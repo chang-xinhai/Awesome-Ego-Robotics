@@ -40,6 +40,11 @@ test('L6 is a separate direct video route',()=>{
  assert.ok(matches(work({sections:['Methods and Toolchains / Representation and latent actions']}),'methods',{...emptyView(),category:'l6'}));
  assert.equal(CATEGORIES.methods.length,7);
 });
+test('official product and manufacturer aliases are searchable',()=>{
+ const x=work({name:'Orbbec EGO',aliases:['奥比中光','EGO 四目']});
+ assert.ok(matches(x,'methods',{...emptyView(),query:'奥比中光'}));
+ assert.ok(matches(x,'methods',{...emptyView(),query:'ego 四目'}));
+});
 test('synthetic channels are filterable without becoming physical observations',()=>{
  const w=work({collections:['datasets'],sections:['Datasets / Hand-object geometry and pose'],research:{dataset:{recordedSignals:[],syntheticSignals:['Vision','Depth'],dataRole:'synthetic'}}});
  assert.deepEqual(signalsFor(w,'datasets'),['Vision','Depth']);

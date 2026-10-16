@@ -135,11 +135,11 @@
       "commercial": false,
       "evidence": [
         {
-          "label": "Official source",
+          "label": "Code & hardware",
           "url": "https://github.com/fpv-labs/ego-oscar"
         },
         {
-          "label": "Paper",
+          "label": "Canonical source",
           "url": "https://arxiv.org/abs/2608.08285"
         },
         {
@@ -150,10 +150,16 @@
           "hardware": "DIY guide/CAD/print links; hardware license not established",
           "software": "Apache-2.0 firmware and recorder repository",
           "data": "Official stereo-550 release"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/fpvlabs/stereo-550"
         }
       ],
       "notes": [
-        "Apache-2.0 capture code and firmware are released. DIY/CAD/print resources are linked externally; hardware license coverage was not established."
+        "Apache-2.0 capture code and firmware are released. DIY/CAD/print resources are linked externally; hardware license coverage was not established.",
+        "Custom stereo-550 / FPV Labs license; consult current access terms.",
+        "Controlled HF access under a custom dataset license."
       ],
       "availability": "Research system"
     },
@@ -418,12 +424,26 @@
       "commercial": false,
       "evidence": [
         {
-          "label": "Official source",
+          "label": "Canonical source",
           "url": "https://arxiv.org/abs/2505.07813"
+        },
+        {
+          "label": "Project",
+          "url": "https://dexwild.github.io/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/dexwild/dexwild"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/boardd/dexwild-dataset"
         }
       ],
       "notes": [
-        "Hardware and data guides are linked by the authors; sensor-level release terms are distinct from the learning code."
+        "Hardware and data guides are linked by the authors; sensor-level release terms are distinct from the learning code.",
+        "Official dataset card declares MIT; inspect accompanying third-party terms.",
+        "Official download links; no full-corpus integrity audit performed."
       ],
       "availability": "Research system"
     },
@@ -742,15 +762,22 @@
       "availability": "Research resource"
     },
     "emg2pose": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "evidence": [
         {
           "label": "Primary source",
           "url": "https://arxiv.org/abs/2412.02725"
+        },
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/facebookresearch/emg2pose"
         }
       ],
-      "availability": "Research resource"
+      "availability": "Research resource",
+      "notes": [
+        "CC-BY-NC-SA-4.0 project; UmeTrack dependency has separate CC-BY-NC terms."
+      ]
     },
     "touchscale": {
       "status": "unknown",
@@ -1105,15 +1132,31 @@
       "availability": "Research resource"
     },
     "egotac": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "evidence": [
         {
-          "label": "Primary source",
+          "label": "Canonical source",
           "url": "https://arxiv.org/abs/2608.15060"
+        },
+        {
+          "label": "Project",
+          "url": "https://egotac.github.io/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/Mr-Zwkid/EgoTac"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/wkzhang/EgoTac-SC"
         }
       ],
-      "availability": "Research resource"
+      "availability": "Research resource",
+      "notes": [
+        "EgoTac-SC HF card: Apache-2.0; auxiliary datasets and MANO retain separate terms.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
     },
     "touchsight": {
       "status": "unknown",
@@ -1609,6 +1652,861 @@
         }
       ],
       "availability": "Research resource"
+    },
+    "apple-vision-pro-m2": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "M2 technical specifications",
+          "url": "https://support.apple.com/en-us/117810"
+        },
+        {
+          "label": "EgoDex capture and format",
+          "url": "https://github.com/apple-aiml-research/ml-egodex"
+        },
+        {
+          "label": "Main-camera API",
+          "url": "https://developer.apple.com/documentation/visionos/accessing-the-main-camera"
+        },
+        {
+          "label": "Eye input access",
+          "url": "https://www.apple.com/sg/legal/privacy/data/en/eyes-hands/"
+        }
+      ],
+      "notes": [
+        "Hardware design and runtime licensing are separate; a documented API is not proof of open hardware."
+      ],
+      "verified": "2026-10-16"
+    },
+    "meta-quest3": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Quest 3 product",
+          "url": "https://www.meta.com/quest/quest-3/"
+        },
+        {
+          "label": "HOT3D device streams",
+          "url": "https://facebookresearch.github.io/hot3d/"
+        },
+        {
+          "label": "Camera API and prerequisites",
+          "url": "https://developers.meta.com/vr/documentation/unity/unity-pca-overview/"
+        }
+      ],
+      "notes": [
+        "Hardware design and runtime licensing are separate; a documented API is not proof of open hardware."
+      ],
+      "verified": "2026-10-16"
+    },
+    "ultraleap-stereo-ir170": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Headset mounting and range",
+          "url": "https://docs.ultraleap.com/hand-tracking/XR-Setup/XR-setup.html"
+        },
+        {
+          "label": "IR sensing and LeapC",
+          "url": "https://docs.ultraleap.com/hand-tracking/index.html"
+        },
+        {
+          "label": "Supported orientations",
+          "url": "https://docs.ultraleap.com/hand-tracking/getting-started.html"
+        }
+      ],
+      "notes": [
+        "Hardware design and runtime licensing are separate; a documented API is not proof of open hardware."
+      ],
+      "verified": "2026-10-16"
+    },
+    "orbbec-ego": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        },
+        {
+          "label": "Official launch history",
+          "url": "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        }
+      ],
+      "notes": "Product listing establishes a capture offering, not independent performance validation or open hardware."
+    },
+    "liv-ego": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://livsynrobotics.com/products/ego"
+        }
+      ],
+      "notes": "Product listing establishes a capture offering, not independent performance validation or open hardware."
+    },
+    "samtzu-ego": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        }
+      ],
+      "notes": "Product listing establishes a capture offering, not independent performance validation or open hardware."
+    },
+    "tobi-ego": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial E2/E6; E8 announced",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.tobi.cn/ego-landing.html"
+        },
+        {
+          "label": "E2 current specification and raw-sample boundaries",
+          "url": "https://www.tobi.cn/product-e2.html"
+        },
+        {
+          "label": "E6 specifications",
+          "url": "https://www.tobi.cn/product-e6.html"
+        },
+        {
+          "label": "Developer documentation",
+          "url": "https://www.tobi.cn/docs.html"
+        }
+      ],
+      "notes": "E2/E6 vendor-listed; E8 landing page still describes a planned platform and target accuracy. Public docs do not establish an open-source license."
+    },
+    "nolo-egocapture": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.nolovr.com/ego-page/index.html?v=3"
+        }
+      ],
+      "notes": "Product listing establishes a capture offering, not independent performance validation or open hardware."
+    },
+    "litchi-egodepth": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://litchibot.com/"
+        },
+        {
+          "label": "Authorized distributor hardware image",
+          "url": "https://humansx.co.jp/en/products/litchi-ego/"
+        }
+      ],
+      "notes": "Product listing establishes a capture offering, not independent performance validation or open hardware."
+    },
+    "litchi-t1": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://litchibot.com/"
+        }
+      ],
+      "notes": "Product listing establishes a capture offering, not independent performance validation or open hardware."
+    },
+    "physen-thor": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.physen.ai/products/thor-ego/"
+        }
+      ],
+      "notes": "Product listing establishes a capture offering, not independent performance validation or open hardware."
+    },
+    "egoeasy": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.yeegooai.com/"
+        }
+      ],
+      "notes": "Product listing establishes a capture offering, not independent performance validation or open hardware."
+    },
+    "xvisio-seerfusion-one": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://en.xvisiotech.com/SeerController/312"
+        }
+      ],
+      "notes": "Product listing establishes a capture offering, not independent performance validation or open hardware."
+    },
+    "dexrobot-dexcap": {
+      "status": "partial",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.dex-robot.com/dexCap"
+        },
+        {
+          "label": "Manufacturer Python SDK",
+          "url": "https://github.com/DexRobot/dexcap-sdk-python"
+        },
+        {
+          "label": "Manufacturer C++ SDK",
+          "url": "https://github.com/DexRobot/dexcap-sdk-cpp"
+        }
+      ],
+      "notes": "Public manufacturer SDK repositories; device firmware and mechanical design release not verified. Distinct from Stanford DexCap."
+    },
+    "pia-primus-ego": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://cn.piagroup.com/news/company2/538.html"
+        }
+      ],
+      "notes": "Product listing establishes a capture offering, not independent performance validation or open hardware."
+    },
+    "nolo-omniglove": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "hardwareStatus": "unknown",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Manufacturer multimodal/glove specification",
+          "url": "https://www.nolovr.com/ego-page/index.html?v=3"
+        }
+      ],
+      "notes": "Glove is a distinct optional capture accessory, not a capability of bare-hand EgoCapture."
+    },
+    "avi-ht": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method",
+      "notes": "No verified implementation release found in checked primary sources.",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2605.21714"
+        }
+      ]
+    },
+    "everybody-tracking": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method",
+      "notes": "No verified implementation release found in checked primary sources.",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2608.29927"
+        }
+      ]
+    },
+    "ego4o": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method",
+      "notes": "No verified implementation release found in checked primary sources.",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2504.08449"
+        }
+      ]
+    },
+    "hmd-poser": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT-licensed method implementation; dataset terms are separate.",
+      "notes": "MIT-licensed method implementation; dataset terms are separate.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/PICO-AI-TEAM/HMD-Poser"
+        }
+      ]
+    },
+    "egotap": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Code and weights released under restrictive noncommercial, nonredistribution terms.",
+      "notes": "Code and weights released under restrictive noncommercial, nonredistribution terms.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/tho-kn/EgoTAP"
+        }
+      ]
+    },
+    "egoposeformer": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 implementation; pretrained/data dependencies need their own terms.",
+      "notes": "Apache-2.0 implementation; pretrained/data dependencies need their own terms.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/ChenhongyiYang/egoposeformer"
+        }
+      ]
+    },
+    "homan": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Public source available; applicable complete-project license not verified.",
+      "notes": "Public source available; applicable complete-project license not verified.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/hassony2/homan"
+        }
+      ]
+    },
+    "hold": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT implementation; pretrained components and data retain separate terms.",
+      "notes": "MIT implementation; pretrained components and data retain separate terms.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/zc-alexfan/hold"
+        }
+      ]
+    },
+    "g-hop": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Official source released; complete model/code license not independently verified.",
+      "notes": "Official source released; complete model/code license not independently verified.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/JudyYe/ghop"
+        }
+      ]
+    },
+    "open-television": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 core implementation; listed dependencies retain their own licenses.",
+      "notes": "Apache-2.0 core implementation; listed dependencies retain their own licenses.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/OpenTeleVision/TeleVision"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/OpenTeleVision/TeleVision/blob/main/LICENSE"
+        }
+      ]
+    },
+    "open-teach": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT method code; robot drivers and headset software retain their own terms.",
+      "notes": "MIT method code; robot drivers and headset software retain their own terms.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/aadhithya14/Open-Teach"
+        }
+      ]
+    },
+    "anyteleop": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Retargeting and MIT visualizer components released; not all end-to-end robot integrations verified.",
+      "notes": "Retargeting and MIT visualizer components released; not all end-to-end robot integrations verified.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/NVlabs/sim-web-visualizer"
+        }
+      ]
+    },
+    "vrb": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method",
+      "notes": "No verified implementation release found in checked primary sources.",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2304.08488"
+        }
+      ]
+    },
+    "whirl": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method",
+      "notes": "No verified implementation release found in checked primary sources.",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2207.09450"
+        }
+      ]
+    },
+    "vc1": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Core code/model terms CC-BY-NC; benchmark dependencies and scene datasets separately licensed.",
+      "notes": "Core code/model terms CC-BY-NC; benchmark dependencies and scene datasets separately licensed.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/facebookresearch/eai-vc"
+        }
+      ]
+    },
+    "voltron": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT implementation; training corpora and evaluation data have separate terms.",
+      "notes": "MIT implementation; training corpora and evaluation data have separate terms.",
+      "evidence": [
+        {
+          "label": "Official code and license",
+          "url": "https://github.com/siddk/voltron-robotics"
+        }
+      ]
+    },
+    "opentouch": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2512.16842"
+        },
+        {
+          "label": "Project",
+          "url": "https://opentouch-tactile.github.io/"
+        },
+        {
+          "label": "Code & dataset",
+          "url": "https://github.com/OpenTouch-MIT/opentouch"
+        }
+      ],
+      "notes": [
+        "Data-specific license not verified; MANO assets require separate terms.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "feel": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2603.15847"
+        },
+        {
+          "label": "Project",
+          "url": "https://www.cs.umd.edu/~edessale/feel"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/edessa/feel"
+        }
+      ],
+      "notes": [
+        "Dataset license not stated in the examined release card.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "egotactile": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2606.09243"
+        },
+        {
+          "label": "Project",
+          "url": "https://egotactile.github.io/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/Russell-Zeng/EgoTactile"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/HustleHard/EgoTactile"
+        }
+      ],
+      "notes": [
+        "CC BY-NC 4.0.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "egoexolearn": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2403.16182"
+        },
+        {
+          "label": "Project",
+          "url": "https://egoexolearn.github.io/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/OpenGVLab/EgoExoLearn"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/hyf015/EgoExoLearn"
+        }
+      ],
+      "notes": [
+        "Official HF card declares MIT; source demonstration videos retain any separate third-party rights.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "egtea-gaze-plus": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2006.00626"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://cbs.ic.gatech.edu/fpv/"
+        },
+        {
+          "label": "Original paper",
+          "url": "https://www.ecva.net/papers/eccv_2018/papers_ECCV/papers/Yin_Li_In_the_Eye_ECCV_2018_paper.pdf"
+        }
+      ],
+      "notes": [
+        "License not verified from the currently reachable primary sources.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "egopat3d": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2203.13116"
+        },
+        {
+          "label": "Project",
+          "url": "https://ai4ce.github.io/EgoPAT3D/"
+        },
+        {
+          "label": "Code & dataset",
+          "url": "https://github.com/ai4ce/EgoPAT3D"
+        }
+      ],
+      "notes": [
+        "Dataset license not verified; consult official provider.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "egodexter": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/1704.02201"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://handtracker.mpi-inf.mpg.de/projects/OccludedHands/EgoDexter.htm"
+        },
+        {
+          "label": "Download",
+          "url": "https://handtracker.mpi-inf.mpg.de/data/EgoDexter/"
+        }
+      ],
+      "notes": [
+        "Scientific/non-commercial purposes only, under the supplied dataset license.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "meccano": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2209.08691"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://iplab.dmi.unict.it/legacy/MECCANO/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/fpv-iplab/MECCANO"
+        }
+      ],
+      "notes": [
+        "Dataset license not verified from the examined official page.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "enigma51": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2309.14809"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://fpv-iplab.github.io/ENIGMA-51/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/fpv-iplab/ENIGMA-51"
+        }
+      ],
+      "notes": [
+        "Dataset license not verified from the examined publisher pages.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "egodemo": {
+      "status": "partial",
+      "commercial": true,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://huggingface.co/datasets/LightwheelAI/EgoDemo"
+        },
+        {
+          "label": "Collection",
+          "url": "https://huggingface.co/collections/LightwheelAI/egosuite-open100k"
+        },
+        {
+          "label": "Technical overview",
+          "url": "https://huggingface.co/blog/LightwheelAI/egosuite-open100k"
+        }
+      ],
+      "notes": [
+        "commercial-training-no-resale-v1.0; custom use restrictions, not an unrestricted open license.",
+        "Hugging Face account and acceptance of access terms are required."
+      ]
+    },
+    "gen-humanego": {
+      "status": "partial",
+      "commercial": true,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://huggingface.co/datasets/genrobot2025/Gen-HumanEgo"
+        },
+        {
+          "label": "Technical blog",
+          "url": "https://www.genrobot.ai/blog/gen-human-ego"
+        },
+        {
+          "label": "Data specification",
+          "url": "https://docs.genrobot.ai/guides/das-ego-data-introduction"
+        },
+        {
+          "label": "Tools",
+          "url": "https://github.com/genrobot-ai/das-datakit"
+        }
+      ],
+      "notes": [
+        "CC BY-SA 4.0, subject to dataset access conditions.",
+        "Official HF form; card states access is automatically granted after submission."
+      ]
+    },
+    "egohod": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2503.00986"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/InternRobotics/EgoHOD"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/Jazzcharles/EgoHOD"
+        }
+      ],
+      "notes": [
+        "Annotation license not verified; original Ego4D and instructional video rights remain separate.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "unrealego": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2401.00889"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://unrealego.mpi-inf.mpg.de/"
+        },
+        {
+          "label": "Project",
+          "url": "https://4dqv.mpi-inf.mpg.de/UnrealEgo2/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/hiroyasuakada/3D-Human-Pose-Perception-from-Egocentric-Stereo-Videos"
+        }
+      ],
+      "notes": [
+        "UnrealEgo2/RW Version 1.0: Simplified BSD License as linked by dataset site.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "actionsense": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://action-sense.csail.mit.edu/"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://action-sense.csail.mit.edu/data.html"
+        },
+        {
+          "label": "Sensor specification",
+          "url": "https://action-sense.csail.mit.edu/dataset_info.html"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/delpreto/ActionNet"
+        }
+      ],
+      "notes": [
+        "CC BY-NC-SA 4.0.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
+    },
+    "thermohands": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Canonical source",
+          "url": "https://arxiv.org/abs/2403.09871"
+        },
+        {
+          "label": "Project",
+          "url": "https://thermohands.github.io/"
+        },
+        {
+          "label": "Code & dataset",
+          "url": "https://github.com/LawrenceZ22/ThermoHands"
+        }
+      ],
+      "notes": [
+        "Dataset-specific license not verified; project links two data archives.",
+        "Official download links; no full-corpus integrity audit performed."
+      ]
     }
   }
 }

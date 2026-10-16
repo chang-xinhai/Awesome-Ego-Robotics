@@ -42,7 +42,7 @@ const imageFallback = (w: Work) =>
 function coverHtml(w: Work) {
   const p = preview(w);
   return p
-    ? `<button type="button" class="card-cover" data-detail="${e(w.id)}" aria-label="View ${e(w.name)} details"><img src="${e(p.url)}" alt="${e(p.alt)}" width="640" height="360" decoding="async"/></button>`
+    ? `<button type="button" class="card-cover" data-detail="${e(w.id)}" aria-label="View ${e(collectionName(w))} details"><img src="${e(p.url)}" alt="${e(p.alt)}" width="640" height="360" decoding="async"/></button>`
     : `<a class="card-cover text-cover" href="${e(w.paperUrl)}" target="_blank" rel="noopener noreferrer"><span>${e(collection === "datasets" ? "Dataset" : collection === "methods" ? "Research method" : "Capture system")}</span><strong>${e(w.name)}</strong><small>Official source ↗</small></a>`;
 }
 const record = (v: unknown): Record<string, unknown> =>
@@ -157,7 +157,7 @@ function renderCategories() {
 }
 function filtered() {
   const rank=(w:Work)=>{const i=settings.initial.indexOf(w.id);return i<0?1000:i;};
-  return works.filter(w=>matches(w,collection,view)).sort((a,b)=>view.sort==="name"?a.name.localeCompare(b.name):view.sort==="oldest"?compareDates(a,b,"oldest"):view.sort==="newest"?compareDates(a,b):rank(a)-rank(b)||compareDates(a,b));
+  return works.filter(w=>matches(w,collection,view)).sort((a,b)=>view.sort==="name"?collectionName(a).localeCompare(collectionName(b)):view.sort==="oldest"?compareDates(a,b,"oldest"):view.sort==="newest"?compareDates(a,b):rank(a)-rank(b)||compareDates(a,b));
 }
 function publicStats(w:Work) {
  const d=record(w.research?.dataset),released=scaleMetrics(record(d.publicScale),true),reported=scaleMetrics(record(d.reportedScale),true);
@@ -173,7 +173,7 @@ function card(w: Work) {
         ...(w.commercial ? [String(w.release?.availability ?? "").includes("Announced") ? "Announced" : String(w.release?.availability ?? "").includes("project") ? "Industry" : "Commercial"] : w.openness === "open" ? ["Open source"] : [])];
   const name = collection === "datasets" ? w.datasetName ?? text(d.name, w.name) : view.filters.availability === "commercial" ? text(w.release?.productName, w.name) : w.name;
   const description = collection === "datasets" ? w.datasetSummary ?? text(d.observations, w.summary ?? w.keywords) : collection === "methods" ? text(record(w.research?.method).summary, w.summary ?? w.keywords) : w.summary ?? w.keywords;
-  return `<article class="library-card feed-enter${selected.has(w.id) ? " is-selected" : ""}" data-id="${e(w.id)}">${!research ? coverHtml(w) : ""}<div class="card-copy"><p class="card-meta">${e(w.institute)} <span>·</span> ${e(w.publication === "Product" ? "Product" : w.year)}</p><h2><button type="button" data-detail="${e(w.id)}" title="${e(w.title)}">${e(research ? w.title : name)}</button></h2><p class="card-description">${e(description)}</p><div class="card-tags">${tags.map((s) => `<span title="${e(s)}"${/soon|pending/i.test(s) ? ' class="access-pending"' : ""}>${e(s === "Proprioception" ? "State" : s)}</span>`).join("")}</div><div class="card-actions"><button type="button" data-detail="${e(w.id)}">Details <span aria-hidden="true">↗</span></button><button type="button" class="compare-toggle" data-compare="${e(w.id)}" aria-label="${selected.has(w.id) ? "Remove" : "Compare"} ${e(w.name)}" aria-pressed="${selected.has(w.id)}" title="${selected.has(w.id) ? "Remove from comparison" : "Add to comparison"}"><span aria-hidden="true">${selected.has(w.id) ? "✓" : "+"}</span> Compare</button></div></div></article>`;
+  return `<article class="library-card feed-enter${selected.has(w.id) ? " is-selected" : ""}" data-id="${e(w.id)}">${!research ? coverHtml(w) : ""}<div class="card-copy"><p class="card-meta">${e(w.institute)} <span>·</span> ${e(w.publication === "Product" ? "Product" : w.year)}</p><h2><button type="button" data-detail="${e(w.id)}" title="${e(w.title)}">${e(research ? w.title : name)}</button></h2><p class="card-description">${e(description)}</p><div class="card-tags">${tags.map((s) => `<span title="${e(s)}"${/soon|pending/i.test(s) ? ' class="access-pending"' : ""}>${e(s === "Proprioception" ? "State" : s)}</span>`).join("")}</div><div class="card-actions"><button type="button" data-detail="${e(w.id)}">Details <span aria-hidden="true">↗</span></button><button type="button" class="compare-toggle" data-compare="${e(w.id)}" aria-label="${selected.has(w.id) ? "Remove" : "Compare"} ${e(name)}" aria-pressed="${selected.has(w.id)}" title="${selected.has(w.id) ? "Remove from comparison" : "Add to comparison"}"><span aria-hidden="true">${selected.has(w.id) ? "✓" : "+"}</span> Compare</button></div></div></article>`;
 }
 function skeleton() {
   return `<article class="library-card skeleton-card" aria-hidden="true"><div class="card-cover skeleton-stage"><div class="skeleton-block skeleton-cover"></div></div><div class="card-copy"><div class="skeleton-block skeleton-meta"></div><div class="skeleton-block skeleton-title"></div><div class="skeleton-block skeleton-line"></div><div class="skeleton-block skeleton-line short"></div><div class="skeleton-tags"><i class="skeleton-block"></i><i class="skeleton-block"></i></div><div class="skeleton-footer"><i class="skeleton-block"></i><i class="skeleton-block"></i></div></div></article>`;
@@ -379,7 +379,7 @@ function updateTray() {
   $("compare-tray").hidden = !selected.size;
   $("compare-count").textContent = `${selected.size} of 4 selected`;
   $("compare-names").textContent = [...selected]
-    .map((id) => byId.get(id)!.name)
+    .map((id) => collectionName(byId.get(id)!))
     .join(" · ");
   $<HTMLButtonElement>("open-compare").disabled = selected.size < 2;
   for (const b of document.querySelectorAll<HTMLButtonElement>(
@@ -428,6 +428,9 @@ function measurement(value: unknown) {
   return `${valueLabel} · ${text(m.shortScope ?? m.scope, "scope unknown")}`;
 }
 const opennessLabel = (w: Work) => ({open:"Open source", partial:"Partial release", closed:"Closed source", unknown:"Unknown"})[w.openness ?? "unknown"] ?? "Unknown";
+function collectionName(w:Work) {
+  return collection === "datasets" ? text(w.datasetName ?? w.research?.dataset?.name,w.name) : w.name;
+}
 function hardwareFacts(w: Work): [string, string][] {
   const h=record(w.research?.hardware);
   return [["Form",text(h.interfaceForms,w.form)],["Body coverage",text(h.bodyCoverage,w.coverage)],
@@ -452,7 +455,8 @@ function methodEvaluationFacts(w:Work):[string,string][] {
   return [["Evaluation",text(m.evaluation)],["Robot evidence",text(m.robotEvidence)],
     ["Robot platform",text(m.robotPlatform,"Not evaluated / not specified")],
     ...(m.policyInput?[["Policy input",text(m.policyInput)] as [string,string]]:[]),
-    ...(m.implementation?[["Implementation",text(m.implementation)] as [string,string]]:[])];
+    ...(m.implementation?[["Implementation",text(m.implementation)] as [string,string]]:[]),
+    ...(m.limitations?[["Limits",text(m.limitations)] as [string,string]]:[])];
 }
 function datasetFacts(w: Work): [string, string][] {
   const d=record(w.research?.dataset);
@@ -470,11 +474,12 @@ function datasetAnnotationFacts(w:Work):[string,string][] {
 function datasetReleaseFacts(w:Work):[string,string][] {
   const d=record(w.research?.dataset);
   return [["Access",text(d.access,w.dataAccess)],["Release scope",text(d.releaseScope)],
-    ["Format",text(d.formats,w.format)],["Data license",text(d.dataLicense,d.license?text(d.license):"Not verified")]];
+    ["Format",text(d.formats,w.format)],["Data license",text(d.dataLicense,d.license?text(d.license):"Not verified")],
+    ...(d.limitations?[["Limits",text(d.limitations)] as [string,string]]:[])];
 }
 function facts(w: Work): [string, string][] {
   const rows: [string,string][] = [["Date", w.date], ["Institution", w.institute], ["Publication", w.publication]];
-  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Public release",scaleText(record(w.research?.dataset?.publicScale))]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...methodEvaluationFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w)])];
+  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Reported scope",text(record(w.research?.dataset?.reportedScale).scope)],["Public release",scaleText(record(w.research?.dataset?.publicScale))],["Public release scope",text(record(w.research?.dataset?.publicScale).scope)]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...methodEvaluationFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w)])];
 }
 const scaleText = formatScale;
 const factsHtml = (rows: [string, string][]) =>
@@ -528,7 +533,7 @@ function showDetail(id: string) {
   const selectedMedia=collection==="research"?media(w,detailKind):preview(w)??media(w);
   const isDataset = detailKind === "datasets";
   const mediaHtml = selectedMedia ? `<div class="detail-media"><img class="detail-cover" src="${e(selectedMedia.url)}" alt="${e(selectedMedia.alt)}"/><p class="image-note">${e(detailKind === "hardware" ? (w.hardwareImageCredit ?? w.credit ?? w.institute) : w.credit ?? w.institute)} · <a href="${e(selectedMedia.source)}" target="_blank" rel="noopener noreferrer">${e(selectedMedia.kind)} ↗</a></p></div>` : "";
-  const notes = [record(w.research?.method).limitations, d.limitations, d.annotationEvidence, record(d.reportedScale).durationUnit, record(w.research?.method).dateNote, h.observationSignalsNote, h.interfaceFormsNote, record(h.tactile).note, record(h.forceTorque).note, h.hardwareAvailability,
+  const notes = [d.annotationEvidence, record(d.reportedScale).durationUnit, record(w.research?.method).dateNote, h.observationSignalsNote, h.interfaceFormsNote, record(h.tactile).note, record(h.forceTorque).note, h.hardwareAvailability,
     record(h.cost).scope, record(h.mass).scope, d.accessNote, d.fpsScope, record(d.reportedScale).scope, record(d.publicScale).snapshotDate ? `Public release snapshot: ${text(record(d.publicScale).snapshotDate)}` : undefined, record(d.publicScale).scope, record(d.reportedScale).scope,
     ...(Array.isArray(d.scopeNotes) ? d.scopeNotes : []),
     ...(Array.isArray(w.release?.notes) ? w.release.notes : [])].filter(Boolean);
@@ -559,7 +564,7 @@ function showCompare() {
   const items = [...selected].map((id) => byId.get(id)!);
   const keys = [...new Set(items.flatMap(w => facts(w).map(([k]) => k)))];
   $("compare-content").innerHTML =
-    `<div class="compare-heading"><h2>Side by side.</h2><p>Specifications and release conditions, with their original sources.</p></div><div class="compare-table-wrap" role="region" tabindex="0" aria-label="Comparison table, scroll horizontally"><table class="comparison-table"><thead><tr><th scope="col">Compare</th>${items.map((w) => `<th scope="col">${preview(w) ? `<img src="${e(preview(w)?.url)}" alt="${e(preview(w)?.alt)}"/>` : ""}<strong>${e(w.name)}</strong><a href="${e(w.paperUrl)}" target="_blank" rel="noopener noreferrer">Primary source ↗</a></th>`).join("")}</tr></thead><tbody>${keys.map((key) => `<tr><th scope="row">${e(key)}</th>${items.map((w) => `<td>${e(facts(w).find(([k]) => k === key)?.[1])}</td>`).join("")}</tr>`).join("")}</tbody></table></div><p class="compare-footnote">Public releases, gated data, announced corpora, and observation variants are different scopes. A reported total is not necessarily the downloadable portion.</p>`;
+    `<div class="compare-heading"><h2>Side by side.</h2><p>Specifications and release conditions, with their original sources.</p></div><div class="compare-table-wrap" role="region" tabindex="0" aria-label="Comparison table, scroll horizontally"><table class="comparison-table"><thead><tr><th scope="col">Compare</th>${items.map((w) => `<th scope="col">${preview(w) ? `<img src="${e(preview(w)?.url)}" alt="${e(preview(w)?.alt)}"/>` : ""}<strong>${e(collectionName(w))}</strong><a href="${e(w.paperUrl)}" target="_blank" rel="noopener noreferrer">Primary source ↗</a></th>`).join("")}</tr></thead><tbody>${keys.map((key) => `<tr><th scope="row">${e(key)}</th>${items.map((w) => `<td>${e(facts(w).find(([k]) => k === key)?.[1])}</td>`).join("")}</tr>`).join("")}</tbody></table></div><p class="compare-footnote">Public releases, gated data, announced corpora, and observation variants are different scopes. A reported total is not necessarily the downloadable portion.</p>`;
   compare.showModal();
   document.body.classList.add("dialog-open");
 }

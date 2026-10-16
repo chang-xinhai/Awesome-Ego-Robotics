@@ -230,7 +230,15 @@
     "hardwareImageAlt": "Ego-OSCAR capture hardware",
     "hardwareImageSource": "https://arxiv.org/html/2608.08285v1/images/design.png",
     "hardwareImagePage": "https://arxiv.org/html/2608.08285v1",
-    "hardwareImageType": "Hardware / capture system"
+    "hardwareImageType": "Hardware / capture system",
+    "datasetName": "Stereo-550",
+    "datasetSummary": "Calibrated stereo demonstrations offer dense action captions and IMU for most sessions; 550 hours is wall-clock duration.",
+    "datasetImage": "images/catalog/ego-oscar-datasets.webp",
+    "datasetImageAlt": "Stereo-550 official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "FPV Labs / original authors",
+    "datasetImageSource": "https://www.fpvlabs.ai/images/ego-oscar-action-labels-poster.webp",
+    "datasetImagePage": "https://www.fpvlabs.ai/essays/ego-oscar"
   },
   {
     "id": "gi-ego1gs",
@@ -648,7 +656,15 @@
     "hardwareImageSource": "https://dexwild.github.io/resources/images/human_hardware_setup.png",
     "hardwareImagePage": "https://arxiv.org/abs/2505.07813",
     "hardwareImageType": "Hardware / capture system",
-    "image": "images/catalog/dexwild-methods.webp"
+    "image": "images/catalog/dexwild-methods.webp",
+    "datasetName": "DexWild dataset",
+    "datasetSummary": "In-the-wild wearable hand demonstrations and robot episodes share five manipulation task families across varied environments.",
+    "datasetImage": "images/catalog/dexwild-datasets.webp",
+    "datasetImageAlt": "DexWild dataset official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "Carnegie Mellon / original authors",
+    "datasetImageSource": "https://arxiv.org/html/2505.07813v2/task_figure-compressed.png",
+    "datasetImagePage": "https://arxiv.org/html/2505.07813v2"
   },
   {
     "id": "egowholeview",
@@ -1308,7 +1324,7 @@
   {
     "id": "emg2pose",
     "name": "emg2pose",
-    "summary": "Reference sEMG-to-hand-pose data with diverse users and motion stages.",
+    "summary": "Decodes wrist sEMG into hand joint angles, with separate regression and initialized-tracking tasks.",
     "signals": [
       "EMG"
     ],
@@ -1318,15 +1334,17 @@
     "reviewed": "2026-10-16",
     "datasetImage": "images/catalog/emg2pose-datasets.webp",
     "credit": "Meta Reality Labs",
-    "imagePage": "https://github.com/facebookresearch/emg2pose/blob/main/README.md",
-    "imageSource": "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_overview.png",
-    "imageAlt": "emg2pose dataset examples and annotations",
+    "imagePage": "https://arxiv.org/html/2412.02725",
+    "imageSource": "https://arxiv.org/html/2412.02725v1/figures/fig1_clip.png",
+    "imageAlt": "emg2pose · vemg2pose method overview and outputs",
     "datasetImageAlt": "emg2pose dataset examples and annotations",
     "datasetImageSource": "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_overview.png",
     "datasetImagePage": "https://github.com/facebookresearch/emg2pose/blob/main/README.md",
     "datasetImageType": "Dataset overview",
     "datasetName": "emg2pose",
-    "datasetSummary": "Reference sEMG-to-hand-pose data with diverse users and motion stages."
+    "datasetSummary": "Reference sEMG-to-hand-pose data with diverse users and motion stages.",
+    "image": "images/catalog/emg2pose-methods.webp",
+    "imageType": "Method overview"
   },
   {
     "id": "touchscale",
@@ -1957,7 +1975,15 @@
     "credit": "Shanghai Qi Zhi Institute / Shanghai Jiao Tong University",
     "imagePage": "https://arxiv.org/html/2608.15060v1",
     "imageSource": "https://arxiv.org/html/2608.15060v1/00-teaser.png",
-    "imageAlt": "EgoTac: official method overview"
+    "imageAlt": "EgoTac: official method overview",
+    "datasetName": "EgoTac-SC",
+    "datasetSummary": "Wearable bimanual force, hand motion and ego video provide the measured core of EgoTac’s mixed-source training data.",
+    "datasetImage": "images/catalog/egotac-datasets.webp",
+    "datasetImageAlt": "EgoTac dataset composition and self-collected capture overview; the larger mixture is distinct from EgoTac-SC alone",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "Shanghai Qi Zhi Institute / original authors",
+    "datasetImageSource": "https://egotac.github.io/assets/images/dataset.png",
+    "datasetImagePage": "https://egotac.github.io/"
   },
   {
     "id": "touchsight",
@@ -2738,5 +2764,977 @@
     "imageAlt": "Official EventEgo3D++ event-surface architecture and 3D full-body pose reconstruction",
     "imageType": "Method / tool output",
     "credit": "EventEgo3D++ authors"
+  },
+  {
+    "id": "apple-vision-pro-m2",
+    "name": "Apple Vision Pro · M2",
+    "summary": "The first-generation headset used to collect EgoDex, with on-device head and hand tracking.",
+    "form": "Headset",
+    "coverage": "Upper body",
+    "signals": [
+      "Vision"
+    ],
+    "tracking": "ARKit head and hand tracking; EgoDex adds upper-body skeletal estimates",
+    "hardwareImage": "images/catalog/apple-vision-pro-m2-hardware.webp",
+    "hardwareImageAlt": "Side view of the first-generation Apple Vision Pro headset",
+    "hardwareImageSource": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/apple_vision_pro_hero.png",
+    "hardwareImagePage": "https://support.apple.com/en-us/117810",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Apple",
+    "reviewed": "2026-10-16",
+    "credit": "Apple",
+    "aliases": [
+      "Apple Vision Pro",
+      "苹果 Vision Pro",
+      "AVP",
+      "EgoDex capture"
+    ]
+  },
+  {
+    "id": "meta-quest3",
+    "name": "Meta Quest 3",
+    "summary": "A production headset used by HOT3D for synchronized egocentric hand–object recordings.",
+    "form": "Headset",
+    "coverage": "Hands",
+    "signals": [
+      "Vision"
+    ],
+    "tracking": "HOT3D uses external optical-marker reference for hand/object ground truth",
+    "hardwareImage": "images/catalog/meta-quest3-hardware.webp",
+    "hardwareImageAlt": "Meta Quest 3 headset and two controllers",
+    "hardwareImageSource": "https://lookaside.fbsbx.com/elementpath/media/?media_id=157327897433582&version=1792013363&transcode_extension=webp",
+    "hardwareImagePage": "https://www.meta.com/quest/quest-3/",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Meta",
+    "reviewed": "2026-10-16",
+    "credit": "Meta",
+    "aliases": [
+      "Quest 3",
+      "HOT3D capture"
+    ]
+  },
+  {
+    "id": "ultraleap-stereo-ir170",
+    "name": "Ultraleap Stereo IR 170",
+    "summary": "A head-mountable stereo infrared module for markerless hand and finger capture.",
+    "form": "Headset",
+    "coverage": "Hands",
+    "signals": [
+      "Vision"
+    ],
+    "tracking": "Model-based optical hand and finger skeleton tracking",
+    "hardwareImage": "images/catalog/ultraleap-stereo-ir170-hardware.webp",
+    "hardwareImageAlt": "Stereo IR 170 camera module with both infrared camera lens caps removed",
+    "hardwareImageSource": "https://docs.ultraleap.com/_images/SIR-lens-caps.png",
+    "hardwareImagePage": "https://docs.ultraleap.com/hand-tracking/XR-Setup/XR-setup.html",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Ultraleap",
+    "reviewed": "2026-10-16",
+    "credit": "Ultraleap",
+    "aliases": [
+      "Stereo IR 170",
+      "SIR170",
+      "Rigel"
+    ]
+  },
+  {
+    "id": "orbbec-ego",
+    "name": "Orbbec EGO",
+    "summary": "A synchronized head-mounted capture family with binocular, four-camera and RGB-D configurations.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Headband",
+    "coverage": "Hands",
+    "tracking": "Raw visual–inertial capture; downstream reconstruction depends on integration",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/orbbec-ego-hardware.webp",
+    "hardwareImageAlt": "Orbbec EGO capture hardware from the official product materials",
+    "hardwareImageSource": "https://www.orbbec.com.cn/uploads/20260817/57d799225767da652e459b51181e4b62.png",
+    "hardwareImagePage": "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Orbbec",
+    "credit": "Orbbec",
+    "aliases": [
+      "奥比中光",
+      "EGO 双目",
+      "EGO 四目",
+      "EGO RGB-D"
+    ]
+  },
+  {
+    "id": "liv-ego",
+    "name": "LivEgo",
+    "summary": "A stereo headband records RGB, inertial and audio streams for natural manipulation capture.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Audio"
+    ],
+    "form": "Headband",
+    "coverage": "Hands",
+    "tracking": "No verified on-device pose output",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/liv-ego-hardware.webp",
+    "hardwareImageAlt": "LivEgo capture hardware from the official product materials",
+    "hardwareImageSource": "https://livsynrobotics.com/images/products/ego.webp",
+    "hardwareImagePage": "https://livsynrobotics.com/products/ego",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Livsyn Robotics (灵生科技)",
+    "credit": "Livsyn Robotics (灵生科技)",
+    "aliases": [
+      "灵生科技",
+      "Liv Ego"
+    ]
+  },
+  {
+    "id": "samtzu-ego",
+    "name": "Samtzu EGO",
+    "summary": "Four synchronized fisheye cameras capture panoramic human activity with inertial and audio streams.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Audio"
+    ],
+    "form": "Headband",
+    "coverage": "Upper body",
+    "tracking": "Pose reconstruction output not specified",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/samtzu-ego-hardware.webp",
+    "hardwareImageAlt": "Samtzu EGO capture hardware from the official product materials",
+    "hardwareImageSource": "https://www.samtzu.com/images/products/ego-pov-wearable.png",
+    "hardwareImagePage": "https://www.samtzu.com/zh/products/ego-pov-wearable/",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Samtzu (芯助科技)",
+    "credit": "Samtzu (芯助科技)",
+    "aliases": [
+      "芯助科技"
+    ]
+  },
+  {
+    "id": "tobi-ego",
+    "name": "TOBI Ego",
+    "summary": "Lightweight stereo E2 and six-camera E6 serve different raw-capture and on-device tracking workflows.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Audio"
+    ],
+    "form": "Headband",
+    "coverage": "Hands",
+    "tracking": "E2 has no on-device SLAM; E6 vendor lists SLAM and hand tracking",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/tobi-ego-hardware.webp",
+    "hardwareImageAlt": "TOBI Ego capture hardware from the official product materials",
+    "hardwareImageSource": "https://www.tobi.cn/assets/official/e6-standard/e6-standard-product.png",
+    "hardwareImagePage": "https://www.tobi.cn/ego-landing.html",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "TOBI Technology (拓比科技)",
+    "credit": "TOBI Technology (拓比科技)",
+    "aliases": [
+      "拓比科技",
+      "拓比",
+      "TOBI E2",
+      "TOBI E6",
+      "TOBI E8"
+    ]
+  },
+  {
+    "id": "nolo-egocapture",
+    "name": "NOLO EgoCapture",
+    "summary": "A split head unit records RGB-D, motion and audio, with bare-hand tracking or an optional tactile glove.",
+    "signals": [
+      "Vision",
+      "Depth",
+      "IMU",
+      "Audio"
+    ],
+    "form": "Headband",
+    "coverage": "Hands",
+    "tracking": "Vendor StarTraq head/wrist pose and 21-keypoint hand tracking; not independently verified GT",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/nolo-egocapture-hardware.webp",
+    "hardwareImageAlt": "NOLO EgoCapture capture hardware from the official product materials",
+    "hardwareImageSource": "https://www.nolovr.com/ego-page/assets/ego_headset.png",
+    "hardwareImagePage": "https://www.nolovr.com/ego-page/index.html?v=3",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "NOLO",
+    "credit": "NOLO",
+    "aliases": [
+      "NOLO",
+      "EgoCapture"
+    ]
+  },
+  {
+    "id": "litchi-egodepth",
+    "name": "LITCHI EgoDepth",
+    "summary": "A four-view RGB headband adds active stereo depth and synchronized inertial/audio capture.",
+    "signals": [
+      "Vision",
+      "Depth",
+      "IMU",
+      "Audio"
+    ],
+    "form": "Headband",
+    "coverage": "Hands",
+    "tracking": "Raw visual–inertial capture; pose requires downstream estimation",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/litchi-egodepth-hardware.webp",
+    "hardwareImageAlt": "LITCHI EgoDepth capture hardware from the official product materials",
+    "hardwareImageSource": "https://humansx.co.jp/wp-content/uploads/2026/10/ego-hero-side-clean.jpg",
+    "hardwareImagePage": "https://litchibot.com/",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "LITCHI (厘清智能)",
+    "credit": "LITCHI (厘清智能)",
+    "aliases": [
+      "厘清智能"
+    ]
+  },
+  {
+    "id": "litchi-t1",
+    "name": "LITCHI T1 series",
+    "summary": "Inertial gloves capture hand motion; the Pro version adds a dense palm pressure array.",
+    "signals": [
+      "IMU",
+      "Tactile"
+    ],
+    "form": "Glove",
+    "coverage": "Hands",
+    "tracking": "IMU-derived hand orientation/pose; no standalone global wrist positioning established",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/litchi-t1-hardware.webp",
+    "hardwareImageAlt": "LITCHI T1-series physical glove with the paired ego capture headband, cropped from the manufacturer poster",
+    "hardwareImageSource": "https://litchibot.com/assets/t1-series-hero.jpg?v=3",
+    "hardwareImagePage": "https://litchibot.com/",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "LITCHI (厘清智能)",
+    "credit": "LITCHI (厘清智能)",
+    "aliases": [
+      "厘清智能"
+    ]
+  },
+  {
+    "id": "physen-thor",
+    "name": "Physen Ego Thor",
+    "summary": "Modular two-, four- and six-camera capture combines calibrated video, IMU and audio.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Audio"
+    ],
+    "form": "Headband",
+    "coverage": "Hands",
+    "tracking": "Online/offline VIO support; numerical pose accuracy not established",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/physen-thor-hardware.webp",
+    "hardwareImageAlt": "Physen Ego Thor capture hardware from the official product materials",
+    "hardwareImageSource": "https://www.physen.ai/products/thor-b.webp",
+    "hardwareImagePage": "https://www.physen.ai/products/thor-ego/",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "PhysenAI (真觉万象)",
+    "credit": "PhysenAI (真觉万象)",
+    "aliases": [
+      "真觉万象",
+      "Thor-Duo",
+      "Thor-Quad",
+      "Thor-Hex"
+    ]
+  },
+  {
+    "id": "egoeasy",
+    "name": "EgoEasy",
+    "summary": "A binocular camera cap and waist recorder capture natural work alongside an app and curation platform.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Hybrid",
+    "coverage": "Hands",
+    "tracking": "Hand trajectories and semantics are downstream processing products",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/egoeasy-hardware.webp",
+    "hardwareImageAlt": "EgoEasy capture hardware from the official product materials",
+    "hardwareImageSource": "https://www.yeegooai.com/images/page02-hardware-20260907.png?v=20260917-tiny",
+    "hardwareImagePage": "https://www.yeegooai.com/",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "YeeGooAI",
+    "credit": "YeeGooAI",
+    "aliases": [
+      "轻松采"
+    ]
+  },
+  {
+    "id": "xvisio-seerfusion-one",
+    "name": "SeerFusion One",
+    "summary": "A six-camera head-mounted terminal records visual–inertial streams with online SLAM and hand tracking.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Headband",
+    "coverage": "Hands",
+    "tracking": "Online VSLAM and hand joint extraction; derived results differ from raw observations",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/xvisio-seerfusion-one-hardware.webp",
+    "hardwareImageAlt": "SeerFusion One capture hardware from the official product materials",
+    "hardwareImageSource": "https://cloud-1251007531.bcdn8.com/quans0818/uploads/20260911/seerfusion-one.png",
+    "hardwareImagePage": "https://en.xvisiotech.com/SeerController/312",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Xvisio Technology (诠视科技)",
+    "credit": "Xvisio Technology (诠视科技)",
+    "aliases": [
+      "诠视科技"
+    ]
+  },
+  {
+    "id": "dexrobot-dexcap",
+    "name": "DexRobot DexCap",
+    "summary": "An encoder-based upper-body exoskeleton records arm, hand and waist motion for robot demonstration capture.",
+    "signals": [
+      "State"
+    ],
+    "form": "Hybrid",
+    "coverage": "Upper body",
+    "tracking": "Encoder-based joint measurement and kinematic pose; no independent external pose validation",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/dexrobot-dexcap-hardware.webp",
+    "hardwareImageAlt": "DexRobot DexCap capture hardware from the official product materials",
+    "hardwareImageSource": "https://activestatic.brandsh.cn/dexrobot/image/dexCap/coreFunctionImage.png",
+    "hardwareImagePage": "https://www.dex-robot.com/dexCap",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "DexRobot",
+    "credit": "DexRobot",
+    "aliases": [
+      "灵巧智能"
+    ]
+  },
+  {
+    "id": "pia-primus-ego",
+    "name": "PIA Primus Ego",
+    "summary": "A five-camera industrial headband synchronizes first-person video, motion and audio.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Audio"
+    ],
+    "form": "Headband",
+    "coverage": "Hands",
+    "tracking": "Vendor lists spatial localization trajectories; method/accuracy not specified",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/pia-primus-ego-hardware.webp",
+    "hardwareImageAlt": "PIA Primus Ego headband cropped from the official launch product graphic",
+    "hardwareImageSource": "https://cn.piagroup.com/uploads/allimg/20260708/5-260FQ55044U9.png",
+    "hardwareImagePage": "https://cn.piagroup.com/news/company2/538.html",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "PIA Automation (均普智能)",
+    "credit": "PIA Automation (均普智能)",
+    "aliases": [
+      "均普智能",
+      "Primus Ego"
+    ]
+  },
+  {
+    "id": "nolo-omniglove",
+    "name": "NOLO OmniGlove",
+    "summary": "A five-finger tactile glove complements egocentric capture with normal-force values and tangential-force directions.",
+    "signals": [
+      "Tactile",
+      "Force"
+    ],
+    "form": "Glove",
+    "coverage": "Hands",
+    "tracking": "Paired EgoCapture hand tracking; glove-local motion sensors unspecified",
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/nolo-omniglove-hardware.webp",
+    "hardwareImageAlt": "NOLO OmniGlove palm and finger tactile pads from manufacturer product materials",
+    "hardwareImageSource": "https://www.nolovr.com/ego-page/assets/glove.jpg",
+    "hardwareImagePage": "https://www.nolovr.com/ego-page/index.html?v=3",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "NOLO",
+    "credit": "NOLO",
+    "aliases": [
+      "NOLO",
+      "OmniGlove"
+    ]
+  },
+  {
+    "id": "avi-ht",
+    "name": "AVI-HT",
+    "summary": "Fuses egocentric images with finger-mounted IMUs to recover occluded hand articulation.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/avi-ht-methods.webp",
+    "imageSource": "https://arxiv.org/html/2605.21714v1/main.png",
+    "imagePage": "https://arxiv.org/html/2605.21714",
+    "imageAlt": "AVI-HT method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "Meta Reality Labs / original paper authors"
+  },
+  {
+    "id": "everybody-tracking",
+    "name": "Everybody Tracking Every Body",
+    "summary": "Combines each wearer’s head trajectory with other wearers’ views for shared-world body tracking.",
+    "signals": [
+      "Vision",
+      "State"
+    ],
+    "coverage": "Whole body",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/everybody-tracking-methods.webp",
+    "imageSource": "https://arxiv.org/html/2608.29927v1/06_exo_pipeline.png",
+    "imagePage": "https://arxiv.org/html/2608.29927",
+    "imageAlt": "Everybody Tracking Every Body method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "University of California, Irvine / original paper authors"
+  },
+  {
+    "id": "ego4o",
+    "name": "Ego4o",
+    "summary": "Recovers body motion and descriptions from flexible combinations of ego images, IMUs and text.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Language"
+    ],
+    "coverage": "Whole body",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/ego4o-methods.webp",
+    "imageSource": "https://arxiv.org/html/2504.08449v1/framework_part_aware_2_crop.png",
+    "imagePage": "https://arxiv.org/html/2504.08449",
+    "imageAlt": "Ego4o method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "Max Planck Institute for Informatics / original paper authors"
+  },
+  {
+    "id": "hmd-poser",
+    "name": "HMD-Poser",
+    "summary": "Tracks whole-body motion on a headset from head/hand poses and optional leg or pelvis IMUs.",
+    "signals": [
+      "State",
+      "IMU"
+    ],
+    "coverage": "Whole body",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/hmd-poser-methods.webp",
+    "imageSource": "https://arxiv.org/html/2403.03561v1/Figure_2.png",
+    "imagePage": "https://arxiv.org/html/2403.03561",
+    "imageAlt": "HMD-Poser method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "PICO, ByteDance / original paper authors"
+  },
+  {
+    "id": "egotap",
+    "name": "EgoTAP",
+    "summary": "Lifts stereo egocentric heatmaps to body joints using skeletal attention propagation.",
+    "signals": [
+      "Vision",
+      "Stereo"
+    ],
+    "coverage": "Whole body",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/egotap-methods.webp",
+    "imageSource": "https://arxiv.org/html/2402.18330v1/Architecture_in_one.png",
+    "imagePage": "https://arxiv.org/html/2402.18330",
+    "imageAlt": "EgoTAP method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "Seoul National University / original paper authors"
+  },
+  {
+    "id": "egoposeformer",
+    "name": "EgoPoseFormer",
+    "summary": "Refines coarse egocentric body joints with fine-grained stereo attention.",
+    "signals": [
+      "Vision",
+      "Stereo"
+    ],
+    "coverage": "Whole body",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/egoposeformer-methods.webp",
+    "imageSource": "https://arxiv.org/html/2403.18080v2/network.png",
+    "imagePage": "https://arxiv.org/html/2403.18080",
+    "imageAlt": "EgoPoseFormer method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "University of Edinburgh / original paper authors"
+  },
+  {
+    "id": "homan",
+    "name": "HOMan",
+    "summary": "Fits one or two MANO hands and a known object model to monocular interaction clips.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/homan-methods.webp",
+    "imageSource": "https://arxiv.org/html/2108.07044v2/images/method.jpg",
+    "imagePage": "https://arxiv.org/html/2108.07044",
+    "imageAlt": "HOMan method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "Inria / original paper authors"
+  },
+  {
+    "id": "hold",
+    "name": "HOLD",
+    "summary": "Reconstructs an articulated hand and unknown object jointly from a monocular video.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/hold-methods.webp",
+    "imageSource": "https://arxiv.org/html/2311.18448v1/method.png",
+    "imagePage": "https://arxiv.org/html/2311.18448",
+    "imageAlt": "HOLD method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "ETH Zürich / original paper authors"
+  },
+  {
+    "id": "g-hop",
+    "name": "G-HOP",
+    "summary": "Uses a joint 3D hand-object diffusion prior for interaction reconstruction and human grasp synthesis.",
+    "signals": [
+      "Vision",
+      "Language"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/g-hop-methods.webp",
+    "imageSource": "https://arxiv.org/html/2404.12383v1/method_diffusion_grid.png",
+    "imagePage": "https://arxiv.org/html/2404.12383",
+    "imageAlt": "G-HOP method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "Carnegie Mellon University / original paper authors"
+  },
+  {
+    "id": "open-television",
+    "name": "Open-TeleVision",
+    "summary": "Retargets headset-tracked upper-body motion with active stereo feedback to collect humanoid demonstrations.",
+    "signals": [
+      "State",
+      "Vision",
+      "Stereo"
+    ],
+    "coverage": "Upper body",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/open-television-methods.webp",
+    "imageSource": "https://arxiv.org/html/2407.01512v2/main.png",
+    "imagePage": "https://arxiv.org/html/2407.01512",
+    "imageAlt": "Open-TeleVision method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "UC San Diego / original paper authors"
+  },
+  {
+    "id": "open-teach",
+    "name": "OPEN TEACH",
+    "summary": "Maps VR-tracked hands and wrists to multiple robot arms, hands and mobile platforms.",
+    "signals": [
+      "State",
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/open-teach-methods.webp",
+    "imageSource": "https://arxiv.org/html/2403.07870v1/schematic_compressed.png",
+    "imagePage": "https://arxiv.org/html/2403.07870",
+    "imageAlt": "OPEN TEACH method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "New York University / original paper authors"
+  },
+  {
+    "id": "anyteleop",
+    "name": "AnyTeleop",
+    "summary": "Turns camera-derived hand motion into robot arm-hand commands across hardware and simulation.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/anyteleop-methods.webp",
+    "imageSource": "https://arxiv.org/html/2307.04577v3/teleop_paradigm_cropped.png",
+    "imagePage": "https://arxiv.org/html/2307.04577",
+    "imageAlt": "AnyTeleop method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "UC San Diego / original paper authors"
+  },
+  {
+    "id": "vrb",
+    "name": "VRB",
+    "summary": "Predicts contact points and post-contact paths from human video for robot learning.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/vrb-methods.webp",
+    "imageSource": "https://arxiv.org/html/2304.08488v1/method_4.png",
+    "imagePage": "https://arxiv.org/html/2304.08488",
+    "imageAlt": "VRB method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "Carnegie Mellon University / original paper authors"
+  },
+  {
+    "id": "whirl",
+    "name": "WHIRL",
+    "summary": "Improves robot manipulation through real-world trials after watching one human demonstration.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/whirl-methods.webp",
+    "imageSource": "https://arxiv.org/html/2207.09450v1/method_v4-compressed.png",
+    "imagePage": "https://arxiv.org/html/2207.09450",
+    "imageAlt": "WHIRL method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "Carnegie Mellon University / original paper authors"
+  },
+  {
+    "id": "vc1",
+    "name": "VC-1 / CortexBench",
+    "summary": "Pretrains visual encoders on diverse human video and benchmarks their transfer to embodied tasks.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Unknown",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/vc1-methods.webp",
+    "imageSource": "https://arxiv.org/html/2303.18240v2/cortex_overview.png",
+    "imagePage": "https://arxiv.org/html/2303.18240",
+    "imageAlt": "VC-1 / CortexBench method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "Georgia Institute of Technology / original paper authors"
+  },
+  {
+    "id": "voltron",
+    "name": "Voltron",
+    "summary": "Balances caption-conditioned reconstruction and language generation to learn robot-useful video representations.",
+    "signals": [
+      "Vision",
+      "Language"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/voltron-methods.webp",
+    "imageSource": "https://arxiv.org/html/2302.12766v1/figures/framework-overview.png",
+    "imagePage": "https://arxiv.org/html/2302.12766",
+    "imageAlt": "Voltron method overview and outputs",
+    "imageType": "Method overview",
+    "credit": "Stanford University / original paper authors"
+  },
+  {
+    "id": "opentouch",
+    "name": "OpenTouch",
+    "summary": "In-the-wild right-hand touch, glove pose and egocentric video, with annotated grasp and action clips.",
+    "datasetName": "OpenTouch",
+    "datasetSummary": "In-the-wild right-hand touch, glove pose and egocentric video, with annotated grasp and action clips.",
+    "datasetImage": "images/catalog/opentouch-datasets.webp",
+    "datasetImageAlt": "OpenTouch official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "MIT / original authors",
+    "credit": "MIT / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "Tactile",
+      "IMU",
+      "Gaze",
+      "Audio"
+    ],
+    "coverage": "Single hand",
+    "datasetImageSource": "https://arxiv.org/html/2512.16842v1/opentouch_dataexample.png",
+    "datasetImagePage": "https://opentouch-tactile.github.io/"
+  },
+  {
+    "id": "feel",
+    "name": "FEEL",
+    "summary": "Natural kitchen manipulation pairs egocentric video with finger and palm force; contact labels are sensor-derived.",
+    "datasetName": "FEEL",
+    "datasetSummary": "Natural kitchen manipulation pairs egocentric video with finger and palm force; contact labels are sensor-derived.",
+    "datasetImage": "images/catalog/feel-datasets.webp",
+    "datasetImageAlt": "FEEL official dataset overview and example observations; official video frame at 7 s",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "University of Maryland / original authors",
+    "credit": "University of Maryland / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "Audio",
+      "Force"
+    ],
+    "coverage": "Hands",
+    "datasetImageSource": "https://www.cs.umd.edu/~edessale/hud_all_participants_10x20_calibrated/Kitchen/P01/P01_both_hands_1146.3s_1166.3s_hud.mp4",
+    "datasetImagePage": "https://www.cs.umd.edu/~edessale/feel"
+  },
+  {
+    "id": "egotactile",
+    "name": "EgoTactile",
+    "summary": "Full-hand grasp pressure across everyday objects, including a separately labelled weakly paired bare-hand transfer set.",
+    "datasetName": "EgoTactile",
+    "datasetSummary": "Full-hand grasp pressure across everyday objects, including a separately labelled weakly paired bare-hand transfer set.",
+    "datasetImage": "images/catalog/egotactile-datasets.webp",
+    "datasetImageAlt": "EgoTactile official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "Tsinghua University / original authors",
+    "credit": "Tsinghua University / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "Tactile"
+    ],
+    "coverage": "Single hand",
+    "datasetImageSource": "https://egotactile.github.io/assets/dataset_overview.png",
+    "datasetImagePage": "https://egotactile.github.io/"
+  },
+  {
+    "id": "egoexolearn",
+    "name": "EgoExoLearn",
+    "summary": "Ego recordings with gaze follow separate demonstration videos, supporting cross-view skill and procedural learning.",
+    "datasetName": "EgoExoLearn",
+    "datasetSummary": "Ego recordings with gaze follow separate demonstration videos, supporting cross-view skill and procedural learning.",
+    "datasetImage": "images/catalog/egoexolearn-datasets.webp",
+    "datasetImageAlt": "EgoExoLearn official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "Shanghai AI Laboratory / original authors",
+    "credit": "Shanghai AI Laboratory / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "Gaze"
+    ],
+    "coverage": "Hands",
+    "datasetImageSource": "https://egoexolearn.github.io/static/images/Illustration.png",
+    "datasetImagePage": "https://egoexolearn.github.io/"
+  },
+  {
+    "id": "egtea-gaze-plus",
+    "name": "EGTEA Gaze+",
+    "summary": "Cooking demonstrations combine wearable eye gaze, action intervals and sampled hand masks; includes the GTEA lineage.",
+    "datasetName": "EGTEA Gaze+",
+    "datasetSummary": "Cooking demonstrations combine wearable eye gaze, action intervals and sampled hand masks; includes the GTEA lineage.",
+    "datasetImage": "images/catalog/egtea-gaze-plus-datasets.webp",
+    "datasetImageAlt": "EGTEA Gaze+ official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "University of Wisconsin–Madison / original authors",
+    "credit": "University of Wisconsin–Madison / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "Gaze"
+    ],
+    "coverage": "Hands",
+    "datasetImageSource": "https://arxiv.org/html/2006.00626v2/egtea_samples-crop.png",
+    "datasetImagePage": "https://cbs.ic.gatech.edu/fpv/"
+  },
+  {
+    "id": "egopat3d",
+    "name": "EgoPAT3D",
+    "summary": "Helmet RGB-D and IMU recordings support 3D hand action-target prediction across household workspaces.",
+    "datasetName": "EgoPAT3D",
+    "datasetSummary": "Helmet RGB-D and IMU recordings support 3D hand action-target prediction across household workspaces.",
+    "datasetImage": "images/catalog/egopat3d-datasets.webp",
+    "datasetImageAlt": "EgoPAT3D official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "New York University / original authors",
+    "credit": "New York University / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "Depth",
+      "IMU"
+    ],
+    "coverage": "Single hand",
+    "datasetImageSource": "https://raw.githubusercontent.com/ai4ce/EgoPAT3D/gh-pages/img/home/scene.jpg",
+    "datasetImagePage": "https://ai4ce.github.io/EgoPAT3D/"
+  },
+  {
+    "id": "egodexter",
+    "name": "EgoDexter",
+    "summary": "A compact RGB-D evaluation set with manually annotated fingertips under real object occlusion and clutter.",
+    "datasetName": "EgoDexter",
+    "datasetSummary": "A compact RGB-D evaluation set with manually annotated fingertips under real object occlusion and clutter.",
+    "datasetImage": "images/catalog/egodexter-datasets.webp",
+    "datasetImageAlt": "EgoDexter real RGB-D sequence examples with the paper’s predicted tracking overlay; overlays are not dataset ground truth",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "Max Planck Institute for Informatics / original authors",
+    "credit": "Max Planck Institute for Informatics / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "coverage": "Single hand",
+    "datasetImageSource": "https://arxiv.org/html/1704.02201v2/figures/Results_qual/qualitative.png",
+    "datasetImagePage": "https://arxiv.org/html/1704.02201v2"
+  },
+  {
+    "id": "meccano",
+    "name": "MECCANO Multimodal",
+    "summary": "Toy assembly in an industrial setting combines ego RGB-D, high-rate gaze and hands/object interaction labels.",
+    "datasetName": "MECCANO Multimodal",
+    "datasetSummary": "Toy assembly in an industrial setting combines ego RGB-D, high-rate gaze and hands/object interaction labels.",
+    "datasetImage": "images/catalog/meccano-datasets.webp",
+    "datasetImageAlt": "MECCANO Multimodal official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "University of Catania / original authors",
+    "credit": "University of Catania / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "Depth",
+      "Gaze"
+    ],
+    "coverage": "Hands",
+    "datasetImageSource": "https://arxiv.org/html/2209.08691v1/images/multimodality.png",
+    "datasetImagePage": "https://iplab.dmi.unict.it/legacy/MECCANO/"
+  },
+  {
+    "id": "enigma51",
+    "name": "ENIGMA-51",
+    "summary": "Electrical-board repair recordings provide dense hand/object interactions, procedural language and industrial scene assets.",
+    "datasetName": "ENIGMA-51",
+    "datasetSummary": "Electrical-board repair recordings provide dense hand/object interactions, procedural language and industrial scene assets.",
+    "datasetImage": "images/catalog/enigma51-datasets.webp",
+    "datasetImageAlt": "ENIGMA-51 official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "University of Catania / original authors",
+    "credit": "University of Catania / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "datasetImageSource": "https://fpv-iplab.github.io/ENIGMA-51/img/images_examples.jpg",
+    "datasetImagePage": "https://fpv-iplab.github.io/ENIGMA-51/"
+  },
+  {
+    "id": "egodemo",
+    "name": "EgoDemo",
+    "summary": "A 50-hour access-controlled sample of ego demonstrations, with hand/body pose variants and optional wrist views.",
+    "datasetName": "EgoDemo",
+    "datasetSummary": "A 50-hour access-controlled sample of ego demonstrations, with hand/body pose variants and optional wrist views.",
+    "datasetImage": "images/catalog/egodemo-datasets.webp",
+    "datasetImageAlt": "EgoDemo official dataset overview and example observations; official video frame at 24 s",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "Lightwheel / original authors",
+    "credit": "Lightwheel / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Whole body",
+    "datasetImageSource": "https://huggingface.co/spaces/LightwheelAI/README/resolve/main/assets/egosuite-open100k-promo.mp4",
+    "datasetImagePage": "https://huggingface.co/datasets/LightwheelAI/EgoDemo"
+  },
+  {
+    "id": "gen-humanego",
+    "name": "Gen-HumanEgo",
+    "summary": "Six-view human demonstrations add reconstructed hands, predicted workspace depth and hierarchical task annotations.",
+    "datasetName": "Gen-HumanEgo",
+    "datasetSummary": "Six-view human demonstrations add reconstructed hands, predicted workspace depth and hierarchical task annotations.",
+    "datasetImage": "images/catalog/gen-humanego-datasets.webp",
+    "datasetImageAlt": "Gen-HumanEgo RGB observation and generated MANO rollout from the publisher visualization",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "GenRobot / original authors",
+    "credit": "GenRobot / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Bimanual",
+    "datasetImageSource": "https://www.genrobot.ai/api/static/s3_manager?path=blog%2FGen-HumanEgo2%2Fgen-human-ego-mano.gif",
+    "datasetImagePage": "https://www.genrobot.ai/blog/gen-human-ego"
+  },
+  {
+    "id": "egohod",
+    "name": "EgoHOD",
+    "summary": "Generated hand–object dynamics captions augment existing Ego4D and selected ego-like instructional video clips.",
+    "datasetName": "EgoHOD",
+    "datasetSummary": "Generated hand–object dynamics captions augment existing Ego4D and selected ego-like instructional video clips.",
+    "datasetImage": "images/catalog/egohod-datasets.webp",
+    "datasetImageAlt": "EgoHOD examples distinguish wearable egocentric, ego-like instructional and rejected non-ego source video",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "Zhejiang University / original authors",
+    "credit": "Zhejiang University / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "datasetImageSource": "https://arxiv.org/html/2503.00986v1/style.png",
+    "datasetImagePage": "https://arxiv.org/html/2503.00986v1"
+  },
+  {
+    "id": "unrealego",
+    "name": "UnrealEgo2 / UnrealEgo-RW",
+    "summary": "Synthetic and real fisheye stereo sequences benchmark whole-body pose recovery; each component has its own labels and scale.",
+    "datasetName": "UnrealEgo2 / UnrealEgo-RW",
+    "datasetSummary": "Synthetic and real fisheye stereo sequences benchmark whole-body pose recovery; each component has its own labels and scale.",
+    "datasetImage": "images/catalog/unrealego-datasets.webp",
+    "datasetImageAlt": "UnrealEgo-RW real stereo fisheye samples from the official dataset site",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "Max Planck Institute for Informatics / original authors",
+    "credit": "Max Planck Institute for Informatics / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "Vision",
+      "Depth"
+    ],
+    "coverage": "Whole body",
+    "datasetImageSource": "https://unrealego.mpi-inf.mpg.de/images/unrealego/example_unrealego_rw.jpg",
+    "datasetImagePage": "https://unrealego.mpi-inf.mpg.de/"
+  },
+  {
+    "id": "actionsense",
+    "name": "ActionSense",
+    "summary": "Kitchen activity capture combines ego gaze, bilateral EMG, full-body inertial motion and hand touch, with sensor availability by subject.",
+    "datasetName": "ActionSense",
+    "datasetSummary": "Kitchen activity capture combines ego gaze, bilateral EMG, full-body inertial motion and hand touch, with sensor availability by subject.",
+    "datasetImage": "images/catalog/actionsense-datasets.webp",
+    "datasetImageAlt": "ActionSense official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "MIT CSAIL / original authors",
+    "credit": "MIT CSAIL / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "IMU",
+      "EMG",
+      "Gaze",
+      "Tactile",
+      "Audio"
+    ],
+    "coverage": "Whole body",
+    "datasetImageSource": "https://action-sense.csail.mit.edu/images/overview.jpg",
+    "datasetImagePage": "https://action-sense.csail.mit.edu/data.html"
+  },
+  {
+    "id": "thermohands",
+    "name": "ThermoHands",
+    "summary": "Multi-spectral bimanual capture tests pose recovery under gloves, darkness and glare using thermal, RGB, NIR and measured depth.",
+    "datasetName": "ThermoHands",
+    "datasetSummary": "Multi-spectral bimanual capture tests pose recovery under gloves, darkness and glare using thermal, RGB, NIR and measured depth.",
+    "datasetImage": "images/catalog/thermohands-datasets.webp",
+    "datasetImageAlt": "ThermoHands official dataset overview and example observations",
+    "datasetImageType": "Dataset overview / examples",
+    "datasetImageCredit": "University of Edinburgh / original authors",
+    "credit": "University of Edinburgh / original authors",
+    "reviewed": "2026-10-16",
+    "signals": [
+      "Vision",
+      "Depth",
+      "Thermal",
+      "NIR"
+    ],
+    "coverage": "Bimanual",
+    "datasetImageSource": "https://arxiv.org/html/2403.09871v5/data_capture_2.png",
+    "datasetImagePage": "https://thermohands.github.io/"
   }
 ]

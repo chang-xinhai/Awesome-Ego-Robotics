@@ -6130,6 +6130,1845 @@
           "https://arxiv.org/html/2502.07869v1"
         ]
       }
+    },
+    "avi-ht": {
+      "summary": "Fuses egocentric images with finger-mounted IMUs to recover occluded hand articulation.",
+      "stage": "L1",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2605.21714"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2605.21714"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Egocentric RGB; 12 on-glove accelerometer/gyroscope sensors",
+      "output": "UmeTrack articulation and wrist SE(3), or MANO geometry",
+      "supervision": "Synchronized marker-mocap hand pose labels",
+      "robotEvidence": "Hand tracking experiments; no robot policy demonstrated",
+      "inputSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "bodyCoverage": "Hands",
+      "target": "Occlusion-robust hand pose",
+      "outputRepresentation": "UmeTrack joint angles/wrist transform; MANO pose, shape and camera",
+      "coordinateFrame": "Visual wrist pose plus articulated-hand coordinates; no SLAM world trajectory",
+      "scale": "Model/mocap hand scale; no world trajectory claim",
+      "temporal": "14-timestamp IMU windows with one image",
+      "evaluation": "DexGloveHOI; keypoint, mesh and finger-angle errors",
+      "robotPlatform": "None reported",
+      "policyInput": "No robot policy",
+      "implementation": "No public training repository verified",
+      "limitations": "Requires synchronized glove IMUs; limited participant and capture coverage",
+      "outputSpace": "mixed",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "supervised",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "output": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "target": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2605.21714"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2605.21714"
+        ]
+      }
+    },
+    "everybody-tracking": {
+      "summary": "Combines each wearer’s head trajectory with other wearers’ views for shared-world body tracking.",
+      "stage": "L2",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2608.29927"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2608.29927"
+        },
+        {
+          "label": "Project",
+          "url": "https://vision.ics.uci.edu/papers/everybody-tracking-every-body-2026/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Synchronized wearer videos; VIO trajectories; cross-view body estimates",
+      "output": "Multi-person SMPL-H motion in a common scene",
+      "supervision": "AMASS motion and multi-person video supervision",
+      "robotEvidence": "Human motion reconstruction; no robot deployment",
+      "inputSignals": [
+        "Vision",
+        "State"
+      ],
+      "bodyCoverage": "Whole body",
+      "target": "Multiple interacting camera wearers",
+      "outputRepresentation": "Body poses, shapes and scene trajectories",
+      "coordinateFrame": "Shared z-up world; ground plane z=0",
+      "scale": "Metric VIO/device calibration anchors the reconstruction",
+      "temporal": "Conditional diffusion over motion windows",
+      "evaluation": "EgoHumans and Harmony4D; global and relative pose errors",
+      "robotPlatform": "None",
+      "policyInput": "No robot policy",
+      "implementation": "Official paper and lab page; code not verified",
+      "limitations": "Small imperfect-reference datasets; participant/device generalization remains unestablished",
+      "outputSpace": "world",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "mixed",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "output": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "target": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2608.29927"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2608.29927"
+        ]
+      }
+    },
+    "ego4o": {
+      "summary": "Recovers body motion and descriptions from flexible combinations of ego images, IMUs and text.",
+      "stage": "L2",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2504.08449"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2504.08449"
+        },
+        {
+          "label": "Project",
+          "url": "https://jianwang-mpi.github.io/ego4o/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "1–3 wearable IMUs; optional ego images and motion descriptions",
+      "output": "Human body motion and language descriptions",
+      "supervision": "Motion-code VQ-VAE and multimodal motion/text training",
+      "robotEvidence": "Motion capture and understanding; no robot policy",
+      "inputSignals": [
+        "Vision",
+        "IMU",
+        "Language"
+      ],
+      "bodyCoverage": "Whole body",
+      "target": "Wearer motion and semantic understanding",
+      "outputRepresentation": "Part-aware motion codes decoded to body poses",
+      "coordinateFrame": "Body-motion representation; world translation not independently established",
+      "scale": "Dataset/body-model scale; no standalone metric-SLAM output",
+      "temporal": "Sequence encoding and test-time motion optimization",
+      "evaluation": "DIP-IMU and Nymeria motion; motion-description evaluation",
+      "robotPlatform": "None",
+      "policyInput": "No robot policy",
+      "implementation": "Official project and paper; released training code not verified",
+      "limitations": "Motion windows introduce latency; conversational capability remains limited",
+      "outputSpace": "model",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "mixed",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "output": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "target": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2504.08449"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2504.08449"
+        ]
+      }
+    },
+    "hmd-poser": {
+      "summary": "Tracks whole-body motion on a headset from head/hand poses and optional leg or pelvis IMUs.",
+      "stage": "L2",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2403.03561"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2403.03561"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/PICO-AI-TEAM/HMD-Poser"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Head/hand 6DoF tracking; optional 2 leg or 3 leg/pelvis IMUs",
+      "output": "Full-body pose and estimated body shape",
+      "supervision": "AMASS motion with simulated sensor observations",
+      "robotEvidence": "On-device avatar driving; no robot policy",
+      "inputSignals": [
+        "State",
+        "IMU"
+      ],
+      "bodyCoverage": "Whole body",
+      "target": "Standalone-headset full-body tracking",
+      "outputRepresentation": "SMPL local rotations, shape and forward-kinematic joints",
+      "coordinateFrame": "Body-centric sensor calibration; headset tracking frame",
+      "scale": "Tracked head/hand positions plus estimated body proportions",
+      "temporal": "Lightweight LSTM and spatial transformer",
+      "evaluation": "AMASS and captured free-dancing motions; PICO deployment",
+      "robotPlatform": "None",
+      "policyInput": "No robot policy",
+      "implementation": "Official MIT code and dancing-data instructions",
+      "limitations": "Sparse upper-body signals leave lower-body ambiguity; IMUs require calibration",
+      "outputSpace": "mixed",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "supervised",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "output": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "target": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "implementation": [
+          "https://github.com/PICO-AI-TEAM/HMD-Poser"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2403.03561"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2403.03561"
+        ]
+      }
+    },
+    "egotap": {
+      "summary": "Lifts stereo egocentric heatmaps to body joints using skeletal attention propagation.",
+      "stage": "L2",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2402.18330"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2402.18330"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/tho-kn/EgoTAP"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Stereo fisheye RGB-derived joint and limb heatmaps",
+      "output": "3D body joint coordinates",
+      "supervision": "Labeled 2D heatmaps and 3D poses",
+      "robotEvidence": "Pose benchmarks only; no robot policy",
+      "inputSignals": [
+        "Vision",
+        "Stereo"
+      ],
+      "bodyCoverage": "Whole body",
+      "target": "Camera wearer body pose",
+      "outputRepresentation": "Skeletal 3D joints",
+      "coordinateFrame": "EgoCap camera frame; UnrealEgo pelvis-relative protocol",
+      "scale": "Dataset calibration/pose scale; not a global camera trajectory",
+      "temporal": "Single-frame stereo inference",
+      "evaluation": "EgoCap and UnrealEgo; MPJPE and PA-MPJPE",
+      "robotPlatform": "None",
+      "policyInput": "No robot policy",
+      "implementation": "Official training code and re-trained weights",
+      "limitations": "Severe occlusion and out-of-view limbs; no temporal context",
+      "outputSpace": "mixed",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "supervised",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "output": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "target": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "implementation": [
+          "https://github.com/tho-kn/EgoTAP"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2402.18330"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2402.18330"
+        ]
+      }
+    },
+    "egoposeformer": {
+      "summary": "Refines coarse egocentric body joints with fine-grained stereo attention.",
+      "stage": "L2",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2403.18080"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2403.18080"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/ChenhongyiYang/egoposeformer"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Calibrated stereo egocentric RGB; monocular variant",
+      "output": "3D human body joint locations",
+      "supervision": "Per-joint 3D pose losses",
+      "robotEvidence": "Pose estimation benchmarks; no robot deployment",
+      "inputSignals": [
+        "Vision",
+        "Stereo"
+      ],
+      "bodyCoverage": "Whole body",
+      "target": "Occluded and invisible wearer joints",
+      "outputRepresentation": "Coarse pose proposals and refined skeleton",
+      "coordinateFrame": "Dataset camera/local-pose protocols; not SLAM world motion",
+      "scale": "Calibrated dataset coordinate scale",
+      "temporal": "Per-frame pose proposal and refinement",
+      "evaluation": "UnrealEgo stereo and SceneEgo monocular",
+      "robotPlatform": "None",
+      "policyInput": "No robot policy",
+      "implementation": "Apache-2.0 code; model/data dependencies separately licensed",
+      "limitations": "Invisible lower-body joints remain ambiguous; assumes full-body anatomy",
+      "outputSpace": "mixed",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "supervised",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "output": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "target": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "implementation": [
+          "https://github.com/ChenhongyiYang/egoposeformer"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2403.18080"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2403.18080"
+        ]
+      }
+    },
+    "emg2pose": {
+      "summary": "Decodes wrist sEMG into hand joint angles, with separate regression and initialized-tracking tasks.",
+      "stage": "L1",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2412.02725"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2412.02725"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/facebookresearch/emg2pose"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "16-channel wrist sEMG; initial pose for tracking task",
+      "output": "Hand joint-angle sequences and model-derived landmarks",
+      "supervision": "Synchronized optical motion-capture angle labels",
+      "robotEvidence": "Wearable hand inference; no robot policy",
+      "inputSignals": [
+        "EMG"
+      ],
+      "bodyCoverage": "Hands",
+      "target": "Continuous finger articulation",
+      "outputRepresentation": "Joint angles; angular velocities integrated by vemg2pose",
+      "coordinateFrame": "Hand-model articulation; no wrist/world trajectory",
+      "scale": "Metric landmarks use a default hand model",
+      "temporal": "Causal convolution and autoregressive LSTM",
+      "evaluation": "Held-out users, placements and motion stages; 5-second windows",
+      "robotPlatform": "None",
+      "policyInput": "No robot policy",
+      "implementation": "Training, evaluation and checkpoints released",
+      "limitations": "Tracking needs initial pose; population and placement shifts remain difficult",
+      "outputSpace": "model",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "supervised",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "output": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "target": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "implementation": [
+          "https://github.com/facebookresearch/emg2pose"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2412.02725"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2412.02725"
+        ]
+      }
+    },
+    "homan": {
+      "summary": "Fits one or two MANO hands and a known object model to monocular interaction clips.",
+      "stage": "L3",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2108.07044"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2108.07044"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/hassony2/homan"
+        },
+        {
+          "label": "Project",
+          "url": "https://hassony2.github.io/homan.html"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Monocular RGB; hand/object detections and masks; approximate object mesh",
+      "output": "Joint hand-object poses and hand articulation",
+      "supervision": "No new interaction-model training; pretrained 2D cues",
+      "robotEvidence": "3D reconstruction only; no executable robot actions",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "target": "One/two-hand manipulated-object reconstruction",
+      "outputRepresentation": "MANO hands and rigid object transforms",
+      "coordinateFrame": "Camera-relative 3D",
+      "scale": "Hand/object scale fitted; metric accuracy depends on priors",
+      "temporal": "Short-clip optimization with smoothness and interaction constraints",
+      "evaluation": "HO-3D, EPIC-KITCHENS and Core50",
+      "robotPlatform": "None",
+      "policyInput": "No robot policy",
+      "implementation": "Public fitting and preprocessing code",
+      "limitations": "Needs approximate object template and reliable detections/masks",
+      "outputSpace": "camera",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "optimization",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "output": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "target": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "implementation": [
+          "https://github.com/hassony2/homan"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2108.07044"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2108.07044"
+        ]
+      }
+    },
+    "hold": {
+      "summary": "Reconstructs an articulated hand and unknown object jointly from a monocular video.",
+      "stage": "L3",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2311.18448"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2311.18448"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/zc-alexfan/hold"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Monocular interaction video; initialized hand/object poses",
+      "output": "Disentangled hand and object surfaces plus poses",
+      "supervision": "RGB rendering and interaction constraints; no 3D HOI training labels",
+      "robotEvidence": "Reconstruction only; no robot policy",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "target": "Category-agnostic hand/object reconstruction",
+      "outputRepresentation": "Compositional articulated signed-distance fields",
+      "coordinateFrame": "Observation-camera and hand/object canonical frames",
+      "scale": "Initialization/model scale; no independent world-metric tracking",
+      "temporal": "Per-sequence implicit-model fitting and pose refinement",
+      "evaluation": "HO3D and captured first/third-person in-the-wild videos",
+      "robotPlatform": "None",
+      "policyInput": "No robot policy",
+      "implementation": "MIT core repository; dependencies and model assets separately licensed",
+      "limitations": "Thin/textureless objects and unseen surfaces challenge SfM/RGB supervision",
+      "outputSpace": "mixed",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "optimization",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "output": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "target": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "implementation": [
+          "https://github.com/zc-alexfan/hold"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2311.18448"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2311.18448"
+        ]
+      }
+    },
+    "g-hop": {
+      "summary": "Uses a joint 3D hand-object diffusion prior for interaction reconstruction and human grasp synthesis.",
+      "stage": "L3",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2404.12383"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2404.12383"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/JudyYe/ghop"
+        },
+        {
+          "label": "Project",
+          "url": "https://judyye.github.io/ghop-www/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Object category plus noisy 3D interaction grid; video/masks for reconstruction",
+      "output": "Hand articulation, object geometry and relative poses",
+      "supervision": "Seven real interaction datasets; denoising diffusion objective",
+      "robotEvidence": "Human-grasp and reconstruction evaluation; no physical robot policy",
+      "inputSignals": [
+        "Vision",
+        "Language"
+      ],
+      "bodyCoverage": "Hands",
+      "target": "Joint hand-object shape prior",
+      "outputRepresentation": "Object latent SDF and hand skeletal-distance fields",
+      "coordinateFrame": "Hand-centric interaction grid; relative object transform",
+      "scale": "Normalized interaction volume, not global metric trajectory",
+      "temporal": "Diffusion prior with sequence reconstruction optimization",
+      "evaluation": "Hand-object video reconstruction and grasp synthesis",
+      "robotPlatform": "None",
+      "policyInput": "No robot policy",
+      "implementation": "Official code repository released",
+      "limitations": "Requires category information; does not guarantee contact",
+      "outputSpace": "model",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "mixed",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "output": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "target": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "implementation": [
+          "https://github.com/JudyYe/ghop"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2404.12383"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2404.12383"
+        ]
+      }
+    },
+    "open-television": {
+      "summary": "Retargets headset-tracked upper-body motion with active stereo feedback to collect humanoid demonstrations.",
+      "stage": "tool",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2407.01512"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2407.01512"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/OpenTeleVision/TeleVision"
+        },
+        {
+          "label": "Project",
+          "url": "https://robot-tv.github.io/"
+        },
+        {
+          "label": "Publication",
+          "url": "https://proceedings.mlr.press/v270/cheng25b.html"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "VR head/hand/wrist tracking; robot stereo visual feedback",
+      "output": "Robot neck, arm and hand targets; demonstrations",
+      "supervision": "Kinematic retargeting; ACT learns from recorded demonstrations",
+      "robotEvidence": "Real teleoperation and autonomous ACT policies on four tasks",
+      "inputSignals": [
+        "State",
+        "Vision",
+        "Stereo"
+      ],
+      "bodyCoverage": "Upper body",
+      "target": "Bimanual humanoid data collection",
+      "outputRepresentation": "Joint targets and action chunks",
+      "coordinateFrame": "Head-relative human positions mapped to robot frame",
+      "scale": "Tracked 3D poses and calibrated robot kinematics",
+      "temporal": "Real-time teleoperation; temporal ACT action chunks",
+      "evaluation": "Can sorting/insertion, folding and unloading",
+      "robotPlatform": "Unitree H1 and Fourier GR-1; locomotion DoFs unused",
+      "policyInput": "Robot camera images and proprioception for ACT",
+      "implementation": "Official teleoperation code and setup documentation",
+      "limitations": "Teleoperation requires operator decisions; task-specific policies and hardware integration",
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "output": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "target": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "implementation": [
+          "https://github.com/OpenTeleVision/TeleVision"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2407.01512"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2407.01512"
+        ]
+      }
+    },
+    "open-teach": {
+      "summary": "Maps VR-tracked hands and wrists to multiple robot arms, hands and mobile platforms.",
+      "stage": "tool",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2403.07870"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2403.07870"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/aadhithya14/Open-Teach"
+        },
+        {
+          "label": "Project",
+          "url": "https://open-teach.github.io/"
+        },
+        {
+          "label": "Publication",
+          "url": "https://www.lerrelpinto.com/publication/openteach/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Meta Quest hand/wrist keypoints; robot camera feedback",
+      "output": "Retargeted robot motion and demonstration recordings",
+      "supervision": "Kinematic mapping; downstream imitation from recorded demonstrations",
+      "robotEvidence": "Real teleoperation across 38 tasks; policies tested on 10 tasks",
+      "inputSignals": [
+        "State",
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "target": "Portable multi-robot demonstration collection",
+      "outputRepresentation": "Arm, finger and mobile-base command streams",
+      "coordinateFrame": "VR palm/wrist frame mapped to robot controls",
+      "scale": "Tracked pose and robot-specific kinematic mappings",
+      "temporal": "Interactive streaming with platform-dependent controller rates",
+      "evaluation": "User study and dexterous/contact-rich manipulation",
+      "robotPlatform": "Franka, xArm, Kinova Jaco, Allegro and Hello Stretch",
+      "policyInput": "Robot observations for downstream imitation; separate from teacher keypoints",
+      "implementation": "MIT code with VR app and robot setup instructions",
+      "limitations": "Robot-specific mappings/controllers; teleoperation is human-in-the-loop",
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "output": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "target": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "implementation": [
+          "https://github.com/aadhithya14/Open-Teach"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2403.07870"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2403.07870"
+        ]
+      }
+    },
+    "anyteleop": {
+      "summary": "Turns camera-derived hand motion into robot arm-hand commands across hardware and simulation.",
+      "stage": "tool",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2307.04577"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2307.04577"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/dexsuite/dex-retargeting"
+        },
+        {
+          "label": "Visualizer",
+          "url": "https://github.com/NVlabs/sim-web-visualizer"
+        },
+        {
+          "label": "Project",
+          "url": "https://yzqin.github.io/anyteleop/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "RGB or RGB-D operator cameras; human hand keypoints",
+      "output": "Collision-aware arm/hand robot commands",
+      "supervision": "Pretrained hand tracking plus kinematic optimization",
+      "robotEvidence": "Real teleoperation; imitation-learning gains evaluated in simulation",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Hands",
+      "target": "Cross-robot visual retargeting and data collection",
+      "outputRepresentation": "Robot finger joint positions and arm motion targets",
+      "coordinateFrame": "Wrist-relative keypoints mapped to robot frames",
+      "scale": "Retargeting scale and robot calibration; camera mode dependent",
+      "temporal": "Real-time streaming and motion smoothing",
+      "evaluation": "10 real manipulation tasks; six simulated imitation tasks",
+      "robotPlatform": "Multiple arm/hand configurations; real and simulated systems",
+      "policyInput": "Human visual feedback for teleoperation; simulator learner observations separately",
+      "implementation": "Released retargeting and web-visualizer components",
+      "limitations": "External-camera adjacent tool; not autonomous ego-video imitation",
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "model-based",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "output": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "target": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "implementation": [
+          "https://github.com/dexsuite/dex-retargeting"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2307.04577"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2307.04577"
+        ]
+      }
+    },
+    "vrb": {
+      "summary": "Predicts contact points and post-contact paths from human video for robot learning.",
+      "stage": "L6",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2304.08488"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2304.08488"
+        },
+        {
+          "label": "Project",
+          "url": "https://vision-robotics-bridge.github.io/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Human RGB videos during pretraining; robot scene image at inference",
+      "output": "2D contact heatmaps and post-contact wrist waypoints",
+      "supervision": "Video-derived hand/contact cues with egomotion compensation",
+      "robotEvidence": "Four robot-learning paradigms tested on physical robots",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "target": "Agent-agnostic manipulation affordances",
+      "outputRepresentation": "Pixel contact points and trajectories",
+      "coordinateFrame": "Image plane, lifted with calibrated RGB-D for control",
+      "scale": "Pixel prediction; deployment depth supplies metric robot actions",
+      "temporal": "Future-video training; scene-conditioned affordance inference",
+      "evaluation": "10+ tasks, four environments; offline learning, exploration, goals and action spaces",
+      "robotPlatform": "Franka Emika Panda and Hello Stretch",
+      "policyInput": "Scene RGB; calibrated depth/kinematics for execution",
+      "implementation": "Official project and paper; complete code release not verified",
+      "limitations": "Visual contact is inferred; restricted primitives and camera calibration remain",
+      "outputSpace": "representation",
+      "evidenceLevel": "real-robot",
+      "trainingType": "self-supervised",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "output": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "target": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2304.08488"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2304.08488"
+        ]
+      }
+    },
+    "whirl": {
+      "summary": "Improves robot manipulation through real-world trials after watching one human demonstration.",
+      "stage": "L5",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2207.09450"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2207.09450"
+        },
+        {
+          "label": "Project",
+          "url": "https://human2robot.github.io/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Single third-person RGB-D human demonstration and robot trial videos",
+      "output": "Task-specific robot manipulation policy",
+      "supervision": "Human hand-motion prior and agent-agnostic video cost",
+      "robotEvidence": "Real robot learning on 20 in-the-wild tasks",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Hands",
+      "target": "One-shot human-video task imitation",
+      "outputRepresentation": "Grasp parameters and trajectory primitives",
+      "coordinateFrame": "Estimated visual prior mapped to robot task space",
+      "scale": "External-camera depth maps lift human waypoints into calibrated robot task space",
+      "temporal": "Sampling-based iterative real-world policy optimization",
+      "evaluation": "20 in-the-wild tasks with iterative physical robot trials",
+      "robotPlatform": "Hello Stretch mobile manipulator",
+      "policyInput": "Real robot observations and trial video objective",
+      "implementation": "Official project links paired videos; full code release not verified",
+      "limitations": "Third-person adjacent resource; per-task robot interaction and scene alignment required",
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "optimization",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "output": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "target": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2207.09450"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2207.09450"
+        ]
+      }
+    },
+    "vc1": {
+      "summary": "Pretrains visual encoders on diverse human video and benchmarks their transfer to embodied tasks.",
+      "stage": "L6",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2303.18240"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2303.18240"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/facebookresearch/eai-vc"
+        },
+        {
+          "label": "Project",
+          "url": "https://eai-vc.github.io/"
+        },
+        {
+          "label": "Publication",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/022ca1bed6b574b962c48a2856eb207b-Abstract-Conference.html"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Human-video and ImageNet RGB frames; downstream robot observations",
+      "output": "Visual embeddings for task-specific policies",
+      "supervision": "Masked autoencoding; downstream imitation or reinforcement learning",
+      "robotEvidence": "Physical TriFinger and Franka few-shot imitation experiments",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Unknown",
+      "target": "Transferable embodied visual representations",
+      "outputRepresentation": "ViT visual feature vectors",
+      "coordinateFrame": "Latent representation; no 3D pose coordinates",
+      "scale": "Not a geometric-scale estimator",
+      "temporal": "Frame pretraining; downstream policy timing is task-specific",
+      "evaluation": "CortexBench 17 tasks plus hardware proof-of-concept",
+      "robotPlatform": "TriFinger and Franka Emika Panda",
+      "policyInput": "Robot images and task-dependent state/goal inputs",
+      "implementation": "VC-1 models and CortexBench code released",
+      "limitations": "No universally best encoder; adaptation needs in-domain data and tuning",
+      "outputSpace": "representation",
+      "evidenceLevel": "real-robot",
+      "trainingType": "self-supervised",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "output": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "target": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "implementation": [
+          "https://github.com/facebookresearch/eai-vc"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2303.18240"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2303.18240"
+        ]
+      }
+    },
+    "voltron": {
+      "summary": "Balances caption-conditioned reconstruction and language generation to learn robot-useful video representations.",
+      "stage": "L6",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2302.12766"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2302.12766"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/siddk/voltron-robotics"
+        },
+        {
+          "label": "Evaluation",
+          "url": "https://github.com/siddk/voltron-evaluation"
+        }
+      ],
+      "verified": "2026-10-16",
+      "input": "Human RGB video frames with captions; optional downstream language",
+      "output": "Frozen visual/multimodal embeddings for task heads",
+      "supervision": "Masked reconstruction and caption generation",
+      "robotEvidence": "Real Franka language-conditioned imitation plus simulation",
+      "inputSignals": [
+        "Vision",
+        "Language"
+      ],
+      "bodyCoverage": "Hands",
+      "target": "Spatial and semantic transfer from human video",
+      "outputRepresentation": "Token features adapted by task-specific heads",
+      "coordinateFrame": "Latent representation, not metric hand pose",
+      "scale": "Not a geometric-scale estimator",
+      "temporal": "Single/dual-frame pretraining contexts",
+      "evaluation": "Five problems: grasp, grounding, control, language imitation and intent",
+      "robotPlatform": "Franka Emika Panda",
+      "policyInput": "Robot images, language and task-dependent proprioception",
+      "implementation": "MIT loading/pretraining code; separate evaluation repository",
+      "limitations": "Main controlled pretraining uses Something-Something-v2, not Ego4D; task-specific adaptation required",
+      "outputSpace": "representation",
+      "evidenceLevel": "real-robot",
+      "trainingType": "self-supervised",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "output": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "target": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "policyInput": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "implementation": [
+          "https://github.com/siddk/voltron-robotics"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2302.12766"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2302.12766"
+        ]
+      }
     }
   }
 }

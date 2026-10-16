@@ -10,6 +10,7 @@ import { compareDates } from "./order";
 export interface Work {
   id: string;
   name: string;
+  aliases?: string[];
   title: string;
   date: string;
   year: string;

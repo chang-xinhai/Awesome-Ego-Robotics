@@ -1957,6 +1957,1280 @@
           "https://www.delsys.com/downloads/USERSGUIDE/trigno/sdk.pdf"
         ]
       }
+    },
+    "apple-vision-pro-m2": {
+      "interface": "Apple Vision Pro (M2, 2024)",
+      "poseTracking": "ARKit head and hand tracking; EgoDex adds upper-body skeletal estimates",
+      "vision": "2 main + 6 world-facing tracking + 4 eye-tracking cameras",
+      "captureComponents": "M2/R1 headset; TrueDepth camera, LiDAR scanner, 4 IMUs and 6 microphones",
+      "cameraSpecs": "Stereoscopic main camera: 6.5 stereo megapixels; EgoDex export is 1080p at 30 Hz",
+      "measuredSignals": "EgoDex exports video and estimated skeletons, without gaze, depth or raw IMU streams. Continuous eye input is not shared with apps",
+      "synchronization": "EgoDex pairs each video frame with ARKit skeletal transforms at 30 Hz",
+      "outputs": "EgoDex: MP4 + HDF5; estimated head/upper-body/hand SE(3) transforms in a per-session ARKit origin frame",
+      "configuration": "First-generation M2 model used by EgoDex; specifications are not those of the later M5 headset",
+      "softwareRelease": "Public ARKit documentation; main-camera capture requires the applicable entitlement and user authorization",
+      "hardwareRelease": "Commercial headset; hardware design files not verified",
+      "evidence": [
+        {
+          "label": "M2 technical specifications",
+          "url": "https://support.apple.com/en-us/117810"
+        },
+        {
+          "label": "EgoDex capture and format",
+          "url": "https://github.com/apple-aiml-research/ml-egodex"
+        },
+        {
+          "label": "Main-camera API",
+          "url": "https://developer.apple.com/documentation/visionos/accessing-the-main-camera"
+        },
+        {
+          "label": "Eye input access",
+          "url": "https://www.apple.com/sg/legal/privacy/data/en/eyes-hands/"
+        }
+      ],
+      "fieldSources": {
+        "vision": [
+          "https://support.apple.com/en-us/117810"
+        ],
+        "captureComponents": [
+          "https://support.apple.com/en-us/117810"
+        ],
+        "cameraSpecs": [
+          "https://support.apple.com/en-us/117810",
+          "https://github.com/apple-aiml-research/ml-egodex"
+        ],
+        "measuredSignals": [
+          "https://github.com/apple-aiml-research/ml-egodex",
+          "https://www.apple.com/sg/legal/privacy/data/en/eyes-hands/"
+        ],
+        "synchronization": [
+          "https://github.com/apple-aiml-research/ml-egodex"
+        ],
+        "outputs": [
+          "https://github.com/apple-aiml-research/ml-egodex"
+        ],
+        "poseTracking": [
+          "https://github.com/apple-aiml-research/ml-egodex"
+        ],
+        "configuration": [
+          "https://support.apple.com/en-us/117810",
+          "https://github.com/apple-aiml-research/ml-egodex"
+        ],
+        "softwareRelease": [
+          "https://developer.apple.com/documentation/visionos/accessing-the-main-camera"
+        ],
+        "hardwareRelease": [
+          "https://support.apple.com/en-us/117810"
+        ]
+      },
+      "bodyCoverage": "Upper body",
+      "observationSignals": [
+        "Vision"
+      ],
+      "interfaceForms": [
+        "Headset"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "verified": "2026-10-16"
+    },
+    "meta-quest3": {
+      "interface": "Meta Quest 3",
+      "poseTracking": "HOT3D uses external optical-marker reference for hand/object ground truth",
+      "vision": "HOT3D release: 2 monochrome egocentric streams; public Passthrough Camera API: front-facing RGB",
+      "captureComponents": "Production VR headset; public camera-access SDK and separately released HOT3D research recordings",
+      "cameraSpecs": "HOT3D: paired 1280×1024 monochrome images at 30 FPS",
+      "measuredSignals": "HOT3D Quest portion contains monochrome images; do not assume its public clips include RGB, gaze or raw depth",
+      "synchronization": "HOT3D calibrated, synchronized multi-view frames; public RGB API is a separate capture path",
+      "outputs": "HOT3D VRS / WebDataset clips with calibration and hand/object reference labels; Camera2 API exposes RGB frames",
+      "configuration": "Quest 3; RGB API requires Horizon OS v74+ and camera permission, with resolution depending on OS version",
+      "softwareRelease": "Public Passthrough Camera API documentation; HOT3D downloader and visualization tools",
+      "hardwareRelease": "Commercial headset; hardware design files not verified",
+      "evidence": [
+        {
+          "label": "Quest 3 product",
+          "url": "https://www.meta.com/quest/quest-3/"
+        },
+        {
+          "label": "HOT3D device streams",
+          "url": "https://facebookresearch.github.io/hot3d/"
+        },
+        {
+          "label": "Camera API and prerequisites",
+          "url": "https://developers.meta.com/vr/documentation/unity/unity-pca-overview/"
+        }
+      ],
+      "fieldSources": {
+        "vision": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://developers.meta.com/vr/documentation/unity/unity-pca-overview/"
+        ],
+        "poseTracking": [
+          "https://facebookresearch.github.io/hot3d/"
+        ],
+        "captureComponents": [
+          "https://www.meta.com/quest/quest-3/",
+          "https://facebookresearch.github.io/hot3d/",
+          "https://developers.meta.com/vr/documentation/unity/unity-pca-overview/"
+        ],
+        "cameraSpecs": [
+          "https://facebookresearch.github.io/hot3d/"
+        ],
+        "measuredSignals": [
+          "https://facebookresearch.github.io/hot3d/"
+        ],
+        "synchronization": [
+          "https://facebookresearch.github.io/hot3d/"
+        ],
+        "outputs": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://developers.meta.com/vr/documentation/unity/unity-pca-overview/"
+        ],
+        "configuration": [
+          "https://developers.meta.com/vr/documentation/unity/unity-pca-overview/"
+        ],
+        "softwareRelease": [
+          "https://developers.meta.com/vr/documentation/unity/unity-pca-overview/",
+          "https://github.com/facebookresearch/hot3d"
+        ],
+        "hardwareRelease": [
+          "https://www.meta.com/quest/quest-3/"
+        ]
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision"
+      ],
+      "interfaceForms": [
+        "Headset"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "verified": "2026-10-16"
+    },
+    "ultraleap-stereo-ir170": {
+      "interface": "Stereo IR 170 camera module / evaluation kit",
+      "poseTracking": "Model-based optical hand and finger skeleton tracking",
+      "vision": "2 near-infrared cameras with active IR illumination",
+      "captureComponents": "USB camera module; attach at the front of a headset using the documented mount",
+      "cameraSpecs": "Typical field of view 170° × 170°; documented reliable hand tracking depth 10–75 cm",
+      "measuredSignals": "Stereo infrared images; skeletal hand pose is a software estimate, not a joint sensor measurement",
+      "synchronization": "Stereo module tracking; cross-device/robot clock synchronization not verified",
+      "outputs": "Hand Tracking Service with LeapC API; Unity/Unreal integrations; module-relative hand estimates",
+      "configuration": "Supports head-mounted, desktop and screentop orientations; reference headset mount is documented",
+      "softwareRelease": "Public LeapC API and integration documentation; tracking runtime has separate terms",
+      "hardwareRelease": "Commercial module; mount CAD is linked, sensor design openness not verified",
+      "evidence": [
+        {
+          "label": "Headset mounting and range",
+          "url": "https://docs.ultraleap.com/hand-tracking/XR-Setup/XR-setup.html"
+        },
+        {
+          "label": "IR sensing and LeapC",
+          "url": "https://docs.ultraleap.com/hand-tracking/index.html"
+        },
+        {
+          "label": "Supported orientations",
+          "url": "https://docs.ultraleap.com/hand-tracking/getting-started.html"
+        }
+      ],
+      "fieldSources": {
+        "vision": [
+          "https://docs.ultraleap.com/hand-tracking/index.html"
+        ],
+        "poseTracking": [
+          "https://docs.ultraleap.com/hand-tracking/index.html"
+        ],
+        "captureComponents": [
+          "https://docs.ultraleap.com/hand-tracking/XR-Setup/XR-setup.html"
+        ],
+        "cameraSpecs": [
+          "https://docs.ultraleap.com/hand-tracking/XR-Setup/XR-setup.html"
+        ],
+        "measuredSignals": [
+          "https://docs.ultraleap.com/hand-tracking/index.html"
+        ],
+        "synchronization": [
+          "https://docs.ultraleap.com/hand-tracking/index.html"
+        ],
+        "outputs": [
+          "https://docs.ultraleap.com/hand-tracking/index.html"
+        ],
+        "configuration": [
+          "https://docs.ultraleap.com/hand-tracking/XR-Setup/XR-setup.html",
+          "https://docs.ultraleap.com/hand-tracking/getting-started.html"
+        ],
+        "softwareRelease": [
+          "https://docs.ultraleap.com/hand-tracking/index.html"
+        ],
+        "hardwareRelease": [
+          "https://docs.ultraleap.com/hand-tracking/XR-Setup/XR-setup.html"
+        ]
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision"
+      ],
+      "interfaceForms": [
+        "Headset"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "verified": "2026-10-16"
+    },
+    "orbbec-ego": {
+      "interface": "Orbbec EGO",
+      "poseTracking": "Raw visual–inertial capture; downstream reconstruction depends on integration",
+      "vision": "Dual: 2×2 MP; Quad: 4×2 MP; 1600×1200 at 30/60 fps; 120 mm baseline",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "EGO Dual / Quad headband; optional WristCam and Hub ecosystem",
+      "cameraSpecs": "Dual: 2×2 MP; Quad: 4×2 MP; 1600×1200 at 30/60 fps; 120 mm baseline",
+      "measuredSignals": "RGB and 6-axis IMU; RGB-D is a separate depth-series configuration",
+      "synchronization": "Vendor lists ≤1 ms synchronization; Dual IMU 400/1000 Hz, Quad 400/800/1000 Hz",
+      "outputs": "Video, IMU, timestamps and calibration; export customization offered",
+      "configuration": "Dual 200 g; Quad <400 g including battery. Tactile requires external ecosystem integration",
+      "softwareRelease": "Vendor offers SDK integration; exact EGO package/license not verified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        },
+        {
+          "label": "Official launch history",
+          "url": "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ],
+        "cameraSpecs": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ],
+        "poseTracking": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ],
+        "measuredSignals": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ],
+        "synchronization": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ],
+        "outputs": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ],
+        "configuration": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ],
+        "softwareRelease": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ],
+        "hardwareRelease": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ],
+        "tactile": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ],
+        "forceTorque": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78",
+          "https://orbbec.com.cn/index.php/index/News/info.html?cate=31&id=380"
+        ]
+      }
+    },
+    "liv-ego": {
+      "interface": "LivEgo",
+      "poseTracking": "No verified on-device pose output",
+      "vision": "1600×1200; Std 30 fps, 60 mm baseline; Plus 30/60 fps, 120 mm baseline; global shutters",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Std / Plus binocular headband with microphones and IMU",
+      "cameraSpecs": "1600×1200; Std 30 fps, 60 mm baseline; Plus 30/60 fps, 120 mm baseline; global shutters",
+      "measuredSignals": "Stereo RGB, six-axis IMU and audio; pose is not established as measured ground truth",
+      "synchronization": "Vendor lists image–IMU alignment <1 ms; Std IMU 200 Hz, Plus 400/1000 Hz",
+      "outputs": "Unified video, IMU, audio and metadata recording; MJPG/H.264/H.265",
+      "configuration": "Std 163 g / one microphone; Plus 200 g / two microphones. Vendor runtime ~8 h",
+      "softwareRelease": "Release/license not verified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://livsynrobotics.com/products/ego"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://livsynrobotics.com/products/ego"
+        ],
+        "cameraSpecs": [
+          "https://livsynrobotics.com/products/ego"
+        ],
+        "poseTracking": [
+          "https://livsynrobotics.com/products/ego"
+        ],
+        "measuredSignals": [
+          "https://livsynrobotics.com/products/ego"
+        ],
+        "synchronization": [
+          "https://livsynrobotics.com/products/ego"
+        ],
+        "outputs": [
+          "https://livsynrobotics.com/products/ego"
+        ],
+        "configuration": [
+          "https://livsynrobotics.com/products/ego"
+        ],
+        "softwareRelease": [
+          "https://livsynrobotics.com/products/ego"
+        ],
+        "hardwareRelease": [
+          "https://livsynrobotics.com/products/ego"
+        ],
+        "tactile": [
+          "https://livsynrobotics.com/products/ego"
+        ],
+        "forceTorque": [
+          "https://livsynrobotics.com/products/ego"
+        ]
+      }
+    },
+    "samtzu-ego": {
+      "interface": "Samtzu EGO",
+      "poseTracking": "Pose reconstruction output not specified",
+      "vision": "4×2096×2096 at 30 fps; vendor panorama FOV 360°×180°",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Upper body",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Four fisheye RGB cameras, six-axis IMU, two microphones and X5 processor",
+      "cameraSpecs": "4×2096×2096 at 30 fps; vendor panorama FOV 360°×180°",
+      "measuredSignals": "RGB, inertial motion and audio; no depth sensor specified",
+      "synchronization": "Hardware frame synchronization; quantitative cross-stream timing not specified",
+      "outputs": "Synchronized audiovisual/inertial capture with upload and annotation workflow",
+      "configuration": "Second-generation listing: 488 g; 64 GB eMMC plus microSD; Ubuntu; Wi-Fi 6/BT5.4",
+      "softwareRelease": "Release/license not verified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ],
+        "cameraSpecs": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ],
+        "poseTracking": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ],
+        "measuredSignals": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ],
+        "synchronization": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ],
+        "outputs": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ],
+        "configuration": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ],
+        "softwareRelease": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ],
+        "hardwareRelease": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ],
+        "tactile": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ],
+        "forceTorque": [
+          "https://www.samtzu.com/zh/products/ego-pov-wearable/"
+        ]
+      }
+    },
+    "tobi-ego": {
+      "interface": "TOBI Ego",
+      "poseTracking": "E2 has no on-device SLAM; E6 vendor lists SLAM and hand tracking",
+      "vision": "E2: 2×1600×1200 at 30 fps global shutter. E6 RGB shutter variants require order confirmation",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "E2 stereo recorder; E6 four monochrome cameras plus two RGB cameras",
+      "cameraSpecs": "E2: 2×1600×1200 at 30 fps global shutter. E6 RGB shutter variants require order confirmation",
+      "measuredSignals": "RGB, IMU and audio; estimated skeletons are distinct from raw device records",
+      "synchronization": "E2 sample: ~799 Hz gyro, inter-eye median 198 µs; brochure timing is a different scope",
+      "outputs": "Video, IMU, timestamps and calibration; E2 pose/depth require downstream processing",
+      "configuration": "Family pages differ in E2 weight/battery specs. E8 remains described as a planned platform with target accuracy",
+      "softwareRelease": "Public developer documentation; SDK/ROM packages have access conditions; source license unverified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.tobi.cn/ego-landing.html"
+        },
+        {
+          "label": "E2 current specification and raw-sample boundaries",
+          "url": "https://www.tobi.cn/product-e2.html"
+        },
+        {
+          "label": "E6 specifications",
+          "url": "https://www.tobi.cn/product-e6.html"
+        },
+        {
+          "label": "Developer documentation",
+          "url": "https://www.tobi.cn/docs.html"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ],
+        "cameraSpecs": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ],
+        "poseTracking": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ],
+        "measuredSignals": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ],
+        "synchronization": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ],
+        "outputs": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ],
+        "configuration": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ],
+        "softwareRelease": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ],
+        "hardwareRelease": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ],
+        "tactile": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ],
+        "forceTorque": [
+          "https://www.tobi.cn/ego-landing.html",
+          "https://www.tobi.cn/product-e2.html",
+          "https://www.tobi.cn/product-e6.html",
+          "https://www.tobi.cn/docs.html"
+        ]
+      }
+    },
+    "nolo-egocapture": {
+      "interface": "NOLO EgoCapture",
+      "poseTracking": "Vendor StarTraq head/wrist pose and 21-keypoint hand tracking; not independently verified GT",
+      "vision": "RGB 1920×1200 at 60 Hz per camera; ToF 640×480 at 30 Hz",
+      "tactile": {
+        "status": "optional",
+        "detail": "OmniGlove array"
+      },
+      "forceTorque": {
+        "status": "optional",
+        "detail": "OmniGlove normal force; calibration unverified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "Audio"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Five RGB cameras, ToF camera, IMU, microphones and separate handheld control/storage terminal",
+      "cameraSpecs": "RGB 1920×1200 at 60 Hz per camera; ToF 640×480 at 30 Hz",
+      "measuredSignals": "RGB, ToF depth, 1000 Hz IMU and audio; optional OmniGlove tactile array",
+      "synchronization": "Vendor lists unified timestamps and 30 Hz aligned outputs",
+      "outputs": "Video/depth, tracked poses and hand keypoints; optional normal-force/tangential-direction outputs",
+      "configuration": "Head unit ~210 g excluding soft headwear; bare-hand and glove modes are distinct",
+      "softwareRelease": "Release/license not verified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.nolovr.com/ego-page/index.html?v=3"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "cameraSpecs": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "poseTracking": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "measuredSignals": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "synchronization": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "outputs": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "configuration": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "softwareRelease": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "hardwareRelease": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "tactile": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "forceTorque": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ]
+      }
+    },
+    "litchi-egodepth": {
+      "interface": "LITCHI EgoDepth",
+      "poseTracking": "Raw visual–inertial capture; pose requires downstream estimation",
+      "vision": "RGB up to 1920×1200 at 30 fps; depth up to 1280×800 at 30 fps",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "Audio"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Four wide-angle RGB cameras, structured-light stereo depth, nine-axis IMU and microphones",
+      "cameraSpecs": "RGB up to 1920×1200 at 30 fps; depth up to 1280×800 at 30 fps",
+      "measuredSignals": "RGB, structured-light depth, 500 Hz IMU and audio",
+      "synchronization": "Vendor image–IMU alignment <1 ms; external trigger available",
+      "outputs": "MP4 video, PTS/IMU CSV, audio and calibration YAML; UVC/UAC/HID or RTSP/TCP",
+      "configuration": "<400 g listing; can pair with T1 Pro glove; device alone has no tactile array",
+      "softwareRelease": "Orbbec SDK integration listed; device-specific distribution/license unverified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://litchibot.com/"
+        },
+        {
+          "label": "Authorized distributor hardware image",
+          "url": "https://humansx.co.jp/en/products/litchi-ego/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ],
+        "cameraSpecs": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ],
+        "poseTracking": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ],
+        "measuredSignals": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ],
+        "synchronization": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ],
+        "outputs": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ],
+        "configuration": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ],
+        "softwareRelease": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ],
+        "hardwareRelease": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ],
+        "tactile": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ],
+        "forceTorque": [
+          "https://litchibot.com/",
+          "https://humansx.co.jp/en/products/litchi-ego/"
+        ]
+      }
+    },
+    "litchi-t1": {
+      "interface": "LITCHI T1 series",
+      "poseTracking": "IMU-derived hand orientation/pose; no standalone global wrist positioning established",
+      "vision": "No integrated camera; pair with EgoDepth for egocentric video",
+      "tactile": {
+        "status": "optional",
+        "detail": "T1 Pro: 368 sites; Lite/T1: absent"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Pressure array; 3D force calibration not verified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "IMU",
+        "Tactile"
+      ],
+      "interfaceForms": [
+        "Glove"
+      ],
+      "captureComponents": "IMU gloves; Pro adds a full-palm flexible tactile array",
+      "cameraSpecs": "No integrated camera; pair with EgoDepth for egocentric video",
+      "measuredSignals": "IMU plus Pro pressure/contact measurements; Lite/T1 do not include Pro tactile capability",
+      "synchronization": "Vendor IMU raw 1000 Hz / pose 500 Hz; Pro tactile 200 Hz; wireless full-data output 100 Hz",
+      "outputs": "Hand motion and pressure/contact data; raw/pose/transport rates describe different stages",
+      "configuration": "Pro 368 tactile sites, upgrade to 600 listed; Lite/T1/Pro are one product family",
+      "softwareRelease": "Release/license not verified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://litchibot.com/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://litchibot.com/"
+        ],
+        "cameraSpecs": [
+          "https://litchibot.com/"
+        ],
+        "poseTracking": [
+          "https://litchibot.com/"
+        ],
+        "measuredSignals": [
+          "https://litchibot.com/"
+        ],
+        "synchronization": [
+          "https://litchibot.com/"
+        ],
+        "outputs": [
+          "https://litchibot.com/"
+        ],
+        "configuration": [
+          "https://litchibot.com/"
+        ],
+        "softwareRelease": [
+          "https://litchibot.com/"
+        ],
+        "hardwareRelease": [
+          "https://litchibot.com/"
+        ],
+        "tactile": [
+          "https://litchibot.com/"
+        ],
+        "forceTorque": [
+          "https://litchibot.com/"
+        ]
+      }
+    },
+    "physen-thor": {
+      "interface": "Physen Ego Thor",
+      "poseTracking": "Online/offline VIO support; numerical pose accuracy not established",
+      "vision": "2/4/6×1920×1080 at 30 fps; default stereo baseline 60 mm; FOV configurable",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Two-camera visual–inertial modules; Quad/Hex add a synchronization board",
+      "cameraSpecs": "2/4/6×1920×1080 at 30 fps; default stereo baseline 60 mm; FOV configurable",
+      "measuredSignals": "Video, 300 Hz IMU and dual-microphone audio",
+      "synchronization": "Vendor 3 µs IMU/frame alignment; Quad/Hex inter-module exposure <10 µs",
+      "outputs": "SD video/IMU recordings; USB UVC video plus IMU; calibration delivered",
+      "configuration": "Duo ~180 g, Quad ~500 g, Hex ~650 g. Internal timing is not external robot/FMG synchronization",
+      "softwareRelease": "Web UI/API described; public source/license unverified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.physen.ai/products/thor-ego/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.physen.ai/products/thor-ego/"
+        ],
+        "cameraSpecs": [
+          "https://www.physen.ai/products/thor-ego/"
+        ],
+        "poseTracking": [
+          "https://www.physen.ai/products/thor-ego/"
+        ],
+        "measuredSignals": [
+          "https://www.physen.ai/products/thor-ego/"
+        ],
+        "synchronization": [
+          "https://www.physen.ai/products/thor-ego/"
+        ],
+        "outputs": [
+          "https://www.physen.ai/products/thor-ego/"
+        ],
+        "configuration": [
+          "https://www.physen.ai/products/thor-ego/"
+        ],
+        "softwareRelease": [
+          "https://www.physen.ai/products/thor-ego/"
+        ],
+        "hardwareRelease": [
+          "https://www.physen.ai/products/thor-ego/"
+        ],
+        "tactile": [
+          "https://www.physen.ai/products/thor-ego/"
+        ],
+        "forceTorque": [
+          "https://www.physen.ai/products/thor-ego/"
+        ]
+      }
+    },
+    "egoeasy": {
+      "interface": "EgoEasy",
+      "poseTracking": "Hand trajectories and semantics are downstream processing products",
+      "vision": "Binocular video; resolution/frame-rate specification not verified",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Hybrid"
+      ],
+      "captureComponents": "Binocular camera cap, waist capture box, phone app and cloud management",
+      "cameraSpecs": "Binocular video; resolution/frame-rate specification not verified",
+      "measuredSignals": "Raw stereo video, IMU and camera calibration",
+      "synchronization": "Time alignment described; quantitative synchronization not specified",
+      "outputs": "MP4/MKV/CSV raw files; optional JSON/Parquet derived annotations and episode indexes",
+      "configuration": "Vendor claims <100 g capture node and 10 h+ operation; weight scope is not the whole worn system",
+      "softwareRelease": "Commercial app/platform; public software/design release unverified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.yeegooai.com/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.yeegooai.com/"
+        ],
+        "cameraSpecs": [
+          "https://www.yeegooai.com/"
+        ],
+        "poseTracking": [
+          "https://www.yeegooai.com/"
+        ],
+        "measuredSignals": [
+          "https://www.yeegooai.com/"
+        ],
+        "synchronization": [
+          "https://www.yeegooai.com/"
+        ],
+        "outputs": [
+          "https://www.yeegooai.com/"
+        ],
+        "configuration": [
+          "https://www.yeegooai.com/"
+        ],
+        "softwareRelease": [
+          "https://www.yeegooai.com/"
+        ],
+        "hardwareRelease": [
+          "https://www.yeegooai.com/"
+        ],
+        "tactile": [
+          "https://www.yeegooai.com/"
+        ],
+        "forceTorque": [
+          "https://www.yeegooai.com/"
+        ]
+      }
+    },
+    "xvisio-seerfusion-one": {
+      "interface": "SeerFusion One",
+      "poseTracking": "Online VSLAM and hand joint extraction; derived results differ from raw observations",
+      "vision": "RGB 1920×1080 at 60 fps; monochrome 640×480 at 60 fps; global shutters",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Two RGB cameras, four monochrome fisheye cameras, 500 Hz IMU and standalone Debian compute",
+      "cameraSpecs": "RGB 1920×1080 at 60 fps; monochrome 640×480 at 60 fps; global shutters",
+      "measuredSignals": "Binocular RGB, monochrome video and IMU; postprocessed depth is not a verified physical depth stream",
+      "synchronization": "Vendor millisecond frame synchronization; precise cross-device statistics unspecified",
+      "outputs": "USB/standalone recording; derived SLAM, depth, skeleton and scene reconstruction",
+      "configuration": "Expandable with separate Traq trackers; replaceable batteries and up to 2 TB TF expansion",
+      "softwareRelease": "Postprocessing tools and developer downloads offered; source/license unverified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://en.xvisiotech.com/SeerController/312"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ],
+        "cameraSpecs": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ],
+        "poseTracking": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ],
+        "measuredSignals": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ],
+        "synchronization": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ],
+        "outputs": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ],
+        "configuration": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ],
+        "softwareRelease": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ],
+        "hardwareRelease": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ],
+        "tactile": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ],
+        "forceTorque": [
+          "https://en.xvisiotech.com/SeerController/312"
+        ]
+      }
+    },
+    "dexrobot-dexcap": {
+      "interface": "DexRobot DexCap",
+      "poseTracking": "Encoder-based joint measurement and kinematic pose; no independent external pose validation",
+      "vision": "No integrated ego camera specified",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Upper body",
+      "observationSignals": [
+        "State"
+      ],
+      "interfaceForms": [
+        "Hybrid"
+      ],
+      "captureComponents": "Upper-body exoskeleton with 65 magnetic absolute encoders",
+      "cameraSpecs": "No integrated ego camera specified",
+      "measuredSignals": "65 joint/waist channels: arms 9 DoF each, hands 21 each, waist 5",
+      "synchronization": "Vendor communication rates: wireless 200 Hz, wired 1000 Hz",
+      "outputs": "Joint and kinematic motion streams; Windows/Linux; C++/Python/ROS integration",
+      "configuration": "4.2 kg system; separate commercial product from Stanford’s 2024 DexCap research rig",
+      "softwareRelease": "Public manufacturer Python/C++ SDK repositories; hardware design release unverified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://www.dex-robot.com/dexCap"
+        },
+        {
+          "label": "Manufacturer Python SDK",
+          "url": "https://github.com/DexRobot/dexcap-sdk-python"
+        },
+        {
+          "label": "Manufacturer C++ SDK",
+          "url": "https://github.com/DexRobot/dexcap-sdk-cpp"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ],
+        "cameraSpecs": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ],
+        "poseTracking": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ],
+        "measuredSignals": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ],
+        "synchronization": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ],
+        "outputs": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ],
+        "configuration": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ],
+        "softwareRelease": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ],
+        "hardwareRelease": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ],
+        "tactile": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ],
+        "forceTorque": [
+          "https://www.dex-robot.com/dexCap",
+          "https://github.com/DexRobot/dexcap-sdk-python",
+          "https://github.com/DexRobot/dexcap-sdk-cpp"
+        ]
+      }
+    },
+    "pia-primus-ego": {
+      "interface": "PIA Primus Ego",
+      "poseTracking": "Vendor lists spatial localization trajectories; method/accuracy not specified",
+      "vision": "Five global-shutter views; 1600×1300 at 30 fps; vendor total FOV 270°",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Three RGB cameras plus binocular stereo pair, six-axis IMU and microphone",
+      "cameraSpecs": "Five global-shutter views; 1600×1300 at 30 fps; vendor total FOV 270°",
+      "measuredSignals": "RGB images, 400 Hz IMU and microphone audio",
+      "synchronization": "Hardware synchronization stated; numerical timing error unspecified",
+      "outputs": "RGB, microphone audio and spatial trajectories; 128 GB eMMC, Bluetooth and Wi-Fi",
+      "configuration": "Industrial task capture. Camera/output specifications read from the official launch graphics",
+      "softwareRelease": "Release/license not verified",
+      "hardwareRelease": "Commercial vendor-listed device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer specifications",
+          "url": "https://cn.piagroup.com/news/company2/538.html"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "captureComponents": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ],
+        "cameraSpecs": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ],
+        "poseTracking": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ],
+        "measuredSignals": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ],
+        "synchronization": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ],
+        "outputs": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ],
+        "configuration": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ],
+        "softwareRelease": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ],
+        "hardwareRelease": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ],
+        "tactile": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ],
+        "forceTorque": [
+          "https://cn.piagroup.com/news/company2/538.html"
+        ]
+      }
+    },
+    "nolo-omniglove": {
+      "interface": "NOLO OmniGlove",
+      "poseTracking": "Paired EgoCapture hand tracking; glove-local motion sensors unspecified",
+      "vision": "No integrated ego camera specified; pairs with EgoCapture headband",
+      "tactile": {
+        "status": "present",
+        "detail": "Five-finger tactile array"
+      },
+      "forceTorque": {
+        "status": "present",
+        "detail": "Vendor lists normal-force values and tangential-force direction"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Tactile",
+        "Force"
+      ],
+      "interfaceForms": [
+        "Glove"
+      ],
+      "captureComponents": "Tactile data glove paired with NOLO EgoCapture",
+      "cameraSpecs": "Companion EgoCapture provides RGB-D video; glove itself is a tactile accessory",
+      "measuredSignals": "Five-finger normal-force values and tangential-force direction; no verified 6-axis wrench",
+      "synchronization": "Vendor lists shared 30 Hz aligned outputs in the combined capture workflow",
+      "outputs": "Tactile force/direction streams alongside paired hand tracking and ego video",
+      "configuration": "Optional distinct glove asset; taxel count, calibration and independent accuracy validation unspecified",
+      "softwareRelease": "Commercial capture ecosystem; public SDK/license not verified",
+      "hardwareRelease": "Vendor-listed glove; public design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer multimodal/glove specification",
+          "url": "https://www.nolovr.com/ego-page/index.html?v=3"
+        }
+      ],
+      "verified": "2026-10-16",
+      "fieldSources": {
+        "poseTracking": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "tactile": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "forceTorque": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "captureComponents": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "cameraSpecs": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "measuredSignals": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "synchronization": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "outputs": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "configuration": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "softwareRelease": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ],
+        "hardwareRelease": [
+          "https://www.nolovr.com/ego-page/index.html?v=3"
+        ]
+      }
     }
   }
 }

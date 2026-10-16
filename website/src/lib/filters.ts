@@ -27,7 +27,7 @@ export const CATEGORIES: Record<Lens, Category[]> = {
     {key:'l4',label:'Robotization',description:'L4 · Demonstration translation',section:'Demonstration translation'},
     {key:'l5',label:'Policy learning',description:'L5 · Policy learning from human data',section:'Policy learning from human data'},
     {key:'l6',label:'Video learning',description:'L6 · Direct representations and latent-action routes',section:'Representation and latent actions'},
-    {key:'tools',label:'Tools & evaluation',description:'Evaluation and toolchains',section:'Evaluation and toolchains'},
+    {key:'tools',label:'Tools',description:'Evaluation and toolchains',section:'Evaluation and toolchains'},
   ],
   research: [],
 };
@@ -102,7 +102,7 @@ export function matches(w:Work,lens:Lens,state:ViewState,excludeFacet?:string) {
   if(state.category!=='all'&&!categoriesFor(w,lens).includes(state.category))return false;
   if(state.query.trim()){
     let haystack=searchIndex.get(w);
-    if(!haystack){haystack=[w.name,w.title,w.keywords,w.institute,w.publication,...w.sections,JSON.stringify(w.research??{}),JSON.stringify(w.release??{})].join(' ').toLowerCase();searchIndex.set(w,haystack);}
+    if(!haystack){haystack=[w.name,...(w.aliases??[]),w.title,w.keywords,w.institute,w.publication,...w.sections,JSON.stringify(w.research??{}),JSON.stringify(w.release??{})].join(' ').toLowerCase();searchIndex.set(w,haystack);}
     if(!haystack.includes(state.query.trim().toLowerCase()))return false;
   }
   if(state.signals.some(s=>!signalsFor(w,lens).includes(s)))return false;
