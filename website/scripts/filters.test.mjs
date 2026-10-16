@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { CATEGORIES,FACETS,TOOL_FACETS,facetsFor,emptyView,matches,signalsFor,coverageFor,facetOptions,categoriesFor } from '../src/lib/filters.ts';
-import { toolTopicsFor,slamFamilyFor } from '../src/lib/tooling.ts';
+import { CATEGORIES,FACETS,TOOL_FACETS,DEPTH_FACETS,facetsFor,emptyView,matches,signalsFor,coverageFor,facetOptions,categoriesFor } from '../src/lib/filters.ts';
+import { toolTopicsFor,slamFamilyFor,depthFamiliesFor,toolSelectionFrom } from '../src/lib/tooling.ts';
 const work=(values={})=>({id:'fixture',name:'Fixture',title:'Fixture',date:'2026-01-01',year:'2026',institute:'Lab',publication:'Paper',keywords:'',paperUrl:'https://example.org/',links:[],sections:['Methods and Toolchains / Hand reconstruction'],collections:['methods'],source:'Methods',kind:'Method',stage:'Hand reconstruction',form:'Glove',coverage:'Hands',tracking:'',signals:[],format:'',dataAccess:'Not verified',codeAccess:'',...values});
 test('each collection exposes only its own categories and at most five facets',()=>{
  assert.equal(CATEGORIES.methods.find(c=>c.key==='l1').section,'Hand reconstruction');
@@ -88,4 +88,44 @@ test('geometry foundations and streaming models have independent discovery witho
  assert.ok(!matches(foundation,'methods',{...emptyView(),category:'tools',filters:{loop:'yes'}}));
  assert.ok(matches(streaming,'methods',{...emptyView(),category:'tools',slamFamily:'streaming',filters:{loop:'optional'}}));
  assert.ok(!matches(streaming,'methods',{...emptyView(),category:'tools',filters:{loop:'yes'}}));
+});
+
+test('All methods contains core layers while tool-only references remain independently accessible',()=>{
+ const tool=work({sections:['Robot Learning and Evaluation / Evaluation and toolchains'],subsections:['Robot Learning and Evaluation / Evaluation and toolchains / SLAM'],research:{method:{slam:{family:'visual-inertial'}}}});
+ assert.ok(!matches(tool,'methods',emptyView()));
+ assert.ok(matches(tool,'methods',{...emptyView(),category:'tools'}));
+ assert.ok(matches(tool,'research',emptyView()));
+ const dual=work({sections:['Methods and Toolchains / World-space and body motion'],research:{method:{slam:{family:'visual-inertial'}}}});
+ assert.ok(matches(dual,'methods',emptyView()));
+ assert.ok(matches(dual,'methods',{...emptyView(),category:'tools',toolTopic:'slam'}));
+});
+
+test('depth families overlap without conflating input setup, camera geometry or metric scale',()=>{
+ const depth=work({sections:['Robot Learning and Evaluation / Evaluation and toolchains'],subsections:['Robot Learning and Evaluation / Evaluation and toolchains / Depth and perception'],research:{method:{inputSignals:['Vision'],perception:{families:['stereo','fisheye'],inputSetup:['stereo'],cameraGeometry:['fisheye'],scaleType:['calibrated']}}}});
+ const state={...emptyView(),category:'tools',toolTopic:'depth',depthFamily:'fisheye',filters:{scale:'calibrated'}};
+ assert.deepEqual(toolTopicsFor(depth),['depth']);
+ assert.deepEqual(depthFamiliesFor(depth),['stereo','fisheye']);
+ assert.deepEqual(depthFamiliesFor(work({research:{method:{perception:{families:['video','multiview']}}}})),['multiview']);
+ assert.ok(matches(depth,'methods',state));
+ assert.ok(!matches(depth,'methods',{...state,depthFamily:'monocular'}));
+ assert.ok(!matches(depth,'methods',{...state,filters:{scale:'metric-predicted'}}));
+ assert.ok(!matches(depth,'methods',{...state,toolTopic:'slam'}));
+ assert.ok(!matches(depth,'methods',emptyView()));
+ assert.deepEqual(signalsFor(depth,'methods'),['Vision']);
+ assert.equal(facetsFor('methods','tools','depth'),DEPTH_FACETS);
+ assert.equal(DEPTH_FACETS.length,3);
+ assert.ok(!DEPTH_FACETS.some(f=>['loop','relocalization','setup','geometry'].includes(f.key)));
+ // Mapping-specific restrictions do not apply to depth and vice versa.
+ assert.ok(matches(depth,'methods',{...state,filters:{loop:'yes'}}));
+ // A remembered IMU restriction from a core layer does not become a hidden depth filter.
+ assert.ok(matches(depth,'methods',{...state,signals:['IMU']}));
+ assert.ok(!matches(work(),'methods',{...emptyView(),signals:['IMU']}));
+});
+
+test('depth and SLAM family links use the selected topic and preserve legacy SLAM URLs',()=>{
+ assert.deepEqual(toolSelectionFrom(new URLSearchParams('tool=depth&family=stereo')),{toolTopic:'depth',slamFamily:'all',depthFamily:'stereo'});
+ assert.deepEqual(toolSelectionFrom(new URLSearchParams('family=lidar')),{toolTopic:'slam',slamFamily:'lidar',depthFamily:'all'});
+ assert.deepEqual(toolSelectionFrom(new URLSearchParams('tool=depth&family=lidar')),{toolTopic:'depth',slamFamily:'all',depthFamily:'all'});
+ assert.deepEqual(toolSelectionFrom(new URLSearchParams('tool=depth&family=video')),{toolTopic:'depth',slamFamily:'all',depthFamily:'multiview'});
+ assert.deepEqual(toolSelectionFrom(new URLSearchParams('tool=calibration&family=stereo')),{toolTopic:'calibration',slamFamily:'all',depthFamily:'all'});
 });

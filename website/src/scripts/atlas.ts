@@ -1,8 +1,8 @@
 import type { Work } from "../lib/catalog";
 import { compareDates } from "../lib/order";
 import { formatScale, scaleMetrics } from "../lib/scale";
-import { CATEGORIES, LENS_COPY, emptyView, facetsFor, facetOptions, facetValues, categoriesFor, signalsFor, matches, type Lens, type ViewState } from "../lib/filters";
-import { TOOL_TOPICS, SLAM_FAMILIES, slamFor, scopeLabelFor } from "../lib/tooling";
+import { CATEGORIES, LENS_COPY, emptyView, isDepthView, facetsFor, facetOptions, facetValues, categoriesFor, signalsFor, matches, type Lens, type ViewState } from "../lib/filters";
+import { TOOL_TOPICS, SLAM_FAMILIES, DEPTH_FAMILIES, PERCEPTION_LABELS, slamFor, perceptionFor, toolSelectionFrom, scopeLabelFor } from "../lib/tooling";
 import { createToolMenu } from "./tool-menu";
 const $ = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id)! as T;
@@ -84,12 +84,9 @@ view.query = params.get("q") ?? "";
 view.sort = Array.from(sort.options).some(o=>o.value===params.get("sort")) ? params.get("sort")! : "newest";
 view.category = CATEGORIES[collection].find(c=>c.key===(params.get("category")??params.get("layer")) || c.section===params.get("source"))?.key ?? "all";
 if(collection==="methods"&&view.category==="tools"){
-  view.toolTopic=TOOL_TOPICS.find(t=>t.key===params.get("tool"))?.key??"all";
-  view.slamFamily=SLAM_FAMILIES.find(f=>f.key===params.get("family"))?.key??"all";
-  if(view.toolTopic==="all"&&view.slamFamily!=="all")view.toolTopic="slam";
-  if(!["all","slam"].includes(view.toolTopic))view.slamFamily="all";
+  Object.assign(view,toolSelectionFrom(params));
 }
-for (const f of facetsFor(collection,view.category)) if(params.has(f.key)) view.filters[f.key]=params.get(f.key)!;
+for (const f of facetsFor(collection,view.category,view.toolTopic)) if(params.has(f.key)) view.filters[f.key]=params.get(f.key)!;
 view.signals = (params.get("signals") ?? "").split(",").filter(Boolean);
 const views = new Map<Lens,ViewState>([[collection,view]]);
 search.value=view.query;
@@ -103,7 +100,11 @@ let selected = new Set<string>(
 const selections = new Map<string, Set<string>>([[collection, selected]]);
 const PAGE_SIZE = 12;
 const toolsMenu=createToolMenu({works:()=>works,state:()=>view,select:(topic,family)=>{
-  view.category="tools";view.toolTopic=topic;view.slamFamily=family;render();
+  view.category="tools";view.toolTopic=topic;
+  if(topic==="depth")view.depthFamily=family;
+  else if(topic==="slam")view.slamFamily=family;
+  else {view.slamFamily="all";view.depthFamily="all";}
+  render();
 }});
 function syncUrl() {
   const p = new URLSearchParams();
@@ -112,11 +113,12 @@ function syncUrl() {
   if(collection==="methods"&&view.category==="tools"){
     if(view.toolTopic&&view.toolTopic!=="all")p.set("tool",view.toolTopic);
     if(view.toolTopic==="slam"&&view.slamFamily&&view.slamFamily!=="all")p.set("family",view.slamFamily);
+    if(view.toolTopic==="depth"&&view.depthFamily&&view.depthFamily!=="all")p.set("family",view.depthFamily);
   }
   if(view.query.trim())p.set("q",view.query.trim());
   if(view.sort!=="newest")p.set("sort",view.sort);
-  for(const f of facetsFor(collection,view.category))if(view.filters[f.key]&&view.filters[f.key]!=="all")p.set(f.key,view.filters[f.key]);
-  if(view.signals.length)p.set("signals",view.signals.join(","));
+  for(const f of facetsFor(collection,view.category,view.toolTopic))if(view.filters[f.key]&&view.filters[f.key]!=="all")p.set(f.key,view.filters[f.key]);
+  if(!isDepthView(collection,view)&&view.signals.length)p.set("signals",view.signals.join(","));
   if(selected.size)p.set("compare",[...selected].join(","));
   if(detail.open&&detail.dataset.work)p.set("item",detail.dataset.work);
   history.replaceState(null,"",location.pathname+(p.size?"?"+p.toString():"")+location.hash);
@@ -126,12 +128,12 @@ function buildFilterPanel() {
   const copy=LENS_COPY[collection];
   const tooling=collection==="methods"&&view.category==="tools";
   $("filter-panel-title").textContent=tooling?"Tool filters":copy.title;
-  $("filter-note").textContent=tooling?"Choose a group in Tools. Sensor requirements, calibration and scale are detailed in each entry.":copy.note;
-  search.placeholder=copy.placeholder;
+  $("filter-note").textContent=tooling?(view.toolTopic==="depth"?"Choose one depth route in Tools. Camera requirements and temporal behavior are in Details; predicted depth is not a measured RGB-D stream.":"Choose a group in Tools. Sensor requirements, calibration and scale are detailed in each entry."):copy.note;
+  search.placeholder=tooling&&view.toolTopic==="depth"?"Find a depth model, camera projection, or institution…":copy.placeholder;
   const activeSignal=document.activeElement instanceof HTMLInputElement&&document.activeElement.name==="signal"?document.activeElement.value:undefined;
   const activeFacet=document.activeElement instanceof HTMLSelectElement?document.activeElement.dataset.facet:undefined;
   const scroll=$("filter-body").scrollTop;
-  $("filter-fields").innerHTML=facetsFor(collection,view.category).map(f=>{
+  $("filter-fields").innerHTML=facetsFor(collection,view.category,view.toolTopic).map(f=>{
     const global=facetOptions(works,collection,f);
     if(!global.some(o=>o.value===view.filters[f.key]))delete view.filters[f.key];
     const pool=works.filter(w=>matches(w,collection,view,f.key));
@@ -151,7 +153,7 @@ function buildFilterPanel() {
   const available=[...new Set([...signalPool.flatMap(w=>signalsFor(w,collection)),...view.signals])].sort();
   $("signal-filter-label").textContent=copy.signals;
   $("signal-options").innerHTML=available.map(s=>`<label><input type="checkbox" name="signal" value="${e(s)}"${view.signals.includes(s)?' checked':''}/><span>${e(s)}</span></label>`).join("");
-  $("signal-filters").hidden=!available.length;
+  $("signal-filters").hidden=isDepthView(collection,view)||!available.length;
   if(activeSignal)Array.from(document.querySelectorAll<HTMLInputElement>("input[name=signal]")).find(el=>el.value===activeSignal)?.focus({preventScroll:true});
   $("filter-body").scrollTop=scroll;
 }
@@ -163,7 +165,7 @@ function renderCategories() {
   const label=collection==="methods"?"All methods":collection==="datasets"?"All datasets":collection==="hardware"?"All hardware":"All research";
   const options=[{key:"all",label,description:label,section:""},...CATEGORIES[collection]];
   nav.innerHTML=options.map(c=>{
-    const n=collection==="methods"&&c.key==="tools"?works.filter(w=>matches(w,collection,{...view,category:"tools",toolTopic:"all",slamFamily:"all"})).length:c.key==="all"?base.length:base.filter(w=>categoriesFor(w,collection).includes(c.key)).length;
+    const n=collection==="methods"&&c.key==="tools"?works.filter(w=>matches(w,collection,{...view,category:"tools",toolTopic:"all",slamFamily:"all",depthFamily:"all"})).length:c.key==="all"?base.length:base.filter(w=>categoriesFor(w,collection).includes(c.key)).length;
     const code=collection==="methods"&&/^l[1-6]$/.test(c.key)?`<small>${c.key.toUpperCase()}</small>`:"";
     const tools=collection==="methods"&&c.key==="tools";
     return `<button type="button" data-category="${e(c.key)}" aria-pressed="${view.category===c.key}" title="${e(c.description)}"${tools?` aria-haspopup="dialog" aria-controls="tools-menu" aria-expanded="${toolsMenu.isOpen()}"`:""}>${code}${e(c.label)}<span>${n}</span>${tools?'<svg class="tools-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>':""}</button>`;
@@ -324,14 +326,14 @@ function filterChips() {
   if(view.query.trim())chips.push({key:"q",value:"",label:view.query.trim()});
   if(collection==="methods"&&view.category==="tools"&&view.toolTopic&&view.toolTopic!=="all"){
     const topic=TOOL_TOPICS.find(t=>t.key===view.toolTopic)?.label;
-    const family=view.toolTopic==="slam"&&view.slamFamily!=="all"?SLAM_FAMILIES.find(f=>f.key===view.slamFamily)?.label:undefined;
+    const family=view.toolTopic==="slam"&&view.slamFamily!=="all"?SLAM_FAMILIES.find(f=>f.key===view.slamFamily)?.label:view.toolTopic==="depth"&&view.depthFamily!=="all"?DEPTH_FAMILIES.find(f=>f.key===view.depthFamily)?.label:undefined;
     chips.push({key:"tool",value:"",label:[topic,family].filter(Boolean).join(" · ")});
   }
-  for(const f of facetsFor(collection,view.category))if(view.filters[f.key]&&view.filters[f.key]!=="all"){
+  for(const f of facetsFor(collection,view.category,view.toolTopic))if(view.filters[f.key]&&view.filters[f.key]!=="all"){
     const label=facetOptions(works,collection,f).find(o=>o.value===view.filters[f.key])?.label??view.filters[f.key];
     chips.push({key:f.key,value:"",label:`${f.label}: ${label}`});
   }
-  view.signals.forEach(s=>chips.push({key:"signal",value:s,label:s}));
+  if(!isDepthView(collection,view))view.signals.forEach(s=>chips.push({key:"signal",value:s,label:s}));
   $("active-filters").innerHTML=chips.map(c=>`<button type="button" data-remove="${e(c.key)}" data-value="${e(c.value)}" aria-label="Remove ${e(c.label)} filter">${e(c.label)}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>`).join("");
   const n=chips.length+(view.category!=="all"?1:0);
   $("filter-count").textContent=String(n);$("filter-count").hidden=!n;
@@ -471,7 +473,7 @@ function hardwareDataFacts(w:Work):[string,string][] {
 }
 function methodFacts(w: Work): [string, string][] {
   const m=record(w.research?.method);
-  if(Object.keys(slamFor(w)).length)return [["Input",text(m.input)],["Output",text(m.output)],
+  if(Object.keys(slamFor(w)).length||Object.keys(perceptionFor(w)).length)return [["Input",text(m.input)],["Output",text(m.output)],
     ["Representation",text(m.outputRepresentation)],["Coordinate frame",text(m.coordinateFrame)]];
   return [["Research layer",text(m.stage)],["Input",text(m.input)],["Output",text(m.output)],
     ["Representation",text(m.outputRepresentation)],["Coordinate frame",text(m.coordinateFrame)],
@@ -479,7 +481,7 @@ function methodFacts(w: Work): [string, string][] {
 }
 function methodEvaluationFacts(w:Work):[string,string][] {
   const m=record(w.research?.method);
-  if(Object.keys(slamFor(w)).length)return [["Evaluation",text(m.evaluation)],
+  if(Object.keys(slamFor(w)).length||Object.keys(perceptionFor(w)).length)return [["Evaluation",text(m.evaluation)],
     ["Implementation",text(m.implementation)],["Limits",text(m.limitations)]];
   return [["Evaluation",text(m.evaluation)],["Robot evidence",text(m.robotEvidence)],
     ["Robot platform",text(m.robotPlatform,"Not evaluated / not specified")],
@@ -492,8 +494,17 @@ function methodReleaseFacts(w:Work):[string,string][] {
   const status=({open:"Open source",partial:"Partial release",closed:"Closed source",unknown:"Not verified"} as Record<string,string>)[String(w.release.status)]??"Not verified";
   return [["Project release",status],["Software / model terms",text(w.release.softwareStatus,"Not verified")]];
 }
+function perceptionFacts(w:Work):[string,string][] {
+  const p=perceptionFor(w);if(!Object.keys(p).length)return [];
+  if(Object.keys(slamFor(w)).length&&!(collection==="methods"&&view.category==="tools"&&view.toolTopic==="depth"))return [];
+  const labels=(v:unknown)=>Array.isArray(v)?v.map(x=>PERCEPTION_LABELS[String(x)]??String(x)).join(" · ")||"Not verified":"Not verified";
+  return [["Input arrangement",labels(p.inputSetup)],["Camera geometry",labels(p.cameraGeometry)],
+    ["Depth output",text(p.outputType)],["Depth scale",labels(p.scaleType)],["Scale source",text(p.scaleSource)],
+    ["Calibration",text(p.calibration)],["Temporal scope",text(p.temporal)],["Capture relevance",text(p.captureRelevance)]];
+}
 function trackingFacts(w:Work):[string,string][] {
   const s=slamFor(w);if(!Object.keys(s).length)return [];
+  if(collection==="methods"&&view.category==="tools"&&view.toolTopic==="depth"&&Object.keys(perceptionFor(w)).length)return [];
   const status=(v:unknown)=>v==="yes"?"Yes":v==="no"?"None":v==="optional"?"Optional":"Not verified";
   const mode=({online:"Online",offline:"Offline",hybrid:"Hybrid"} as Record<string,string>)[String(s.role)]??"Not specified";
   const mapping=!["calibration","evaluation"].includes(String(s.family));
@@ -522,7 +533,7 @@ function datasetReleaseFacts(w:Work):[string,string][] {
 }
 function facts(w: Work): [string, string][] {
   const rows: [string,string][] = [["Date", w.date], ["Institution", w.institute], ["Publication", w.publication]];
-  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Reported scope",text(record(w.research?.dataset?.reportedScale).scope)],["Public release",scaleText(record(w.research?.dataset?.publicScale))],["Public release scope",text(record(w.research?.dataset?.publicScale).scope)]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...trackingFacts(w),...methodEvaluationFacts(w),...methodReleaseFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w),...trackingFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w)])];
+  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Reported scope",text(record(w.research?.dataset?.reportedScale).scope)],["Public release",scaleText(record(w.research?.dataset?.publicScale))],["Public release scope",text(record(w.research?.dataset?.publicScale).scope)]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...perceptionFacts(w),...trackingFacts(w),...methodEvaluationFacts(w),...methodReleaseFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w),...perceptionFacts(w),...trackingFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w)])];
 }
 const scaleText = formatScale;
 const factsHtml = (rows: [string, string][]) =>
@@ -583,8 +594,8 @@ function showDetail(id: string) {
     ...(Array.isArray(w.release?.notes) ? w.release.notes : [])].filter(Boolean);
   const section=(title:string,rows:[string,string][],note="")=>`<section class="detail-section"><h3>${e(title)}</h3>${factsHtml(rows)}${note?`<p class="detail-scope-note">${e(note)}</p>`:""}</section>`;
   const hardwareSection=w.research?.hardware?section("Hardware & sensing",hardwareFacts(w))+section("Capture & data",hardwareDataFacts(w)):"";
-  const tracking=trackingFacts(w);
-  const methodSection=w.research?.method?section("Method at a glance",methodFacts(w))+(tracking.length?section(["calibration","evaluation"].includes(String(slamFor(w).family))?"Tool setup":"Tracking & mapping",tracking):"")+section(tracking.length?"Evaluation & implementation":"Evaluation & deployment",methodEvaluationFacts(w))+(w.release?section("Release",methodReleaseFacts(w)):""):"";
+  const tracking=trackingFacts(w),perception=perceptionFacts(w);
+  const methodSection=w.research?.method?section("Method at a glance",methodFacts(w))+(perception.length?section("Depth & camera setup",perception):"")+(tracking.length?section(["calibration","evaluation"].includes(String(slamFor(w).family))?"Tool setup":"Tracking & mapping",tracking):"")+section(tracking.length||perception.length?"Evaluation & implementation":"Evaluation & deployment",methodEvaluationFacts(w))+(w.release?section("Release",methodReleaseFacts(w)):""):"";
   const publicScale=scaleText(record(d.publicScale)),reportedScale=scaleText(record(d.reportedScale));
   const scaleColumns=`<div class="data-scale-columns">${publicScale!=="Not verified"?`<div class="data-scale-column"><span>Public release</span><p>${e(publicScale)}</p>${record(d.publicScale).scope?`<small>${e(record(d.publicScale).scope)}</small>`:""}</div>`:""}${reportedScale!=="Not verified"?`<div class="data-scale-column"><span>Reported</span><p>${e(reportedScale)}</p>${record(d.reportedScale).scope?`<small>${e(record(d.reportedScale).scope)}</small>`:""}</div>`:""}</div>`;
   const datasetSection=w.research?.dataset?`<section class="detail-section"><h3>Dataset</h3>${scaleColumns}${factsHtml(datasetFacts(w))}</section>`+section("Annotations & tasks",datasetAnnotationFacts(w))+section("Release & access",datasetReleaseFacts(w)):"";
@@ -608,7 +619,9 @@ function showCompare() {
   if (selected.size < 2) return;
   const items = [...selected].map((id) => byId.get(id)!);
   const keys = [...new Set(items.flatMap(w => facts(w).map(([k]) => k)))];
-  const note = items.some(w => Object.keys(slamFor(w)).length)
+  const note = collection==="methods"&&view.toolTopic==="depth"
+    ? "Predicted metric depth, calibrated stereo geometry and relative depth have different scale assumptions. Check camera calibration, output units and model terms in the original sources."
+    : items.some(w => Object.keys(slamFor(w)).length)
     ? "Compare sensor requirements, scale, calibration and alignment. Online execution does not imply real-time performance or a complete SLAM backend."
     : collection === "datasets"
       ? "Public releases, gated data, announced corpora, and observation variants are different scopes. A reported total is not necessarily the downloadable portion."
@@ -719,7 +732,7 @@ $("active-filters").addEventListener("click",event=>{
   const button=(event.target as HTMLElement).closest<HTMLElement>("[data-remove]");if(!button)return;
   const key=button.dataset.remove!;
   if(key==="q"){view.query="";search.value="";}
-  else if(key==="tool"){view.toolTopic="all";view.slamFamily="all";}
+  else if(key==="tool"){view.toolTopic="all";view.slamFamily="all";view.depthFamily="all";}
   else if(key==="signal")view.signals=view.signals.filter(s=>s!==button.dataset.value);
   else delete view.filters[key];
   buildFilterPanel();render();

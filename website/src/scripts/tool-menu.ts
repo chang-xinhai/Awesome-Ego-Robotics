@@ -1,6 +1,6 @@
 import type { Work } from '../lib/catalog';
 import { matches, type ViewState } from '../lib/filters';
-import { TOOL_TOPICS, SLAM_FAMILIES, toolTopicsFor, slamFamilyFor } from '../lib/tooling';
+import { TOOL_TOPICS, SLAM_FAMILIES, DEPTH_FAMILIES, slamFamilyFor, depthFamiliesFor } from '../lib/tooling';
 
 interface Options {
   works:()=>Work[];
@@ -38,27 +38,28 @@ export function createToolMenu(options:Options) {
     if(state.category!=='tools'){close();return;}
     const focused=panel.contains(document.activeElement)?(document.activeElement as HTMLElement).dataset:undefined;
     const scroll=document.getElementById('tools-body')!.scrollTop;
-    const pool=options.works().filter(w=>matches(w,'methods',{...state,category:'tools',toolTopic:'all',slamFamily:'all'}));
+    const poolFor=(topic:string)=>options.works().filter(w=>matches(w,'methods',{...state,category:'tools',toolTopic:topic,slamFamily:'all',depthFamily:'all'}));
     const topic=TOOL_TOPICS.find(t=>t.key===state.toolTopic)??TOOL_TOPICS[0];
-    const family=state.slamFamily??'all';
+    const family=(topic.key==='depth'?state.depthFamily:state.slamFamily)??'all';
     topics.innerHTML=TOOL_TOPICS.map(t=>{
-      const n=t.key==='all'?pool.length:pool.filter(w=>toolTopicsFor(w).includes(t.key)).length;
+      const n=poolFor(t.key).length;
       return `<button type="button" data-tool-topic="${t.key}" aria-pressed="${topic.key===t.key}"><span>${escape(t.label)}</span><small>${n}</small>${arrow}</button>`;
     }).join('');
-    if(topic.key==='all'||topic.key==='slam'){
-      const slam=pool.filter(w=>toolTopicsFor(w).includes('slam'));
-      content.innerHTML=`<p class="tools-eyebrow">SLAM & reconstruction</p><div class="tools-families" role="group" aria-label="SLAM families">${SLAM_FAMILIES.map(f=>{
-        const n=f.key==='all'?slam.length:slam.filter(w=>slamFamilyFor(w)===f.key).length;
-        return `<button type="button" data-slam-family="${f.key}" aria-pressed="${topic.key==='slam'&&family===f.key}"><span>${escape(f.label)}<small>${n}</small></span><em>${escape(f.description)}</em></button>`;
+    if(topic.key==='depth'||topic.key==='slam'){
+      const depth=topic.key==='depth',pool=poolFor(topic.key),families=depth?DEPTH_FAMILIES:SLAM_FAMILIES;
+      content.innerHTML=`<p class="tools-eyebrow">${depth?'Depth & perception':'SLAM & reconstruction'}</p><div class="tools-families" role="group" aria-label="${depth?'Depth':'SLAM'} families">${families.map(f=>{
+        const n=f.key==='all'?pool.length:pool.filter(w=>depth?depthFamiliesFor(w).includes(f.key):slamFamilyFor(w)===f.key).length;
+        return `<button type="button" data-${depth?'depth':'slam'}-family="${f.key}" aria-pressed="${family===f.key}"><span>${escape(f.label)}<small>${n}</small></span><em>${escape(f.description)}</em></button>`;
       }).join('')}</div>`;
     }else{
-      const n=pool.filter(w=>toolTopicsFor(w).includes(topic.key)).length;
+      const n=poolFor(topic.key).length;
       content.innerHTML=`<div class="tools-topic-summary"><p class="tools-eyebrow">${escape(topic.label)}</p><h3>${n}<span> resources</span></h3><p>${escape(topic.description)}</p><p class="tools-context">Sensor requirements, outputs and sources are available in each entry.</p></div>`;
     }
     done.textContent=`View ${options.works().filter(w=>matches(w,'methods',{...state,category:'tools'})).length} resources`;
-    document.getElementById('tools-selection')!.textContent=topic.key==='slam'?(SLAM_FAMILIES.find(f=>f.key===family)?.label??'All references'):topic.label;
+    document.getElementById('tools-selection')!.textContent=topic.key==='slam'?(SLAM_FAMILIES.find(f=>f.key===family)?.label??'All references'):topic.key==='depth'?(DEPTH_FAMILIES.find(f=>f.key===family)?.label??'All depth references'):topic.label;
     if(focused?.toolTopic)topics.querySelector<HTMLButtonElement>(`[data-tool-topic="${focused.toolTopic}"]`)?.focus({preventScroll:true});
     else if(focused?.slamFamily)content.querySelector<HTMLButtonElement>(`[data-slam-family="${focused.slamFamily}"]`)?.focus({preventScroll:true});
+    else if(focused?.depthFamily)content.querySelector<HTMLButtonElement>(`[data-depth-family="${focused.depthFamily}"]`)?.focus({preventScroll:true});
     document.getElementById('tools-body')!.scrollTop=scroll;
     anchor()?.setAttribute('aria-expanded',String(opened));
     fit();
@@ -72,16 +73,16 @@ export function createToolMenu(options:Options) {
     if(b)options.select(b.dataset.toolTopic!,'all');
   });
   content.addEventListener('click',event=>{
-    const b=(event.target as HTMLElement).closest<HTMLButtonElement>('[data-slam-family]');
-    if(b)options.select('slam',b.dataset.slamFamily!);
+    const b=(event.target as HTMLElement).closest<HTMLButtonElement>('[data-slam-family],[data-depth-family]');
+    if(b)options.select(b.dataset.depthFamily?'depth':'slam',(b.dataset.depthFamily??b.dataset.slamFamily)!);
   });
   panel.addEventListener('keydown',event=>{
     const target=event.target as HTMLElement;
     if(event.key==='Escape'){event.stopPropagation();close(true);}
-    else if(event.key==='ArrowRight'&&target.dataset.toolTopic==='slam'){
-      event.preventDefault();content.querySelector<HTMLButtonElement>('[data-slam-family]')?.focus();
-    }else if(event.key==='ArrowLeft'&&target.dataset.slamFamily){
-      event.preventDefault();topics.querySelector<HTMLButtonElement>('[data-tool-topic="slam"]')?.focus();
+    else if(event.key==='ArrowRight'&&['depth','slam'].includes(target.dataset.toolTopic??'')){
+      event.preventDefault();content.querySelector<HTMLButtonElement>('[data-slam-family],[data-depth-family]')?.focus();
+    }else if(event.key==='ArrowLeft'&&(target.dataset.slamFamily||target.dataset.depthFamily)){
+      event.preventDefault();topics.querySelector<HTMLButtonElement>(`[data-tool-topic="${target.dataset.depthFamily?'depth':'slam'}"]`)?.focus();
     }
   });
   document.getElementById('tools-close')!.addEventListener('click',()=>close(true));

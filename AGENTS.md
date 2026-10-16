@@ -148,7 +148,9 @@ allowed. Keep deployment manual (`workflow_dispatch`) until approval.
 
 Keep category bars and facet definitions separate by hardware/datasets/methods.
 Methods must expose L1–L6 plus tools; L6 remains parallel, not another required
-step in explicit reconstruction. Never mix hardware forms and dataset families
+step in explicit reconstruction. All methods includes the L1–L6 core methods,
+excluding entries placed only in Tools. A core method may also have a sourced
+Tools cross-reference without losing its core placement. Never mix hardware forms and dataset families
 into a method dropdown. Limit each panel to five relevant facets; compute option
 counts from the active category and other filters. Preserve each collection's
 query, sort, category, facets, signals and comparison separately.
@@ -176,10 +178,33 @@ on cards, and do not exclude an important reconstruction model just because it
 does not implement a complete SLAM backend. Distinguish base models from
 optional loop-closing wrappers and software licenses from model-weight terms.
 
-Under Evaluation and toolchains use fourth-level README headings for SLAM,
+Under Evaluation and toolchains use fourth-level README headings for Depth and
+perception (before SLAM), SLAM,
 Calibration and synchronization, Trajectory evaluation, Ego and UMI workflows,
 and Others. The website derives these subgroups without creating a second
 canonical bibliography. Tools uses an on-demand split menu, preserving the
 existing category bar, five-facet panels, state restoration and shared URLs.
 Cross-references to an existing method may appear in Tools through sourced
 SLAM metadata without duplicating the canonical work or its README row.
+
+## Depth and perception
+
+Depth estimation is a capture-processing reference, separate from core L1–L6
+methods and from SLAM. Cover important monocular, stereo / active, video,
+multi-view, fisheye / wide-FOV and panoramic work. Keep one intuitive browser
+navigation: monocular, stereo / active, multi-view / video, fisheye and panoramic.
+These discovery routes may overlap without duplicating works. Do not add parallel
+input-count, camera-type and temporal navigation systems. Extra depth facets are
+scale, project release and year; preserve input arrangement, camera geometry and
+temporal behavior as independent sourced attributes in Details and Compare.
+Use sourced `method.perception` metadata and Tools cross-references for existing
+geometry models instead of duplicating their canonical entries. Keep room for
+later semantic perception without padding the depth survey with unrelated CV.
+
+Separate predicted relative depth, learned metric prediction, calibrated
+triangulation and measured depth. Record axial depth versus ray distance or
+disparity, intrinsics / baseline / poses, rectification or native camera model,
+temporal consistency, and code versus model-weight terms. Panorama, cubemap and
+native fisheye inputs are different projections. A projector / IR pattern is a
+required input for structured-light decoding, not ordinary passive stereo.
+Predicted depth is an output and must not become a Depth input-signal tag.

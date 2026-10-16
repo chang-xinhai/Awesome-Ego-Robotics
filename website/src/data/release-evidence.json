@@ -5018,6 +5018,1408 @@
       "notes": [
         "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights."
       ]
+    },
+    "moge-3": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT source and official model card; inherited backbone notices apply",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/microsoft/MoGe/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/microsoft/MoGe"
+        },
+        {
+          "label": "Official model card",
+          "url": "https://huggingface.co/Ruicheng/moge-3-vitl"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. MIT source and official model card; inherited backbone notices apply"
+      ]
+    },
+    "depthart-tiny": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Author-owned material CC-BY-4.0; included attention code and DA V2-L teacher have CC-BY-NC-4.0 terms; upstream notices retained",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/xuefeng-cvr/DepthART/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/xuefeng-cvr/DepthART"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Author-owned material CC-BY-4.0; included attention code and DA V2-L teacher have CC-BY-NC-4.0 terms; upstream notices retained"
+      ]
+    },
+    "zipdepth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT source; released checkpoints; separate checkpoint terms not found in the official repository; DA V2-L teacher terms recorded",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/fabiotosi92/ZipDepth/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/fabiotosi92/ZipDepth"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. MIT source; released checkpoints; separate checkpoint terms not found in the official repository; DA V2-L teacher terms recorded"
+      ]
+    },
+    "dvd-depth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 code; CC-BY-NC-4.0 pretrained weights",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/EnVision-Research/DVD/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/EnVision-Research/DVD"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Apache-2.0 code; CC-BY-NC-4.0 pretrained weights"
+      ]
+    },
+    "moge-2": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT source and official metric / normal model cards; DINOv2 Apache-2.0",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/microsoft/MoGe/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/microsoft/MoGe"
+        },
+        {
+          "label": "Official model card",
+          "url": "https://huggingface.co/Ruicheng/moge-2-vitl-normal"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. MIT source and official metric / normal model cards; DINOv2 Apache-2.0"
+      ]
+    },
+    "flashdepth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 source / checkpoint card; L uses DA V2-L (CC-BY-NC), S uses DA V2-S (Apache-2.0); Full uses the L teacher",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/Eyeline-Labs/FlashDepth/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/Eyeline-Labs/FlashDepth"
+        },
+        {
+          "label": "Official checkpoint card",
+          "url": "https://huggingface.co/Eyeline-Labs/FlashDepth"
+        },
+        {
+          "label": "Variant initialization and teacher",
+          "url": "https://github.com/Eyeline-Labs/FlashDepth#training"
+        },
+        {
+          "label": "DA V2 model-size licenses",
+          "url": "https://github.com/DepthAnything/Depth-Anything-V2#license"
+        },
+        {
+          "label": "DA V2 Large checkpoint",
+          "url": "https://huggingface.co/depth-anything/Depth-Anything-V2-Large"
+        },
+        {
+          "label": "DA V2 Small checkpoint",
+          "url": "https://huggingface.co/depth-anything/Depth-Anything-V2-Small"
+        }
+      ],
+      "notes": [
+        "Official training initializes FlashDepth-L from Depth Anything V2-L and FlashDepth-S from V2-S. Their upstream weights have CC-BY-NC-4.0 and Apache-2.0 terms respectively.",
+        "FlashDepth Full starts from S and uses L as a teacher. Aggregate project status is Partial across variants; source / checkpoint-card Apache labels do not remove upstream component conditions.",
+        "No blanket non-commercial claim is made for every FlashDepth variant; inspect the selected model and its components."
+      ]
+    },
+    "unidepth-v2": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "CC-BY-NC-4.0 software and model distribution",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/lpiccinelli-eth/UniDepth/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/lpiccinelli-eth/UniDepth"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. CC-BY-NC-4.0 software and model distribution"
+      ]
+    },
+    "video-depth-anything": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 source and Small weights; Base / Large weights CC-BY-NC-4.0",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/DepthAnything/Video-Depth-Anything/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/DepthAnything/Video-Depth-Anything"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Apache-2.0 source and Small weights; Base / Large weights CC-BY-NC-4.0"
+      ]
+    },
+    "rollingdepth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 source; OpenRAIL++-M model weights",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/prs-eth/RollingDepth/blob/main/LICENSE.txt"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/prs-eth/RollingDepth"
+        },
+        {
+          "label": "Model license",
+          "url": "https://github.com/prs-eth/RollingDepth/blob/main/LICENSE-MODEL.txt"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Apache-2.0 source; OpenRAIL++-M model weights"
+      ]
+    },
+    "moge": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT source and official model card; DINOv2 components Apache-2.0",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/microsoft/MoGe/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/microsoft/MoGe"
+        },
+        {
+          "label": "Official model card",
+          "url": "https://huggingface.co/Ruicheng/moge-vitl"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. MIT source and official model card; DINOv2 components Apache-2.0"
+      ]
+    },
+    "depth-pro": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apple custom permissive copyright license for sample code and weights; upstream notices retained",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/apple/ml-depth-pro/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/apple/ml-depth-pro"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Apple custom permissive copyright license for sample code and weights; upstream notices retained"
+      ]
+    },
+    "lotus": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 source / author checkpoint cards; pretrained Stable Diffusion components retain their upstream model terms",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/EnVision-Research/Lotus/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/EnVision-Research/Lotus"
+        },
+        {
+          "label": "Official checkpoint card",
+          "url": "https://huggingface.co/jingheya/lotus-depth-d-v1-0"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Apache-2.0 source / author checkpoint cards; pretrained Stable Diffusion components retain their upstream model terms"
+      ]
+    },
+    "depthcrafter": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Tencent academic / research / education-only license for inference code and weights",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/Tencent/DepthCrafter/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/Tencent/DepthCrafter"
+        },
+        {
+          "label": "Official model card",
+          "url": "https://huggingface.co/tencent/DepthCrafter"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Tencent academic / research / education-only license for inference code and weights"
+      ]
+    },
+    "depth-anything-v2": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 source and Small weights; Base / Large / Giant weights CC-BY-NC-4.0",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/DepthAnything/Depth-Anything-V2/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/DepthAnything/Depth-Anything-V2"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Apache-2.0 source and Small weights; Base / Large / Giant weights CC-BY-NC-4.0"
+      ]
+    },
+    "chronodepth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT source / released UNet card; required Stable Video Diffusion base uses the Stability AI Community License",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/jhaoshao/ChronoDepth/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/jhaoshao/ChronoDepth"
+        },
+        {
+          "label": "Official model card",
+          "url": "https://huggingface.co/jhshao/ChronoDepth-v1"
+        },
+        {
+          "label": "Required SVD base in inference",
+          "url": "https://github.com/jhaoshao/ChronoDepth"
+        },
+        {
+          "label": "SVD base model terms",
+          "url": "https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt/blob/main/LICENSE.md"
+        },
+        {
+          "label": "SVD model card",
+          "url": "https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt"
+        }
+      ],
+      "notes": [
+        "Official inference loads stabilityai/stable-video-diffusion-img2vid-xt separately from the ChronoDepth UNet. The base model has Stability AI Community License conditions; the full pipeline is not covered by MIT alone.",
+        "The base community license permits research and limited commercial use under its conditions; this is not labeled a blanket commercial ban."
+      ]
+    },
+    "unidepth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "CC-BY-NC-4.0 project software and model distribution",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/lpiccinelli-eth/UniDepth/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/lpiccinelli-eth/UniDepth"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. CC-BY-NC-4.0 project software and model distribution"
+      ]
+    },
+    "metric3d-v2": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "BSD-2-Clause code; public checkpoints; checkpoint-specific license not independently verified",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/YvanYin/Metric3D/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/YvanYin/Metric3D"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. BSD-2-Clause code; public checkpoints; checkpoint-specific license not independently verified"
+      ]
+    },
+    "depth-anything": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 project source and model release",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/LiheYoung/Depth-Anything/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/LiheYoung/Depth-Anything"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Apache-2.0 project source and model release"
+      ]
+    },
+    "marigold": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 source; current model distribution uses OpenRAIL++-M terms; original v1 model card labels Apache-2.0",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/prs-eth/Marigold/blob/main/LICENSE.txt"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/prs-eth/Marigold"
+        },
+        {
+          "label": "Model license",
+          "url": "https://github.com/prs-eth/Marigold/blob/main/LICENSE-MODEL.txt"
+        },
+        {
+          "label": "Original v1 checkpoint card",
+          "url": "https://huggingface.co/prs-eth/marigold-depth-v1-0"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Apache-2.0 source; current model distribution uses OpenRAIL++-M terms; original v1 model card labels Apache-2.0"
+      ]
+    },
+    "metric3d": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "BSD-2-Clause code; public checkpoints; checkpoint-specific licensing not independently stated in the inspected model card",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/YvanYin/Metric3D/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/YvanYin/Metric3D"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. BSD-2-Clause code; public checkpoints; checkpoint-specific licensing not independently stated in the inspected model card"
+      ]
+    },
+    "zoedepth": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT project source and released models",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/isl-org/ZoeDepth/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/isl-org/ZoeDepth"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. MIT project source and released models"
+      ]
+    },
+    "dpt": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT project source and released models",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/isl-org/DPT/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/isl-org/DPT"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. MIT project source and released models"
+      ]
+    },
+    "adabins": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "GPL-3.0 source; downloadable weights; a separate checkpoint license was not verified",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/shariqfarooq123/AdaBins/blob/main/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/shariqfarooq123/AdaBins"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. GPL-3.0 source; downloadable weights; a separate checkpoint license was not verified"
+      ]
+    },
+    "midas": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT project source and released model distribution",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/isl-org/MiDaS/blob/master/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/isl-org/MiDaS"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. MIT project source and released model distribution"
+      ]
+    },
+    "monodepth2": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Niantic non-commercial license for software; public pretrained checkpoints under project terms",
+      "evidence": [
+        {
+          "label": "Project license",
+          "url": "https://github.com/nianticlabs/monodepth2/blob/master/LICENSE"
+        },
+        {
+          "label": "Release / model terms",
+          "url": "https://github.com/nianticlabs/monodepth2"
+        }
+      ],
+      "notes": [
+        "Software and pretrained checkpoint terms are recorded separately. Niantic non-commercial license for software; public pretrained checkpoints under project terms"
+      ]
+    },
+    "nbs": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Public paper / project; no author source or model license verified",
+      "evidence": [
+        {
+          "label": "Public release evidence",
+          "url": "https://intrinsic-experimental.github.io/nbs-website/"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. Public paper / project; no author source or model license verified"
+      ]
+    },
+    "nsl": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "CC BY-NC 4.0 author release; upstream model and renderer terms remain separate",
+      "evidence": [
+        {
+          "label": "Author release / license notice",
+          "url": "https://github.com/Namisntimpot/NSL"
+        },
+        {
+          "label": "Training-data availability",
+          "url": "https://github.com/PeterZs/NSL_Data"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. CC BY-NC 4.0 author release; upstream model and renderer terms remain separate",
+        "Original training dataset is unavailable after a cluster migration; the author provides a regeneration pipeline, not an identical downloadable corpus."
+      ]
+    },
+    "fast-foundationstereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "NVIDIA research license for this repository; C-Fast-FoundationStereo / TAO have separate commercial terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/NVlabs/Fast-FoundationStereo/blob/master/LICENSE.txt"
+        },
+        {
+          "label": "Separate commercial model",
+          "url": "https://huggingface.co/nvidia/c-fast-foundationstereo"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. NVIDIA research license for this repository; C-Fast-FoundationStereo / TAO have separate commercial terms"
+      ]
+    },
+    "bridgedepth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT source; Depth Anything V2 backbone / checkpoint terms remain separate",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/aeolusguan/BridgeDepth/blob/main/LICENSE"
+        },
+        {
+          "label": "Depth Anything V2 backbone terms",
+          "url": "https://github.com/DepthAnything/Depth-Anything-V2#license"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. MIT source; Depth Anything V2 backbone / checkpoint terms remain separate"
+      ]
+    },
+    "s2m2": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "CC BY-NC 4.0 inference release and checkpoints; training code not included",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/junhong-3dv/s2m2/blob/main/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. CC BY-NC 4.0 inference release and checkpoints; training code not included",
+        "Inference supports calibrated pinhole stereo; original training code is not included and released models differ from selected leaderboard versions."
+      ]
+    },
+    "smoe-stereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT source; pretrained vision backbone / weights have additional terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/cocowy1/SMoE-Stereo/blob/main/LICENSE"
+        },
+        {
+          "label": "Depth Anything V2 backbone terms",
+          "url": "https://github.com/DepthAnything/Depth-Anything-V2#license"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. MIT source; pretrained vision backbone / weights have additional terms"
+      ]
+    },
+    "foundationstereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "NVIDIA non-commercial research source / checkpoints; TAO commercial model is separately licensed",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/NVlabs/FoundationStereo/blob/master/LICENSE"
+        },
+        {
+          "label": "Separate TAO model",
+          "url": "https://catalog.ngc.nvidia.com/orgs/nvidia/tao/models/foundationstereo"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. NVIDIA non-commercial research source / checkpoints; TAO commercial model is separately licensed"
+      ]
+    },
+    "defom-stereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT source; Depth Anything V2 pretrained backbone terms remain separate",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/antigravity-tech/DEFOM-Stereo/blob/main/LICENSE"
+        },
+        {
+          "label": "Depth Anything V2 backbone terms",
+          "url": "https://github.com/DepthAnything/Depth-Anything-V2#license"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. MIT source; Depth Anything V2 pretrained backbone terms remain separate"
+      ]
+    },
+    "monster": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Custom MonSter Model License limits released materials to non-commercial research / education",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/Junda24/MonSter/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. Custom MonSter Model License limits released materials to non-commercial research / education"
+      ]
+    },
+    "stereoanywhere": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Author LICENCE.md and required Depth Anything V2-Large have research-only terms",
+      "evidence": [
+        {
+          "label": "Source license",
+          "url": "https://github.com/bartn8/stereoanywhere/blob/main/LICENCE.md"
+        },
+        {
+          "label": "Depth Anything V2 backbone terms",
+          "url": "https://github.com/DepthAnything/Depth-Anything-V2#license"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. Author LICENCE.md and required Depth Anything V2-Large have research-only terms"
+      ]
+    },
+    "igev-plusplus": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT open-source code; released pretrained checkpoints have unverified independent weight terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/gangweix/IGEV-plusplus/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code is openly licensed under MIT. Separate model-weight terms were not independently verified; combined project release is partial. Dataset terms remain independent."
+      ]
+    },
+    "lightstereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Author README restricts code to academic, non-commercial use",
+      "evidence": [
+        {
+          "label": "Author release / license notice",
+          "url": "https://github.com/XiandaGuo/OpenStereo"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. Author README restricts code to academic, non-commercial use"
+      ]
+    },
+    "selective-stereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT open-source code; released pretrained checkpoints have unverified independent weight terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/Windsrain/Selective-Stereo/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code is openly licensed under MIT. Separate model-weight terms were not independently verified; combined project release is partial. Dataset terms remain independent."
+      ]
+    },
+    "igev-stereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT open-source code; released pretrained checkpoints have unverified independent weight terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/gangweix/IGEV/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code is openly licensed under MIT. Separate model-weight terms were not independently verified; combined project release is partial. Dataset terms remain independent."
+      ]
+    },
+    "croco-v2": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "CC BY-NC-SA 4.0 source with component notices; model checkpoint terms checked separately",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/naver/croco/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. CC BY-NC-SA 4.0 source with component notices; model checkpoint terms checked separately"
+      ]
+    },
+    "unimatch": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT open-source code; released pretrained checkpoints have unverified independent weight terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/autonomousvision/unimatch/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code is openly licensed under MIT. Separate model-weight terms were not independently verified; combined project release is partial. Dataset terms remain independent."
+      ]
+    },
+    "crestereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 open-source code; released pretrained checkpoints have unverified independent weight terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/megvii-research/CREStereo/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code is openly licensed under Apache-2.0. Separate model-weight terms were not independently verified; combined project release is partial. Dataset terms remain independent."
+      ]
+    },
+    "acvnet": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT open-source code; released pretrained checkpoints have unverified independent weight terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/gangweix/ACVNet/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code is openly licensed under MIT. Separate model-weight terms were not independently verified; combined project release is partial. Dataset terms remain independent."
+      ]
+    },
+    "raft-stereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT open-source code; released pretrained checkpoints have unverified independent weight terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/princeton-vl/RAFT-Stereo/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code is openly licensed under MIT. Separate model-weight terms were not independently verified; combined project release is partial. Dataset terms remain independent."
+      ]
+    },
+    "hitnet": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 open-source code; released pretrained checkpoints have unverified independent weight terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/google-research/google-research/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code is openly licensed under Apache-2.0. Separate model-weight terms were not independently verified; combined project release is partial. Dataset terms remain independent."
+      ]
+    },
+    "gwcnet": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT open-source code; released pretrained checkpoints have unverified independent weight terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/xy-guo/GwcNet/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code is openly licensed under MIT. Separate model-weight terms were not independently verified; combined project release is partial. Dataset terms remain independent."
+      ]
+    },
+    "psmnet": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT open-source code; released pretrained checkpoints have unverified independent weight terms",
+      "evidence": [
+        {
+          "label": "Source / model license",
+          "url": "https://github.com/JiaRenChang/PSMNet/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code is openly licensed under MIT. Separate model-weight terms were not independently verified; combined project release is partial. Dataset terms remain independent."
+      ]
+    },
+    "gcnet": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method / tool",
+      "softwareStatus": "No author code / model license verified",
+      "evidence": [
+        {
+          "label": "Public release evidence",
+          "url": "https://arxiv.org/abs/1703.04309"
+        }
+      ],
+      "notes": [
+        "Source, model weights and training datasets have independent terms. No author code / model license verified"
+      ]
+    },
+    "omnipoint": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Paper / announced implementation",
+      "softwareStatus": "Public paper; no working official code / weight release verified",
+      "evidence": [
+        {
+          "label": "Official project",
+          "url": "https://botaoye.github.io/omnipoint/"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "widedepth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research benchmark and tools",
+      "softwareStatus": "Public loader has no selected code license; released datasets have separate terms",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/IlyaInd/WideDepth"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "h-omnistereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "NVIDIA-derived research / noncommercial license; model and dataset terms separate",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/JIANG-CX/H-OmniStereo"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/JIANG-CX/H-OmniStereo/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "mtpano": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Public research code; no explicit project license verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/Evergreen0929/MTPano"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "depth-any-panoramas": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "CC-BY-NC-4.0 repository; released model weights / dataset terms checked separately",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/Insta360-Research-Team/DAP"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/Insta360-Research-Team/DAP/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "depth-anything-any-direction": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Apache-2.0 code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/EnVision-Research/DA-2"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/EnVision-Research/DA-2/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "rpg360": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Public research code; no explicit project license verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/jdk9405/RPG360"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "fastvidar": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Paper / announced implementation",
+      "softwareStatus": "Public paper; no working official code / weight release verified",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2509.23733"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "omnistereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Public research code; no explicit project license verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/DengJiaxi1/OmniStereo"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "depthfisheye": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Paper / announced implementation",
+      "softwareStatus": "Official repository says Coming Soon; no implementation / weights verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/world-executed/DepthFisheye"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "dfi-omnistereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Apache-2.0 code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/vita-epfl/DFI-OmniStereo"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/vita-epfl/DFI-OmniStereo/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "unik3d": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "CC-BY-NC-4.0 software; released checkpoints, noncommercial terms",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/lpiccinelli-eth/UniK3D"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/lpiccinelli-eth/UniK3D/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "depth-any-camera": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/yuliangguo/depth_any_camera"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/yuliangguo/depth_any_camera/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "panda-depth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Apache-2.0 code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/caozidong/PanDA"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/caozidong/PanDA/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "depth-anywhere": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Apache-2.0 code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/albert100121/Depth-Anywhere"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/albert100121/Depth-Anywhere/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "elite360d": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Public research code; no explicit project license verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/haoai-1997/Elite360D"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "fova-depth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "CC-BY-NC-SA-4.0 software; pretrained checkpoint terms require the linked release conditions",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/NVlabs/fova-depth"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/NVlabs/fova-depth/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "egformer": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/yuniw18/EGformer"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/yuniw18/EGformer/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "s2net": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/aliyun/S2net"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/aliyun/S2net/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "bifuse-plus-plus": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/fuenwang/BiFusev2"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/fuenwang/BiFusev2/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "panoformer": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/zhijieshen-bjtu/PanoFormer"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/zhijieshen-bjtu/PanoFormer/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "omnifusion": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/yuliangguo/OmniFusion"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/yuliangguo/OmniFusion/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "360monodepth": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/manurare/360monodepth"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/manurare/360monodepth/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "sphere-stereo": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Custom noncommercial reproducibility code; faster real-time version separately licensed",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/KAIST-VCLAB/sphere-stereo"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/KAIST-VCLAB/sphere-stereo/blob/master/license.txt"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "unifuse": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/alibaba/UniFuse-Unidirectional-Fusion"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/alibaba/UniFuse-Unidirectional-Fusion/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "bifuse": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/yuhsuanyeh/BiFuse"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/yuhsuanyeh/BiFuse/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
+    },
+    "omnimvs": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "GPL-3.0 code; model-weight license not independently verified",
+      "evidence": [
+        {
+          "label": "Author implementation",
+          "url": "https://github.com/hyu-cvlab/omnimvs-pytorch"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/hyu-cvlab/omnimvs-pytorch/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
+      ]
     }
   }
 }
