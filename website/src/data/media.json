@@ -7637,5 +7637,2366 @@
     "imageAlt": "OmniMVS fisheye feature extraction and concentric-sphere matching volume.",
     "imageType": "Depth estimation / geometry method figure",
     "imageCredit": "OmniMVS authors; original figure rights retained"
+  },
+  {
+    "id": "marigold-v2",
+    "name": "Marigold V2",
+    "summary": "Repurposes an image-editing diffusion transformer for sharp single-step depth, with separate normal and albedo predictors.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/marigold-v2-methods.webp",
+    "imageSource": "https://raw.githubusercontent.com/huawei-bayerlab/marigold-v2/main/assets/images/teaser.webp",
+    "imagePage": "https://github.com/huawei-bayerlab/marigold-v2",
+    "imageAlt": "Marigold V2 authors' labeled teaser comparing sharp depth predictions and fine structures",
+    "imageType": "Method / depth output",
+    "credit": "Marigold V2 authors; third-party figure rights retained",
+    "imageCredit": "Marigold V2 authors; third-party figure rights retained"
+  },
+  {
+    "id": "mtd",
+    "name": "MTD",
+    "summary": "Converts relative depth into metric depth using sparse 3D seeds, segment graph alignment and geodesic refinement.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/mtd-methods.webp",
+    "imageSource": "https://arxiv.org/html/2605.11578v1/overall_framework_11140036.png",
+    "imagePage": "https://arxiv.org/html/2605.11578v1",
+    "imageAlt": "MTD author segment-wise metric scale recovery and pixel-wise geodesic refinement framework",
+    "imageType": "Method / depth output",
+    "credit": "MTD authors; third-party figure rights retained",
+    "imageCredit": "MTD authors; third-party figure rights retained"
+  },
+  {
+    "id": "any2full",
+    "name": "Any2Full",
+    "summary": "Uses a scale-aware prompt encoder to adapt a monocular depth foundation in one completion stage.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/any2full-methods.webp",
+    "imageSource": "https://arxiv.org/html/2603.05711v1/framework3.png",
+    "imagePage": "https://arxiv.org/html/2603.05711v1",
+    "imageAlt": "Any2Full author scale-aware sparse-depth prompting architecture for one-stage metric completion",
+    "imageType": "Method / depth output",
+    "credit": "Any2Full authors; third-party figure rights retained",
+    "imageCredit": "Any2Full authors; third-party figure rights retained"
+  },
+  {
+    "id": "capa-depth",
+    "name": "CAPA",
+    "summary": "Adapts frozen geometry foundations to sparse observations through small test-time LoRA or visual-prompt parameters.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/capa-depth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2602.14751v1/method_figure-crop.png",
+    "imagePage": "https://arxiv.org/html/2602.14751v1",
+    "imageAlt": "CAPA author diagram of sparse-depth-guided LoRA and visual-prompt test-time adaptation",
+    "imageType": "Method / depth output",
+    "credit": "CAPA authors; third-party figure rights retained",
+    "imageCredit": "CAPA authors; third-party figure rights retained"
+  },
+  {
+    "id": "metricanything",
+    "name": "MetricAnything",
+    "summary": "Learns metric geometry from heterogeneous depth sources and distills separate prompt-free depth and point-map students.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/metricanything-methods.webp",
+    "imageSource": "https://arxiv.org/html/2601.22054v1/student_vs_anno.png",
+    "imagePage": "https://arxiv.org/html/2601.22054v1",
+    "imageAlt": "MetricAnything author qualitative RGB and predicted depth comparison on challenging scenes",
+    "imageType": "Method / depth output",
+    "credit": "MetricAnything authors; third-party figure rights retained",
+    "imageCredit": "MetricAnything authors; third-party figure rights retained"
+  },
+  {
+    "id": "lingbot-depth",
+    "name": "LingBot-Depth",
+    "summary": "Completes and refines raw sensor depth using RGB context and masked-depth pretraining.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/lingbot-depth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2601.17895v1/teaser-crop.png",
+    "imagePage": "https://arxiv.org/html/2601.17895v1",
+    "imageAlt": "LingBot-Depth author teaser showing RGB-D sensor refinement and downstream spatial perception examples",
+    "imageType": "Method / depth output",
+    "credit": "LingBot-Depth authors; third-party figure rights retained",
+    "imageCredit": "LingBot-Depth authors; third-party figure rights retained"
+  },
+  {
+    "id": "infinidepth",
+    "name": "InfiniDepth",
+    "summary": "Queries a continuous implicit depth field to recover fine geometry at arbitrary output resolutions.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/infinidepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2601.03252v1/pipeline_finalversion.png",
+    "imagePage": "https://arxiv.org/html/2601.03252v1",
+    "imageAlt": "InfiniDepth continuous-coordinate feature query and implicit depth decoding architecture",
+    "imageType": "Method / depth output",
+    "credit": "InfiniDepth authors; third-party figure rights retained",
+    "imageCredit": "InfiniDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "anydepth",
+    "name": "AnyDepth",
+    "summary": "Uses DINOv3 features and a compact single-path depth decoder, with quality-filtered synthetic supervision.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/anydepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2601.02760v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2601.02760v1",
+    "imageAlt": "AnyDepth author teaser with RGB inputs and zero-shot monocular depth outputs",
+    "imageType": "Method / depth output",
+    "credit": "AnyDepth authors; third-party figure rights retained",
+    "imageCredit": "AnyDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "hyden",
+    "name": "HyDen",
+    "summary": "Combines a full-resolution CNN with a low-resolution transformer for efficient high-resolution monocular geometry.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/hyden-methods.webp",
+    "imageSource": "https://lacuna.tiptreesystems.com/figures/art_7ca9ba453c634d9bae52a299318ddcb5",
+    "imagePage": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/d8a7f2f7e346410e8ac7b39d9ff28c4a-Abstract-Conference.html",
+    "imageAlt": "HyDen authors' dual-path CNN and ViT architecture from the paper, mirrored without content changes",
+    "imageType": "Method / depth output",
+    "credit": "HyDen authors; third-party figure rights retained",
+    "imageCredit": "HyDen authors; third-party figure rights retained; unmodified paper figure via Lacuna mirror",
+    "imageNote": "Unmodified author architecture figure mirrored from the official paper page 4; primary PDF download truncated in this environment",
+    "imageOriginal": "https://openreview.net/pdf/0ff89017386e25a71f75a09605e88cd37aaf4f46.pdf#page=4"
+  },
+  {
+    "id": "bokehdepth",
+    "name": "BokehDepth",
+    "summary": "Generates a calibrated defocus stack from RGB, then feeds defocus cues back into a metric depth model.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/bokehdepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2512.12425v1/intro_wide.png",
+    "imagePage": "https://arxiv.org/html/2512.12425v1",
+    "imageAlt": "BokehDepth author overview of monocular prediction, depth-based bokeh and generated-defocus depth cues",
+    "imageType": "Method / depth output",
+    "credit": "BokehDepth authors; third-party figure rights retained",
+    "imageCredit": "BokehDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "pixel-perfect-depth",
+    "name": "Pixel-Perfect Depth",
+    "summary": "Diffuses depth directly in pixel space, using foundation-model semantics to preserve clean geometric boundaries.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/pixel-perfect-depth-methods.webp",
+    "imageSource": "https://raw.githubusercontent.com/gangweix/pixel-perfect-depth/main/assets/overview.png",
+    "imagePage": "https://github.com/gangweix/pixel-perfect-depth",
+    "imageAlt": "Pixel-Perfect Depth author pixel-space diffusion and semantic feature architecture",
+    "imageType": "Method / depth output",
+    "credit": "Pixel-Perfect Depth authors; third-party figure rights retained",
+    "imageCredit": "Pixel-Perfect Depth authors; third-party figure rights retained"
+  },
+  {
+    "id": "prior-depth-anything",
+    "name": "Prior Depth Anything",
+    "summary": "Combines incomplete metric observations with dense monocular structure using coarse alignment and fine refinement.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/prior-depth-anything-methods.webp",
+    "imageSource": "https://arxiv.org/html/2505.10565v1/model.png",
+    "imagePage": "https://arxiv.org/html/2505.10565v1",
+    "imageAlt": "Prior Depth Anything coarse metric alignment and fine structure refinement architecture",
+    "imageType": "Method / depth output",
+    "credit": "Prior Depth Anything authors; third-party figure rights retained",
+    "imageCredit": "Prior Depth Anything authors; third-party figure rights retained"
+  },
+  {
+    "id": "dmd3c",
+    "name": "DMD³C",
+    "summary": "Distills monocular geometry into a depth-completion model to improve boundaries beyond sparse ground-truth coverage.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/dmd3c-methods.webp",
+    "imageSource": "https://arxiv.org/html/2503.16970v1/images/framework.png",
+    "imagePage": "https://arxiv.org/html/2503.16970v1",
+    "imageAlt": "DMD3C author second-stage foundation-depth distillation and metric supervised completion diagram",
+    "imageType": "Method / depth output",
+    "credit": "DMD³C authors; third-party figure rights retained",
+    "imageCredit": "DMD³C authors; third-party figure rights retained"
+  },
+  {
+    "id": "patchrefiner-v2",
+    "name": "PatchRefiner V2",
+    "summary": "Uses a lightweight refiner and coarse-to-fine feature denoising to reduce tiled high-resolution depth cost.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/patchrefiner-v2-methods.webp",
+    "imageSource": "https://arxiv.org/html/2501.01121v1/arch_2.png",
+    "imagePage": "https://arxiv.org/html/2501.01121v1",
+    "imageAlt": "PatchRefiner V2 author lightweight refiner architecture with coarse-to-fine feature guidance",
+    "imageType": "Method / depth output",
+    "credit": "PatchRefiner V2 authors; third-party figure rights retained",
+    "imageCredit": "PatchRefiner V2 authors; third-party figure rights retained"
+  },
+  {
+    "id": "depthlab",
+    "name": "DepthLab",
+    "summary": "Uses diffusion image priors to complete large holes and sparse observations while preserving known depth scale.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/depthlab-methods.webp",
+    "imageSource": "https://arxiv.org/html/2412.18153v1/pipe_zh.png",
+    "imagePage": "https://arxiv.org/html/2412.18153v1",
+    "imageAlt": "DepthLab author masked-depth and RGB-conditioned diffusion training diagram",
+    "imageType": "Method / depth output",
+    "credit": "DepthLab authors; third-party figure rights retained",
+    "imageCredit": "DepthLab authors; third-party figure rights retained"
+  },
+  {
+    "id": "prompt-depth-anything",
+    "name": "Prompt Depth Anything",
+    "summary": "Prompts a depth foundation model with aligned low-resolution LiDAR for detailed 4K metric depth.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/prompt-depth-anything-methods.webp",
+    "imageSource": "https://arxiv.org/html/2412.14015v1/pipeline.png",
+    "imagePage": "https://arxiv.org/html/2412.14015v1",
+    "imageAlt": "Prompt Depth Anything RGB and LiDAR depth prompt fusion architecture",
+    "imageType": "Method / depth output",
+    "credit": "Prompt Depth Anything authors; third-party figure rights retained",
+    "imageCredit": "Prompt Depth Anything authors; third-party figure rights retained"
+  },
+  {
+    "id": "marigold-dc",
+    "name": "Marigold-DC",
+    "summary": "Guides a pretrained diffusion depth prior with sparse measurements at inference time, without model fine-tuning.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/marigold-dc-methods.webp",
+    "imageSource": "https://arxiv.org/html/2412.13389v1/images/method/depth_completion_pipeline.png",
+    "imagePage": "https://arxiv.org/html/2412.13389v1",
+    "imageAlt": "Marigold-DC sparse-depth-guided latent optimization and diffusion denoising architecture",
+    "imageType": "Method / depth output",
+    "credit": "Marigold-DC authors; third-party figure rights retained",
+    "imageCredit": "Marigold-DC authors; third-party figure rights retained"
+  },
+  {
+    "id": "omni-dc",
+    "name": "OMNI-DC",
+    "summary": "Integrates multi-resolution depth gradients to complete sparse inputs across unseen depth patterns.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/omni-dc-methods.webp",
+    "imageSource": "https://arxiv.org/html/2411.19278v1/pipeline.png",
+    "imagePage": "https://arxiv.org/html/2411.19278v1",
+    "imageAlt": "OMNI-DC author multi-resolution depth-gradient prediction and integration pipeline",
+    "imageType": "Method / depth output",
+    "credit": "OMNI-DC authors; third-party figure rights retained",
+    "imageCredit": "OMNI-DC authors; third-party figure rights retained"
+  },
+  {
+    "id": "sharpdepth",
+    "name": "SharpDepth",
+    "summary": "Distills diffusion detail into metric predictions using noise-aware guidance from complementary depth models.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/sharpdepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2411.18229v1/Depth-Phong_pipeline_crop-compressed.png",
+    "imagePage": "https://arxiv.org/html/2411.18229v1",
+    "imageAlt": "SharpDepth metric and diffusion depth priors, noise-aware gating and sharpening pipeline",
+    "imageType": "Method / depth output",
+    "credit": "SharpDepth authors; third-party figure rights retained",
+    "imageCredit": "SharpDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "depth-ar",
+    "name": "DAR",
+    "summary": "Predicts depth through coupled low-to-high resolution and coarse-to-fine ordinal autoregressive objectives.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/depth-ar-methods.webp",
+    "imageSource": "https://arxiv.org/html/2411.11361v1/overview12.png",
+    "imagePage": "https://arxiv.org/html/2411.11361v1",
+    "imageAlt": "DAR author architecture for RGB-conditioned resolution and granularity autoregressive depth prediction",
+    "imageType": "Method / depth output",
+    "credit": "DAR authors; third-party figure rights retained",
+    "imageCredit": "DAR authors; third-party figure rights retained"
+  },
+  {
+    "id": "patchrefiner",
+    "name": "PatchRefiner",
+    "summary": "Separates reliable metric scale from synthetic high-frequency detail when refining real-domain depth.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/patchrefiner-methods.webp",
+    "imageSource": "https://arxiv.org/html/2406.06679v1/arch.png",
+    "imagePage": "https://arxiv.org/html/2406.06679v1",
+    "imageAlt": "PatchRefiner frozen coarse model and residual high-resolution depth refiner architecture",
+    "imageType": "Method / depth output",
+    "credit": "PatchRefiner authors; third-party figure rights retained",
+    "imageCredit": "PatchRefiner authors; third-party figure rights retained"
+  },
+  {
+    "id": "depth-prompting",
+    "name": "Depth Prompting",
+    "summary": "Adapts depth-foundation priors to changing sensor sparsity and range using a separate depth prompt.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/depth-prompting-methods.webp",
+    "imageSource": "https://arxiv.org/html/2405.11867v1/teaser_camera-ready.png",
+    "imagePage": "https://arxiv.org/html/2405.11867v1",
+    "imageAlt": "Depth Prompting author overview comparing sensor patterns and metric depth completion outputs",
+    "imageType": "Method / depth output",
+    "credit": "Depth Prompting authors; third-party figure rights retained",
+    "imageCredit": "Depth Prompting authors; third-party figure rights retained"
+  },
+  {
+    "id": "ecodepth",
+    "name": "ECoDepth",
+    "summary": "Conditions a diffusion perception backbone on rich ViT image embeddings rather than generated captions.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/ecodepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2403.18807v1/final_aarch.png",
+    "imagePage": "https://arxiv.org/html/2403.18807v1",
+    "imageAlt": "ECoDepth ViT image-conditioning and diffusion feature depth decoder architecture",
+    "imageType": "Method / depth output",
+    "credit": "ECoDepth authors; third-party figure rights retained",
+    "imageCredit": "ECoDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "depth-fm",
+    "name": "DepthFM",
+    "summary": "Transfers Stable Diffusion priors into an image-to-depth flow-matching model with few inference steps.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/depth-fm-methods.webp",
+    "imageSource": "https://arxiv.org/html/2403.13788v1/figures/cover.jpg",
+    "imagePage": "https://arxiv.org/html/2403.13788v1",
+    "imageAlt": "DepthFM author cover figure showing RGB-to-depth predictions and fine scene geometry",
+    "imageType": "Method / depth output",
+    "credit": "DepthFM authors; third-party figure rights retained",
+    "imageCredit": "DepthFM authors; third-party figure rights retained"
+  },
+  {
+    "id": "geowizard",
+    "name": "GeoWizard",
+    "summary": "Jointly generates depth and normals while separating indoor, outdoor and object scene distributions.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/geowizard-methods.webp",
+    "imageSource": "https://arxiv.org/html/2403.12013v1/figs/piepline.png",
+    "imagePage": "https://arxiv.org/html/2403.12013v1",
+    "imageAlt": "GeoWizard joint diffusion architecture for RGB-conditioned depth and surface-normal prediction",
+    "imageType": "Method / depth output",
+    "credit": "GeoWizard authors; third-party figure rights retained",
+    "imageCredit": "GeoWizard authors; third-party figure rights retained"
+  },
+  {
+    "id": "genpercept",
+    "name": "GenPercept",
+    "summary": "Adapts diffusion features into a single-step dense predictor with task-specific decoders.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/genpercept-methods.webp",
+    "imageSource": "https://arxiv.org/html/2403.06090v1/rgb_depth_normal.png",
+    "imagePage": "https://arxiv.org/html/2403.06090v1",
+    "imageAlt": "GenPercept author examples of RGB, predicted depth and surface normals",
+    "imageType": "Method / depth output",
+    "credit": "GenPercept authors; third-party figure rights retained",
+    "imageCredit": "GenPercept authors; third-party figure rights retained"
+  },
+  {
+    "id": "dmd-depth",
+    "name": "DMD",
+    "summary": "Conditions a diffusion depth predictor on camera field of view to jointly model indoor and outdoor metric depths.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/dmd-depth-methods.webp",
+    "imageSource": "https://diffusion-vision.github.io/dmd/images/samples/hypersim/image_2.jpeg",
+    "imagePage": "https://arxiv.org/html/2312.13252v1",
+    "imageAlt": "Official DMD sample pairing the same RGB image with the model's predicted metric depth; labels added",
+    "imageType": "Method / depth output",
+    "credit": "DMD authors; third-party figure rights retained",
+    "imageCredit": "DMD authors; third-party figure rights retained",
+    "imageSources": [
+      "https://diffusion-vision.github.io/dmd/images/samples/hypersim/ours_2.png"
+    ]
+  },
+  {
+    "id": "patchfusion",
+    "name": "PatchFusion",
+    "summary": "Fuses global depth context with detailed overlapping tiles for high-resolution metric prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/patchfusion-methods.webp",
+    "imageSource": "https://arxiv.org/html/2312.02284v1/pipeline.png",
+    "imagePage": "https://arxiv.org/html/2312.02284v1",
+    "imageAlt": "PatchFusion global coarse depth, local tile prediction and guided fusion pipeline",
+    "imageType": "Method / depth output",
+    "credit": "PatchFusion authors; third-party figure rights retained",
+    "imageCredit": "PatchFusion authors; third-party figure rights retained"
+  },
+  {
+    "id": "tadp",
+    "name": "TADP",
+    "summary": "Aligns image captions with diffusion features to improve depth and other dense perception tasks.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/tadp-methods.webp",
+    "imageSource": "https://arxiv.org/html/2310.00031v1/cvpr_2024_fig1.png",
+    "imagePage": "https://arxiv.org/html/2310.00031v1",
+    "imageAlt": "TADP author figure illustrating caption alignment for diffusion-based depth and visual perception",
+    "imageType": "Method / depth output",
+    "credit": "TADP authors; third-party figure rights retained",
+    "imageCredit": "TADP authors; third-party figure rights retained"
+  },
+  {
+    "id": "iebins",
+    "name": "IEBins",
+    "summary": "Refines depth through uncertainty-adaptive elastic bins rather than one fixed depth discretization.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/iebins-methods.webp",
+    "imageSource": "https://arxiv.org/html/2309.14137v1/depth_stages.png",
+    "imagePage": "https://arxiv.org/html/2309.14137v1",
+    "imageAlt": "IEBins author depth and uncertainty maps across iterative elastic-bin refinement stages",
+    "imageType": "Method / depth output",
+    "credit": "IEBins authors; third-party figure rights retained",
+    "imageCredit": "IEBins authors; third-party figure rights retained"
+  },
+  {
+    "id": "idisc",
+    "name": "iDisc",
+    "summary": "Learns internal discrete scene representations without imposing output depth bins or plane constraints.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/idisc-methods.webp",
+    "imageSource": "https://arxiv.org/html/2304.06334v1/model_up.png",
+    "imagePage": "https://arxiv.org/html/2304.06334v1",
+    "imageAlt": "iDisc author architecture of internal discretization and dense depth prediction",
+    "imageType": "Method / depth output",
+    "credit": "iDisc authors; third-party figure rights retained",
+    "imageCredit": "iDisc authors; third-party figure rights retained"
+  },
+  {
+    "id": "diffusiondepth",
+    "name": "DiffusionDepth",
+    "summary": "Iteratively denoises a depth latent under RGB guidance, with self-diffusion to handle sparse training labels.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/diffusiondepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2303.05021v1/cover.png",
+    "imagePage": "https://arxiv.org/html/2303.05021v1",
+    "imageAlt": "DiffusionDepth author cover diagram of RGB-conditioned iterative depth denoising",
+    "imageType": "Method / depth output",
+    "credit": "DiffusionDepth authors; third-party figure rights retained",
+    "imageCredit": "DiffusionDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "vpd",
+    "name": "VPD",
+    "summary": "Uses diffusion U-Net features and text-image attention as a backbone for supervised depth prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/vpd-methods.webp",
+    "imageSource": "https://raw.githubusercontent.com/wl-zhao/VPD/main/figs/intro.png",
+    "imagePage": "https://github.com/wl-zhao/VPD",
+    "imageAlt": "VPD author introduction figure showing diffusion-pretrained features for dense visual tasks including depth",
+    "imageType": "Method / depth output",
+    "credit": "VPD authors; third-party figure rights retained",
+    "imageCredit": "VPD authors; third-party figure rights retained"
+  },
+  {
+    "id": "newcrfs",
+    "name": "NeW CRFs",
+    "summary": "Uses attention-based windowed conditional random fields to refine depth predictions efficiently.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/newcrfs-methods.webp",
+    "imageSource": "https://arxiv.org/html/2203.01502v1/figures/net.png",
+    "imagePage": "https://arxiv.org/html/2203.01502v1",
+    "imageAlt": "NeW CRFs author network with multi-scale encoder features and neural window CRF depth refinement",
+    "imageType": "Method / depth output",
+    "credit": "NeW CRFs authors; third-party figure rights retained",
+    "imageCredit": "NeW CRFs authors; third-party figure rights retained"
+  },
+  {
+    "id": "boosting-monocular-depth",
+    "name": "Boosting Monocular Depth",
+    "summary": "Merges depth at multiple image resolutions and adaptive patches to improve detail without retraining the base predictor.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/boosting-monocular-depth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2105.14021v1/images/pipeline.jpg",
+    "imagePage": "https://arxiv.org/html/2105.14021v1",
+    "imageAlt": "Boosting Monocular Depth author multi-resolution merging and adaptive-patch pipeline",
+    "imageType": "Method / depth output",
+    "credit": "Boosting Monocular Depth authors; third-party figure rights retained",
+    "imageCredit": "Boosting Monocular Depth authors; third-party figure rights retained"
+  },
+  {
+    "id": "leres",
+    "name": "LeReS",
+    "summary": "Recovers a depth shift and camera focal length to make single-image scene shape more geometrically plausible.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/leres-methods.webp",
+    "imageSource": "https://arxiv.org/html/2012.09365v1/pipeline.png",
+    "imagePage": "https://arxiv.org/html/2012.09365v1",
+    "imageAlt": "LeReS author depth, focal length and shift recovery pipeline for single-image scene shape",
+    "imageType": "Method / depth output",
+    "credit": "LeReS authors; third-party figure rights retained",
+    "imageCredit": "LeReS authors; third-party figure rights retained"
+  },
+  {
+    "id": "bts",
+    "name": "BTS",
+    "summary": "Predicts depth through multi-scale local plane estimates that guide progressively finer reconstruction.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/bts-methods.webp",
+    "imageSource": "https://arxiv.org/pdf/1907.10326#page=1",
+    "imagePage": "https://arxiv.org/abs/1907.10326",
+    "imageAlt": "BTS Figure 1 with RGB input, predicted depth, ground truth and multi-scale local planar guidance outputs",
+    "imageType": "Method / depth output",
+    "credit": "BTS authors; third-party figure rights retained",
+    "imageCredit": "BTS authors; third-party figure rights retained"
+  },
+  {
+    "id": "blast3r",
+    "name": "BLASt3R",
+    "summary": "Combines learned multi-view matching and monocular priors in scalable bundle adjustment.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/blast3r-methods.webp",
+    "imageSource": "https://arxiv.org/html/2609.05210v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2609.05210v1",
+    "imageAlt": "BLASt3R author teaser showing offline and online reconstructions of Tanks and Temples, ETH3D and TUM scenes",
+    "imageType": "Method / depth output",
+    "credit": "BLASt3R authors; third-party figure rights retained",
+    "imageCredit": "BLASt3R authors; third-party figure rights retained"
+  },
+  {
+    "id": "iggt4d",
+    "name": "IGGT4D",
+    "summary": "Predicts streaming geometry and persistent object-instance features together.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/iggt4d-methods.webp",
+    "imageSource": "https://arxiv.org/html/2607.19228v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2607.19228v1",
+    "imageAlt": "IGGT4D author overview of streaming 4D geometry, instance features and instance-aware downstream applications",
+    "imageType": "Method / depth output",
+    "credit": "IGGT4D authors; third-party figure rights retained",
+    "imageCredit": "IGGT4D authors; third-party figure rights retained"
+  },
+  {
+    "id": "vigeo",
+    "name": "ViGeo",
+    "summary": "One geometry model switches between full-video, streaming and chunked inference.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/vigeo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2605.30060v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2605.30060v1",
+    "imageAlt": "ViGeo author teaser showing input video, consistent point maps, depth and normal outputs, and streaming inference",
+    "imageType": "Method / depth output",
+    "credit": "ViGeo authors; third-party figure rights retained",
+    "imageCredit": "ViGeo authors; third-party figure rights retained"
+  },
+  {
+    "id": "longdpm",
+    "name": "LongDPM",
+    "summary": "Registers overlapping dynamic point-map chunks into coherent long-video geometry.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/longdpm-methods.webp",
+    "imageSource": "https://arxiv.org/html/2605.17303v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2605.17303v1",
+    "imageAlt": "LongDPM author schematic contrasting static reconstruction, short-context dynamic reconstruction and overlap-aware long-video fusion",
+    "imageType": "Method / depth output",
+    "credit": "LongDPM authors; third-party figure rights retained",
+    "imageCredit": "LongDPM authors; third-party figure rights retained"
+  },
+  {
+    "id": "gemdepth",
+    "name": "GemDepth",
+    "summary": "Uses predicted camera-motion embeddings to stabilize detailed video depth in 3D.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/gemdepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2605.10525v1/fig3.png",
+    "imagePage": "https://arxiv.org/html/2605.10525v1",
+    "imageAlt": "GemDepth labeled RGB and depth comparison on Sintel, Bonn and ScanNet with the authors’ prediction in the rightmost column",
+    "imageType": "Method / depth output",
+    "credit": "GemDepth authors; third-party figure rights retained",
+    "imageCredit": "GemDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "more-4d",
+    "name": "MoRe",
+    "summary": "Disentangles moving regions from static structure for dynamic video geometry.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/more-4d-methods.webp",
+    "imageSource": "https://arxiv.org/html/2603.05078v1/cover.png",
+    "imagePage": "https://arxiv.org/html/2603.05078v1",
+    "imageAlt": "MoRe author teaser of reconstructed dynamic people, camera trajectory and predicted foreground motion masks",
+    "imageType": "Method / depth output",
+    "credit": "MoRe authors; third-party figure rights retained",
+    "imageCredit": "MoRe authors; third-party figure rights retained"
+  },
+  {
+    "id": "motioncrafter",
+    "name": "MotionCrafter",
+    "summary": "A joint geometry-motion VAE produces world point maps and dense scene flow.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/motioncrafter-methods.webp",
+    "imageSource": "https://arxiv.org/html/2602.08961v1/teaser_figure.png",
+    "imagePage": "https://arxiv.org/html/2602.08961v1",
+    "imageAlt": "MotionCrafter author teaser showing input video, reconstructed scene flow and world-coordinate dynamic point clouds",
+    "imageType": "Method / depth output",
+    "credit": "MotionCrafter authors; third-party figure rights retained",
+    "imageCredit": "MotionCrafter authors; third-party figure rights retained"
+  },
+  {
+    "id": "v-dpm",
+    "name": "V-DPM",
+    "summary": "Extends dynamic point maps from image pairs to joint video shape and motion.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/v-dpm-methods.webp",
+    "imageSource": "https://arxiv.org/html/2601.09499v1/figures/teaser.png",
+    "imagePage": "https://arxiv.org/html/2601.09499v1",
+    "imageAlt": "V-DPM author examples of time-dependent reconstructed point maps and dense motion trajectories",
+    "imageType": "Method / depth output",
+    "credit": "V-DPM authors; third-party figure rights retained",
+    "imageCredit": "V-DPM authors; third-party figure rights retained"
+  },
+  {
+    "id": "stabledpt",
+    "name": "StableDPT",
+    "summary": "Shares keyframe context across a video to stabilize an image depth backbone.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/stabledpt-methods.webp",
+    "imageSource": "https://arxiv.org/html/2601.02793v1/fig/teaser2.png",
+    "imagePage": "https://arxiv.org/html/2601.02793v1",
+    "imageAlt": "StableDPT author teaser showing sequence keyframe context and temporally coherent depth predictions",
+    "imageType": "Method / depth output",
+    "credit": "StableDPT authors; third-party figure rights retained",
+    "imageCredit": "StableDPT authors; third-party figure rights retained"
+  },
+  {
+    "id": "velodepth",
+    "name": "VeloDepth",
+    "summary": "Propagates depth features and predictions between keyframes using corrected optical flow.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/velodepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2512.10725v1/VeloDepth_1_teaser_v2.png",
+    "imagePage": "https://arxiv.org/html/2512.10725v1",
+    "imageAlt": "VeloDepth author overview of online depth and feature propagation between RGB keyframes",
+    "imageType": "Method / depth output",
+    "credit": "VeloDepth authors; third-party figure rights retained",
+    "imageCredit": "VeloDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "any4d",
+    "name": "Any4D",
+    "summary": "Factorizes camera depth and world motion for metric 4D prediction from flexible sensors.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/any4d-methods.webp",
+    "imageSource": "https://arxiv.org/html/2512.10935v1/cvpr_teaser.png",
+    "imagePage": "https://arxiv.org/html/2512.10935v1",
+    "imageAlt": "Any4D author teaser showing dense predicted geometry and 3D motion tracks across indoor and outdoor scenes",
+    "imageType": "Method / depth output",
+    "credit": "Any4D authors; third-party figure rights retained",
+    "imageCredit": "Any4D authors; third-party figure rights retained"
+  },
+  {
+    "id": "fin3r",
+    "name": "Fin3R",
+    "summary": "Distills monocular priors into feed-forward 3D models while preserving cross-view consistency.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/fin3r-methods.webp",
+    "imageSource": "https://arxiv.org/html/2511.22429v1/teaser3.png",
+    "imagePage": "https://arxiv.org/html/2511.22429v1",
+    "imageAlt": "Fin3R labeled comparisons of base and distilled depth / 3D reconstruction models",
+    "imageType": "Method / depth output",
+    "credit": "Fin3R authors; third-party figure rights retained",
+    "imageCredit": "Fin3R authors; third-party figure rights retained"
+  },
+  {
+    "id": "amb3r",
+    "name": "AMB3R",
+    "summary": "Uses a compact learned volumetric backend for metric-scale reconstruction from unposed images.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/amb3r-methods.webp",
+    "imageSource": "https://arxiv.org/html/2511.20343v1/teaser_v6.png",
+    "imagePage": "https://arxiv.org/html/2511.20343v1",
+    "imageAlt": "AMB3R author teaser showing monocular and multi-view depth, metric geometry, visual odometry and reconstruction outputs",
+    "imageType": "Method / depth output",
+    "credit": "AMB3R authors; third-party figure rights retained",
+    "imageCredit": "AMB3R authors; third-party figure rights retained"
+  },
+  {
+    "id": "ovda",
+    "name": "oVDA",
+    "summary": "Converts Video Depth Anything to causal inference with cached temporal features.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/ovda-methods.webp",
+    "imageSource": "https://arxiv.org/html/2510.09182v1/AlternativeArchitecture_svg-tex.png",
+    "imagePage": "https://arxiv.org/html/2510.09182v1",
+    "imageAlt": "oVDA author architecture diagram showing cached temporal attention, causal inference and masked training",
+    "imageType": "Method / depth output",
+    "credit": "oVDA authors; third-party figure rights retained",
+    "imageCredit": "oVDA authors; third-party figure rights retained"
+  },
+  {
+    "id": "vipe",
+    "name": "ViPE",
+    "summary": "Annotates raw videos with camera geometry and dense near-metric depth across camera models.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/vipe-methods.webp",
+    "imageSource": "https://arxiv.org/html/2508.10934v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2508.10934v1",
+    "imageAlt": "ViPE author teaser showing raw video, recovered cameras / scene geometry and dense predicted depth for pinhole and panoramic examples",
+    "imageType": "Method / depth output",
+    "credit": "ViPE authors; third-party figure rights retained",
+    "imageCredit": "ViPE authors; third-party figure rights retained"
+  },
+  {
+    "id": "unigeo",
+    "name": "UniGeo",
+    "summary": "Predicts globally consistent coordinates and normals using video diffusion priors.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/unigeo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2505.24521v1/teaser2.png",
+    "imagePage": "https://arxiv.org/html/2505.24521v1",
+    "imageAlt": "UniGeo author teaser showing RGB multi-view / video inputs and globally consistent geometric coordinates and normals",
+    "imageType": "Method / depth output",
+    "credit": "UniGeo authors; third-party figure rights retained",
+    "imageCredit": "UniGeo authors; third-party figure rights retained"
+  },
+  {
+    "id": "seurat",
+    "name": "Seurat",
+    "summary": "Infers temporal depth ratios from the motion of tracked 2D points.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/seurat-methods.webp",
+    "imageSource": "https://arxiv.org/html/2504.14687v1/Teaser_v3.png",
+    "imagePage": "https://arxiv.org/html/2504.14687v1",
+    "imageAlt": "Seurat author teaser lifting tracked 2D image points into smooth 3D point trajectories",
+    "imageType": "Method / depth output",
+    "credit": "Seurat authors; third-party figure rights retained",
+    "imageCredit": "Seurat authors; third-party figure rights retained"
+  },
+  {
+    "id": "geo4d",
+    "name": "Geo4D",
+    "summary": "Aligns point, disparity and ray predictions from a video diffusion model.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/geo4d-methods.webp",
+    "imageSource": "https://arxiv.org/html/2504.07961v1/teaser_v3.png",
+    "imagePage": "https://arxiv.org/html/2504.07961v1",
+    "imageAlt": "Geo4D author overview of RGB input, point / disparity / ray predictions and dynamic scene reconstruction",
+    "imageType": "Method / depth output",
+    "credit": "Geo4D authors; third-party figure rights retained",
+    "imageCredit": "Geo4D authors; third-party figure rights retained"
+  },
+  {
+    "id": "geometrycrafter",
+    "name": "GeometryCrafter",
+    "summary": "Diffuses temporally coherent camera point maps rather than encoding depth as RGB.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/geometrycrafter-methods.webp",
+    "imageSource": "https://arxiv.org/html/2504.01016v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2504.01016v1",
+    "imageAlt": "GeometryCrafter author teaser showing predicted video point maps, reconstructed scenes and derived depth applications",
+    "imageType": "Method / depth output",
+    "credit": "GeometryCrafter authors; third-party figure rights retained",
+    "imageCredit": "GeometryCrafter authors; third-party figure rights retained"
+  },
+  {
+    "id": "dynamic-point-maps",
+    "name": "Dynamic Point Maps",
+    "summary": "Extends point maps with a time reference to recover dynamic geometry and scene motion.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/dynamic-point-maps-methods.webp",
+    "imageSource": "https://arxiv.org/html/2503.16318v1/teaser_v3.png",
+    "imagePage": "https://arxiv.org/html/2503.16318v1",
+    "imageAlt": "Dynamic Point Maps author teaser showing time-referenced dynamic geometry and projected motion tracks",
+    "imageType": "Method / depth output",
+    "credit": "Dynamic Point Maps authors; third-party figure rights retained",
+    "imageCredit": "Dynamic Point Maps authors; third-party figure rights retained"
+  },
+  {
+    "id": "stereo4d",
+    "name": "Stereo4D",
+    "summary": "Mines world-consistent dynamic geometry from stereoscopic internet videos.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/stereo4d-methods.webp",
+    "imageSource": "https://arxiv.org/html/2412.09621v1/teaser_v5.png",
+    "imagePage": "https://arxiv.org/html/2412.09621v1",
+    "imageAlt": "Stereo4D author visualization of mined internet stereo scene geometry with colored long-term 3D motion trails",
+    "imageType": "Method / depth output",
+    "credit": "Stereo4D authors; third-party figure rights retained",
+    "imageCredit": "Stereo4D authors; third-party figure rights retained"
+  },
+  {
+    "id": "align3r",
+    "name": "Align3R",
+    "summary": "Aligns monocular depth priors across dynamic videos using learned point maps.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/align3r-methods.webp",
+    "imageSource": "https://arxiv.org/html/2412.03079v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2412.03079v1",
+    "imageAlt": "Align3R author teaser showing video input, aligned depth and dynamic point clouds with camera trajectories",
+    "imageType": "Method / depth output",
+    "credit": "Align3R authors; third-party figure rights retained",
+    "imageCredit": "Align3R authors; third-party figure rights retained"
+  },
+  {
+    "id": "buffer-anytime",
+    "name": "Buffer Anytime",
+    "summary": "Transfers image depth and normal priors to video without paired video-geometry labels.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/buffer-anytime-methods.webp",
+    "imageSource": "https://arxiv.org/html/2411.17249v1/training.png",
+    "imagePage": "https://arxiv.org/html/2411.17249v1",
+    "imageAlt": "Buffer Anytime author training diagram with optical-flow temporal constraints, a fixed image teacher and the video depth / normal model",
+    "imageType": "Method / depth output",
+    "credit": "Buffer Anytime authors; third-party figure rights retained",
+    "imageCredit": "Buffer Anytime authors; third-party figure rights retained"
+  },
+  {
+    "id": "depth-any-video",
+    "name": "Depth Any Video",
+    "summary": "Uses synthetic game videos and video-diffusion priors for temporally coherent depth.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/depth-any-video-methods.webp",
+    "imageSource": "https://arxiv.org/html/2410.10815v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2410.10815v1",
+    "imageAlt": "Depth Any Video author teaser showing RGB scenes, estimated image depth and temporally consistent video depth",
+    "imageType": "Method / depth output",
+    "credit": "Depth Any Video authors; third-party figure rights retained",
+    "imageCredit": "Depth Any Video authors; third-party figure rights retained"
+  },
+  {
+    "id": "futuredepth",
+    "name": "FutureDepth",
+    "summary": "Learns future feature prediction and masked reconstruction to improve multi-frame depth.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/futuredepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2403.12953v1/figures/main-fig.jpg",
+    "imagePage": "https://arxiv.org/html/2403.12953v1",
+    "imageAlt": "FutureDepth author architecture of feature prediction / reconstruction, multi-frame attention and refined depth outputs",
+    "imageType": "Method / depth output",
+    "credit": "FutureDepth authors; third-party figure rights retained",
+    "imageCredit": "FutureDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "mamo",
+    "name": "MAMo",
+    "summary": "Adds visual and displacement-token memory to single-image depth networks.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/mamo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2307.14336v1/figures/motivation.jpg",
+    "imagePage": "https://arxiv.org/html/2307.14336v1",
+    "imageAlt": "MAMo author motivation diagram contrasting single-image, cost-volume and memory-attention video depth inference",
+    "imageType": "Method / depth output",
+    "credit": "MAMo authors; third-party figure rights retained",
+    "imageCredit": "MAMo authors; third-party figure rights retained"
+  },
+  {
+    "id": "nvds",
+    "name": "NVDS / NVDS+",
+    "summary": "Stabilizes predictions from existing single-image depth models without retraining each source model.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/nvds-methods.webp",
+    "imageSource": "https://arxiv.org/html/2307.08695v1/pipeline_0307.png",
+    "imagePage": "https://arxiv.org/html/2307.08695v1",
+    "imageAlt": "NVDS author stabilizer overview showing monocular input predictions, stabilized video depth and temporal fusion modules",
+    "imageType": "Method / depth output",
+    "credit": "NVDS / NVDS+ authors; third-party figure rights retained",
+    "imageCredit": "NVDS / NVDS+ authors; third-party figure rights retained"
+  },
+  {
+    "id": "simplerecon",
+    "name": "SimpleRecon",
+    "summary": "Pairs a 2D multi-view depth network with conventional TSDF fusion.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/simplerecon-methods.webp",
+    "imageSource": "https://nianticlabs.github.io/simplerecon/resources/teaser.jpg",
+    "imagePage": "https://nianticlabs.github.io/simplerecon/",
+    "imageAlt": "SimpleRecon official labeled teaser comparing input RGB, authors’ depth and fused mesh with baselines and reference geometry",
+    "imageType": "Method / depth output",
+    "credit": "SimpleRecon authors; third-party figure rights retained",
+    "imageCredit": "SimpleRecon authors; third-party figure rights retained"
+  },
+  {
+    "id": "dynamic-video-depth",
+    "name": "Dynamic Video Depth",
+    "summary": "Optimizes depth and scene flow together to keep moving objects coherent in 3D.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/dynamic-video-depth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2108.01166v1/teaser_v3.png",
+    "imagePage": "https://arxiv.org/html/2108.01166v1",
+    "imageAlt": "Dynamic Video Depth author teaser showing moving-object RGB frames, reprojection and consistent predicted disparity",
+    "imageType": "Method / depth output",
+    "credit": "Dynamic Video Depth authors; third-party figure rights retained",
+    "imageCredit": "Dynamic Video Depth authors; third-party figure rights retained"
+  },
+  {
+    "id": "manydepth",
+    "name": "ManyDepth",
+    "summary": "Uses a temporal cost volume when helpful and ignores it for unreliable motion cues.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/manydepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2104.14540v1/teaser_4.png",
+    "imagePage": "https://arxiv.org/html/2104.14540v1",
+    "imageAlt": "ManyDepth author comparison showing one model’s single-frame and multi-frame depth predictions on the same street scene",
+    "imageType": "Method / depth output",
+    "credit": "ManyDepth authors; third-party figure rights retained",
+    "imageCredit": "ManyDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "robust-cvd",
+    "name": "Robust-CVD",
+    "summary": "Jointly optimizes poses and detailed depth using deformation splines and geometric filtering.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/robust-cvd-methods.webp",
+    "imageSource": "https://arxiv.org/html/2012.05901v1/figures/teaser.png",
+    "imagePage": "https://arxiv.org/html/2012.05901v1",
+    "imageAlt": "Robust-CVD author teaser of reconstructed handheld dynamic scenes with corresponding camera geometry",
+    "imageType": "Method / depth output",
+    "credit": "Robust-CVD authors; third-party figure rights retained",
+    "imageCredit": "Robust-CVD authors; third-party figure rights retained"
+  },
+  {
+    "id": "deepvideomvs",
+    "name": "DeepVideoMVS",
+    "summary": "Warps recurrent scene memory into each new camera view for online multi-view depth.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/deepvideomvs-methods.webp",
+    "imageSource": "https://arxiv.org/html/2012.02177v1/teaser_tsdf_horizontal.png",
+    "imagePage": "https://arxiv.org/html/2012.02177v1",
+    "imageAlt": "DeepVideoMVS labeled author comparison of reference, backbone-only and recurrent-fusion scene reconstructions",
+    "imageType": "Method / depth output",
+    "credit": "DeepVideoMVS authors; third-party figure rights retained",
+    "imageCredit": "DeepVideoMVS authors; third-party figure rights retained"
+  },
+  {
+    "id": "estdepth",
+    "name": "ESTDepth",
+    "summary": "Fuses epipolar spatial and temporal correlations for posed video depth.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/estdepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2011.13118v1/ter.png",
+    "imagePage": "https://arxiv.org/html/2011.13118v1",
+    "imageAlt": "ESTDepth author diagram comparing independent per-frame depth with joint epipolar spatio-temporal estimates",
+    "imageType": "Method / depth output",
+    "credit": "ESTDepth authors; third-party figure rights retained",
+    "imageCredit": "ESTDepth authors; third-party figure rights retained"
+  },
+  {
+    "id": "consistent-video-depth",
+    "name": "Consistent Video Depth",
+    "summary": "Fine-tunes a monocular depth prior to satisfy a particular video’s geometric constraints.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/consistent-video-depth-methods.webp",
+    "imageSource": "https://roxanneluo.github.io/Consistent-Video-Depth-Estimation/images/overview.png",
+    "imagePage": "https://roxanneluo.github.io/Consistent-Video-Depth-Estimation/",
+    "imageAlt": "Consistent Video Depth official overview of sampled RGB frames, estimated depth and per-video geometric optimization",
+    "imageType": "Method / depth output",
+    "credit": "Consistent Video Depth authors; third-party figure rights retained",
+    "imageCredit": "Consistent Video Depth authors; third-party figure rights retained"
+  },
+  {
+    "id": "deepv2d",
+    "name": "DeepV2D",
+    "summary": "Alternates differentiable multi-view depth inference and camera-motion refinement.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth / perception tool",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/deepv2d-methods.webp",
+    "imageSource": "https://arxiv.org/html/1812.04605v1/Pull.png",
+    "imagePage": "https://arxiv.org/html/1812.04605v1",
+    "imageAlt": "DeepV2D author overview of alternating differentiable stereo-depth and camera-motion modules",
+    "imageType": "Method / depth output",
+    "credit": "DeepV2D authors; third-party figure rights retained",
+    "imageCredit": "DeepV2D authors; third-party figure rights retained"
+  },
+  {
+    "id": "dex-fisheye",
+    "name": "DEX",
+    "summary": "Adapts frozen depth and open-vocabulary segmentation models to fisheye images through latent distortion extenders.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "DEX authors",
+    "image": "images/catalog/dex-fisheye-methods.webp",
+    "imageSource": "https://arxiv.org/html/2608.27860v1/eccv_figures/qual7.jpg",
+    "imagePage": "https://arxiv.org/abs/2608.27860",
+    "imageAlt": "Fisheye input images and 3D reconstructions comparing baseline models with the DEX-adapted model.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "DEX authors; original figure rights retained"
+  },
+  {
+    "id": "x-lens",
+    "name": "X-Lens",
+    "summary": "Predicts metric axial depth jointly across calibrated fisheye and pinhole cameras with a compact geometry-aware transformer.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "X-Lens authors",
+    "image": "images/catalog/x-lens-methods.webp",
+    "imageSource": "https://raw.githubusercontent.com/D-Robotics-AI-Lab/XLens/main/assets/images/teaser_cover.jpg",
+    "imagePage": "https://drobotics-xlens.github.io/",
+    "imageAlt": "X-Lens metric scene point clouds with fisheye and pinhole RGB inputs and predicted depth maps.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "X-Lens authors; original figure rights retained"
+  },
+  {
+    "id": "omnids",
+    "name": "OmniDS",
+    "summary": "Refines multi-fisheye inverse depth using dynamic context fusion and cross-camera consensus.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "OmniDS authors",
+    "image": "images/catalog/omnids-methods.webp",
+    "imageSource": "https://arxiv.org/html/2607.03038v1/figure/OmniDS4.png",
+    "imagePage": "https://parkchaesong.github.io/omnids/",
+    "imageAlt": "OmniDS four-fisheye inputs, dual-stream context encoder, iterative matching and inverse depth output.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "OmniDS authors; original figure rights retained"
+  },
+  {
+    "id": "pvdepth",
+    "name": "PVDepth",
+    "summary": "Adapts a video diffusion depth model to panoramic geometry and nonlinear temporal motion.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "PVDepth authors",
+    "image": "images/catalog/pvdepth-methods.webp",
+    "imageSource": "https://raw.githubusercontent.com/ChuanxinSong/PVDepth/main/asset/PVDepth_Poster.png",
+    "imagePage": "https://github.com/ChuanxinSong/PVDepth",
+    "imageAlt": "PVDepth panoramic video framework with sphere-aware noise initialization and cube-rectified temporal modeling.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "PVDepth authors; original figure rights retained"
+  },
+  {
+    "id": "depthmaster-unified",
+    "name": "DepthMaster",
+    "summary": "Unifies perspective and panoramic metric depth through overlapping perspective patches and correspondence consistency.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "DepthMaster authors",
+    "image": "images/catalog/depthmaster-unified-methods.webp",
+    "imageSource": "https://raw.githubusercontent.com/PolyU-VCLab/DepthMaster/main/assets/teaser.png",
+    "imagePage": "https://arxiv.org/abs/2606.12368",
+    "imageAlt": "DepthMaster unified perspective-patch pipeline with virtual camera priors and correspondence-consistency loss.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "DepthMaster authors; original figure rights retained"
+  },
+  {
+    "id": "sce-depth",
+    "name": "SCE-Depth",
+    "summary": "Combines a spherical compound-eye sensor model, HEALPix network and gradient-aware depth prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "SCE-Depth authors",
+    "image": "images/catalog/sce-depth-methods.webp",
+    "imageSource": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhu_SCE-Depth_A_Spherical_Compound_Eye_Framework_for_Wide_FOV_Depth_CVPR_2026_paper.pdf#page=1",
+    "imagePage": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhu_SCE-Depth_A_Spherical_Compound_Eye_Framework_for_Wide_FOV_Depth_CVPR_2026_paper.pdf",
+    "imageAlt": "SCE-Depth compound-eye camera, spherical image, gradient features and predicted spherical depth.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "SCE-Depth authors; original figure rights retained"
+  },
+  {
+    "id": "pager",
+    "name": "PaGeR",
+    "summary": "Adapts a multi-view geometry foundation model to predict panoramic depth, normals and sky.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "PaGeR authors",
+    "image": "images/catalog/pager-methods.webp",
+    "imageSource": "https://raw.githubusercontent.com/prs-eth/PaGeR/main/assets/teaser.png",
+    "imagePage": "https://pager360.github.io/",
+    "imageAlt": "PaGeR panoramic RGB inputs, predicted depth and normals, and reconstructed scene point clouds.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "PaGeR authors; original figure rights retained"
+  },
+  {
+    "id": "unidac",
+    "name": "UniDAC",
+    "summary": "Separates relative depth and spatially varying scale to transfer perspective-trained depth across camera types.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "UniDAC authors",
+    "image": "images/catalog/unidac-methods.webp",
+    "imageSource": "https://arxiv.org/html/2603.27105v2/figures/overview/overview_new4.png",
+    "imagePage": "https://arxiv.org/abs/2603.27105",
+    "imageAlt": "UniDAC camera-aware depth network with relative depth, dense scale estimation and metric depth outputs.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "UniDAC authors; original figure rights retained"
+  },
+  {
+    "id": "vggt-360",
+    "name": "VGGT-360",
+    "summary": "Uses training-free multi-view geometry reasoning over projected panorama views to produce coherent 360° depth.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "VGGT-360 authors",
+    "image": "images/catalog/vggt-360-methods.webp",
+    "imageSource": "https://arxiv.org/html/2603.18943v2/Fig2_new.png",
+    "imagePage": "https://arxiv.org/abs/2603.18943",
+    "imageAlt": "VGGT-360 adaptive perspective sampling, geometry-aware attention and panorama depth reconstruction.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "VGGT-360 authors; original figure rights retained"
+  },
+  {
+    "id": "reper360",
+    "name": "RePer-360",
+    "summary": "Transfers frozen perspective priors to panoramas through geometry-aligned self-modulation.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "RePer-360 authors",
+    "image": "images/catalog/reper360-methods.webp",
+    "imageSource": "https://arxiv.org/html/2603.05999v2/framework.png",
+    "imagePage": "https://arxiv.org/abs/2603.05999",
+    "imageAlt": "RePer-360 frozen panorama backbone with geometry-aligned guidance and self-conditioned modulation.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "RePer-360 authors; original figure rights retained"
+  },
+  {
+    "id": "depth-anything-360",
+    "name": "DA360",
+    "summary": "Adapts Depth Anything V2 to scale-invariant panorama disparity with circular seam handling.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "DA360 authors",
+    "image": "images/catalog/depth-anything-360-methods.webp",
+    "imageSource": "https://raw.githubusercontent.com/antigravity-tech/DA360/main/assets/teaser.jpg",
+    "imagePage": "https://arxiv.org/abs/2512.22819",
+    "imageAlt": "DA360 panorama inputs and reconstructed point clouds compared with depth baselines.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "DA360 authors; original figure rights retained"
+  },
+  {
+    "id": "st2360d",
+    "name": "ST²360D",
+    "summary": "Treats perspective patches from one panorama as a virtual video to reuse temporal depth consistency.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "ST²360D authors",
+    "image": "images/catalog/st2360d-methods.webp",
+    "imageSource": "https://caozidong.github.io/ST2360D_Depth/image/teaser.png",
+    "imagePage": "https://caozidong.github.io/ST2360D_Depth/",
+    "imageAlt": "ST²360D converting one panorama to a virtual video sequence and merging video-depth predictions.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "ST²360D authors; original figure rights retained"
+  },
+  {
+    "id": "mdp-omni",
+    "name": "MDP-Omni",
+    "summary": "Uses multimodal depth-prior sampling to preserve depth boundaries in omnidirectional stereo.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "MDP-Omni authors",
+    "image": "images/catalog/mdp-omni-methods.webp",
+    "imageSource": "https://openaccess.thecvf.com/content/ICCV2025/papers/Son_MDP-Omni_Parameter-free_Multimodal_Depth_Prior-based_Sampling_for_Omnidirectional_Stereo_Matching_ICCV_2025_paper.pdf#page=4",
+    "imagePage": "https://openaccess.thecvf.com/content/ICCV2025/papers/Son_MDP-Omni_Parameter-free_Multimodal_Depth_Prior-based_Sampling_for_Omnidirectional_Stereo_Matching_ICCV_2025_paper.pdf",
+    "imageAlt": "MDP-Omni multi-fisheye spherical sweeping, cascade depth-prior sampling and azimuth volume fusion.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "MDP-Omni authors; original figure rights retained"
+  },
+  {
+    "id": "calibration-tokens-depth",
+    "name": "Calibration Tokens",
+    "summary": "Uses learnable tokens to align fisheye features with a frozen perspective depth model.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Calibration Tokens authors",
+    "image": "images/catalog/calibration-tokens-depth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2508.04928v5/calibration_token_inference.png",
+    "imagePage": "https://arxiv.org/abs/2508.04928",
+    "imageAlt": "Calibration Tokens adapting a perspective depth transformer to native fisheye images.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "Calibration Tokens authors; original figure rights retained"
+  },
+  {
+    "id": "dreamcube-depth",
+    "name": "DreamCube",
+    "summary": "Synchronizes cube-face diffusion operations to improve panoramic depth consistency and RGB-D generation.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "DreamCube authors",
+    "image": "images/catalog/dreamcube-depth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2506.17206v1/sync_depth.png",
+    "imagePage": "https://arxiv.org/abs/2506.17206",
+    "imageAlt": "DreamCube panoramic depth comparison showing seam-consistent Marigold outputs with multi-plane synchronization.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "DreamCube authors; original figure rights retained"
+  },
+  {
+    "id": "pgfuse",
+    "name": "PGFuse",
+    "summary": "Adds latitude-aware PanoGabor filters to fuse panorama representations without reintroducing distortion.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "PGFuse authors",
+    "image": "images/catalog/pgfuse-methods.webp",
+    "imageSource": "https://arxiv.org/html/2408.16227v5/PGFuse.png",
+    "imagePage": "https://arxiv.org/abs/2408.16227",
+    "imageAlt": "PGFuse panorama depth architecture with latitude-aware PanoGabor filtering and spherical gradients.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "PGFuse authors; original figure rights retained"
+  },
+  {
+    "id": "sgformer-depth",
+    "name": "SGFormer",
+    "summary": "Uses spherical geometric priors and global context to improve ERP depth decoding.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "SGFormer authors",
+    "image": "images/catalog/sgformer-depth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2404.14979v3/Genaral_network_V11_nokuangf3.png",
+    "imagePage": "https://arxiv.org/abs/2404.14979",
+    "imageAlt": "SGFormer global positional context and spherical-prior depth decoder operating on panoramic images.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "SGFormer authors; original figure rights retained"
+  },
+  {
+    "id": "sgde360",
+    "name": "SDGE / SGDE",
+    "summary": "Uses stereo overlap priors to guide full-view depth in sparsely overlapping surround camera rigs.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "SDGE / SGDE authors",
+    "image": "images/catalog/sgde360-methods.webp",
+    "imageSource": "https://arxiv.org/html/2402.11791v4/architecture_fisheye.png",
+    "imagePage": "https://arxiv.org/abs/2402.11791",
+    "imageAlt": "SDGE surround-camera self-calibration, virtual pinhole stereo and overlap depth-prior learning.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "SDGE / SGDE authors; original figure rights retained"
+  },
+  {
+    "id": "romnistereo",
+    "name": "RomniStereo",
+    "summary": "Applies RAFT-style recurrent updates to spherical-sweep omnidirectional stereo.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "RomniStereo authors",
+    "image": "images/catalog/romnistereo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2401.04345v2/camera_rig.png",
+    "imagePage": "https://arxiv.org/abs/2401.04345",
+    "imageAlt": "RomniStereo four-fisheye camera rig, input images and omnidirectional point-cloud reconstruction.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "RomniStereo authors; original figure rights retained"
+  },
+  {
+    "id": "heal-swin-depth",
+    "name": "HEAL-SWIN",
+    "summary": "Transfers shifted-window transformers to HEALPix for distortion-aware fisheye depth and segmentation.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "HEAL-SWIN authors",
+    "image": "images/catalog/heal-swin-depth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2307.07313v2/fig_vertical_less_patches_sidewalk_hampus.png",
+    "imagePage": "https://arxiv.org/abs/2307.07313",
+    "imageAlt": "HEAL-SWIN spherical HEALPix patches and windows compared with planar shifted-window processing.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "HEAL-SWIN authors; original figure rights retained"
+  },
+  {
+    "id": "hrdfuse",
+    "name": "HRDFuse",
+    "summary": "Combines holistic panorama and regional tangent-patch depth distributions.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "HRDFuse authors",
+    "image": "images/catalog/hrdfuse-methods.webp",
+    "imageSource": "https://arxiv.org/html/2303.11616v3/coverfig.png",
+    "imagePage": "https://arxiv.org/abs/2303.11616",
+    "imageAlt": "HRDFuse holistic panorama and regional tangent depth distributions with labeled output comparisons.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "HRDFuse authors; original figure rights retained"
+  },
+  {
+    "id": "fredsnet",
+    "name": "FreDSNet",
+    "summary": "Jointly estimates panoramic depth and semantics using fast Fourier convolutions.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "FreDSNet authors",
+    "image": "images/catalog/fredsnet-methods.webp",
+    "imageSource": "https://arxiv.org/html/2210.01595v2/Arch-Model.png",
+    "imagePage": "https://arxiv.org/abs/2210.01595",
+    "imageAlt": "FreDSNet Fourier-aware shared encoder and joint panoramic depth and semantic decoders.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "FreDSNet authors; original figure rights retained"
+  },
+  {
+    "id": "mode360",
+    "name": "MODE",
+    "summary": "Fuses omnidirectional stereo pairs to recover depth robustly under lens soiling and glare.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "MODE authors",
+    "image": "images/catalog/mode360-methods.webp",
+    "imageSource": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136930192.pdf#page=2",
+    "imagePage": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136930192.pdf",
+    "imageAlt": "MODE physical multi-camera panorama rig, stereo input views and omnidirectional depth reconstruction.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "MODE authors; original figure rights retained"
+  },
+  {
+    "id": "spheredepth",
+    "name": "SphereDepth",
+    "summary": "Predicts panorama depth directly on a triangular spherical mesh to avoid projection discontinuities.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "SphereDepth authors",
+    "image": "images/catalog/spheredepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2208.13714v3/fig/pipeline.PNG",
+    "imagePage": "https://arxiv.org/abs/2208.13714",
+    "imageAlt": "SphereDepth spherical mesh depth network with mesh convolution, pooling and unpooling.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "SphereDepth authors; original figure rights retained"
+  },
+  {
+    "id": "glpanodepth",
+    "name": "GLPanoDepth",
+    "summary": "Fuses global cubemap-transformer context with local ERP convolution features for panorama depth.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "GLPanoDepth authors",
+    "image": "images/catalog/glpanodepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2202.02796v2/MyNetV2.png",
+    "imagePage": "https://arxiv.org/abs/2202.02796",
+    "imageAlt": "GLPanoDepth cubemap transformer and ERP convolution branches with gated feature fusion.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "GLPanoDepth authors; original figure rights retained"
+  },
+  {
+    "id": "acdnet",
+    "name": "ACDNet",
+    "summary": "Adapts dilated convolution receptive fields to panorama distortion and global indoor context.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "ACDNet authors",
+    "image": "images/catalog/acdnet-methods.webp",
+    "imageSource": "https://arxiv.org/html/2112.14440v2/teaser.png",
+    "imagePage": "https://arxiv.org/abs/2112.14440",
+    "imageAlt": "ACDNet labeled panorama-depth and point-cloud results compared with earlier indoor depth models.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "ACDNet authors; original figure rights retained"
+  },
+  {
+    "id": "pano3d",
+    "name": "Pano3D",
+    "summary": "Provides spherical depth benchmarks and baselines emphasizing boundaries, smoothness and dataset bias.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Pano3D authors",
+    "image": "images/catalog/pano3d-methods.webp",
+    "imageSource": "https://arxiv.org/html/2109.02749v1/Figures/Teaser_updt_2.png",
+    "imagePage": "https://arxiv.org/abs/2109.02749",
+    "imageAlt": "Pano3D scene depth and normal examples illustrating boundary preservation and depth smoothness.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "Pano3D authors; original figure rights retained"
+  },
+  {
+    "id": "slicenet",
+    "name": "SliceNet",
+    "summary": "Compresses indoor panoramas into vertical slices to preserve long-range geometry and high-resolution details.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "SliceNet authors",
+    "image": "images/catalog/slicenet-methods.webp",
+    "imageSource": "https://openaccess.thecvf.com/content/CVPR2021/papers/Pintore_SliceNet_Deep_Dense_Depth_Estimation_From_a_Single_Indoor_Panorama_CVPR_2021_paper.pdf#page=3",
+    "imagePage": "https://openaccess.thecvf.com/content/CVPR2021/papers/Pintore_SliceNet_Deep_Dense_Depth_Estimation_From_a_Single_Indoor_Panorama_CVPR_2021_paper.pdf",
+    "imageAlt": "SliceNet vertical panorama slice representation, recurrent context and dense-depth decoding architecture.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "SliceNet authors; original figure rights retained"
+  },
+  {
+    "id": "svdistnet",
+    "name": "SVDistNet",
+    "summary": "Conditions fisheye distance prediction on camera geometry to share one model across surround-view lenses.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "SVDistNet authors",
+    "image": "images/catalog/svdistnet-methods.webp",
+    "imageSource": "https://arxiv.org/html/2104.04420v1/main_fig.png",
+    "imagePage": "https://arxiv.org/abs/2104.04420",
+    "imageAlt": "SVDistNet distance predictions using a shared model across multiple fisheye camera viewpoints.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "SVDistNet authors; original figure rights retained"
+  },
+  {
+    "id": "omnidet",
+    "name": "OmniDet",
+    "summary": "Shares fisheye features across distance, ego-motion, semantics, motion, object and lens-soiling prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "OmniDet authors",
+    "image": "images/catalog/omnidet-methods.webp",
+    "imageSource": "https://arxiv.org/html/2102.07448v3/mtl_framework.png",
+    "imagePage": "https://arxiv.org/abs/2102.07448",
+    "imageAlt": "OmniDet shared fisheye encoder with distance, motion, semantics, detection and lens-soiling prediction tasks.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "OmniDet authors; original figure rights retained"
+  },
+  {
+    "id": "hohonet",
+    "name": "HoHoNet",
+    "summary": "Uses latent horizontal features for dense panorama depth, semantics and room layout.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "HoHoNet authors",
+    "image": "images/catalog/hohonet-methods.webp",
+    "imageSource": "https://arxiv.org/html/2011.11498v3/teaser_v2.png",
+    "imagePage": "https://arxiv.org/abs/2011.11498",
+    "imageAlt": "HoHoNet latent horizontal feature representation for panorama depth, layout and semantic segmentation.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "HoHoNet authors; original figure rights retained"
+  },
+  {
+    "id": "syndistnet",
+    "name": "SynDistNet",
+    "summary": "Jointly learns fisheye distance and semantics to reduce dynamic-object artifacts.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "SynDistNet authors",
+    "image": "images/catalog/syndistnet-methods.webp",
+    "imageSource": "https://arxiv.org/html/2008.04017v3/main_fig_bold.png",
+    "imagePage": "https://arxiv.org/abs/2008.04017",
+    "imageAlt": "SynDistNet jointly predicting fisheye distance and semantic segmentation with shared features.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "SynDistNet authors; original figure rights retained"
+  },
+  {
+    "id": "crownconv360depth",
+    "name": "CrownConv / IcoSweepNet",
+    "summary": "Uses an origami-crown icosahedral representation for multi-fisheye omnidirectional depth.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "CrownConv authors",
+    "image": "images/catalog/crownconv360depth-methods.webp",
+    "imageSource": "https://arxiv.org/html/2007.06891v1/overview.png",
+    "imagePage": "https://arxiv.org/abs/2007.06891",
+    "imageAlt": "CrownConv fisheye-to-icosahedron features, spherical sweeping and omnidirectional depth regression.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "CrownConv authors; original figure rights retained"
+  },
+  {
+    "id": "unrectdepthnet",
+    "name": "UnRectDepthNet",
+    "summary": "Generalizes self-supervised depth and distance learning to unrectified camera models.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "UnRectDepthNet authors",
+    "image": "images/catalog/unrectdepthnet-methods.webp",
+    "imageSource": "https://arxiv.org/html/2007.06676v4/method.png",
+    "imagePage": "https://arxiv.org/abs/2007.06676",
+    "imageAlt": "UnRectDepthNet generic camera-model training pipeline for distorted RGB depth and motion recovery.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "UnRectDepthNet authors; original figure rights retained"
+  },
+  {
+    "id": "360sd-net",
+    "name": "360SD-Net",
+    "summary": "Learns spherical disparity with a distortion-aware cost volume for top-bottom panorama stereo.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "360SD-Net authors",
+    "image": "images/catalog/360sd-net-methods.webp",
+    "imageSource": "https://arxiv.org/pdf/1911.04460#page=3",
+    "imagePage": "https://arxiv.org/abs/1911.04460",
+    "imageAlt": "360SD-Net top-bottom panorama stereo feature extraction and learnable spherical disparity cost volume.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "360SD-Net authors; original figure rights retained"
+  },
+  {
+    "id": "fisheyedistancenet",
+    "name": "FisheyeDistanceNet",
+    "summary": "Learns scale-aware ray distance from raw fisheye video without rectification.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "FisheyeDistanceNet authors",
+    "image": "images/catalog/fisheyedistancenet-methods.webp",
+    "imageSource": "https://arxiv.org/html/1910.04076v4/method_final.png",
+    "imagePage": "https://arxiv.org/abs/1910.04076",
+    "imageAlt": "FisheyeDistanceNet self-supervised video reconstruction, distance networks, masks and vehicle odometry.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "FisheyeDistanceNet authors; original figure rights retained"
+  },
+  {
+    "id": "omnidepth",
+    "name": "OmniDepth",
+    "summary": "Establishes spherical-panorama depth learning with distortion-aware networks and rendered 3D training data.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "OmniDepth authors",
+    "image": "images/catalog/omnidepth-methods.webp",
+    "imageSource": "https://arxiv.org/html/1807.09620v1/figures/new/architectures/RectDilatedNet.jpg",
+    "imagePage": "https://arxiv.org/abs/1807.09620",
+    "imageAlt": "OmniDepth RectNet rectangular and dilated convolution architecture for spherical panorama depth.",
+    "imageType": "Depth / geometry method figure",
+    "imageCredit": "OmniDepth authors; original figure rights retained"
+  },
+  {
+    "id": "mvsnet",
+    "name": "MVSNet",
+    "summary": "Predicts reference-view depth by warping calibrated image features into a camera-frustum cost volume.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Yao Yao , Zixin Luo , Shiwei Li , Tian Fang , Long Quan",
+    "image": "images/catalog/mvsnet-methods.webp",
+    "imageSource": "https://arxiv.org/html/1804.02505v2/distribution.png",
+    "imagePage": "https://arxiv.org/html/1804.02505",
+    "imageAlt": "MVSNet author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Yao Yao , Zixin Luo , Shiwei Li , Tian Fang , Long Quan; original rights retained"
+  },
+  {
+    "id": "r-mvsnet",
+    "name": "R-MVSNet",
+    "summary": "Regularizes depth hypotheses recurrently to reduce memory use in high-resolution multi-view stereo.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Yao Yao , Zixin Luo , Shiwei Li , Tianwei Shen , Tian Fang , Long Quan",
+    "image": "images/catalog/r-mvsnet-methods.webp",
+    "imageSource": "https://arxiv.org/html/1902.10556v1/pipeline.png",
+    "imagePage": "https://arxiv.org/html/1902.10556",
+    "imageAlt": "R-MVSNet author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Yao Yao , Zixin Luo , Shiwei Li , Tianwei Shen , Tian Fang , Long Quan; original rights retained"
+  },
+  {
+    "id": "cas-mvsnet",
+    "name": "CasMVSNet",
+    "summary": "Uses progressively narrower cost volumes to estimate high-resolution stereo and multi-view depth.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Xiaodong Gu , Zhiwen Fan , Zuozhuo Dai , Siyu Zhu , Feitong Tan , Ping Tan",
+    "image": "images/catalog/cas-mvsnet-methods.webp",
+    "imageSource": "https://arxiv.org/html/1912.06378v3/imgs/network/arch.jpg",
+    "imagePage": "https://arxiv.org/html/1912.06378",
+    "imageAlt": "CasMVSNet author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Xiaodong Gu , Zhiwen Fan , Zuozhuo Dai , Siyu Zhu , Feitong Tan , Ping Tan; original rights retained"
+  },
+  {
+    "id": "patchmatchnet",
+    "name": "PatchmatchNet",
+    "summary": "Learns adaptive depth-hypothesis propagation and evaluation in a coarse-to-fine PatchMatch pipeline.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Fangjinhua Wang , Silvano Galliani , Christoph Vogel , Pablo Speciale , Marc Pollefeys",
+    "image": "images/catalog/patchmatchnet-methods.webp",
+    "imageSource": "https://arxiv.org/html/2012.01411v1/figures/overall_structure_small_1.jpg",
+    "imagePage": "https://arxiv.org/html/2012.01411",
+    "imageAlt": "PatchmatchNet author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Fangjinhua Wang , Silvano Galliani , Christoph Vogel , Pablo Speciale , Marc Pollefeys; original rights retained"
+  },
+  {
+    "id": "itermvs",
+    "name": "IterMVS",
+    "summary": "Encodes and refines per-pixel depth probabilities in a recurrent hidden state for efficient multi-view stereo.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Fangjinhua Wang , Silvano Galliani , Christoph Vogel , Marc Pollefeys",
+    "image": "images/catalog/itermvs-methods.webp",
+    "imageSource": "https://arxiv.org/html/2112.05126v1/images/pipeline8.jpg",
+    "imagePage": "https://arxiv.org/html/2112.05126",
+    "imageAlt": "IterMVS author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Fangjinhua Wang , Silvano Galliani , Christoph Vogel , Marc Pollefeys; original rights retained"
+  },
+  {
+    "id": "unimvsnet",
+    "name": "UniMVSNet",
+    "summary": "Unifies classification and regression of depth hypotheses using an adaptive focal objective.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Rui Peng , Rongjie Wang , Zhenyu Wang , Yawen Lai , Ronggang Wang",
+    "image": "images/catalog/unimvsnet-methods.webp",
+    "imageSource": "https://arxiv.org/html/2201.01501v3/dtu_depth_point.png",
+    "imagePage": "https://arxiv.org/html/2201.01501",
+    "imageAlt": "UniMVSNet author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Rui Peng , Rongjie Wang , Zhenyu Wang , Yawen Lai , Ronggang Wang; original rights retained"
+  },
+  {
+    "id": "mvsformer",
+    "name": "MVSFormer",
+    "summary": "Combines pretrained vision-transformer features with temperature-based multi-view depth prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Chenjie Cao , Xinlin Ren , Yanwei Fu",
+    "image": "images/catalog/mvsformer-methods.webp",
+    "imageSource": "https://arxiv.org/html/2208.02541v3/teaser_v2.png",
+    "imagePage": "https://arxiv.org/html/2208.02541",
+    "imageAlt": "MVSFormer author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Chenjie Cao , Xinlin Ren , Yanwei Fu; original rights retained"
+  },
+  {
+    "id": "mvsformer-plus-plus",
+    "name": "MVSFormer++",
+    "summary": "Improves transformer feature extraction and cost-volume regularization for calibrated multi-view depth.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Chenjie Cao , Xinlin Ren , Yanwei Fu",
+    "image": "images/catalog/mvsformer-plus-plus-methods.webp",
+    "imageSource": "https://arxiv.org/html/2401.11673v1/overview.png",
+    "imagePage": "https://arxiv.org/html/2401.11673",
+    "imageAlt": "MVSFormer++ author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Chenjie Cao , Xinlin Ren , Yanwei Fu; original rights retained"
+  },
+  {
+    "id": "geomvsnet",
+    "name": "GeoMVSNet",
+    "summary": "Feeds geometric structure back into multi-stage depth estimation and geometry-aware training.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Zhe Zhang, Rui Peng, Yuxi Hu and Ronggang Wang",
+    "image": "images/catalog/geomvsnet-methods.webp",
+    "imageSource": "https://images.ctfassets.net/odsfb7g0v9wp/4P9kYNSWaDlWQawHOxH0c/cee7cb84f33db49513675e2f44907409/GeoMVSNet.png",
+    "imagePage": "https://www.doublez.site/research/",
+    "imageAlt": "GeoMVSNet architecture with coarse-to-fine geometric fusion, depth hypotheses and geometry-aware losses",
+    "imageType": "Depth / method output",
+    "imageCredit": "Zhe Zhang, Rui Peng, Yuxi Hu and Ronggang Wang; original rights retained"
+  },
+  {
+    "id": "mvsanywhere",
+    "name": "MVSAnywhere",
+    "summary": "Combines monocular priors and an adaptive multi-view cost volume for cross-domain depth estimation.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Sergio Izquierdo , Mohamed Sayed , Michael Firman , Guillermo Garcia-Hernando , Daniyar Turmukhambetov , Javier Civera , Oisin Mac Aodha , Gabriel Brostow , Jamie Watson",
+    "image": "images/catalog/mvsanywhere-methods.webp",
+    "imageSource": "https://arxiv.org/html/2503.22430v1/teaser2.png",
+    "imagePage": "https://arxiv.org/html/2503.22430",
+    "imageAlt": "MVSAnywhere author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Sergio Izquierdo , Mohamed Sayed , Michael Firman , Guillermo Garcia-Hernando , Daniyar Turmukhambetov , Javier Civera , Oisin Mac Aodha , Gabriel Brostow , Jamie Watson; original rights retained"
+  },
+  {
+    "id": "depthsplat",
+    "name": "DepthSplat",
+    "summary": "Connects monocular priors, multi-view matching and Gaussian rendering to improve depth prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Haofei Xu , Songyou Peng , Fangjinhua Wang , Hermann Blum , Daniel Barath , Andreas Geiger , Marc Pollefeys",
+    "image": "images/catalog/depthsplat-methods.webp",
+    "imageSource": "https://arxiv.org/html/2410.13862v3/pipeline.png",
+    "imagePage": "https://arxiv.org/html/2410.13862",
+    "imageAlt": "DepthSplat author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Haofei Xu , Songyou Peng , Fangjinhua Wang , Hermann Blum , Daniel Barath , Andreas Geiger , Marc Pollefeys; original rights retained"
+  },
+  {
+    "id": "doubletake",
+    "name": "DoubleTake",
+    "summary": "Uses rendered depth and confidence from its accumulated mesh to improve subsequent multi-view estimates.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Mohamed Sayed , Filippo Aleotti , Jamie Watson , Zawar Qureshi , Guillermo Garcia-Hernando , Gabriel Brostow , Sara Vicente , Michael Firman",
+    "image": "images/catalog/doubletake-methods.webp",
+    "imageSource": "https://arxiv.org/html/2406.18387v2/teaser.png",
+    "imagePage": "https://arxiv.org/html/2406.18387",
+    "imageAlt": "DoubleTake author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Mohamed Sayed , Filippo Aleotti , Jamie Watson , Zawar Qureshi , Guillermo Garcia-Hernando , Gabriel Brostow , Sara Vicente , Michael Firman; original rights retained"
+  },
+  {
+    "id": "waft-stereo",
+    "name": "WAFT-Stereo",
+    "summary": "Replaces a stereo cost volume with iterative feature warping for efficient correspondence estimation.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Yihan Wang , Jia Deng",
+    "image": "images/catalog/waft-stereo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2603.24836v3/sim2real-vis.png",
+    "imagePage": "https://arxiv.org/html/2603.24836",
+    "imageAlt": "WAFT-Stereo author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Yihan Wang , Jia Deng; original rights retained"
+  },
+  {
+    "id": "stereo-any-video",
+    "name": "Stereo Any Video",
+    "summary": "Combines monocular video priors with all-to-all stereo correlation for temporally stable disparity.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Junpeng Jing , Weixun Luo , Ye Mao , Krystian Mikolajczyk",
+    "image": "images/catalog/stereo-any-video-methods.webp",
+    "imageSource": "https://arxiv.org/html/2503.05549v3/framework.png",
+    "imagePage": "https://arxiv.org/html/2503.05549",
+    "imageAlt": "Stereo Any Video author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Junpeng Jing , Weixun Luo , Ye Mao , Krystian Mikolajczyk; original rights retained"
+  },
+  {
+    "id": "stereo-transformer",
+    "name": "STTR",
+    "summary": "Treats stereo correspondence as sequence matching with attention, uniqueness and occlusion reasoning.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Zhaoshuo Li , Xingtong Liu , Nathan Drenkow , Andy Ding , Francis X. Creighton , Russell H. Taylor , Mathias Unberath",
+    "image": "images/catalog/stereo-transformer-methods.webp",
+    "imageSource": "https://arxiv.org/html/2011.02910v4/img/network_overview.PNG",
+    "imagePage": "https://arxiv.org/html/2011.02910",
+    "imageAlt": "STTR author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Zhaoshuo Li , Xingtong Liu , Nathan Drenkow , Andy Ding , Francis X. Creighton , Russell H. Taylor , Mathias Unberath; original rights retained"
+  },
+  {
+    "id": "dynamic-stereo",
+    "name": "DynamicStereo",
+    "summary": "Uses spatial, stereo and temporal attention to estimate consistent disparity across dynamic stereo videos.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Nikita Karaev , Ignacio Rocco , Benjamin Graham , Natalia Neverova , Andrea Vedaldi , Christian Rupprecht",
+    "image": "images/catalog/dynamic-stereo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2305.02296v1/architecture_diagram_.png",
+    "imagePage": "https://arxiv.org/html/2305.02296",
+    "imageAlt": "DynamicStereo author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Nikita Karaev , Ignacio Rocco , Benjamin Graham , Natalia Neverova , Andrea Vedaldi , Christian Rupprecht; original rights retained"
+  },
+  {
+    "id": "leastereo",
+    "name": "LEAStereo",
+    "summary": "Searches feature and matching architectures jointly to balance stereo accuracy and computation.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Xuelian Cheng , Yiran Zhong , Mehrtash Harandi , Yuchao Dai , Xiaojun Chang , Tom Drummond , Hongdong Li , Zongyuan Ge",
+    "image": "images/catalog/leastereo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2010.13501v1/LEAStereo.png",
+    "imagePage": "https://arxiv.org/html/2010.13501",
+    "imageAlt": "LEAStereo author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Xuelian Cheng , Yiran Zhong , Mehrtash Harandi , Yuchao Dai , Xiaojun Chang , Tom Drummond , Hongdong Li , Zongyuan Ge; original rights retained"
+  },
+  {
+    "id": "lite-any-stereo",
+    "name": "Lite Any Stereo",
+    "summary": "Uses a compact stereo architecture and staged training for efficient zero-shot correspondence prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Junpeng Jing , Weixun Luo , Ye Mao , Krystian Mikolajczyk",
+    "image": "images/catalog/lite-any-stereo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2511.16555v3/zeroshot.png",
+    "imagePage": "https://arxiv.org/html/2511.16555",
+    "imageAlt": "Lite Any Stereo author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Junpeng Jing , Weixun Luo , Ye Mao , Krystian Mikolajczyk; original rights retained"
+  },
+  {
+    "id": "lite-any-stereo-v2",
+    "name": "Lite Any Stereo V2",
+    "summary": "Uses latency-oriented 2D cost aggregation and filtered pseudo-label training for efficient stereo generalization.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Junpeng Jing , Ronglai Zuo , Zhelun Shen , Shangchen Zhou , Rolandos Alexandros Potamias , Stefanos Zafeiriou , Krystian Mikolajczyk , Jiankang Deng",
+    "image": "images/catalog/lite-any-stereo-v2-methods.webp",
+    "imageSource": "https://arxiv.org/html/2606.24457v1/figure2.png",
+    "imagePage": "https://arxiv.org/html/2606.24457",
+    "imageAlt": "Lite Any Stereo V2 author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Junpeng Jing , Ronglai Zuo , Zhelun Shen , Shangchen Zhou , Rolandos Alexandros Potamias , Stefanos Zafeiriou , Krystian Mikolajczyk , Jiankang Deng; original rights retained"
+  },
+  {
+    "id": "d-fuse",
+    "name": "D-FUSE",
+    "summary": "Aligns monocular priors with stereo disparity using local ordering and pixel-wise registration.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Chengtang Yao , Lidong Yu , Zhidan Liu , Jiaxi Zeng , Yuwei Wu , Yunde Jia",
+    "image": "images/catalog/d-fuse-methods.webp",
+    "imageSource": "https://arxiv.org/html/2505.14414v2/fig1-all.png",
+    "imagePage": "https://arxiv.org/html/2505.14414",
+    "imageAlt": "D-FUSE author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Chengtang Yao , Lidong Yu , Zhidan Liu , Jiaxi Zeng , Yuwei Wu , Yunde Jia; original rights retained"
+  },
+  {
+    "id": "bida-stereo",
+    "name": "BiDA-Stereo",
+    "summary": "Aligns stereo-video features bidirectionally and aggregates temporal information for consistent disparity.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Junpeng Jing , Ye Mao , Krystian Mikolajczyk",
+    "image": "images/catalog/bida-stereo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2403.10755v1/framework.png",
+    "imagePage": "https://arxiv.org/html/2403.10755",
+    "imageAlt": "BiDA-Stereo author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Junpeng Jing , Ye Mao , Krystian Mikolajczyk; original rights retained"
+  },
+  {
+    "id": "promptstereo",
+    "name": "PromptStereo",
+    "summary": "Injects monocular structure and stereo-motion prompts into a depth-decoder refinement unit.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Xianqi Wang , Hao Yang , Hangtian Wang , Junda Cheng , Gangwei Xu , Min Lin , Xin Yang",
+    "image": "images/catalog/promptstereo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2603.01650v2/overview.png",
+    "imagePage": "https://arxiv.org/html/2603.01650",
+    "imageAlt": "PromptStereo author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Xianqi Wang , Hao Yang , Hangtian Wang , Junda Cheng , Gangwei Xu , Min Lin , Xin Yang; original rights retained"
+  },
+  {
+    "id": "greaten-stereo",
+    "name": "GREATEN-Stereo",
+    "summary": "Fuses normal-derived geometry with image features to improve synthetic-to-real stereo matching.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Jiahao Li , Xinhong Chen , Zhengmin Jiang , Cheng Huang , Yung-Hui Li , Jianping Wang",
+    "image": "images/catalog/greaten-stereo-methods.webp",
+    "imageSource": "https://arxiv.org/html/2604.09142v2/main_architecture.png",
+    "imagePage": "https://arxiv.org/html/2604.09142",
+    "imageAlt": "GREATEN-Stereo author figure showing the method architecture and depth output",
+    "imageType": "Depth / method output",
+    "imageCredit": "Jiahao Li , Xinhong Chen , Zhengmin Jiang , Cheng Huang , Yung-Hui Li , Jianping Wang; original rights retained"
+  },
+  {
+    "id": "d3roma",
+    "name": "D3RoMa",
+    "summary": "Uses disparity diffusion and stereo geometry to restore depth around transparent and reflective objects.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Songlin Wei , Haoran Geng , Jiayi Chen , Congyue Deng , Wenbo Cui , Chengyang Zhao , Xiaomeng Fang , Leonidas Guibas , He Wang",
+    "image": "images/catalog/d3roma-methods.webp",
+    "imageSource": "https://arxiv.org/html/2409.14365v2/in-the-wild-new.png",
+    "imagePage": "https://arxiv.org/html/2409.14365",
+    "imageAlt": "D3RoMa author figure showing depth prediction and reconstruction results",
+    "imageType": "Depth / method output",
+    "imageCredit": "Songlin Wei , Haoran Geng , Jiayi Chen , Congyue Deng , Wenbo Cui , Chengyang Zhao , Xiaomeng Fang , Leonidas Guibas , He Wang; original rights retained"
   }
 ]
