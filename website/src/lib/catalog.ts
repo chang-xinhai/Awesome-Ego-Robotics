@@ -44,6 +44,7 @@ export interface Work {
   coverSource?: string;
   coverIsPhoto?: boolean;
   hardwareImage?: string;
+  hardwareImageCredit?: string;
   hardwareImageAlt?: string;
   hardwareImageSource?: string;
   hardwareImagePage?: string;

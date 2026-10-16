@@ -4,12 +4,11 @@ import CatalogCard from "../components/CatalogCard.astro";
 import { getCatalog } from "../lib/catalog";
 import { SITE } from "../lib/site";
 import { sitePath } from "../lib/paths";
+import { CATEGORIES, FACETS, facetOptions, signalsFor } from "../lib/filters";
 const works = getCatalog();
 const hardware = works.filter(w => w.collections.includes("hardware"));
 const initial = ["aria-gen2", "dexcap", "egodex", "hot3d", "nymeria", "egoemg", "hamer", "hawor", "egoallo", "egomimic"];
 const first = hardware.slice(0, 12);
-const years = [...new Set(works.map((w) => w.year))].sort().reverse();
-const access = [...new Set(works.map((w) => w.dataAccess))].sort();
 const icon = {
   search: "M21 21l-4.35-4.35M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z",
   filter: "M4 7h16M7 12h10M10 17h4",
@@ -73,127 +72,36 @@ const icon = {
       </button>
       <div class="filter-panel" id="filter-panel" hidden>
         <div class="filter-heading">
-          <h2>Refine your collection</h2>
+          <h2 id="filter-panel-title">Hardware filters</h2>
           <button id="reset-filters" type="button">
             Reset
           </button>
         </div>
-        <div class="filter-fields">
-          <label>
-            Research area
-            <select id="source-filter">
-              <option value="all">All areas</option>
-              {[...new Set(works.map(w => w.stage))].sort().map((v) => (
-                <option value={v}>{v}</option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Interface
-            <select id="form-filter">
-              <option value="all">All interfaces</option>
-              {[...new Set(works.flatMap(w => w.forms ?? [w.form]))].sort().map((v) => (
-                <option value={v}>{v}</option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Body coverage
-            <select id="coverage-filter">
-              <option value="all">Any coverage</option>
-              {["Hands", "Upper body", "Whole body", "Not reported"].map(v => <option value={v}>{v}</option>)}
-            </select>
-          </label>
-          <label>
-            Tactile sensing
-            <select id="tactile-filter">
-              <option value="all">Any status</option>
-              <option value="present">Present</option>
-              <option value="optional">Optional</option>
-              <option value="reference">Reference / calibration</option>
-              <option value="none">None</option>
-              <option value="unknown">Not verified</option>
-            </select>
-          </label>
-          <label>
-            Force / torque
-            <select id="force-filter">
-              <option value="all">Any status</option>
-              <option value="present">Present</option>
-              <option value="optional">Optional</option>
-              <option value="reference">Reference / calibration</option>
-              <option value="none">None</option>
-              <option value="unknown">Not verified</option>
-            </select>
-          </label>
-          <label>
-            Dataset access
-            <select id="access-filter">
-              <option value="all">All access states</option>
-              {access.map((v) => (
-                <option value={v}>{v}</option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Source release
-            <select id="openness-filter">
-              <option value="all">All releases</option>
-              <option value="open">Open source</option>
-              <option value="partial">Partial release</option>
-              <option value="closed">Closed source</option>
-              <option value="unknown">Unknown</option>
-            </select>
-          </label>
-          <label>
-            Availability
-            <select id="availability-filter">
-              <option value="all">Research & products</option>
-              <option value="research">Research / DIY</option>
-              <option value="commercial">Companies & products</option>
-            </select>
-          </label>
-          <label>
-            Paper / resource year
-            <select id="year-filter">
-              <option value="all">All years</option>
-              {years.map((v) => (
-                <option value={v}>{v}</option>
-              ))}
-            </select>
-          </label>
+        <div class="filter-body" id="filter-body">
+        <div class="filter-fields" id="filter-fields">
+          {FACETS.hardware.map(f => <label>{f.label}<select id={f.key + "-filter"} data-facet={f.key}><option value="all">All</option>{facetOptions(works,"hardware",f).map(o => <option value={o.value}>{o.label}</option>)}</select></label>)}
         </div>
-        <fieldset class="signal-filters">
-          <legend>Signals / representations</legend>
-          {[
-            "Vision",
-            "Tactile",
-            "Force",
-            "Audio",
-            "Depth",
-            "IMU",
-            "Contact",
-            "Events",
-            "EMG",
-            "Gaze",
-            "State",
-          ].map((v) => (
-            <label>
-              <input type="checkbox" name="signal" value={v} />
-              <span>
-                {v === "Proprioception" ? "State / proprioception" : v}
-              </span>
-            </label>
-          ))}
+        <fieldset class="signal-filters" id="signal-filters">
+          <legend id="signal-filter-label">Recorded signals</legend>
+          <div id="signal-options">
+            {[...new Set(hardware.flatMap(w=>signalsFor(w,"hardware")))].sort().map(v=><label><input type="checkbox" name="signal" value={v}/><span>{v}</span></label>)}
+          </div>
         </fieldset>
-        <p class="filter-note">
-          Release status refers to the relevant artifact. Hardware files, software, and data access are verified separately; commercial does not imply closed source.
-        </p>
+        <p class="filter-note" id="filter-note">Choose a device family below. Commercial availability and source release are separate.</p>
+        </div>
+        <div class="filter-footer">
         <button type="button" id="apply-filters" class="button-dark">
           Done
         </button>
+        </div>
       </div>
     </div>
+    <nav class="category-nav" aria-label="Hardware categories">
+      <div class="category-options" id="category-options">
+        <button type="button" data-category="all" aria-pressed="true">All hardware <span>{hardware.length}</span></button>
+        {CATEGORIES.hardware.map(c => <button type="button" data-category={c.key} aria-pressed="false" title={c.description}>{c.label}<span>{hardware.filter(w=>w.sections.some(s=>s.endsWith(" / "+c.section))).length}</span></button>)}
+      </div>
+    </nav>
     <div class="library-meta">
       <p id="result-count" role="status" aria-live="polite">
         {hardware.length} hardware entries

@@ -127,7 +127,7 @@ and scroll position during append. Hardware/dataset/method compare fields differ
 News records milestones, not routine additions. Conventional Commits:
 `docs:`, `feat:`, `fix:`, `refactor:`, `chore:`.
 Before finishing: check primary links, README IDs, six-column schema, dates,
-ordering, manifest IDs/local images, `npm run check`, `npm run build`, and browser
+ordering, manifest IDs/local images, `npm test`, `npm run check`, `npm run build`, and browser
 search/filter/details/compare/shared URL on desktop and mobile. Review design
 and source quality with subagents when the task requests parallel review.
 
@@ -137,3 +137,20 @@ The current website is a **local review draft**. Do not enable GitHub Pages,
 trigger deployment, add push-triggered deployment, or advertise a live website
 until the user approves the local preview. Source pushes and validation CI are
 allowed. Keep deployment manual (`workflow_dispatch`) until approval.
+
+## Collection filters and evidence presentation
+
+Keep category bars and facet definitions separate by hardware/datasets/methods.
+Methods must expose L1–L6 plus tools; L6 remains parallel, not another required
+step in explicit reconstruction. Never mix hardware forms and dataset families
+into a method dropdown. Limit each panel to five relevant facets; compute option
+counts from the active category and other filters. Preserve each collection's
+query, sort, category, facets, signals and comparison separately.
+
+Use explicit output/representation, validation and learning classifications;
+real-robot trajectory execution is not automatically a closed-loop policy.
+Project release is not automatically hardware design openness. Rendered channels
+can be filtered for synthetic data but must stay separate from physical signals.
+Preserve field-level source URLs, measurement scope, unit qualifiers and new
+scale dimensions. Empty lists must render an honest unknown, never a blank fact.
+Restore keyboard focus when replacing filter controls and after closing sheets.

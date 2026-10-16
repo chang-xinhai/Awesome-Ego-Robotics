@@ -6,9 +6,16 @@
         "participants": 53,
         "scope": "current official README; paper v1 reports >10 h and 41 participants"
       },
-      "publicScale": {},
+      "publicScale": {
+        "episodes": 3,
+        "scope": "official preview shard; full release size not verified"
+      },
       "access": "Access conditions",
-      "formats": [],
+      "formats": [
+        "Memmap",
+        "MP4",
+        "NPY"
+      ],
       "observations": "Bilateral sEMG/IMU, ego wide-angle RGB and external RGB-D reference video.",
       "labels": "Hand motion and wrist articulation targets from mocap reconstruction.",
       "bodyCoverage": "Bimanual",
@@ -36,12 +43,100 @@
         "EMG",
         "IMU"
       ],
-      "datasetUrl": "https://github.com/zhenqis123/EgoEMG"
+      "datasetUrl": "https://github.com/zhenqis123/EgoEMG",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Head-mounted wide-angle RGB; external ZED 2i reference; bilateral 8-channel sEMG bands.",
+      "recordedStreams": "Bilateral 8-channel sEMG at 2 kHz; IMU; ego RGB; external stereo RGB/reference depth.",
+      "coordinateFrame": "MANO reconstruction from 21 optical markers per hand; wrist angles in forearm frame.",
+      "calibration": "Host timestamps and interpolation; optical reference captured at 120 Hz.",
+      "derivedSignals": [
+        "MANO hand meshes",
+        "22-DoF joint-angle targets",
+        "Wrist articulation"
+      ],
+      "tasks": [
+        "EMG-to-pose",
+        "Vision-to-pose",
+        "Multimodal hand pose"
+      ],
+      "splits": "Cross-gesture, cross-user and combined user/gesture tests.",
+      "dataLicense": "Code MIT; data and third-party assets have separate terms.",
+      "releaseScope": "Three-episode v3 preview shard; paper v1 41 people/>10 h, current README 53/>18 h.",
+      "contactType": "none",
+      "reviewed": "2026-10-16",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "recordedStreams": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "coordinateFrame": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "calibration": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "derivedSignals": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "publicScale": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "formats": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "tasks": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "splits": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "dataLicense": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "releaseScope": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ],
+        "contactType": [
+          "https://github.com/zhenqis123/EgoEMG",
+          "https://arxiv.org/abs/2605.05712",
+          "https://github.com/zhenqis123/EgoEMG"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "egopressure": {
       "reportedScale": {
+        "hours": 5,
+        "frames": "4.3M multi-view images",
         "participants": 21,
-        "gestures": 31
+        "gestures": 31,
+        "scope": "recording time versus summed camera frames"
       },
       "publicScale": {},
       "access": "Access conditions",
@@ -50,7 +145,7 @@
       "labels": "Hand meshes and pressure intensities projected onto contact vertices.",
       "bodyCoverage": "Single hand",
       "annotationEvidence": "Measured touchpad pressure combined with multi-view hand-model optimization.",
-      "limitations": "Planar normal-pressure interaction; no general whole-hand object tactile or shear measurements.",
+      "limitations": "Normal pressure on a flat pad; no shear or unconstrained object-surface tactile measurement.",
       "sources": [
         {
           "label": "Official project / release",
@@ -77,7 +172,91 @@
         "Depth",
         "Tactile"
       ],
-      "datasetUrl": "https://dataset.egopressure.inf.ethz.ch/"
+      "datasetUrl": "https://dataset.egopressure.inf.ethz.ch/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "One head camera + seven stationary Azure Kinects; Sensel Morph pressure pad.",
+      "recordedStreams": "Eight RGB-D views at 30 Hz; synchronized planar pressure readings.",
+      "coordinateFrame": "Shared calibrated world; pressure pad plane; camera-projected MANO joints and mesh.",
+      "calibration": "Static camera extrinsics; nine active IR pad markers for ego pose/synchronization.",
+      "derivedSignals": [
+        "MANO meshes",
+        "Pressure projected onto hand vertices / UV maps"
+      ],
+      "tasks": [
+        "Surface-pressure prediction",
+        "Hand-pressure prediction",
+        "Hand mesh estimation"
+      ],
+      "contactType": "measured",
+      "releaseScope": "Dataset download plus use agreement; pressure is measured on a planar pad.",
+      "reviewed": "2026-10-16",
+      "splits": "Not verified",
+      "dataLicense": "Check dataset terms",
+      "fieldSources": {
+        "reportedScale": [
+          "https://siplab.org/projects/EgoPressure",
+          "https://arxiv.org/abs/2409.02224",
+          "https://github.com/eth-siplab/EgoPressure",
+          "https://dataset.egopressure.inf.ethz.ch/"
+        ],
+        "cameraSetup": [
+          "https://siplab.org/projects/EgoPressure",
+          "https://arxiv.org/abs/2409.02224",
+          "https://github.com/eth-siplab/EgoPressure",
+          "https://dataset.egopressure.inf.ethz.ch/"
+        ],
+        "recordedStreams": [
+          "https://siplab.org/projects/EgoPressure",
+          "https://arxiv.org/abs/2409.02224",
+          "https://github.com/eth-siplab/EgoPressure",
+          "https://dataset.egopressure.inf.ethz.ch/"
+        ],
+        "coordinateFrame": [
+          "https://siplab.org/projects/EgoPressure",
+          "https://arxiv.org/abs/2409.02224",
+          "https://github.com/eth-siplab/EgoPressure",
+          "https://dataset.egopressure.inf.ethz.ch/"
+        ],
+        "calibration": [
+          "https://siplab.org/projects/EgoPressure",
+          "https://arxiv.org/abs/2409.02224",
+          "https://github.com/eth-siplab/EgoPressure",
+          "https://dataset.egopressure.inf.ethz.ch/"
+        ],
+        "derivedSignals": [
+          "https://siplab.org/projects/EgoPressure",
+          "https://arxiv.org/abs/2409.02224",
+          "https://github.com/eth-siplab/EgoPressure",
+          "https://dataset.egopressure.inf.ethz.ch/"
+        ],
+        "tasks": [
+          "https://siplab.org/projects/EgoPressure",
+          "https://arxiv.org/abs/2409.02224",
+          "https://github.com/eth-siplab/EgoPressure",
+          "https://dataset.egopressure.inf.ethz.ch/"
+        ],
+        "contactType": [
+          "https://siplab.org/projects/EgoPressure",
+          "https://arxiv.org/abs/2409.02224",
+          "https://github.com/eth-siplab/EgoPressure",
+          "https://dataset.egopressure.inf.ethz.ch/"
+        ],
+        "releaseScope": [
+          "https://siplab.org/projects/EgoPressure",
+          "https://arxiv.org/abs/2409.02224",
+          "https://github.com/eth-siplab/EgoPressure",
+          "https://dataset.egopressure.inf.ethz.ch/"
+        ],
+        "limitations": [
+          "https://siplab.org/projects/EgoPressure",
+          "https://arxiv.org/abs/2409.02224",
+          "https://github.com/eth-siplab/EgoPressure",
+          "https://dataset.egopressure.inf.ethz.ch/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "ego4d": {
       "reportedScale": {
@@ -120,9 +299,96 @@
       "accessNote": "Dataset license acceptance and official downloader; component availability varies.",
       "recordedSignals": [
         "Vision",
-        "Audio"
+        "Audio",
+        "IMU"
       ],
-      "datasetUrl": "https://ego4d-data.org/docs/start-here/"
+      "datasetUrl": "https://ego4d-data.org/docs/start-here/",
+      "annotationType": "human",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Seven head-mounted camera types; device and modality availability are per video.",
+      "recordedStreams": "First-person video; audio, IMU and stereo exist only for documented subsets.",
+      "coordinateFrame": "Video time and benchmark coordinates; no corpus-wide metric hand/world annotation.",
+      "calibration": "Device metadata; standardized 30-fps video option; calibration is not uniform.",
+      "derivedSignals": [
+        "Text narrations",
+        "Benchmark-specific action / object labels"
+      ],
+      "tasks": [
+        "Episodic memory",
+        "Forecasting",
+        "Hand-object interaction",
+        "Social interaction",
+        "Audio-visual diarization"
+      ],
+      "splits": "Benchmark-specific train/val/test manifests; withheld annotations on test subsets.",
+      "dataLicense": "Ego4D dataset license; application/acceptance required.",
+      "releaseScope": "Licensed official download; subset coverage differs across benchmarks.",
+      "reviewed": "2026-10-16",
+      "contactType": "unknown",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://ego4d-data.org/",
+          "https://arxiv.org/abs/2110.07058",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://ego4d-data.org/docs/start-here/"
+        ],
+        "recordedStreams": [
+          "https://ego4d-data.org/",
+          "https://arxiv.org/abs/2110.07058",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://ego4d-data.org/docs/start-here/"
+        ],
+        "recordedSignals": [
+          "https://ego4d-data.org/",
+          "https://arxiv.org/abs/2110.07058",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://ego4d-data.org/docs/start-here/"
+        ],
+        "coordinateFrame": [
+          "https://ego4d-data.org/",
+          "https://arxiv.org/abs/2110.07058",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://ego4d-data.org/docs/start-here/"
+        ],
+        "calibration": [
+          "https://ego4d-data.org/",
+          "https://arxiv.org/abs/2110.07058",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://ego4d-data.org/docs/start-here/"
+        ],
+        "derivedSignals": [
+          "https://ego4d-data.org/",
+          "https://arxiv.org/abs/2110.07058",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://ego4d-data.org/docs/start-here/"
+        ],
+        "tasks": [
+          "https://ego4d-data.org/",
+          "https://arxiv.org/abs/2110.07058",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://ego4d-data.org/docs/start-here/"
+        ],
+        "splits": [
+          "https://ego4d-data.org/",
+          "https://arxiv.org/abs/2110.07058",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://ego4d-data.org/docs/start-here/"
+        ],
+        "dataLicense": [
+          "https://ego4d-data.org/",
+          "https://arxiv.org/abs/2110.07058",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://ego4d-data.org/docs/start-here/"
+        ],
+        "releaseScope": [
+          "https://ego4d-data.org/",
+          "https://arxiv.org/abs/2110.07058",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://ego4d-data.org/docs/start-here/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "ego-exo4d": {
       "reportedScale": {
@@ -170,13 +436,96 @@
         "Gaze",
         "Audio"
       ],
-      "datasetUrl": "https://docs.ego-exo4d-data.org/"
+      "datasetUrl": "https://docs.ego-exo4d-data.org/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Aria RGB + two monochrome SLAM cameras; four or five external GoPros.",
+      "recordedStreams": "Synchronized ego/exo video, Aria IMUs, eye cameras/gaze and audio.",
+      "coordinateFrame": "Calibrated ego/exo geometry; 3D hand/body benchmarks use defined scene frames.",
+      "calibration": "Ego camera calibration and synchronization with exo GoPros; session-specific layout.",
+      "derivedSignals": [
+        "3D hand/body pose annotations",
+        "Expert commentary",
+        "Atomic descriptions"
+      ],
+      "tasks": [
+        "Ego/exo pose estimation",
+        "Proficiency estimation",
+        "Ego/exo correspondence",
+        "Video-language"
+      ],
+      "splits": "Separate benchmark splits and annotation coverage; do not infer all-take pose completeness.",
+      "dataLicense": "Ego-Exo4D dataset agreement; separate from Ego4D.",
+      "releaseScope": "5,035 takes; 1,286.3 h sums ego and exo views, not unique activity hours.",
+      "reviewed": "2026-10-16",
+      "contactType": "unknown",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://ego-exo4d-data.org/",
+          "https://arxiv.org/abs/2311.18259",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://docs.ego-exo4d-data.org/"
+        ],
+        "recordedStreams": [
+          "https://ego-exo4d-data.org/",
+          "https://arxiv.org/abs/2311.18259",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://docs.ego-exo4d-data.org/"
+        ],
+        "coordinateFrame": [
+          "https://ego-exo4d-data.org/",
+          "https://arxiv.org/abs/2311.18259",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://docs.ego-exo4d-data.org/"
+        ],
+        "calibration": [
+          "https://ego-exo4d-data.org/",
+          "https://arxiv.org/abs/2311.18259",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://docs.ego-exo4d-data.org/"
+        ],
+        "derivedSignals": [
+          "https://ego-exo4d-data.org/",
+          "https://arxiv.org/abs/2311.18259",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://docs.ego-exo4d-data.org/"
+        ],
+        "tasks": [
+          "https://ego-exo4d-data.org/",
+          "https://arxiv.org/abs/2311.18259",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://docs.ego-exo4d-data.org/"
+        ],
+        "splits": [
+          "https://ego-exo4d-data.org/",
+          "https://arxiv.org/abs/2311.18259",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://docs.ego-exo4d-data.org/"
+        ],
+        "dataLicense": [
+          "https://ego-exo4d-data.org/",
+          "https://arxiv.org/abs/2311.18259",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://docs.ego-exo4d-data.org/"
+        ],
+        "releaseScope": [
+          "https://ego-exo4d-data.org/",
+          "https://arxiv.org/abs/2311.18259",
+          "https://github.com/facebookresearch/Ego4d",
+          "https://docs.ego-exo4d-data.org/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "epic-kitchens": {
       "reportedScale": {
         "hours": 100,
         "videos": 700,
-        "kitchens": 45
+        "kitchens": 45,
+        "frames": "20M",
+        "actionSegments": "~90K",
+        "scope": "EPIC-KITCHENS-100 includes the earlier 55-hour corpus"
       },
       "publicScale": {},
       "access": "Access conditions",
@@ -214,7 +563,94 @@
         "Vision",
         "Audio"
       ],
-      "datasetUrl": "https://epic-kitchens.github.io/2025#downloads"
+      "datasetUrl": "https://epic-kitchens.github.io/2025#downloads",
+      "annotationType": "human",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Head-mounted GoPro in real participant kitchens.",
+      "coordinateFrame": "2D image and video timestamps; no calibrated 3D hand pose in core release.",
+      "calibration": "Video metadata available; no shared metric scene calibration.",
+      "derivedSignals": [
+        "Verb/noun action segments",
+        "Narrations",
+        "Optional derived optical flow"
+      ],
+      "tasks": [
+        "Action recognition",
+        "Action anticipation",
+        "Action detection",
+        "Video-text retrieval",
+        "Domain adaptation"
+      ],
+      "splits": "Official challenge-specific CSV splits; unseen participants and later-recording generalization.",
+      "dataLicense": "CC BY-NC 4.0",
+      "contactType": "none",
+      "releaseScope": "Videos and annotations through official scripts; later annotation extensions are separate.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Head-mounted GoPro videos from real kitchens.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://epic-kitchens.github.io/2025",
+          "https://arxiv.org/abs/2006.13256",
+          "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+          "https://epic-kitchens.github.io/2025#downloads"
+        ],
+        "cameraSetup": [
+          "https://epic-kitchens.github.io/2025",
+          "https://arxiv.org/abs/2006.13256",
+          "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+          "https://epic-kitchens.github.io/2025#downloads"
+        ],
+        "coordinateFrame": [
+          "https://epic-kitchens.github.io/2025",
+          "https://arxiv.org/abs/2006.13256",
+          "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+          "https://epic-kitchens.github.io/2025#downloads"
+        ],
+        "calibration": [
+          "https://epic-kitchens.github.io/2025",
+          "https://arxiv.org/abs/2006.13256",
+          "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+          "https://epic-kitchens.github.io/2025#downloads"
+        ],
+        "derivedSignals": [
+          "https://epic-kitchens.github.io/2025",
+          "https://arxiv.org/abs/2006.13256",
+          "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+          "https://epic-kitchens.github.io/2025#downloads"
+        ],
+        "tasks": [
+          "https://epic-kitchens.github.io/2025",
+          "https://arxiv.org/abs/2006.13256",
+          "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+          "https://epic-kitchens.github.io/2025#downloads"
+        ],
+        "splits": [
+          "https://epic-kitchens.github.io/2025",
+          "https://arxiv.org/abs/2006.13256",
+          "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+          "https://epic-kitchens.github.io/2025#downloads"
+        ],
+        "dataLicense": [
+          "https://epic-kitchens.github.io/2025",
+          "https://arxiv.org/abs/2006.13256",
+          "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+          "https://epic-kitchens.github.io/2025#downloads"
+        ],
+        "contactType": [
+          "https://epic-kitchens.github.io/2025",
+          "https://arxiv.org/abs/2006.13256",
+          "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+          "https://epic-kitchens.github.io/2025#downloads"
+        ],
+        "releaseScope": [
+          "https://epic-kitchens.github.io/2025",
+          "https://arxiv.org/abs/2006.13256",
+          "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+          "https://epic-kitchens.github.io/2025#downloads"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "hd-epic": {
       "reportedScale": {
@@ -262,7 +698,88 @@
         "Gaze",
         "Audio"
       ],
-      "datasetUrl": "https://hd-epic.github.io/site/#download"
+      "datasetUrl": "https://hd-epic.github.io/site/#download",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Project Aria glasses; real home kitchens with 3D digital twins.",
+      "coordinateFrame": "Per-frame device-to-world transforms; gaze rays and objects grounded in kitchen space.",
+      "calibration": "Static sensor-to-device calibration and per-frame camera transforms now released.",
+      "derivedSignals": [
+        "SLAM point clouds",
+        "Gaze rays",
+        "3D object itineraries",
+        "Hand/object masks"
+      ],
+      "tasks": [
+        "Fine-grained activity",
+        "Long-video VQA",
+        "Object tracking",
+        "Sound recognition"
+      ],
+      "splits": "Annotation-specific subsets; object/hand masks sample frames rather than every frame.",
+      "dataLicense": "CC BY-NC 4.0",
+      "releaseScope": "41 h; MP4, VRS and annotations separately downloadable; intermediate calibration/pose data released.",
+      "contactType": "none",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Aria sensor streams, RGB videos, gaze and spatial tracking.",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://hd-epic.github.io/site/",
+          "https://arxiv.org/abs/2502.04144",
+          "https://github.com/hd-epic/hd-epic-annotations",
+          "https://hd-epic.github.io/site/#download"
+        ],
+        "coordinateFrame": [
+          "https://hd-epic.github.io/site/",
+          "https://arxiv.org/abs/2502.04144",
+          "https://github.com/hd-epic/hd-epic-annotations",
+          "https://hd-epic.github.io/site/#download"
+        ],
+        "calibration": [
+          "https://hd-epic.github.io/site/",
+          "https://arxiv.org/abs/2502.04144",
+          "https://github.com/hd-epic/hd-epic-annotations",
+          "https://hd-epic.github.io/site/#download"
+        ],
+        "derivedSignals": [
+          "https://hd-epic.github.io/site/",
+          "https://arxiv.org/abs/2502.04144",
+          "https://github.com/hd-epic/hd-epic-annotations",
+          "https://hd-epic.github.io/site/#download"
+        ],
+        "tasks": [
+          "https://hd-epic.github.io/site/",
+          "https://arxiv.org/abs/2502.04144",
+          "https://github.com/hd-epic/hd-epic-annotations",
+          "https://hd-epic.github.io/site/#download"
+        ],
+        "splits": [
+          "https://hd-epic.github.io/site/",
+          "https://arxiv.org/abs/2502.04144",
+          "https://github.com/hd-epic/hd-epic-annotations",
+          "https://hd-epic.github.io/site/#download"
+        ],
+        "dataLicense": [
+          "https://hd-epic.github.io/site/",
+          "https://arxiv.org/abs/2502.04144",
+          "https://github.com/hd-epic/hd-epic-annotations",
+          "https://hd-epic.github.io/site/#download"
+        ],
+        "releaseScope": [
+          "https://hd-epic.github.io/site/",
+          "https://arxiv.org/abs/2502.04144",
+          "https://github.com/hd-epic/hd-epic-annotations",
+          "https://hd-epic.github.io/site/#download"
+        ],
+        "contactType": [
+          "https://hd-epic.github.io/site/",
+          "https://arxiv.org/abs/2502.04144",
+          "https://github.com/hd-epic/hd-epic-annotations",
+          "https://hd-epic.github.io/site/#download"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "assembly101": {
       "reportedScale": {
@@ -305,11 +822,94 @@
         "Vision",
         "Monochrome"
       ],
-      "datasetUrl": "https://huggingface.co/datasets/cvml-nus/assembly101"
+      "datasetUrl": "https://huggingface.co/datasets/cvml-nus/assembly101",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "Eight static RGB cameras + four head-mounted monochrome cameras.",
+      "coordinateFrame": "Calibrated multi-camera capture; 3D hand trajectories are automatically estimated.",
+      "calibration": "Camera extrinsics in AssemblyPoses; original video synchronization differs from AssemblyHands.",
+      "derivedSignals": [
+        "18M estimated 3D hand poses",
+        "Coarse/fine actions",
+        "Mistakes/corrections"
+      ],
+      "tasks": [
+        "Recognition",
+        "Anticipation",
+        "Temporal segmentation",
+        "Mistake detection",
+        "Cross-view transfer"
+      ],
+      "splits": "Official train/val/test sequence splits and toy/action protocols.",
+      "dataLicense": "CC BY-NC 4.0",
+      "contactType": "none",
+      "releaseScope": "4,321 camera videos; views of the same assembly are not independent episodes.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Eight static and four egocentric camera views of toy assembly.",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://assembly-101.github.io/",
+          "https://arxiv.org/abs/2203.14712",
+          "https://github.com/assembly-101/assembly101-annotations",
+          "https://huggingface.co/datasets/cvml-nus/assembly101"
+        ],
+        "coordinateFrame": [
+          "https://assembly-101.github.io/",
+          "https://arxiv.org/abs/2203.14712",
+          "https://github.com/assembly-101/assembly101-annotations",
+          "https://huggingface.co/datasets/cvml-nus/assembly101"
+        ],
+        "calibration": [
+          "https://assembly-101.github.io/",
+          "https://arxiv.org/abs/2203.14712",
+          "https://github.com/assembly-101/assembly101-annotations",
+          "https://huggingface.co/datasets/cvml-nus/assembly101"
+        ],
+        "derivedSignals": [
+          "https://assembly-101.github.io/",
+          "https://arxiv.org/abs/2203.14712",
+          "https://github.com/assembly-101/assembly101-annotations",
+          "https://huggingface.co/datasets/cvml-nus/assembly101"
+        ],
+        "tasks": [
+          "https://assembly-101.github.io/",
+          "https://arxiv.org/abs/2203.14712",
+          "https://github.com/assembly-101/assembly101-annotations",
+          "https://huggingface.co/datasets/cvml-nus/assembly101"
+        ],
+        "splits": [
+          "https://assembly-101.github.io/",
+          "https://arxiv.org/abs/2203.14712",
+          "https://github.com/assembly-101/assembly101-annotations",
+          "https://huggingface.co/datasets/cvml-nus/assembly101"
+        ],
+        "dataLicense": [
+          "https://assembly-101.github.io/",
+          "https://arxiv.org/abs/2203.14712",
+          "https://github.com/assembly-101/assembly101-annotations",
+          "https://huggingface.co/datasets/cvml-nus/assembly101"
+        ],
+        "contactType": [
+          "https://assembly-101.github.io/",
+          "https://arxiv.org/abs/2203.14712",
+          "https://github.com/assembly-101/assembly101-annotations",
+          "https://huggingface.co/datasets/cvml-nus/assembly101"
+        ],
+        "releaseScope": [
+          "https://assembly-101.github.io/",
+          "https://arxiv.org/abs/2203.14712",
+          "https://github.com/assembly-101/assembly101-annotations",
+          "https://huggingface.co/datasets/cvml-nus/assembly101"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "hot3d": {
       "reportedScale": {
         "minutes": 833,
+        "multiViewFrames": ">1.5M",
+        "images": ">3.7M",
         "participants": 19,
         "objects": 33
       },
@@ -350,7 +950,98 @@
         "Monochrome",
         "Gaze"
       ],
-      "datasetUrl": "https://huggingface.co/datasets/projectaria/hot3d"
+      "datasetUrl": "https://huggingface.co/datasets/projectaria/hot3d",
+      "annotationType": "measured",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Aria: 1 RGB + 2 monochrome; Quest 3: 2 monochrome cameras.",
+      "recordedStreams": "Aria 1408×1408 RGB + 640×480 mono; Quest 1280×1024 mono, all at 30 fps.",
+      "coordinateFrame": "Camera-to-world transforms; mocap-referenced hands/objects and 3D scanned models.",
+      "calibration": "Intrinsics and camera-to-world transforms for images; Aria SLAM context separate.",
+      "derivedSignals": [
+        "MANO/UmeTrack hand poses",
+        "Rigid-object 6DoF poses",
+        "Aria SLAM point clouds"
+      ],
+      "tasks": [
+        "3D hand tracking",
+        "6DoF object pose",
+        "Unknown-object 3D lifting"
+      ],
+      "splits": "HOT3D-Clips: curated 150-frame/5-s clips; same challenge splits for hand and object tasks.",
+      "dataLicense": "HOT3D dataset license agreement",
+      "contactType": "inferred",
+      "releaseScope": "Full dataset and separately packaged HOT3D-Clips; no depth sensor or tactile sensor.",
+      "reviewed": "2026-10-16",
+      "fieldSources": {
+        "reportedScale": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "cameraSetup": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "recordedStreams": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "coordinateFrame": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "calibration": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "derivedSignals": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "tasks": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "splits": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "dataLicense": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "contactType": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "releaseScope": [
+          "https://facebookresearch.github.io/hot3d/",
+          "https://arxiv.org/abs/2411.19167",
+          "https://github.com/facebookresearch/hot3d",
+          "https://huggingface.co/datasets/projectaria/hot3d"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "hoi4d": {
       "reportedScale": {
@@ -369,7 +1060,7 @@
       ],
       "observations": "Head-mounted RGB-D recordings in indoor rooms.",
       "labels": "Hand pose, object pose, panoptic/motion segmentation and action segments.",
-      "bodyCoverage": "Hands and objects",
+      "bodyCoverage": "Single hand",
       "annotationEvidence": "Human-assisted geometric annotation and optimization.",
       "limitations": "Labels are reconstructed and manually refined; no executable robot action labels.",
       "sources": [
@@ -397,11 +1088,93 @@
         "Vision",
         "Depth"
       ],
-      "datasetUrl": "https://github.com/leolyliu/HOI4D-Instructions"
+      "datasetUrl": "https://github.com/leolyliu/HOI4D-Instructions",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "frames",
+      "cameraSetup": "Head-mounted RGB-D capture across 610 rooms; single-hand manipulation.",
+      "coordinateFrame": "Camera-space hand/object pose; metric RGB-D scenes and reconstructed object models.",
+      "calibration": "Released camera parameters, depth and scene point clouds.",
+      "derivedSignals": [
+        "Hand joints / meshes",
+        "Object poses",
+        "Panoptic and motion masks",
+        "Action segments"
+      ],
+      "tasks": [
+        "4D segmentation",
+        "Category-level object tracking",
+        "Action segmentation"
+      ],
+      "dataLicense": "CC BY-NC 4.0",
+      "contactType": "none",
+      "releaseScope": "Use release.txt and task-specific downloads; 2.4M frames over 4,000 sequences.",
+      "reviewed": "2026-10-16",
+      "splits": "Not verified",
+      "recordedStreams": "Head-mounted RGB-D recordings in indoor rooms.",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://hoi4d.github.io/",
+          "https://arxiv.org/abs/2203.01577",
+          "https://github.com/leolyliu/HOI4D-Instructions",
+          "https://github.com/leolyliu/HOI4D-Instructions"
+        ],
+        "coordinateFrame": [
+          "https://hoi4d.github.io/",
+          "https://arxiv.org/abs/2203.01577",
+          "https://github.com/leolyliu/HOI4D-Instructions",
+          "https://github.com/leolyliu/HOI4D-Instructions"
+        ],
+        "calibration": [
+          "https://hoi4d.github.io/",
+          "https://arxiv.org/abs/2203.01577",
+          "https://github.com/leolyliu/HOI4D-Instructions",
+          "https://github.com/leolyliu/HOI4D-Instructions"
+        ],
+        "derivedSignals": [
+          "https://hoi4d.github.io/",
+          "https://arxiv.org/abs/2203.01577",
+          "https://github.com/leolyliu/HOI4D-Instructions",
+          "https://github.com/leolyliu/HOI4D-Instructions"
+        ],
+        "tasks": [
+          "https://hoi4d.github.io/",
+          "https://arxiv.org/abs/2203.01577",
+          "https://github.com/leolyliu/HOI4D-Instructions",
+          "https://github.com/leolyliu/HOI4D-Instructions"
+        ],
+        "dataLicense": [
+          "https://hoi4d.github.io/",
+          "https://arxiv.org/abs/2203.01577",
+          "https://github.com/leolyliu/HOI4D-Instructions",
+          "https://github.com/leolyliu/HOI4D-Instructions"
+        ],
+        "contactType": [
+          "https://hoi4d.github.io/",
+          "https://arxiv.org/abs/2203.01577",
+          "https://github.com/leolyliu/HOI4D-Instructions",
+          "https://github.com/leolyliu/HOI4D-Instructions"
+        ],
+        "releaseScope": [
+          "https://hoi4d.github.io/",
+          "https://arxiv.org/abs/2203.01577",
+          "https://github.com/leolyliu/HOI4D-Instructions",
+          "https://github.com/leolyliu/HOI4D-Instructions"
+        ],
+        "bodyCoverage": [
+          "https://hoi4d.github.io/",
+          "https://arxiv.org/abs/2203.01577",
+          "https://github.com/leolyliu/HOI4D-Instructions",
+          "https://github.com/leolyliu/HOI4D-Instructions"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "arctic": {
       "reportedScale": {
-        "frames": 2100000
+        "frames": "2.1M camera frames",
+        "participants": 10,
+        "objects": 11
       },
       "publicScale": {},
       "access": "Access conditions",
@@ -435,7 +1208,91 @@
       "recordedSignals": [
         "Vision"
       ],
-      "datasetUrl": "https://arctic.is.tue.mpg.de/"
+      "datasetUrl": "https://arctic.is.tue.mpg.de/",
+      "annotationType": "measured",
+      "dataRole": "egocentric",
+      "scaleType": "frames",
+      "cameraSetup": "Egocentric and external RGB cameras in an optical motion-capture lab.",
+      "coordinateFrame": "Calibrated world/camera poses; MANO/SMPL-X and articulated object meshes.",
+      "calibration": "Released camera calibration and object models; motion capture aligned with cameras.",
+      "derivedSignals": [
+        "Articulated object motion",
+        "Geometric hand-object contact / distance",
+        "Rendered depth"
+      ],
+      "tasks": [
+        "Consistent hand-object motion reconstruction",
+        "Interaction field estimation"
+      ],
+      "splits": "Official sequence/subject and viewpoint protocols; use dataset split definitions.",
+      "contactType": "inferred",
+      "dataLicense": "ARCTIC registration and dataset/model terms",
+      "releaseScope": "Core RGB and 3D annotation; rendered depth is synthetic reference, not measured depth.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Synchronized egocentric and external RGB video.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://arctic.is.tue.mpg.de/",
+          "https://arxiv.org/abs/2204.13662",
+          "https://github.com/zc-alexfan/arctic",
+          "https://arctic.is.tue.mpg.de/"
+        ],
+        "cameraSetup": [
+          "https://arctic.is.tue.mpg.de/",
+          "https://arxiv.org/abs/2204.13662",
+          "https://github.com/zc-alexfan/arctic",
+          "https://arctic.is.tue.mpg.de/"
+        ],
+        "coordinateFrame": [
+          "https://arctic.is.tue.mpg.de/",
+          "https://arxiv.org/abs/2204.13662",
+          "https://github.com/zc-alexfan/arctic",
+          "https://arctic.is.tue.mpg.de/"
+        ],
+        "calibration": [
+          "https://arctic.is.tue.mpg.de/",
+          "https://arxiv.org/abs/2204.13662",
+          "https://github.com/zc-alexfan/arctic",
+          "https://arctic.is.tue.mpg.de/"
+        ],
+        "derivedSignals": [
+          "https://arctic.is.tue.mpg.de/",
+          "https://arxiv.org/abs/2204.13662",
+          "https://github.com/zc-alexfan/arctic",
+          "https://arctic.is.tue.mpg.de/"
+        ],
+        "tasks": [
+          "https://arctic.is.tue.mpg.de/",
+          "https://arxiv.org/abs/2204.13662",
+          "https://github.com/zc-alexfan/arctic",
+          "https://arctic.is.tue.mpg.de/"
+        ],
+        "splits": [
+          "https://arctic.is.tue.mpg.de/",
+          "https://arxiv.org/abs/2204.13662",
+          "https://github.com/zc-alexfan/arctic",
+          "https://arctic.is.tue.mpg.de/"
+        ],
+        "contactType": [
+          "https://arctic.is.tue.mpg.de/",
+          "https://arxiv.org/abs/2204.13662",
+          "https://github.com/zc-alexfan/arctic",
+          "https://arctic.is.tue.mpg.de/"
+        ],
+        "dataLicense": [
+          "https://arctic.is.tue.mpg.de/",
+          "https://arxiv.org/abs/2204.13662",
+          "https://github.com/zc-alexfan/arctic",
+          "https://arctic.is.tue.mpg.de/"
+        ],
+        "releaseScope": [
+          "https://arctic.is.tue.mpg.de/",
+          "https://arxiv.org/abs/2204.13662",
+          "https://github.com/zc-alexfan/arctic",
+          "https://arctic.is.tue.mpg.de/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "egodex": {
       "reportedScale": {
@@ -475,16 +1332,85 @@
       "recordedSignals": [
         "Vision"
       ],
-      "datasetUrl": "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+      "datasetUrl": "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download",
+      "annotationType": "estimated",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Apple Vision Pro RGB video synthesized from device cameras.",
+      "coordinateFrame": "ARKit session origin on the ground; stationary within an episode, reset between sessions.",
+      "calibration": "Fixed RGB intrinsics; per-frame camera transform, with RGB reprojection caveat.",
+      "derivedSignals": [
+        "ARKit head/upper-body/hand transforms",
+        "Joint confidence",
+        "LLM/VLM descriptions"
+      ],
+      "tasks": [
+        "Dexterous trajectory prediction",
+        "Human-data pretraining"
+      ],
+      "splits": "~725 h train; 7 h test; 97 h additional after frozen 99/1 split.",
+      "dataLicense": "CC BY-NC-ND",
+      "releaseScope": "829 h in Apple CDN archives; HDF5 poses aligned to 30-fps MP4.",
+      "contactType": "none",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "30 Hz 1080p egocentric video from Apple Vision Pro.",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://github.com/apple-aiml-research/ml-egodex",
+          "https://arxiv.org/abs/2505.11709",
+          "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+        ],
+        "coordinateFrame": [
+          "https://github.com/apple-aiml-research/ml-egodex",
+          "https://arxiv.org/abs/2505.11709",
+          "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+        ],
+        "calibration": [
+          "https://github.com/apple-aiml-research/ml-egodex",
+          "https://arxiv.org/abs/2505.11709",
+          "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+        ],
+        "derivedSignals": [
+          "https://github.com/apple-aiml-research/ml-egodex",
+          "https://arxiv.org/abs/2505.11709",
+          "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+        ],
+        "tasks": [
+          "https://github.com/apple-aiml-research/ml-egodex",
+          "https://arxiv.org/abs/2505.11709",
+          "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+        ],
+        "splits": [
+          "https://github.com/apple-aiml-research/ml-egodex",
+          "https://arxiv.org/abs/2505.11709",
+          "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+        ],
+        "dataLicense": [
+          "https://github.com/apple-aiml-research/ml-egodex",
+          "https://arxiv.org/abs/2505.11709",
+          "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+        ],
+        "releaseScope": [
+          "https://github.com/apple-aiml-research/ml-egodex",
+          "https://arxiv.org/abs/2505.11709",
+          "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+        ],
+        "contactType": [
+          "https://github.com/apple-aiml-research/ml-egodex",
+          "https://arxiv.org/abs/2505.11709",
+          "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "egoverse": {
       "reportedScale": {
-        "hours": 4003,
+        "hours": 1362,
         "episodes": "~80,000",
         "tasks": 1965,
         "scenes": 240,
         "participants": 2087,
-        "snapshotDate": "2026-10-16"
+        "scope": "arXiv v2, 2026-07-07; living collection may differ"
       },
       "publicScale": {},
       "access": "Access conditions",
@@ -495,7 +1421,7 @@
       "labels": "Hand/body tracking, camera pose and language; annotation fields vary by source.",
       "bodyCoverage": "Bimanual",
       "annotationEvidence": "Source-specific tracking pipelines normalized into EgoDB.",
-      "limitations": "Release snapshots grow and are reprocessed; sensor and annotation quality vary across sources.",
+      "limitations": "Do not combine paper scale with changing browser totals or count older reprocessed hashes twice.",
       "sources": [
         {
           "label": "Official project / release",
@@ -520,13 +1446,114 @@
       "recordedSignals": [
         "Vision"
       ],
-      "datasetUrl": "https://egoverse-research-workbench.vercel.app/"
+      "datasetUrl": "https://egoverse-research-workbench.vercel.app/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Heterogeneous contributor capture systems; modality layout is episode/source specific.",
+      "coordinateFrame": "EgoDB normalized episode schema; verify frame definitions and tracking per source.",
+      "calibration": "Camera intrinsics mandatory in current Zarr schema; source-specific extrinsics.",
+      "derivedSignals": [
+        "Hand/head tracking",
+        "Camera pose",
+        "Language annotations"
+      ],
+      "tasks": [
+        "Human-to-robot transfer",
+        "Standardized flagship tasks",
+        "Open-ended manipulation"
+      ],
+      "splits": "Shared lab/task evaluation protocols; active episode hashes can change after reprocessing.",
+      "dataLicense": "Source-specific access and license terms",
+      "releaseScope": "Living EgoDB browser; current downloadable aggregate not independently counted.",
+      "contactType": "none",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Egocentric recordings from heterogeneous capture systems and operators.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "cameraSetup": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "coordinateFrame": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "calibration": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "derivedSignals": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "tasks": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "splits": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "dataLicense": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "releaseScope": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "limitations": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "contactType": [
+          "https://egoverse.ai/",
+          "https://arxiv.org/abs/2604.07607",
+          "https://github.com/GaTech-RL2/EgoVerse",
+          "https://egoverse-research-workbench.vercel.app/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "fpha": {
-      "reportedScale": {},
+      "reportedScale": {
+        "sequences": 1175,
+        "frames": 105459,
+        "participants": 6,
+        "actions": 45,
+        "objectCategories": 26
+      },
       "publicScale": {},
       "access": "Request access",
-      "formats": [],
+      "formats": [
+        "RGB/depth images",
+        "TXT",
+        "PLY"
+      ],
       "observations": "Head-mounted RGB-D recordings of daily hand actions.",
       "labels": "3D hand joints, action classes and object 6DoF poses for a subset.",
       "bodyCoverage": "Single hand",
@@ -557,10 +1584,106 @@
         "Vision",
         "Depth"
       ],
-      "datasetUrl": "https://github.com/guiggh/hand_pose_action"
+      "datasetUrl": "https://github.com/guiggh/hand_pose_action",
+      "annotationType": "measured",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "Head-mounted RGB-D; six magnetic sensors on each recorded hand.",
+      "coordinateFrame": "Hand world joints in millimetres; object mesh coordinates in metres.",
+      "calibration": "Released RGB/depth camera intrinsics and hand-to-camera transform.",
+      "derivedSignals": [
+        "21 hand joints via magnetic measurements + IK",
+        "Object 6DoF on 261 sequences"
+      ],
+      "tasks": [
+        "Hand pose estimation",
+        "Action recognition",
+        "Hand-object pose"
+      ],
+      "splits": "Paper action split, leave-one-person-out, cross-subject and cross-object protocols.",
+      "dataLicense": "Academic research only; redistribution and modification restricted.",
+      "contactType": "none",
+      "releaseScope": "Official request and maintained instructions; object-pose subset is 261 sequences / 4 objects.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Head-mounted RGB-D recordings of daily hand actions.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ],
+        "cameraSetup": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ],
+        "coordinateFrame": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ],
+        "calibration": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ],
+        "formats": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ],
+        "derivedSignals": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ],
+        "tasks": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ],
+        "splits": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ],
+        "dataLicense": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ],
+        "contactType": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ],
+        "releaseScope": [
+          "https://guiggh.github.io/publications/first-person-hands/",
+          "https://arxiv.org/abs/1704.02463",
+          "https://github.com/guiggh/hand_pose_action",
+          "https://github.com/guiggh/hand_pose_action"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "h2o": {
-      "reportedScale": {},
+      "reportedScale": {
+        "multiViewFrames": 571645,
+        "egocentricFrames": 114329,
+        "participants": 4,
+        "objects": 8,
+        "scope": "five synchronized RGB-D camera views"
+      },
       "publicScale": {},
       "access": "Access conditions",
       "formats": [
@@ -597,10 +1720,99 @@
         "Vision",
         "Depth"
       ],
-      "datasetUrl": "https://h2odataset.ethz.ch/"
+      "datasetUrl": "https://h2odataset.ethz.ch/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "frames",
+      "cameraSetup": "Four static Azure Kinects + one head-mounted Azure Kinect.",
+      "coordinateFrame": "Calibrated common capture geometry; hand joints, camera poses and 6DoF object pose.",
+      "calibration": "IR-sphere/PnP calibration; released camera and world transforms.",
+      "derivedSignals": [
+        "MANO hand fits",
+        "Object poses and meshes",
+        "Interaction labels"
+      ],
+      "tasks": [
+        "Bimanual interaction recognition",
+        "Hand pose",
+        "Object pose"
+      ],
+      "splits": "Subject-based; 344645 /73380 /153620 train/val/test camera frames.",
+      "dataLicense": "Academic noncommercial dataset terms",
+      "contactType": "inferred",
+      "releaseScope": "Full or pose-only downloads; multi-view count is not the single ego-view count.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Egocentric and external Azure Kinect RGB-D streams.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://taeinkwon.com/projects/h2o/",
+          "https://arxiv.org/abs/2104.11181",
+          "https://github.com/taeinkwon/h2odataset",
+          "https://h2odataset.ethz.ch/"
+        ],
+        "cameraSetup": [
+          "https://taeinkwon.com/projects/h2o/",
+          "https://arxiv.org/abs/2104.11181",
+          "https://github.com/taeinkwon/h2odataset",
+          "https://h2odataset.ethz.ch/"
+        ],
+        "coordinateFrame": [
+          "https://taeinkwon.com/projects/h2o/",
+          "https://arxiv.org/abs/2104.11181",
+          "https://github.com/taeinkwon/h2odataset",
+          "https://h2odataset.ethz.ch/"
+        ],
+        "calibration": [
+          "https://taeinkwon.com/projects/h2o/",
+          "https://arxiv.org/abs/2104.11181",
+          "https://github.com/taeinkwon/h2odataset",
+          "https://h2odataset.ethz.ch/"
+        ],
+        "derivedSignals": [
+          "https://taeinkwon.com/projects/h2o/",
+          "https://arxiv.org/abs/2104.11181",
+          "https://github.com/taeinkwon/h2odataset",
+          "https://h2odataset.ethz.ch/"
+        ],
+        "tasks": [
+          "https://taeinkwon.com/projects/h2o/",
+          "https://arxiv.org/abs/2104.11181",
+          "https://github.com/taeinkwon/h2odataset",
+          "https://h2odataset.ethz.ch/"
+        ],
+        "splits": [
+          "https://taeinkwon.com/projects/h2o/",
+          "https://arxiv.org/abs/2104.11181",
+          "https://github.com/taeinkwon/h2odataset",
+          "https://h2odataset.ethz.ch/"
+        ],
+        "dataLicense": [
+          "https://taeinkwon.com/projects/h2o/",
+          "https://arxiv.org/abs/2104.11181",
+          "https://github.com/taeinkwon/h2odataset",
+          "https://h2odataset.ethz.ch/"
+        ],
+        "contactType": [
+          "https://taeinkwon.com/projects/h2o/",
+          "https://arxiv.org/abs/2104.11181",
+          "https://github.com/taeinkwon/h2odataset",
+          "https://h2odataset.ethz.ch/"
+        ],
+        "releaseScope": [
+          "https://taeinkwon.com/projects/h2o/",
+          "https://arxiv.org/abs/2104.11181",
+          "https://github.com/taeinkwon/h2odataset",
+          "https://h2odataset.ethz.ch/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "assemblyhands": {
-      "reportedScale": {},
+      "reportedScale": {
+        "images": "3.0M annotated images",
+        "egocentricImages": 490000,
+        "scope": "sampled from Assembly101, not a new independent capture corpus"
+      },
       "publicScale": {},
       "access": "Access conditions",
       "formats": [
@@ -638,12 +1850,97 @@
         "Vision",
         "Monochrome"
       ],
-      "datasetUrl": "https://github.com/facebookresearch/assemblyhands-toolkit"
+      "datasetUrl": "https://github.com/facebookresearch/assemblyhands-toolkit",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "frames",
+      "cameraSetup": "Assembly101: four ego monochrome cameras; eight external RGB views support annotation.",
+      "coordinateFrame": "World-space 3D joints with per-view camera transforms.",
+      "calibration": "COCO-like image metadata; intrinsics/extrinsics and original camera models.",
+      "derivedSignals": [
+        "3D hand joints",
+        "Automatic multi-view labels from manually annotated seeds"
+      ],
+      "tasks": [
+        "Egocentric hand pose",
+        "Pose-based action classification"
+      ],
+      "splits": "Official train/val/test COCO-like JSON; separate challenge test evaluation.",
+      "dataLicense": "CC BY-NC 4.0",
+      "contactType": "none",
+      "releaseScope": "Rectified images/videos and annotation toolkit; synchronization corrected relative to original videos.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Synchronized ego and exo images sampled from Assembly101.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://assemblyhands.github.io/",
+          "https://arxiv.org/abs/2304.12301",
+          "https://github.com/facebookresearch/assemblyhands-toolkit",
+          "https://github.com/facebookresearch/assemblyhands-toolkit"
+        ],
+        "cameraSetup": [
+          "https://assemblyhands.github.io/",
+          "https://arxiv.org/abs/2304.12301",
+          "https://github.com/facebookresearch/assemblyhands-toolkit",
+          "https://github.com/facebookresearch/assemblyhands-toolkit"
+        ],
+        "coordinateFrame": [
+          "https://assemblyhands.github.io/",
+          "https://arxiv.org/abs/2304.12301",
+          "https://github.com/facebookresearch/assemblyhands-toolkit",
+          "https://github.com/facebookresearch/assemblyhands-toolkit"
+        ],
+        "calibration": [
+          "https://assemblyhands.github.io/",
+          "https://arxiv.org/abs/2304.12301",
+          "https://github.com/facebookresearch/assemblyhands-toolkit",
+          "https://github.com/facebookresearch/assemblyhands-toolkit"
+        ],
+        "derivedSignals": [
+          "https://assemblyhands.github.io/",
+          "https://arxiv.org/abs/2304.12301",
+          "https://github.com/facebookresearch/assemblyhands-toolkit",
+          "https://github.com/facebookresearch/assemblyhands-toolkit"
+        ],
+        "tasks": [
+          "https://assemblyhands.github.io/",
+          "https://arxiv.org/abs/2304.12301",
+          "https://github.com/facebookresearch/assemblyhands-toolkit",
+          "https://github.com/facebookresearch/assemblyhands-toolkit"
+        ],
+        "splits": [
+          "https://assemblyhands.github.io/",
+          "https://arxiv.org/abs/2304.12301",
+          "https://github.com/facebookresearch/assemblyhands-toolkit",
+          "https://github.com/facebookresearch/assemblyhands-toolkit"
+        ],
+        "dataLicense": [
+          "https://assemblyhands.github.io/",
+          "https://arxiv.org/abs/2304.12301",
+          "https://github.com/facebookresearch/assemblyhands-toolkit",
+          "https://github.com/facebookresearch/assemblyhands-toolkit"
+        ],
+        "contactType": [
+          "https://assemblyhands.github.io/",
+          "https://arxiv.org/abs/2304.12301",
+          "https://github.com/facebookresearch/assemblyhands-toolkit",
+          "https://github.com/facebookresearch/assemblyhands-toolkit"
+        ],
+        "releaseScope": [
+          "https://assemblyhands.github.io/",
+          "https://arxiv.org/abs/2304.12301",
+          "https://github.com/facebookresearch/assemblyhands-toolkit",
+          "https://github.com/facebookresearch/assemblyhands-toolkit"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "show3d": {
       "reportedScale": {
         "hours": 20,
         "recordings": 2137,
+        "multiViewFrames": "4.3M",
+        "images": "43M",
         "participants": 38,
         "objects": 21
       },
@@ -682,21 +1979,115 @@
       "recordedSignals": [
         "Monochrome"
       ],
-      "datasetUrl": "https://huggingface.co/datasets/facebook/show3d-dataset"
+      "datasetUrl": "https://huggingface.co/datasets/facebook/show3d-dataset",
+      "annotationType": "estimated",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Quest 3 stereo + up to eight backpack-mounted monochrome fisheye views.",
+      "coordinateFrame": "Ten-camera shared reference frame; MANO/UmeTrack/MHR geometry by release version.",
+      "calibration": "Hardware-synchronized at 60 Hz; per-scene camera calibration.",
+      "derivedSignals": [
+        "Markerless hand meshes",
+        "Object poses on a subset",
+        "Action captions"
+      ],
+      "tasks": [
+        "Hand pose",
+        "Object pose forecasting",
+        "Cross-dataset evaluation"
+      ],
+      "splits": "Training poses public; test poses withheld. has_object_pose indicates object-label subset.",
+      "dataLicense": "CC BY-NC 4.0; third-party hand models have separate terms.",
+      "contactType": "none",
+      "releaseScope": "Versioned hand/object annotations; object poses are not present for every scene.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Quest stereo and backpack-mounted external camera videos.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://show3d-dataset.github.io/",
+          "https://arxiv.org/abs/2603.28760",
+          "https://github.com/facebookresearch/show3d",
+          "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ],
+        "cameraSetup": [
+          "https://show3d-dataset.github.io/",
+          "https://arxiv.org/abs/2603.28760",
+          "https://github.com/facebookresearch/show3d",
+          "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ],
+        "coordinateFrame": [
+          "https://show3d-dataset.github.io/",
+          "https://arxiv.org/abs/2603.28760",
+          "https://github.com/facebookresearch/show3d",
+          "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ],
+        "calibration": [
+          "https://show3d-dataset.github.io/",
+          "https://arxiv.org/abs/2603.28760",
+          "https://github.com/facebookresearch/show3d",
+          "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ],
+        "derivedSignals": [
+          "https://show3d-dataset.github.io/",
+          "https://arxiv.org/abs/2603.28760",
+          "https://github.com/facebookresearch/show3d",
+          "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ],
+        "tasks": [
+          "https://show3d-dataset.github.io/",
+          "https://arxiv.org/abs/2603.28760",
+          "https://github.com/facebookresearch/show3d",
+          "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ],
+        "splits": [
+          "https://show3d-dataset.github.io/",
+          "https://arxiv.org/abs/2603.28760",
+          "https://github.com/facebookresearch/show3d",
+          "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ],
+        "dataLicense": [
+          "https://github.com/facebookresearch/show3d",
+          "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ],
+        "contactType": [
+          "https://show3d-dataset.github.io/",
+          "https://arxiv.org/abs/2603.28760",
+          "https://github.com/facebookresearch/show3d",
+          "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ],
+        "releaseScope": [
+          "https://show3d-dataset.github.io/",
+          "https://arxiv.org/abs/2603.28760",
+          "https://github.com/facebookresearch/show3d",
+          "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "ego-1k": {
-      "reportedScale": {},
-      "publicScale": {},
+      "reportedScale": {
+        "sequences": 956,
+        "frames": 490966,
+        "images": 5891592,
+        "hours": 2.3,
+        "scope": "one frame timestamp comprises 12 camera images"
+      },
+      "publicScale": {
+        "sequences": 956,
+        "scope": "official Hugging Face dataset card; no independent full download"
+      },
       "access": "Access conditions",
       "formats": [
+        "WebDataset TAR",
+        "PNG",
         "Parquet",
-        "VRS"
+        "JSON"
       ],
       "observations": "Multi-camera fisheye recordings and rectified stereo views.",
       "labels": "Calibrated camera geometry and derived stereo information.",
       "bodyCoverage": "Hands and environment",
       "annotationEvidence": "Hardware synchronization and geometric calibration; stereo depth is estimated.",
-      "limitations": "The large capture rig differs from lightweight glasses; no independent hand/depth GT is established here.",
+      "limitations": "No independent hand/depth ground truth; rig differs substantially from lightweight glasses.",
       "sources": [
         {
           "label": "Official project / release",
@@ -715,10 +2106,107 @@
       "verified": "2026-10-16",
       "accessNote": "Official release under FAIR noncommercial research license.",
       "recordedSignals": [
-        "Vision",
-        "Monochrome"
+        "Vision"
       ],
-      "datasetUrl": "https://huggingface.co/datasets/facebook/ego-1k"
+      "datasetUrl": "https://huggingface.co/datasets/facebook/ego-1k",
+      "annotationType": "estimated",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "Twelve synchronous cameras around a VR headset; six rectified stereo pairs.",
+      "recordedStreams": "12 rectified 1280×1280 views at 60 Hz; 6.7–9.7-s clips.",
+      "coordinateFrame": "Optional device-to-world pose; camera-to-device extrinsics in each frame metadata.",
+      "calibration": "Per-camera K/E matrices; rectified pinhole projection, 120° horizontal FoV.",
+      "derivedSignals": [
+        "Rig pose",
+        "Rectified stereo geometry"
+      ],
+      "tasks": [
+        "Egocentric novel-view synthesis",
+        "Dynamic scene reconstruction"
+      ],
+      "splits": "860 recordings train; 96 test.",
+      "dataLicense": "FAIR Noncommercial Research License",
+      "contactType": "none",
+      "releaseScope": "~18 TB image tar shards; Parquet contains metadata, not image payloads.",
+      "reviewed": "2026-10-16",
+      "fieldSources": {
+        "reportedScale": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "publicScale": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "recordedSignals": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "recordedStreams": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "coordinateFrame": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "calibration": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "formats": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "derivedSignals": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "tasks": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "splits": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "dataLicense": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "contactType": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "releaseScope": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "limitations": [
+          "https://huggingface.co/datasets/facebook/ego-1k",
+          "https://arxiv.org/abs/2603.13741",
+          "https://huggingface.co/datasets/facebook/ego-1k"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "holoassist": {
       "reportedScale": {
@@ -765,7 +2253,88 @@
         "Gaze",
         "Audio"
       ],
-      "datasetUrl": "https://holoassist.github.io/"
+      "datasetUrl": "https://holoassist.github.io/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "HoloLens 2 on task performer; remote instructor supplies verbal guidance.",
+      "coordinateFrame": "Device head/hand tracking with released RGB/depth calibration.",
+      "calibration": "Seven synchronized streams; camera calibration files and PSI capture/export tooling.",
+      "derivedSignals": [
+        "Tracked hands/head",
+        "Gaze rays",
+        "Action and conversation segments",
+        "Mistakes/interventions"
+      ],
+      "tasks": [
+        "Mistake detection",
+        "Intervention prediction",
+        "Hand forecasting",
+        "Action recognition"
+      ],
+      "splits": "Official train/validation/test files; raw and processed annotations both released.",
+      "dataLicense": "CDLA-Permissive-2.0",
+      "contactType": "none",
+      "releaseScope": "166 h recordings; data groups downloadable separately; device hand estimates are not independent mocap.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "HoloLens RGB-D, hand/head tracking, gaze, audio and inertial streams.",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://holoassist.github.io/",
+          "https://arxiv.org/abs/2309.17024",
+          "https://github.com/Ember-HoloAssist/holoassist-release",
+          "https://holoassist.github.io/"
+        ],
+        "coordinateFrame": [
+          "https://holoassist.github.io/",
+          "https://arxiv.org/abs/2309.17024",
+          "https://github.com/Ember-HoloAssist/holoassist-release",
+          "https://holoassist.github.io/"
+        ],
+        "calibration": [
+          "https://holoassist.github.io/",
+          "https://arxiv.org/abs/2309.17024",
+          "https://github.com/Ember-HoloAssist/holoassist-release",
+          "https://holoassist.github.io/"
+        ],
+        "derivedSignals": [
+          "https://holoassist.github.io/",
+          "https://arxiv.org/abs/2309.17024",
+          "https://github.com/Ember-HoloAssist/holoassist-release",
+          "https://holoassist.github.io/"
+        ],
+        "tasks": [
+          "https://holoassist.github.io/",
+          "https://arxiv.org/abs/2309.17024",
+          "https://github.com/Ember-HoloAssist/holoassist-release",
+          "https://holoassist.github.io/"
+        ],
+        "splits": [
+          "https://holoassist.github.io/",
+          "https://arxiv.org/abs/2309.17024",
+          "https://github.com/Ember-HoloAssist/holoassist-release",
+          "https://holoassist.github.io/"
+        ],
+        "dataLicense": [
+          "https://holoassist.github.io/",
+          "https://arxiv.org/abs/2309.17024",
+          "https://github.com/Ember-HoloAssist/holoassist-release",
+          "https://holoassist.github.io/"
+        ],
+        "contactType": [
+          "https://holoassist.github.io/",
+          "https://arxiv.org/abs/2309.17024",
+          "https://github.com/Ember-HoloAssist/holoassist-release",
+          "https://holoassist.github.io/"
+        ],
+        "releaseScope": [
+          "https://holoassist.github.io/",
+          "https://arxiv.org/abs/2309.17024",
+          "https://github.com/Ember-HoloAssist/holoassist-release",
+          "https://holoassist.github.io/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "nymeria": {
       "reportedScale": {
@@ -808,13 +2377,95 @@
         "Gaze",
         "Audio"
       ],
-      "datasetUrl": "https://www.projectaria.com/datasets/nymeria/"
+      "datasetUrl": "https://www.projectaria.com/datasets/nymeria/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Aria head + wrist devices; Xsens body suit; observer headset.",
+      "coordinateFrame": "Wearable devices and body motion localized in one shared metric 3D world.",
+      "calibration": "Hardware synchronization and device-to-device / world alignment.",
+      "derivedSignals": [
+        "Localized Xsens body motion",
+        "SMPL/MHR in NymeriaPlus",
+        "Language",
+        "Scene boxes / semantic additions"
+      ],
+      "tasks": [
+        "Egocentric full-body motion",
+        "Motion-language modeling",
+        "Wearable localization"
+      ],
+      "splits": "Release-specific sequence selection; NymeriaPlus downloader and legacy Nymeria branch differ.",
+      "dataLicense": "Dataset-specific Nymeria / NymeriaPlus licenses; code CC BY-NC 4.0.",
+      "contactType": "none",
+      "releaseScope": "Original 300 h /264 participants; Plus adds annotations/modalities, not automatically new capture hours.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Multi-device Project Aria head/wrist recordings and additional observer views.",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://github.com/facebookresearch/nymeria_dataset",
+          "https://arxiv.org/abs/2406.09905",
+          "https://www.projectaria.com/datasets/nymeria/"
+        ],
+        "coordinateFrame": [
+          "https://github.com/facebookresearch/nymeria_dataset",
+          "https://arxiv.org/abs/2406.09905",
+          "https://www.projectaria.com/datasets/nymeria/"
+        ],
+        "calibration": [
+          "https://github.com/facebookresearch/nymeria_dataset",
+          "https://arxiv.org/abs/2406.09905",
+          "https://www.projectaria.com/datasets/nymeria/"
+        ],
+        "derivedSignals": [
+          "https://github.com/facebookresearch/nymeria_dataset",
+          "https://arxiv.org/abs/2406.09905",
+          "https://www.projectaria.com/datasets/nymeria/"
+        ],
+        "tasks": [
+          "https://github.com/facebookresearch/nymeria_dataset",
+          "https://arxiv.org/abs/2406.09905",
+          "https://www.projectaria.com/datasets/nymeria/"
+        ],
+        "splits": [
+          "https://github.com/facebookresearch/nymeria_dataset",
+          "https://arxiv.org/abs/2406.09905",
+          "https://www.projectaria.com/datasets/nymeria/"
+        ],
+        "dataLicense": [
+          "https://github.com/facebookresearch/nymeria_dataset",
+          "https://arxiv.org/abs/2406.09905",
+          "https://www.projectaria.com/datasets/nymeria/"
+        ],
+        "contactType": [
+          "https://github.com/facebookresearch/nymeria_dataset",
+          "https://arxiv.org/abs/2406.09905",
+          "https://www.projectaria.com/datasets/nymeria/"
+        ],
+        "releaseScope": [
+          "https://github.com/facebookresearch/nymeria_dataset",
+          "https://arxiv.org/abs/2406.09905",
+          "https://www.projectaria.com/datasets/nymeria/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "egobody": {
-      "reportedScale": {},
+      "reportedScale": {
+        "sequences": 125,
+        "participants": 36,
+        "scenes": 15,
+        "egocentricRGBFrames": 199111,
+        "externalRGBDTimeSteps": 219731
+      },
       "publicScale": {},
       "access": "Request access",
-      "formats": [],
+      "formats": [
+        "RGB/depth images",
+        "PKL",
+        "JSON",
+        "CSV"
+      ],
       "observations": "Synchronized HoloLens 2 ego sensing and multiple external Azure Kinect RGB-D streams.",
       "labels": "SMPL-X body fits, 3D scenes and head/hand/gaze tracking.",
       "bodyCoverage": "Whole body",
@@ -846,12 +2497,105 @@
         "Depth",
         "Gaze"
       ],
-      "datasetUrl": "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+      "datasetUrl": "https://sanweiliti.github.io/egobody/egobody.html#dataset-download",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "HoloLens 2 ego plus three to five external Azure Kinects.",
+      "coordinateFrame": "SMPL/SMPL-X in master Kinect RGB frame; HoloLens world linked by calibration.",
+      "calibration": "holo_to_kinect transform plus per-frame PV-camera-to-world transforms.",
+      "derivedSignals": [
+        "SMPL/SMPL-X wearer and interactee fits",
+        "Head/hand tracking",
+        "Gaze"
+      ],
+      "tasks": [
+        "Ego body shape/motion",
+        "Social interaction",
+        "Scene-aware body reconstruction"
+      ],
+      "splits": "data_splits.csv; train/val body fits and test evaluation protocol.",
+      "dataLicense": "Signed EgoBody dataset license; text annotations have separate terms.",
+      "contactType": "none",
+      "releaseScope": "RGB-D, scene scans, tracking and model fits are separate components.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Synchronized HoloLens 2 ego sensing and multiple external Azure Kinect RGB-D streams.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ],
+        "cameraSetup": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ],
+        "coordinateFrame": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ],
+        "calibration": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ],
+        "formats": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ],
+        "derivedSignals": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ],
+        "tasks": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ],
+        "splits": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ],
+        "dataLicense": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ],
+        "contactType": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ],
+        "releaseScope": [
+          "https://sanweiliti.github.io/egobody/egobody.html",
+          "https://arxiv.org/abs/2112.07642",
+          "https://github.com/sanweiliti/EgoBody",
+          "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "aria-everyday-activities": {
       "reportedScale": {
         "sequences": 143,
-        "locations": 5
+        "hours": ">7.5 accumulated",
+        "locations": 5,
+        "twoUserSequences": 53
       },
       "publicScale": {},
       "access": "Access conditions",
@@ -891,12 +2635,93 @@
         "Gaze",
         "Audio"
       ],
-      "datasetUrl": "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+      "datasetUrl": "https://huggingface.co/datasets/projectaria/aria-everyday-activities",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "One or two simultaneous Aria wearers in everyday indoor/outdoor scenarios.",
+      "coordinateFrame": "All recordings at the same physical location share a global frame.",
+      "calibration": "Factory/online camera+IMU calibration; shared clock across concurrent recordings.",
+      "derivedSignals": [
+        "MPS device trajectories",
+        "Semi-dense SLAM point clouds",
+        "Gaze",
+        "Speech transcripts"
+      ],
+      "tasks": [
+        "Always-on egocentric perception",
+        "Multi-user localization",
+        "Scene understanding"
+      ],
+      "dataLicense": "Project Aria dataset agreement",
+      "contactType": "none",
+      "releaseScope": "Raw VRS plus MPS and speech annotations; accumulated device hours can overlap.",
+      "reviewed": "2026-10-16",
+      "splits": "Not verified",
+      "recordedStreams": "Project Aria sensor streams from daily scenarios.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset",
+          "https://arxiv.org/abs/2402.13349",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+        ],
+        "cameraSetup": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset",
+          "https://arxiv.org/abs/2402.13349",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+        ],
+        "coordinateFrame": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset",
+          "https://arxiv.org/abs/2402.13349",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+        ],
+        "calibration": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset",
+          "https://arxiv.org/abs/2402.13349",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+        ],
+        "derivedSignals": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset",
+          "https://arxiv.org/abs/2402.13349",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+        ],
+        "tasks": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset",
+          "https://arxiv.org/abs/2402.13349",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+        ],
+        "dataLicense": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset",
+          "https://arxiv.org/abs/2402.13349",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+        ],
+        "contactType": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset",
+          "https://arxiv.org/abs/2402.13349",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+        ],
+        "releaseScope": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset",
+          "https://arxiv.org/abs/2402.13349",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "aria-digital-twin": {
       "reportedScale": {
         "sequences": 200,
-        "scope": "original paper release"
+        "objectInstances": 398,
+        "scope": "original paper; current documentation reports 284 apartment +52 office recordings"
       },
       "publicScale": {},
       "access": "Access conditions",
@@ -909,7 +2734,7 @@
       "labels": "Device/object/human poses, scene/object models, segmentation and reference depth.",
       "bodyCoverage": "Whole body and environment",
       "annotationEvidence": "Digital scene reconstruction, motion capture and rendering generate reference annotations.",
-      "limitations": "Reference depth is not acquired by an onboard depth sensor; current docs contain inconsistent sequence totals.",
+      "limitations": "No onboard depth sensor; reference depth comes from known geometry. Original/current totals differ.",
       "sources": [
         {
           "label": "Official project / release",
@@ -937,20 +2762,111 @@
         "IMU",
         "Gaze"
       ],
-      "datasetUrl": "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+      "datasetUrl": "https://huggingface.co/datasets/projectaria/aria-digital-twin",
+      "annotationType": "mixed",
+      "dataRole": "mixed",
+      "scaleType": "sequences",
+      "cameraSetup": "Aria RGB + two monochrome cameras/dual IMU in scanned apartment and office.",
+      "coordinateFrame": "Common metric digital-twin scene; camera, object and person reference trajectories.",
+      "calibration": "Full sensor calibration and motion-capture alignment to scanned scenes.",
+      "derivedSignals": [
+        "Rendered reference depth",
+        "Segmentation",
+        "Mocap object/person pose",
+        "Photorealistic rendered streams"
+      ],
+      "tasks": [
+        "Object detection/pose",
+        "Scene understanding",
+        "Human tracking",
+        "Digital twins"
+      ],
+      "dataLicense": "Aria Digital Twin dataset agreement",
+      "contactType": "none",
+      "releaseScope": "Raw capture, reference annotations, scene/object meshes and synthetic renderings separate.",
+      "reviewed": "2026-10-16",
+      "splits": "Not verified",
+      "recordedStreams": "Raw Aria camera/inertial streams plus separate synthetic renderings.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset",
+          "https://arxiv.org/abs/2306.06362",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        ],
+        "cameraSetup": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset",
+          "https://arxiv.org/abs/2306.06362",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        ],
+        "coordinateFrame": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset",
+          "https://arxiv.org/abs/2306.06362",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        ],
+        "calibration": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset",
+          "https://arxiv.org/abs/2306.06362",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        ],
+        "derivedSignals": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset",
+          "https://arxiv.org/abs/2306.06362",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        ],
+        "tasks": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset",
+          "https://arxiv.org/abs/2306.06362",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        ],
+        "dataLicense": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset",
+          "https://arxiv.org/abs/2306.06362",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        ],
+        "contactType": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset",
+          "https://arxiv.org/abs/2306.06362",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        ],
+        "releaseScope": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset",
+          "https://arxiv.org/abs/2306.06362",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        ],
+        "limitations": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset",
+          "https://arxiv.org/abs/2306.06362",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "world-in-your-hands": {
       "reportedScale": {
-        "hours": ">1,000"
+        "hours": 1045,
+        "scenarios": 10,
+        "atomicAnnotationHours": 600,
+        "atomicEpisodes": "~100K",
+        "scope": "arXiv v4, 2026-09-21"
       },
       "publicScale": {},
       "access": "Access conditions",
       "formats": [],
-      "observations": "Wearable perception rig, glove IMUs and finger pressure sensors; hardware-synchronized cameras.",
+      "observations": "First-person and hand-centric RGB/IR; Manus glove motion and IMU measurements.",
       "labels": "Hand/wrist trajectories, derived depth/masks and language descriptions.",
       "bodyCoverage": "Hands and upper body",
       "annotationEvidence": "Sensor-assisted motion capture and automatic annotation pipeline.",
-      "limitations": "Collection scale and accessible release scale must be checked separately; tracking is not glasses-only.",
+      "limitations": "Current paper does not establish pressure/tactile sensing. Estimated stereo depth is not an onboard RGB-D stream.",
       "sources": [
         {
           "label": "Official project / release",
@@ -974,10 +2890,114 @@
       "accessNote": "Official site provides sample/full-data instructions; independent count of public hours not verified.",
       "recordedSignals": [
         "Vision",
-        "IMU",
-        "Tactile"
+        "IMU"
       ],
-      "datasetUrl": "https://wiyh.tars-ai.com/"
+      "datasetUrl": "https://wiyh.tars-ai.com/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "recordedStreams": "Wearable RGB/IR views, glove IMUs and visual trackers; no audio collected.",
+      "cameraSetup": "Oracle Suite: H-FPVHive cameras, H-Gloves and H-Backpack.",
+      "coordinateFrame": "Sensor-fused 6DoF wrist trajectories; calibrated perception-to-hand alignment.",
+      "calibration": "Synchronized wearable modules; motion accuracy checked against external optical mocap.",
+      "derivedSignals": [
+        "6DoF wrists",
+        "Hand skeletons",
+        "Stereo-estimated depth",
+        "Masks",
+        "Atomic language"
+      ],
+      "tasks": [
+        "Human-to-robot co-training",
+        "VLA pretraining",
+        "Hand/perception annotation"
+      ],
+      "dataLicense": "Research-use dataset terms; actual release license must be checked.",
+      "contactType": "unknown",
+      "releaseScope": "Reported collection and annotation scale; public full-data release not independently verified.",
+      "reviewed": "2026-10-16",
+      "splits": "Not verified",
+      "fieldSources": {
+        "reportedScale": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "recordedSignals": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "observations": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "recordedStreams": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "cameraSetup": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "coordinateFrame": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "calibration": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "derivedSignals": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "tasks": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "dataLicense": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "contactType": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "releaseScope": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ],
+        "limitations": [
+          "https://wiyh.tars-ai.com/",
+          "https://arxiv.org/abs/2512.24310",
+          "https://github.com/tars-robotics/World-In-Your-Hands",
+          "https://wiyh.tars-ai.com/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "egolife": {
       "reportedScale": {
@@ -1014,15 +3034,90 @@
         "Vision",
         "Audio"
       ],
-      "datasetUrl": "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+      "datasetUrl": "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342",
+      "annotationType": "human",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Wearable AI glasses; 15 fixed external cameras in shared living spaces.",
+      "recordedStreams": "Ego video and audio; exo reference video. Additional Aria signals only on applicable recordings.",
+      "coordinateFrame": "Audio-based synchronized timelines; spatial reconstructions are processed context.",
+      "calibration": "Within-group/cross-view audio alignment plus human verification.",
+      "derivedSignals": [
+        "Activity timelines",
+        "Identity/context annotations",
+        "EgoLifeQA questions and evidence"
+      ],
+      "tasks": [
+        "Long-context QA",
+        "Episodic memory",
+        "Daily activity understanding"
+      ],
+      "splits": "EgoLifeQA benchmark; six people across seven days.",
+      "contactType": "none",
+      "releaseScope": "Paper reports 300 h; current project site labels 250+ h. Accessible scale and modality coverage are not independently counted.",
+      "reviewed": "2026-10-16",
+      "dataLicense": "Check dataset terms",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://egolife-ai.github.io/blog/",
+          "https://arxiv.org/abs/2503.03803",
+          "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+        ],
+        "recordedStreams": [
+          "https://egolife-ai.github.io/blog/",
+          "https://arxiv.org/abs/2503.03803",
+          "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+        ],
+        "coordinateFrame": [
+          "https://egolife-ai.github.io/blog/",
+          "https://arxiv.org/abs/2503.03803",
+          "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+        ],
+        "calibration": [
+          "https://egolife-ai.github.io/blog/",
+          "https://arxiv.org/abs/2503.03803",
+          "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+        ],
+        "derivedSignals": [
+          "https://egolife-ai.github.io/blog/",
+          "https://arxiv.org/abs/2503.03803",
+          "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+        ],
+        "tasks": [
+          "https://egolife-ai.github.io/blog/",
+          "https://arxiv.org/abs/2503.03803",
+          "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+        ],
+        "splits": [
+          "https://egolife-ai.github.io/blog/",
+          "https://arxiv.org/abs/2503.03803",
+          "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+        ],
+        "contactType": [
+          "https://egolife-ai.github.io/blog/",
+          "https://arxiv.org/abs/2503.03803",
+          "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+        ],
+        "releaseScope": [
+          "https://egolife-ai.github.io/blog/",
+          "https://arxiv.org/abs/2503.03803",
+          "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "touch-and-go": {
-      "reportedScale": {},
+      "reportedScale": {
+        "touchEvents": "~13.9K",
+        "objectInstances": "~3971 extrapolated",
+        "scope": "object estimate extrapolated from manual counting of 10% videos"
+      },
       "publicScale": {},
       "access": "Public download",
       "formats": [
         "MP4",
-        "NumPy"
+        "NPY",
+        "TXT"
       ],
       "observations": "First-person RGB and synchronized handheld GelSight tactile video.",
       "labels": "Touch onset and material labels.",
@@ -1054,12 +3149,106 @@
         "Vision",
         "Tactile"
       ],
-      "datasetUrl": "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+      "datasetUrl": "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "episodes",
+      "cameraSetup": "Egocentric webcam plus handheld GelSight probe.",
+      "coordinateFrame": "Timestamp-aligned RGB/tactile images; no world-space hand/robot trajectory.",
+      "calibration": "Both video streams recorded concurrently on one computer at ~27 Hz.",
+      "derivedSignals": [
+        "Touch onset labels",
+        "Material labels"
+      ],
+      "tasks": [
+        "Visuo-tactile representation",
+        "Material classification",
+        "Tactile prediction",
+        "Image stylization"
+      ],
+      "splits": "Task-specific. Paper recommends video-level separation to avoid near-duplicate leakage.",
+      "dataLicense": "CC BY 4.0",
+      "contactType": "measured",
+      "releaseScope": "RGB/GelSight video and per-frame timestamps; optical tactile deformation, not calibrated 6-axis force.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "First-person RGB and synchronized handheld GelSight tactile video.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ],
+        "cameraSetup": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ],
+        "coordinateFrame": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ],
+        "calibration": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ],
+        "formats": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ],
+        "derivedSignals": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ],
+        "tasks": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ],
+        "splits": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ],
+        "dataLicense": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ],
+        "contactType": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ],
+        "releaseScope": [
+          "https://touch-and-go.github.io/",
+          "https://arxiv.org/abs/2211.12498",
+          "https://github.com/fredfyyang/Touch-and-Go",
+          "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "egotouch": {
       "reportedScale": {
+        "hours": 20,
         "episodes": 1891,
-        "tasks": 208
+        "tasks": 208,
+        "frames": "~2.1M time steps",
+        "scope": "paper v1"
       },
       "publicScale": {},
       "access": "Public download",
@@ -1068,7 +3257,7 @@
       "labels": "42-joint hand pose and time-aligned continuous pressure maps.",
       "bodyCoverage": "Bimanual",
       "annotationEvidence": "Wearable pressure measurements and sensor-assisted pose capture.",
-      "limitations": "The 16×16 arrays mainly cover each palm; predicted pressure is separate from measured labels.",
+      "limitations": "Raw pressure channels are remapped into sparse hand-shaped grids; published maps are not independent dense taxel counts.",
       "sources": [
         {
           "label": "Official project / release",
@@ -1094,7 +3283,97 @@
         "Vision",
         "Tactile"
       ],
-      "datasetUrl": "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+      "datasetUrl": "https://huggingface.co/datasets/zhouzhoujy/EgoTouch",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "episodes",
+      "cameraSetup": "Head/chest RGB and dual wrist fisheye cameras; Rokoko gloves, Vive head/wrist trackers and pressure gloves.",
+      "recordedStreams": "Three 640×480 RGB views; pressure packets; glove kinematics/IMU and tracker poses.",
+      "coordinateFrame": "42 hand joints aligned to Vive frame when tracker available; valid-alignment flag.",
+      "calibration": "Timestamp/latest-sample alignment to 30-Hz timeline, not hardware simultaneous exposure.",
+      "derivedSignals": [
+        "Canonical 21×21 hand pressure maps",
+        "42-joint hand poses"
+      ],
+      "tasks": [
+        "Bimanual tactile prediction",
+        "Seen/unseen object generalization",
+        "Missing-view inference"
+      ],
+      "splits": "80/10/10% episodes; seen-object and unseen-object test subsets.",
+      "contactType": "measured",
+      "releaseScope": "Official HF has data files; no complete dataset card/license independently verified.",
+      "reviewed": "2026-10-16",
+      "dataLicense": "Check dataset terms",
+      "fieldSources": {
+        "reportedScale": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "cameraSetup": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "recordedStreams": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "coordinateFrame": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "calibration": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "derivedSignals": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "tasks": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "splits": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "contactType": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "releaseScope": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "limitations": [
+          "https://jianyi2004.github.io/TouchAnything-Website/",
+          "https://arxiv.org/abs/2605.13083",
+          "https://github.com/Jianyi2004/TouchAnything",
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "emg2pose": {
       "reportedScale": {
@@ -1104,7 +3383,9 @@
         "hdf5Files": 25253
       },
       "publicScale": {
-        "hours": 370
+        "hours": 370,
+        "hdf5Files": 25253,
+        "scope": "official431 GiB full release card"
       },
       "access": "Public download",
       "formats": [
@@ -1136,11 +3417,87 @@
       "recordedSignals": [
         "EMG"
       ],
-      "datasetUrl": "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+      "datasetUrl": "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar",
+      "annotationType": "measured",
+      "dataRole": "reference",
+      "scaleType": "hours",
+      "cameraSetup": "Bilateral wrist sEMG bands with optical hand motion capture; signal-only public data.",
+      "coordinateFrame": "Per-hand joint angles; no ego camera trajectories or raw paired RGB release.",
+      "calibration": "Time-aligned 2-kHz sEMG and mocap-derived joint angles; invalid-pose masks.",
+      "derivedSignals": [
+        "Mocap/IK hand angles",
+        "Validity masks"
+      ],
+      "tasks": [
+        "sEMG hand pose estimation",
+        "Cross-user and cross-stage generalization"
+      ],
+      "splits": "Train/val/test; user, stage, and user+stage holdouts via metadata.csv.",
+      "dataLicense": "CC BY-NC-SA 4.0 and supplemental terms",
+      "contactType": "none",
+      "releaseScope": "431 GiB full archive and ~600 MiB mini version; adjacent reference, not paired egocentric video.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Wrist sEMG aligned at 2 kHz with per-hand joint angles.",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://github.com/facebookresearch/emg2pose",
+          "https://arxiv.org/abs/2412.02725",
+          "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        ],
+        "coordinateFrame": [
+          "https://github.com/facebookresearch/emg2pose",
+          "https://arxiv.org/abs/2412.02725",
+          "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        ],
+        "calibration": [
+          "https://github.com/facebookresearch/emg2pose",
+          "https://arxiv.org/abs/2412.02725",
+          "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        ],
+        "derivedSignals": [
+          "https://github.com/facebookresearch/emg2pose",
+          "https://arxiv.org/abs/2412.02725",
+          "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        ],
+        "tasks": [
+          "https://github.com/facebookresearch/emg2pose",
+          "https://arxiv.org/abs/2412.02725",
+          "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        ],
+        "splits": [
+          "https://github.com/facebookresearch/emg2pose",
+          "https://arxiv.org/abs/2412.02725",
+          "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        ],
+        "dataLicense": [
+          "https://github.com/facebookresearch/emg2pose",
+          "https://arxiv.org/abs/2412.02725",
+          "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        ],
+        "contactType": [
+          "https://github.com/facebookresearch/emg2pose",
+          "https://arxiv.org/abs/2412.02725",
+          "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        ],
+        "publicScale": [
+          "https://github.com/facebookresearch/emg2pose",
+          "https://arxiv.org/abs/2412.02725",
+          "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        ],
+        "releaseScope": [
+          "https://github.com/facebookresearch/emg2pose",
+          "https://arxiv.org/abs/2412.02725",
+          "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "touchscale": {
       "reportedScale": {
-        "hours": 500
+        "hours": 500,
+        "episodes": "~87K",
+        "taskDescriptions": "~2K",
+        "scope": "full paper collection"
       },
       "publicScale": {
         "hours": 100,
@@ -1148,18 +3505,23 @@
         "tasks": 929,
         "sceneTypes": 22,
         "participants": 24,
-        "snapshotDate": "2026-10-16"
+        "scope": "official HF first release; not independent full download"
       },
       "access": "Access conditions",
       "formats": [
-        "WebDataset",
-        "MP4"
+        "WebDataset TAR",
+        "MP4",
+        "MKV",
+        "NPZ",
+        "HDF5",
+        "Parquet",
+        "JSON"
       ],
       "observations": "Head RGB-D, dual wrist RGB and full-hand pressure gloves.",
       "labels": "Time-aligned tactile outputs, instructions and capture metadata.",
       "bodyCoverage": "Bimanual",
       "annotationEvidence": "Measured glove normal-pressure signals with automated completeness and quality checks.",
-      "limitations": "Paper reports 500 hours; the current card documents a 100-hour subset. No failure examples in that release.",
+      "limitations": "Paper and release card differ on depth resolution; use release documentation. Wrist/head streams align within 0.1 s, rather than identical exposure times.",
       "sources": [
         {
           "label": "Official project / release",
@@ -1184,10 +3546,123 @@
       "recordedSignals": [
         "Vision",
         "Depth",
-        "Tactile",
-        "IMU"
+        "IMU",
+        "Tactile"
       ],
-      "datasetUrl": "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+      "datasetUrl": "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Head Orbbec Gemini 345Lg RGB-D/IMU; dual RealSense D405 wrist RGB; 880-taxel gloves per hand.",
+      "recordedStreams": "Head and wrist RGB at 30 fps; head depth; approximately 200-Hz IMU; timestamped 35–90-Hz glove data.",
+      "coordinateFrame": "Head-aligned depth in millimetres; hand-specific tactile taxel geometry.",
+      "calibration": "Head intrinsics; Kalibr RGB/depth/IMU parameters; per-glove calibration and shared-clock timestamps.",
+      "derivedSignals": [
+        "30-Hz aligned episode timeline",
+        "Task instructions",
+        "Quality-control scores"
+      ],
+      "tasks": [
+        "Tactile prediction",
+        "Representation learning",
+        "Human-to-robot policy mid-training"
+      ],
+      "splits": "Current 100-hour HF payload is under train; paper unseen-source/sensor protocols are separate.",
+      "contactType": "measured",
+      "releaseScope": "100-hour first batch, approximately 1.05 TB / 430 shards. Full 500 hours announced for before November 2026.",
+      "reviewed": "2026-10-16",
+      "dataLicense": "CC BY-NC 4.0; commercial use requires separate permission.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "publicScale": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "cameraSetup": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "recordedSignals": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "recordedStreams": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "coordinateFrame": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "calibration": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "derivedSignals": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "formats": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "tasks": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "splits": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "contactType": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "releaseScope": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "limitations": [
+          "https://touch-scale.github.io/",
+          "https://arxiv.org/abs/2610.10288",
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "dataLicense": [
+          "https://github.com/phai-lab/touchscale",
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "interhand26m": {
       "reportedScale": {
@@ -1196,14 +3671,14 @@
       "publicScale": {},
       "access": "Access conditions",
       "formats": [
-        "JPEG",
+        "JPG",
         "JSON"
       ],
       "observations": "Studio RGB views of single and interacting hands.",
       "labels": "3D hand pose and later fitted hand meshes.",
       "bodyCoverage": "Bimanual",
       "annotationEvidence": "Human-assisted multi-view annotation and triangulation.",
-      "limitations": "Reference dataset rather than egocentric daily manipulation; no object dynamics or robot actions.",
+      "limitations": "Exocentric studio reference, not an egocentric demonstration corpus; no objects or robot actions.",
       "sources": [
         {
           "label": "Official project / release",
@@ -1228,7 +3703,96 @@
       "recordedSignals": [
         "Vision"
       ],
-      "datasetUrl": "https://mks0601.github.io/InterHand2.6M/#download"
+      "datasetUrl": "https://mks0601.github.io/InterHand2.6M/#download",
+      "annotationType": "mixed",
+      "dataRole": "reference",
+      "scaleType": "frames",
+      "cameraSetup": "Studio multi-camera rigs:80–140 cameras; 30–90 fps capture depending session.",
+      "coordinateFrame": "Calibrated world/camera 3D joints; wrist-relative evaluation protocols.",
+      "calibration": "Multi-camera 3D-target calibration; triangulated multi-view annotations.",
+      "derivedSignals": [
+        "Manual and automatic2D/3D joint annotations",
+        "Handedness / validity"
+      ],
+      "tasks": [
+        "Single/interacting hand pose",
+        "Interacting-hand reconstruction"
+      ],
+      "splits": "Train/val/test; manual (M), automatic (A), and combined (M+A) annotation variants.",
+      "dataLicense": "InterHand2.6M dataset agreement; check registration terms.",
+      "contactType": "none",
+      "releaseScope": "2.6M curated RGB images;5-fps and 30-fps release variants are alternative sampling.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Studio RGB views of single and interacting hands.",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ],
+        "coordinateFrame": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ],
+        "calibration": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ],
+        "formats": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ],
+        "derivedSignals": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ],
+        "tasks": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ],
+        "splits": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ],
+        "dataLicense": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ],
+        "contactType": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ],
+        "releaseScope": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ],
+        "limitations": [
+          "https://mks0601.github.io/InterHand2.6M/",
+          "https://arxiv.org/abs/2008.09309",
+          "https://github.com/facebookresearch/InterHand2.6M",
+          "https://mks0601.github.io/InterHand2.6M/#download"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "egogesture": {
       "reportedScale": {
@@ -1266,10 +3830,71 @@
         "Vision",
         "Depth"
       ],
-      "datasetUrl": "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+      "datasetUrl": "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html",
+      "annotationType": "human",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "Head-mounted Intel RealSense RGB-D across six indoor/outdoor settings.",
+      "coordinateFrame": "Video gesture labels; core release has no metric 3D hand-joint ground truth.",
+      "calibration": "Paired RGB/depth capture; intrinsics/extrinsics not independently verified here.",
+      "derivedSignals": [
+        "Gesture classes",
+        "Gesture temporal boundaries"
+      ],
+      "tasks": [
+        "Gesture classification",
+        "Gesture detection / spotting"
+      ],
+      "splits": "Official subject-based split; 50 participants, 83 gesture classes.",
+      "contactType": "none",
+      "releaseScope": "2,081 videos and 24,161 gesture samples; request/download conditions on project page.",
+      "reviewed": "2026-10-16",
+      "dataLicense": "Check dataset terms",
+      "recordedStreams": "Egocentric RGB-D gesture videos in six scene conditions.",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html",
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        ],
+        "coordinateFrame": [
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html",
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        ],
+        "calibration": [
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html",
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        ],
+        "derivedSignals": [
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html",
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        ],
+        "tasks": [
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html",
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        ],
+        "splits": [
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html",
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        ],
+        "contactType": [
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html",
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        ],
+        "releaseScope": [
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html",
+          "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "sanpo": {
-      "reportedScale": {},
+      "reportedScale": {
+        "realSessions": 701,
+        "syntheticSessions": 1961,
+        "realVideosPerSession": 4,
+        "syntheticFrames": 113000,
+        "scope": "session count; real video streams should not be counted as independent activity"
+      },
       "publicScale": {},
       "access": "Public download",
       "formats": [
@@ -1282,7 +3907,7 @@
       "labels": "Semantic masks and derived depth maps.",
       "bodyCoverage": "Body motion and environment",
       "annotationEvidence": "Human segmentation plus stereo/model-derived depth; synthetic labels are rendered.",
-      "limitations": "Navigation-focused; dense depth includes inferred values and is not independent depth-sensor GT.",
+      "limitations": "Real depth is stereo estimation, not independent active-depth ground truth; only 237 real sessions have segmentation.",
       "sources": [
         {
           "label": "Official project / release",
@@ -1306,10 +3931,118 @@
       "accessNote": "Official download repository; CC BY 4.0.",
       "recordedSignals": [
         "Vision",
-        "Depth",
         "IMU"
       ],
-      "datasetUrl": "https://github.com/google-research-datasets/sanpo_dataset"
+      "datasetUrl": "https://github.com/google-research-datasets/sanpo_dataset",
+      "annotationType": "mixed",
+      "dataRole": "mixed",
+      "scaleType": "sequences",
+      "cameraSetup": "Real: head ZED-M + chest ZED-2i stereo. Synthetic: simulated matching rigs.",
+      "recordedStreams": "Real stereo RGB at 15 fps plus IMU; real depth is estimated from stereo.",
+      "coordinateFrame": "Camera poses and metric depth; use the corrected right-handed, Y-up poses released 2025-06-05.",
+      "calibration": "Stereo camera metadata and rectification; corrected fixed_camera_poses.csv aligns real poses with the right-handed, Y-up convention.",
+      "derivedSignals": [
+        "ZED sparse / CREStereo dense depth",
+        "VIO/IMU camera poses",
+        "Human panoptic masks"
+      ],
+      "tasks": [
+        "Human navigation",
+        "Panoptic segmentation",
+        "Depth estimation"
+      ],
+      "splits": "Mutually exclusive session IDs in real/synthetic train/test splits.",
+      "dataLicense": "CC BY 4.0",
+      "contactType": "none",
+      "releaseScope": "~6 TB official GCS release; real and synthetic folders separate.",
+      "reviewed": "2026-10-16",
+      "fieldSources": {
+        "reportedScale": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "cameraSetup": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "recordedSignals": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "recordedStreams": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "coordinateFrame": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "calibration": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "derivedSignals": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "formats": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "tasks": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "splits": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "dataLicense": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "contactType": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "releaseScope": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ],
+        "limitations": [
+          "https://google-research-datasets.github.io/sanpo_dataset/",
+          "https://arxiv.org/abs/2309.12172",
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "ego-gen": {
       "reportedScale": {},
@@ -1342,11 +4075,110 @@
       "name": "EgoGen",
       "verified": "2026-10-16",
       "accessNote": "Official code and pretrained assets have component-specific terms.",
-      "recordedSignals": [
+      "recordedSignals": [],
+      "datasetUrl": "https://ego-gen.github.io/",
+      "annotationType": "synthetic",
+      "dataRole": "synthetic",
+      "scaleType": "unknown",
+      "cameraSetup": "Virtual head-mounted multi-camera rigs rendered from SMPL-X human motion.",
+      "recordedStreams": "Synthetic RGB, depth, surface normals, segmentation and world-position renderings.",
+      "coordinateFrame": "Simulator scene/body geometry and defined virtual camera coordinates.",
+      "calibration": "Synthetic camera intrinsics/extrinsics and distortion models.",
+      "derivedSignals": [
+        "Rendered depth/normals",
+        "Segmentation",
+        "Body geometry",
+        "World position"
+      ],
+      "tasks": [
+        "HMD localization",
+        "Ego camera tracking",
+        "Human mesh recovery"
+      ],
+      "splits": "Generated task-specific training/evaluation sets; no single corpus-wide scale asserted.",
+      "dataLicense": "Code Apache 2.0; SMPL-X, AMASS, SAMP and scene assets retain separate terms.",
+      "contactType": "none",
+      "releaseScope": "Generator and task datasets through official release; synthetic only.",
+      "reviewed": "2026-10-16",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "recordedSignals": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "recordedStreams": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "coordinateFrame": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "calibration": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "derivedSignals": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "tasks": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "splits": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "dataLicense": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "contactType": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "releaseScope": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ],
+        "syntheticSignals": [
+          "https://ego-gen.github.io/",
+          "https://arxiv.org/abs/2401.08739",
+          "https://github.com/ligengen/EgoGen",
+          "https://ego-gen.github.io/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence.",
+      "syntheticSignals": [
         "Vision",
         "Depth"
-      ],
-      "datasetUrl": "https://ego-gen.github.io/"
+      ]
     },
     "taco": {
       "reportedScale": {
@@ -1385,19 +4217,104 @@
       "verified": "2026-10-16",
       "accessNote": "Official V1 dataset link and use terms.",
       "recordedSignals": [
-        "Vision"
+        "Vision",
+        "Depth"
       ],
-      "datasetUrl": "https://taco2024.github.io/"
+      "datasetUrl": "https://taco2024.github.io/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "12 FLIR RGB cameras + 6 NOKOV mocap cameras; head-mounted RealSense L515 RGB-D.",
+      "coordinateFrame": "Mocap world frame for objects/camera; multi-view reconstructed hand meshes.",
+      "calibration": "Synchronized multi-view rig with optical markers on tools/objects and ego rig.",
+      "derivedSignals": [
+        "Hand meshes from multi-view fitting",
+        "Mocap object/tool poses",
+        "Action labels"
+      ],
+      "tasks": [
+        "Compositional action recognition",
+        "Motion forecasting",
+        "Cooperative grasp synthesis"
+      ],
+      "contactType": "inferred",
+      "releaseScope": "2.5K motion sequences and 5.2M camera frames; hands are fitted from video and objects have mocap-referenced motion.",
+      "reviewed": "2026-10-16",
+      "splits": "Not verified",
+      "dataLicense": "CC BY 4.0 (official repository); third-party model assets retain their terms.",
+      "recordedStreams": "Egocentric and third-person views of tool use and coordinated object manipulation.",
+      "fieldSources": {
+        "cameraSetup": [
+          "https://taco2024.github.io/",
+          "https://arxiv.org/abs/2401.08399",
+          "https://github.com/leolyliu/TACO-Instructions",
+          "https://taco2024.github.io/"
+        ],
+        "recordedSignals": [
+          "https://taco2024.github.io/",
+          "https://arxiv.org/abs/2401.08399",
+          "https://github.com/leolyliu/TACO-Instructions",
+          "https://taco2024.github.io/"
+        ],
+        "coordinateFrame": [
+          "https://taco2024.github.io/",
+          "https://arxiv.org/abs/2401.08399",
+          "https://github.com/leolyliu/TACO-Instructions",
+          "https://taco2024.github.io/"
+        ],
+        "calibration": [
+          "https://taco2024.github.io/",
+          "https://arxiv.org/abs/2401.08399",
+          "https://github.com/leolyliu/TACO-Instructions",
+          "https://taco2024.github.io/"
+        ],
+        "derivedSignals": [
+          "https://taco2024.github.io/",
+          "https://arxiv.org/abs/2401.08399",
+          "https://github.com/leolyliu/TACO-Instructions",
+          "https://taco2024.github.io/"
+        ],
+        "tasks": [
+          "https://taco2024.github.io/",
+          "https://arxiv.org/abs/2401.08399",
+          "https://github.com/leolyliu/TACO-Instructions",
+          "https://taco2024.github.io/"
+        ],
+        "contactType": [
+          "https://taco2024.github.io/",
+          "https://arxiv.org/abs/2401.08399",
+          "https://github.com/leolyliu/TACO-Instructions",
+          "https://taco2024.github.io/"
+        ],
+        "releaseScope": [
+          "https://taco2024.github.io/",
+          "https://arxiv.org/abs/2401.08399",
+          "https://github.com/leolyliu/TACO-Instructions",
+          "https://taco2024.github.io/"
+        ],
+        "dataLicense": [
+          "https://github.com/leolyliu/TACO-Instructions",
+          "https://taco2024.github.io/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "oakink2": {
-      "reportedScale": {},
+      "reportedScale": {
+        "sequences": 627,
+        "complexTaskSequences": 264,
+        "multiViewFrames": "4.01M",
+        "views": 4,
+        "objects": 75,
+        "participants": 9
+      },
       "publicScale": {},
       "access": "Access conditions",
       "formats": [
-        "JPEG",
+        "Images",
         "PKL",
-        "OBJ",
-        "PLY"
+        "JSON",
+        "3D meshes"
       ],
       "observations": "Synchronized multi-view image streams of complex task completion.",
       "labels": "3D human/hands/objects, primitive text and task dependency graphs.",
@@ -1428,20 +4345,114 @@
       "recordedSignals": [
         "Vision"
       ],
-      "datasetUrl": "https://oakink.net/v2/"
+      "datasetUrl": "https://oakink.net/v2/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "Four synchronized views:1 egocentric +3 allocentric.",
+      "coordinateFrame": "Calibrated scene space; SMPL-X body / hands and object transformations.",
+      "calibration": "Multi-view camera streams and scene/model geometry in release toolkit.",
+      "derivedSignals": [
+        "Body/hand/object pose",
+        "Affordance labels",
+        "Primitive dependency graphs"
+      ],
+      "tasks": [
+        "Complex task completion",
+        "Hand-object reconstruction",
+        "Task-aware motion synthesis"
+      ],
+      "splits": "Paper sequence-level~70 / 5 / 25% train/val/test; release revisions fixed missing annotations.",
+      "contactType": "inferred",
+      "releaseScope": "Official HF dataset plus toolkit; refresh source revision before comparing sequence counts.",
+      "reviewed": "2026-10-16",
+      "dataLicense": "Check dataset terms",
+      "recordedStreams": "Synchronized multi-view image streams of complex task completion.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://oakink.net/v2/",
+          "https://arxiv.org/abs/2403.19417",
+          "https://github.com/oakink/OakInk2",
+          "https://oakink.net/v2/"
+        ],
+        "cameraSetup": [
+          "https://oakink.net/v2/",
+          "https://arxiv.org/abs/2403.19417",
+          "https://github.com/oakink/OakInk2",
+          "https://oakink.net/v2/"
+        ],
+        "coordinateFrame": [
+          "https://oakink.net/v2/",
+          "https://arxiv.org/abs/2403.19417",
+          "https://github.com/oakink/OakInk2",
+          "https://oakink.net/v2/"
+        ],
+        "calibration": [
+          "https://oakink.net/v2/",
+          "https://arxiv.org/abs/2403.19417",
+          "https://github.com/oakink/OakInk2",
+          "https://oakink.net/v2/"
+        ],
+        "formats": [
+          "https://oakink.net/v2/",
+          "https://arxiv.org/abs/2403.19417",
+          "https://github.com/oakink/OakInk2",
+          "https://oakink.net/v2/"
+        ],
+        "derivedSignals": [
+          "https://oakink.net/v2/",
+          "https://arxiv.org/abs/2403.19417",
+          "https://github.com/oakink/OakInk2",
+          "https://oakink.net/v2/"
+        ],
+        "tasks": [
+          "https://oakink.net/v2/",
+          "https://arxiv.org/abs/2403.19417",
+          "https://github.com/oakink/OakInk2",
+          "https://oakink.net/v2/"
+        ],
+        "splits": [
+          "https://oakink.net/v2/",
+          "https://arxiv.org/abs/2403.19417",
+          "https://github.com/oakink/OakInk2",
+          "https://oakink.net/v2/"
+        ],
+        "contactType": [
+          "https://oakink.net/v2/",
+          "https://arxiv.org/abs/2403.19417",
+          "https://github.com/oakink/OakInk2",
+          "https://oakink.net/v2/"
+        ],
+        "releaseScope": [
+          "https://oakink.net/v2/",
+          "https://arxiv.org/abs/2403.19417",
+          "https://github.com/oakink/OakInk2",
+          "https://oakink.net/v2/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "hocap": {
-      "reportedScale": {},
+      "reportedScale": {
+        "videos": 64,
+        "multiViewRGBDFrames": "~656K",
+        "participants": 9,
+        "objects": 64,
+        "scope": "Current arXiv v4, 2025-03-11"
+      },
       "publicScale": {},
       "access": "Public download",
       "formats": [
-        "ZIP"
+        "RGB/depth PNG",
+        "NPY",
+        "JSON",
+        "3D meshes"
       ],
       "observations": "Multiple RealSense RGB-D cameras and a HoloLens headset.",
       "labels": "Object models, hand/object poses and segmentation.",
       "bodyCoverage": "Hands and objects",
       "annotationEvidence": "Semi-automatic shape/pose annotation from RGB-D; no motion-capture system required.",
-      "limitations": "Reference poses are optimized annotations rather than independent mocap measurements.",
+      "limitations": "Semi-automatic reconstructed references, not optical-mocap GT; unstable ego tracking can exclude sequences.",
       "sources": [
         {
           "label": "Official project / release",
@@ -1467,13 +4478,118 @@
         "Vision",
         "Depth"
       ],
-      "datasetUrl": "https://irvlutd.github.io/HOCap/#data"
+      "datasetUrl": "https://irvlutd.github.io/HOCap/#data",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "frames",
+      "cameraSetup": "Eight RealSense D455 + overhead Azure Kinect; wearer HoloLens ego headset.",
+      "coordinateFrame": "Common calibrated 3D frame; optimized hand/object reference poses.",
+      "calibration": "Vicalib camera calibration; multi-view RGB-D fusion.",
+      "derivedSignals": [
+        "MANO hand meshes",
+        "Object 6DoF",
+        "Reconstructed object shapes",
+        "Masks"
+      ],
+      "tasks": [
+        "Hand pose",
+        "Seen/unseen object detection",
+        "Object pose",
+        "Shape reconstruction"
+      ],
+      "splits": "Separate hand-pose, object-detection and object-pose train/val/test configurations.",
+      "dataLicense": "Dataset CC BY 4.0; toolkit GPL 3.0.",
+      "contactType": "none",
+      "releaseScope": "Dataset/subject/object/calibration archives and evaluation configs.",
+      "reviewed": "2026-10-16",
+      "recordedStreams": "Multiple RealSense RGB-D cameras and a HoloLens headset.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "cameraSetup": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "coordinateFrame": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "calibration": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "derivedSignals": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "tasks": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "formats": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "splits": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "dataLicense": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "contactType": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "releaseScope": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ],
+        "limitations": [
+          "https://irvlutd.github.io/HOCap/",
+          "https://arxiv.org/abs/2406.06843",
+          "https://github.com/IRVLUTD/HO-Cap",
+          "https://irvlutd.github.io/HOCap/#data"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "egohos": {
-      "reportedScale": {},
+      "reportedScale": {
+        "images": 11243,
+        "scope": "labeled 2D egocentric images,not new 3D capture hours"
+      },
       "publicScale": {},
       "access": "Public download",
-      "formats": [],
+      "formats": [
+        "RGB images",
+        "Segmentation masks"
+      ],
       "observations": "Egocentric RGB images drawn from manipulation videos.",
       "labels": "Hand masks, interacted-object masks and contact-boundary labels.",
       "bodyCoverage": "Hands and objects",
@@ -1499,10 +4615,90 @@
       "recordedSignals": [
         "Vision"
       ],
-      "datasetUrl": "https://github.com/owenzlz/EgoHOS"
+      "datasetUrl": "https://github.com/owenzlz/EgoHOS",
+      "annotationType": "human",
+      "dataRole": "egocentric",
+      "scaleType": "frames",
+      "cameraSetup": "Selected frames from egocentric daily manipulation videos.",
+      "coordinateFrame": "2D image-space semantic masks and contact boundaries.",
+      "calibration": "Not applicable to 2D segmentation; no metric camera/hand calibration released.",
+      "derivedSignals": [
+        "Left/right hand masks",
+        "Interacted-object masks",
+        "Hand-object contact boundaries"
+      ],
+      "tasks": [
+        "Hand-object segmentation",
+        "Contact boundary segmentation",
+        "Out-of-distribution video segmentation"
+      ],
+      "splits": "Official data splits and separate hand/contact/object segmentation modules.",
+      "contactType": "inferred",
+      "releaseScope": "Official dataset archive and models; visual contact labels are not tactile measurements.",
+      "reviewed": "2026-10-16",
+      "dataLicense": "Check dataset terms",
+      "recordedStreams": "Egocentric RGB images drawn from manipulation videos.",
+      "fieldSources": {
+        "reportedScale": [
+          "https://github.com/owenzlz/EgoHOS",
+          "https://arxiv.org/abs/2208.03826",
+          "https://github.com/owenzlz/EgoHOS"
+        ],
+        "cameraSetup": [
+          "https://github.com/owenzlz/EgoHOS",
+          "https://arxiv.org/abs/2208.03826",
+          "https://github.com/owenzlz/EgoHOS"
+        ],
+        "coordinateFrame": [
+          "https://github.com/owenzlz/EgoHOS",
+          "https://arxiv.org/abs/2208.03826",
+          "https://github.com/owenzlz/EgoHOS"
+        ],
+        "calibration": [
+          "https://github.com/owenzlz/EgoHOS",
+          "https://arxiv.org/abs/2208.03826",
+          "https://github.com/owenzlz/EgoHOS"
+        ],
+        "derivedSignals": [
+          "https://github.com/owenzlz/EgoHOS",
+          "https://arxiv.org/abs/2208.03826",
+          "https://github.com/owenzlz/EgoHOS"
+        ],
+        "formats": [
+          "https://github.com/owenzlz/EgoHOS",
+          "https://arxiv.org/abs/2208.03826",
+          "https://github.com/owenzlz/EgoHOS"
+        ],
+        "tasks": [
+          "https://github.com/owenzlz/EgoHOS",
+          "https://arxiv.org/abs/2208.03826",
+          "https://github.com/owenzlz/EgoHOS"
+        ],
+        "splits": [
+          "https://github.com/owenzlz/EgoHOS",
+          "https://arxiv.org/abs/2208.03826",
+          "https://github.com/owenzlz/EgoHOS"
+        ],
+        "contactType": [
+          "https://github.com/owenzlz/EgoHOS",
+          "https://arxiv.org/abs/2208.03826",
+          "https://github.com/owenzlz/EgoHOS"
+        ],
+        "releaseScope": [
+          "https://github.com/owenzlz/EgoHOS",
+          "https://arxiv.org/abs/2208.03826",
+          "https://github.com/owenzlz/EgoHOS"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     },
     "aria-gen2-pilot": {
-      "reportedScale": {},
+      "reportedScale": {
+        "sequences": 12,
+        "scenarios": 5,
+        "sequenceDuration": "~5 min",
+        "scope": "initial 2025 paper release; ongoing incremental additions"
+      },
       "publicScale": {},
       "access": "Access conditions",
       "formats": [],
@@ -1510,7 +4706,7 @@
       "labels": "Machine-perception outputs for wearer, scene and interaction context.",
       "bodyCoverage": "Head hands and environment",
       "annotationEvidence": "Device sensing with estimated perception outputs; fields follow release-specific documentation.",
-      "limitations": "Incremental pilot collection; algorithm outputs should not be relabeled as independent GT.",
+      "limitations": "No physical depth sensor. FoundationStereo depth and heart rate are predictions, not reference ground truth.",
       "sources": [
         {
           "label": "Official project / release",
@@ -1537,10 +4733,109 @@
         "Monochrome",
         "IMU",
         "Gaze",
-        "Audio",
-        "PPG"
+        "Audio"
       ],
-      "datasetUrl": "https://www.projectaria.com/datasets/gen2pilot/"
+      "datasetUrl": "https://www.projectaria.com/datasets/gen2pilot/",
+      "annotationType": "estimated",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "Aria Gen 2: one RGB, four CV mono and binocular eye cameras; dual IMUs and eight-channel audio.",
+      "recordedStreams": "RGB 10 fps; CV mono 30 fps; eye images 5 fps; dual IMU 800 Hz; eight-channel audio; PPG 128 Hz and environmental sensors.",
+      "coordinateFrame": "On-device odometry frame and shared multi-user SLAM frame; algorithm estimates.",
+      "calibration": "Factory and online calibration; multi-device alignment/time synchronization released.",
+      "derivedSignals": [
+        "VIO",
+        "Hand tracking",
+        "Gaze",
+        "Stereo-estimated depth",
+        "Heart-rate estimates",
+        "Diarization"
+      ],
+      "tasks": [
+        "Contextual AI",
+        "Egocentric scene understanding",
+        "Wearable hand tracking"
+      ],
+      "dataLicense": "CC BY-NC 4.0 dataset; paper licensing is separate.",
+      "contactType": "none",
+      "releaseScope": "Initial pilot: twelve approximately five-minute recordings; raw data, on-device estimates, MPS and other algorithm outputs are separate.",
+      "reviewed": "2026-10-16",
+      "splits": "Not verified",
+      "fieldSources": {
+        "reportedScale": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "cameraSetup": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "recordedStreams": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "recordedSignals": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "coordinateFrame": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "calibration": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "derivedSignals": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "tasks": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "dataLicense": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "contactType": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "releaseScope": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ],
+        "limitations": [
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://arxiv.org/abs/2510.16134",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://www.projectaria.com/datasets/gen2pilot/"
+        ]
+      },
+      "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
     }
   }
 }

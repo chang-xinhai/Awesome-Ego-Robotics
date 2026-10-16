@@ -106,7 +106,14 @@
     "form": "Headband",
     "coverage": "Whole body",
     "tracking": "Visual hand/body reconstruction",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/kai-ego-hardware.webp",
+    "hardwareImageAlt": "Kai Halo head-mounted camera array on a mannequin",
+    "hardwareImageSource": "https://assets.kinetixai.cn/shucai/s10-20260702-2/s3/头环_00456.jpg",
+    "hardwareImagePage": "https://www.kinetixai.tech/zh/KaiEgo",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Kinetix AI",
+    "hardwareImageReviewed": "2026-10-16"
   },
   {
     "id": "das-ego",
@@ -193,7 +200,15 @@
     "form": "Hybrid",
     "coverage": "Upper body",
     "tracking": "Hand and body pose annotations",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/lightwheel-egosuite-hardware.webp",
+    "hardwareImageAlt": "EgoSuite wrist-mounted camera modules and tracking markers in the official Open100K release video, 64-second frame",
+    "hardwareImageSource": "https://lw-cdn.lightwheel.net/build/egosuite-open100k/assets/egosuite-open100k-announcement-WRuorN5F.mp4#t=64",
+    "hardwareImagePage": "https://egosuite100k.lightwheel.ai/",
+    "hardwareImageType": "Hardware in use / official video frame",
+    "hardwareImageCredit": "Lightwheel",
+    "hardwareImageReviewed": "2026-10-16",
+    "hardwareImageCapture": "Frame at 64.0 seconds from official EgoSuite-Open100K announcement video"
   },
   {
     "id": "ego-oscar",
@@ -320,10 +335,12 @@
     "imagePage": "https://www.rokoko.com/products/smartgloves-ii",
     "imageSource": "https://cdn.prod.website-files.com/5e6b63ac3b6e253f11889f39/69972cb0ec0a57e98752880d_IMG_6180-2.avif",
     "imageAlt": "Rokoko Smartgloves II capture hardware",
-    "hardwareImageAlt": "Rokoko Smartgloves II capture hardware",
-    "hardwareImageSource": "https://cdn.prod.website-files.com/5e6b63ac3b6e253f11889f39/69972cb0ec0a57e98752880d_IMG_6180-2.avif",
+    "hardwareImageAlt": "Rokoko Smartgloves II worn on a hand, with dorsal sensor hub and exposed fingertips",
+    "hardwareImageSource": "https://cdn.prod.website-files.com/5e6b63ac3b6e253f11889f39/699c0c351fa5085d4cb939f0_2.avif",
     "hardwareImagePage": "https://www.rokoko.com/products/smartgloves-ii",
-    "hardwareImageType": "Hardware / capture system"
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Rokoko",
+    "hardwareImageReviewed": "2026-10-16"
   },
   {
     "id": "xsens-link",
@@ -424,7 +441,14 @@
     "form": "Headset",
     "coverage": "Whole body",
     "tracking": "Multi-view body pose estimation",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/egorear-hardware.webp",
+    "hardwareImageAlt": "EgoRear helmet prototype with front and rear cameras; hardware panel cropped from Figure 3",
+    "hardwareImageSource": "https://arxiv.org/html/2503.11652v2/device.png",
+    "hardwareImagePage": "https://arxiv.org/html/2503.11652v2",
+    "hardwareImageType": "Hardware photograph / cropped paper panel",
+    "hardwareImageCredit": "Akada et al.",
+    "hardwareImageReviewed": "2026-10-16"
   },
   {
     "id": "egocap",
@@ -507,10 +531,8 @@
     "name": "ForceBand",
     "summary": "Wrist EMG and IMU provide force-enriched human demonstrations after calibration with fingertip force measurements.",
     "signals": [
-      "Vision",
       "EMG",
-      "IMU",
-      "Force"
+      "IMU"
     ],
     "form": "Wristband",
     "coverage": "Hands",
@@ -531,8 +553,7 @@
     "name": "OSMO",
     "summary": "A wearable tactile glove records normal and shear contact signals for human-to-robot skill transfer.",
     "signals": [
-      "Tactile",
-      "Force"
+      "Tactile"
     ],
     "form": "Glove",
     "coverage": "Hands",
@@ -572,7 +593,14 @@
     "datasetImagePage": "https://siplab.org/projects/EgoPressure",
     "datasetImageType": "Dataset overview",
     "datasetName": "EgoPressure",
-    "datasetSummary": "Egocentric hand video paired with measured surface pressure and reconstructed hand geometry."
+    "datasetSummary": "Egocentric hand video paired with measured surface pressure and reconstructed hand geometry.",
+    "hardwareImage": "images/catalog/egopressure-hardware.webp",
+    "hardwareImageAlt": "EgoPressure camera rig and Sensel pressure surface with head-mounted capture",
+    "hardwareImageSource": "https://arxiv.org/html/2409.02224v2/camera_setup.png",
+    "hardwareImagePage": "https://arxiv.org/html/2409.02224v2",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Zhao et al.",
+    "hardwareImageReviewed": "2026-10-16"
   },
   {
     "id": "dexcap",
@@ -581,9 +609,7 @@
     "signals": [
       "Vision",
       "Depth",
-      "State",
-      "SLAM",
-      "Mocap"
+      "State"
     ],
     "form": "Hybrid",
     "coverage": "Hands",
@@ -606,7 +632,8 @@
     "summary": "Mobile glove-and-camera capture records dexterous human actions in varied environments for robot co-training.",
     "signals": [
       "Vision",
-      "State"
+      "State",
+      "Depth"
     ],
     "form": "Hybrid",
     "coverage": "Hands",
@@ -678,7 +705,14 @@
     "form": "Hybrid",
     "coverage": "Not reported",
     "tracking": "Configurable EMG/IMU recording; kinematics require additional processing",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "hardwareImage": "images/catalog/delsys-trigno-avanti-hardware.webp",
+    "hardwareImageAlt": "Delsys Trigno Avanti wireless surface EMG sensor",
+    "hardwareImageSource": "https://delsys.com/wp-content/uploads/2025/05/product-trigno-avanti-01.webp",
+    "hardwareImagePage": "https://delsys.com/trigno/",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Delsys",
+    "hardwareImageReviewed": "2026-10-16"
   },
   {
     "id": "ego4d",
@@ -686,7 +720,8 @@
     "summary": "Daily-life egocentric video for activity understanding, episodic memory and anticipation.",
     "signals": [
       "Vision",
-      "Audio"
+      "Audio",
+      "IMU"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -1024,8 +1059,7 @@
     "name": "Ego-1K",
     "summary": "Synchronized multi-camera egocentric video for stereo and novel-view synthesis research.",
     "signals": [
-      "Vision",
-      "Monochrome"
+      "Vision"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -1181,8 +1215,7 @@
     "summary": "Multi-sensor human manipulation data and annotations designed for transfer to dexterous robots.",
     "signals": [
       "Vision",
-      "IMU",
-      "Tactile"
+      "IMU"
     ],
     "form": "Not reported",
     "coverage": "Upper body",
@@ -1198,7 +1231,7 @@
     "datasetImagePage": "https://arxiv.org/html/2512.24310v1",
     "datasetImageType": "Dataset overview",
     "datasetName": "World In Your Hands",
-    "datasetSummary": "Multi-sensor human manipulation data and annotations designed for transfer to dexterous robots."
+    "datasetSummary": "Large-scale egocentric and hand-centric RGB/IR recordings with glove-based hand motion."
   },
   {
     "id": "egolife",
@@ -1302,8 +1335,8 @@
     "signals": [
       "Vision",
       "Depth",
-      "Tactile",
-      "IMU"
+      "IMU",
+      "Tactile"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -1374,7 +1407,6 @@
     "summary": "Wearable stereo navigation data combining real recordings and a separate synthetic component.",
     "signals": [
       "Vision",
-      "Depth",
       "IMU"
     ],
     "form": "Not reported",
@@ -1397,10 +1429,7 @@
     "id": "ego-gen",
     "name": "EgoGen",
     "summary": "Synthetic egocentric data with controllable human motion, sensors and geometric labels.",
-    "signals": [
-      "Vision",
-      "Depth"
-    ],
+    "signals": [],
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
@@ -1422,7 +1451,8 @@
     "name": "TACO",
     "summary": "Bimanual tool–action–object interactions with 3D meshes and compositional generalization tasks.",
     "signals": [
-      "Vision"
+      "Vision",
+      "Depth"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -1519,8 +1549,7 @@
       "Monochrome",
       "IMU",
       "Gaze",
-      "Audio",
-      "PPG"
+      "Audio"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -1542,7 +1571,9 @@
     "id": "mano",
     "name": "MANO",
     "summary": "A compact parametric hand model that provides a common mesh representation for capture and reconstruction.",
-    "signals": [],
+    "signals": [
+      "State"
+    ],
     "form": "Not reported",
     "coverage": "Hands",
     "tracking": "Not reported",
@@ -1711,8 +1742,7 @@
     "name": "ESTHER",
     "summary": "Uses stereo geometry and temporal context for metric egocentric hand reconstruction.",
     "signals": [
-      "Vision",
-      "Stereo"
+      "Vision"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -1815,7 +1845,7 @@
     "summary": "Reconstructs the camera wearer's body and hands in an allocentric scene frame.",
     "signals": [
       "Vision",
-      "SLAM"
+      "State"
     ],
     "form": "Not reported",
     "coverage": "Whole body",
@@ -1831,7 +1861,9 @@
     "id": "umetrack",
     "name": "UmeTrack",
     "summary": "Learns a unified multiview, multiframe hand tracker for real-time VR interaction.",
-    "signals": [],
+    "signals": [
+      "Vision"
+    ],
     "form": "Not reported",
     "coverage": "Hands",
     "tracking": "Not reported",
@@ -2069,7 +2101,7 @@
     "name": "Dex-X",
     "summary": "Uses simulation to add tactile supervision missing from human video and transfers the resulting policy.",
     "signals": [
-      "Tactile"
+      "Vision"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -2102,7 +2134,9 @@
     "id": "egobridge",
     "name": "EgoBridge",
     "summary": "Aligns human and robot policy features while preserving action-relevant information.",
-    "signals": [],
+    "signals": [
+      "Vision"
+    ],
     "form": "Not reported",
     "coverage": "Hands",
     "tracking": "Not reported",
@@ -2134,7 +2168,9 @@
     "id": "motiontrans",
     "name": "MotionTrans",
     "summary": "Studies motion-level skill transfer from VR human data through shared multi-task training.",
-    "signals": [],
+    "signals": [
+      "Vision"
+    ],
     "form": "Not reported",
     "coverage": "Hands",
     "tracking": "Not reported",
@@ -2166,7 +2202,9 @@
     "id": "being-h05",
     "name": "Being-H0.5",
     "summary": "Uses a human-centric action interface to share motion knowledge across robot embodiments.",
-    "signals": [],
+    "signals": [
+      "Vision"
+    ],
     "form": "Not reported",
     "coverage": "Hands",
     "tracking": "Not reported",
@@ -2232,7 +2270,9 @@
     "id": "metis",
     "name": "METIS",
     "summary": "Integrates multi-source egocentric data and motion-aware supervision for dexterous control.",
-    "signals": [],
+    "signals": [
+      "Vision"
+    ],
     "form": "Not reported",
     "coverage": "Hands",
     "tracking": "Not reported",
@@ -2248,8 +2288,7 @@
     "name": "Being-H0",
     "summary": "Builds motion-based instruction supervision from heterogeneous human capture sources.",
     "signals": [
-      "Vision",
-      "Mocap"
+      "Vision"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -2282,11 +2321,19 @@
     "id": "egozero",
     "name": "EgoZero",
     "summary": "Learns transferable manipulation policies from smart-glasses demonstrations without robot training data.",
-    "signals": [],
+    "signals": [
+      "Vision"
+    ],
     "form": "Not reported",
     "coverage": "Hands",
     "tracking": "Not reported",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/egozero-methods.webp",
+    "imageSource": "https://egozero-robot.github.io/static/images/architecture.png",
+    "imagePage": "https://egozero-robot.github.io/",
+    "imageAlt": "EgoZero architecture: Aria human capture, point representations and robot execution",
+    "imageType": "Method / tool output",
+    "credit": "EgoZero authors"
   },
   {
     "id": "humanego",
@@ -2309,7 +2356,9 @@
     "id": "egohumanoid",
     "name": "EgoHumanoid",
     "summary": "Aligns egocentric human demonstrations with humanoid control for mobile manipulation.",
-    "signals": [],
+    "signals": [
+      "Vision"
+    ],
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
@@ -2325,7 +2374,7 @@
     "name": "DexRoam",
     "summary": "Preserves coordinated whole-body motion during human-to-robot demonstration transfer.",
     "signals": [
-      "Stereo"
+      "Vision"
     ],
     "form": "Not reported",
     "coverage": "Whole body",
@@ -2341,7 +2390,9 @@
     "id": "egohumanoid-v2",
     "name": "EgoHumanoid-V2",
     "summary": "Transfers coordinated whole-body skills through coarse-to-fine action and visual alignment.",
-    "signals": [],
+    "signals": [
+      "Vision"
+    ],
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
@@ -2356,7 +2407,9 @@
     "id": "emma",
     "name": "EMMA",
     "summary": "Combines human mobility data with static robot demonstrations to learn mobile manipulation.",
-    "signals": [],
+    "signals": [
+      "Vision"
+    ],
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
@@ -2389,8 +2442,7 @@
     "name": "R3M",
     "summary": "Pretrains a reusable visual representation from human video for data-efficient robot control.",
     "signals": [
-      "Vision",
-      "Language"
+      "Vision"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -2441,8 +2493,7 @@
     "name": "UniVLA",
     "summary": "Uses task-centric latent actions to transfer knowledge across viewpoints and embodiments.",
     "signals": [
-      "Vision",
-      "Language"
+      "Vision"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -2476,8 +2527,7 @@
     "name": "Gen2Act",
     "summary": "Conditions manipulation on generated human motion to generalize beyond collected robot tasks.",
     "signals": [
-      "Vision",
-      "Language"
+      "Vision"
     ],
     "form": "Not reported",
     "coverage": "Hands",
@@ -2562,12 +2612,18 @@
     "name": "dex-retargeting",
     "summary": "Provides configurable kinematic retargeting from human hand motion to multiple dexterous robot hands.",
     "signals": [
-      "Pose"
+      "State"
     ],
     "form": "Not reported",
     "coverage": "Hands",
     "tracking": "Not reported",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/dex-retargeting-methods.webp",
+    "imageSource": "https://raw.githubusercontent.com/dexsuite/dex-retargeting/main/example/vector_retargeting/teaser.webp",
+    "imagePage": "https://github.com/dexsuite/dex-retargeting/tree/main/example/vector_retargeting",
+    "imageAlt": "Official hand-video retargeting example showing the human hand and robot hand output",
+    "imageType": "Method / tool output",
+    "credit": "DexSuite / Dex Retargeting authors"
   },
   {
     "id": "projectaria-tools",
@@ -2575,38 +2631,57 @@
     "summary": "Supplies readers, calibration, synchronization, visualization, and interfaces for processing Aria recordings.",
     "signals": [
       "Vision",
-      "SLAM",
-      "IMU"
+      "IMU",
+      "Gaze",
+      "Audio"
     ],
     "form": "Not reported",
     "coverage": "Hands",
     "tracking": "Not reported",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/projectaria-tools-methods.webp",
+    "imageSource": "https://facebookresearch.github.io/projectaria_tools/assets/images/rerun-mps-67569c76ebd095aa749b8a8c7f3df4c5.png",
+    "imagePage": "https://facebookresearch.github.io/projectaria_tools/docs/data_utilities/visualization/visualization_python",
+    "imageAlt": "Official Project Aria Tools MPS Rerun visualization with camera trajectories and synchronized sensor images",
+    "imageType": "Method / tool output",
+    "credit": "Meta / Project Aria"
   },
   {
     "id": "egolocate",
     "name": "EgoLocate",
     "summary": "Fuses sparse inertial capture with visual localization to reduce global motion drift.",
     "signals": [
-      "IMU",
-      "Vision"
+      "Vision",
+      "IMU"
     ],
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/egolocate-methods.webp",
+    "imageSource": "https://arxiv.org/html/2305.01599v1/pic/teaser.jpg",
+    "imagePage": "https://arxiv.org/html/2305.01599v1",
+    "imageAlt": "EgoLocate capture and reconstruction teaser showing body motion and scene localization",
+    "imageType": "Method / tool output",
+    "credit": "EgoLocate authors"
   },
   {
     "id": "egoposer",
     "name": "EgoPoser",
     "summary": "Infers full-body motion from sparse head and hand signals while handling missing hand observations.",
     "signals": [
-      "Pose"
+      "State"
     ],
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/egoposer-methods.webp",
+    "imageSource": "https://siplab.org/figures/teasers/egoposer.jpg",
+    "imagePage": "https://siplab.org/projects/EgoPoser",
+    "imageAlt": "EgoPoser full-body reconstruction with intermittent hand and headset tracking",
+    "imageType": "Method / tool output",
+    "credit": "EgoPoser authors / SIP Lab"
   },
   {
     "id": "egoego",
@@ -2618,7 +2693,13 @@
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/egoego-methods.webp",
+    "imageSource": "https://arxiv.org/html/2212.04636v1/Figure_teaser.png",
+    "imagePage": "https://arxiv.org/html/2212.04636v1",
+    "imageAlt": "EgoEgo reconstructs head motion and plausible full-body pose from first-person video",
+    "imageType": "Method / tool output",
+    "credit": "EgoEgo authors"
   },
   {
     "id": "egoposevr",
@@ -2627,12 +2708,18 @@
     "signals": [
       "Vision",
       "Depth",
-      "Pose"
+      "State"
     ],
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/egoposevr-methods.webp",
+    "imageSource": "https://arxiv.org/html/2602.05590v1/Figures/Pipeline/Pipeline.jpg",
+    "imagePage": "https://arxiv.org/html/2602.05590v1",
+    "imageAlt": "EgoPoseVR spatiotemporal RGB-D and headset-motion fusion with kinematic pose refinement",
+    "imageType": "Method / tool output",
+    "credit": "EgoPoseVR authors"
   },
   {
     "id": "eventego3d-plus-plus",
@@ -2644,6 +2731,12 @@
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/eventego3d-plus-plus-methods.webp",
+    "imageSource": "https://eventego3d.mpi-inf.mpg.de/static/images/architecture-min.png",
+    "imagePage": "https://eventego3d.mpi-inf.mpg.de/",
+    "imageAlt": "Official EventEgo3D++ event-surface architecture and 3D full-body pose reconstruction",
+    "imageType": "Method / tool output",
+    "credit": "EventEgo3D++ authors"
   }
 ]

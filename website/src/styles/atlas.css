@@ -2408,3 +2408,39 @@ dialog[open] {
  .text-cover strong { font-size:21px; }
 }
 .card-tags > span { max-width:100%; overflow:hidden; text-overflow:ellipsis; }
+
+/* Each collection has its own research map and a compact faceted sheet. */
+.category-nav { margin: 23px 0 0; min-width:0; }
+.category-options { display:flex; align-items:center; gap:7px; overflow-x:auto; padding:2px 0 7px; scrollbar-width:thin; scrollbar-color:#dddde2 transparent; }
+.category-options button { flex:none; display:inline-flex; align-items:center; gap:7px; min-height:37px; padding:8px 11px; border:1px solid transparent; border-radius:10px; color:var(--muted); font-size:12px; font-weight:500; white-space:nowrap; transition:background .16s,color .16s; }
+.category-options button:hover { color:var(--ink); background:#f7f7f9; }
+.category-options button[aria-pressed="true"] { color:var(--ink); background:#f1f1f4; border-color:#e8e8ed; }
+.category-options small { font-size:10px; letter-spacing:.02em; color:#9b9ba4; }
+.category-options button[aria-pressed="true"] small { color:#5b5b66; }
+.category-options span { color:#a0a0a9; font-size:10px; font-variant-numeric:tabular-nums; }
+.library-meta { margin-top:14px; }
+.filter-panel { width:min(530px,100%); padding:24px; background:rgba(255,255,255,.985); }
+.filter-fields { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+#signal-options { display:flex; flex-wrap:wrap; gap:7px; }
+.filter-heading h2 { margin:0; font-size:18px; }
+.filter-note { font-size:11px; line-height:1.65; margin:18px 0; }
+.filter-fields select { font-size:12px; }
+.detail-section .facts > div { align-items:start; }
+.detail-section .facts dd { text-wrap:pretty; }
+.detail-scope-note { color:var(--muted); font-size:12px; line-height:1.6; margin:12px 0 0; }
+.detail-subtitle { color:var(--muted); font-size:12px; margin:0 0 18px; }
+@media(max-width:700px) {
+ .category-nav { margin-top:15px; }
+ .category-options { gap:3px; padding-bottom:7px; }
+ .category-options button { font-size:11px; padding:8px 10px; min-height:36px; }
+ .filter-panel { padding:20px; }
+ .filter-fields { gap:16px 12px; }
+}
+.library-meta { min-height:54px; margin-top:2px; }
+.filter-panel:not([hidden]) { display:flex; flex-direction:column; }
+.filter-heading { flex:none; }
+.filter-body { min-height:0; flex:1; overflow-y:auto; overscroll-behavior:contain; padding:4px; margin:-4px; scrollbar-width:thin; }
+.filter-footer { flex:none; padding-top:16px; background:#fff; }
+.filter-panel #apply-filters { position:static; margin:0; width:100%; }
+.data-scale-column small { display:block; margin-top:9px; font-size:11px; line-height:1.5; color:var(--muted); }
+.filter-body { margin:-4px -4px 0; }

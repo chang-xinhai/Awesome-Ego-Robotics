@@ -19,6 +19,7 @@ Open <http://localhost:4342/Awesome-Ego-Robotics/>. `explore/` is an alternate e
 point. `catalog.json` is the static README-derived catalog.
 
 ```sh
+npm test
 npm run check
 npm run build
 npm run preview -- --host 0.0.0.0 --port 4342
@@ -77,3 +78,24 @@ filters, details, context-specific comparisons, shared URLs, empty/error states,
 keyboard operation, infinite loading and reduced motion. Review the rendered
 site against Awesome-UMI for typography, palette, spacing, image fit, controls
 and responsive behavior.
+
+## Collection-specific discovery
+
+Each lens has a visible category bar and at most five dedicated facets.
+Hardware uses device families, form, coverage, availability and project release.
+Datasets use data families, coverage, annotation evidence, data scope and access.
+Methods use L1 hand reconstruction, L2 world/body motion, L3 interaction, L4
+robotization, L5 policy learning, L6 direct video-learning routes, and tools.
+Their additional filters cover output/representation, validation and learning.
+Year is shared. Options/counts narrow to the category and other active filters.
+Query, sort, categories, facets, signals and comparison are remembered separately
+for each lens. Shared URLs contain only the active view; legacy `source=` links
+migrate to the equivalent category. Newest remains the default.
+
+Every hardware/dataset/method placement has a real credited local preview.
+Hardware videos are explicitly credited as original video frames. Rich details
+separate capture/export, raw versus derived observations, annotations and
+release scope, or method geometry versus robot evaluation. `fieldSources`
+records primary evidence per field. Synthetic modalities remain separate from
+physical recordings. Scale formatting preserves new dimensions and avoids
+repeating units already present in source values.

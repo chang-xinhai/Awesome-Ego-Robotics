@@ -27,12 +27,66 @@
         {
           "label": "Project Aria tools",
           "url": "https://github.com/facebookresearch/projectaria_tools"
+        },
+        {
+          "label": "VRS data format",
+          "url": "https://facebookresearch.github.io/projectaria_tools/docs/data_formats"
         }
       ],
       "verified": "2026-10-16",
       "interfaceForms": [
         "Glasses"
-      ]
+      ],
+      "captureComponents": "5 cameras; dual IMUs; 7-channel microphones; GNSS, magnetometer and barometer",
+      "cameraSpecs": "RGB: 2880×2880 max, 110° H/V, up to 30 fps; 2 mono: 640×480, 150° H × 120° V; 2 eye cameras: up to 90 fps",
+      "measuredSignals": "RGB, monochrome, eye images, acceleration/angular velocity and spatial audio",
+      "synchronization": "Calibrated sensors; common-clock timestamps with nanosecond resolution",
+      "outputs": "VRS recordings; calibration, images and motion/audio streams via Project Aria Tools",
+      "configuration": "Gen 1; recording profiles determine active streams, resolution and rate",
+      "softwareRelease": "Public Project Aria Tools; perception results are derived outputs",
+      "hardwareRelease": "Research glasses; partner access, not an open-hardware design release",
+      "fieldSources": {
+        "captureComponents": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/tech_spec/hardware_spec",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://facebookresearch.github.io/projectaria_tools/docs/data_formats"
+        ],
+        "cameraSpecs": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/tech_spec/hardware_spec",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://facebookresearch.github.io/projectaria_tools/docs/data_formats"
+        ],
+        "measuredSignals": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/tech_spec/hardware_spec",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://facebookresearch.github.io/projectaria_tools/docs/data_formats"
+        ],
+        "synchronization": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/tech_spec/hardware_spec",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://facebookresearch.github.io/projectaria_tools/docs/data_formats"
+        ],
+        "outputs": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/tech_spec/hardware_spec",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://facebookresearch.github.io/projectaria_tools/docs/data_formats"
+        ],
+        "configuration": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/tech_spec/hardware_spec",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://facebookresearch.github.io/projectaria_tools/docs/data_formats"
+        ],
+        "softwareRelease": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/tech_spec/hardware_spec",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://facebookresearch.github.io/projectaria_tools/docs/data_formats"
+        ],
+        "hardwareRelease": [
+          "https://facebookresearch.github.io/projectaria_tools/docs/tech_spec/hardware_spec",
+          "https://github.com/facebookresearch/projectaria_tools",
+          "https://facebookresearch.github.io/projectaria_tools/docs/data_formats"
+        ]
+      }
     },
     "project-aria-gen2": {
       "interface": "Project Aria Gen 2",
@@ -57,12 +111,58 @@
         {
           "label": "Official source",
           "url": "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware"
+        },
+        {
+          "label": "Aria Gen 2 overview",
+          "url": "https://facebookresearch.github.io/projectaria_tools/gen2/"
         }
       ],
       "verified": "2026-10-16",
       "interfaceForms": [
         "Glasses"
-      ]
+      ],
+      "captureComponents": "7 cameras; dual 6-axis IMUs; 7 spatial microphones plus nosepad contact microphone; PPG, ALS and GNSS",
+      "cameraSpecs": "RGB: 4032×3024 at 24 fps, 133° H × 99° V; 4 mono CV: 512×512, 119° H/V; 2 eye: 400×400, gaze up to 90 Hz",
+      "measuredSignals": "RGB, mono, eye images, IMU, audio and physiological/environmental signals; front stereo depth is computed off-device",
+      "synchronization": "Sub-GHz timestamp alignment across devices; alignment does not synchronize frame triggers",
+      "outputs": "VRS; on-device 6DoF localization, articulated hand tracking and gaze",
+      "configuration": "Gen 2; contact microphone records speech vibration, not hand contact pressure",
+      "softwareRelease": "Public Project Aria Tools and client SDK",
+      "hardwareRelease": "Research kit by application; CAD accessory files are separate from glasses electronics",
+      "fieldSources": {
+        "captureComponents": [
+          "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware",
+          "https://facebookresearch.github.io/projectaria_tools/gen2/"
+        ],
+        "cameraSpecs": [
+          "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware",
+          "https://facebookresearch.github.io/projectaria_tools/gen2/"
+        ],
+        "measuredSignals": [
+          "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware",
+          "https://facebookresearch.github.io/projectaria_tools/gen2/"
+        ],
+        "synchronization": [
+          "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware",
+          "https://facebookresearch.github.io/projectaria_tools/gen2/"
+        ],
+        "outputs": [
+          "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware",
+          "https://facebookresearch.github.io/projectaria_tools/gen2/"
+        ],
+        "configuration": [
+          "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware",
+          "https://facebookresearch.github.io/projectaria_tools/gen2/"
+        ],
+        "softwareRelease": [
+          "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware",
+          "https://facebookresearch.github.io/projectaria_tools/gen2/"
+        ],
+        "hardwareRelease": [
+          "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware",
+          "https://facebookresearch.github.io/projectaria_tools/gen2/"
+        ]
+      }
     },
     "pupil-neon": {
       "interface": "Pupil Neon",
@@ -87,12 +187,53 @@
         {
           "label": "Official source",
           "url": "https://pupil-labs.com/products/neon"
+        },
+        {
+          "label": "Neon specifications",
+          "url": "https://pupil-labs.com/products/neon/specs"
         }
       ],
       "verified": "2026-10-16",
       "interfaceForms": [
         "Glasses"
-      ]
+      ],
+      "captureComponents": "Modular glasses + scene camera, 2 IR eye cameras, stereo microphones and IMU",
+      "cameraSpecs": "Scene: 1600×1200 at 30 Hz; 103° H × 77° V (128° diagonal); eye cameras: 192×192 at 200 Hz",
+      "measuredSignals": "Scene/eye video, inertial data and audio; gaze/pupil metrics are estimated",
+      "outputs": "Companion app recordings; live scene video, gaze, eye state and head orientation",
+      "configuration": "Neon module supports multiple frames; gaze tracking is not hand/body pose measurement",
+      "softwareRelease": "Companion/Cloud workflows and developer integrations; full stack licensing is separate",
+      "hardwareRelease": "Commercial glasses; no public complete hardware design established",
+      "fieldSources": {
+        "captureComponents": [
+          "https://pupil-labs.com/products/neon",
+          "https://pupil-labs.com/products/neon/specs"
+        ],
+        "cameraSpecs": [
+          "https://pupil-labs.com/products/neon",
+          "https://pupil-labs.com/products/neon/specs"
+        ],
+        "measuredSignals": [
+          "https://pupil-labs.com/products/neon",
+          "https://pupil-labs.com/products/neon/specs"
+        ],
+        "outputs": [
+          "https://pupil-labs.com/products/neon",
+          "https://pupil-labs.com/products/neon/specs"
+        ],
+        "configuration": [
+          "https://pupil-labs.com/products/neon",
+          "https://pupil-labs.com/products/neon/specs"
+        ],
+        "softwareRelease": [
+          "https://pupil-labs.com/products/neon",
+          "https://pupil-labs.com/products/neon/specs"
+        ],
+        "hardwareRelease": [
+          "https://pupil-labs.com/products/neon",
+          "https://pupil-labs.com/products/neon/specs"
+        ]
+      }
     },
     "tobii-pro-glasses-3": {
       "interface": "Tobii Pro Glasses 3",
@@ -122,7 +263,41 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Glasses"
-      ]
+      ],
+      "captureComponents": "Scene camera, 4 eye-tracking sensors, IMU, microphone and separate recording unit",
+      "cameraSpecs": "Scene: 1920×1080 at 25 fps, 106° diagonal; gaze: 50 or 100 Hz",
+      "measuredSignals": "Scene video, mono audio, accelerometer/gyro at 100 Hz and magnetometer at 10 Hz",
+      "synchronization": "Recording unit provides a 3.5 mm TTL synchronization port",
+      "outputs": "Live/stored data through free Glasses 3 API; Pro Lab analysis and export",
+      "configuration": "Gaze-focused device; no built-in hand or full-body tracking is claimed",
+      "softwareRelease": "Free documented API; API availability does not establish open hardware",
+      "hardwareRelease": "Commercial device and controller app",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3"
+        ],
+        "cameraSpecs": [
+          "https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3"
+        ],
+        "measuredSignals": [
+          "https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3"
+        ],
+        "synchronization": [
+          "https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3"
+        ],
+        "outputs": [
+          "https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3"
+        ],
+        "configuration": [
+          "https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3"
+        ],
+        "softwareRelease": [
+          "https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3"
+        ],
+        "hardwareRelease": [
+          "https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3"
+        ]
+      }
     },
     "kai-ego": {
       "interface": "Kai Ego Suite / Kai Halo",
@@ -150,7 +325,41 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Headband"
-      ]
+      ],
+      "captureComponents": "Kai Halo headband: front fisheye array plus 4 downward cameras",
+      "cameraSpecs": "Official page describes a 4-camera fisheye front array; resolution/frame rates are not specified",
+      "measuredSignals": "Multi-view first-person video; hand/body poses and scene geometry are reconstructed",
+      "synchronization": "Vendor reports microsecond-level timing alignment",
+      "outputs": "Hand/body reconstruction, 3D scenes, action semantics and segmented task episodes",
+      "configuration": "Kai Ego Suite includes capture hardware and a hosted curation/annotation stack",
+      "softwareRelease": "Developer documentation linked; public raw-data API and license need confirmation",
+      "hardwareRelease": "Vendor-listed commercial solution; design-file release unknown",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.kinetixai.tech/zh/KaiEgo"
+        ],
+        "cameraSpecs": [
+          "https://www.kinetixai.tech/zh/KaiEgo"
+        ],
+        "measuredSignals": [
+          "https://www.kinetixai.tech/zh/KaiEgo"
+        ],
+        "synchronization": [
+          "https://www.kinetixai.tech/zh/KaiEgo"
+        ],
+        "outputs": [
+          "https://www.kinetixai.tech/zh/KaiEgo"
+        ],
+        "configuration": [
+          "https://www.kinetixai.tech/zh/KaiEgo"
+        ],
+        "softwareRelease": [
+          "https://www.kinetixai.tech/zh/KaiEgo"
+        ],
+        "hardwareRelease": [
+          "https://www.kinetixai.tech/zh/KaiEgo"
+        ]
+      }
     },
     "das-ego": {
       "interface": "DAS Ego",
@@ -179,7 +388,37 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Headband"
-      ]
+      ],
+      "captureComponents": "6 RGB cameras; calibrated 2×2 IMU array; microphone and removable battery",
+      "cameraSpecs": "6 × approximately 2 MP at 30 Hz; combined coverage ≈270° H × 150° V",
+      "measuredSignals": "RGB image streams, inertial readings and audio; VIO trajectories are derived",
+      "outputs": "ROS bag workflow; H.264 camera streams at 30 Hz, IMU topic at 200 Hz, VIO and calibration topics",
+      "configuration": "DAS Ego Manual v2.0; combined FOV is system coverage, not a single camera FOV",
+      "softwareRelease": "Documented Docker-based SLAM/reconstruction processing",
+      "hardwareRelease": "Commercial capture device; public complete design release unknown",
+      "fieldSources": {
+        "captureComponents": [
+          "https://docs.genrobot.ai/products/das-ego"
+        ],
+        "cameraSpecs": [
+          "https://docs.genrobot.ai/products/das-ego"
+        ],
+        "measuredSignals": [
+          "https://docs.genrobot.ai/products/das-ego"
+        ],
+        "outputs": [
+          "https://docs.genrobot.ai/products/das-ego"
+        ],
+        "configuration": [
+          "https://docs.genrobot.ai/products/das-ego"
+        ],
+        "softwareRelease": [
+          "https://docs.genrobot.ai/products/das-ego"
+        ],
+        "hardwareRelease": [
+          "https://docs.genrobot.ai/products/das-ego"
+        ]
+      }
     },
     "lumos-ego": {
       "interface": "Lumos Ego STD / Lite",
@@ -209,7 +448,41 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Headband"
-      ]
+      ],
+      "captureComponents": "Fisheye RGB + 4 SLAM cameras + 6-axis IMU; ToF only on STD",
+      "cameraSpecs": "RGB: 1280×1280 at 60±1 fps, 200° diagonal; SLAM: 640×480 at 30 fps; STD ToF: 320×240 at 30±1 fps",
+      "measuredSignals": "Video and 500 Hz IMU; measured ToF depth on STD; SLAM/42+ hand keypoints are derived",
+      "synchronization": "Vendor reports microsecond-level hardware timestamp alignment",
+      "outputs": "Aligned visual/inertial streams, SLAM pose and hand joints with confidence; USB 3.2 Type-C",
+      "configuration": "STD includes ToF; Lite excludes it",
+      "softwareRelease": "Ubuntu 20.04 SDK listed; software source/license not established",
+      "hardwareRelease": "Commercial head-mounted device",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.lumosbot.tech/products/ego/"
+        ],
+        "cameraSpecs": [
+          "https://www.lumosbot.tech/products/ego/"
+        ],
+        "measuredSignals": [
+          "https://www.lumosbot.tech/products/ego/"
+        ],
+        "synchronization": [
+          "https://www.lumosbot.tech/products/ego/"
+        ],
+        "outputs": [
+          "https://www.lumosbot.tech/products/ego/"
+        ],
+        "configuration": [
+          "https://www.lumosbot.tech/products/ego/"
+        ],
+        "softwareRelease": [
+          "https://www.lumosbot.tech/products/ego/"
+        ],
+        "hardwareRelease": [
+          "https://www.lumosbot.tech/products/ego/"
+        ]
+      }
     },
     "mego-view": {
       "interface": "MEgo View",
@@ -240,7 +513,41 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Hybrid"
-      ]
+      ],
+      "captureComponents": "Head: 3 fisheye + 1 stereo pair; wrists: 1 wide-angle camera per hand",
+      "cameraSpecs": "7 RGB cameras; 2 MP at 60 fps, global shutter",
+      "measuredSignals": "RGB, 9-axis IMU at 1000 Hz and audio; depth, trajectory and body pose are output products",
+      "synchronization": "Vendor reports sub-millisecond wireless alignment and hardware camera triggering",
+      "outputs": "Local storage or cloud upload; RGB, depth, IMU, trajectory, audio and body pose",
+      "configuration": "MEgo View is separate from tactile MEgo Gripper; gripper tactile specs do not apply to View",
+      "softwareRelease": "Cloud reconstruction/quality control/annotation service; source license unknown",
+      "hardwareRelease": "Commercial head-and-wrist capture kit",
+      "fieldSources": {
+        "captureComponents": [
+          "https://maniformer.ai/mego"
+        ],
+        "cameraSpecs": [
+          "https://maniformer.ai/mego"
+        ],
+        "measuredSignals": [
+          "https://maniformer.ai/mego"
+        ],
+        "synchronization": [
+          "https://maniformer.ai/mego"
+        ],
+        "outputs": [
+          "https://maniformer.ai/mego"
+        ],
+        "configuration": [
+          "https://maniformer.ai/mego"
+        ],
+        "softwareRelease": [
+          "https://maniformer.ai/mego"
+        ],
+        "hardwareRelease": [
+          "https://maniformer.ai/mego"
+        ]
+      }
     },
     "lightwheel-egosuite": {
       "interface": "Lightwheel EgoSuite",
@@ -270,7 +577,37 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Hybrid"
-      ]
+      ],
+      "captureComponents": "Multiple configurations: VR capture unit, dexterous exoskeleton interfaces and UMI-aligned grippers",
+      "cameraSpecs": "Suite-level RGB-D claimed; per-device camera count, rate and depth hardware are not disclosed",
+      "measuredSignals": "Configuration-dependent RGB-D and tactile capture; hand/body pose and semantics are post-processed",
+      "outputs": "3D hand/full-body pose and frame-aligned action/language annotations",
+      "configuration": "Suite-level modalities do not imply every headset contains tactile sensors",
+      "softwareRelease": "Managed capture and data-processing platform; public complete source release unknown",
+      "hardwareRelease": "Commercial data/capture service; contact/demo access",
+      "fieldSources": {
+        "captureComponents": [
+          "https://lightwheel.ai/egosuite"
+        ],
+        "cameraSpecs": [
+          "https://lightwheel.ai/egosuite"
+        ],
+        "measuredSignals": [
+          "https://lightwheel.ai/egosuite"
+        ],
+        "outputs": [
+          "https://lightwheel.ai/egosuite"
+        ],
+        "configuration": [
+          "https://lightwheel.ai/egosuite"
+        ],
+        "softwareRelease": [
+          "https://lightwheel.ai/egosuite"
+        ],
+        "hardwareRelease": [
+          "https://lightwheel.ai/egosuite"
+        ]
+      }
     },
     "ego-oscar": {
       "interface": "Ego-OSCAR",
@@ -306,7 +643,51 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Headband"
-      ]
+      ],
+      "captureComponents": "Stereo camera + ICM-20948 IMU; ESP32-S3 coprocessor and Radxa host recorder",
+      "measuredSignals": "Stereo images and IMU telemetry",
+      "synchronization": "Camera VSYNC pulse counts and serial telemetry link video with IMU/frame-sync metadata",
+      "outputs": "Segmented video, IMU CSV, session offsets and metadata; V4L2/FFmpeg capture",
+      "configuration": "Source defaults must be checked against each build’s ports, GPIO, image format and rate",
+      "softwareRelease": "Apache-2.0 firmware, host recorder and validation utilities",
+      "hardwareRelease": "DIY guide, CAD/print files and hardware diagram linked by authors",
+      "fieldSources": {
+        "captureComponents": [
+          "https://github.com/fpv-labs/ego-oscar",
+          "https://arxiv.org/abs/2608.08285",
+          "https://github.com/fpv-labs/ego-oscar/blob/main/LICENSE"
+        ],
+        "measuredSignals": [
+          "https://github.com/fpv-labs/ego-oscar",
+          "https://arxiv.org/abs/2608.08285",
+          "https://github.com/fpv-labs/ego-oscar/blob/main/LICENSE"
+        ],
+        "synchronization": [
+          "https://github.com/fpv-labs/ego-oscar",
+          "https://arxiv.org/abs/2608.08285",
+          "https://github.com/fpv-labs/ego-oscar/blob/main/LICENSE"
+        ],
+        "outputs": [
+          "https://github.com/fpv-labs/ego-oscar",
+          "https://arxiv.org/abs/2608.08285",
+          "https://github.com/fpv-labs/ego-oscar/blob/main/LICENSE"
+        ],
+        "configuration": [
+          "https://github.com/fpv-labs/ego-oscar",
+          "https://arxiv.org/abs/2608.08285",
+          "https://github.com/fpv-labs/ego-oscar/blob/main/LICENSE"
+        ],
+        "softwareRelease": [
+          "https://github.com/fpv-labs/ego-oscar",
+          "https://arxiv.org/abs/2608.08285",
+          "https://github.com/fpv-labs/ego-oscar/blob/main/LICENSE"
+        ],
+        "hardwareRelease": [
+          "https://github.com/fpv-labs/ego-oscar",
+          "https://arxiv.org/abs/2608.08285",
+          "https://github.com/fpv-labs/ego-oscar/blob/main/LICENSE"
+        ]
+      }
     },
     "gi-ego1gs": {
       "interface": "GI EGO1GS",
@@ -335,7 +716,41 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Headband"
-      ]
+      ],
+      "captureComponents": "Global-shutter stereo headset, 9-DoF IMU and stereo microphones",
+      "cameraSpecs": "Dual 1080p at 30 fps; per camera 157° H × 84° V; stereo baseline 63 mm",
+      "measuredSignals": "Stereo RGB, 400 Hz inertial data and stereo audio",
+      "synchronization": "All capture streams share a hardware clock",
+      "outputs": "Single time-aligned .mcap recording; H.265 video and per-frame hand detections",
+      "configuration": "Ego1GS; do not copy the comparison-table rolling-shutter Ego1 specs",
+      "softwareRelease": "Companion app and documented device API; EgoHand detector is proprietary",
+      "hardwareRelease": "Commercial product page; detector performance still being characterized",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.gilabs.xyz/products/ego1gs"
+        ],
+        "cameraSpecs": [
+          "https://www.gilabs.xyz/products/ego1gs"
+        ],
+        "measuredSignals": [
+          "https://www.gilabs.xyz/products/ego1gs"
+        ],
+        "synchronization": [
+          "https://www.gilabs.xyz/products/ego1gs"
+        ],
+        "outputs": [
+          "https://www.gilabs.xyz/products/ego1gs"
+        ],
+        "configuration": [
+          "https://www.gilabs.xyz/products/ego1gs"
+        ],
+        "softwareRelease": [
+          "https://www.gilabs.xyz/products/ego1gs"
+        ],
+        "hardwareRelease": [
+          "https://www.gilabs.xyz/products/ego1gs"
+        ]
+      }
     },
     "manus-metagloves-pro": {
       "interface": "MANUS Metagloves Pro",
@@ -362,7 +777,33 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Glove"
-      ]
+      ],
+      "captureComponents": "EMF finger-tracking gloves; mount for external global hand tracker",
+      "measuredSignals": "Electromagnetic fingertip tracking; estimated articulated hand pose",
+      "outputs": "25-DoF hand representation; direct streaming, file export and custom SDK integrations",
+      "configuration": "Metagloves Pro; Pro Haptic is a separate variant, not proof of tactile sensing",
+      "softwareRelease": "MANUS Core and SDK; access/features depend on software license",
+      "hardwareRelease": "Commercial glove; hardware design release unknown",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.manus-meta.com/products/metagloves-pro"
+        ],
+        "measuredSignals": [
+          "https://www.manus-meta.com/products/metagloves-pro"
+        ],
+        "outputs": [
+          "https://www.manus-meta.com/products/metagloves-pro"
+        ],
+        "configuration": [
+          "https://www.manus-meta.com/products/metagloves-pro"
+        ],
+        "softwareRelease": [
+          "https://www.manus-meta.com/products/metagloves-pro"
+        ],
+        "hardwareRelease": [
+          "https://www.manus-meta.com/products/metagloves-pro"
+        ]
+      }
     },
     "manus-quantum-metagloves": {
       "interface": "MANUS Quantum Metagloves",
@@ -389,7 +830,37 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Glove"
-      ]
+      ],
+      "captureComponents": "Legacy finger-tracking gloves; external tracker mount for global wrist pose",
+      "measuredSignals": "Absolute fingertip position/rotation relative to glove; 120 Hz sensor sampling",
+      "synchronization": "Timecode/genlock and external recording trigger integrations listed",
+      "outputs": "MANUS Core streaming; recorded sessions export FBX or CSV",
+      "configuration": "Quantum Metagloves is explicitly marked LEGACY; not current Metagloves Pro",
+      "softwareRelease": "Core and SDK integrations; Linux/SDK features depend on license tier",
+      "hardwareRelease": "Legacy commercial model; current fulfillment not assumed",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.manus-meta.com/products/quantum-metagloves"
+        ],
+        "measuredSignals": [
+          "https://www.manus-meta.com/products/quantum-metagloves"
+        ],
+        "synchronization": [
+          "https://www.manus-meta.com/products/quantum-metagloves"
+        ],
+        "outputs": [
+          "https://www.manus-meta.com/products/quantum-metagloves"
+        ],
+        "configuration": [
+          "https://www.manus-meta.com/products/quantum-metagloves"
+        ],
+        "softwareRelease": [
+          "https://www.manus-meta.com/products/quantum-metagloves"
+        ],
+        "hardwareRelease": [
+          "https://www.manus-meta.com/products/quantum-metagloves"
+        ]
+      }
     },
     "stretchsense-pro": {
       "interface": "StretchSense Pro gloves",
@@ -416,7 +887,33 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Glove"
-      ]
+      ],
+      "captureComponents": "Wearable finger-tracking gloves with native 6DoF spatial tracking",
+      "measuredSignals": "Finger articulation and hand pose; integrated ego camera is not established",
+      "outputs": "Structured human manipulation demonstrations for robot learning and teleoperation",
+      "configuration": "Robotics solution describes Pro-family capabilities; exact generation/rate require model-specific documentation",
+      "softwareRelease": "Vendor data pipeline and API/integration offering; public license unknown",
+      "hardwareRelease": "Commercial consultation/solution offering; no open design established",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.stretchsense.com/robotics"
+        ],
+        "measuredSignals": [
+          "https://www.stretchsense.com/robotics"
+        ],
+        "outputs": [
+          "https://www.stretchsense.com/robotics"
+        ],
+        "configuration": [
+          "https://www.stretchsense.com/robotics"
+        ],
+        "softwareRelease": [
+          "https://www.stretchsense.com/robotics"
+        ],
+        "hardwareRelease": [
+          "https://www.stretchsense.com/robotics"
+        ]
+      }
     },
     "rokoko-smartgloves-ii": {
       "interface": "Rokoko Smartgloves II",
@@ -444,7 +941,33 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Glove"
-      ]
+      ],
+      "captureComponents": "7 sensors per glove; inertial and electromagnetic sensor-fusion system",
+      "measuredSignals": "250 Hz internal IMU sampling; articulated finger/wrist motion output",
+      "outputs": "Rokoko Studio/device SDK; CSV, FBX and BVH export plus live integrations",
+      "configuration": "Smartgloves II; 166.67 Hz in comparison table belongs to previous generation",
+      "softwareRelease": "Commercial Studio and SDK workflows; streaming/export options depend on plan",
+      "hardwareRelease": "Commercial gloves; optional body-system integration",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.rokoko.com/products/smartgloves-ii"
+        ],
+        "measuredSignals": [
+          "https://www.rokoko.com/products/smartgloves-ii"
+        ],
+        "outputs": [
+          "https://www.rokoko.com/products/smartgloves-ii"
+        ],
+        "configuration": [
+          "https://www.rokoko.com/products/smartgloves-ii"
+        ],
+        "softwareRelease": [
+          "https://www.rokoko.com/products/smartgloves-ii"
+        ],
+        "hardwareRelease": [
+          "https://www.rokoko.com/products/smartgloves-ii"
+        ]
+      }
     },
     "xsens-link": {
       "interface": "Xsens Link",
@@ -472,7 +995,33 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Suit"
-      ]
+      ],
+      "captureComponents": "17 body sensors + 1 prop sensor; integrated-cable eSuit and wireless hub",
+      "measuredSignals": "Inertial orientation/motion; full-body kinematics inferred by sensor fusion",
+      "outputs": "240 Hz update rate; Animate/Analyze export and Humanoid teleoperation/data streaming",
+      "configuration": "Current Next-Generation Link page; optional MANUS/StretchSense finger integration",
+      "softwareRelease": "Commercial Xsens software required; available applications differ by license",
+      "hardwareRelease": "Commercial eSuit; upper/lower-body modular use supported",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.xsens.com/motion-capture/xsens-link-specifications"
+        ],
+        "measuredSignals": [
+          "https://www.xsens.com/motion-capture/xsens-link-specifications"
+        ],
+        "outputs": [
+          "https://www.xsens.com/motion-capture/xsens-link-specifications"
+        ],
+        "configuration": [
+          "https://www.xsens.com/motion-capture/xsens-link-specifications"
+        ],
+        "softwareRelease": [
+          "https://www.xsens.com/motion-capture/xsens-link-specifications"
+        ],
+        "hardwareRelease": [
+          "https://www.xsens.com/motion-capture/xsens-link-specifications"
+        ]
+      }
     },
     "xsens-awinda": {
       "interface": "Xsens Awinda",
@@ -500,7 +1049,37 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Suit"
-      ]
+      ],
+      "captureComponents": "17 wireless body sensors (+1 prop); straps and Awinda recording/docking station",
+      "measuredSignals": "Body inertial sensing; full-body motion output at 60 Hz",
+      "synchronization": "Awinda station BNC hardware synchronization for third-party EMG/force plates",
+      "outputs": "Animate/Analyze real-time streaming and export",
+      "configuration": "Optional MANUS/StretchSense finger integration; external force plates are not suit-mounted F/T",
+      "softwareRelease": "Commercial Xsens software",
+      "hardwareRelease": "Commercial wireless mocap system; quoted 50 m range and 12 h battery are vendor specifications",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.xsens.com/motion-capture/xsens-mvn-awinda"
+        ],
+        "measuredSignals": [
+          "https://www.xsens.com/motion-capture/xsens-mvn-awinda"
+        ],
+        "synchronization": [
+          "https://www.xsens.com/motion-capture/xsens-mvn-awinda"
+        ],
+        "outputs": [
+          "https://www.xsens.com/motion-capture/xsens-mvn-awinda"
+        ],
+        "configuration": [
+          "https://www.xsens.com/motion-capture/xsens-mvn-awinda"
+        ],
+        "softwareRelease": [
+          "https://www.xsens.com/motion-capture/xsens-mvn-awinda"
+        ],
+        "hardwareRelease": [
+          "https://www.xsens.com/motion-capture/xsens-mvn-awinda"
+        ]
+      }
     },
     "rokoko-smartsuit-pro-ii": {
       "interface": "Rokoko Smartsuit Pro II",
@@ -528,7 +1107,33 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Suit"
-      ]
+      ],
+      "captureComponents": "Embedded body IMUs and Wi-Fi hub; optional Smartgloves",
+      "measuredSignals": "Inertial body motion; vendor lists 200 fps sensor frame rate",
+      "outputs": "Rokoko Studio recording; FBX/BVH/CSV export and live 3D-tool integrations",
+      "configuration": "Smartsuit Pro II; power bank required and sold separately",
+      "softwareRelease": "Studio recording available; streaming and expanded exports require subscription features",
+      "hardwareRelease": "Commercial body suit; no external camera needed for body capture",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.rokoko.com/products/smartsuit-pro"
+        ],
+        "measuredSignals": [
+          "https://www.rokoko.com/products/smartsuit-pro"
+        ],
+        "outputs": [
+          "https://www.rokoko.com/products/smartsuit-pro"
+        ],
+        "configuration": [
+          "https://www.rokoko.com/products/smartsuit-pro"
+        ],
+        "softwareRelease": [
+          "https://www.rokoko.com/products/smartsuit-pro"
+        ],
+        "hardwareRelease": [
+          "https://www.rokoko.com/products/smartsuit-pro"
+        ]
+      }
     },
     "sony-mocopi": {
       "interface": "Sony mocopi",
@@ -556,7 +1161,33 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Suit"
-      ]
+      ],
+      "captureComponents": "6 sparse sensors on head, waist, hands and legs in the documented base configuration",
+      "measuredSignals": "Accelerometer and gyroscope measurements",
+      "outputs": "Estimated 3D joint positions/orientations, including unsensored elbows and knees",
+      "configuration": "Sparse-inertial full-body inference; inferred joints are not directly measured markers",
+      "softwareRelease": "Sony developer portal provides SDK/plugin integration routes",
+      "hardwareRelease": "Commercial wearable sensors; not an open hardware design",
+      "fieldSources": {
+        "captureComponents": [
+          "https://xyn.sony.net/en/developer/technical/mocopi/aboutmocopi"
+        ],
+        "measuredSignals": [
+          "https://xyn.sony.net/en/developer/technical/mocopi/aboutmocopi"
+        ],
+        "outputs": [
+          "https://xyn.sony.net/en/developer/technical/mocopi/aboutmocopi"
+        ],
+        "configuration": [
+          "https://xyn.sony.net/en/developer/technical/mocopi/aboutmocopi"
+        ],
+        "softwareRelease": [
+          "https://xyn.sony.net/en/developer/technical/mocopi/aboutmocopi"
+        ],
+        "hardwareRelease": [
+          "https://xyn.sony.net/en/developer/technical/mocopi/aboutmocopi"
+        ]
+      }
     },
     "egorear": {
       "interface": "EgoRear / Ego4View",
@@ -584,7 +1215,37 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Headset"
-      ]
+      ],
+      "captureComponents": "Helmet with 4 downward-facing RIBCAGE RX0 II cameras: 2 front + 2 rear",
+      "cameraSpecs": "FUJINON FE185C057HA-1 fisheye lenses; released real-world views: 872×872 at 25 fps",
+      "measuredSignals": "4 RGB viewpoints; body/SMPL reference is reconstructed using external studio cameras",
+      "outputs": "Ego4View-RW and Ego4View-Syn; multi-view egocentric 3D body pose",
+      "configuration": "Left/right baseline 12 cm; front/rear distance 37 cm in the default prototype",
+      "softwareRelease": "Research project resources; hardware CAD/license not established",
+      "hardwareRelease": "Research prototype, not a retail headset",
+      "fieldSources": {
+        "captureComponents": [
+          "https://arxiv.org/abs/2503.11652"
+        ],
+        "cameraSpecs": [
+          "https://arxiv.org/abs/2503.11652"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/2503.11652"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/2503.11652"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/2503.11652"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/2503.11652"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/2503.11652"
+        ]
+      }
     },
     "egocap": {
       "interface": "EgoCap",
@@ -612,7 +1273,37 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Headset"
-      ]
+      ],
+      "captureComponents": "Helmet or Oculus-mounted dual-fisheye rig",
+      "cameraSpecs": "2 × 180° fisheye cameras; 1280×1024 at 30 Hz",
+      "measuredSignals": "Egocentric RGB views; model-based skeletal motion is estimated",
+      "outputs": "Markerless full-body skeletal pose; optional scene-based global pose",
+      "configuration": "Two paper prototypes: robust bike helmet and lightweight VR-mounted rig",
+      "softwareRelease": "Research method; complete public implementation license not established",
+      "hardwareRelease": "Research prototypes; checkerboard used in training/validation, not normal tracking",
+      "fieldSources": {
+        "captureComponents": [
+          "https://arxiv.org/abs/1609.07306"
+        ],
+        "cameraSpecs": [
+          "https://arxiv.org/abs/1609.07306"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/1609.07306"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/1609.07306"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/1609.07306"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/1609.07306"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/1609.07306"
+        ]
+      }
     },
     "meta-neural-band": {
       "interface": "Meta Neural Band",
@@ -640,7 +1331,33 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Wristband"
-      ]
+      ],
+      "captureComponents": "Wrist sEMG interface with inertial measurements and haptic feedback",
+      "measuredSignals": "Electrical muscle activity plus wrist acceleration/rotation/orientation",
+      "outputs": "Machine-learning gesture commands such as pinch, click, scroll and wrist roll",
+      "configuration": "Consumer Neural Band differs from separate Meta research EMG datasets/kits",
+      "softwareRelease": "Public product description does not establish raw sEMG recording/API access",
+      "hardwareRelease": "Commercial smart-glasses interface; not an articulated hand-pose GT system",
+      "fieldSources": {
+        "captureComponents": [
+          "https://www.meta.com/en-gb/emerging-tech/emg-wearable-technology/"
+        ],
+        "measuredSignals": [
+          "https://www.meta.com/en-gb/emerging-tech/emg-wearable-technology/"
+        ],
+        "outputs": [
+          "https://www.meta.com/en-gb/emerging-tech/emg-wearable-technology/"
+        ],
+        "configuration": [
+          "https://www.meta.com/en-gb/emerging-tech/emg-wearable-technology/"
+        ],
+        "softwareRelease": [
+          "https://www.meta.com/en-gb/emerging-tech/emg-wearable-technology/"
+        ],
+        "hardwareRelease": [
+          "https://www.meta.com/en-gb/emerging-tech/emg-wearable-technology/"
+        ]
+      }
     },
     "egoemg": {
       "interface": "EgoEMG capture rig",
@@ -671,7 +1388,41 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Hybrid"
-      ]
+      ],
+      "captureComponents": "Bilateral WAVELETECH wristbands; head RGB camera; external ZED 2i RGB-D; FZMotion optical mocap",
+      "cameraSpecs": "Head wide-angle RGB plus external RGB-D; exact ego resolution/rate not specified here",
+      "measuredSignals": "8 EMG channels per wrist at 2 kHz; IMU at 120 Hz; 21 reflective markers per hand at 120 Hz",
+      "synchronization": "Host-timestamp soft synchronization followed by common-timeline interpolation",
+      "outputs": "Bimanual MANO parameters and wrist articulation reconstructed from optical references",
+      "configuration": "Controlled capture rig; external RGB-D is not a depth camera on the head",
+      "softwareRelease": "Authors link EgoEMG repository; access follows release terms",
+      "hardwareRelease": "Research rig of commercial components",
+      "fieldSources": {
+        "captureComponents": [
+          "https://arxiv.org/abs/2605.05712"
+        ],
+        "cameraSpecs": [
+          "https://arxiv.org/abs/2605.05712"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/2605.05712"
+        ],
+        "synchronization": [
+          "https://arxiv.org/abs/2605.05712"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/2605.05712"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/2605.05712"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/2605.05712"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/2605.05712"
+        ]
+      }
     },
     "forceband": {
       "interface": "ForceBand",
@@ -704,7 +1455,39 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Wristband"
-      ]
+      ],
+      "captureComponents": "Muscle-aware wrist sEMG band + IMU; egocentric video; fingertip force sensors only for pretraining/calibration",
+      "measuredSignals": "8-channel sEMG and 10-dimensional IMU representation; model streams at 250 Hz",
+      "outputs": "EMG2Force per-finger contact/force estimates; force-enriched robot demonstrations",
+      "configuration": "Target-task demonstrations remove fingertip force sensors; predicted force is not directly measured task-time force",
+      "softwareRelease": "Authors release code; repository license linked",
+      "hardwareRelease": "Paper describes reproducible commodity-component design; full fabrication package licensing unknown",
+      "fieldSources": {
+        "captureComponents": [
+          "https://arxiv.org/abs/2606.26093",
+          "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/2606.26093",
+          "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/2606.26093",
+          "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/2606.26093",
+          "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/2606.26093",
+          "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/2606.26093",
+          "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+        ]
+      }
     },
     "osmo": {
       "interface": "OSMO",
@@ -715,13 +1498,12 @@
         "detail": "12 three-axis tactile sensors across fingertips and palm"
       },
       "forceTorque": {
-        "status": "present",
-        "detail": "Local normal and shear contact force; not wrist 6-axis F/T"
+        "status": "unknown",
+        "detail": "No separate calibrated wrist F/T channel established; paper uses raw magnetic flux as tactile observations"
       },
       "bodyCoverage": "Hands",
       "observationSignals": [
-        "Tactile",
-        "Force"
+        "Tactile"
       ],
       "evidence": [
         {
@@ -736,7 +1518,52 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Glove"
-      ]
+      ],
+      "captureComponents": "12 magnetic tactile taxels across fingertips and palm; soft magnet patches + dual magnetometers",
+      "measuredSignals": "Raw magnetic flux (μT) used as tactile input; differential sensing reduces common-mode noise",
+      "forceShort": "Uncalibrated contact",
+      "outputs": "Contact-sensitive tactile traces; vision/HAMER-based hand tracking is a separate processing route",
+      "configuration": "Same stretchable glove platform worn by human and Psyonic robot hand",
+      "softwareRelease": "Public firmware, data pipeline, retargeting and policy code; license must be checked by artifact",
+      "hardwareRelease": "Author repository links hardware guides/PCB files on website branch and a third-party DIY kit",
+      "fieldSources": {
+        "captureComponents": [
+          "https://arxiv.org/abs/2512.08920",
+          "https://github.com/jessicayin/osmo_tactile_glove"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/2512.08920",
+          "https://github.com/jessicayin/osmo_tactile_glove"
+        ],
+        "forceTorque": [
+          "https://arxiv.org/abs/2512.08920",
+          "https://github.com/jessicayin/osmo_tactile_glove"
+        ],
+        "forceShort": [
+          "https://arxiv.org/abs/2512.08920",
+          "https://github.com/jessicayin/osmo_tactile_glove"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/2512.08920",
+          "https://github.com/jessicayin/osmo_tactile_glove"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/2512.08920",
+          "https://github.com/jessicayin/osmo_tactile_glove"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/2512.08920",
+          "https://github.com/jessicayin/osmo_tactile_glove"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/2512.08920",
+          "https://github.com/jessicayin/osmo_tactile_glove"
+        ],
+        "observationSignals": [
+          "https://arxiv.org/abs/2512.08920",
+          "https://github.com/jessicayin/osmo_tactile_glove"
+        ]
+      }
     },
     "egopressure": {
       "interface": "EgoPressure capture rig",
@@ -766,7 +1593,41 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Hybrid"
-      ]
+      ],
+      "captureComponents": "1 head-mounted + 7 stationary RGB-D cameras; Sensel Morph pressure surface",
+      "cameraSpecs": "8-camera RGB-D capture at 30 Hz",
+      "measuredSignals": "RGB/depth and external surface pressure; no pressure-sensing glove",
+      "synchronization": "Multi-view synchronized recording; pressure maps projected onto the recovered hand mesh",
+      "outputs": "Optimized hand mesh/pose, pressure labels and pressure-to-hand registration",
+      "configuration": "Bare-hand interaction with an instrumented touch surface; not general free-space fingertip-force capture",
+      "softwareRelease": "Research dataset/project resources; access/license handled separately",
+      "hardwareRelease": "Research capture installation with commercial cameras and touchpad",
+      "fieldSources": {
+        "captureComponents": [
+          "https://arxiv.org/abs/2409.02224"
+        ],
+        "cameraSpecs": [
+          "https://arxiv.org/abs/2409.02224"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/2409.02224"
+        ],
+        "synchronization": [
+          "https://arxiv.org/abs/2409.02224"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/2409.02224"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/2409.02224"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/2409.02224"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/2409.02224"
+        ]
+      }
     },
     "dexcap": {
       "interface": "DexCap (Stanford)",
@@ -790,12 +1651,48 @@
         {
           "label": "Official source",
           "url": "https://arxiv.org/abs/2403.07788"
+        },
+        {
+          "label": "Stanford DexCap project",
+          "url": "https://dex-cap.github.io/"
         }
       ],
       "verified": "2026-10-16",
       "interfaceForms": [
         "Hybrid"
-      ]
+      ],
+      "captureComponents": "EMF finger gloves; T265 wrist SLAM cameras; chest L515 RGB-D + tracking camera; backpack mini-PC",
+      "measuredSignals": "Finger motion, wrist visual-inertial streams and chest RGB-D observations",
+      "outputs": "Bimanual 6DoF wrists, fingers and colored point clouds aligned to the initial chest tracking-camera world frame",
+      "configuration": "3D-printed calibration rack fixes initial camera transforms; initial rack procedure takes about 10 seconds",
+      "softwareRelease": "Author project links code and collected data",
+      "hardwareRelease": "Author hardware guide; portable research rig, not a separately verified commercial DexCap product",
+      "fieldSources": {
+        "captureComponents": [
+          "https://arxiv.org/abs/2403.07788",
+          "https://dex-cap.github.io/"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/2403.07788",
+          "https://dex-cap.github.io/"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/2403.07788",
+          "https://dex-cap.github.io/"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/2403.07788",
+          "https://dex-cap.github.io/"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/2403.07788",
+          "https://dex-cap.github.io/"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/2403.07788",
+          "https://dex-cap.github.io/"
+        ]
+      }
     },
     "dexwild": {
       "interface": "DexWild-System",
@@ -818,12 +1715,53 @@
         {
           "label": "Official source",
           "url": "https://arxiv.org/abs/2505.07813"
+        },
+        {
+          "label": "DexWild project",
+          "url": "https://dexwild.github.io/"
         }
       ],
       "verified": "2026-10-16",
       "interfaceForms": [
         "Hybrid"
-      ]
+      ],
+      "captureComponents": "Motion-capture glove, ArUco wrist markers, 2 palm stereo cameras, tracking camera and battery mini-PC",
+      "cameraSpecs": "Palm-mounted stereo global-shutter cameras; exact resolution/rate depend on setup",
+      "measuredSignals": "Palm images and glove motion; wrist pose tracked visually through markers",
+      "outputs": "Relative hand/wrist state-action differences and local task observations",
+      "configuration": "Tracking camera can be head-mounted or exocentric; relative actions avoid a fixed global calibration frame",
+      "softwareRelease": "Author project provides software/data resources",
+      "hardwareRelease": "Research sensor-pod system; component/source availability checked separately",
+      "fieldSources": {
+        "captureComponents": [
+          "https://arxiv.org/abs/2505.07813",
+          "https://dexwild.github.io/"
+        ],
+        "cameraSpecs": [
+          "https://arxiv.org/abs/2505.07813",
+          "https://dexwild.github.io/"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/2505.07813",
+          "https://dexwild.github.io/"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/2505.07813",
+          "https://dexwild.github.io/"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/2505.07813",
+          "https://dexwild.github.io/"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/2505.07813",
+          "https://dexwild.github.io/"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/2505.07813",
+          "https://dexwild.github.io/"
+        ]
+      }
     },
     "egowholeview": {
       "interface": "Six-camera head-mounted capture rig",
@@ -851,7 +1789,41 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Headset"
-      ]
+      ],
+      "captureComponents": "6 USB RGB cameras: front pair, lateral pair and overlapping downward pair",
+      "cameraSpecs": "Wide-angle optics 170–220°; demonstrated recording: 1920×1080 at 59.94 fps",
+      "measuredSignals": "RGB only; body and hand pose inferred by models, not measured depth or inertial sensors",
+      "synchronization": "Hardware trigger creates one timestamped frame per camera; rigid rig calibrated with cylindrical target",
+      "outputs": "World-frame rig trajectory, SMPL-X body and MANO hands with metric placement from triangulation",
+      "configuration": "Missing dual-view hand detection removes metric root placement for that hand; whole-body output exceeds directly visible regions",
+      "softwareRelease": "Public release/license not established by paper",
+      "hardwareRelease": "Research prototype; complete design package not verified",
+      "fieldSources": {
+        "captureComponents": [
+          "https://arxiv.org/abs/2610.16256"
+        ],
+        "cameraSpecs": [
+          "https://arxiv.org/abs/2610.16256"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/2610.16256"
+        ],
+        "synchronization": [
+          "https://arxiv.org/abs/2610.16256"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/2610.16256"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/2610.16256"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/2610.16256"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/2610.16256"
+        ]
+      }
     },
     "mindrove-armband": {
       "interface": "MindRove EMG Armband",
@@ -883,7 +1855,39 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Armband"
-      ]
+      ],
+      "captureComponents": "8-channel EMG armband with 3-axis accelerometer and gyroscope; Wi-Fi direct",
+      "measuredSignals": "Raw EMG: 500 samples/s, 24 bit, 0–250 Hz bandwidth; inertial streams",
+      "outputs": "Windows visualizer CSV; real-time LSL; SDK acquisition and signal processing",
+      "configuration": "Original MR-ARB-8-V04 listing; Armband 2 is a separate product",
+      "softwareRelease": "Public documented SDK: C++, C#, Python and MATLAB; Windows/macOS/Linux",
+      "hardwareRelease": "Commercial armband; optional SyncBox listed separately",
+      "fieldSources": {
+        "captureComponents": [
+          "https://mindrove.com/product/emg-armband/",
+          "https://docs.mindrove.com/main/index.html"
+        ],
+        "measuredSignals": [
+          "https://mindrove.com/product/emg-armband/",
+          "https://docs.mindrove.com/main/index.html"
+        ],
+        "outputs": [
+          "https://mindrove.com/product/emg-armband/",
+          "https://docs.mindrove.com/main/index.html"
+        ],
+        "configuration": [
+          "https://mindrove.com/product/emg-armband/",
+          "https://docs.mindrove.com/main/index.html"
+        ],
+        "softwareRelease": [
+          "https://mindrove.com/product/emg-armband/",
+          "https://docs.mindrove.com/main/index.html"
+        ],
+        "hardwareRelease": [
+          "https://mindrove.com/product/emg-armband/",
+          "https://docs.mindrove.com/main/index.html"
+        ]
+      }
     },
     "delsys-trigno-avanti": {
       "interface": "Delsys Trigno Avanti",
@@ -915,7 +1919,44 @@
       "verified": "2026-10-16",
       "interfaceForms": [
         "Hybrid"
-      ]
+      ],
+      "captureComponents": "Wireless surface-EMG/IMU sensor nodes and a Trigno acquisition system",
+      "measuredSignals": "sEMG plus configurable inertial/orientation channels; exact rates depend on sensor mode and base system",
+      "synchronization": "Trigno proprietary wireless protocol provides synchronized multi-sensor transmission",
+      "outputs": "Trigno acquisition/software SDK stream; kinematics require downstream modeling",
+      "configuration": "Avanti sensor is distinct from Mini, Duo, Quattro and add-on force/load-cell adapters",
+      "softwareRelease": "Public SDK manual and Delsys API integration offering",
+      "hardwareRelease": "Commercial sensor ecosystem; no camera or hand pose GT built into Avanti",
+      "fieldSources": {
+        "captureComponents": [
+          "https://delsys.com/trigno/",
+          "https://www.delsys.com/downloads/USERSGUIDE/trigno/sdk.pdf"
+        ],
+        "measuredSignals": [
+          "https://delsys.com/trigno/",
+          "https://www.delsys.com/downloads/USERSGUIDE/trigno/sdk.pdf"
+        ],
+        "synchronization": [
+          "https://delsys.com/trigno/",
+          "https://www.delsys.com/downloads/USERSGUIDE/trigno/sdk.pdf"
+        ],
+        "outputs": [
+          "https://delsys.com/trigno/",
+          "https://www.delsys.com/downloads/USERSGUIDE/trigno/sdk.pdf"
+        ],
+        "configuration": [
+          "https://delsys.com/trigno/",
+          "https://www.delsys.com/downloads/USERSGUIDE/trigno/sdk.pdf"
+        ],
+        "softwareRelease": [
+          "https://delsys.com/trigno/",
+          "https://www.delsys.com/downloads/USERSGUIDE/trigno/sdk.pdf"
+        ],
+        "hardwareRelease": [
+          "https://delsys.com/trigno/",
+          "https://www.delsys.com/downloads/USERSGUIDE/trigno/sdk.pdf"
+        ]
+      }
     }
   }
 }

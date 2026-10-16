@@ -1,5 +1,7 @@
 import type { Work } from "../lib/catalog";
 import { compareDates } from "../lib/order";
+import { formatScale, scaleMetrics } from "../lib/scale";
+import { CATEGORIES, FACETS, LENS_COPY, emptyView, facetOptions, facetValues, categoriesFor, signalsFor, matches, type Lens, type ViewState } from "../lib/filters";
 const $ = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id)! as T;
 const settings = JSON.parse($("catalog-settings").textContent!) as {
@@ -47,43 +49,22 @@ const record = (v: unknown): Record<string, unknown> =>
   v && typeof v === "object" && !Array.isArray(v)
     ? (v as Record<string, unknown>)
     : {};
-const text = (v: unknown, fallback = "Not verified"): string =>
-  v === null || v === undefined || v === ""
-    ? fallback
-    : Array.isArray(v)
-      ? v
-          .map((x) => text(x, ""))
-          .filter(Boolean)
-          .join(" · ")
-      : typeof v === "object"
-        ? Object.entries(v as Record<string, unknown>)
-            .map(([k, x]) => `${k}: ${text(x, "")}`)
-            .join("; ")
-        : String(v);
+const text=(value:unknown,fallback="Not verified"):string=>{
+ if(value===null||value===undefined||value==="")return fallback;
+ if(Array.isArray(value))return value.map(v=>text(v,"")).filter(Boolean).join(" · ")||fallback;
+ if(typeof value==="object")return Object.entries(value as Record<string,unknown>).map(([k,v])=>`${k}: ${text(v,"")}`).join("; ")||fallback;
+ return String(value);
+};
 const search = $<HTMLInputElement>("catalog-search"),
   sort = $<HTMLSelectElement>("sort-order"),
   results = $("catalog-results");
-const filterIds = [
-  "source",
-  "form",
-  "coverage",
-  "tactile",
-  "force",
-  "access",
-  "openness",
-  "availability",
-  "year",
-] as const;
-const controls = Object.fromEntries(
-  filterIds.map((k) => [k, $<HTMLSelectElement>(k + "-filter")]),
-) as Record<(typeof filterIds)[number], HTMLSelectElement>;
 const detail = $<HTMLDialogElement>("detail-dialog"),
   compare = $<HTMLDialogElement>("compare-dialog"),
   about = $<HTMLDialogElement>("about-dialog"),
   roadmap = $<HTMLDialogElement>("roadmap-dialog");
 let works: Work[] = [],
   byId = new Map<string, Work>(),
-  collection = "hardware",
+  collection: Lens = "hardware",
   cursor = 0,
   generation = 0,
   busy = false,
@@ -93,24 +74,18 @@ const params = new URLSearchParams(location.search);
 collection = ["hardware", "datasets", "methods", "research"].includes(
   params.get("collection") ?? "",
 )
-  ? params.get("collection")!
+  ? params.get("collection")! as Lens
   : "hardware";
 if (params.get("view") === "index") collection = "research";
-search.value = params.get("q") ?? "";
-const sortParam = params.get("sort");
-sort.value = Array.from(sort.options).some((o) => o.value === sortParam)
-  ? sortParam!
-  : "newest";
-for (const k of filterIds)
-  if (
-    params.has(k) &&
-    Array.from(controls[k].options).some((o) => o.value === params.get(k))
-  )
-    controls[k].value = params.get(k)!;
-for (const el of document.querySelectorAll<HTMLInputElement>(
-  "input[name=signal]",
-))
-  el.checked = (params.get("signals") ?? "").split(",").includes(el.value);
+let view = emptyView();
+view.query = params.get("q") ?? "";
+view.sort = Array.from(sort.options).some(o=>o.value===params.get("sort")) ? params.get("sort")! : "newest";
+view.category = CATEGORIES[collection].find(c=>c.key===(params.get("category")??params.get("layer")) || c.section===params.get("source"))?.key ?? "all";
+for (const f of FACETS[collection]) if(params.has(f.key)) view.filters[f.key]=params.get(f.key)!;
+view.signals = (params.get("signals") ?? "").split(",").filter(Boolean);
+const views = new Map<Lens,ViewState>([[collection,view]]);
+search.value=view.query;
+sort.value=view.sort;
 let selected = new Set<string>(
   [...new Set((params.get("compare") ?? "").split(",").filter(Boolean))].slice(
     0,
@@ -119,119 +94,74 @@ let selected = new Set<string>(
 );
 const selections = new Map<string, Set<string>>([[collection, selected]]);
 const PAGE_SIZE = 12;
-const signals = () =>
-  Array.from(
-    document.querySelectorAll<HTMLInputElement>("input[name=signal]:checked"),
-  ).map((el) => el.value);
 function syncUrl() {
   const p = new URLSearchParams();
-  if (collection !== "hardware") p.set("collection", collection);
-  if (search.value.trim()) p.set("q", search.value.trim());
-  if (sort.value !== "newest") p.set("sort", sort.value);
-  for (const k of filterIds)
-    if (controls[k].value !== "all") p.set(k, controls[k].value);
-  if (signals().length) p.set("signals", signals().join(","));
-  if (selected.size) p.set("compare", [...selected].join(","));
-  if (detail.open && detail.dataset.work) p.set("item", detail.dataset.work);
-  history.replaceState(
-    null,
-    "",
-    location.pathname + (p.size ? "?" + p.toString() : "") + location.hash,
-  );
+  if(collection!=="hardware")p.set("collection",collection);
+  if(view.category!=="all")p.set("category",view.category);
+  if(view.query.trim())p.set("q",view.query.trim());
+  if(view.sort!=="newest")p.set("sort",view.sort);
+  for(const f of FACETS[collection])if(view.filters[f.key]&&view.filters[f.key]!=="all")p.set(f.key,view.filters[f.key]);
+  if(view.signals.length)p.set("signals",view.signals.join(","));
+  if(selected.size)p.set("compare",[...selected].join(","));
+  if(detail.open&&detail.dataset.work)p.set("item",detail.dataset.work);
+  history.replaceState(null,"",location.pathname+(p.size?"?"+p.toString():"")+location.hash);
 }
-function currentSignals(w: Work): string[] {
-  const v = collection === "hardware" ? record(w.research?.hardware).observationSignals : collection === "datasets" ? record(w.research?.dataset).recordedSignals : collection === "methods" ? record(w.research?.method).inputSignals : w.signals;
-  return Array.isArray(v) ? v as string[] : w.signals;
+const currentSignals = (w:Work) => signalsFor(w,collection);
+function buildFilterPanel() {
+  const copy=LENS_COPY[collection];
+  $("filter-panel-title").textContent=copy.title;
+  $("filter-note").textContent=copy.note;
+  search.placeholder=copy.placeholder;
+  const activeSignal=document.activeElement instanceof HTMLInputElement&&document.activeElement.name==="signal"?document.activeElement.value:undefined;
+  const activeFacet=document.activeElement instanceof HTMLSelectElement?document.activeElement.dataset.facet:undefined;
+  const scroll=$("filter-body").scrollTop;
+  $("filter-fields").innerHTML=FACETS[collection].map(f=>{
+    const global=facetOptions(works,collection,f);
+    if(!global.some(o=>o.value===view.filters[f.key]))delete view.filters[f.key];
+    const pool=works.filter(w=>matches(w,collection,view,f.key));
+    const options=facetOptions(pool,collection,f);
+    const selected=global.find(o=>o.value===view.filters[f.key]);
+    if(selected&&!options.some(o=>o.value===selected.value))options.push(selected);
+    return `<label>${e(f.label)}<select id="${e(f.key)}-filter" data-facet="${e(f.key)}"><option value="all">Any</option>${options.map(o=>{
+      const n=pool.filter(w=>facetValues(w,collection,f.key).includes(o.value)).length;
+      return `<option value="${e(o.value)}"${view.filters[f.key]===o.value?' selected':''}>${e(o.label)} (${n})</option>`;
+    }).join("")}</select></label>`;
+  }).join("");
+  if(activeFacet)$("filter-fields").querySelector<HTMLSelectElement>(`[data-facet="${activeFacet}"]`)?.focus({preventScroll:true});
+
+  const signalPool=works.filter(w=>matches(w,collection,{...view,signals:[]}));
+  const globalSignals=new Set(works.filter(w=>collection==="research"||w.collections.includes(collection)).flatMap(w=>signalsFor(w,collection)));
+  view.signals=view.signals.filter(s=>globalSignals.has(s));
+  const available=[...new Set([...signalPool.flatMap(w=>signalsFor(w,collection)),...view.signals])].sort();
+  $("signal-filter-label").textContent=copy.signals;
+  $("signal-options").innerHTML=available.map(s=>`<label><input type="checkbox" name="signal" value="${e(s)}"${view.signals.includes(s)?' checked':''}/><span>${e(s)}</span></label>`).join("");
+  $("signal-filters").hidden=!available.length;
+  if(activeSignal)Array.from(document.querySelectorAll<HTMLInputElement>("input[name=signal]")).find(el=>el.value===activeSignal)?.focus({preventScroll:true});
+  $("filter-body").scrollTop=scroll;
 }
-function currentCoverage(w: Work): string {
-  const v = String(collection === "datasets" ? record(w.research?.dataset).bodyCoverage ?? w.coverage : collection === "methods" ? record(w.research?.method).bodyCoverage ?? w.coverage : w.coverage);
-  return /whole|full.body/i.test(v) ? "Whole body" : /upper/i.test(v) ? "Upper body" : /hand|finger|bimanual|unimanual/i.test(v) ? "Hands" : "Not reported";
-}
-function sensorStatus(w: Work, signal: "Tactile" | "Force") {
-  if (collection === "hardware") return signal === "Tactile" ? w.tactileStatus ?? "unknown" : w.forceStatus ?? "unknown";
-  return currentSignals(w).includes(signal) ? "present" : "unknown";
+function renderCategories() {
+  const nav=$("category-options");
+  const focused=document.activeElement instanceof HTMLElement&&nav.contains(document.activeElement)?document.activeElement.dataset.category:undefined;
+  const state={...view,category:"all"};
+  const base=works.filter(w=>matches(w,collection,state));
+  const label=collection==="methods"?"All methods":collection==="datasets"?"All datasets":collection==="hardware"?"All hardware":"All research";
+  const options=[{key:"all",label,description:label,section:""},...CATEGORIES[collection]];
+  nav.innerHTML=options.map(c=>{
+    const n=c.key==="all"?base.length:base.filter(w=>categoriesFor(w,collection).includes(c.key)).length;
+    const code=collection==="methods"&&/^l[1-6]$/.test(c.key)?`<small>${c.key.toUpperCase()}</small>`:"";
+    return `<button type="button" data-category="${e(c.key)}" aria-pressed="${view.category===c.key}" title="${e(c.description)}">${code}${e(c.label)}<span>${n}</span></button>`;
+  }).join("");
+  nav.parentElement!.setAttribute("aria-label",`${collection} categories`);
+  nav.parentElement!.hidden=collection==="research";
+  if(focused)nav.querySelector<HTMLButtonElement>(`[data-category="${focused}"]`)?.focus({preventScroll:true});
 }
 function filtered() {
-  const q = search.value.trim().toLowerCase(),
-    sig = signals();
-  const list = works.filter(
-    (w) =>
-      (collection === "research" || w.collections.includes(collection)) &&
-      (!q ||
-        [
-          w.name,
-          w.title,
-          w.keywords,
-          w.institute,
-          w.publication,
-          w.tracking,
-          JSON.stringify(w.research ?? {}),
-          JSON.stringify(w.release ?? {}),
-          ...w.sections,
-          ...w.signals,
-        ]
-          .join(" ")
-          .toLowerCase()
-          .includes(q)) &&
-      (controls.source.value === "all" || w.sections.some(section => section.endsWith(" / " + controls.source.value))) &&
-      (controls.form.value === "all" ||
-        (w.forms ?? [w.form]).includes(controls.form.value)) &&
-      (controls.coverage.value === "all" || currentCoverage(w) === controls.coverage.value) &&
-      (controls.tactile.value === "all" ||
-        sensorStatus(w, "Tactile") === controls.tactile.value) &&
-      (controls.force.value === "all" ||
-        sensorStatus(w, "Force") === controls.force.value) &&
-      (controls.access.value === "all" ||
-        w.dataAccess === controls.access.value) &&
-      (controls.openness.value === "all" || (w.openness ?? "unknown") === controls.openness.value) &&
-      (controls.availability.value === "all" || (controls.availability.value === "commercial" ? w.commercial === true : w.commercial !== true)) &&
-      (controls.year.value === "all" || w.year === controls.year.value) &&
-      sig.every((s) => currentSignals(w).includes(s)),
-  );
-  const rank = (w: Work) => {
-    const r = settings.initial.indexOf(w.id);
-    return r < 0 ? 1000 : r;
-  };
-  return list.sort((a, b) =>
-    sort.value === "name"
-      ? a.name.localeCompare(b.name)
-      : sort.value === "oldest"
-        ? compareDates(a, b, "oldest")
-        : sort.value === "newest"
-          ? compareDates(a, b)
-          : rank(a) - rank(b) || compareDates(a, b),
-  );
+  const rank=(w:Work)=>{const i=settings.initial.indexOf(w.id);return i<0?1000:i;};
+  return works.filter(w=>matches(w,collection,view)).sort((a,b)=>view.sort==="name"?a.name.localeCompare(b.name):view.sort==="oldest"?compareDates(a,b,"oldest"):view.sort==="newest"?compareDates(a,b):rank(a)-rank(b)||compareDates(a,b));
 }
-function publicStats(w: Work) {
-  const d = record(w.research?.dataset),
-    released = record(d.publicScale),
-    reported = record(d.reportedScale);
-  const s = Object.keys(released).length ? released : reported;
-  const scope = Object.keys(released).length ? "released" : "reported";
-  const fmt = (x: unknown) =>
-    typeof x === "number"
-      ? new Intl.NumberFormat("en", {
-          notation: x >= 10000 ? "compact" : "standard",
-          maximumFractionDigits: 1,
-        }).format(x)
-      : text(x, "");
-  return [
-    "hours",
-    "episodes",
-    "sessions",
-    "trajectories",
-    "indexedDemos",
-    "tasks",
-    "semanticTasks",
-    "vqaSamples",
-    "minutes", "participants", "sequences", "images", "frames", "recordings",
-  ]
-    .filter((k) => s[k] !== undefined && s[k] !== null)
-    .slice(0, 2)
-    .map(
-      (k) =>
-        `${s[k + "Qualifier"] === ">" ? ">" : ""}${fmt(s[k])} ${k === "hours" ? text(s.durationUnit, "h") : k === "semanticTasks" ? "semantic tasks" : k === "indexedDemos" ? "indexed demos" : k === "vqaSamples" ? "VQA samples" : k}${k.startsWith("indexed") ? "" : " " + scope}`,
-    );
+function publicStats(w:Work) {
+ const d=record(w.research?.dataset),released=scaleMetrics(record(d.publicScale),true),reported=scaleMetrics(record(d.reportedScale),true);
+ return (released.length?released:reported).slice(0,2).map(m=>`${m.text} ${released.length?"released":"reported"}`);
 }
 function card(w: Work) {
   const research = collection === "research";
@@ -241,7 +171,7 @@ function card(w: Work) {
       ? [...publicStats(w), text(d.access, "")].filter(Boolean).slice(0, 3)
       : [...currentSignals(w).filter((s) => s !== "Not reported").slice(0, 2),
         ...(w.commercial ? [String(w.release?.availability ?? "").includes("Announced") ? "Announced" : String(w.release?.availability ?? "").includes("project") ? "Industry" : "Commercial"] : w.openness === "open" ? ["Open source"] : [])];
-  const name = collection === "datasets" ? w.datasetName ?? text(d.name, w.name) : controls.availability.value === "commercial" ? text(w.release?.productName, w.name) : w.name;
+  const name = collection === "datasets" ? w.datasetName ?? text(d.name, w.name) : view.filters.availability === "commercial" ? text(w.release?.productName, w.name) : w.name;
   const description = collection === "datasets" ? w.datasetSummary ?? text(d.observations, w.summary ?? w.keywords) : collection === "methods" ? text(record(w.research?.method).summary, w.summary ?? w.keywords) : w.summary ?? w.keywords;
   return `<article class="library-card feed-enter${selected.has(w.id) ? " is-selected" : ""}" data-id="${e(w.id)}">${!research ? coverHtml(w) : ""}<div class="card-copy"><p class="card-meta">${e(w.institute)} <span>·</span> ${e(w.publication === "Product" ? "Product" : w.year)}</p><h2><button type="button" data-detail="${e(w.id)}" title="${e(w.title)}">${e(research ? w.title : name)}</button></h2><p class="card-description">${e(description)}</p><div class="card-tags">${tags.map((s) => `<span title="${e(s)}"${/soon|pending/i.test(s) ? ' class="access-pending"' : ""}>${e(s === "Proprioception" ? "State" : s)}</span>`).join("")}</div><div class="card-actions"><button type="button" data-detail="${e(w.id)}">Details <span aria-hidden="true">↗</span></button><button type="button" class="compare-toggle" data-compare="${e(w.id)}" aria-label="${selected.has(w.id) ? "Remove" : "Compare"} ${e(w.name)}" aria-pressed="${selected.has(w.id)}" title="${selected.has(w.id) ? "Remove from comparison" : "Add to comparison"}"><span aria-hidden="true">${selected.has(w.id) ? "✓" : "+"}</span> Compare</button></div></div></article>`;
 }
@@ -372,25 +302,16 @@ function observe() {
   observer.observe($("feed-boundary"));
 }
 function filterChips() {
-  const chips: { key: string; value: string; label: string }[] = [];
-  if (search.value.trim())
-    chips.push({ key: "q", value: "", label: search.value.trim() });
-  for (const k of filterIds)
-    if (controls[k].value !== "all")
-      chips.push({
-        key: k,
-        value: "",
-        label: `${({source: "Research area", form: "Interface", coverage: "Body coverage", tactile: "Tactile", force: "Force / torque", access: "Dataset access", openness: "Source release", availability: "Availability", year: "Year"})[k]}: ${controls[k].selectedOptions[0].textContent}`,
-      });
-  signals().forEach((s) => chips.push({ key: "signal", value: s, label: s }));
-  $("active-filters").innerHTML = chips
-    .map(
-      (c) =>
-        `<button type="button" data-remove="${e(c.key)}" data-value="${e(c.value)}" aria-label="Remove ${e(c.label)} filter">${e(c.label)}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>`,
-    )
-    .join("");
-  $("filter-count").textContent = String(chips.length);
-  $("filter-count").hidden = !chips.length;
+  const chips:{key:string;value:string;label:string}[]=[];
+  if(view.query.trim())chips.push({key:"q",value:"",label:view.query.trim()});
+  for(const f of FACETS[collection])if(view.filters[f.key]&&view.filters[f.key]!=="all"){
+    const label=facetOptions(works,collection,f).find(o=>o.value===view.filters[f.key])?.label??view.filters[f.key];
+    chips.push({key:f.key,value:"",label:`${f.label}: ${label}`});
+  }
+  view.signals.forEach(s=>chips.push({key:"signal",value:s,label:s}));
+  $("active-filters").innerHTML=chips.map(c=>`<button type="button" data-remove="${e(c.key)}" data-value="${e(c.value)}" aria-label="Remove ${e(c.label)} filter">${e(c.label)}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>`).join("");
+  const n=chips.length+(view.category!=="all"?1:0);
+  $("filter-count").textContent=String(n);$("filter-count").hidden=!n;
 }
 function render() {
   if (!works.length) {
@@ -418,19 +339,17 @@ function render() {
         String(b.dataset.collection === collection),
       ),
     );
+  buildFilterPanel();
+  renderCategories();
   filterChips();
   syncUrl();
   setBoundary(false, false);
   if (list.length) void loadNext();
 }
 function reset() {
-  search.value = "";
-  for (const k of filterIds) controls[k].value = "all";
-  document
-    .querySelectorAll<HTMLInputElement>("input[name=signal]")
-    .forEach((el) => (el.checked = false));
-  sort.value = "newest";
-  render();
+  view=emptyView();views.set(collection,view);
+  search.value="";sort.value="newest";
+  buildFilterPanel();render();
 }
 function fitPanel() {
   const el = $("filter-panel");
@@ -440,16 +359,18 @@ function fitPanel() {
   const bottom = viewport ? viewportTop + viewport.height : innerHeight;
   el.style.top = "";
   // Short windows need a taller sheet, rather than a popover squeezed under chrome.
-  if (bottom - el.getBoundingClientRect().top < 300) {
+  if (bottom - el.getBoundingClientRect().top < Math.min(540,bottom-viewportTop-24)) {
     const toolbarTop = $("library-toolbar").getBoundingClientRect().top;
     el.style.top = `${viewportTop + 12 - toolbarTop}px`;
   }
   el.style.maxHeight = `${Math.max(48, Math.floor(bottom - el.getBoundingClientRect().top - 12))}px`;
 }
 function panel(open: boolean) {
+  const restore=!open&&!$("filter-panel").hidden&&$("filter-panel").contains(document.activeElement);
   $("filter-panel").hidden = !open;
   $("filters-toggle").setAttribute("aria-expanded", String(open));
   if (open) fitPanel();
+  else if(restore)$("filters-toggle").focus({preventScroll:true});
 }
 window.visualViewport?.addEventListener("resize", fitPanel, { passive: true });
 addEventListener("scroll", fitPanel, { passive: true });
@@ -508,124 +429,68 @@ function measurement(value: unknown) {
 }
 const opennessLabel = (w: Work) => ({open:"Open source", partial:"Partial release", closed:"Closed source", unknown:"Unknown"})[w.openness ?? "unknown"] ?? "Unknown";
 function hardwareFacts(w: Work): [string, string][] {
-  const h = record(w.research?.hardware);
-  return [
-    ["Form", (w.forms ?? [w.form]).join(" · ")],
-    ["Body coverage", w.coverage],
-    ["Tracking", text(h.poseTracking, w.tracking)],
-    ["Vision", text(h.vision, "Unknown")],
-    ["Tactile sensing", sensor(h.tactile)],
-    ["Force sensing", text(h.forceShort, sensor(h.forceTorque))],
-    ["Signals", w.signals.join(" · ") || "Not verified"],
-    ["Source release", opennessLabel(w)],
-    ...(w.commercial ? [["Availability", text(w.release?.availability, "Commercial product")] as [string,string]] : []),
-  ];
+  const h=record(w.research?.hardware);
+  return [["Form",text(h.interfaceForms,w.form)],["Body coverage",text(h.bodyCoverage,w.coverage)],
+    ["Tracking",text(h.poseTracking,w.tracking)],["Cameras",text(h.cameraSpecs,h.vision?text(h.vision):"Not specified")],
+    ["Tactile sensing",sensor(h.tactile)],["Force sensing",text(h.forceShort,sensor(h.forceTorque))],
+    ["Measured signals",text(h.measuredSignals,text(h.observationSignals))],["Project release",opennessLabel(w)]];
+}
+function hardwareDataFacts(w:Work):[string,string][] {
+  const h=record(w.research?.hardware);
+  return [["Components",text(h.captureComponents)],["Synchronization",text(h.synchronization)],
+    ["Output & export",text(h.outputs)],["Software / SDK",text(h.softwareRelease)],
+    ["Hardware access",text(h.hardwareRelease)],["Configuration",text(h.configuration)]];
 }
 function methodFacts(w: Work): [string, string][] {
-  const m = record(w.research?.method);
-  return [["Input", text(m.input)], ["Output", text(m.output)], ["Supervision", text(m.supervision)], ["Evidence", text(m.robotEvidence)]];
+  const m=record(w.research?.method);
+  return [["Research layer",text(m.stage)],["Input",text(m.input)],["Output",text(m.output)],
+    ["Representation",text(m.outputRepresentation)],["Coordinate frame",text(m.coordinateFrame)],
+    ["Scale",text(m.scale)],["Temporal scope",text(m.temporal)],["Supervision",text(m.supervision)]];
+}
+function methodEvaluationFacts(w:Work):[string,string][] {
+  const m=record(w.research?.method);
+  return [["Evaluation",text(m.evaluation)],["Robot evidence",text(m.robotEvidence)],
+    ["Robot platform",text(m.robotPlatform,"Not evaluated / not specified")],
+    ...(m.policyInput?[["Policy input",text(m.policyInput)] as [string,string]]:[]),
+    ...(m.implementation?[["Implementation",text(m.implementation)] as [string,string]]:[])];
 }
 function datasetFacts(w: Work): [string, string][] {
-  const d = record(w.research?.dataset);
-  return [["Observed signals", text(d.observations, w.signals.join(" · "))], ["Labels", text(d.labels)], ["Body coverage", text(d.bodyCoverage, w.coverage)], ["Label evidence", text(d.annotationEvidence)], ["Access", text(d.access, w.dataAccess)], ["Format", text(d.formats, w.format)], ["Reported scale", scaleText(record(d.reportedScale))], ["Public release", scaleText(record(d.publicScale))]];
+  const d=record(w.research?.dataset);
+  return [[d.dataRole==="synthetic"?"Rendered channels":"Observed streams",text(d.recordedStreams,d.observations?text(d.observations):"Not specified")],
+    ...(d.dataRole==="synthetic"?[["Physical observations","None — synthetic resource"] as [string,string]]:[]),
+    ["Camera setup",text(d.cameraSetup)],["Body coverage",text(d.bodyCoverage,w.coverage)],
+    ["Coordinate frame",text(d.coordinateFrame)],["Calibration & timing",text(d.calibration)],
+    ["Derived outputs",text(d.derivedSignals,"None specified")]];
+}
+function datasetAnnotationFacts(w:Work):[string,string][] {
+  const d=record(w.research?.dataset);
+  return [["Labels",text(d.labels)],["Label evidence",text(d.annotationEvidence)],
+    ["Tasks",text(d.tasks)],["Splits",text(d.splits)]];
+}
+function datasetReleaseFacts(w:Work):[string,string][] {
+  const d=record(w.research?.dataset);
+  return [["Access",text(d.access,w.dataAccess)],["Release scope",text(d.releaseScope)],
+    ["Format",text(d.formats,w.format)],["Data license",text(d.dataLicense,d.license?text(d.license):"Not verified")]];
 }
 function facts(w: Work): [string, string][] {
   const rows: [string,string][] = [["Date", w.date], ["Institution", w.institute], ["Publication", w.publication]];
-  return [...rows, ...(collection === "datasets" ? datasetFacts(w) : collection === "methods" ? methodFacts(w) : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w)] : hardwareFacts(w))];
+  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Public release",scaleText(record(w.research?.dataset?.publicScale))]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...methodEvaluationFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w)])];
 }
-function scaleText(scale: Record<string, unknown>) {
-  const labels: Record<string, string> = {
-    hours: "hours",
-    minutes: "minutes",
-    participants: "participants",
-    sequences: "sequences",
-    recordings: "recordings",
-    images: "images",
-    gestures: "gestures",
-    gestureClasses: "gesture classes",
-    gestureSamples: "gesture samples",
-    takes: "takes",
-    sceneTypes: "scene types",
-    countries: "countries",
-    subjects: "subjects",
-    trials: "trials",
-    actionTypes: "action types",
-    days: "days",
-    hdf5Files: "HDF5 files",
-    instructorPerformerPairs: "instructor–performer pairs",
-    kitchens: "kitchens",
-    motionSequences: "motion sequences",
-    objectInstances: "object instances",
-    recipes: "recipes",
-    stages: "stages",
-    toyModels: "toy models",
-    videoFrames: "video frames",
-    episodes: "episodes",
-    demos: "demonstrations",
-    demonstrations: "demonstrations",
-    sessions: "sessions",
-    tasks: "tasks",
-    scenes: "scenes",
-    environments: "environments",
-    objects: "objects",
-    operators: "operators",
-    collectionDesks: "collection desks",
-    trajectories: "trajectories",
-    videos: "videos",
-    semanticTasks: "semantic tasks",
-    taskConfigurations: "task configurations",
-    taskHandConfigurations: "task–hand configurations",
-    singleArmTasks: "single-arm tasks",
-    dualArmTasks: "bimanual tasks",
-    singleArmSessions: "single-arm sessions",
-    dualArmSessions: "bimanual sessions",
-    indexedDemos: "indexed demonstrations",
-    indexedRows: "indexed task rows",
-    pretrainingVideos: "pretraining videos",
-    vqaSamples: "VQA samples",
-    realWorldVqaSamples: "real-world VQA samples",
-    fisheyeRefSpatialVqaSamples: "fisheye VQA samples",
-    clips: "clips",
-    indoorScenes: "indoor scenes",
-    householdScenarios: "household scenarios",
-    locations: "locations",
-    datasetFamilies: "dataset families",
-    processedSplits: "processed splits",
-    frames: "frames",
-    tables: "tables",
-    laundryEpisodes: "laundry episodes",
-    drawingEpisodes: "drawing episodes",
-    uniqueDrawings: "unique drawings",
-  };
-  return (
-    Object.entries(labels)
-      .filter(([k]) => scale[k] !== undefined && scale[k] !== null)
-      .map(
-        ([k, label]) =>
-          `${scale[k + "Qualifier"] === ">" ? ">" : ""}${typeof scale[k] === "number" ? new Intl.NumberFormat("en").format(scale[k] as number) : text(scale[k])} ${k === "hours" && scale.durationUnit ? text(scale.durationUnit) : label}`,
-      )
-      .join(" · ") || "Not verified"
-  );
-}
+const scaleText = formatScale;
 const factsHtml = (rows: [string, string][]) =>
   `<dl class="facts">${rows.map(([k, v]) => `<div><dt>${e(k)}</dt><dd>${e(v)}</dd></div>`).join("")}</dl>`;
-function sources(w: Work) {
-  const h = record(w.research?.hardware),
-    d = record(w.research?.dataset), m = record(w.research?.method);
-  const items = [
-    ...(Array.isArray(m.sources) ? m.sources : []),
-    ...(Array.isArray(h.evidence) ? h.evidence : []),
-    ...(h.signalsEvidence ? [h.signalsEvidence] : []),
-    ...(Array.isArray(d.sources) ? d.sources : []),
-    ...(Array.isArray(w.release?.evidence) ? w.release.evidence : []),
-  ].map(record);
-  const seen = new Set<string>();
-  return items.filter((s) => {
-    const u = String(s.url ?? "");
-    if (!/^https?:\/\//.test(u) || seen.has(u)) return false;
-    seen.add(u);
-    return true;
-  });
+function sources(w:Work) {
+  const h=record(w.research?.hardware),d=record(w.research?.dataset),m=record(w.research?.method);
+  const items=[...(Array.isArray(h.evidence)?h.evidence:[]),...(Array.isArray(d.sources)?d.sources:[]),...(Array.isArray(m.sources)?m.sources:[]),...(Array.isArray(w.release?.evidence)?w.release.evidence:[])].map(record);
+  const fields=new Map<string,Set<string>>();
+  for(const evidence of [h,d,m])for(const [field,urls] of Object.entries(record(evidence.fieldSources)))if(Array.isArray(urls))for(const url of urls)if(typeof url==="string"&&/^https?:\/\//.test(url)){
+    if(!fields.has(url))fields.set(url,new Set());fields.get(url)!.add(field.replace(/([A-Z])/g," $1").toLowerCase());
+  }
+  for(const [url,names] of fields)items.push({url,label:"Field evidence",supports:[...names].join(" · ")});
+  const merged=new Map<string,Record<string,unknown>>();
+  for(const item of items){const url=String(item.url??"");if(!/^https?:\/\//.test(url))continue;
+    const old=merged.get(url);merged.set(url,{...old,...item,label:old?.label??item.label,supports:fields.has(url)?[...fields.get(url)!].join(" · "):item.supports??old?.supports});}
+  return [...merged.values()];
 }
 function variantsHtml(w: Work) {
   const variants = Array.isArray(w.release?.commercialVariants) ? w.release.commercialVariants.map(record) : [];
@@ -659,19 +524,20 @@ function showDetail(id: string) {
     return true;
   });
   const sourceList = sources(w);
-  const selectedMedia = collection === "research" ? media(w, w.collections.includes("methods") ? "methods" : w.collections.includes("datasets") ? "datasets" : "hardware") : preview(w) ?? media(w);
   const detailKind = collection === "research" ? (w.collections.includes("hardware") ? "hardware" : w.collections.includes("datasets") ? "datasets" : "methods") : collection;
+  const selectedMedia=collection==="research"?media(w,detailKind):preview(w)??media(w);
   const isDataset = detailKind === "datasets";
-  const mediaHtml = selectedMedia ? `<div class="detail-media"><img class="detail-cover" src="${e(selectedMedia.url)}" alt="${e(selectedMedia.alt)}"/><p class="image-note">${e(w.credit ?? w.institute)} · <a href="${e(selectedMedia.source)}" target="_blank" rel="noopener noreferrer">${e(selectedMedia.kind)} ↗</a></p></div>` : "";
-  const notes = [d.limitations, d.annotationEvidence, record(d.reportedScale).durationUnit, record(w.research?.method).dateNote, h.observationSignalsNote, h.interfaceFormsNote, record(h.tactile).note, record(h.forceTorque).note, h.hardwareAvailability,
+  const mediaHtml = selectedMedia ? `<div class="detail-media"><img class="detail-cover" src="${e(selectedMedia.url)}" alt="${e(selectedMedia.alt)}"/><p class="image-note">${e(detailKind === "hardware" ? (w.hardwareImageCredit ?? w.credit ?? w.institute) : w.credit ?? w.institute)} · <a href="${e(selectedMedia.source)}" target="_blank" rel="noopener noreferrer">${e(selectedMedia.kind)} ↗</a></p></div>` : "";
+  const notes = [record(w.research?.method).limitations, d.limitations, d.annotationEvidence, record(d.reportedScale).durationUnit, record(w.research?.method).dateNote, h.observationSignalsNote, h.interfaceFormsNote, record(h.tactile).note, record(h.forceTorque).note, h.hardwareAvailability,
     record(h.cost).scope, record(h.mass).scope, d.accessNote, d.fpsScope, record(d.reportedScale).scope, record(d.publicScale).snapshotDate ? `Public release snapshot: ${text(record(d.publicScale).snapshotDate)}` : undefined, record(d.publicScale).scope, record(d.reportedScale).scope,
     ...(Array.isArray(d.scopeNotes) ? d.scopeNotes : []),
     ...(Array.isArray(w.release?.notes) ? w.release.notes : [])].filter(Boolean);
-  const hardwareSection = w.collections.includes("hardware") || Object.keys(h).length ? `<section class="detail-section"><h3>Hardware & sensing</h3>${factsHtml(hardwareFacts(w))}</section>` : "";
-  const methodSection = w.research?.method ? `<section class="detail-section"><h3>Method at a glance</h3>${factsHtml(methodFacts(w))}</section>` : "";
-  const datasetSection = Object.keys(d).length ? `<section class="detail-section"><h3>Dataset</h3><div class="data-scale-columns">${scaleText(record(d.publicScale)) !== "Not verified" ? `<div class="data-scale-column"><span>Released / indexed</span><p>${e(scaleText(record(d.publicScale)))}</p></div>` : ""}${scaleText(record(d.reportedScale)) !== "Not verified" ? `<div class="data-scale-column"><span>Reported</span><p>${e(scaleText(record(d.reportedScale)))}</p></div>` : ""}</div>${factsHtml([
-    ...datasetFacts(w).filter(([key]) => !["Reported scale", "Public release"].includes(key)),
-  ])}</section>` : "";
+  const section=(title:string,rows:[string,string][],note="")=>`<section class="detail-section"><h3>${e(title)}</h3>${factsHtml(rows)}${note?`<p class="detail-scope-note">${e(note)}</p>`:""}</section>`;
+  const hardwareSection=w.research?.hardware?section("Hardware & sensing",hardwareFacts(w))+section("Capture & data",hardwareDataFacts(w)):"";
+  const methodSection=w.research?.method?section("Method at a glance",methodFacts(w))+section("Evaluation & deployment",methodEvaluationFacts(w)):"";
+  const publicScale=scaleText(record(d.publicScale)),reportedScale=scaleText(record(d.reportedScale));
+  const scaleColumns=`<div class="data-scale-columns">${publicScale!=="Not verified"?`<div class="data-scale-column"><span>Public release</span><p>${e(publicScale)}</p>${record(d.publicScale).scope?`<small>${e(record(d.publicScale).scope)}</small>`:""}</div>`:""}${reportedScale!=="Not verified"?`<div class="data-scale-column"><span>Reported</span><p>${e(reportedScale)}</p>${record(d.reportedScale).scope?`<small>${e(record(d.reportedScale).scope)}</small>`:""}</div>`:""}</div>`;
+  const datasetSection=w.research?.dataset?`<section class="detail-section"><h3>Dataset</h3>${scaleColumns}${factsHtml(datasetFacts(w))}</section>`+section("Annotations & tasks",datasetAnnotationFacts(w))+section("Release & access",datasetReleaseFacts(w)):"";
   const release = w.release ? `<div class="release-specifications">${factsHtml([
     ["Hardware", text(w.release.hardwareStatus, "Unknown")], ["Software", text(w.release.softwareStatus, "Unknown")],
     ...(w.commercial ? [["Availability", text(w.release?.availability, "Commercial product")] as [string, string]] : []),
@@ -681,8 +547,8 @@ function showDetail(id: string) {
     ["Tactile sensor", text(record(h.tactile).detail ?? record(h.tactile).type, "")], ["Force sensor", text(record(h.forceTorque).detail ?? record(h.forceTorque).type, "")],
     ["Actions", text(h.actionSpace ?? d.action, "")], ["Observations", text(d.observations, "")], ["Embodiments", text(d.embodiments, "")],
   ].filter(([,v]) => !!v) as [string,string][];
-  $("detail-content").innerHTML = `<div class="detail-layout${selectedMedia ? "" : " no-media"}">${mediaHtml}<div class="detail-copy"><p class="detail-kicker">${e(w.institute)}${w.date === "—" ? "" : " · " + e(w.date)} · ${e(w.publication)}</p><h2>${e(isDataset ? text(d.name, w.name) : w.name)}</h2><p class="detail-paper-title">${e(isDataset ? w.datasetSummary ?? w.title : detailKind === "methods" ? text(record(w.research?.method).summary, w.title) : w.summary ?? w.title)}</p><div class="detail-links">${unique.map(l => `<a href="${e(l.url)}" target="_blank" rel="noopener noreferrer">${e(l.label)} ↗</a>`).join("")}</div>${detailKind === "methods" ? methodSection + (datasetSection ? `<details class="detail-secondary"><summary>Dataset</summary>${datasetSection}</details>` : "") : isDataset ? datasetSection + (hardwareSection ? `<details class="detail-secondary"><summary>Hardware & sensing</summary>${hardwareSection}</details>` : "") : hardwareSection + methodSection + (datasetSection ? `<details class="detail-secondary"><summary>Dataset · ${e(publicStats(w)[0] ?? text(d.access))}</summary>${datasetSection}</details>` : "")}
-    <details class="detail-sources"><summary>Sources & specifications${sourceList.length ? ` · ${sourceList.length} references` : ""}</summary>${factsHtml(specifications)}${release}${variantsHtml(w)}${notes.map(n => `<p class="data-note">${e(n)}</p>`).join("")}${sourceList.length ? `<ol>${sourceList.map(s => `<li><a href="${e(s.url)}" target="_blank" rel="noopener noreferrer">${e(new URL(String(s.url)).hostname)} ↗</a><br/>${e(s.note ?? s.supports ?? s.section)}</li>`).join("")}</ol>` : `<a href="${e(w.paperUrl)}" target="_blank" rel="noopener noreferrer">Primary source ↗</a>`}</details>
+  $("detail-content").innerHTML = `<div class="detail-layout${selectedMedia ? "" : " no-media"}">${mediaHtml}<div class="detail-copy"><p class="detail-kicker">${e(w.institute)}${w.date === "—" ? "" : " · " + e(w.date)} · ${e(w.publication)}</p><h2>${e(isDataset ? text(d.name, w.name) : w.name)}</h2><p class="detail-paper-title">${e(isDataset ? w.datasetSummary ?? w.title : detailKind === "methods" ? text(record(w.research?.method).summary, w.title) : w.summary ?? w.title)}</p><div class="detail-links">${unique.map(l => `<a href="${e(l.url)}" target="_blank" rel="noopener noreferrer">${e(l.label)} ↗</a>`).join("")}</div>${detailKind === "methods" ? methodSection + (datasetSection ? `<details class="detail-secondary"><summary>Dataset</summary>${datasetSection}</details>` : "") : isDataset ? datasetSection + (hardwareSection ? `<details class="detail-secondary"><summary>Hardware & sensing</summary>${hardwareSection}</details>` : "") : hardwareSection + (methodSection ? `<details class="detail-secondary"><summary>Related method</summary>${methodSection}</details>` : "") + (datasetSection ? `<details class="detail-secondary"><summary>Dataset · ${e(publicStats(w)[0] ?? text(d.access))}</summary>${datasetSection}</details>` : "")}
+    <details class="detail-sources"><summary>Sources & specifications${sourceList.length ? ` · ${sourceList.length} references` : ""}</summary>${factsHtml(specifications)}${release}${variantsHtml(w)}${notes.map(n => `<p class="data-note">${e(n)}</p>`).join("")}${sourceList.length ? `<ol>${sourceList.map(s => `<li><a href="${e(s.url)}" target="_blank" rel="noopener noreferrer">${e(s.label ?? new URL(String(s.url)).hostname)} ↗</a><br/>${e(s.note ?? s.supports ?? s.section)}</li>`).join("")}</ol>` : `<a href="${e(w.paperUrl)}" target="_blank" rel="noopener noreferrer">Primary source ↗</a>`}</details>
     <button class="button-dark detail-compare" data-detail-compare="${e(id)}" type="button">${selected.has(id) ? "Remove from comparison" : "Add to comparison"}</button></div></div>`;
   detail.showModal();
   document.body.classList.add("dialog-open");
@@ -759,22 +625,27 @@ detail.addEventListener("click", (event) => {
   );
   if (b) toggle(b.dataset.detailCompare!);
 });
-document.querySelectorAll<HTMLButtonElement>("[data-collection]").forEach((b) =>
-  b.addEventListener("click", () => {
-    selections.set(collection, selected);
-    collection = b.dataset.collection!;
-    selected = selections.get(collection) ?? new Set<string>();
-    selections.set(collection, selected);
-    panel(false);
-    render();
-    updateTray();
-  }),
-);
-for (const k of filterIds) controls[k].addEventListener("change", render);
-for (const el of document.querySelectorAll("input[name=signal]"))
-  el.addEventListener("change", render);
-search.addEventListener("input", render);
-sort.addEventListener("change", render);
+document.querySelectorAll<HTMLButtonElement>("[data-collection]").forEach(b=>b.addEventListener("click",()=>{
+  views.set(collection,view);selections.set(collection,selected);
+  collection=b.dataset.collection as Lens;
+  view=views.get(collection)??emptyView();views.set(collection,view);
+  selected=selections.get(collection)??new Set<string>();selections.set(collection,selected);
+  search.value=view.query;sort.value=view.sort;
+  panel(false);buildFilterPanel();render();updateTray();
+}));
+$("category-options").addEventListener("click",event=>{
+  const button=(event.target as HTMLElement).closest<HTMLButtonElement>("[data-category]");
+  if(!button)return;view.category=button.dataset.category!;render();
+});
+$("filter-fields").addEventListener("change",event=>{
+  const control=event.target;if(!(control instanceof HTMLSelectElement)||!control.dataset.facet)return;
+  view.filters[control.dataset.facet]=control.value;render();
+});
+$("signal-options").addEventListener("change",()=>{
+  view.signals=Array.from(document.querySelectorAll<HTMLInputElement>("input[name=signal]:checked")).map(el=>el.value);render();
+});
+search.addEventListener("input",()=>{view.query=search.value;render();});
+sort.addEventListener("change",()=>{view.sort=sort.value;render();});
 $("reset-filters").addEventListener("click", reset);
 $("empty-reset").addEventListener("click", reset);
 $("filters-toggle").addEventListener("click", () =>
@@ -784,20 +655,13 @@ $("apply-filters").addEventListener("click", () => panel(false));
 document.addEventListener("pointerdown", (event) => {
   if (!$("library-toolbar").contains(event.target as Node)) panel(false);
 });
-$("active-filters").addEventListener("click", (event) => {
-  const b = (event.target as HTMLElement).closest<HTMLElement>("[data-remove]");
-  if (!b) return;
-  const key = b.dataset.remove!;
-  if (key === "q") search.value = "";
-  else if (key === "signal")
-    document
-      .querySelectorAll<HTMLInputElement>("input[name=signal]")
-      .forEach((el) => {
-        if (el.value === b.dataset.value) el.checked = false;
-      });
-  else if (filterIds.includes(key as (typeof filterIds)[number]))
-    controls[key as (typeof filterIds)[number]].value = "all";
-  render();
+$("active-filters").addEventListener("click",event=>{
+  const button=(event.target as HTMLElement).closest<HTMLElement>("[data-remove]");if(!button)return;
+  const key=button.dataset.remove!;
+  if(key==="q"){view.query="";search.value="";}
+  else if(key==="signal")view.signals=view.signals.filter(s=>s!==button.dataset.value);
+  else delete view.filters[key];
+  buildFilterPanel();render();
 });
 $("open-compare").addEventListener("click", showCompare);
 $("clear-compare").addEventListener("click", () => {
@@ -858,19 +722,14 @@ async function boot() {
   makeBatch(PAGE_SIZE);
   setBoundary(true, false);
   try {
-    const response = await fetch(settings.endpoint);
+    const response = await fetch(settings.endpoint, { cache: "no-cache" });
     if (!response.ok) throw Error(`Catalog HTTP ${response.status}`);
     const data = await response.json();
     if (!Array.isArray(data) || !data.length) throw Error("Empty catalog");
     if (token !== generation) return;
     works = data as Work[];
     byId = new Map(works.map((w) => [w.id, w]));
-    const priorAccess = controls.access.value;
-    const accesses = [...new Set(works.map((w) => w.dataAccess))].sort();
-    controls.access.innerHTML =
-      '<option value="all">All access states</option>' +
-      accesses.map((s) => `<option value="${e(s)}">${e(s)}</option>`).join("");
-    if (accesses.includes(priorAccess)) controls.access.value = priorAccess;
+    buildFilterPanel();
     render();
     updateTray();
     const item = params.get("item");
