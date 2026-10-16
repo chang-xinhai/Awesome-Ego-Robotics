@@ -1,0 +1,1546 @@
+{
+  "records": {
+    "egoemg": {
+      "reportedScale": {
+        "hours": ">18",
+        "participants": 53,
+        "scope": "current official README; paper v1 reports >10 h and 41 participants"
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [],
+      "observations": "Bilateral sEMG/IMU, ego wide-angle RGB and external RGB-D reference video.",
+      "labels": "Hand motion and wrist articulation targets from mocap reconstruction.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Optical marker measurements followed by learned hand-model reconstruction.",
+      "limitations": "Current release is a preview shard; original paper reported >10 h / 41 participants. External RGB-D is a reference view.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://github.com/zhenqis123/EgoEMG"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.05712"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://github.com/zhenqis123/EgoEMG"
+        }
+      ],
+      "name": "EgoEMG",
+      "verified": "2026-10-16",
+      "accessNote": "Official Baidu Netdisk preview shard and benchmark code; full public hours not independently verified.",
+      "recordedSignals": [
+        "Vision",
+        "EMG",
+        "IMU"
+      ],
+      "datasetUrl": "https://github.com/zhenqis123/EgoEMG"
+    },
+    "egopressure": {
+      "reportedScale": {
+        "participants": 21,
+        "gestures": 31
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [],
+      "observations": "Ego/exo RGB-D and a Sensel pressure-sensitive touchpad.",
+      "labels": "Hand meshes and pressure intensities projected onto contact vertices.",
+      "bodyCoverage": "Single hand",
+      "annotationEvidence": "Measured touchpad pressure combined with multi-view hand-model optimization.",
+      "limitations": "Planar normal-pressure interaction; no general whole-hand object tactile or shear measurements.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://siplab.org/projects/EgoPressure"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2409.02224"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/eth-siplab/EgoPressure"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://dataset.egopressure.inf.ethz.ch/"
+        }
+      ],
+      "name": "EgoPressure",
+      "verified": "2026-10-16",
+      "accessNote": "Official dataset download and use agreement.",
+      "recordedSignals": [
+        "Vision",
+        "Depth",
+        "Tactile"
+      ],
+      "datasetUrl": "https://dataset.egopressure.inf.ethz.ch/"
+    },
+    "ego4d": {
+      "reportedScale": {
+        "hours": 3670,
+        "participants": 923,
+        "locations": 74,
+        "countries": 9
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "MP4",
+        "JSON"
+      ],
+      "observations": "Wearable first-person video; additional modalities are available for subsets.",
+      "labels": "Narrations, temporal activity labels and benchmark-specific annotations.",
+      "bodyCoverage": "Hands and daily activity",
+      "annotationEvidence": "Human annotation; coverage varies by benchmark and recording.",
+      "limitations": "Most clips do not include metric hand pose or robot actions.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://ego4d-data.org/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2110.07058"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/facebookresearch/Ego4d"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://ego4d-data.org/docs/start-here/"
+        }
+      ],
+      "name": "Ego4D",
+      "verified": "2026-10-16",
+      "accessNote": "Dataset license acceptance and official downloader; component availability varies.",
+      "recordedSignals": [
+        "Vision",
+        "Audio"
+      ],
+      "datasetUrl": "https://ego4d-data.org/docs/start-here/"
+    },
+    "ego-exo4d": {
+      "reportedScale": {
+        "hours": 1286.3,
+        "durationUnit": "ego + exo video hours",
+        "participants": 740,
+        "takes": 5035
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "MP4",
+        "JSON"
+      ],
+      "observations": "Project Aria ego recordings synchronized with external cameras.",
+      "labels": "Expert commentary, narrations, atomic actions and benchmark-specific hand/body poses.",
+      "bodyCoverage": "Hands and whole body",
+      "annotationEvidence": "Multi-view pose annotation and human language labeling; annotation scope is task dependent.",
+      "limitations": "The reported duration sums ego and exo streams; many activities are outside manipulation.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://ego-exo4d-data.org/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2311.18259"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/facebookresearch/Ego4d"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://docs.ego-exo4d-data.org/"
+        }
+      ],
+      "name": "Ego-Exo4D",
+      "verified": "2026-10-16",
+      "accessNote": "Dataset agreement and official download CLI.",
+      "recordedSignals": [
+        "Vision",
+        "Monochrome",
+        "IMU",
+        "Gaze",
+        "Audio"
+      ],
+      "datasetUrl": "https://docs.ego-exo4d-data.org/"
+    },
+    "epic-kitchens": {
+      "reportedScale": {
+        "hours": 100,
+        "videos": 700,
+        "kitchens": 45
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "MP4",
+        "CSV"
+      ],
+      "observations": "Head-mounted GoPro videos from real kitchens.",
+      "labels": "Narrations, action boundaries and verb/noun labels; additional annotations are separate releases.",
+      "bodyCoverage": "Hands and daily activity",
+      "annotationEvidence": "Participant narration and crowd-assisted temporal labeling.",
+      "limitations": "EPIC-55 is included in the family and must not be added again to the 100-hour total; no 3D hand GT.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://epic-kitchens.github.io/2025"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2006.13256"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/epic-kitchens/epic-kitchens-100-annotations"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://epic-kitchens.github.io/2025#downloads"
+        }
+      ],
+      "name": "EPIC-KITCHENS-100",
+      "verified": "2026-10-16",
+      "accessNote": "Official download process and dataset-specific license.",
+      "recordedSignals": [
+        "Vision",
+        "Audio"
+      ],
+      "datasetUrl": "https://epic-kitchens.github.io/2025#downloads"
+    },
+    "hd-epic": {
+      "reportedScale": {
+        "hours": 41,
+        "kitchens": 9,
+        "recipes": 69
+      },
+      "publicScale": {},
+      "access": "Public download",
+      "formats": [
+        "VRS",
+        "MP4",
+        "HDF5"
+      ],
+      "observations": "Aria sensor streams, RGB videos, gaze and spatial tracking.",
+      "labels": "Recipes, fine-grained actions, object motion, hand masks and 3D-grounded VQA.",
+      "bodyCoverage": "Hands and environment",
+      "annotationEvidence": "Detailed human annotation grounded in scanned kitchens and device tracking.",
+      "limitations": "Kitchen-focused validation data; object masks and motion labels are not full hand-action ground truth.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://hd-epic.github.io/site/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2502.04144"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/hd-epic/hd-epic-annotations"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://hd-epic.github.io/site/#download"
+        }
+      ],
+      "name": "HD-EPIC",
+      "verified": "2026-10-16",
+      "accessNote": "Official dataset download links and component downloader.",
+      "recordedSignals": [
+        "Vision",
+        "Monochrome",
+        "IMU",
+        "Gaze",
+        "Audio"
+      ],
+      "datasetUrl": "https://hd-epic.github.io/site/#download"
+    },
+    "assembly101": {
+      "reportedScale": {
+        "videos": 4321,
+        "toyModels": 101
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "MP4",
+        "JSON"
+      ],
+      "observations": "Eight static and four egocentric camera views of toy assembly.",
+      "labels": "Coarse/fine action segments and 3D hand poses.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Human action annotation with automatically generated hand pose tracks.",
+      "limitations": "Pose labels are model-derived; AssemblyHands reuses this capture source.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://assembly-101.github.io/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2203.14712"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/assembly-101/assembly101-annotations"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://huggingface.co/datasets/cvml-nus/assembly101"
+        }
+      ],
+      "name": "Assembly101",
+      "verified": "2026-10-16",
+      "accessNote": "Official download scripts and noncommercial dataset terms.",
+      "recordedSignals": [
+        "Vision",
+        "Monochrome"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/cvml-nus/assembly101"
+    },
+    "hot3d": {
+      "reportedScale": {
+        "minutes": 833,
+        "participants": 19,
+        "objects": 33
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "VRS",
+        "JSON"
+      ],
+      "observations": "Aria RGB/monochrome streams and Quest 3 monochrome stereo; gaze on Aria subset.",
+      "labels": "3D hand shape/pose, rigid-object pose, camera calibration and object models.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Optical motion capture and fitted hand/object meshes.",
+      "limitations": "Controlled indoor scenes and known rigid objects; contact geometry is not measured tactile force.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://facebookresearch.github.io/hot3d/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2411.19167"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/facebookresearch/hot3d"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://huggingface.co/datasets/projectaria/hot3d"
+        }
+      ],
+      "name": "HOT3D",
+      "verified": "2026-10-16",
+      "accessNote": "Hugging Face / Aria download route under dataset terms.",
+      "recordedSignals": [
+        "Vision",
+        "Monochrome",
+        "Gaze"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/projectaria/hot3d"
+    },
+    "hoi4d": {
+      "reportedScale": {
+        "frames": 2400000,
+        "sequences": 4000,
+        "participants": 9,
+        "objectInstances": 800
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "MP4",
+        "AVI",
+        "JSON",
+        "PCD"
+      ],
+      "observations": "Head-mounted RGB-D recordings in indoor rooms.",
+      "labels": "Hand pose, object pose, panoptic/motion segmentation and action segments.",
+      "bodyCoverage": "Hands and objects",
+      "annotationEvidence": "Human-assisted geometric annotation and optimization.",
+      "limitations": "Labels are reconstructed and manually refined; no executable robot action labels.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://hoi4d.github.io/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2203.01577"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/leolyliu/HOI4D-Instructions"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://github.com/leolyliu/HOI4D-Instructions"
+        }
+      ],
+      "name": "HOI4D",
+      "verified": "2026-10-16",
+      "accessNote": "Follow the official data access and annotation instructions; release.txt identifies public sequences.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "datasetUrl": "https://github.com/leolyliu/HOI4D-Instructions"
+    },
+    "arctic": {
+      "reportedScale": {
+        "frames": 2100000
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [],
+      "observations": "Synchronized egocentric and external RGB video.",
+      "labels": "Hand/object meshes, articulated object motion and dynamic contact labels.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Marker-based motion capture fitted to scanned models.",
+      "limitations": "Laboratory capture; geometric contact is not a tactile sensor measurement.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://arctic.is.tue.mpg.de/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2204.13662"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/zc-alexfan/arctic"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://arctic.is.tue.mpg.de/"
+        }
+      ],
+      "name": "ARCTIC",
+      "verified": "2026-10-16",
+      "accessNote": "Registration and dataset/model license conditions apply.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "datasetUrl": "https://arctic.is.tue.mpg.de/"
+    },
+    "egodex": {
+      "reportedScale": {
+        "hours": 829,
+        "tasks": 194
+      },
+      "publicScale": {
+        "hours": 829
+      },
+      "access": "Public download",
+      "formats": [
+        "MP4",
+        "HDF5"
+      ],
+      "observations": "30 Hz 1080p egocentric video from Apple Vision Pro.",
+      "labels": "Head/upper-body/hand transforms, optional confidence and generated language descriptions.",
+      "bodyCoverage": "Hands and upper body",
+      "annotationEvidence": "ARKit tracking in a per-session origin frame; language generated by LLM/VLM.",
+      "limitations": "Device tracking is not independent mocap GT; RGB reprojection can differ from tracked camera geometry.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://github.com/apple-aiml-research/ml-egodex"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2505.11709"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+        }
+      ],
+      "name": "EgoDex",
+      "verified": "2026-10-16",
+      "accessNote": "Direct Apple CDN archives; dataset CC BY-NC-ND.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "datasetUrl": "https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download"
+    },
+    "egoverse": {
+      "reportedScale": {
+        "hours": 4003,
+        "episodes": "~80,000",
+        "tasks": 1965,
+        "scenes": 240,
+        "participants": 2087,
+        "snapshotDate": "2026-10-16"
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "Zarr"
+      ],
+      "observations": "Egocentric recordings from heterogeneous capture systems and operators.",
+      "labels": "Hand/body tracking, camera pose and language; annotation fields vary by source.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Source-specific tracking pipelines normalized into EgoDB.",
+      "limitations": "Release snapshots grow and are reprocessed; sensor and annotation quality vary across sources.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://egoverse.ai/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.07607"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/GaTech-RL2/EgoVerse"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://egoverse-research-workbench.vercel.app/"
+        }
+      ],
+      "name": "EgoVerse",
+      "verified": "2026-10-16",
+      "accessNote": "Use the official dataset browser and download instructions; verify source-specific terms.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "datasetUrl": "https://egoverse-research-workbench.vercel.app/"
+    },
+    "fpha": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Request access",
+      "formats": [],
+      "observations": "Head-mounted RGB-D recordings of daily hand actions.",
+      "labels": "3D hand joints, action classes and object 6DoF poses for a subset.",
+      "bodyCoverage": "Single hand",
+      "annotationEvidence": "Magnetic sensors and inverse kinematics generate hand pose reference labels.",
+      "limitations": "Small participant/object set; sensors affect hand appearance and not every joint is directly measured.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://guiggh.github.io/publications/first-person-hands/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/1704.02463"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/guiggh/hand_pose_action"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://github.com/guiggh/hand_pose_action"
+        }
+      ],
+      "name": "FPHA",
+      "verified": "2026-10-16",
+      "accessNote": "Official project links a dataset request form; see repository for maintained access instructions.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "datasetUrl": "https://github.com/guiggh/hand_pose_action"
+    },
+    "h2o": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "TXT",
+        "RGB/depth images"
+      ],
+      "observations": "Egocentric and external Azure Kinect RGB-D streams.",
+      "labels": "Left/right 3D hand pose, object pose, camera pose and interaction labels.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Multi-view model fitting, RGB-D object tracking and manual refinement.",
+      "limitations": "Semi-automatic pose labels and controlled activities; action categories are not robot commands.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://taeinkwon.com/projects/h2o/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2104.11181"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/taeinkwon/h2odataset"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://h2odataset.ethz.ch/"
+        }
+      ],
+      "name": "H2O",
+      "verified": "2026-10-16",
+      "accessNote": "Official downloader selects full data or pose-only data.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "datasetUrl": "https://h2odataset.ethz.ch/"
+    },
+    "assemblyhands": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "JSON",
+        "TAR.GZ",
+        "MP4"
+      ],
+      "observations": "Synchronized ego and exo images sampled from Assembly101.",
+      "labels": "3D hand joints with calibrated camera/image metadata.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Manual annotations seed multi-view automatic pose-label generation.",
+      "limitations": "Derived from Assembly101, so capture hours must not be counted twice; labels retain model error.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://assemblyhands.github.io/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2304.12301"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/facebookresearch/assemblyhands-toolkit"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://github.com/facebookresearch/assemblyhands-toolkit"
+        }
+      ],
+      "name": "AssemblyHands",
+      "verified": "2026-10-16",
+      "accessNote": "CC BY-NC 4.0; official toolkit documents raw and rectified image access.",
+      "recordedSignals": [
+        "Vision",
+        "Monochrome"
+      ],
+      "datasetUrl": "https://github.com/facebookresearch/assemblyhands-toolkit"
+    },
+    "show3d": {
+      "reportedScale": {
+        "hours": 20,
+        "recordings": 2137,
+        "participants": 38,
+        "objects": 21
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "MP4",
+        "JSON"
+      ],
+      "observations": "Quest stereo and backpack-mounted external camera videos.",
+      "labels": "Hand meshes/poses, object poses for a subset, calibration and action captions.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Markerless multi-view tracking and optimization with separate quality validation.",
+      "limitations": "Object-pose availability varies by scene; tracking annotations are not direct force measurements.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://show3d-dataset.github.io/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.28760"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/facebookresearch/show3d"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://huggingface.co/datasets/facebook/show3d-dataset"
+        }
+      ],
+      "name": "SHOW3D",
+      "verified": "2026-10-16",
+      "accessNote": "Hugging Face release and official loader; test poses are withheld.",
+      "recordedSignals": [
+        "Monochrome"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/facebook/show3d-dataset"
+    },
+    "ego-1k": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "Parquet",
+        "VRS"
+      ],
+      "observations": "Multi-camera fisheye recordings and rectified stereo views.",
+      "labels": "Calibrated camera geometry and derived stereo information.",
+      "bodyCoverage": "Hands and environment",
+      "annotationEvidence": "Hardware synchronization and geometric calibration; stereo depth is estimated.",
+      "limitations": "The large capture rig differs from lightweight glasses; no independent hand/depth GT is established here.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://huggingface.co/datasets/facebook/ego-1k"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.13741"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://huggingface.co/datasets/facebook/ego-1k"
+        }
+      ],
+      "name": "Ego-1K",
+      "verified": "2026-10-16",
+      "accessNote": "Official release under FAIR noncommercial research license.",
+      "recordedSignals": [
+        "Vision",
+        "Monochrome"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/facebook/ego-1k"
+    },
+    "holoassist": {
+      "reportedScale": {
+        "hours": 166,
+        "instructorPerformerPairs": 350
+      },
+      "publicScale": {},
+      "access": "Public download",
+      "formats": [
+        "PNG",
+        "TXT",
+        "JSON"
+      ],
+      "observations": "HoloLens RGB-D, hand/head tracking, gaze, audio and inertial streams.",
+      "labels": "Action segments, conversation, mistakes, interventions and hand trajectories.",
+      "bodyCoverage": "Hands and upper body",
+      "annotationEvidence": "Device tracking plus manual action/conversation annotation.",
+      "limitations": "Hand pose is device-estimated; assistant benchmarks do not establish robot policy performance.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://holoassist.github.io/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2309.17024"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/Ember-HoloAssist/holoassist-release"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://holoassist.github.io/"
+        }
+      ],
+      "name": "HoloAssist",
+      "verified": "2026-10-16",
+      "accessNote": "Official repository states dataset is released under permissive CDLA 2.0.",
+      "recordedSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "Gaze",
+        "Audio"
+      ],
+      "datasetUrl": "https://holoassist.github.io/"
+    },
+    "nymeria": {
+      "reportedScale": {
+        "hours": 300,
+        "participants": 264,
+        "locations": 50,
+        "scope": "original Nymeria release"
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "VRS"
+      ],
+      "observations": "Multi-device Project Aria head/wrist recordings and additional observer views.",
+      "labels": "Localized body motion, spatial tracking and language annotations; newer releases add modalities/representations.",
+      "bodyCoverage": "Whole body",
+      "annotationEvidence": "Synchronized wearable capture and motion-capture suit; processed and retargeted motion outputs.",
+      "limitations": "Full-body reference motion relies on a suit; original capture does not provide independent dense finger GT.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://github.com/facebookresearch/nymeria_dataset"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2406.09905"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://www.projectaria.com/datasets/nymeria/"
+        }
+      ],
+      "name": "Nymeria / NymeriaPlus",
+      "verified": "2026-10-16",
+      "accessNote": "Use the official release selector and downloader; legacy Nymeria and NymeriaPlus loaders differ.",
+      "recordedSignals": [
+        "Vision",
+        "Monochrome",
+        "IMU",
+        "Gaze",
+        "Audio"
+      ],
+      "datasetUrl": "https://www.projectaria.com/datasets/nymeria/"
+    },
+    "egobody": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Request access",
+      "formats": [],
+      "observations": "Synchronized HoloLens 2 ego sensing and multiple external Azure Kinect RGB-D streams.",
+      "labels": "SMPL-X body fits, 3D scenes and head/hand/gaze tracking.",
+      "bodyCoverage": "Whole body",
+      "annotationEvidence": "Multi-view RGB-D body-model fitting with human quality control.",
+      "limitations": "Social-interaction and body-shape benchmark; body fits are not a direct robot action representation.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://sanweiliti.github.io/egobody/egobody.html"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2112.07642"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/sanweiliti/EgoBody"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+        }
+      ],
+      "name": "EgoBody",
+      "verified": "2026-10-16",
+      "accessNote": "Signed dataset license required; separate terms for motion text labels.",
+      "recordedSignals": [
+        "Vision",
+        "Depth",
+        "Gaze"
+      ],
+      "datasetUrl": "https://sanweiliti.github.io/egobody/egobody.html#dataset-download"
+    },
+    "aria-everyday-activities": {
+      "reportedScale": {
+        "sequences": 143,
+        "locations": 5
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "VRS"
+      ],
+      "observations": "Project Aria sensor streams from daily scenarios.",
+      "labels": "Globally aligned trajectories, scene point clouds, eye gaze and speech transcription.",
+      "bodyCoverage": "Head and environment",
+      "annotationEvidence": "Machine Perception Services outputs and speech annotation.",
+      "limitations": "SLAM/MPS results are estimated context; dense hand/body action GT is not implied.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2402.13349"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/facebookresearch/projectaria_tools"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+        }
+      ],
+      "name": "Aria Everyday Activities",
+      "verified": "2026-10-16",
+      "accessNote": "Aria dataset agreement and official downloader.",
+      "recordedSignals": [
+        "Vision",
+        "Monochrome",
+        "IMU",
+        "Gaze",
+        "Audio"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/projectaria/aria-everyday-activities"
+    },
+    "aria-digital-twin": {
+      "reportedScale": {
+        "sequences": 200,
+        "scope": "original paper release"
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "VRS",
+        "GLB",
+        "CSV"
+      ],
+      "observations": "Raw Aria camera/inertial streams plus separate synthetic renderings.",
+      "labels": "Device/object/human poses, scene/object models, segmentation and reference depth.",
+      "bodyCoverage": "Whole body and environment",
+      "annotationEvidence": "Digital scene reconstruction, motion capture and rendering generate reference annotations.",
+      "limitations": "Reference depth is not acquired by an onboard depth sensor; current docs contain inconsistent sequence totals.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2306.06362"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/facebookresearch/projectaria_tools"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+        }
+      ],
+      "name": "Aria Digital Twin",
+      "verified": "2026-10-16",
+      "accessNote": "Use current official download manifest; data groups and GT vary per sequence.",
+      "recordedSignals": [
+        "Vision",
+        "Monochrome",
+        "IMU",
+        "Gaze"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/projectaria/aria-digital-twin"
+    },
+    "world-in-your-hands": {
+      "reportedScale": {
+        "hours": ">1,000"
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [],
+      "observations": "Wearable perception rig, glove IMUs and finger pressure sensors; hardware-synchronized cameras.",
+      "labels": "Hand/wrist trajectories, derived depth/masks and language descriptions.",
+      "bodyCoverage": "Hands and upper body",
+      "annotationEvidence": "Sensor-assisted motion capture and automatic annotation pipeline.",
+      "limitations": "Collection scale and accessible release scale must be checked separately; tracking is not glasses-only.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://wiyh.tars-ai.com/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2512.24310"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/tars-robotics/World-In-Your-Hands"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://wiyh.tars-ai.com/"
+        }
+      ],
+      "name": "World In Your Hands",
+      "verified": "2026-10-16",
+      "accessNote": "Official site provides sample/full-data instructions; independent count of public hours not verified.",
+      "recordedSignals": [
+        "Vision",
+        "IMU",
+        "Tactile"
+      ],
+      "datasetUrl": "https://wiyh.tars-ai.com/"
+    },
+    "egolife": {
+      "reportedScale": {
+        "hours": 300,
+        "participants": 6,
+        "days": 7
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [],
+      "observations": "Wearable first-person videos with synchronized third-person references.",
+      "labels": "Long-context question answering and daily-life event annotations.",
+      "bodyCoverage": "Daily activity and environment",
+      "annotationEvidence": "Human daily-life capture and extensive event/QA annotation.",
+      "limitations": "A life-assistant dataset rather than metric manipulation-action supervision.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://egolife-ai.github.io/blog/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2503.03803"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+        }
+      ],
+      "name": "EgoLife",
+      "verified": "2026-10-16",
+      "accessNote": "Official Hugging Face collection; dataset components have their own access terms.",
+      "recordedSignals": [
+        "Vision",
+        "Audio"
+      ],
+      "datasetUrl": "https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342"
+    },
+    "touch-and-go": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Public download",
+      "formats": [
+        "MP4",
+        "NumPy"
+      ],
+      "observations": "First-person RGB and synchronized handheld GelSight tactile video.",
+      "labels": "Touch onset and material labels.",
+      "bodyCoverage": "Probe-mediated touch",
+      "annotationEvidence": "Measured optical tactile observations with human material labeling.",
+      "limitations": "A held probe measures contact; this is not bare-hand whole-surface tactile or robot action data.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://touch-and-go.github.io/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2211.12498"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/fredfyyang/Touch-and-Go"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+        }
+      ],
+      "name": "Touch and Go",
+      "verified": "2026-10-16",
+      "accessNote": "Official Google Drive data links; see paper/repository terms.",
+      "recordedSignals": [
+        "Vision",
+        "Tactile"
+      ],
+      "datasetUrl": "https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B"
+    },
+    "egotouch": {
+      "reportedScale": {
+        "episodes": 1891,
+        "tasks": 208
+      },
+      "publicScale": {},
+      "access": "Public download",
+      "formats": [],
+      "observations": "Head camera, two wrist cameras and palm pressure arrays.",
+      "labels": "42-joint hand pose and time-aligned continuous pressure maps.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Wearable pressure measurements and sensor-assisted pose capture.",
+      "limitations": "The 16×16 arrays mainly cover each palm; predicted pressure is separate from measured labels.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://jianyi2004.github.io/TouchAnything-Website/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.13083"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/Jianyi2004/TouchAnything"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        }
+      ],
+      "name": "EgoTouch / TouchAnything",
+      "verified": "2026-10-16",
+      "accessNote": "Official Hugging Face repository is public and ungated; download listing verified 2026-10-16.",
+      "recordedSignals": [
+        "Vision",
+        "Tactile"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+    },
+    "emg2pose": {
+      "reportedScale": {
+        "hours": 370,
+        "participants": 193,
+        "stages": 29,
+        "hdf5Files": 25253
+      },
+      "publicScale": {
+        "hours": 370
+      },
+      "access": "Public download",
+      "formats": [
+        "HDF5",
+        "CSV"
+      ],
+      "observations": "Wrist sEMG aligned at 2 kHz with per-hand joint angles.",
+      "labels": "Motion-capture-derived hand articulation.",
+      "bodyCoverage": "Single-hand samples",
+      "annotationEvidence": "Synchronized sEMG and hand mocap.",
+      "limitations": "Reference dataset: no paired egocentric RGB is established; do not merge it with EgoEMG.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://github.com/facebookresearch/emg2pose"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2412.02725"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+        }
+      ],
+      "name": "emg2pose",
+      "verified": "2026-10-16",
+      "accessNote": "Full and mini datasets available; CC BY-NC-SA 4.0.",
+      "recordedSignals": [
+        "EMG"
+      ],
+      "datasetUrl": "https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar"
+    },
+    "touchscale": {
+      "reportedScale": {
+        "hours": 500
+      },
+      "publicScale": {
+        "hours": 100,
+        "episodes": 15324,
+        "tasks": 929,
+        "sceneTypes": 22,
+        "participants": 24,
+        "snapshotDate": "2026-10-16"
+      },
+      "access": "Access conditions",
+      "formats": [
+        "WebDataset",
+        "MP4"
+      ],
+      "observations": "Head RGB-D, dual wrist RGB and full-hand pressure gloves.",
+      "labels": "Time-aligned tactile outputs, instructions and capture metadata.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Measured glove normal-pressure signals with automated completeness and quality checks.",
+      "limitations": "Paper reports 500 hours; the current card documents a 100-hour subset. No failure examples in that release.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://touch-scale.github.io/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.10288"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/phai-lab/touchscale"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        }
+      ],
+      "name": "TouchScale",
+      "verified": "2026-10-16",
+      "accessNote": "Official dataset card: CC BY-NC 4.0; full 500-hour release planned before November 2026.",
+      "recordedSignals": [
+        "Vision",
+        "Depth",
+        "Tactile",
+        "IMU"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+    },
+    "interhand26m": {
+      "reportedScale": {
+        "images": 2600000
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "JPEG",
+        "JSON"
+      ],
+      "observations": "Studio RGB views of single and interacting hands.",
+      "labels": "3D hand pose and later fitted hand meshes.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Human-assisted multi-view annotation and triangulation.",
+      "limitations": "Reference dataset rather than egocentric daily manipulation; no object dynamics or robot actions.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://mks0601.github.io/InterHand2.6M/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2008.09309"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/facebookresearch/InterHand2.6M"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://mks0601.github.io/InterHand2.6M/#download"
+        }
+      ],
+      "name": "InterHand2.6M",
+      "verified": "2026-10-16",
+      "accessNote": "Official download links and noncommercial research terms.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "datasetUrl": "https://mks0601.github.io/InterHand2.6M/#download"
+    },
+    "egogesture": {
+      "reportedScale": {
+        "videos": 2081,
+        "gestureSamples": 24161,
+        "participants": 50,
+        "gestureClasses": 83
+      },
+      "publicScale": {},
+      "access": "Request access",
+      "formats": [
+        "AVI",
+        "JPEG",
+        "CSV"
+      ],
+      "observations": "Egocentric RGB-D gesture videos in six scene conditions.",
+      "labels": "Gesture class and temporal start/end boundaries.",
+      "bodyCoverage": "Hands",
+      "annotationEvidence": "Designed gesture protocol and manually segmented class labels.",
+      "limitations": "Gesture recognition resource; not dense 3D hand pose or manipulation-action supervision.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        }
+      ],
+      "name": "EgoGesture",
+      "verified": "2026-10-16",
+      "accessNote": "Sign agreement and email the listed contact; approval provides download links.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "datasetUrl": "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+    },
+    "sanpo": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Public download",
+      "formats": [
+        "PNG",
+        "NPZ",
+        "CSV",
+        "JSON"
+      ],
+      "observations": "Head/chest stereo video, camera pose and inertial data; separate synthetic scenes.",
+      "labels": "Semantic masks and derived depth maps.",
+      "bodyCoverage": "Body motion and environment",
+      "annotationEvidence": "Human segmentation plus stereo/model-derived depth; synthetic labels are rendered.",
+      "limitations": "Navigation-focused; dense depth includes inferred values and is not independent depth-sensor GT.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://google-research-datasets.github.io/sanpo_dataset/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2309.12172"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/google-research-datasets/sanpo_dataset"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://github.com/google-research-datasets/sanpo_dataset"
+        }
+      ],
+      "name": "SANPO",
+      "verified": "2026-10-16",
+      "accessNote": "Official download repository; CC BY 4.0.",
+      "recordedSignals": [
+        "Vision",
+        "Depth",
+        "IMU"
+      ],
+      "datasetUrl": "https://github.com/google-research-datasets/sanpo_dataset"
+    },
+    "ego-gen": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [],
+      "observations": "Rendered first-person views generated from simulated body motion and scene assets.",
+      "labels": "Synthetic body pose, camera trajectories, geometry and rendering outputs.",
+      "bodyCoverage": "Whole body and environment",
+      "annotationEvidence": "Simulation-generated annotations rather than physical sensor measurement.",
+      "limitations": "Synthetic resource; realism and asset distributions must be tested before transfer claims.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://ego-gen.github.io/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2401.08739"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/ligengen/EgoGen"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://ego-gen.github.io/"
+        }
+      ],
+      "name": "EgoGen",
+      "verified": "2026-10-16",
+      "accessNote": "Official code and pretrained assets have component-specific terms.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "datasetUrl": "https://ego-gen.github.io/"
+    },
+    "taco": {
+      "reportedScale": {
+        "motionSequences": "2.5K",
+        "videoFrames": "5.2M",
+        "objectInstances": 196,
+        "actionTypes": 15
+      },
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [],
+      "observations": "Egocentric and third-person views of tool use and coordinated object manipulation.",
+      "labels": "Hand/object meshes and tool-action-object labels.",
+      "bodyCoverage": "Bimanual",
+      "annotationEvidence": "Multi-view capture combined with optical motion capture.",
+      "limitations": "Studio protocol; geometric contact and cooperative grasp synthesis are not measured tactile force.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://taco2024.github.io/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2401.08399"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/leolyliu/TACO-Instructions"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://taco2024.github.io/"
+        }
+      ],
+      "name": "TACO",
+      "verified": "2026-10-16",
+      "accessNote": "Official V1 dataset link and use terms.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "datasetUrl": "https://taco2024.github.io/"
+    },
+    "oakink2": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [
+        "JPEG",
+        "PKL",
+        "OBJ",
+        "PLY"
+      ],
+      "observations": "Synchronized multi-view image streams of complex task completion.",
+      "labels": "3D human/hands/objects, primitive text and task dependency graphs.",
+      "bodyCoverage": "Bimanual and upper body",
+      "annotationEvidence": "Sensor-assisted capture and fitted 3D human/object representations.",
+      "limitations": "Released annotations are labeled preview and may change; body-model fields do not imply all joints are used.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://oakink.net/v2/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2403.19417"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/oakink/OakInk2"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://oakink.net/v2/"
+        }
+      ],
+      "name": "OakInk2",
+      "verified": "2026-10-16",
+      "accessNote": "Official Hugging Face tarballs; annotations are preview releases.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "datasetUrl": "https://oakink.net/v2/"
+    },
+    "hocap": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Public download",
+      "formats": [
+        "ZIP"
+      ],
+      "observations": "Multiple RealSense RGB-D cameras and a HoloLens headset.",
+      "labels": "Object models, hand/object poses and segmentation.",
+      "bodyCoverage": "Hands and objects",
+      "annotationEvidence": "Semi-automatic shape/pose annotation from RGB-D; no motion-capture system required.",
+      "limitations": "Reference poses are optimized annotations rather than independent mocap measurements.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://irvlutd.github.io/HOCap/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2406.06843"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/IRVLUTD/HO-Cap"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://irvlutd.github.io/HOCap/#data"
+        }
+      ],
+      "name": "HO-Cap",
+      "verified": "2026-10-16",
+      "accessNote": "Official download scripts and Box archives; CC BY 4.0.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "datasetUrl": "https://irvlutd.github.io/HOCap/#data"
+    },
+    "egohos": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Public download",
+      "formats": [],
+      "observations": "Egocentric RGB images drawn from manipulation videos.",
+      "labels": "Hand masks, interacted-object masks and contact-boundary labels.",
+      "bodyCoverage": "Hands and objects",
+      "annotationEvidence": "Manual image segmentation and contact-boundary annotation.",
+      "limitations": "Image-level contact masks do not provide metric 3D contact force or robot commands.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://github.com/owenzlz/EgoHOS"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2208.03826"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://github.com/owenzlz/EgoHOS"
+        }
+      ],
+      "name": "EgoHOS",
+      "verified": "2026-10-16",
+      "accessNote": "Official repository provides annotation and image download instructions.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "datasetUrl": "https://github.com/owenzlz/EgoHOS"
+    },
+    "aria-gen2-pilot": {
+      "reportedScale": {},
+      "publicScale": {},
+      "access": "Access conditions",
+      "formats": [],
+      "observations": "Aria Gen 2 raw sensing during cleaning, cooking, eating, play and outdoor walking.",
+      "labels": "Machine-perception outputs for wearer, scene and interaction context.",
+      "bodyCoverage": "Head hands and environment",
+      "annotationEvidence": "Device sensing with estimated perception outputs; fields follow release-specific documentation.",
+      "limitations": "Incremental pilot collection; algorithm outputs should not be relabeled as independent GT.",
+      "sources": [
+        {
+          "label": "Official project / release",
+          "url": "https://www.projectaria.com/datasets/gen2pilot/"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2510.16134"
+        },
+        {
+          "label": "Official toolkit",
+          "url": "https://github.com/facebookresearch/projectaria_tools"
+        },
+        {
+          "label": "Dataset release",
+          "url": "https://www.projectaria.com/datasets/gen2pilot/"
+        }
+      ],
+      "name": "Aria Gen 2 Pilot Dataset",
+      "verified": "2026-10-16",
+      "accessNote": "Official Project Aria dataset page and release-specific terms.",
+      "recordedSignals": [
+        "Vision",
+        "Monochrome",
+        "IMU",
+        "Gaze",
+        "Audio",
+        "PPG"
+      ],
+      "datasetUrl": "https://www.projectaria.com/datasets/gen2pilot/"
+    }
+  }
+}

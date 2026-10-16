@@ -1,0 +1,1796 @@
+{
+  "works": {
+    "dexcap": {
+      "input": "SLAM, electromagnetic hand mocap, and scene point cloud",
+      "output": "Robot joint demonstrations and visual policy",
+      "supervision": "Human mocap; optional robot rollout correction",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2403.07788"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/j96w/DexCap"
+        },
+        {
+          "label": "Official project",
+          "url": "https://dex-cap.github.io"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2403.07788v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Combines portable hand capture with retargeting and point-cloud imitation learning.",
+      "inputSignals": [
+        "SLAM",
+        "Mocap"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "dexwild": {
+      "input": "Wearable human demonstrations and robot data",
+      "output": "Dexterous robot policy",
+      "supervision": "Human-robot co-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2505.07813"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/dexwild/dexwild-training"
+        },
+        {
+          "label": "Official project",
+          "url": "https://dexwild.github.io"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2505.07813v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Combines diverse wearable human interactions with robot demonstrations for in-the-wild generalization.",
+      "inputSignals": [],
+      "bodyCoverage": "Hands"
+    },
+    "mano": {
+      "input": "Hand pose and shape parameters",
+      "output": "Articulated hand mesh; root placement supplied separately",
+      "supervision": "Registered 3D hand scans",
+      "robotEvidence": "Hand model benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2201.02610"
+        },
+        {
+          "label": "Official project",
+          "url": "http://mano.is.tue.mpg.de"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2201.02610v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "A compact parametric hand model that provides a common mesh representation for capture and reconstruction.",
+      "inputSignals": [],
+      "dateNote": "Original publication: 2017; arXiv upload: 2022-01-07.",
+      "bodyCoverage": "Hands"
+    },
+    "hamer": {
+      "input": "Monocular RGB hand crop",
+      "output": "MANO hand mesh; camera-relative estimate",
+      "supervision": "Mixed 2D and 3D hand annotations",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2312.05251"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/geopavlakos/hamer"
+        },
+        {
+          "label": "Official project",
+          "url": "https://geopavlakos.github.io/hamer/"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2312.05251v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Scales transformer capacity and mixed hand annotations for robust monocular hand mesh recovery.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "wilor": {
+      "input": "Monocular RGB image",
+      "output": "Hand detections and camera-relative MANO meshes",
+      "supervision": "Hand detection and mesh supervision",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2409.12259"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/rolpotamias/WiLoR"
+        },
+        {
+          "label": "Official project",
+          "url": "https://rolpotamias.github.io/WiLoR"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2409.12259v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Combines hand localization and mesh reconstruction in an efficient pipeline for unconstrained images.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "wildhands": {
+      "input": "Egocentric RGB; camera information",
+      "output": "3D hand pose in the camera frame",
+      "supervision": "3D labels and auxiliary 2D supervision",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2312.06583"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/ap229997/hands"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2312.06583v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Studies camera conditioning and training recipes for everyday egocentric hand estimation.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "handoccnet": {
+      "input": "RGB hand crop with occlusion",
+      "output": "Camera-relative hand mesh",
+      "supervision": "3D hand mesh annotations",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2203.14564"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/namepllet/HandOccNet"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2203.14564v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses occluded image regions as context for recovering partially hidden hand geometry.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "hamba": {
+      "input": "Single RGB hand crop",
+      "output": "MANO hand pose and shape",
+      "supervision": "Supervised hand reconstruction",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2407.09646"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/humansensinglab/Hamba"
+        },
+        {
+          "label": "Official project",
+          "url": "https://humansensinglab.github.io/Hamba/"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2407.09646v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses graph-guided state-space scanning to model joint relationships for hand reconstruction.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egohandicl": {
+      "input": "Egocentric RGB and retrieved exemplars",
+      "output": "3D hand mesh estimate",
+      "supervision": "Hand geometry and contextual exemplar supervision",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2601.19850"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/Nicous20/EgoHandICL"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2601.19850v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses in-context exemplars to improve reconstruction under difficult egocentric interactions.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "omnihands": {
+      "input": "Monocular or multiview RGB; image or video",
+      "output": "Interacting hand meshes and relative motion",
+      "supervision": "Supervised interactive-hand data",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2405.20330"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/LinDixuan/OmniHands"
+        },
+        {
+          "label": "Official project",
+          "url": "https://OmniHand.github.io"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2405.20330v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Recovers interacting hands across image, video, and multiview inputs with shared tokenization.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "vidihand": {
+      "input": "Egocentric RGB video",
+      "output": "Metric hand pose sequence; scene scale remains a separate question",
+      "supervision": "Video diffusion prior and hand annotations",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2606.30308"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/NTUYWANG103/ViDiHand"
+        },
+        {
+          "label": "Official project",
+          "url": "https://vidihand.github.io"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2606.30308v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Adapts a pretrained video diffusion representation for detector-free bimanual motion reconstruction.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "ace-ego-hand": {
+      "input": "Egocentric RGB clip; optional intrinsics",
+      "output": "Metric bimanual hand trajectories",
+      "supervision": "Video diffusion prior and hand annotations",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2608.20308"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/ggxxii/ACE-Ego-Hand"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2608.20308v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Repurposes video diffusion features to recover occluded and temporarily unseen hands.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "esther": {
+      "input": "Calibrated egocentric stereo video",
+      "output": "Metric 3D hand geometry and motion",
+      "supervision": "Pipeline pseudo-labels; mocap test reference",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.34817"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.34817v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses stereo geometry and temporal context for metric egocentric hand reconstruction.",
+      "inputSignals": [
+        "Vision",
+        "Stereo"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "eventegohands-plus-plus": {
+      "input": "Egocentric event stream",
+      "output": "Left and right 3D hand meshes",
+      "supervision": "Real and synthetic event-hand annotations",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.17189"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/ryhara/EventEgoHandsV2"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.17189v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://ryhara.github.io/EventEgoHandsV2/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Adds instance-aware hand detection to event-based egocentric mesh reconstruction.",
+      "inputSignals": [
+        "Events"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "hawor": {
+      "input": "Monocular egocentric RGB video",
+      "output": "World-space hand and camera trajectories; inferred scale",
+      "supervision": "Hand supervision; SLAM and learned depth alignment",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2501.02973"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/ThunderVVV/HaWoR"
+        },
+        {
+          "label": "Official project",
+          "url": "https://hawor-project.github.io/"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2501.02973v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Combines hand reconstruction, motion infilling, and egocentric SLAM to recover world-space motion.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "mint": {
+      "input": "Egocentric RGB video",
+      "output": "Camera trajectory; camera- and world-space hands",
+      "supervision": "Large-scale pipeline pseudo-labels and joint annotations",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.04958"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/wuji-technology/wuji-ego-mint"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.04958v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Jointly estimates camera and hand states before composing world-space hand trajectories.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "infinihand": {
+      "input": "Streaming uncalibrated egocentric RGB",
+      "output": "MANO states; camera and world-space hand trajectories",
+      "supervision": "Staged hand and world-motion supervision",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.35743"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/infinihand/InfiniHand"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.35743v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses persistent spatiotemporal memory for streaming joint camera and hand motion estimation.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "dyn-hamr": {
+      "input": "Monocular video from a moving camera",
+      "output": "Global interacting-hand motion",
+      "supervision": "Hand priors; SLAM; test-time optimization",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2412.12861"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/ZhengdiYu/Dyn-HaMR"
+        },
+        {
+          "label": "Official project",
+          "url": "https://dyn-hamr.github.io/"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2412.12861v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Optimizes global hand motion using camera tracking and interacting-hand priors.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egoallo": {
+      "input": "Headset SLAM poses and egocentric images",
+      "output": "Scene-frame body pose, height, and hand motion",
+      "supervision": "Conditional body-motion model and image guidance",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2410.03665"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/brentyi/egoallo"
+        },
+        {
+          "label": "Official project",
+          "url": "https://egoallo.github.io/"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2410.03665v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Reconstructs the camera wearer's body and hands in an allocentric scene frame.",
+      "inputSignals": [
+        "Vision",
+        "SLAM"
+      ],
+      "bodyCoverage": "Whole body"
+    },
+    "umetrack": {
+      "input": "Calibrated multiview headset cameras",
+      "output": "World-space 3D hand pose",
+      "supervision": "Real and synthetic egocentric hand labels",
+      "robotEvidence": "Hand-tracking benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2211.00099"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/facebookresearch/UmeTrack"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2211.00099v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Learns a unified multiview, multiframe hand tracker for real-time VR interaction.",
+      "inputSignals": [],
+      "bodyCoverage": "Hands"
+    },
+    "egograsp": {
+      "input": "Monocular egocentric RGB video",
+      "output": "World-space hand and object trajectories",
+      "supervision": "Geometric initialization; diffusion priors",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2601.01050"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/MINT-SJTU/EgoGrasp"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2601.01050v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Combines body and interaction priors to recover open-category world-space hand-object motion.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "whole": {
+      "input": "Egocentric RGB video and object templates",
+      "output": "World-space hand and object motion",
+      "supervision": "Joint generative motion prior with video guidance",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2602.22209"
+        },
+        {
+          "label": "Official project",
+          "url": "https://judyye.github.io/whole-www"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2602.22209v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Jointly reconstructs hand-object trajectories to handle occlusion and out-of-sight intervals.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egofound3r": {
+      "input": "Egocentric RGB video",
+      "output": "Metric world-space hands; predicted contact and distance",
+      "supervision": "Geometry and interaction-attribute supervision",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.01210"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2610.01210v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://mint-sjtu.github.io/EgoFound3R.io/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Predicts hand geometry and point-wise interaction attributes in one model.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egofun3d": {
+      "input": "Egocentric video of interactive objects",
+      "output": "Interactive 3D geometry, articulations, and function templates",
+      "supervision": "Paired geometry and functional annotations",
+      "robotEvidence": "Reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2604.11038"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/3dlg-hcvc/EgoFun3D"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2604.11038v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Models interactive objects with function templates that can be compiled for simulation.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egotac": {
+      "input": "Egocentric RGB video",
+      "output": "Predicted contact and force; not measured touch",
+      "supervision": "Image-tactile pairs with measured force and contact",
+      "robotEvidence": "Tactile prediction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2608.15060"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/Mr-Zwkid/EgoTac"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2608.15060v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Learns tactile priors from paired data and predicts contact and force from vision.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "touchsight": {
+      "input": "Bare-hand or gloved egocentric RGB video",
+      "output": "Predicted dense hand contact force",
+      "supervision": "Pressure-glove measurements and generated visual augmentation",
+      "robotEvidence": "Tactile prediction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.20414"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.20414v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses glove supervision and visual augmentation to predict dense force for bare-hand video.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "dexmv": {
+      "input": "Human manipulation video; recovered hand and object poses",
+      "output": "Retargeted robot demonstrations",
+      "supervision": "Visual reconstruction and imitation learning",
+      "robotEvidence": "Simulation",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2108.05877"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/yzqin/dexmv-sim"
+        },
+        {
+          "label": "Official project",
+          "url": "https://yzqin.github.io/dexmv"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2108.05877v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Translates reconstructed human hand-object motion into dexterous robot demonstrations.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "hop": {
+      "input": "In-the-wild videos; reconstructed 3D hand-object trajectories",
+      "output": "Retargeted sensorimotor trajectories and manipulation prior",
+      "supervision": "Video-based trajectory reconstruction; downstream RL or BC",
+      "robotEvidence": "Robot policy benchmarks",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2409.08273"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/hgaurav2k/hop"
+        },
+        {
+          "label": "Official project",
+          "url": "https://hgaurav2k.github.io/hop/"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2409.08273v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Pretrains a manipulation prior on hand-object trajectories extracted from human video.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egoengine": {
+      "input": "Egocentric human RGB video",
+      "output": "Robot-view observations and executable action trajectories",
+      "supervision": "Reconstruction; physics-constrained synthesis",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2606.12604"
+        },
+        {
+          "label": "Official project",
+          "url": "https://egoengine.github.io"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2606.12604v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Bridges visual and action gaps by synthesizing robot observations and feasible trajectories.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egoaero": {
+      "input": "Single egocentric RGB-D demonstration",
+      "output": "Contact-consistent trajectories and robot policy",
+      "supervision": "Asset-free reconstruction and residual learning",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2606.08057"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2606.08057v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Learns dexterous manipulation from one RGB-D demonstration without pre-scanned object assets.",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "huro": {
+      "input": "Heterogeneous human videos and annotations",
+      "output": "Robotized observations and action trajectories",
+      "supervision": "Inferred intermediate signals; VLA pretraining",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.10706"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/3587jjh/HuRo"
+        },
+        {
+          "label": "Official project",
+          "url": "https://3587jjh.github.io/HuRo"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.10706v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Robotizes diverse human videos to supply aligned visual and action supervision for VLAs.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "ego2robot": {
+      "input": "Egocentric human video and motion annotations",
+      "output": "Retargeted robot actions and synthesized robot views",
+      "supervision": "Visual synthesis; multilevel quality curation",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2608.02580"
+        },
+        {
+          "label": "Official project",
+          "url": "https://www-ye.github.io/ego2robot_blog/"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2608.02580v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Converts human demonstrations into robot-format training data across multiple morphologies.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "vividex": {
+      "input": "Human videos and reconstructed motion",
+      "output": "Point-cloud visual manipulation policy",
+      "supervision": "Trajectory-guided RL teachers; visual distillation",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2404.15709"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/zerchen/vividex_mujoco"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2404.15709v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Refines noisy video trajectories in simulation before distilling a deployable visual policy.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "dex-x": {
+      "input": "Monocular human demonstrations; simulated interaction",
+      "output": "Point-cloud and tactile robot policy",
+      "supervision": "Simulated contact and tactile supervision",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.07747"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/gcfy63821/dexx_lab"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.07747v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses simulation to add tactile supervision missing from human video and transfers the resulting policy.",
+      "inputSignals": [
+        "Tactile"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egomimic": {
+      "input": "Aria human video and 3D hand tracks; robot demonstrations",
+      "output": "Single-arm and bimanual manipulation policy",
+      "supervision": "Human-robot co-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2410.24221"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/SimarKareer/EgoMimic"
+        },
+        {
+          "label": "Official project",
+          "url": "https://egomimic.github.io/"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2410.24221v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Aligns egocentric human demonstrations with robot data in a shared imitation-learning framework.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egobridge": {
+      "input": "Egocentric human and robot demonstrations",
+      "output": "Domain-aligned manipulation policy",
+      "supervision": "Optimal-transport latent alignment and co-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2509.19626"
+        },
+        {
+          "label": "Official project",
+          "url": "https://ego-bridge.github.io"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2509.19626v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Aligns human and robot policy features while preserving action-relevant information.",
+      "inputSignals": [],
+      "bodyCoverage": "Hands"
+    },
+    "egowild2dex": {
+      "input": "In-the-wild egocentric video and robot data",
+      "output": "Dual-arm dexterous manipulation policy",
+      "supervision": "Geometric view alignment and human-robot co-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.23755"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.23755v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://mmlab.hk/egowild2dex"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Aligns unstable human views and motions with robot observations and actions.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "motiontrans": {
+      "input": "Human VR demonstrations and robot tasks",
+      "output": "Motion-transfer manipulation policy",
+      "supervision": "Weighted multi-task human-robot co-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2509.17759"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/michaelyuancb/motiontrans"
+        },
+        {
+          "label": "Official project",
+          "url": "https://motiontrans.github.io/"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2509.17759v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Studies motion-level skill transfer from VR human data through shared multi-task training.",
+      "inputSignals": [],
+      "bodyCoverage": "Hands"
+    },
+    "egovla": {
+      "input": "Egocentric human video; limited robot demonstrations",
+      "output": "Retargeted VLA robot actions",
+      "supervision": "Human-action pretraining and robot fine-tuning",
+      "robotEvidence": "Simulation",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2507.12440"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/RchalYang/EgoVLA_Release"
+        },
+        {
+          "label": "Official project",
+          "url": "https://rchalyang.github.io/EgoVLA"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2507.12440v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Pretrains on human wrist and hand actions before retargeting and robot adaptation.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "being-h05": {
+      "input": "Human interaction traces and heterogeneous robot data",
+      "output": "Cross-embodiment VLA actions",
+      "supervision": "Unified action-space pretraining and robot adaptation",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2601.12993"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/BeingBeyond/Being-H"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2601.12993v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses a human-centric action interface to share motion knowledge across robot embodiments.",
+      "inputSignals": [],
+      "bodyCoverage": "Hands"
+    },
+    "egoscale": {
+      "input": "Action-labeled egocentric human video; aligned robot data",
+      "output": "Dexterous VLA policy",
+      "supervision": "Human pretraining and aligned human-robot mid-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2602.16710"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2602.16710v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://research.nvidia.com/labs/gear/egoscale/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Studies how large-scale human demonstrations transfer to fine-grained dexterous robot control.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "ironmind": {
+      "input": "Egocentric video and heterogeneous robot trajectories",
+      "output": "Camera-space dexterous actions",
+      "supervision": "Camera-space human-robot pretraining and post-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.39403"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.39403v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://xpeng-robotics.github.io/ironmind/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses camera-space action alignment to reduce reliance on explicit whole-body retargeting.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egosteer": {
+      "input": "Curated egocentric video; robot data and corrections",
+      "output": "Language-steerable dexterous VLA policy",
+      "supervision": "Human pretraining; robot post-training; DAgger",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2607.09701"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/egosteer/egosteer"
+        },
+        {
+          "label": "Official project",
+          "url": "https://egosteer.github.io/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Combines an egocentric data pipeline with robot grounding and correction for steerable policies.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "metis": {
+      "input": "Multi-source human and robot demonstrations",
+      "output": "Dexterous vision-language-action policy",
+      "supervision": "Unified action space and motion-aware dynamics",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2511.17366"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/AureleoPKU/Metis"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2511.17366v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Integrates multi-source egocentric data and motion-aware supervision for dexterous control.",
+      "inputSignals": [],
+      "bodyCoverage": "Hands"
+    },
+    "being-h0": {
+      "input": "Human video, mocap, and VR data; robot adaptation",
+      "output": "Dexterous VLA actions",
+      "supervision": "Physical instruction tuning and robot post-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2507.15597"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/BeingBeyond/Being-H0"
+        },
+        {
+          "label": "Official project",
+          "url": "https://beingbeyond.github.io/Being-H0"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Builds motion-based instruction supervision from heterogeneous human capture sources.",
+      "inputSignals": [
+        "Vision",
+        "Mocap"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "videodex": {
+      "input": "Internet human videos and downstream robot data",
+      "output": "Dexterous manipulation policy",
+      "supervision": "Visual, action, and physical video priors",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2212.04498"
+        },
+        {
+          "label": "Official project",
+          "url": "https://video-dex.github.io"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2212.04498v1"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Extracts complementary priors from human videos to guide dexterous robot learning.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egozero": {
+      "input": "Aria smart-glasses human demonstrations",
+      "output": "Closed-loop gripper robot policy",
+      "supervision": "Human demonstrations; no robot training data",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2505.20290"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/vliu15/egozero"
+        },
+        {
+          "label": "Official project",
+          "url": "https://egozero-robot.github.io"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Learns transferable manipulation policies from smart-glasses demonstrations without robot training data.",
+      "inputSignals": [],
+      "bodyCoverage": "Hands"
+    },
+    "humanego": {
+      "input": "Minutes of human egocentric video",
+      "output": "Entity-level manipulation policy",
+      "supervision": "Hand-object representation and flow matching",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2605.24934"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/TX-Leo/HumanEgo"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Transfers human demonstrations using an entity-level representation of hand-object interaction.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egohumanoid": {
+      "input": "Wearable human motion and limited humanoid data",
+      "output": "Humanoid loco-manipulation VLA policy",
+      "supervision": "View and action alignment; human-robot co-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2602.10106"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/OpenDriveLab/EgoHumanoid"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Aligns egocentric human demonstrations with humanoid control for mobile manipulation.",
+      "inputSignals": [],
+      "bodyCoverage": "Whole body"
+    },
+    "dexroam": {
+      "input": "VR headset and head stereo capture; robot data",
+      "output": "Mobile bimanual dexterous policy",
+      "supervision": "Embodiment, action-semantic, and temporal alignment",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.35761"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/zhourui9813/DexRoam-Policy-Training"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.35761v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://dexroam.github.io/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Preserves coordinated whole-body motion during human-to-robot demonstration transfer.",
+      "inputSignals": [
+        "Stereo"
+      ],
+      "bodyCoverage": "Whole body"
+    },
+    "egohumanoid-v2": {
+      "input": "Egocentric coordinated whole-body demonstrations",
+      "output": "Coordinated humanoid loco-manipulation policy",
+      "supervision": "Kinematic correction and dynamics-aware action refinement",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.37181"
+        },
+        {
+          "label": "Paper affiliations",
+          "url": "https://arxiv.org/html/2609.37181v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://opendrivelab.com/EgoHumanoid-V2/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Transfers coordinated whole-body skills through coarse-to-fine action and visual alignment.",
+      "inputSignals": [],
+      "bodyCoverage": "Whole body"
+    },
+    "emma": {
+      "input": "Human mobile manipulation and static robot demonstrations",
+      "output": "Mobile manipulation policy",
+      "supervision": "Human full-body and static-robot co-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2509.04443"
+        },
+        {
+          "label": "Official project",
+          "url": "https://ego-moma.github.io/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Combines human mobility data with static robot demonstrations to learn mobile manipulation.",
+      "inputSignals": [],
+      "bodyCoverage": "Whole body"
+    },
+    "dexvip": {
+      "input": "Human-object interaction images from video",
+      "output": "Dexterous grasping policy",
+      "supervision": "Video-derived hand pose prior for RL",
+      "robotEvidence": "Simulation",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2202.00164"
+        },
+        {
+          "label": "Official project",
+          "url": "https://vision.cs.utexas.edu/projects/dexvip-dexterous-grasp-pose-prior"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses human grasp poses from unconstrained video as a prior for dexterous grasp learning.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "r3m": {
+      "input": "Ego4D RGB video and language",
+      "output": "Frozen visual representation for robot policies",
+      "supervision": "Temporal contrast; video-language alignment",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2203.12601"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/facebookresearch/r3m"
+        },
+        {
+          "label": "Official project",
+          "url": "https://tinyurl.com/robotr3m"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Pretrains a reusable visual representation from human video for data-efficient robot control.",
+      "inputSignals": [
+        "Vision",
+        "Language"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "mimicplay": {
+      "input": "Human play video and limited teleoperated data",
+      "output": "Latent plans and low-level robot control",
+      "supervision": "Hierarchical human-robot imitation learning",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2302.12422"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/j96w/MimicPlay"
+        },
+        {
+          "label": "Official project",
+          "url": "https://mimic-play.github.io"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Learns high-level plans from human play to guide robot skills over long horizons.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "lapa": {
+      "input": "Action-unlabeled video and downstream robot data",
+      "output": "Discrete latent actions; adapted robot policy",
+      "supervision": "VQ latent-action learning and robot fine-tuning",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2410.11758"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/LatentActionPretraining/LAPA"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Learns latent action tokens from videos before grounding them in robot controls.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "univla": {
+      "input": "Human and robot video; language",
+      "output": "Task-centric latent actions and robot controls",
+      "supervision": "Latent-action pretraining and action decoding",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2505.06111"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/OpenDriveLab/UniVLA"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses task-centric latent actions to transfer knowledge across viewpoints and embodiments.",
+      "inputSignals": [
+        "Vision",
+        "Language"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "moto": {
+      "input": "Unlabeled video; robot trajectory fine-tuning",
+      "output": "Latent motion tokens and robot actions",
+      "supervision": "Motion-token pretraining and co-fine-tuning",
+      "robotEvidence": "Robot policy benchmarks",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2412.04445"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/TencentARC/Moto"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Models video motion with discrete tokens that bridge pretraining and robot control.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "gen2act": {
+      "input": "Language; generated human video; robot observations",
+      "output": "Video-conditioned robot actions",
+      "supervision": "Human-video generation priors and robot policy training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2409.16283"
+        },
+        {
+          "label": "Official project",
+          "url": "https://homangab.github.io/gen2act/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Conditions manipulation on generated human motion to generalize beyond collected robot tasks.",
+      "inputSignals": [
+        "Vision",
+        "Language"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "dexwm": {
+      "input": "Egocentric videos and finger keypoint actions",
+      "output": "Action-conditioned future latent environment states",
+      "supervision": "Human video world modeling and hand consistency",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2512.13644"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/facebookresearch/dexwm"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses fine-grained hand actions from human video to train a dexterous interaction world model.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "egowam": {
+      "input": "In-the-wild egocentric video and robot data",
+      "output": "Robot actions with predicted world features or 3D flow",
+      "supervision": "Controlled human-robot world-action co-training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2607.08436"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/GaTech-RL2/EgoWAM"
+        },
+        {
+          "label": "Official project",
+          "url": "https://gatech-rl2.github.io/egowam.github.io"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Compares pixel, feature, and 3D-flow prediction targets for human-to-robot transfer.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "vip": {
+      "input": "Action-unlabeled Ego4D video; downstream goal image",
+      "output": "Visual representation and dense goal-conditioned reward",
+      "supervision": "Value-implicit self-supervised pretraining",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2210.00030"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/facebookresearch/vip"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Learns visual rewards from human video without requiring action labels.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "vid2robot": {
+      "input": "Human prompt video and current robot observations",
+      "output": "Video-conditioned robot actions",
+      "supervision": "Paired human-video and robot-trajectory training",
+      "robotEvidence": "Real-robot policy",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2403.12943"
+        },
+        {
+          "label": "Official project",
+          "url": "https://vid2robot.github.io"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Uses cross-attention to infer a task from human video and execute it with a robot.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "dex-retargeting": {
+      "input": "Human hand pose or keypoint targets; robot model",
+      "output": "Robot hand joint targets; feasibility must be evaluated downstream",
+      "supervision": "Optimization-based; no training data required for basic retargeting",
+      "robotEvidence": "Retargeting tool",
+      "sources": [
+        {
+          "label": "Official repository",
+          "url": "https://github.com/dexsuite/dex-retargeting"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Provides configurable kinematic retargeting from human hand motion to multiple dexterous robot hands.",
+      "inputSignals": [
+        "Pose"
+      ],
+      "bodyCoverage": "Hands"
+    },
+    "projectaria-tools": {
+      "input": "Aria recordings and calibration; optional MPS outputs",
+      "output": "Synchronized sensor streams and derived tracking data",
+      "supervision": "Tooling and service outputs; capabilities depend on device and service",
+      "robotEvidence": "Capture processing tool",
+      "sources": [
+        {
+          "label": "Official repository",
+          "url": "https://github.com/facebookresearch/projectaria_tools"
+        },
+        {
+          "label": "Official documentation",
+          "url": "https://facebookresearch.github.io/projectaria_tools/gen2/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Supplies readers, calibration, synchronization, visualization, and interfaces for processing Aria recordings.",
+      "inputSignals": [
+        "Vision",
+        "SLAM",
+        "IMU"
+      ],
+      "bodyCoverage": "Head and hands"
+    },
+    "egolocate": {
+      "input": "Six body IMUs and a monocular body-mounted camera",
+      "output": "Body pose, scene map, and global localization",
+      "supervision": "Inertial mocap and visual SLAM fusion",
+      "robotEvidence": "Body reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2305.01599"
+        },
+        {
+          "label": "Official project",
+          "url": "https://github.com/Xinyu-Yi/EgoLocate"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Fuses sparse inertial capture with visual localization to reduce global motion drift.",
+      "inputSignals": [
+        "IMU",
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body"
+    },
+    "egoposer": {
+      "input": "Headset pose and intermittent tracked hands",
+      "output": "Full-body pose from sparse headset signals",
+      "supervision": "Supervised body motion; sparse observation modeling",
+      "robotEvidence": "Body reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2308.06493"
+        },
+        {
+          "label": "Official project",
+          "url": "https://siplab.org/projects/EgoPoser"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Infers full-body motion from sparse head and hand signals while handling missing hand observations.",
+      "inputSignals": [
+        "Pose"
+      ],
+      "bodyCoverage": "Whole body"
+    },
+    "egoego": {
+      "input": "Monocular head-mounted RGB video",
+      "output": "Estimated head motion and plausible full-body motion",
+      "supervision": "Separate video and body-motion datasets; conditional diffusion",
+      "robotEvidence": "Body reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2212.04636"
+        },
+        {
+          "label": "Official project",
+          "url": "https://github.com/lijiaman/egoego_release"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Decomposes egocentric full-body reconstruction into head-motion estimation and body-motion generation.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body"
+    },
+    "egoposevr": {
+      "input": "Headset motion and egocentric RGB-D",
+      "output": "Full-body pose sequence",
+      "supervision": "Synthetic synchronized RGB-D and headset motion; kinematic optimization",
+      "robotEvidence": "Body reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2602.05590"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Fuses headset motion with RGB-D observations for temporally coherent full-body reconstruction.",
+      "inputSignals": [
+        "Vision",
+        "Depth",
+        "Pose"
+      ],
+      "bodyCoverage": "Whole body"
+    },
+    "eventego3d-plus-plus": {
+      "input": "Head-mounted fisheye event stream",
+      "output": "3D full-body joint motion",
+      "supervision": "Synthetic and real mocap-aligned event datasets",
+      "robotEvidence": "Body reconstruction benchmark",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2502.07869"
+        },
+        {
+          "label": "Official project",
+          "url": "https://eventego3d.mpi-inf.mpg.de/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "summary": "Recovers egocentric body motion from event streams under fast motion and challenging illumination.",
+      "inputSignals": [
+        "Events"
+      ],
+      "bodyCoverage": "Whole body"
+    }
+  }
+}

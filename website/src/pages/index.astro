@@ -1,0 +1,382 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CatalogCard from "../components/CatalogCard.astro";
+import { getCatalog } from "../lib/catalog";
+import { SITE } from "../lib/site";
+import { sitePath } from "../lib/paths";
+const works = getCatalog();
+const hardware = works.filter(w => w.collections.includes("hardware"));
+const initial = ["aria-gen2", "dexcap", "egodex", "hot3d", "nymeria", "egoemg", "hamer", "hawor", "egoallo", "egomimic"];
+const first = hardware.slice(0, 12);
+const years = [...new Set(works.map((w) => w.year))].sort().reverse();
+const access = [...new Set(works.map((w) => w.dataAccess))].sort();
+const icon = {
+  search: "M21 21l-4.35-4.35M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z",
+  filter: "M4 7h16M7 12h10M10 17h4",
+  chevron: "m6 9 6 6 6-6",
+  close: "m6 6 12 12M6 18 18 6",
+  share: "M12 16V3m-4 4 4-4 4 4M5 12v8h14v-8",
+};
+---
+
+<BaseLayout
+  title="Awesome Ego Robotics — Human experience, robot intelligence"
+  description={SITE.description}
+>
+  <section class="library-intro wrap">
+    <h1><span>Human experience.</span>{" "}<span>Robot intelligence.</span></h1>
+    <p>
+      Egocentric capture, wearable sensing, and learning from human experience.
+    </p>
+  </section>
+  <section class="library wrap" id="library" aria-label="Research library">
+    <div class="library-toolbar" id="library-toolbar">
+      <div class="library-tabs" role="group" aria-label="Collection">
+        <button type="button" data-collection="hardware" aria-pressed="true">
+          Hardware
+        </button>
+        <button type="button" data-collection="datasets" aria-pressed="false">
+          Datasets
+        </button>
+        <button type="button" data-collection="methods" aria-pressed="false">
+          Methods
+        </button>
+      </div>
+      <label class="search-field">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d={icon.search} />
+        </svg>
+        <input
+          id="catalog-search"
+          type="search"
+          autocomplete="off"
+          placeholder="Find a device, sensor, dataset, or institution…"
+          aria-label="Search the library"
+        />
+        <kbd>/</kbd>
+      </label>
+      <button
+        class="filters-toggle"
+        id="filters-toggle"
+        aria-label="Filters"
+        aria-expanded="false"
+        aria-controls="filter-panel"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d={icon.filter} />
+        </svg>
+        <span>Filters</span>
+        <span class="filter-count" id="filter-count" hidden>
+          0
+        </span>
+      </button>
+      <div class="filter-panel" id="filter-panel" hidden>
+        <div class="filter-heading">
+          <h2>Refine your collection</h2>
+          <button id="reset-filters" type="button">
+            Reset
+          </button>
+        </div>
+        <div class="filter-fields">
+          <label>
+            Research area
+            <select id="source-filter">
+              <option value="all">All areas</option>
+              {[...new Set(works.map(w => w.stage))].sort().map((v) => (
+                <option value={v}>{v}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Interface
+            <select id="form-filter">
+              <option value="all">All interfaces</option>
+              {[...new Set(works.flatMap(w => w.forms ?? [w.form]))].sort().map((v) => (
+                <option value={v}>{v}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Body coverage
+            <select id="coverage-filter">
+              <option value="all">Any coverage</option>
+              {["Hands", "Upper body", "Whole body", "Not reported"].map(v => <option value={v}>{v}</option>)}
+            </select>
+          </label>
+          <label>
+            Tactile sensing
+            <select id="tactile-filter">
+              <option value="all">Any status</option>
+              <option value="present">Present</option>
+              <option value="optional">Optional</option>
+              <option value="reference">Reference / calibration</option>
+              <option value="none">None</option>
+              <option value="unknown">Not verified</option>
+            </select>
+          </label>
+          <label>
+            Force / torque
+            <select id="force-filter">
+              <option value="all">Any status</option>
+              <option value="present">Present</option>
+              <option value="optional">Optional</option>
+              <option value="reference">Reference / calibration</option>
+              <option value="none">None</option>
+              <option value="unknown">Not verified</option>
+            </select>
+          </label>
+          <label>
+            Dataset access
+            <select id="access-filter">
+              <option value="all">All access states</option>
+              {access.map((v) => (
+                <option value={v}>{v}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Source release
+            <select id="openness-filter">
+              <option value="all">All releases</option>
+              <option value="open">Open source</option>
+              <option value="partial">Partial release</option>
+              <option value="closed">Closed source</option>
+              <option value="unknown">Unknown</option>
+            </select>
+          </label>
+          <label>
+            Availability
+            <select id="availability-filter">
+              <option value="all">Research & products</option>
+              <option value="research">Research / DIY</option>
+              <option value="commercial">Companies & products</option>
+            </select>
+          </label>
+          <label>
+            Paper / resource year
+            <select id="year-filter">
+              <option value="all">All years</option>
+              {years.map((v) => (
+                <option value={v}>{v}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <fieldset class="signal-filters">
+          <legend>Signals / representations</legend>
+          {[
+            "Vision",
+            "Tactile",
+            "Force",
+            "Audio",
+            "Depth",
+            "IMU",
+            "Contact",
+            "Events",
+            "EMG",
+            "Gaze",
+            "State",
+          ].map((v) => (
+            <label>
+              <input type="checkbox" name="signal" value={v} />
+              <span>
+                {v === "Proprioception" ? "State / proprioception" : v}
+              </span>
+            </label>
+          ))}
+        </fieldset>
+        <p class="filter-note">
+          Release status refers to the relevant artifact. Hardware files, software, and data access are verified separately; commercial does not imply closed source.
+        </p>
+        <button type="button" id="apply-filters" class="button-dark">
+          Done
+        </button>
+      </div>
+    </div>
+    <div class="library-meta">
+      <p id="result-count" role="status" aria-live="polite">
+        {hardware.length} hardware entries
+      </p>
+      <div class="library-meta-actions">
+        <a class="research-index-link" href={sitePath() + "?collection=research#library"}>Research index ↗</a>
+        <button type="button" id="share-view" aria-label="Copy this view link">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d={icon.share} />
+          </svg>
+          <span>Share view</span>
+        </button>
+        <label class="sort-label">
+          <span>Sort:</span>
+          <select id="sort-order" aria-label="Sort results">
+            <option value="newest" selected>Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="name">Name A–Z</option>
+            <option value="recommended">Curated</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div
+      class="active-filters"
+      id="active-filters"
+      aria-label="Active filters"
+    ></div>
+    <div id="catalog-results" class="catalog-feed" aria-busy="false">
+      <div class="feed-batch">
+        {first.map((w) => w && <CatalogCard work={w} />)}
+      </div>
+    </div>
+    <div id="catalog-empty" class="empty-state" hidden>
+      <h2>No matches this time.</h2>
+      <p>Try another phrase or use fewer filters.</p>
+      <button type="button" id="empty-reset" class="button-dark">
+        Clear filters
+      </button>
+    </div>
+    <div class="feed-boundary" id="feed-boundary">
+      <div
+        class="loading-dots"
+        id="loading-dots"
+        role="status"
+        aria-label="Loading more entries"
+        hidden
+      >
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+      <span id="feed-end" hidden>
+        end
+      </span>
+      <div id="feed-error" hidden>
+        <p>The collection could not be loaded.</p>
+        <button type="button" id="retry-load">
+          Try again
+        </button>
+      </div>
+    </div>
+    <noscript>
+      <p class="no-script">
+        For the complete collection,{" "}
+        <a href={SITE.github + "#readme"}>read the README</a>. Search,
+        comparison, and continuous loading require JavaScript.
+      </p>
+    </noscript>
+  </section>
+  <div class="compare-tray" id="compare-tray" hidden>
+    <div>
+      <strong id="compare-count">0 selected</strong>
+      <span id="compare-names"></span>
+    </div>
+    <button type="button" id="open-compare" class="button-dark" disabled>
+      Compare
+    </button>
+    <button
+      type="button"
+      id="clear-compare"
+      class="icon-button"
+      aria-label="Clear comparison"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d={icon.close} />
+      </svg>
+    </button>
+  </div>
+  <dialog id="detail-dialog" class="detail-dialog" aria-label="Resource details">
+    <button
+      type="button"
+      class="dialog-close icon-button"
+      data-close
+      aria-label="Close details"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d={icon.close} />
+      </svg>
+    </button>
+    <div id="detail-content"></div>
+  </dialog>
+  <dialog id="compare-dialog" class="compare-dialog" aria-label="Resource comparison">
+    <button
+      type="button"
+      class="dialog-close icon-button"
+      data-close
+      aria-label="Close comparison"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d={icon.close} />
+      </svg>
+    </button>
+    <div id="compare-content"></div>
+  </dialog>
+  <dialog id="about-dialog" class="about-dialog" aria-label="About this collection">
+    <button
+      type="button"
+      class="dialog-close icon-button"
+      data-close
+      aria-label="Close about"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d={icon.close} />
+      </svg>
+    </button>
+    <h2>From human experience to robot learning.</h2>
+    <p>
+      Explore the hardware, datasets, reconstruction methods, and robot learning systems connecting human experience to robot skills.
+    </p>
+    <p>
+      The README is the canonical collection. Specifications and release
+      information are checked against papers and official resources. Images
+      belong to their credited projects.
+    </p>
+    <p>
+      Paper-reported scale, indexed data, and downloadable releases are kept
+      separate. Missing information stays unverified.
+    </p>
+    <a class="button-dark" href={SITE.github + "#readme"}>
+      Read the collection ↗
+    </a>
+  </dialog>
+  <dialog id="roadmap-dialog" class="about-dialog roadmap-dialog" aria-label="Research roadmap">
+    <button type="button" class="dialog-close icon-button" data-close aria-label="Close roadmap">×</button>
+    <p class="roadmap-eyebrow">A research roadmap</p>
+    <h2>Many signals.<br/><em>More than one path.</em></h2>
+    <p>Capture is the foundation. Reconstruction is one route to robot learning; representations and latent actions offer parallel routes.</p>
+    <ol class="roadmap-lanes">
+      <li><span>00</span><div><strong>Capture & datasets</strong><p>Glasses, gloves, EMG, touch and whole-body signals.</p></div></li>
+      <li><span>01</span><div><strong>Hand reconstruction</strong><p>Camera-frame joints, meshes and temporal consistency.</p></div></li>
+      <li><span>02</span><div><strong>World-space motion</strong><p>Camera motion, scale and human body trajectories.</p></div></li>
+      <li><span>03</span><div><strong>Hand–object interaction</strong><p>Object geometry, contact and interaction dynamics.</p></div></li>
+      <li><span>04</span><div><strong>Demonstration translation</strong><p>Retargeting, refinement and executable robot actions.</p></div></li>
+      <li><span>05</span><div><strong>Policy learning & evaluation</strong><p>Human-data training and downstream robot evidence.</p></div></li>
+      <li class="parallel-lane"><span>↗</span><div><strong>Direct video-learning routes</strong><p>Representations, latent actions, rewards and world-action models.</p></div></li>
+    </ol>
+    <a class="button-dark" href={SITE.github + "#overview-and-taxonomy"}>Read the taxonomy ↗</a>
+  </dialog>
+  <p id="announcement" class="toast" role="status" aria-live="polite"></p>
+  <script
+    is:inline
+    id="catalog-settings"
+    type="application/json"
+    set:html={JSON.stringify({
+      initial,
+      base: import.meta.env.BASE_URL,
+      endpoint: sitePath("catalog.json"),
+      github: SITE.github,
+    })}
+  />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: SITE.name,
+      description: SITE.description,
+      numberOfItems: works.length,
+    })}
+  />
+  <script>
+    import "../scripts/atlas";
+  </script>
+</BaseLayout>

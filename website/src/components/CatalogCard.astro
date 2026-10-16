@@ -1,0 +1,56 @@
+---
+import type { Work } from "../lib/catalog";
+import { sitePath } from "../lib/paths";
+interface Props {
+  work: Work;
+}
+const { work: w } = Astro.props;
+---
+
+<article class="library-card" data-id={w.id}>
+  {(w.hardwareImage ?? w.coverImage ?? w.image) ? <button
+    class="card-cover"
+    data-detail={w.id}
+    type="button"
+    aria-label={"View " + w.name}
+  >
+    <img
+      src={sitePath(w.hardwareImage ?? w.coverImage ?? w.image!)}
+      alt={w.hardwareImageAlt ?? w.coverAlt ?? w.imageAlt}
+      width="640"
+      height="360"
+      loading="lazy"
+      decoding="async"
+    />
+  </button> : <a class="card-cover text-cover" href={w.paperUrl}><span>Capture system</span><strong>{w.name}</strong><small>Official source ↗</small></a>}
+  <div class="card-copy">
+    <p class="card-meta">
+      {w.institute} <span>·</span> {w.year}
+    </p>
+    <h2>
+      <a href={w.paperUrl}>{w.name}</a>
+    </h2>
+    <p class="card-description">{w.summary ?? w.keywords}</p>
+    <div class="card-tags">
+      {w.signals
+        .filter((s) => s !== "Not reported")
+        .slice(0, 3)
+        .map((s) => (
+          <span>{s}</span>
+        ))}
+    </div>
+    <div class="card-actions">
+      <button type="button" data-detail={w.id}>
+        Details <span aria-hidden="true">↗</span>
+      </button>
+      <button
+        type="button"
+        class="compare-toggle"
+        data-compare={w.id}
+        aria-pressed="false"
+      >
+        <span aria-hidden="true">+</span> Compare
+      </button>
+    </div>
+  </div>
+</article>

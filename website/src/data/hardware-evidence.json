@@ -1,0 +1,921 @@
+{
+  "works": {
+    "project-aria-gen1": {
+      "interface": "Project Aria Gen 1",
+      "poseTracking": "Visual–inertial SLAM; MPS hand tracking",
+      "vision": "1 RGB + 2 monochrome scene + 2 eye cameras",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Gaze",
+        "Audio"
+      ],
+      "evidence": [
+        {
+          "label": "Hardware specifications",
+          "url": "https://facebookresearch.github.io/projectaria_tools/docs/tech_spec/hardware_spec"
+        },
+        {
+          "label": "Project Aria tools",
+          "url": "https://github.com/facebookresearch/projectaria_tools"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Glasses"
+      ]
+    },
+    "project-aria-gen2": {
+      "interface": "Project Aria Gen 2",
+      "poseTracking": "On-device 6DoF localization and articulated hand tracking",
+      "vision": "1 RGB + 4 monochrome CV + 2 eye cameras",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Gaze",
+        "Audio"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Glasses"
+      ]
+    },
+    "pupil-neon": {
+      "interface": "Pupil Neon",
+      "poseTracking": "Gaze estimation; no hand/body pose claim",
+      "vision": "Wide-angle scene camera + eye cameras",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "—",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Gaze",
+        "Audio"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://pupil-labs.com/products/neon"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Glasses"
+      ]
+    },
+    "tobii-pro-glasses-3": {
+      "interface": "Tobii Pro Glasses 3",
+      "poseTracking": "Gaze tracking; no hand/body tracking claim",
+      "vision": "Scene camera + eye-tracking cameras",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "—",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Gaze",
+        "Audio"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Glasses"
+      ]
+    },
+    "kai-ego": {
+      "interface": "Kai Ego Suite / Kai Halo",
+      "poseTracking": "Visual hand/body reconstruction",
+      "vision": "Front and downward fisheye camera arrays",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Whole body",
+      "observationSignals": [
+        "Vision",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.kinetixai.tech/zh/KaiEgo"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Headband"
+      ]
+    },
+    "das-ego": {
+      "interface": "DAS Ego",
+      "poseTracking": "Visual–inertial trajectory reconstruction",
+      "vision": "6 wide-angle RGB cameras",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "—",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://docs.genrobot.ai/products/das-ego"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Headband"
+      ]
+    },
+    "lumos-ego": {
+      "interface": "Lumos Ego STD / Lite",
+      "poseTracking": "SLAM and 42 bimanual hand keypoints",
+      "vision": "Fisheye RGB + 4 SLAM cameras; ToF only STD",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.lumosbot.tech/products/ego/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Headband"
+      ]
+    },
+    "mego-view": {
+      "interface": "MEgo View",
+      "poseTracking": "Vendor hand/body reconstruction pipeline",
+      "vision": "5 head cameras + 2 wrist cameras; RGB and derived depth output",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Upper body",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "Audio",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://maniformer.ai/mego"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Hybrid"
+      ]
+    },
+    "lightwheel-egosuite": {
+      "interface": "Lightwheel EgoSuite",
+      "poseTracking": "Hand and body pose annotations",
+      "vision": "RGB-D across suite configurations",
+      "tactile": {
+        "status": "present",
+        "detail": "Suite includes tactile capture; device configuration varies"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Upper body",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Tactile",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://lightwheel.ai/egosuite"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Hybrid"
+      ]
+    },
+    "ego-oscar": {
+      "interface": "Ego-OSCAR",
+      "poseTracking": "Stereo–inertial recording; downstream pose not built-in",
+      "vision": "Synchronized stereo video",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "—",
+      "observationSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://github.com/fpv-labs/ego-oscar"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.08285"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/fpv-labs/ego-oscar/blob/main/LICENSE"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Headband"
+      ]
+    },
+    "gi-ego1gs": {
+      "interface": "GI EGO1GS",
+      "poseTracking": "Hand detection; not a hand-pose ground-truth system",
+      "vision": "Dual global-shutter cameras",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.gilabs.xyz/products/ego1gs"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Headband"
+      ]
+    },
+    "manus-metagloves-pro": {
+      "interface": "MANUS Metagloves Pro",
+      "poseTracking": "EMF fingertip tracking; external tracker for global hand pose",
+      "vision": "No integrated camera listed",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.manus-meta.com/products/metagloves-pro"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Glove"
+      ]
+    },
+    "manus-quantum-metagloves": {
+      "interface": "MANUS Quantum Metagloves",
+      "poseTracking": "Absolute fingertip position and rotation tracking",
+      "vision": "No integrated camera listed",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.manus-meta.com/products/quantum-metagloves"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Glove"
+      ]
+    },
+    "stretchsense-pro": {
+      "interface": "StretchSense Pro gloves",
+      "poseTracking": "Finger articulation and native 6DoF hand tracking",
+      "vision": "No integrated egocentric camera established",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.stretchsense.com/robotics"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Glove"
+      ]
+    },
+    "rokoko-smartgloves-ii": {
+      "interface": "Rokoko Smartgloves II",
+      "poseTracking": "IMU finger tracking; optional Coil Pro for wrist tracking",
+      "vision": "Camera-free capture",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "IMU",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.rokoko.com/products/smartgloves-ii"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Glove"
+      ]
+    },
+    "xsens-link": {
+      "interface": "Xsens Link",
+      "poseTracking": "Inertial full-body sensor fusion",
+      "vision": "No camera required for body tracking",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Whole body",
+      "observationSignals": [
+        "IMU",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.xsens.com/motion-capture/xsens-link-specifications"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Suit"
+      ]
+    },
+    "xsens-awinda": {
+      "interface": "Xsens Awinda",
+      "poseTracking": "17 wireless inertial body sensors",
+      "vision": "No camera required for body tracking",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Whole body",
+      "observationSignals": [
+        "IMU",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.xsens.com/motion-capture/xsens-mvn-awinda"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Suit"
+      ]
+    },
+    "rokoko-smartsuit-pro-ii": {
+      "interface": "Rokoko Smartsuit Pro II",
+      "poseTracking": "Inertial sensor fusion",
+      "vision": "Camera-free body capture",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Whole body",
+      "observationSignals": [
+        "IMU",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.rokoko.com/products/smartsuit-pro"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Suit"
+      ]
+    },
+    "sony-mocopi": {
+      "interface": "Sony mocopi",
+      "poseTracking": "Sparse inertial sensing with learned body estimation",
+      "vision": "No integrated camera",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Whole body",
+      "observationSignals": [
+        "IMU",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://xyn.sony.net/en/developer/technical/mocopi/aboutmocopi"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Suit"
+      ]
+    },
+    "egorear": {
+      "interface": "EgoRear / Ego4View",
+      "poseTracking": "Multi-view body pose estimation",
+      "vision": "Front and rear head-mounted views",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Whole body",
+      "observationSignals": [
+        "Vision",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2503.11652"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Headset"
+      ]
+    },
+    "egocap": {
+      "interface": "EgoCap",
+      "poseTracking": "Markerless skeletal tracking from two fisheye cameras",
+      "vision": "Head-mounted stereo fisheye pair",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Whole body",
+      "observationSignals": [
+        "Vision",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/1609.07306"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Headset"
+      ]
+    },
+    "meta-neural-band": {
+      "interface": "Meta Neural Band",
+      "poseTracking": "Muscle-signal gesture decoding",
+      "vision": "No wristband camera",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "EMG",
+        "IMU"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.meta.com/en-gb/emerging-tech/emg-wearable-technology/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Wristband"
+      ]
+    },
+    "egoemg": {
+      "interface": "EgoEMG capture rig",
+      "poseTracking": "Mocap-derived hand motion and wrist articulation references",
+      "vision": "Egocentric RGB + external RGB-D",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "EMG",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2605.05712"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Hybrid"
+      ]
+    },
+    "forceband": {
+      "interface": "ForceBand",
+      "poseTracking": "sEMG/IMU-to-fingertip-force prediction",
+      "vision": "Egocentric video paired with the wristband",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "reference",
+        "detail": "Direct fingertip force is an external calibration/pretraining reference; task-time force is inferred from wrist EMG/IMU."
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "EMG",
+        "IMU"
+      ],
+      "forceShort": "Calibration reference",
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2606.26093"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Wristband"
+      ]
+    },
+    "osmo": {
+      "interface": "OSMO",
+      "poseTracking": "Compatible with external hand tracking",
+      "vision": "No integrated ego camera; pair with visual capture",
+      "tactile": {
+        "status": "present",
+        "detail": "12 three-axis tactile sensors across fingertips and palm"
+      },
+      "forceTorque": {
+        "status": "present",
+        "detail": "Local normal and shear contact force; not wrist 6-axis F/T"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Tactile",
+        "Force"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2512.08920"
+        },
+        {
+          "label": "Hardware and firmware release",
+          "url": "https://github.com/jessicayin/osmo_tactile_glove"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Glove"
+      ]
+    },
+    "egopressure": {
+      "interface": "EgoPressure capture rig",
+      "poseTracking": "Multi-view sequence-based hand mesh reconstruction",
+      "vision": "1 head-mounted + 7 stationary Kinect cameras",
+      "tactile": {
+        "status": "present",
+        "detail": "External pressure-sensing surface, not a tactile glove"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Tactile",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2409.02224"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Hybrid"
+      ]
+    },
+    "dexcap": {
+      "interface": "DexCap (Stanford)",
+      "poseTracking": "SLAM wrist trajectories + EMF finger motion capture",
+      "vision": "Chest RGB-D LiDAR camera and tracking cameras",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2403.07788"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Hybrid"
+      ]
+    },
+    "dexwild": {
+      "interface": "DexWild-System",
+      "poseTracking": "Hand articulation and relative wrist tracking",
+      "vision": "Palm-mounted task-view cameras",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2505.07813"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Hybrid"
+      ]
+    },
+    "egowholeview": {
+      "interface": "Six-camera head-mounted capture rig",
+      "poseTracking": "World-frame body and bimanual hand reconstruction",
+      "vision": "6 synchronized wide-angle RGB cameras",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Whole body",
+      "observationSignals": [
+        "Vision",
+        "State"
+      ],
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.16256"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Headset"
+      ]
+    },
+    "mindrove-armband": {
+      "interface": "MindRove EMG Armband",
+      "poseTracking": "Muscle and inertial recording; no built-in hand-pose GT",
+      "vision": "No integrated camera",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "EMG",
+        "IMU"
+      ],
+      "evidence": [
+        {
+          "label": "Product specifications",
+          "url": "https://mindrove.com/product/emg-armband/"
+        },
+        {
+          "label": "SDK",
+          "url": "https://docs.mindrove.com/main/index.html"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Armband"
+      ]
+    },
+    "delsys-trigno-avanti": {
+      "interface": "Delsys Trigno Avanti",
+      "poseTracking": "Configurable EMG/IMU recording; kinematics require additional processing",
+      "vision": "No integrated camera",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "—",
+      "observationSignals": [
+        "EMG",
+        "IMU"
+      ],
+      "evidence": [
+        {
+          "label": "Product specifications",
+          "url": "https://delsys.com/trigno/"
+        },
+        {
+          "label": "SDK manual",
+          "url": "https://www.delsys.com/downloads/USERSGUIDE/trigno/sdk.pdf"
+        }
+      ],
+      "verified": "2026-10-16",
+      "interfaceForms": [
+        "Hybrid"
+      ]
+    }
+  }
+}

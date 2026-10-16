@@ -1,0 +1,1614 @@
+{
+  "works": {
+    "project-aria-gen1": {
+      "status": "partial",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Hardware specifications",
+          "url": "https://facebookresearch.github.io/projectaria_tools/docs/tech_spec/hardware_spec"
+        },
+        {
+          "label": "Project Aria tools",
+          "url": "https://github.com/facebookresearch/projectaria_tools"
+        }
+      ],
+      "notes": [
+        "Open tools and public datasets; access to research glasses through the partner program."
+      ],
+      "availability": "Research system"
+    },
+    "project-aria-gen2": {
+      "status": "partial",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://facebookresearch.github.io/projectaria_tools/gen2/technical-specs/device/hardware"
+        }
+      ],
+      "notes": [
+        "Open tools; research kit access by application. Stereo CV is not stereo RGB. Contact microphone measures audio, not tactile pressure."
+      ],
+      "availability": "Research system"
+    },
+    "pupil-neon": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://pupil-labs.com/products/neon"
+        }
+      ],
+      "notes": [
+        "Commercial device; openness of the full hardware is not established by the product page."
+      ],
+      "availability": "Commercial product"
+    },
+    "tobii-pro-glasses-3": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3"
+        }
+      ],
+      "notes": [
+        "Commercial capture component; a research SDK is not an open hardware release."
+      ],
+      "availability": "Commercial product"
+    },
+    "kai-ego": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.kinetixai.tech/zh/KaiEgo"
+        }
+      ],
+      "notes": [
+        "Vendor-described capture and reconstruction; public raw-stream and hardware release terms need confirmation."
+      ],
+      "availability": "Commercial product"
+    },
+    "das-ego": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://docs.genrobot.ai/products/das-ego"
+        }
+      ],
+      "notes": [
+        "Manual v2.0 checked; dataset access and device hardware openness are separate questions."
+      ],
+      "availability": "Commercial product"
+    },
+    "lumos-ego": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.lumosbot.tech/products/ego/"
+        }
+      ],
+      "notes": [
+        "Depth is configuration-dependent: Lite omits ToF. Public product page documents ROS / ROS2 and Ubuntu support."
+      ],
+      "availability": "Commercial product"
+    },
+    "mego-view": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://maniformer.ai/mego"
+        }
+      ],
+      "notes": [
+        "MEgo View is the human capture kit; MEgo Gripper is a separate tool-based interface."
+      ],
+      "availability": "Commercial product"
+    },
+    "lightwheel-egosuite": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://lightwheel.ai/egosuite"
+        }
+      ],
+      "notes": [
+        "Multimodal claims describe the suite, not every individual head unit. Hardware designs not established as open."
+      ],
+      "availability": "Commercial product"
+    },
+    "ego-oscar": {
+      "status": "partial",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://github.com/fpv-labs/ego-oscar"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.08285"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/fpv-labs/ego-oscar/blob/main/LICENSE"
+        },
+        {
+          "hardware": "DIY guide/CAD/print links; hardware license not established",
+          "software": "Apache-2.0 firmware and recorder repository",
+          "data": "Official stereo-550 release"
+        }
+      ],
+      "notes": [
+        "Apache-2.0 capture code and firmware are released. DIY/CAD/print resources are linked externally; hardware license coverage was not established."
+      ],
+      "availability": "Research system"
+    },
+    "gi-ego1gs": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.gilabs.xyz/products/ego1gs"
+        }
+      ],
+      "notes": [
+        "Vendor documents MCAP output. Detection boxes are not 3D hand pose; production detector benchmarks remain unspecified."
+      ],
+      "availability": "Commercial product"
+    },
+    "manus-metagloves-pro": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.manus-meta.com/products/metagloves-pro"
+        }
+      ],
+      "notes": [
+        "SDK and sensor-data access are license-dependent; product availability does not establish open hardware."
+      ],
+      "availability": "Commercial product"
+    },
+    "manus-quantum-metagloves": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.manus-meta.com/products/quantum-metagloves"
+        }
+      ],
+      "notes": [
+        "Official page marks Quantum end-of-life / no longer in production; retain for reproducibility, not as current product recommendation."
+      ],
+      "availability": "Commercial product"
+    },
+    "stretchsense-pro": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.stretchsense.com/robotics"
+        }
+      ],
+      "notes": [
+        "Current robotics page calls the device Pro gloves. Exact model and raw-signal export terms should be confirmed before procurement."
+      ],
+      "availability": "Commercial product"
+    },
+    "rokoko-smartgloves-ii": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.rokoko.com/products/smartgloves-ii"
+        }
+      ],
+      "notes": [
+        "Smartgloves II is the current page. Global wrist tracking requires an additional tracking solution; camera-free does not imply pressure sensing."
+      ],
+      "availability": "Commercial product"
+    },
+    "xsens-link": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.xsens.com/motion-capture/xsens-link-specifications"
+        }
+      ],
+      "notes": [
+        "Body pose is estimated from wearable inertial sensors; hand articulation requires separate glove integration."
+      ],
+      "availability": "Commercial product"
+    },
+    "xsens-awinda": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.xsens.com/motion-capture/xsens-mvn-awinda"
+        }
+      ],
+      "notes": [
+        "Body-worn strap system, not an egocentric camera. Finger tracking depends on optional MANUS / StretchSense integration."
+      ],
+      "availability": "Commercial product"
+    },
+    "rokoko-smartsuit-pro-ii": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.rokoko.com/products/smartsuit-pro"
+        }
+      ],
+      "notes": [
+        "Finger articulation requires optional Smartgloves; streaming and exports can depend on software plan."
+      ],
+      "availability": "Commercial product"
+    },
+    "sony-mocopi": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://xyn.sony.net/en/developer/technical/mocopi/aboutmocopi"
+        }
+      ],
+      "notes": [
+        "Standard kit has six body sensors; Professional mode uses additional sensors. Unsensed joints are estimated rather than directly measured."
+      ],
+      "availability": "Commercial product"
+    },
+    "egorear": {
+      "status": "partial",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2503.11652"
+        }
+      ],
+      "notes": [
+        "Research rig; repository releases code, models and datasets. Body pose evidence must not be generalized to finger articulation."
+      ],
+      "availability": "Research system"
+    },
+    "egocap": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/1609.07306"
+        }
+      ],
+      "notes": [
+        "Foundational research capture setup; not a current commercial product or a source of measured contact forces."
+      ],
+      "availability": "Research system"
+    },
+    "meta-neural-band": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://www.meta.com/en-gb/emerging-tech/emg-wearable-technology/"
+        }
+      ],
+      "notes": [
+        "Commercial gesture interface. Raw EMG export, full hand pose and robot-learning data access are not established by the public product page."
+      ],
+      "availability": "Commercial product"
+    },
+    "egoemg": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2605.05712"
+        }
+      ],
+      "notes": [
+        "External RGB-D belongs to reference capture, not the ego camera. Submission to a conference is not acceptance."
+      ],
+      "availability": "Research system"
+    },
+    "forceband": {
+      "status": "partial",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2606.26093"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+        },
+        {
+          "hardware": "Build/BOM information; licensed hardware design files not established",
+          "software": "Apache-2.0 in the official repository",
+          "data": "See dataset release separately"
+        }
+      ],
+      "notes": [
+        "Apache-2.0 software is released. Project describes the band and build/BOM; explicit hardware CAD/license coverage was not verified. Task-time force is inferred from EMG/IMU."
+      ],
+      "availability": "Research system"
+    },
+    "osmo": {
+      "status": "partial",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2512.08920"
+        },
+        {
+          "label": "Hardware and firmware release",
+          "url": "https://github.com/jessicayin/osmo_tactile_glove"
+        },
+        {
+          "hardware": "Public hardware and PCB design files; explicit license not established",
+          "software": "Public firmware/policy files; no root license found",
+          "data": "See dataset release separately"
+        }
+      ],
+      "notes": [
+        "Hardware, PCB and firmware files are public. No root license was found in the official repository during this check; full hardware/software licensing remains unspecified."
+      ],
+      "availability": "Research system"
+    },
+    "egopressure": {
+      "status": "partial",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2409.02224"
+        }
+      ],
+      "notes": [
+        "Measured pressure applies to contacting instrumented surfaces. It does not directly measure arbitrary object contact everywhere."
+      ],
+      "availability": "Research system"
+    },
+    "dexcap": {
+      "status": "partial",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2403.07788"
+        }
+      ],
+      "notes": [
+        "Stanford research rig, distinct from commercial products using the same DexCap name. Hardware uses commercially sourced capture components."
+      ],
+      "availability": "Research system"
+    },
+    "dexwild": {
+      "status": "partial",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://arxiv.org/abs/2505.07813"
+        }
+      ],
+      "notes": [
+        "Hardware and data guides are linked by the authors; sensor-level release terms are distinct from the learning code."
+      ],
+      "availability": "Research system"
+    },
+    "egowholeview": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.16256"
+        }
+      ],
+      "notes": [
+        "Camera-only capture: metric scale uses the stereo baseline. Predicted body/hand states are not measured robot-action ground truth."
+      ],
+      "availability": "Research system"
+    },
+    "mindrove-armband": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Product specifications",
+          "url": "https://mindrove.com/product/emg-armband/"
+        },
+        {
+          "label": "SDK",
+          "url": "https://docs.mindrove.com/main/index.html"
+        }
+      ],
+      "notes": [
+        "Commercial raw-signal capture component; requires a separately synchronized egocentric camera. Hardware openness not established."
+      ],
+      "availability": "Commercial product"
+    },
+    "delsys-trigno-avanti": {
+      "status": "unknown",
+      "commercial": true,
+      "evidence": [
+        {
+          "label": "Product specifications",
+          "url": "https://delsys.com/trigno/"
+        },
+        {
+          "label": "SDK manual",
+          "url": "https://www.delsys.com/downloads/USERSGUIDE/trigno/sdk.pdf"
+        }
+      ],
+      "notes": [
+        "Commercial raw-signal capture component; requires a separately synchronized egocentric camera. Hardware openness not established."
+      ],
+      "availability": "Commercial product"
+    },
+    "ego4d": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2110.07058"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "ego-exo4d": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2311.18259"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "epic-kitchens": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2006.13256"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "hd-epic": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2502.04144"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "assembly101": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2203.14712"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "hot3d": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2411.19167"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "hoi4d": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2203.01577"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "arctic": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2204.13662"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egodex": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2505.11709"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egoverse": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2604.07607"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "fpha": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/1704.02463"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "h2o": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2104.11181"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "assemblyhands": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2304.12301"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "show3d": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2603.28760"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "ego-1k": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2603.13741"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "holoassist": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2309.17024"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "nymeria": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2406.09905"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egobody": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2112.07642"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "aria-everyday-activities": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2402.13349"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "aria-digital-twin": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2306.06362"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "world-in-your-hands": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2512.24310"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egolife": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2503.03803"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "touch-and-go": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2211.12498"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egotouch": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2605.13083"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "emg2pose": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2412.02725"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "touchscale": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2610.10288"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "interhand26m": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2008.09309"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egogesture": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "sanpo": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2309.12172"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "ego-gen": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2401.08739"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "taco": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2401.08399"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "oakink2": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2403.19417"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "hocap": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2406.06843"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egohos": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2208.03826"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "aria-gen2-pilot": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2510.16134"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "mano": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2201.02610"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "hamer": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2312.05251"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "wilor": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2409.12259"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "wildhands": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2312.06583"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "handoccnet": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2203.14564"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "hamba": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2407.09646"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egohandicl": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2601.19850"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "omnihands": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2405.20330"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "vidihand": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2606.30308"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "ace-ego-hand": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2608.20308"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "esther": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.34817"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "eventegohands-plus-plus": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.17189"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "hawor": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2501.02973"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "mint": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.04958"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "infinihand": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.35743"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "dyn-hamr": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2412.12861"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egoallo": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2410.03665"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "umetrack": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2211.00099"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egograsp": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2601.01050"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "whole": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2602.22209"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egofound3r": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2610.01210"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egofun3d": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2604.11038"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egotac": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2608.15060"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "touchsight": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.20414"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "dexmv": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2108.05877"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "hop": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2409.08273"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egoengine": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2606.12604"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egoaero": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2606.08057"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "huro": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.10706"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "ego2robot": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2608.02580"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "vividex": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2404.15709"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "dex-x": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.07747"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egomimic": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2410.24221"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egobridge": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2509.19626"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egowild2dex": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.23755"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "motiontrans": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2509.17759"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egovla": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2507.12440"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "being-h05": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2601.12993"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egoscale": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2602.16710"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "ironmind": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.39403"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egosteer": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2607.09701"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "metis": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2511.17366"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "being-h0": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2507.15597"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "videodex": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2212.04498"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egozero": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2505.20290"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "humanego": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2605.24934"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egohumanoid": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2602.10106"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "dexroam": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.35761"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egohumanoid-v2": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2609.37181"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "emma": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2509.04443"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "dexvip": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2202.00164"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "r3m": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2203.12601"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "mimicplay": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2302.12422"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "lapa": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2410.11758"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "univla": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2505.06111"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "moto": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2412.04445"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "gen2act": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2409.16283"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "dexwm": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2512.13644"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egowam": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2607.08436"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "vip": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2210.00030"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "vid2robot": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2403.12943"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "dex-retargeting": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://github.com/dexsuite/dex-retargeting"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "projectaria-tools": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://github.com/facebookresearch/projectaria_tools"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egolocate": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2305.01599"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egoposer": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2308.06493"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egoego": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2212.04636"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "egoposevr": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2602.05590"
+        }
+      ],
+      "availability": "Research resource"
+    },
+    "eventego3d-plus-plus": {
+      "status": "unknown",
+      "commercial": false,
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2502.07869"
+        }
+      ],
+      "availability": "Research resource"
+    }
+  }
+}
