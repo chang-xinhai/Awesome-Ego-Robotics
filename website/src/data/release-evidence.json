@@ -2507,6 +2507,1117 @@
         "Dataset-specific license not verified; project links two data archives.",
         "Official download links; no full-corpus integrity audit performed."
       ]
+    },
+    "orb-slam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/raulmur/ORB_SLAM"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/raulmur/ORB_SLAM/blob/master/LICENSE.txt"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "orb-slam2": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/raulmur/ORB_SLAM2"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/raulmur/ORB_SLAM2/blob/master/LICENSE.txt"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "orb-slam3": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/UZ-SLAMLab/ORB_SLAM3"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/UZ-SLAMLab/ORB_SLAM3/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "vins-mono": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/HKUST-Aerial-Robotics/VINS-Mono"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/HKUST-Aerial-Robotics/VINS-Mono/blob/master/LICENCE"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "okvis": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/ethz-asl/okvis"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/ethz-asl/okvis/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "BSD-3-Clause; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "okvis2": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/ethz-mrl/okvis2"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/ethz-mrl/okvis2/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "BSD-3-Clause; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "openvins": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/rpng/open_vins"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/rpng/open_vins/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "rovio": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/ethz-asl/rovio"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/ethz-asl/rovio/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "BSD-3-Clause; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "svo": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/uzh-rpg/rpg_svo"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/uzh-rpg/rpg_svo#licence"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "svo2": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/uzh-rpg/rpg_svo_pro_open"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/uzh-rpg/rpg_svo_pro_open/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms.",
+        "SVO Pro adds later VIO/global-map extensions beyond the original TRO visual-odometry paper."
+      ],
+      "verified": "2026-10-16"
+    },
+    "dso": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/JakobEngel/dso"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/JakobEngel/dso/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "ldso": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/tum-vision/LDSO"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/tum-vision/LDSO/blob/master/LICENSE.txt"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "lsd-slam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/tum-vision/lsd_slam"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/tum-vision/lsd_slam/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "ptam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/Oxford-PTAM/PTAM-GPL"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/Oxford-PTAM/PTAM-GPL/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-3.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "kimera": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/MIT-SPARK/Kimera"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/MIT-SPARK/Kimera/blob/master/LICENSE.BSD"
+        }
+      ],
+      "notes": [
+        "BSD-2-Clause; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "basalt": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://gitlab.com/VladyslavUsenko/basalt"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://gitlab.com/VladyslavUsenko/basalt/-/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "BSD-3-Clause; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "rtab-map": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/introlab/rtabmap"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/introlab/rtabmap/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "BSD-3-Clause; third-party dependencies and paper figures retain separate terms.",
+        "ArXiv v1 is dated 2024-03-10; the same work appeared in JFR 2019."
+      ],
+      "verified": "2026-10-16"
+    },
+    "elasticfusion": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/mp3guy/ElasticFusion"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/mp3guy/ElasticFusion/blob/master/LICENSE.txt"
+        }
+      ],
+      "notes": [
+        "Imperial noncommercial research license; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "bundlefusion": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/niessner/BundleFusion"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/niessner/BundleFusion/blob/master/LICENSE.txt"
+        }
+      ],
+      "notes": [
+        "CC-BY-NC-SA-4.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "kinectfusion": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research paper",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://www.microsoft.com/en-us/research/publication/kinectfusion-real-time-dense-surface-mapping-tracking/"
+        }
+      ],
+      "notes": [
+        "No license for an original author implementation verified; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "msckf": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research paper",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://www-users.cse.umn.edu/~stergios/papers/ICRA07-MSCKF.pdf"
+        }
+      ],
+      "notes": [
+        "No license for an original author implementation verified; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "maplab": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/ethz-asl/maplab"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/ethz-asl/maplab/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Apache-2.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "dynaslam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Official implementation and license",
+          "url": "https://github.com/BertaBescos/DynaSLAM"
+        },
+        {
+          "label": "Verified software license",
+          "url": "https://github.com/BertaBescos/DynaSLAM/blob/master/LICENSE.txt"
+        }
+      ],
+      "notes": [
+        "CC-BY-NC-4.0; third-party dependencies and paper figures retain separate terms."
+      ],
+      "verified": "2026-10-16"
+    },
+    "vggt-slam-2": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "BSD-2-Clause wrapper; backbone / models have separate terms",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/MIT-SPARK/VGGT-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "VGGT and optional model dependencies retain separate licenses. Version 1 code is on version1.0; main is 2.0."
+      ]
+    },
+    "vggt-slam": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "BSD-2-Clause wrapper; backbone / models have separate terms",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/MIT-SPARK/VGGT-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "VGGT and optional model dependencies retain separate licenses. Version 1 code is on version1.0; main is 2.0."
+      ]
+    },
+    "mast3r-slam": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC BY-NC-SA 4.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/rmurai0610/MASt3R-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Source and model release under non-commercial terms; not an OSI software license."
+      ]
+    },
+    "slam3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC BY-NC-SA 4.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/PKU-VCL-3DV/SLAM3R/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Source and model release under non-commercial terms; not an OSI software license."
+      ]
+    },
+    "megasam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/mega-sam/mega-sam/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "monst3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC BY-NC-SA 4.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/Junyi42/monst3r/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Source and model release under non-commercial terms; not an OSI software license."
+      ]
+    },
+    "dpv-slam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "MIT",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/princeton-vl/DPVO/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "splat-slam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/google-research/Splat-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "glorie-slam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/zhangganlin/GlORIE-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "leap-vo": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC BY-NC 4.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/wrchen530/leapvo/blob/main/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "Non-commercial source release; dependencies retain their separate terms."
+      ]
+    },
+    "gaussian-splatting-slam": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "Imperial MonoGS non-commercial research license",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/muskie82/MonoGS/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Research-use source release, with commercial use restricted."
+      ]
+    },
+    "splatam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "BSD-3-Clause",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/spla-tam/SplaTAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "go-slam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/youmi-zym/GO-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "co-slam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/HengyiWang/Co-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "nicer-slam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/cvg/nicer-slam/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "eslam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/idiap/ESLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "dytanvo": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "BSD-3-Clause",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/castacks/DytanVO/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "dpvo": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "MIT",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/princeton-vl/DPVO/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "nice-slam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/cvg/nice-slam/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "droid-slam": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "BSD-3-Clause",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/princeton-vl/DROID-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "License statement applies to this implementation; third-party components and pretrained models retain separate terms."
+      ]
+    },
+    "imap": {
+      "status": "unknown",
+      "commercial": false,
+      "softwareStatus": "Not verified",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Official project",
+          "url": "https://edgarsucar.github.io/iMAP/"
+        },
+        {
+          "label": "iMAP* is a separate reimplementation",
+          "url": "https://github.com/cvg/nice-slam#imap"
+        }
+      ],
+      "notes": [
+        "Original implementation release not verified. NICE-SLAM provides an explicitly labeled iMAP* reimplementation."
+      ]
+    },
+    "fast-livo2": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/hku-mars/FAST-LIVO2/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: GPL-2.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "fast-livo": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/hku-mars/FAST-LIVO/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: GPL-2.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "fast-lio2": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/hku-mars/FAST_LIO/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: GPL-2.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "fast-lio": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/hku-mars/FAST_LIO/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: GPL-2.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "r2live": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/hku-mars/r2live/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: GPL-2.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "r3live": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/hku-mars/r3live/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: GPL-2.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "lio-sam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/TixiaoShan/LIO-SAM/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: BSD-3-Clause. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "lvi-sam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/TixiaoShan/LVI-SAM/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: BSD-3-Clause. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "loam": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://www.roboticsproceedings.org/rss10/p07.html"
+        },
+        {
+          "label": "Author publication record",
+          "url": "https://publications.ri.cmu.edu/loam-lidar-odometry-and-mapping-in-real-time"
+        }
+      ],
+      "notes": [
+        "Paper is public. A current licensed author implementation is not established here."
+      ]
+    },
+    "lego-loam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: BSD-3-Clause. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "point-lio": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "GPL-2.0 license",
+          "url": "https://github.com/hku-mars/Point-LIO/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: GPL-2.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "coin-lio": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "BSD-3-Clause license",
+          "url": "https://github.com/ethz-asl/COIN-LIO/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: BSD-3-Clause. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "clins": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/APRIL-ZJU/clins/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: GPL-3.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "glim": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/koide3/glim/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: MIT. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "li-init": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/hku-mars/LiDAR_IMU_Init/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: GPL-2.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "kalibr": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "License in official README",
+          "url": "https://github.com/ethz-asl/kalibr#license-bsd"
+        }
+      ],
+      "notes": [
+        "Software license: BSD-4-Clause. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "rolling-shutter-calibration": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "License in official README",
+          "url": "https://github.com/ethz-asl/kalibr#license-bsd"
+        }
+      ],
+      "notes": [
+        "Software license: BSD-4-Clause. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "evo": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/MichaelGrupp/evo/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: GPL-3.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "far-lio": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Official license",
+          "url": "https://github.com/TUMFTM/FAR-LIO/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software license: Apache-2.0. Third-party figure and datasets retain separate terms."
+      ]
+    },
+    "rsvi-calibration": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Author source license",
+          "url": "https://github.com/JzHuai0108/kalibr/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Author Kalibr extension; BSD-family license and inherited component terms."
+      ]
+    },
+    "dm-vio": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "GPL-3.0 license",
+          "url": "https://github.com/lukasvst/dm-vio/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "DM-VIO implementation is GPL-3.0; paper figures and third-party dependencies retain separate terms."
+      ]
+    },
+    "umi-slam-workflow": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Processing wrapper MIT license",
+          "url": "https://github.com/real-stanford/universal_manipulation_interface/blob/main/LICENSE"
+        },
+        {
+          "label": "ORB-SLAM3 backend GPL-3.0 license",
+          "url": "https://github.com/cheng-chi/ORB_SLAM3/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "UMI orchestration/processing wrapper: MIT. GoPro ORB-SLAM3 fork: GPL-3.0. These are separate components; the combined pipeline is not represented as wholly MIT. Docker images, calibration tools, datasets and other dependencies retain separate terms."
+      ]
     }
   }
 }

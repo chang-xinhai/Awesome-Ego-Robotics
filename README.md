@@ -1,148 +1,118 @@
 <div align="center">
+
 <h1 id="awesome-ego-robotics">Awesome-Ego-Robotics</h1>
-<p><strong>Egocentric & Wearable Capture, Data, and Learning for Robotics</strong></p>
-<p>面向机器人的第一视角与可穿戴采集、数据及学习</p>
-<p><a href="#hardware-and-capture-systems">Hardware 硬件</a> · <a href="#datasets">Datasets 数据集</a> · <a href="#methods-and-toolchains">Methods 方法</a> · <a href="#robot-learning-and-evaluation">Robot learning 机器人学习</a></p>
+
+<p>
+  <strong>A curated map of hardware, datasets, methods, and tools for egocentric robot learning.</strong>
+</p>
+
+<!-- [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) -->
+<!-- [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) -->
+
+<p>
+  <a href="#hardware-and-capture-systems"><img alt="Hardware" src="https://img.shields.io/badge/Hardware-Human%20Capture-a8d8ff?style=for-the-badge"></a>
+  <a href="#methods-and-toolchains"><img alt="Methods" src="https://img.shields.io/badge/Methods-Reconstruction%20%26%20Transfer-b8e6c9?style=for-the-badge"></a>
+  <a href="#datasets"><img alt="Datasets" src="https://img.shields.io/badge/Datasets-Egocentric%20Data-ffd6a5?style=for-the-badge"></a>
+  <a href="#robot-learning-and-evaluation"><img alt="Learning" src="https://img.shields.io/badge/Learning-Policies%20%26%20Tools-d7c5ff?style=for-the-badge"></a>
+  <a href="#overview-and-taxonomy"><img alt="Taxonomy" src="https://img.shields.io/badge/Taxonomy-Ecosystem%20Map-ffb7b2?style=for-the-badge"></a>
+</p>
+
 </div>
 
-> **Website preview:** the visual atlas is under local review. Run the instructions in [website/README.md](website/README.md); public website deployment is pending preview approval.
+<p align="center"><a href="website/README.md"><strong>Preview the visual atlas →</strong></a> · Images, filters, details, and side-by-side comparison · Local review; deployment pending approval</p>
 
 ## About
 
-A curated map of human experience as a source of robot skills: first-person
-cameras, wearable sensing, hand and body motion, interaction datasets,
-demonstration translation, and learning from human data.
+**Awesome-Ego-Robotics**: A curated list for **egocentric and wearable human capture, data, and learning for robotics**.
 
-The scope extends from hands to whole body and from vision to depth, IMU, gaze,
-audio, EMG, touch and force. Supporting gloves, EMG bands and mocap systems can
-be included without an ego camera when their role in capture or robot learning
-is explicit. Reference-only or synthetic resources are labeled; they are not
-presented as synchronized human egocentric recordings.
+This repository focuses on:
+- **Hardware and Capture Systems**: first-person cameras, headsets, gloves, EMG bands, body capture, and tactile sensing
+- **Methods and Toolchains**: hand and body reconstruction, hand-object interaction, robotization, and direct video-learning routes
+- **Datasets**: first-person activity, interaction geometry, whole-body motion, physical signals, and human-to-robot demonstrations
+- **Robot Learning and Evaluation**: policies, SLAM and odometry, calibration, trajectory evaluation, and capture workflows
+- **Overview and Taxonomy**: independent dimensions, the Ego Data Pyramid reading route, and evidence conventions
 
-The README is the canonical collection. The website adds credited figures,
-faceted browsing, compact details, source evidence and context-specific
-comparison, using the visual system of [Awesome-UMI](https://github.com/chang-xinhai/Awesome-UMI).
+The scope follows human experience into robot skills. Supporting wearable sensors and capture-relevant SLAM foundations are included with their role stated. Reference-only and synthetic resources are labeled. Tool-based gripper interfaces are covered in [Awesome-UMI](https://github.com/chang-xinhai/Awesome-UMI).
 
-<p align="center"><img src="assets/dexcap-hardware.webp" alt="DexCap (Stanford) capture hardware" width="850"><br><sub>Wearable capture: DexCap combines hand motion capture and scene sensing. Source: <a href="https://arxiv.org/html/2403.07788v1">official project / paper</a>. Figure rights remain with the original authors.</sub></p>
-<p align="center"><img src="assets/hot3d-datasets.webp" alt="HOT3D dataset examples and annotations" width="850"><br><sub>Dataset view: HOT3D captures hand–object interactions and reference geometry. Source: <a href="https://facebookresearch.github.io/hot3d/">official project / paper</a>. Figure rights remain with the original authors.</sub></p>
+<p align="center">
+  <img src="assets/dexcap-hardware.webp" alt="DexCap wearable capture hardware" width="900">
+  <br>
+  <sub><span style="color: #777;">Source: original DexCap paper, <a href="https://arxiv.org/html/2403.07788v1">arxiv.org</a>. Figure rights remain with the original authors.</span></sub>
+</p>
+
+<p align="center">
+  <img src="assets/hot3d-datasets.webp" alt="HOT3D hand-object dataset examples and annotations" width="900">
+  <br>
+  <sub><span style="color: #777;">Source: original HOT3D project page, <a href="https://facebookresearch.github.io/hot3d/">facebookresearch.github.io/hot3d</a>. Figure rights remain with the original authors.</span></sub>
+</p>
 
 ## Must Read
 
-| Question | Starting points |
+Start here for the shortest path through the capture-to-learning ecosystem.
+
+| Goal | Start with |
 | :-- | :-- |
 | What can an ego capture platform actually record? | [Project Aria tools](https://github.com/facebookresearch/projectaria_tools), [HOT3D](https://facebookresearch.github.io/hot3d/) |
 | Where are large first-person video corpora? | [Ego4D](https://ego4d-data.org/), [Ego-Exo4D](https://ego-exo4d-data.org/), [EPIC-KITCHENS](https://epic-kitchens.github.io/) |
 | What data support hands, objects and whole-body recovery? | [EgoDex](https://github.com/apple-aiml-research/ml-egodex), [ARCTIC](https://arctic.is.tue.mpg.de/), [Nymeria](https://github.com/facebookresearch/nymeria_dataset) |
 | How do reconstruction stages differ? | [HaMeR](https://geopavlakos.github.io/hamer/), [HaWoR](https://hawor-project.github.io/), [EgoAllo](https://egoallo.github.io/) |
 | How can demonstrations reach a robot? | [DexCap](https://dex-cap.github.io/), [EgoMimic](https://egomimic.github.io/) |
+| Recover and validate capture trajectories | [ORB-SLAM3](https://github.com/UZ-SLAMLab/ORB_SLAM3), [OpenVINS](https://docs.openvins.com/), [FAST-LIVO2](https://github.com/hku-mars/FAST-LIVO2), [MegaSaM](https://github.com/mega-sam/mega-sam), [SLAM and processing tools](#evaluation-and-toolchains) |
 | How should the larger ecosystem connect? | [Awesome-UMI](https://github.com/chang-xinhai/Awesome-UMI), [Awesome-Robot-Data-Engine](https://github.com/chang-xinhai/Awesome-Robot-Data-Engine) |
 
 ## News
 
-- **2026-10-16** — Initialized the single-README collection and local visual atlas with independent hardware, dataset and method views.
+- [2026-10-16] Initialized the single-README collection and local visual atlas with independent hardware, dataset and method views.
 
 ## Contents
 
-- [About · 关于](#about)
-- [Must Read · 阅读入口](#must-read)
-- [Overview and Taxonomy · 概览与分类](#overview-and-taxonomy)
-  - [Independent Dimensions · 独立分类维度](#independent-dimensions)
-  - [Research Roadmap · 研究路线](#research-roadmap)
-  - [Evidence and Inclusion · 证据与收录](#evidence-and-inclusion)
-- [Hardware and Capture Systems · 硬件与采集系统](#hardware-and-capture-systems)
-  - [Egocentric cameras and headsets · 第一视角相机与头戴设备](#egocentric-cameras-and-headsets)
-  - [Gloves and hand capture · 手套与手部采集](#gloves-and-hand-capture)
-  - [EMG and neural interfaces · 肌电与神经接口](#emg-and-neural-interfaces)
-  - [Whole-body and hybrid capture · 全身与混合采集](#whole-body-and-hybrid-capture)
-  - [Contact and tactile capture · 接触与触觉采集](#contact-and-tactile-capture)
-- [Datasets · 数据集](#datasets)
-  - [Video and activity · 视频与活动](#video-and-activity)
-  - [Hand-object geometry and pose · 手物几何与姿态](#hand-object-geometry-and-pose)
-  - [Whole-body and multimodal · 全身与多模态](#whole-body-and-multimodal)
-  - [Touch force and EMG · 触觉、力与肌电](#touch-force-and-emg)
-  - [Robot demonstration and transfer · 机器人示范与迁移](#robot-demonstration-and-transfer)
-- [Methods and Toolchains · 方法与工具链](#methods-and-toolchains)
-  - [Hand reconstruction · 手部重建](#hand-reconstruction)
-  - [World-space and body motion · 世界坐标与身体运动](#world-space-and-body-motion)
-  - [Hand-object interaction · 手物交互](#hand-object-interaction)
-  - [Demonstration translation · 机器人示范转换](#demonstration-translation)
-  - [Representation and latent actions · 表征与隐式动作](#representation-and-latent-actions)
-- [Robot Learning and Evaluation · 机器人学习与评测](#robot-learning-and-evaluation)
-  - [Policy learning from human data · 从人类数据学习策略](#policy-learning-from-human-data)
-  - [Evaluation and toolchains · 评测与工具链](#evaluation-and-toolchains)
-- [Citation · 引用](#citation)
-- [Acknowledgement · 致谢](#acknowledgement)
-
-## Overview and Taxonomy
-
-概览与分类。The three collection views describe resource types; the dimensions
-below remain independent so that a glove can be commercial, full-body-compatible,
-and IMU/EMG-enabled without being forced into one exclusive category.
-
-### Independent Dimensions
-
-| Dimension / 维度 | Values and interpretation / 取值与解释 |
-| :-- | :-- |
-| Resource / 资源类型 | Hardware, dataset, reconstruction/toolchain, policy/evaluation |
-| Form / 设备形态 | Glasses, headset, headband, chest camera, wristband, glove, suit, hybrid rig |
-| Signals / 采集信号 | RGB/vision, depth, IMU, EMG, gaze, audio, tactile, force; derived estimates labeled separately |
-| Body coverage / 身体范围 | One/both hands, upper body, whole body; scene capture does not imply body tracking |
-| Interaction / 交互形态 | Natural manipulation, tools, contact-rich actions, locomotion, teleoperation |
-| Geometry / 几何表示 | 2D joints, camera-relative 3D, world-space trajectories, metric scale, objects/contact |
-| Learning role / 学习用途 | Pretraining, co-training, robotization, rewards, policy inputs, evaluation |
-| Access / 开放状态 | Hardware files, licensed software, dataset download/conditions, commercial availability — separately |
-
-### Research Roadmap
-
-The **Ego Data Pyramid** is one way to survey methods inside this larger field.
-It is a reading route, not a claim that every policy must reconstruct 3D.
-
-```mermaid
-flowchart LR
-    A[Capture & Datasets 采集与数据] --> B[Hand Reconstruction 手部重建]
-    B --> C[World Motion 世界运动]
-    C --> D[Hand-Object Interaction 手物交互]
-    D --> E[Robot Demonstrations 机器人示范]
-    E --> F[Policy & Evaluation 策略与评测]
-    A --> G[Representations / Latent Actions 表征与隐式动作]
-    G --> F
-```
-
-Full-body, EMG, tactile and force can enter at capture, supervision, interaction,
-or policy stages. They are not limited to an extra tag on hand reconstruction.
-
-### Evidence and Inclusion
-
-- **Observation ≠ estimate ≠ reference label ≠ policy input.** Measured depth is
-  different from monocular predicted depth; optical flow or contact prediction
-  is different from a tactile sensor. Haptic feedback is not measured touch.
-- **Camera frame ≠ world frame ≠ metric scale.** Inspect calibration, scale,
-  timing and drift before assuming trajectories can drive a robot.
-- **Retargeting ≠ executable action ground truth.** Distinguish kinematic
-  translation, simulation, playback and closed-loop real-robot policy evidence.
-- **Reported scale ≠ released scale.** Subsets, access conditions, licenses and
-  derived annotations remain explicit in dataset evidence.
-- **Commercial ≠ closed source.** Product availability and hardware/software/data
-  release are separate. Product claims are manufacturer-reported.
-- Every entry is linked to a primary paper or official public resource. Dates
-  use arXiv **v1** where available; `—` means no verified publication date.
-  Partial dates retain their original precision. For older papers uploaded to
-  arXiv later (e.g. MANO), the venue year can precede the Date column.
-- Keep UMI tool interfaces primarily in [Awesome-UMI](https://github.com/chang-xinhai/Awesome-UMI).
-  Include them here when a distinct ego/wearable contribution is central.
+- [Awesome-Ego-Robotics](#awesome-ego-robotics)
+  - [About](#about)
+  - [Must Read](#must-read)
+  - [News](#news)
+  - [Hardware and Capture Systems](#hardware-and-capture-systems)
+    - [Egocentric cameras and headsets](#egocentric-cameras-and-headsets)
+    - [Gloves and hand capture](#gloves-and-hand-capture)
+    - [EMG and neural interfaces](#emg-and-neural-interfaces)
+    - [Whole-body and hybrid capture](#whole-body-and-hybrid-capture)
+    - [Contact and tactile capture](#contact-and-tactile-capture)
+  - [Methods and Toolchains](#methods-and-toolchains)
+    - [Hand reconstruction](#hand-reconstruction)
+    - [World-space and body motion](#world-space-and-body-motion)
+    - [Hand-object interaction](#hand-object-interaction)
+    - [Demonstration translation](#demonstration-translation)
+    - [Representation and latent actions](#representation-and-latent-actions)
+  - [Datasets](#datasets)
+    - [Video and activity](#video-and-activity)
+    - [Hand-object geometry and pose](#hand-object-geometry-and-pose)
+    - [Whole-body and multimodal](#whole-body-and-multimodal)
+    - [Touch force and EMG](#touch-force-and-emg)
+    - [Robot demonstration and transfer](#robot-demonstration-and-transfer)
+  - [Robot Learning and Evaluation](#robot-learning-and-evaluation)
+    - [Policy learning from human data](#policy-learning-from-human-data)
+    - [Evaluation and toolchains](#evaluation-and-toolchains)
+      - [SLAM](#slam)
+      - [Calibration and synchronization](#calibration-and-synchronization)
+      - [Trajectory evaluation](#trajectory-evaluation)
+      - [Ego and UMI workflows](#ego-and-umi-workflows)
+      - [Others](#others)
+  - [Overview and Taxonomy](#overview-and-taxonomy)
+    - [Independent Dimensions](#independent-dimensions)
+    - [Research Roadmap](#research-roadmap)
+    - [Evidence and Inclusion](#evidence-and-inclusion)
+  - [Citation](#citation)
+  - [Acknowledgement](#acknowledgement)
 
 ## Hardware and Capture Systems
 
-硬件与采集系统。Research rigs and commercial devices are both included. A commercial listing does not establish availability in every region or an independently tested tracking accuracy.
+Research rigs and commercial devices are both included. A commercial listing does not establish availability in every region or an independently tested tracking accuracy.
 
 ### Egocentric cameras and headsets
 
-第一视角相机与头戴设备。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-08-08 | Headband, Vision, IMU | FPV Labs | [Ego-OSCAR: Egocentric Open source Stereo CAptuRe System](https://arxiv.org/abs/2608.08285) | arXiv | [Code & hardware](https://github.com/fpv-labs/ego-oscar) / [Dataset](https://huggingface.co/datasets/fpvlabs/stereo-550) <!-- work:ego-oscar --> |
-| 2026-07-08 | Vision, IMU, Audio; Headband | PIA Automation (均普智能) | [PIA Primus Ego industrial egocentric data capture terminal](https://cn.piagroup.com/news/company2/538.html) | Product / Official resource | — <!-- work:pia-primus-ego --> |
+| 2026-07-08 | Vision, IMU, Audio; Headband | PIA Automation | [PIA Primus Ego industrial egocentric data capture terminal](https://cn.piagroup.com/news/company2/538.html) | Product / Official resource | — <!-- work:pia-primus-ego --> |
 | 2026-07 | Vision, IMU; Headband | Orbbec | [Orbbec EGO first-person capture modules](https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78) | Product / Official resource | — <!-- work:orbbec-ego --> |
 | 2025-12-04 | Hybrid, Vision, Depth, Tactile, State | Lightwheel | [EgoSuite multimodal human data capture](https://lightwheel.ai/egosuite) | Product | — <!-- work:lightwheel-egosuite --> |
 | 2024 | Headset, Vision, ARKit, Estimated pose | Apple | [Apple Vision Pro (M2) spatial capture headset](https://support.apple.com/en-us/117810) | Product | [EgoDex capture](https://github.com/apple-aiml-research/ml-egodex) / [Camera access](https://developer.apple.com/documentation/visionos/accessing-the-main-camera) <!-- work:apple-vision-pro-m2 --> |
@@ -157,33 +127,29 @@ or policy stages. They are not limited to an extra tag on hand reconstruction.
 | — | Headband, Vision, IMU, Audio | General Intelligence Labs | [Global-shutter stereo egocentric headset](https://www.gilabs.xyz/products/ego1gs) | Product | — <!-- work:gi-ego1gs --> |
 | — | Headset, Vision, State | Meta | [Meta Quest 3 egocentric capture headset](https://www.meta.com/quest/quest-3/) | Product | [HOT3D capture](https://facebookresearch.github.io/hot3d/) / [RGB camera API](https://developers.meta.com/vr/documentation/unity/unity-pca-overview/) <!-- work:meta-quest3 --> |
 | — | Headset, Vision, Stereo | Ultraleap | [Ultraleap Stereo IR 170 head-mounted hand tracker](https://docs.ultraleap.com/hand-tracking/XR-Setup/XR-setup.html) | Product | [Tracking and SDK](https://docs.ultraleap.com/hand-tracking/index.html) / [Pico integration](https://docs.ultraleap.com/pico/overview.html) <!-- work:ultraleap-stereo-ir170 --> |
-| — | Vision, IMU, Audio; Headband | Livsyn Robotics (灵生科技) | [LivEgo first-person data collection headband](https://livsynrobotics.com/products/ego) | Product / Official resource | — <!-- work:liv-ego --> |
-| — | Vision, IMU, Audio; Headband | Samtzu (芯助科技) | [Samtzu EGO POV wearable data capture device](https://www.samtzu.com/zh/products/ego-pov-wearable/) | Product / Official resource | — <!-- work:samtzu-ego --> |
-| — | Vision, IMU, Audio; Headband | TOBI Technology (拓比科技) | [TOBI Ego E2 / E6 / E8 capture family](https://www.tobi.cn/ego-landing.html) | Product / Official resource | — <!-- work:tobi-ego --> |
+| — | Vision, IMU, Audio; Headband | Livsyn Robotics | [LivEgo first-person data collection headband](https://livsynrobotics.com/products/ego) | Product / Official resource | — <!-- work:liv-ego --> |
+| — | Vision, IMU, Audio; Headband | Samtzu | [Samtzu EGO POV wearable data capture device](https://www.samtzu.com/zh/products/ego-pov-wearable/) | Product / Official resource | — <!-- work:samtzu-ego --> |
+| — | Vision, IMU, Audio; Headband | TOBI Technology | [TOBI Ego E2 / E6 / E8 capture family](https://www.tobi.cn/ego-landing.html) | Product / Official resource | — <!-- work:tobi-ego --> |
 | — | Vision, Depth, IMU, Audio; Headband | NOLO | [NOLO EgoCapture first-person multimodal capture system](https://www.nolovr.com/ego-page/index.html?v=3) | Product / Official resource | — <!-- work:nolo-egocapture --> |
-| — | Vision, Depth, IMU, Audio; Headband | LITCHI (厘清智能) | [LITCHI EgoDepth egocentric data capture device](https://litchibot.com/) | Product / Official resource | — <!-- work:litchi-egodepth --> |
-| — | Vision, IMU, Audio; Headband | PhysenAI (真觉万象) | [Physen Ego Thor-Duo / Thor-Quad / Thor-Hex capture family](https://www.physen.ai/products/thor-ego/) | Product / Official resource | — <!-- work:physen-thor --> |
+| — | Vision, Depth, IMU, Audio; Headband | LITCHI | [LITCHI EgoDepth egocentric data capture device](https://litchibot.com/) | Product / Official resource | — <!-- work:litchi-egodepth --> |
+| — | Vision, IMU, Audio; Headband | PhysenAI | [Physen Ego Thor-Duo / Thor-Quad / Thor-Hex capture family](https://www.physen.ai/products/thor-ego/) | Product / Official resource | — <!-- work:physen-thor --> |
 | — | Vision, IMU; Hybrid | YeeGooAI | [EgoEasy lightweight egocentric capture system](https://www.yeegooai.com/) | Product / Official resource | — <!-- work:egoeasy --> |
-| — | Vision, IMU; Headband | Xvisio Technology (诠视科技) | [Xvisio SeerFusion One egocentric data acquisition terminal](https://en.xvisiotech.com/SeerController/312) | Product / Official resource | — <!-- work:xvisio-seerfusion-one --> |
+| — | Vision, IMU; Headband | Xvisio Technology | [Xvisio SeerFusion One egocentric data acquisition terminal](https://en.xvisiotech.com/SeerController/312) | Product / Official resource | — <!-- work:xvisio-seerfusion-one --> |
 
 ### Gloves and hand capture
 
-手套与手部采集。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2025-05-12 | Hybrid, Vision, State | Carnegie Mellon | [DexWild: Dexterous Human Interactions for In-the-Wild Robot Policies](https://arxiv.org/abs/2505.07813) | RSS 2025 | [Project](https://dexwild.github.io/) / [Code](https://github.com/dexwild/dexwild) / [Dataset](https://huggingface.co/datasets/boardd/dexwild-dataset) / [Code](https://github.com/dexwild/dexwild-training) / [Project](https://dexwild.github.io) <!-- work:dexwild --> |
 | — | Glove, State | MANUS | [EMF finger-tracking gloves for robotics](https://www.manus-meta.com/products/metagloves-pro) | Product | [Licenses](https://www.manus-meta.com/software) <!-- work:manus-metagloves-pro --> |
 | — | Glove, State | MANUS | [Legacy Quantum motion-capture gloves](https://www.manus-meta.com/products/quantum-metagloves) | Product | — <!-- work:manus-quantum-metagloves --> |
 | — | Glove, State | StretchSense | [StretchSense human manipulation data capture](https://www.stretchsense.com/robotics) | Product | [Hardware](https://www.stretchsense.com/hardware) / [API](https://www.stretchsense.com/api-integrations) <!-- work:stretchsense-pro --> |
 | — | Glove, IMU, State | Rokoko | [Inertial hand and finger capture gloves](https://www.rokoko.com/products/smartgloves-ii) | Product | [Device SDK](https://sdk.rokoko.com/) <!-- work:rokoko-smartgloves-ii --> |
-| — | IMU, Tactile; Glove | LITCHI (厘清智能) | [LITCHI T1 / T1 Lite / T1 Pro data collection gloves](https://litchibot.com/) | Product / Official resource | — <!-- work:litchi-t1 --> |
+| — | IMU, Tactile; Glove | LITCHI | [LITCHI T1 / T1 Lite / T1 Pro data collection gloves](https://litchibot.com/) | Product / Official resource | — <!-- work:litchi-t1 --> |
 
 ### EMG and neural interfaces
 
-肌电与神经接口。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-06-24 | Wristband, Vision, EMG, IMU, Force | Amazon FAR | [ForceBand: Learning Forceful Manipulation with sEMG](https://arxiv.org/abs/2606.26093) | arXiv | [Project](https://forceband-emg.github.io/) / [Code & BOM](https://github.com/Bottle101/ForceBand) <!-- work:forceband --> |
 | 2026-05-07 | Hybrid, Vision, Depth, IMU, EMG, State | Tsinghua | [EgoEMG: A Multimodal Egocentric Dataset with Bilateral EMG and Vision for Hand Pose Estimation](https://arxiv.org/abs/2605.05712) | arXiv | [Code](https://github.com/zhenqis123/EgoEMG) <!-- work:egoemg --> |
@@ -193,9 +159,7 @@ or policy stages. They are not limited to an extra tag on hand reconstruction.
 
 ### Whole-body and hybrid capture
 
-全身与混合采集。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-10-12 | Headset, Vision, State | Zhongguancun Academy | [EgoWholeView: Camera-Only Head-Mounted Capture of Body and Bimanual Hand Motion for Embodied Demonstrations](https://arxiv.org/abs/2610.16256) | arXiv | — <!-- work:egowholeview --> |
 | 2025-03-14 | Headset, Vision, State | MPI Informatics | [Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation](https://arxiv.org/abs/2503.11652) | ICCV 2025 | [Code](https://github.com/hiroyasuakada/EgoRear) <!-- work:egorear --> |
@@ -209,117 +173,19 @@ or policy stages. They are not limited to an extra tag on hand reconstruction.
 
 ### Contact and tactile capture
 
-接触与触觉采集。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2025-12-09 | Glove, Tactile, Magnetic flux | Meta FAIR | [OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer](https://arxiv.org/abs/2512.08920) | arXiv | [Project](https://jessicayin.github.io/osmo_tactile_glove/) / [Hardware & code](https://github.com/jessicayin/osmo_tactile_glove) <!-- work:osmo --> |
 | 2024-09-03 | Hybrid, Vision, Depth, Tactile, State | ETH Zürich | [EgoPressure: A Dataset for Hand Pressure and Pose Estimation in Egocentric Vision](https://arxiv.org/abs/2409.02224) | CVPR 2025 | [Project](https://yiming-zhao.github.io/EgoPressure/) / [Project](https://siplab.org/projects/EgoPressure) / [GitHub](https://github.com/eth-siplab/EgoPressure) / [Dataset](https://dataset.egopressure.inf.ethz.ch/) <!-- work:egopressure --> |
 | — | Tactile, Force; Glove | NOLO | [NOLO OmniGlove tactile data collection glove](https://www.nolovr.com/ego-page/index.html?v=3) | Product / Official resource | — <!-- work:nolo-omniglove --> |
 
-## Datasets
-
-数据集。Video, pose, whole-body, touch/force/EMG and robot-transfer assets. Reference and synthetic resources are explicitly marked in keywords; their signal pairing and evidence differ.
-
-### Video and activity
-
-视频与活动。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
-| :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2025-03-05 | Video and activity, RGB, Audio, Daily activity and environment | NTU S-Lab | [EgoLife: Towards Egocentric Life Assistant](https://arxiv.org/abs/2503.03803) | CVPR 2025 | [Project](https://egolife-ai.github.io/blog/) / [Dataset](https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342) <!-- work:egolife --> |
-| 2025-03-02 | Derived annotations, RGB, Hand-object dynamics, Video-language | Zhejiang University | [Modeling Fine-Grained Hand-Object Dynamics for Egocentric Video Representation Learning](https://arxiv.org/abs/2503.00986) | ICLR 2025 | [Code](https://github.com/InternRobotics/EgoHOD) / [Dataset](https://huggingface.co/datasets/Jazzcharles/EgoHOD) <!-- work:egohod --> |
-| 2025-02-06 | Video and activity, RGB, Monochrome, IMU, Eye tracking, Audio, Hands and environment | University of Bristol | [HD-EPIC: A Highly-Detailed Egocentric Video Dataset](https://arxiv.org/abs/2502.04144) | CVPR 2025 | [Project](https://hd-epic.github.io/site/) / [GitHub](https://github.com/hd-epic/hd-epic-annotations) / [Dataset](https://hd-epic.github.io/site/#download) <!-- work:hd-epic --> |
-| 2024-03-24 | Ego/exo, RGB, Gaze, Procedures | Shanghai AI Laboratory | [EgoExoLearn: A Dataset for Bridging Asynchronous Ego- and Exo-centric View of Procedural Activities in Real World](https://arxiv.org/abs/2403.16182) | CVPR 2024 | [Project](https://egoexolearn.github.io/) / [Code](https://github.com/OpenGVLab/EgoExoLearn) / [Dataset](https://huggingface.co/datasets/hyf015/EgoExoLearn) <!-- work:egoexolearn --> |
-| 2023-11-30 | Video and activity, RGB, Monochrome, IMU, Eye tracking, Audio, Hands and whole body | Ego-Exo4D consortium | [Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives](https://arxiv.org/abs/2311.18259) | CVPR 2024 | [Project](https://ego-exo4d-data.org/) / [GitHub](https://github.com/facebookresearch/Ego4d) / [Dataset](https://docs.ego-exo4d-data.org/) <!-- work:ego-exo4d --> |
-| 2023-09-26 | Egocentric, RGB, Industrial repair, Procedures | University of Catania | [ENIGMA-51: Towards a Fine-Grained Understanding of Human-Object Interactions in Industrial Scenarios](https://arxiv.org/abs/2309.14809) | WACV 2024 | [Dataset](https://fpv-iplab.github.io/ENIGMA-51/) / [Code](https://github.com/fpv-iplab/ENIGMA-51) <!-- work:enigma51 --> |
-| 2022-09-19 | Egocentric, RGB-D, Gaze, Industrial assembly | University of Catania | [MECCANO: A Multimodal Egocentric Dataset for Humans Behavior Understanding in the Industrial-like Domain](https://arxiv.org/abs/2209.08691) | CVIU 2023 | [Dataset](https://iplab.dmi.unict.it/legacy/MECCANO/) / [Code](https://github.com/fpv-iplab/MECCANO) <!-- work:meccano --> |
-| 2022-03-28 | Video and activity, RGB, Monochrome, Bimanual | Assembly101 collaboration | [Assembly101: A Large-Scale Multi-View Video Dataset for Understanding Procedural Activities](https://arxiv.org/abs/2203.14712) | CVPR 2022 | [Project](https://assembly-101.github.io/) / [GitHub](https://github.com/assembly-101/assembly101-annotations) / [Dataset](https://huggingface.co/datasets/cvml-nus/assembly101) <!-- work:assembly101 --> |
-| 2021-10-13 | Video and activity, RGB, Audio, Hands and daily activity | Ego4D consortium | [Ego4D: Around the World in 3,000 Hours of Egocentric Video](https://arxiv.org/abs/2110.07058) | CVPR 2022 | [Project](https://ego4d-data.org/) / [GitHub](https://github.com/facebookresearch/Ego4d) / [Dataset](https://ego4d-data.org/docs/start-here/) <!-- work:ego4d --> |
-| 2020-06-23 | Video and activity, RGB, Audio, Hands and daily activity | University of Bristol | [Rescaling Egocentric Vision](https://arxiv.org/abs/2006.13256) | IJCV 2022 | [Project](https://epic-kitchens.github.io/2025) / [GitHub](https://github.com/epic-kitchens/epic-kitchens-100-annotations) / [Dataset](https://epic-kitchens.github.io/2025#downloads) <!-- work:epic-kitchens --> |
-| 2020-05-31 | Egocentric, RGB, Gaze, Hand masks, Cooking | University of Wisconsin–Madison | [In the Eye of the Beholder: Gaze and Actions in First Person Video](https://arxiv.org/abs/2006.00626) | IEEE TPAMI (2021 early access) | [Dataset](https://cbs.ic.gatech.edu/fpv/) / [Original paper](https://www.ecva.net/papers/eccv_2018/papers_ECCV/papers/Yin_Li_In_the_Eye_ECCV_2018_paper.pdf) <!-- work:egtea-gaze-plus --> |
-| 2018-02-21 | Video and activity, RGB, Depth, Hands | Chinese Academy of Sciences | [EgoGesture](https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html) | IEEE TMM 2018 | — <!-- work:egogesture --> |
-
-### Hand-object geometry and pose
-
-手物几何与姿态。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
-| :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2026-03-30 | Hand-object geometry and pose, Monochrome, Bimanual | Meta Reality Labs | [SHOW3D: Capturing Scenes of 3D Hands and Objects in the Wild](https://arxiv.org/abs/2603.28760) | CVPR 2026 | [Project](https://show3d-dataset.github.io/) / [GitHub](https://github.com/facebookresearch/show3d) / [Dataset](https://huggingface.co/datasets/facebook/show3d-dataset) <!-- work:show3d --> |
-| 2026-03-14 | 12 views, Fisheye, Stereo views, WebDataset, Parquet | Meta Reality Labs | [Ego-1K -- A Large-Scale Multiview Video Dataset for Egocentric Vision](https://arxiv.org/abs/2603.13741) | arXiv 2026 | [Project](https://huggingface.co/datasets/facebook/ego-1k) <!-- work:ego-1k --> |
-| 2024-11-28 | Hand-object geometry and pose, RGB, Monochrome, Eye tracking, Bimanual | Meta Reality Labs | [HOT3D: Hand and Object Tracking in 3D from Egocentric Multi-View Videos](https://arxiv.org/abs/2411.19167) | CVPR 2025 | [Project](https://facebookresearch.github.io/hot3d/) / [GitHub](https://github.com/facebookresearch/hot3d) / [Dataset](https://huggingface.co/datasets/projectaria/hot3d) <!-- work:hot3d --> |
-| 2024-06-10 | Hand-object geometry and pose, RGB, Depth, Hands and objects | UT Dallas | [HO-Cap: A Capture System and Dataset for 3D Reconstruction and Pose Tracking of Hand-Object Interaction](https://arxiv.org/abs/2406.06843) | NeurIPS 2025 Datasets & Benchmarks | [Project](https://irvlutd.github.io/HOCap/) / [GitHub](https://github.com/IRVLUTD/HO-Cap) / [Dataset](https://irvlutd.github.io/HOCap/#data) <!-- work:hocap --> |
-| 2024-03-28 | Hand-object geometry and pose, RGB, Bimanual and upper body | Shanghai Jiao Tong University | [OAKINK2: A Dataset of Bimanual Hands-Object Manipulation in Complex Task Completion](https://arxiv.org/abs/2403.19417) | CVPR 2024 | [Project](https://oakink.net/v2/) / [GitHub](https://github.com/oakink/OakInk2) <!-- work:oakink2 --> |
-| 2024-03-14 | Egocentric, Thermal, RGB-D, NIR, Bimanual | University of Edinburgh | [ThermoHands: A Benchmark for 3D Hand Pose Estimation from Egocentric Thermal Images](https://arxiv.org/abs/2403.09871) | ACM SenSys 2025 | [Project](https://thermohands.github.io/) / [Code & dataset](https://github.com/LawrenceZ22/ThermoHands) <!-- work:thermohands --> |
-| 2024-01-16 | Hand-object geometry and pose, RGB, Bimanual | Tsinghua University | [TACO: Benchmarking Generalizable Bimanual Tool-ACtion-Object Understanding](https://arxiv.org/abs/2401.08399) | CVPR 2024 | [Project](https://taco2024.github.io/) / [GitHub](https://github.com/leolyliu/TACO-Instructions) <!-- work:taco --> |
-| 2023-04-24 | Hand-object geometry and pose, RGB, Monochrome, Bimanual | Meta | [AssemblyHands: Towards Egocentric Activity Understanding via 3D Hand Pose Estimation](https://arxiv.org/abs/2304.12301) | CVPR 2023 | [Project](https://assemblyhands.github.io/) / [GitHub](https://github.com/facebookresearch/assemblyhands-toolkit) <!-- work:assemblyhands --> |
-| 2022-08-07 | Hand-object geometry and pose, RGB, Hands and objects | — | [Fine-Grained Egocentric Hand-Object Segmentation: Dataset, Model, and Applications](https://arxiv.org/abs/2208.03826) | ECCV 2022 | [Project](https://github.com/owenzlz/EgoHOS) <!-- work:egohos --> |
-| 2022-04-28 | Hand-object geometry and pose, RGB, Bimanual | Max Planck Institute for Intelligent Systems | [ARCTIC: A Dataset for Dexterous Bimanual Hand-Object Manipulation](https://arxiv.org/abs/2204.13662) | CVPR 2023 | [Project](https://arctic.is.tue.mpg.de/) / [GitHub](https://github.com/zc-alexfan/arctic) <!-- work:arctic --> |
-| 2022-03-24 | Egocentric, RGB-D, IMU, Action target | New York University | [Egocentric Prediction of Action Target in 3D](https://arxiv.org/abs/2203.13116) | CVPR 2022 | [Project](https://ai4ce.github.io/EgoPAT3D/) / [Code & dataset](https://github.com/ai4ce/EgoPAT3D) <!-- work:egopat3d --> |
-| 2022-03-03 | Hand-object geometry and pose, RGB, Depth, Hands and objects | — | [HOI4D: A 4D Egocentric Dataset for Category-Level Human-Object Interaction](https://arxiv.org/abs/2203.01577) | CVPR 2022 | [Project](https://hoi4d.github.io/) / [GitHub](https://github.com/leolyliu/HOI4D-Instructions) <!-- work:hoi4d --> |
-| 2021-04-22 | Hand-object geometry and pose, RGB, Depth, Bimanual | ETH Zürich | [H2O: Two Hands Manipulating Objects for First Person Interaction Recognition](https://arxiv.org/abs/2104.11181) | ICCV 2021 | [Project](https://taeinkwon.com/projects/h2o/) / [GitHub](https://github.com/taeinkwon/h2odataset) / [Dataset](https://h2odataset.ethz.ch/) <!-- work:h2o --> |
-| 2020-08-21 | Hand-object geometry and pose, RGB, Bimanual, Reference data | Facebook Reality Labs | [InterHand2.6M: A Dataset and Baseline for 3D Interacting Hand Pose Estimation from a Single RGB Image](https://arxiv.org/abs/2008.09309) | ECCV 2020 | [Project](https://mks0601.github.io/InterHand2.6M/) / [GitHub](https://github.com/facebookresearch/InterHand2.6M) / [Dataset](https://mks0601.github.io/InterHand2.6M/#download) <!-- work:interhand26m --> |
-| 2017-04-08 | Hand-object geometry and pose, RGB, Depth, Single hand | — | [First-Person Hand Action Benchmark with RGB-D Videos and 3D Hand Pose Annotations](https://arxiv.org/abs/1704.02463) | CVPR 2018 | [Project](https://guiggh.github.io/publications/first-person-hands/) / [GitHub](https://github.com/guiggh/hand_pose_action) <!-- work:fpha --> |
-| 2017-04-07 | Egocentric, RGB-D, Fingertip annotation, Occlusion | Max Planck Institute for Informatics | [Real-time Hand Tracking under Occlusion from an Egocentric RGB-D Sensor](https://arxiv.org/abs/1704.02201) | ICCV 2017 | [Dataset](https://handtracker.mpi-inf.mpg.de/projects/OccludedHands/EgoDexter.htm) / [Download](https://handtracker.mpi-inf.mpg.de/data/EgoDexter/) <!-- work:egodexter --> |
-
-### Whole-body and multimodal
-
-全身与多模态。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
-| :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2025-10-17 | Whole-body and multimodal, RGB, Monochrome, IMU, Eye tracking, Audio, PPG, Head hands and environment | Meta Reality Labs | [Aria Gen 2 Pilot Dataset](https://arxiv.org/abs/2510.16134) | arXiv 2025 | [Project](https://www.projectaria.com/datasets/gen2pilot/) / [GitHub](https://github.com/facebookresearch/projectaria_tools) <!-- work:aria-gen2-pilot --> |
-| 2024-06-14 | Whole-body and multimodal, RGB, Monochrome, IMU, Eye tracking, Audio, Whole body | Meta Reality Labs | [Nymeria: A Massive Collection of Multimodal Egocentric Daily Motion in the Wild](https://arxiv.org/abs/2406.09905) | ECCV 2024 | [Project](https://github.com/facebookresearch/nymeria_dataset) / [Dataset](https://www.projectaria.com/datasets/nymeria/) <!-- work:nymeria --> |
-| 2024-02-20 | Whole-body and multimodal, RGB, Monochrome, IMU, Eye tracking, Audio, Head and environment | Meta Reality Labs | [Aria Everyday Activities Dataset](https://arxiv.org/abs/2402.13349) | arXiv 2024 | [Project](https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset) / [GitHub](https://github.com/facebookresearch/projectaria_tools) / [Dataset](https://huggingface.co/datasets/projectaria/aria-everyday-activities) <!-- work:aria-everyday-activities --> |
-| 2024-01-16 | Whole-body and multimodal, RGB, Depth, Whole body and environment | ETH Zürich | [EgoGen: An Egocentric Synthetic Data Generator](https://arxiv.org/abs/2401.08739) | CVPR 2024 | [Project](https://ego-gen.github.io/) / [GitHub](https://github.com/ligengen/EgoGen) <!-- work:ego-gen --> |
-| 2023-12-30 | Egocentric, Stereo fisheye, Whole body, Real/synthetic | Max Planck Institute for Informatics | [3D Human Pose Perception from Egocentric Stereo Videos](https://arxiv.org/abs/2401.00889) | CVPR 2024 | [Dataset](https://unrealego.mpi-inf.mpg.de/) / [Project](https://4dqv.mpi-inf.mpg.de/UnrealEgo2/) / [Code](https://github.com/hiroyasuakada/3D-Human-Pose-Perception-from-Egocentric-Stereo-Videos) <!-- work:unrealego --> |
-| 2023-09-29 | Whole-body and multimodal, RGB, Depth, IMU, Eye tracking, Audio, Hands and upper body | Microsoft | [HoloAssist: an Egocentric Human Interaction Dataset for Interactive AI Assistants in the Real World](https://arxiv.org/abs/2309.17024) | ICCV 2023 | [Project](https://holoassist.github.io/) / [GitHub](https://github.com/Ember-HoloAssist/holoassist-release) <!-- work:holoassist --> |
-| 2023-09-21 | Stereo video, IMU, Navigation, Mixed real/synthetic | Google Research | [SANPO: A Scene Understanding, Accessibility and Human Navigation Dataset](https://arxiv.org/abs/2309.12172) | arXiv 2023 | [Project](https://google-research-datasets.github.io/sanpo_dataset/) / [GitHub](https://github.com/google-research-datasets/sanpo_dataset) <!-- work:sanpo --> |
-| 2023-06-10 | Whole-body and multimodal, RGB, Monochrome, IMU, Eye tracking, Whole body and environment | Meta Reality Labs | [Aria Digital Twin: A New Benchmark Dataset for Egocentric 3D Machine Perception](https://arxiv.org/abs/2306.06362) | ICCV 2023 | [Project](https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset) / [GitHub](https://github.com/facebookresearch/projectaria_tools) / [Dataset](https://huggingface.co/datasets/projectaria/aria-digital-twin) <!-- work:aria-digital-twin --> |
-| 2021-12-14 | Whole-body and multimodal, RGB, Depth, Eye tracking, Whole body | ETH Zürich | [EgoBody: Human Body Shape and Motion of Interacting People from Head-Mounted Devices](https://arxiv.org/abs/2112.07642) | ECCV 2022 | [Project](https://sanweiliti.github.io/egobody/egobody.html) / [GitHub](https://github.com/sanweiliti/EgoBody) / [Dataset](https://sanweiliti.github.io/egobody/egobody.html#dataset-download) <!-- work:egobody --> |
-
-### Touch force and EMG
-
-触觉、力与肌电。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
-| :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2026-10-07 | RGB-D, IMU, Bimanual pressure, 100 h public subset | Texas A&M University | [TouchScale: 500 Hours of Human Vision and Touch for Visual-Tactile Learning](https://arxiv.org/abs/2610.10288) | arXiv 2026 | [Project](https://touch-scale.github.io/) / [GitHub](https://github.com/phai-lab/touchscale) / [Dataset](https://huggingface.co/datasets/2077AIDataFoundation/TouchScale) <!-- work:touchscale --> |
-| 2026-08-15 | RGB, IMU, Tactile, Bimanual, Zarr | Shanghai Qi Zhi Institute | [EgoTac: In-the-wild Tactile Prediction from Egocentric Vision](https://arxiv.org/abs/2608.15060) | arXiv | [Project](https://egotac.github.io/) / [Code](https://github.com/Mr-Zwkid/EgoTac) / [Dataset](https://huggingface.co/datasets/wkzhang/EgoTac-SC) <!-- work:egotac --> |
-| 2026-06-08 | RGB, Tactile, Grasp pressure, Bare-hand transfer | Tsinghua University | [EgoTactile: Learning Grasp Pressure for Everyday Objects from Egocentric Video](https://arxiv.org/abs/2606.09243) | ICML 2026 | [Project](https://egotactile.github.io/) / [Code](https://github.com/Russell-Zeng/EgoTactile) / [Dataset](https://huggingface.co/datasets/HustleHard/EgoTactile) <!-- work:egotactile --> |
-| 2026-05-13 | Touch force and EMG, RGB, Pressure, Bimanual | HIT Shenzhen | [TouchAnything: A Dataset and Framework for Bimanual Tactile Estimation from Egocentric Video](https://arxiv.org/abs/2605.13083) | arXiv 2026 | [Project](https://jianyi2004.github.io/TouchAnything-Website/) / [GitHub](https://github.com/Jianyi2004/TouchAnything) / [Dataset](https://huggingface.co/datasets/zhouzhoujy/EgoTouch) <!-- work:egotouch --> |
-| 2026-05-07 | Touch force and EMG, RGB, EMG, IMU, Bimanual | Tsinghua | [EgoEMG: A Multimodal Egocentric Dataset with Bilateral EMG and Vision for Hand Pose Estimation](https://arxiv.org/abs/2605.05712) | arXiv | [Code](https://github.com/zhenqis123/EgoEMG) <!-- work:egoemg --> |
-| 2026-03-16 | RGB, Audio, Force, Contact | University of Maryland | [FEEL (Force-Enhanced Egocentric Learning): A Dataset for Physical Action Understanding](https://arxiv.org/abs/2603.15847) | ECCV 2026 | [Project](https://www.cs.umd.edu/~edessale/feel) / [Dataset](https://huggingface.co/datasets/edessa/feel) <!-- work:feel --> |
-| 2025-12-18 | Egocentric, RGB, Tactile, IMU, Gaze, Audio | MIT | [OPENTOUCH: Bringing Full-Hand Touch to Real-World Interaction](https://arxiv.org/abs/2512.16842) | arXiv | [Project](https://opentouch-tactile.github.io/) / [Code & dataset](https://github.com/OpenTouch-MIT/opentouch) <!-- work:opentouch --> |
-| 2024-12-02 | Touch force and EMG, EMG, Single-hand samples, Reference data | Meta Reality Labs | [emg2pose: A Large and Diverse Benchmark for Surface Electromyographic Hand Pose Estimation](https://arxiv.org/abs/2412.02725) | NeurIPS 2024 | [Project](https://github.com/facebookresearch/emg2pose) / [Dataset](https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar) <!-- work:emg2pose --> |
-| 2024-09-03 | Touch force and EMG, RGB, Depth, Pressure, Single hand | ETH Zürich | [EgoPressure: A Dataset for Hand Pressure and Pose Estimation in Egocentric Vision](https://arxiv.org/abs/2409.02224) | CVPR 2025 | [Project](https://yiming-zhao.github.io/EgoPressure/) / [Project](https://siplab.org/projects/EgoPressure) / [GitHub](https://github.com/eth-siplab/EgoPressure) / [Dataset](https://dataset.egopressure.inf.ethz.ch/) <!-- work:egopressure --> |
-| 2022-11-22 | Touch force and EMG, RGB, Tactile, Probe-mediated touch | University of Michigan | [Touch and Go: Learning from Human-Collected Vision and Touch](https://arxiv.org/abs/2211.12498) | NeurIPS 2022 | [Project](https://touch-and-go.github.io/) / [GitHub](https://github.com/fredfyyang/Touch-and-Go) / [Dataset](https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B) <!-- work:touch-and-go --> |
-| 2022 | Wearable, EMG, IMU, Gaze, Tactile, RGB-D reference | MIT CSAIL | [ActionSense: A Multimodal Dataset and Recording Framework for Human Activities Using Wearable Sensors in a Kitchen Environment](https://action-sense.csail.mit.edu/) | NeurIPS 2022 Datasets & Benchmarks | [Dataset](https://action-sense.csail.mit.edu/data.html) / [Sensor specification](https://action-sense.csail.mit.edu/dataset_info.html) / [Code](https://github.com/delpreto/ActionNet) <!-- work:actionsense --> |
-
-### Robot demonstration and transfer
-
-机器人示范与迁移。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
-| :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2026-09-23 | Egocentric, Six RGB views, Derived depth, MANO, MCAP | GenRobot | [Gen-HumanEgo: Egocentric Human Demonstrations with Structured Supervision](https://huggingface.co/datasets/genrobot2025/Gen-HumanEgo) | Official dataset | [Technical blog](https://www.genrobot.ai/blog/gen-human-ego) / [Data specification](https://docs.genrobot.ai/guides/das-ego-data-introduction) / [Tools](https://github.com/genrobot-ai/das-datakit) <!-- work:gen-humanego --> |
-| 2026-08-08 | Egocentric, Stereo RGB, IMU subset, Action captions | FPV Labs | [Ego-OSCAR: Egocentric Open source Stereo CAptuRe System](https://arxiv.org/abs/2608.08285) | arXiv | [Code & hardware](https://github.com/fpv-labs/ego-oscar) / [Dataset](https://huggingface.co/datasets/fpvlabs/stereo-550) <!-- work:ego-oscar --> |
-| 2026-08 | Egocentric, RGB, Hand pose, Body pose, LeRobot, MCAP | Lightwheel | [EgoDemo: 50-hour sample from EgoSuite-Open100K](https://huggingface.co/datasets/LightwheelAI/EgoDemo) | Official dataset | [Collection](https://huggingface.co/collections/LightwheelAI/egosuite-open100k) / [Technical overview](https://huggingface.co/blog/LightwheelAI/egosuite-open100k) <!-- work:egodemo --> |
-| 2026-04-08 | Robot demonstration and transfer, RGB, Bimanual | EgoVerse consortium | [EgoVerse: An Egocentric Human Dataset for Robot Learning from Around the World](https://arxiv.org/abs/2604.07607) | arXiv 2026 | [Project](https://egoverse.ai/) / [GitHub](https://github.com/GaTech-RL2/EgoVerse) / [Dataset](https://egoverse-research-workbench.vercel.app/) <!-- work:egoverse --> |
-| 2025-12-30 | RGB/IR, IMU, Glove motion, Bimanual | TARS Robotics | [World In Your Hands: A Large-Scale and Open-Source Ecosystem for Learning Human-Centric Manipulation in the Wild](https://arxiv.org/abs/2512.24310) | arXiv 2025 | [Project](https://wiyh.tars-ai.com/) / [GitHub](https://github.com/tars-robotics/World-In-Your-Hands) <!-- work:world-in-your-hands --> |
-| 2025-05-16 | Robot demonstration and transfer, RGB, Hands and upper body | Apple | [EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video](https://arxiv.org/abs/2505.11709) | ICLR 2026 | [Project](https://github.com/apple-aiml-research/ml-egodex) / [Dataset](https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download) <!-- work:egodex --> |
-| 2025-05-12 | Wearable, RGB, Glove motion, Human/robot, HDF5 | Carnegie Mellon | [DexWild: Dexterous Human Interactions for In-the-Wild Robot Policies](https://arxiv.org/abs/2505.07813) | RSS 2025 | [Project](https://dexwild.github.io/) / [Code](https://github.com/dexwild/dexwild) / [Dataset](https://huggingface.co/datasets/boardd/dexwild-dataset) <!-- work:dexwild --> |
-
 ## Methods and Toolchains
 
-方法与工具链。Organized by the transformation they perform; inputs, output frame/scale, supervision and evidence are available in the visual atlas.
+Organized by the transformation they perform; inputs, output frame/scale, supervision and evidence are available in the visual atlas.
 
 ### Hand reconstruction
 
-手部重建。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-09-28 | Hand reconstruction, Human video, Hand, RGB, Stereo | City University of Hong Kong | [ESTHER: Egocentric Stereo Hand Estimation and Reconstruction in the Wild](https://arxiv.org/abs/2609.34817) | arXiv | — <!-- work:esther --> |
 | 2026-09-15 | Hand reconstruction, Wearable capture, Hand, Event | Keio University | [EventEgoHands++: Event-based Egocentric 3D Hand Mesh Reconstruction with Real Dataset](https://arxiv.org/abs/2609.17189) | IEEE Access 2026 | [Code](https://github.com/ryhara/EventEgoHandsV2) / [Project](https://ryhara.github.io/EventEgoHandsV2/) <!-- work:eventegohands-plus-plus --> |
@@ -338,9 +204,7 @@ or policy stages. They are not limited to an extra tag on hand reconstruction.
 
 ### World-space and body motion
 
-世界坐标与身体运动。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-09-28 | World-space and body motion, Wearable capture, Hand, RGB | Shanghai AI Laboratory | [InfiniHand: Streaming World-Space Hand Motion Estimation from Egocentric Video](https://arxiv.org/abs/2609.35743) | arXiv | [Code](https://github.com/infinihand/InfiniHand) <!-- work:infinihand --> |
 | 2026-09-04 | World-space and body motion, Human video, Hand, RGB | ShanghaiTech University | [MINT: A Unified Model for World-Space Camera and Hand Motion Estimation from Scalable Egocentric Pipeline Supervision](https://arxiv.org/abs/2609.04958) | arXiv | [Code](https://github.com/wuji-technology/wuji-ego-mint) <!-- work:mint --> |
@@ -361,9 +225,7 @@ or policy stages. They are not limited to an extra tag on hand reconstruction.
 
 ### Hand-object interaction
 
-手物交互。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-10-01 | Hand-object interaction, Human video, Hand, RGB | Shanghai Jiao Tong University | [EgoFound3R: End-to-End Egocentric Hand Reconstruction in World Space with Point-Wise Interaction Attributes](https://arxiv.org/abs/2610.01210) | arXiv | [Project](https://mint-sjtu.github.io/EgoFound3R.io/) <!-- work:egofound3r --> |
 | 2026-09-17 | Hand-object interaction, Human video, Hand, RGB | Tsinghua University | [TouchSight: Bare-Handed Tactile Prediction from Egocentric Video via Generative Visual Augmentation](https://arxiv.org/abs/2609.20414) | arXiv | — <!-- work:touchsight --> |
@@ -377,9 +239,7 @@ or policy stages. They are not limited to an extra tag on hand reconstruction.
 
 ### Demonstration translation
 
-机器人示范转换。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-09-09 | Demonstration translation, Human video, Hand, RGB | RLWRLD | [HuRo: Robotizing Human Videos for Scalable VLA Pretraining](https://arxiv.org/abs/2609.10706) | arXiv | [Code](https://github.com/3587jjh/HuRo) / [Project](https://3587jjh.github.io/HuRo) <!-- work:huro --> |
 | 2026-09-07 | Demonstration translation, Wearable capture, Hand, Tactile | Tsinghua University | [Dex-X: Learning Visual-Tactile Dexterous Manipulation From Human Videos with Simulated Interaction](https://arxiv.org/abs/2609.07747) | arXiv | [Code](https://github.com/gcfy63821/dexx_lab) <!-- work:dex-x --> |
@@ -393,9 +253,7 @@ or policy stages. They are not limited to an extra tag on hand reconstruction.
 
 ### Representation and latent actions
 
-表征与隐式动作。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-07-08 | Representation and latent actions, Human video, Hand, RGB | — | [EgoWAM: World Action Models Beyond Pixels with In-the-Wild Egocentric Human Data](https://arxiv.org/abs/2607.08436) | arXiv | [Code](https://github.com/GaTech-RL2/EgoWAM) / [Project](https://gatech-rl2.github.io/egowam.github.io) <!-- work:egowam --> |
 | 2025-12-15 | Representation and latent actions, Human video, Hand, RGB | — | [World Models for Learning Dexterous Hand-Object Interactions from Human Videos](https://arxiv.org/abs/2512.13644) | arXiv | [Code](https://github.com/facebookresearch/dexwm) <!-- work:dexwm --> |
@@ -411,15 +269,97 @@ or policy stages. They are not limited to an extra tag on hand reconstruction.
 | 2022-09-30 | Representation and latent actions, Human video, Hand, RGB | — | [VIP: Towards Universal Visual Reward and Representation via Value-Implicit Pre-Training](https://arxiv.org/abs/2210.00030) | arXiv | [Code](https://github.com/facebookresearch/vip) <!-- work:vip --> |
 | 2022-03-23 | Representation and latent actions, Human video, Hand, RGB, Language | — | [R3M: A Universal Visual Representation for Robot Manipulation](https://arxiv.org/abs/2203.12601) | arXiv | [Code](https://github.com/facebookresearch/r3m) / [Project](https://tinyurl.com/robotr3m) <!-- work:r3m --> |
 
+## Datasets
+
+Video, pose, whole-body, touch/force/EMG and robot-transfer assets. Reference and synthetic resources are explicitly marked in keywords; their signal pairing and evidence differ.
+
+### Video and activity
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2025-03-05 | Video and activity, RGB, Audio, Daily activity and environment | NTU S-Lab | [EgoLife: Towards Egocentric Life Assistant](https://arxiv.org/abs/2503.03803) | CVPR 2025 | [Project](https://egolife-ai.github.io/blog/) / [Dataset](https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342) <!-- work:egolife --> |
+| 2025-03-02 | Derived annotations, RGB, Hand-object dynamics, Video-language | Zhejiang University | [Modeling Fine-Grained Hand-Object Dynamics for Egocentric Video Representation Learning](https://arxiv.org/abs/2503.00986) | ICLR 2025 | [Code](https://github.com/InternRobotics/EgoHOD) / [Dataset](https://huggingface.co/datasets/Jazzcharles/EgoHOD) <!-- work:egohod --> |
+| 2025-02-06 | Video and activity, RGB, Monochrome, IMU, Eye tracking, Audio, Hands and environment | University of Bristol | [HD-EPIC: A Highly-Detailed Egocentric Video Dataset](https://arxiv.org/abs/2502.04144) | CVPR 2025 | [Project](https://hd-epic.github.io/site/) / [GitHub](https://github.com/hd-epic/hd-epic-annotations) / [Dataset](https://hd-epic.github.io/site/#download) <!-- work:hd-epic --> |
+| 2024-03-24 | Ego/exo, RGB, Gaze, Procedures | Shanghai AI Laboratory | [EgoExoLearn: A Dataset for Bridging Asynchronous Ego- and Exo-centric View of Procedural Activities in Real World](https://arxiv.org/abs/2403.16182) | CVPR 2024 | [Project](https://egoexolearn.github.io/) / [Code](https://github.com/OpenGVLab/EgoExoLearn) / [Dataset](https://huggingface.co/datasets/hyf015/EgoExoLearn) <!-- work:egoexolearn --> |
+| 2023-11-30 | Video and activity, RGB, Monochrome, IMU, Eye tracking, Audio, Hands and whole body | Ego-Exo4D consortium | [Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives](https://arxiv.org/abs/2311.18259) | CVPR 2024 | [Project](https://ego-exo4d-data.org/) / [GitHub](https://github.com/facebookresearch/Ego4d) / [Dataset](https://docs.ego-exo4d-data.org/) <!-- work:ego-exo4d --> |
+| 2023-09-26 | Egocentric, RGB, Industrial repair, Procedures | University of Catania | [ENIGMA-51: Towards a Fine-Grained Understanding of Human-Object Interactions in Industrial Scenarios](https://arxiv.org/abs/2309.14809) | WACV 2024 | [Dataset](https://fpv-iplab.github.io/ENIGMA-51/) / [Code](https://github.com/fpv-iplab/ENIGMA-51) <!-- work:enigma51 --> |
+| 2022-09-19 | Egocentric, RGB-D, Gaze, Industrial assembly | University of Catania | [MECCANO: A Multimodal Egocentric Dataset for Humans Behavior Understanding in the Industrial-like Domain](https://arxiv.org/abs/2209.08691) | CVIU 2023 | [Dataset](https://iplab.dmi.unict.it/legacy/MECCANO/) / [Code](https://github.com/fpv-iplab/MECCANO) <!-- work:meccano --> |
+| 2022-03-28 | Video and activity, RGB, Monochrome, Bimanual | Assembly101 collaboration | [Assembly101: A Large-Scale Multi-View Video Dataset for Understanding Procedural Activities](https://arxiv.org/abs/2203.14712) | CVPR 2022 | [Project](https://assembly-101.github.io/) / [GitHub](https://github.com/assembly-101/assembly101-annotations) / [Dataset](https://huggingface.co/datasets/cvml-nus/assembly101) <!-- work:assembly101 --> |
+| 2021-10-13 | Video and activity, RGB, Audio, Hands and daily activity | Ego4D consortium | [Ego4D: Around the World in 3,000 Hours of Egocentric Video](https://arxiv.org/abs/2110.07058) | CVPR 2022 | [Project](https://ego4d-data.org/) / [GitHub](https://github.com/facebookresearch/Ego4d) / [Dataset](https://ego4d-data.org/docs/start-here/) <!-- work:ego4d --> |
+| 2020-06-23 | Video and activity, RGB, Audio, Hands and daily activity | University of Bristol | [Rescaling Egocentric Vision](https://arxiv.org/abs/2006.13256) | IJCV 2022 | [Project](https://epic-kitchens.github.io/2025) / [GitHub](https://github.com/epic-kitchens/epic-kitchens-100-annotations) / [Dataset](https://epic-kitchens.github.io/2025#downloads) <!-- work:epic-kitchens --> |
+| 2020-05-31 | Egocentric, RGB, Gaze, Hand masks, Cooking | University of Wisconsin–Madison | [In the Eye of the Beholder: Gaze and Actions in First Person Video](https://arxiv.org/abs/2006.00626) | IEEE TPAMI (2021 early access) | [Dataset](https://cbs.ic.gatech.edu/fpv/) / [Original paper](https://www.ecva.net/papers/eccv_2018/papers_ECCV/papers/Yin_Li_In_the_Eye_ECCV_2018_paper.pdf) <!-- work:egtea-gaze-plus --> |
+| 2018-02-21 | Video and activity, RGB, Depth, Hands | Chinese Academy of Sciences | [EgoGesture](https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html) | IEEE TMM 2018 | — <!-- work:egogesture --> |
+
+### Hand-object geometry and pose
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-03-30 | Hand-object geometry and pose, Monochrome, Bimanual | Meta Reality Labs | [SHOW3D: Capturing Scenes of 3D Hands and Objects in the Wild](https://arxiv.org/abs/2603.28760) | CVPR 2026 | [Project](https://show3d-dataset.github.io/) / [GitHub](https://github.com/facebookresearch/show3d) / [Dataset](https://huggingface.co/datasets/facebook/show3d-dataset) <!-- work:show3d --> |
+| 2026-03-14 | 12 views, Fisheye, Stereo views, WebDataset, Parquet | Meta Reality Labs | [Ego-1K -- A Large-Scale Multiview Video Dataset for Egocentric Vision](https://arxiv.org/abs/2603.13741) | arXiv 2026 | [Project](https://huggingface.co/datasets/facebook/ego-1k) <!-- work:ego-1k --> |
+| 2024-11-28 | Hand-object geometry and pose, RGB, Monochrome, Eye tracking, Bimanual | Meta Reality Labs | [HOT3D: Hand and Object Tracking in 3D from Egocentric Multi-View Videos](https://arxiv.org/abs/2411.19167) | CVPR 2025 | [Project](https://facebookresearch.github.io/hot3d/) / [GitHub](https://github.com/facebookresearch/hot3d) / [Dataset](https://huggingface.co/datasets/projectaria/hot3d) <!-- work:hot3d --> |
+| 2024-06-10 | Hand-object geometry and pose, RGB, Depth, Hands and objects | UT Dallas | [HO-Cap: A Capture System and Dataset for 3D Reconstruction and Pose Tracking of Hand-Object Interaction](https://arxiv.org/abs/2406.06843) | NeurIPS 2025 Datasets & Benchmarks | [Project](https://irvlutd.github.io/HOCap/) / [GitHub](https://github.com/IRVLUTD/HO-Cap) / [Dataset](https://irvlutd.github.io/HOCap/#data) <!-- work:hocap --> |
+| 2024-03-28 | Hand-object geometry and pose, RGB, Bimanual and upper body | Shanghai Jiao Tong University | [OAKINK2: A Dataset of Bimanual Hands-Object Manipulation in Complex Task Completion](https://arxiv.org/abs/2403.19417) | CVPR 2024 | [Project](https://oakink.net/v2/) / [GitHub](https://github.com/oakink/OakInk2) <!-- work:oakink2 --> |
+| 2024-03-14 | Egocentric, Thermal, RGB-D, NIR, Bimanual | University of Edinburgh | [ThermoHands: A Benchmark for 3D Hand Pose Estimation from Egocentric Thermal Images](https://arxiv.org/abs/2403.09871) | ACM SenSys 2025 | [Project](https://thermohands.github.io/) / [Code & dataset](https://github.com/LawrenceZ22/ThermoHands) <!-- work:thermohands --> |
+| 2024-01-16 | Hand-object geometry and pose, RGB, Bimanual | Tsinghua University | [TACO: Benchmarking Generalizable Bimanual Tool-ACtion-Object Understanding](https://arxiv.org/abs/2401.08399) | CVPR 2024 | [Project](https://taco2024.github.io/) / [GitHub](https://github.com/leolyliu/TACO-Instructions) <!-- work:taco --> |
+| 2023-04-24 | Hand-object geometry and pose, RGB, Monochrome, Bimanual | Meta | [AssemblyHands: Towards Egocentric Activity Understanding via 3D Hand Pose Estimation](https://arxiv.org/abs/2304.12301) | CVPR 2023 | [Project](https://assemblyhands.github.io/) / [GitHub](https://github.com/facebookresearch/assemblyhands-toolkit) <!-- work:assemblyhands --> |
+| 2022-08-07 | Hand-object geometry and pose, RGB, Hands and objects | — | [Fine-Grained Egocentric Hand-Object Segmentation: Dataset, Model, and Applications](https://arxiv.org/abs/2208.03826) | ECCV 2022 | [Project](https://github.com/owenzlz/EgoHOS) <!-- work:egohos --> |
+| 2022-04-28 | Hand-object geometry and pose, RGB, Bimanual | Max Planck Institute for Intelligent Systems | [ARCTIC: A Dataset for Dexterous Bimanual Hand-Object Manipulation](https://arxiv.org/abs/2204.13662) | CVPR 2023 | [Project](https://arctic.is.tue.mpg.de/) / [GitHub](https://github.com/zc-alexfan/arctic) <!-- work:arctic --> |
+| 2022-03-24 | Egocentric, RGB-D, IMU, Action target | New York University | [Egocentric Prediction of Action Target in 3D](https://arxiv.org/abs/2203.13116) | CVPR 2022 | [Project](https://ai4ce.github.io/EgoPAT3D/) / [Code & dataset](https://github.com/ai4ce/EgoPAT3D) <!-- work:egopat3d --> |
+| 2022-03-03 | Hand-object geometry and pose, RGB, Depth, Hands and objects | — | [HOI4D: A 4D Egocentric Dataset for Category-Level Human-Object Interaction](https://arxiv.org/abs/2203.01577) | CVPR 2022 | [Project](https://hoi4d.github.io/) / [GitHub](https://github.com/leolyliu/HOI4D-Instructions) <!-- work:hoi4d --> |
+| 2021-04-22 | Hand-object geometry and pose, RGB, Depth, Bimanual | ETH Zürich | [H2O: Two Hands Manipulating Objects for First Person Interaction Recognition](https://arxiv.org/abs/2104.11181) | ICCV 2021 | [Project](https://taeinkwon.com/projects/h2o/) / [GitHub](https://github.com/taeinkwon/h2odataset) / [Dataset](https://h2odataset.ethz.ch/) <!-- work:h2o --> |
+| 2020-08-21 | Hand-object geometry and pose, RGB, Bimanual, Reference data | Facebook Reality Labs | [InterHand2.6M: A Dataset and Baseline for 3D Interacting Hand Pose Estimation from a Single RGB Image](https://arxiv.org/abs/2008.09309) | ECCV 2020 | [Project](https://mks0601.github.io/InterHand2.6M/) / [GitHub](https://github.com/facebookresearch/InterHand2.6M) / [Dataset](https://mks0601.github.io/InterHand2.6M/#download) <!-- work:interhand26m --> |
+| 2017-04-08 | Hand-object geometry and pose, RGB, Depth, Single hand | — | [First-Person Hand Action Benchmark with RGB-D Videos and 3D Hand Pose Annotations](https://arxiv.org/abs/1704.02463) | CVPR 2018 | [Project](https://guiggh.github.io/publications/first-person-hands/) / [GitHub](https://github.com/guiggh/hand_pose_action) <!-- work:fpha --> |
+| 2017-04-07 | Egocentric, RGB-D, Fingertip annotation, Occlusion | Max Planck Institute for Informatics | [Real-time Hand Tracking under Occlusion from an Egocentric RGB-D Sensor](https://arxiv.org/abs/1704.02201) | ICCV 2017 | [Dataset](https://handtracker.mpi-inf.mpg.de/projects/OccludedHands/EgoDexter.htm) / [Download](https://handtracker.mpi-inf.mpg.de/data/EgoDexter/) <!-- work:egodexter --> |
+
+### Whole-body and multimodal
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2025-10-17 | Whole-body and multimodal, RGB, Monochrome, IMU, Eye tracking, Audio, PPG, Head hands and environment | Meta Reality Labs | [Aria Gen 2 Pilot Dataset](https://arxiv.org/abs/2510.16134) | arXiv 2025 | [Project](https://www.projectaria.com/datasets/gen2pilot/) / [GitHub](https://github.com/facebookresearch/projectaria_tools) <!-- work:aria-gen2-pilot --> |
+| 2024-06-14 | Whole-body and multimodal, RGB, Monochrome, IMU, Eye tracking, Audio, Whole body | Meta Reality Labs | [Nymeria: A Massive Collection of Multimodal Egocentric Daily Motion in the Wild](https://arxiv.org/abs/2406.09905) | ECCV 2024 | [Project](https://github.com/facebookresearch/nymeria_dataset) / [Dataset](https://www.projectaria.com/datasets/nymeria/) <!-- work:nymeria --> |
+| 2024-02-20 | Whole-body and multimodal, RGB, Monochrome, IMU, Eye tracking, Audio, Head and environment | Meta Reality Labs | [Aria Everyday Activities Dataset](https://arxiv.org/abs/2402.13349) | arXiv 2024 | [Project](https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_everyday_activities_dataset) / [GitHub](https://github.com/facebookresearch/projectaria_tools) / [Dataset](https://huggingface.co/datasets/projectaria/aria-everyday-activities) <!-- work:aria-everyday-activities --> |
+| 2024-01-16 | Whole-body and multimodal, RGB, Depth, Whole body and environment | ETH Zürich | [EgoGen: An Egocentric Synthetic Data Generator](https://arxiv.org/abs/2401.08739) | CVPR 2024 | [Project](https://ego-gen.github.io/) / [GitHub](https://github.com/ligengen/EgoGen) <!-- work:ego-gen --> |
+| 2023-12-30 | Egocentric, Stereo fisheye, Whole body, Real/synthetic | Max Planck Institute for Informatics | [3D Human Pose Perception from Egocentric Stereo Videos](https://arxiv.org/abs/2401.00889) | CVPR 2024 | [Dataset](https://unrealego.mpi-inf.mpg.de/) / [Project](https://4dqv.mpi-inf.mpg.de/UnrealEgo2/) / [Code](https://github.com/hiroyasuakada/3D-Human-Pose-Perception-from-Egocentric-Stereo-Videos) <!-- work:unrealego --> |
+| 2023-09-29 | Whole-body and multimodal, RGB, Depth, IMU, Eye tracking, Audio, Hands and upper body | Microsoft | [HoloAssist: an Egocentric Human Interaction Dataset for Interactive AI Assistants in the Real World](https://arxiv.org/abs/2309.17024) | ICCV 2023 | [Project](https://holoassist.github.io/) / [GitHub](https://github.com/Ember-HoloAssist/holoassist-release) <!-- work:holoassist --> |
+| 2023-09-21 | Stereo video, IMU, Navigation, Mixed real/synthetic | Google Research | [SANPO: A Scene Understanding, Accessibility and Human Navigation Dataset](https://arxiv.org/abs/2309.12172) | arXiv 2023 | [Project](https://google-research-datasets.github.io/sanpo_dataset/) / [GitHub](https://github.com/google-research-datasets/sanpo_dataset) <!-- work:sanpo --> |
+| 2023-06-10 | Whole-body and multimodal, RGB, Monochrome, IMU, Eye tracking, Whole body and environment | Meta Reality Labs | [Aria Digital Twin: A New Benchmark Dataset for Egocentric 3D Machine Perception](https://arxiv.org/abs/2306.06362) | ICCV 2023 | [Project](https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset) / [GitHub](https://github.com/facebookresearch/projectaria_tools) / [Dataset](https://huggingface.co/datasets/projectaria/aria-digital-twin) <!-- work:aria-digital-twin --> |
+| 2021-12-14 | Whole-body and multimodal, RGB, Depth, Eye tracking, Whole body | ETH Zürich | [EgoBody: Human Body Shape and Motion of Interacting People from Head-Mounted Devices](https://arxiv.org/abs/2112.07642) | ECCV 2022 | [Project](https://sanweiliti.github.io/egobody/egobody.html) / [GitHub](https://github.com/sanweiliti/EgoBody) / [Dataset](https://sanweiliti.github.io/egobody/egobody.html#dataset-download) <!-- work:egobody --> |
+
+### Touch force and EMG
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-07 | RGB-D, IMU, Bimanual pressure, 100 h public subset | Texas A&M University | [TouchScale: 500 Hours of Human Vision and Touch for Visual-Tactile Learning](https://arxiv.org/abs/2610.10288) | arXiv 2026 | [Project](https://touch-scale.github.io/) / [GitHub](https://github.com/phai-lab/touchscale) / [Dataset](https://huggingface.co/datasets/2077AIDataFoundation/TouchScale) <!-- work:touchscale --> |
+| 2026-08-15 | RGB, IMU, Tactile, Bimanual, Zarr | Shanghai Qi Zhi Institute | [EgoTac: In-the-wild Tactile Prediction from Egocentric Vision](https://arxiv.org/abs/2608.15060) | arXiv | [Project](https://egotac.github.io/) / [Code](https://github.com/Mr-Zwkid/EgoTac) / [Dataset](https://huggingface.co/datasets/wkzhang/EgoTac-SC) <!-- work:egotac --> |
+| 2026-06-08 | RGB, Tactile, Grasp pressure, Bare-hand transfer | Tsinghua University | [EgoTactile: Learning Grasp Pressure for Everyday Objects from Egocentric Video](https://arxiv.org/abs/2606.09243) | ICML 2026 | [Project](https://egotactile.github.io/) / [Code](https://github.com/Russell-Zeng/EgoTactile) / [Dataset](https://huggingface.co/datasets/HustleHard/EgoTactile) <!-- work:egotactile --> |
+| 2026-05-13 | Touch force and EMG, RGB, Pressure, Bimanual | HIT Shenzhen | [TouchAnything: A Dataset and Framework for Bimanual Tactile Estimation from Egocentric Video](https://arxiv.org/abs/2605.13083) | arXiv 2026 | [Project](https://jianyi2004.github.io/TouchAnything-Website/) / [GitHub](https://github.com/Jianyi2004/TouchAnything) / [Dataset](https://huggingface.co/datasets/zhouzhoujy/EgoTouch) <!-- work:egotouch --> |
+| 2026-05-07 | Touch force and EMG, RGB, EMG, IMU, Bimanual | Tsinghua | [EgoEMG: A Multimodal Egocentric Dataset with Bilateral EMG and Vision for Hand Pose Estimation](https://arxiv.org/abs/2605.05712) | arXiv | [Code](https://github.com/zhenqis123/EgoEMG) <!-- work:egoemg --> |
+| 2026-03-16 | RGB, Audio, Force, Contact | University of Maryland | [FEEL (Force-Enhanced Egocentric Learning): A Dataset for Physical Action Understanding](https://arxiv.org/abs/2603.15847) | ECCV 2026 | [Project](https://www.cs.umd.edu/~edessale/feel) / [Dataset](https://huggingface.co/datasets/edessa/feel) <!-- work:feel --> |
+| 2025-12-18 | Egocentric, RGB, Tactile, IMU, Gaze, Audio | MIT | [OPENTOUCH: Bringing Full-Hand Touch to Real-World Interaction](https://arxiv.org/abs/2512.16842) | arXiv | [Project](https://opentouch-tactile.github.io/) / [Code & dataset](https://github.com/OpenTouch-MIT/opentouch) <!-- work:opentouch --> |
+| 2024-12-02 | Touch force and EMG, EMG, Single-hand samples, Reference data | Meta Reality Labs | [emg2pose: A Large and Diverse Benchmark for Surface Electromyographic Hand Pose Estimation](https://arxiv.org/abs/2412.02725) | NeurIPS 2024 | [Project](https://github.com/facebookresearch/emg2pose) / [Dataset](https://fb-ctrl-oss.s3.amazonaws.com/emg2pose/emg2pose_dataset.tar) <!-- work:emg2pose --> |
+| 2024-09-03 | Touch force and EMG, RGB, Depth, Pressure, Single hand | ETH Zürich | [EgoPressure: A Dataset for Hand Pressure and Pose Estimation in Egocentric Vision](https://arxiv.org/abs/2409.02224) | CVPR 2025 | [Project](https://yiming-zhao.github.io/EgoPressure/) / [Project](https://siplab.org/projects/EgoPressure) / [GitHub](https://github.com/eth-siplab/EgoPressure) / [Dataset](https://dataset.egopressure.inf.ethz.ch/) <!-- work:egopressure --> |
+| 2022-11-22 | Touch force and EMG, RGB, Tactile, Probe-mediated touch | University of Michigan | [Touch and Go: Learning from Human-Collected Vision and Touch](https://arxiv.org/abs/2211.12498) | NeurIPS 2022 | [Project](https://touch-and-go.github.io/) / [GitHub](https://github.com/fredfyyang/Touch-and-Go) / [Dataset](https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B) <!-- work:touch-and-go --> |
+| 2022 | Wearable, EMG, IMU, Gaze, Tactile, RGB-D reference | MIT CSAIL | [ActionSense: A Multimodal Dataset and Recording Framework for Human Activities Using Wearable Sensors in a Kitchen Environment](https://action-sense.csail.mit.edu/) | NeurIPS 2022 Datasets & Benchmarks | [Dataset](https://action-sense.csail.mit.edu/data.html) / [Sensor specification](https://action-sense.csail.mit.edu/dataset_info.html) / [Code](https://github.com/delpreto/ActionNet) <!-- work:actionsense --> |
+
+### Robot demonstration and transfer
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-09-23 | Egocentric, Six RGB views, Derived depth, MANO, MCAP | GenRobot | [Gen-HumanEgo: Egocentric Human Demonstrations with Structured Supervision](https://huggingface.co/datasets/genrobot2025/Gen-HumanEgo) | Official dataset | [Technical blog](https://www.genrobot.ai/blog/gen-human-ego) / [Data specification](https://docs.genrobot.ai/guides/das-ego-data-introduction) / [Tools](https://github.com/genrobot-ai/das-datakit) <!-- work:gen-humanego --> |
+| 2026-08-08 | Egocentric, Stereo RGB, IMU subset, Action captions | FPV Labs | [Ego-OSCAR: Egocentric Open source Stereo CAptuRe System](https://arxiv.org/abs/2608.08285) | arXiv | [Code & hardware](https://github.com/fpv-labs/ego-oscar) / [Dataset](https://huggingface.co/datasets/fpvlabs/stereo-550) <!-- work:ego-oscar --> |
+| 2026-08 | Egocentric, RGB, Hand pose, Body pose, LeRobot, MCAP | Lightwheel | [EgoDemo: 50-hour sample from EgoSuite-Open100K](https://huggingface.co/datasets/LightwheelAI/EgoDemo) | Official dataset | [Collection](https://huggingface.co/collections/LightwheelAI/egosuite-open100k) / [Technical overview](https://huggingface.co/blog/LightwheelAI/egosuite-open100k) <!-- work:egodemo --> |
+| 2026-04-08 | Robot demonstration and transfer, RGB, Bimanual | EgoVerse consortium | [EgoVerse: An Egocentric Human Dataset for Robot Learning from Around the World](https://arxiv.org/abs/2604.07607) | arXiv 2026 | [Project](https://egoverse.ai/) / [GitHub](https://github.com/GaTech-RL2/EgoVerse) / [Dataset](https://egoverse-research-workbench.vercel.app/) <!-- work:egoverse --> |
+| 2025-12-30 | RGB/IR, IMU, Glove motion, Bimanual | TARS Robotics | [World In Your Hands: A Large-Scale and Open-Source Ecosystem for Learning Human-Centric Manipulation in the Wild](https://arxiv.org/abs/2512.24310) | arXiv 2025 | [Project](https://wiyh.tars-ai.com/) / [GitHub](https://github.com/tars-robotics/World-In-Your-Hands) <!-- work:world-in-your-hands --> |
+| 2025-05-16 | Robot demonstration and transfer, RGB, Hands and upper body | Apple | [EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video](https://arxiv.org/abs/2505.11709) | ICLR 2026 | [Project](https://github.com/apple-aiml-research/ml-egodex) / [Dataset](https://github.com/apple-aiml-research/ml-egodex#dataset-access-and-download) <!-- work:egodex --> |
+| 2025-05-12 | Wearable, RGB, Glove motion, Human/robot, HDF5 | Carnegie Mellon | [DexWild: Dexterous Human Interactions for In-the-Wild Robot Policies](https://arxiv.org/abs/2505.07813) | RSS 2025 | [Project](https://dexwild.github.io/) / [Code](https://github.com/dexwild/dexwild) / [Dataset](https://huggingface.co/datasets/boardd/dexwild-dataset) <!-- work:dexwild --> |
+
 ## Robot Learning and Evaluation
 
-机器人学习与评测。Learning directly from human data, translating to robot skills, and the tools and evidence needed to evaluate the transfer.
+Learning directly from human data, translating to robot skills, and the tools and evidence needed to evaluate the transfer.
 
 ### Policy learning from human data
 
-从人类数据学习策略。
-
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-09-30 | Policy learning from human data, Human video, Hand, RGB | XPENG Robotics | [IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining](https://arxiv.org/abs/2609.39403) | arXiv | [Project](https://xpeng-robotics.github.io/ironmind/) <!-- work:ironmind --> |
 | 2026-09-29 | Policy learning from human data, Wearable capture, Whole body | OpenDriveLab | [EgoHumanoid-V2: Human-to-Humanoid Transfer of Coordinated Whole-Body Skills for Loco-Manipulation](https://arxiv.org/abs/2609.37181) | arXiv | [Project](https://opendrivelab.com/EgoHumanoid-V2/) <!-- work:egohumanoid-v2 --> |
@@ -445,15 +385,175 @@ or policy stages. They are not limited to an extra tag on hand reconstruction.
 
 ### Evaluation and toolchains
 
-评测与工具链。
+Foundations and practical tools for capture processing. General SLAM references are included for their value in sensor and trajectory design; direct Ego/UMI adoption is distinguished from potential relevance.
 
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+For a broader introduction, start with the [SLAM Handbook](https://github.com/SLAM-Handbook-contributors/slam-handbook-public-release), the [SLAM survey](https://arxiv.org/abs/1606.05830), and [micro Lie theory](https://arxiv.org/abs/1812.01537).
+
+#### SLAM
+
+Camera tracking, odometry, mapping and offline reconstruction. Each entry states its sensor requirements, metric-scale assumptions, loop closure and runtime scope in the visual atlas.
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-24 | SLAM, lidar-inertial, LiDAR, IMU | Technical University of Munich | [FAR-LIO: Enabling High-Speed Autonomy through Fast, Accurate, and Robust LiDAR-Inertial Odometry](https://arxiv.org/abs/2606.26010) | IROS 2026 | [Code](https://github.com/TUMFTM/FAR-LIO) <!-- work:far-lio --> |
+| 2026-01-27 | SLAM, VGGT-SLAM 2.0, Learned, Camera tracking, Monocular RGB | MIT | [VGGT-SLAM 2.0: Real-time Dense Feed-forward Scene Reconstruction](https://arxiv.org/abs/2601.19887) | RSS 2026 | [Code](https://github.com/MIT-SPARK/VGGT-SLAM) <!-- work:vggt-slam-2 --> |
+| 2025-05-18 | SLAM, VGGT-SLAM, Learned, Camera tracking, Monocular RGB | MIT | [VGGT-SLAM: Dense RGB SLAM Optimized on the SL(4) Manifold](https://arxiv.org/abs/2505.12549) | NeurIPS 2025 | [Code](https://github.com/MIT-SPARK/VGGT-SLAM/tree/version1.0) <!-- work:vggt-slam --> |
+| 2024-12-16 | SLAM, MASt3R-SLAM, Learned, Camera tracking, Monocular RGB | Imperial College London | [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors](https://arxiv.org/abs/2412.12392) | CVPR 2025 | [Code](https://github.com/rmurai0610/MASt3R-SLAM) / [Project](https://edexheim.github.io/mast3r-slam/) <!-- work:mast3r-slam --> |
+| 2024-12-12 | SLAM, SLAM3R, Geometry, Camera tracking, Monocular RGB | Peking University | [SLAM3R: Real-Time Dense Scene Reconstruction from Monocular RGB Videos](https://arxiv.org/abs/2412.09401) | CVPR 2025 | [Code](https://github.com/PKU-VCL-3DV/SLAM3R) <!-- work:slam3r --> |
+| 2024-12-05 | SLAM, MegaSaM, Learned, Offline reconstruction, Monocular RGB | Google DeepMind | [MegaSaM: Accurate, Fast, and Robust Structure and Motion from Casual Dynamic Videos](https://arxiv.org/abs/2412.04463) | CVPR 2025 | [Code](https://github.com/mega-sam/mega-sam) / [Project](https://mega-sam.github.io/) <!-- work:megasam --> |
+| 2024-10-04 | SLAM, MonST3R, Geometry, Offline reconstruction, Monocular RGB | UC Berkeley | [MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion](https://arxiv.org/abs/2410.03825) | ICLR 2025 | [Code](https://github.com/Junyi42/monst3r) / [Project](https://monst3r-project.github.io/) <!-- work:monst3r --> |
+| 2024-08-26 | SLAM, lidar-visual-inertial, LiDAR, Vision, IMU | The University of Hong Kong | [FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry](https://arxiv.org/abs/2408.14035) | IEEE T-RO 2024 | [Code](https://github.com/hku-mars/FAST-LIVO2) <!-- work:fast-livo2 --> |
+| 2024-08-03 | SLAM, DPV-SLAM, Learned, Camera tracking, Monocular RGB | Princeton University | [Deep Patch Visual SLAM](https://arxiv.org/abs/2408.01654) | ECCV 2024 | [Code](https://github.com/princeton-vl/DPVO) <!-- work:dpv-slam --> |
+| 2024-07-14 | SLAM, lidar-inertial, LiDAR, IMU | National Institute of Advanced Industrial Science and Technology | [GLIM: 3D Range-Inertial Localization and Mapping with GPU-Accelerated Scan Matching Factors](https://arxiv.org/abs/2407.10344) | Robotics and Autonomous Systems 2024 | [Code](https://github.com/koide3/glim) <!-- work:glim --> |
+| 2024-05-26 | SLAM, Splat-SLAM, Dense, Camera tracking, Monocular RGB | ETH Zurich | [Splat-SLAM: Globally Optimized RGB-only SLAM with 3D Gaussians](https://arxiv.org/abs/2405.16544) | CVPR Workshops 2025 | [Code](https://github.com/google-research/Splat-SLAM) / [Publication](https://openaccess.thecvf.com/content/CVPR2025W/VOCVALC/html/Sandstrom_Splat-SLAM_Globally_Optimized_RGB-only_SLAM_with_3D_Gaussians_CVPRW_2025_paper.html) <!-- work:splat-slam --> |
+| 2024-03-28 | SLAM, GlORIE-SLAM, Dense, Camera tracking, Monocular RGB | ETH Zurich | [GlORIE-SLAM: Globally Optimized RGB-only Implicit Encoding Point Cloud SLAM](https://arxiv.org/abs/2403.19549) | arXiv | [Code](https://github.com/zhangganlin/GlORIE-SLAM) / [Project](https://ganlinzhang.xyz/GlORIE-SLAM/) <!-- work:glorie-slam --> |
+| 2024-03-10 | SLAM, RGB-D mapping, Loop closure | Université de Sherbrooke | [RTAB-Map as an Open-Source Lidar and Visual SLAM Library for Large-Scale and Long-Term Online Operation](https://arxiv.org/abs/2403.06341) | JFR 2019 | [Code](https://github.com/introlab/rtabmap) <!-- work:rtab-map --> |
+| 2024-01-03 | SLAM, LEAP-VO, Learned, Camera tracking, Monocular RGB | TU Munich | [LEAP-VO: Long-term Effective Any Point Tracking for Visual Odometry](https://arxiv.org/abs/2401.01887) | CVPR 2024 | [Code](https://github.com/wrchen530/leapvo) / [Project](https://wrchen530.github.io/projects/leapvo/) <!-- work:leap-vo --> |
+| 2023-12-11 | SLAM, Gaussian Splatting SLAM / MonoGS, Dense, Monocular RGB, RGB-D | Imperial College London | [Gaussian Splatting SLAM](https://arxiv.org/abs/2312.06741) | CVPR 2024 | [Code](https://github.com/muskie82/MonoGS) / [Project](https://rmurai.co.uk/projects/GaussianSplattingSLAM/) <!-- work:gaussian-splatting-slam --> |
+| 2023-12-04 | SLAM, SplaTAM, Dense, Camera tracking, RGB-D | Carnegie Mellon University | [SplaTAM: Splat, Track & Map 3D Gaussians for Dense RGB-D SLAM](https://arxiv.org/abs/2312.02126) | CVPR 2024 | [Code](https://github.com/spla-tam/SplaTAM) / [Project](https://spla-tam.github.io/) <!-- work:splatam --> |
+| 2023-10-02 | SLAM, lidar-inertial, LiDAR, IMU | ETH Zurich | [COIN-LIO: Complementary Intensity-Augmented LiDAR Inertial Odometry](https://arxiv.org/abs/2310.01235) | ICRA 2024 | [Code](https://github.com/ethz-asl/COIN-LIO) <!-- work:coin-lio --> |
+| 2023-09-05 | SLAM, GO-SLAM, Dense, Monocular RGB, RGB-D | University of Bologna | [GO-SLAM: Global Optimization for Consistent 3D Instant Reconstruction](https://arxiv.org/abs/2309.02436) | ICCV 2023 | [Code](https://github.com/youmi-zym/GO-SLAM) / [Project](https://youmi-zym.github.io/projects/GO-SLAM/) <!-- work:go-slam --> |
+| 2023-04-27 | SLAM, Co-SLAM, Dense, Camera tracking, RGB-D | University College London | [Co-SLAM: Joint Coordinate and Sparse Parametric Encodings for Neural Real-Time SLAM](https://arxiv.org/abs/2304.14377) | CVPR 2023 | [Code](https://github.com/HengyiWang/Co-SLAM) / [Project](https://hengyiwang.github.io/projects/CoSLAM.html) <!-- work:co-slam --> |
+| 2023-04-07 | SLAM, lidar-inertial, LiDAR, IMU | The University of Hong Kong | [Point-LIO: Robust High-Bandwidth Light Detection and Ranging Inertial Odometry](https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/aisy.202200459) | Advanced Intelligent Systems 2023 | [Code](https://github.com/hku-mars/Point-LIO) <!-- work:point-lio --> |
+| 2023-02-07 | SLAM, NICER-SLAM, Dense, Camera tracking, Monocular RGB | ETH Zurich | [NICER-SLAM: Neural Implicit Scene Encoding for RGB SLAM](https://arxiv.org/abs/2302.03594) | 3DV 2024 | [Code](https://github.com/cvg/nicer-slam) / [Project](https://nicer-slam.github.io/) <!-- work:nicer-slam --> |
+| 2022-11-21 | SLAM, ESLAM, Dense, Camera tracking, RGB-D | Idiap Research Institute | [ESLAM: Efficient Dense SLAM System Based on Hybrid Representation of Signed Distance Fields](https://arxiv.org/abs/2211.11704) | CVPR 2023 | [Code](https://github.com/idiap/ESLAM) / [Project](https://www.idiap.ch/paper/eslam/) <!-- work:eslam --> |
+| 2022-09-17 | SLAM, DytanVO, Learned, Camera tracking, Monocular RGB | Carnegie Mellon University | [DytanVO: Joint Refinement of Visual Odometry and Motion Segmentation in Dynamic Environments](https://arxiv.org/abs/2209.08430) | ICRA 2023 | [Code](https://github.com/castacks/DytanVO) <!-- work:dytanvo --> |
+| 2022-08-08 | SLAM, DPVO, Learned, Camera tracking, Monocular RGB | Princeton University | [Deep Patch Visual Odometry](https://arxiv.org/abs/2208.04726) | NeurIPS 2023 | [Code](https://github.com/princeton-vl/DPVO) <!-- work:dpvo --> |
+| 2022-03-02 | SLAM, lidar-visual-inertial, LiDAR, Vision, IMU | The University of Hong Kong | [FAST-LIVO: Fast and Tightly-coupled Sparse-Direct LiDAR-Inertial-Visual Odometry](https://arxiv.org/abs/2203.00893) | IROS 2022 | [Code](https://github.com/hku-mars/FAST-LIVO) <!-- work:fast-livo --> |
+| 2022-02-18 | SLAM, Visual-inertial, Loop closure | Technical University of Munich | [OKVIS2: Realtime Scalable Visual-Inertial SLAM with Loop Closure](https://arxiv.org/abs/2202.09199) | arXiv | [Code](https://github.com/ethz-mrl/okvis2) <!-- work:okvis2 --> |
+| 2022-01-11 | SLAM, Visual-inertial, Delayed marginalization, Vision, IMU | Technical University of Munich | [DM-VIO: Delayed Marginalization Visual-Inertial Odometry](https://arxiv.org/abs/2201.04114) | IEEE RA-L 2022 | [Code](https://github.com/lukasvst/dm-vio) / [Project](https://cvg.cit.tum.de/research/vslam/dm-vio?redirect=1) <!-- work:dm-vio --> |
+| 2021-12-22 | SLAM, NICE-SLAM, Dense, Camera tracking, RGB-D | Zhejiang University | [NICE-SLAM: Neural Implicit Scalable Encoding for SLAM](https://arxiv.org/abs/2112.12130) | CVPR 2022 | [Code](https://github.com/cvg/nice-slam) <!-- work:nice-slam --> |
+| 2021-09-10 | SLAM, lidar-visual-inertial, LiDAR, Vision, IMU | The University of Hong Kong | [R3LIVE: A Robust, Real-time, RGB-colored, LiDAR-Inertial-Visual tightly-coupled state Estimation and mapping package](https://arxiv.org/abs/2109.07982) | ICRA 2022 | [Code](https://github.com/hku-mars/r3live) <!-- work:r3live --> |
+| 2021-09-10 | SLAM, lidar-inertial, LiDAR, IMU | Zhejiang University | [CLINS: Continuous-Time Trajectory Estimation for LiDAR-Inertial System](https://arxiv.org/abs/2109.04687) | IROS 2021 | [Code](https://github.com/APRIL-ZJU/clins) <!-- work:clins --> |
+| 2021-08-24 | SLAM, DROID-SLAM, Learned, Monocular RGB, RGB-D | Princeton University | [DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](https://arxiv.org/abs/2108.10869) | NeurIPS 2021 | [Code](https://github.com/princeton-vl/DROID-SLAM) <!-- work:droid-slam --> |
+| 2021-07-14 | SLAM, lidar-inertial, LiDAR, IMU | The University of Hong Kong | [FAST-LIO2: Fast Direct LiDAR-inertial Odometry](https://arxiv.org/abs/2107.06829) | IEEE T-RO 2022 | [Code](https://github.com/hku-mars/FAST_LIO) <!-- work:fast-lio2 --> |
+| 2021-04-22 | SLAM, lidar-visual-inertial, LiDAR, Vision, IMU | Massachusetts Institute of Technology | [LVI-SAM: Tightly-coupled Lidar-Visual-Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2104.10831) | ICRA 2021 | [Code](https://github.com/TixiaoShan/LVI-SAM) <!-- work:lvi-sam --> |
+| 2021-03-23 | SLAM, iMAP, Dense, Camera tracking, RGB-D | Imperial College London | [iMAP: Implicit Mapping and Positioning in Real-Time](https://arxiv.org/abs/2103.12352) | ICCV 2021 | [Project](https://edgarsucar.github.io/iMAP/) <!-- work:imap --> |
+| 2021-02-24 | SLAM, lidar-visual-inertial, LiDAR, Vision, IMU | The University of Hong Kong | [R2LIVE: A Robust, Real-time, LiDAR-Inertial-Visual tightly-coupled state Estimator and mapping](https://arxiv.org/abs/2102.12400) | IEEE RA-L 2021 | [Code](https://github.com/hku-mars/r2live) <!-- work:r2live --> |
+| 2020-10-16 | SLAM, lidar-inertial, LiDAR, IMU | The University of Hong Kong | [FAST-LIO: A Fast, Robust LiDAR-inertial Odometry Package by Tightly-Coupled Iterated Kalman Filter](https://arxiv.org/abs/2010.08196) | IEEE RA-L 2021 | [Code](https://github.com/hku-mars/FAST_LIO) <!-- work:fast-lio --> |
+| 2020-07-23 | SLAM, Visual-inertial, Loop closure | University of Zaragoza | [ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM](https://arxiv.org/abs/2007.11898) | IEEE TRO 2021 | [Code](https://github.com/UZ-SLAMLab/ORB_SLAM3) <!-- work:orb-slam3 --> |
+| 2020-07-01 | SLAM, lidar-inertial, LiDAR, IMU | Massachusetts Institute of Technology | [LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2007.00258) | IROS 2020 | [Code](https://github.com/TixiaoShan/LIO-SAM) <!-- work:lio-sam --> |
+| 2020 | SLAM, Visual-inertial, Odometry | University of Delaware | [OpenVINS: A Research Platform for Visual-Inertial Estimation](https://pgeneva.com/downloads/papers/Geneva2020ICRA.pdf) | ICRA 2020 | [Code](https://github.com/rpng/open_vins) <!-- work:openvins --> |
+| 2019-10-06 | SLAM, Visual-inertial, Loop closure | MIT | [Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](https://arxiv.org/abs/1910.02490) | ICRA 2020 | [Code](https://github.com/MIT-SPARK/Kimera) <!-- work:kimera --> |
+| 2019-04-13 | SLAM, Visual-inertial, Loop closure | Technical University of Munich | [Visual-Inertial Mapping with Non-Linear Factor Recovery](https://arxiv.org/abs/1904.06504) | IEEE RA-L 2020 | [Code](https://gitlab.com/VladyslavUsenko/basalt) <!-- work:basalt --> |
+| 2018-08-03 | SLAM, Visual SLAM, Loop closure | Technical University of Munich | [LDSO: Direct Sparse Odometry with Loop Closure](https://arxiv.org/abs/1808.01111) | IROS 2018 | [Code](https://github.com/tum-vision/LDSO) <!-- work:ldso --> |
+| 2018-06-14 | SLAM, Visual SLAM, Loop closure | University of Zaragoza | [DynaSLAM: Tracking, Mapping and Inpainting in Dynamic Scenes](https://arxiv.org/abs/1806.05620) | IEEE RA-L / IROS 2018 | [Code](https://github.com/BertaBescos/DynaSLAM) <!-- work:dynaslam --> |
+| 2018 | SLAM, lidar, LiDAR | Stevens Institute of Technology | [LeGO-LOAM: Lightweight and Ground-Optimized Lidar Odometry and Mapping on Variable Terrain](https://github.com/RobustFieldAutonomyLab/LeGO-LOAM) | IROS 2018 | [Code](https://github.com/RobustFieldAutonomyLab/LeGO-LOAM) <!-- work:lego-loam --> |
+| 2017-11-28 | SLAM, Visual-inertial, Loop closure | ETH Zurich | [maplab: An Open Framework for Research in Visual-inertial Mapping and Localization](https://arxiv.org/abs/1711.10250) | IEEE RA-L 2018 | [Code](https://github.com/ethz-asl/maplab) <!-- work:maplab --> |
+| 2017-08-13 | SLAM, Visual-inertial, Loop closure | HKUST | [VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator](https://arxiv.org/abs/1708.03852) | IEEE TRO 2018 | [Code](https://github.com/HKUST-Aerial-Robotics/VINS-Mono) <!-- work:vins-mono --> |
+| 2016-12-14 | SLAM, Visual SLAM, Odometry | University of Zurich | [SVO: Semidirect Visual Odometry for Monocular and Multicamera Systems](https://doi.org/10.1109/TRO.2016.2623335) | IEEE TRO 2017 | [Code](https://github.com/uzh-rpg/rpg_svo_pro_open) <!-- work:svo2 --> |
+| 2016-10-20 | SLAM, Visual SLAM, Loop closure | University of Zaragoza | [ORB-SLAM2: an Open-Source SLAM System for Monocular, Stereo and RGB-D Cameras](https://arxiv.org/abs/1610.06475) | IEEE TRO 2017 | [Code](https://github.com/raulmur/ORB_SLAM2) <!-- work:orb-slam2 --> |
+| 2016-07-09 | SLAM, Visual SLAM, Odometry | Technical University of Munich | [Direct Sparse Odometry](https://arxiv.org/abs/1607.02565) | IEEE TPAMI 2018 | [Code](https://github.com/JakobEngel/dso) <!-- work:dso --> |
+| 2016-04-05 | SLAM, RGB-D mapping, Loop closure | Stanford University | [BundleFusion: Real-time Globally Consistent 3D Reconstruction using On-the-fly Surface Re-integration](https://arxiv.org/abs/1604.01093) | ACM TOG 2017 | [Code](https://github.com/niessner/BundleFusion) <!-- work:bundlefusion --> |
+| 2015-07 | SLAM, RGB-D mapping, Loop closure | Imperial College London | [ElasticFusion: Dense SLAM Without a Pose Graph](https://roboticsproceedings.org/rss11/p01.pdf) | RSS 2015 | [Code](https://github.com/mp3guy/ElasticFusion) <!-- work:elasticfusion --> |
+| 2015-02-03 | SLAM, Visual SLAM, Loop closure | University of Zaragoza | [ORB-SLAM: a Versatile and Accurate Monocular SLAM System](https://arxiv.org/abs/1502.00956) | IEEE TRO 2015 | [Code](https://github.com/raulmur/ORB_SLAM) <!-- work:orb-slam --> |
+| 2015 | SLAM, Visual-inertial, Odometry | ETH Zurich | [Robust Visual Inertial Odometry Using a Direct EKF-Based Approach](https://doi.org/10.3929/ethz-a-010566547) | IROS 2015 | [Code](https://github.com/ethz-asl/rovio) <!-- work:rovio --> |
+| 2014-12-15 | SLAM, Visual-inertial, Odometry | ETH Zurich | [Keyframe-Based Visual-Inertial Odometry Using Nonlinear Optimization](https://doi.org/10.1177/0278364914554813) | IJRR 2015 | [Code](https://github.com/ethz-asl/okvis) <!-- work:okvis --> |
+| 2014-07 | SLAM, lidar, LiDAR | Carnegie Mellon University | [LOAM: Lidar Odometry and Mapping in Real-time](https://www.roboticsproceedings.org/rss10/p07.html) | RSS 2014 | — <!-- work:loam --> |
+| 2014 | SLAM, Visual SLAM, Odometry | University of Zurich | [SVO: Fast Semi-Direct Monocular Visual Odometry](https://rpg.ifi.uzh.ch/docs/ICRA14_Forster.pdf) | ICRA 2014 | [Code](https://github.com/uzh-rpg/rpg_svo) <!-- work:svo --> |
+| 2014 | SLAM, Visual SLAM, Loop closure | Technical University of Munich | [LSD-SLAM: Large-Scale Direct Monocular SLAM](https://cvg.cit.tum.de/_media/spezial/bib/engel14eccv.pdf) | ECCV 2014 | [Code](https://github.com/tum-vision/lsd_slam) <!-- work:lsd-slam --> |
+| 2011-10 | SLAM, RGB-D mapping | Imperial College London | [KinectFusion: Real-Time Dense Surface Mapping and Tracking](https://www.microsoft.com/en-us/research/publication/kinectfusion-real-time-dense-surface-mapping-tracking/) | ISMAR 2011 | — <!-- work:kinectfusion --> |
+| 2007 | SLAM, Visual SLAM | University of Oxford | [Parallel Tracking and Mapping for Small AR Workspaces](https://www.robots.ox.ac.uk/~gk/publications/KleinMurray2007ISMAR.pdf) | ISMAR 2007 | [Code](https://github.com/Oxford-PTAM/PTAM-GPL) <!-- work:ptam --> |
+| 2007 | SLAM, Visual-inertial, Odometry | University of Minnesota | [A Multi-State Constraint Kalman Filter for Vision-aided Inertial Navigation](https://www-users.cse.umn.edu/~stergios/papers/ICRA07-MSCKF.pdf) | ICRA 2007 | — <!-- work:msckf --> |
+
+Also see [EgoLocate](https://arxiv.org/abs/2305.01599), indexed once under [World-space and body motion](#world-space-and-body-motion), for a wearable body-motion and mapping system.
+
+#### Calibration and synchronization
+
+Camera models, camera–IMU / LiDAR extrinsics, timing and rolling-shutter calibration.
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2022-02-22 | SLAM, calibration, Calibration and synchronization, LiDAR, IMU | The University of Hong Kong | [Robust Real-time LiDAR-inertial Initialization](https://arxiv.org/abs/2202.11006) | IROS 2022 | [Code](https://github.com/hku-mars/LiDAR_IMU_Init) <!-- work:li-init --> |
+| 2021-08-16 | SLAM, calibration, Calibration and synchronization, Vision, IMU | Wuhan University | [Continuous-Time Spatiotemporal Calibration of a Rolling Shutter Camera-IMU System](https://arxiv.org/abs/2108.07200) | IEEE Sensors Journal 2022 | [Code](https://github.com/JzHuai0108/kalibr) <!-- work:rsvi-calibration --> |
+| 2013-06 | SLAM, calibration, Calibration and synchronization, Vision | ETH Zurich | [Rolling Shutter Camera Calibration](https://openaccess.thecvf.com/content_cvpr_2013/html/Oth_Rolling_Shutter_Camera_2013_CVPR_paper.html) | CVPR 2013 | [Code](https://github.com/ethz-asl/kalibr) <!-- work:rolling-shutter-calibration --> |
+| 2013 | SLAM, calibration, Calibration and synchronization, Vision, IMU | ETH Zurich | [Unified Temporal and Spatial Calibration for Multi-Sensor Systems](https://www.research-collection.ethz.ch/items/487b06bb-dcbe-411d-ab46-8580147273ac) | IROS 2013 | [Code](https://github.com/ethz-asl/kalibr) <!-- work:kalibr --> |
+
+#### Trajectory evaluation
+
+Trajectory alignment, error metrics and diagnostics. An aligned trajectory is not automatically metrically correct.
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2017 | SLAM, evaluation, Trajectory evaluation, State | Michael Grupp | [evo: Python package for the evaluation of odometry and SLAM](https://github.com/MichaelGrupp/evo) | Open-source tool | [Code](https://github.com/MichaelGrupp/evo) <!-- work:evo --> |
+
+#### Ego and UMI workflows
+
+Processing systems with a documented role in egocentric capture. The UMI entry is its SLAM processing workflow; gripper hardware remains in Awesome-UMI.
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| — | SLAM, GoPro, Visual-inertial, Action recovery, Data processing | Stanford University | [UMI SLAM processing pipeline](https://github.com/real-stanford/universal_manipulation_interface/tree/main/scripts_slam_pipeline) | Open-source tool | [Instructions](https://github.com/real-stanford/universal_manipulation_interface#running-umi-slam-pipeline) / [SLAM fork](https://github.com/cheng-chi/ORB_SLAM3) / [Supporting paper](https://arxiv.org/abs/2402.10329) <!-- work:umi-slam-workflow --> |
+| — | Aria, SLAM, Calibration, Data processing | Meta | [Project Aria Tools and Machine Perception Services](https://github.com/facebookresearch/projectaria_tools) | Open-source tool | [Documentation](https://facebookresearch.github.io/projectaria_tools/gen2/) <!-- work:projectaria-tools --> |
+
+#### Others
+
+Teleoperation, retargeting and supporting research tools.
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2024-07-01 | Evaluation and toolchains, State, Vision, Stereo, Upper body | UC San Diego | [Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512) | CoRL 2024 | [Code](https://github.com/OpenTeleVision/TeleVision) / [Project](https://robot-tv.github.io/) / [Publication](https://proceedings.mlr.press/v270/cheng25b.html) <!-- work:open-television --> |
 | 2024-03-12 | Evaluation and toolchains, State, Vision, Hands | New York University | [OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation](https://arxiv.org/abs/2403.07870) | CoRL 2024 | [Code](https://github.com/aadhithya14/Open-Teach) / [Project](https://open-teach.github.io/) / [Publication](https://www.lerrelpinto.com/publication/openteach/) <!-- work:open-teach --> |
 | 2023-07-10 | Evaluation and toolchains, Vision, Depth, Hands | UC San Diego | [AnyTeleop: A General Vision-Based Dexterous Robot Arm-Hand Teleoperation System](https://arxiv.org/abs/2307.04577) | RSS 2023 | [Code](https://github.com/dexsuite/dex-retargeting) / [Visualizer](https://github.com/NVlabs/sim-web-visualizer) / [Project](https://yzqin.github.io/anyteleop/) <!-- work:anyteleop --> |
 | — | Retargeting, Toolchain, Hand | — | [Dexterous Hand Retargeting](https://github.com/dexsuite/dex-retargeting) | Open-source tool | — <!-- work:dex-retargeting --> |
-| — | Aria, SLAM, Calibration, Data processing | Meta | [Project Aria Tools and Machine Perception Services](https://github.com/facebookresearch/projectaria_tools) | Open-source tool | [Documentation](https://facebookresearch.github.io/projectaria_tools/gen2/) <!-- work:projectaria-tools --> |
+
+## Overview and Taxonomy
+
+The three collection views describe resource types; the dimensions
+below remain independent so that a glove can be commercial, full-body-compatible,
+and IMU/EMG-enabled without being forced into one exclusive category.
+
+### Independent Dimensions
+
+| Dimension | Values and interpretation |
+| :-- | :-- |
+| Resource | Hardware, dataset, reconstruction/toolchain, policy/evaluation |
+| Form | Glasses, headset, headband, chest camera, wristband, glove, suit, hybrid rig |
+| Signals | RGB/vision, depth, IMU, EMG, gaze, audio, tactile, force; derived estimates labeled separately |
+| Body coverage | One/both hands, upper body, whole body; scene capture does not imply body tracking |
+| Interaction | Natural manipulation, tools, contact-rich actions, locomotion, teleoperation |
+| Geometry | 2D joints, camera-relative 3D, world-space trajectories, metric scale, objects/contact |
+| Learning role | Pretraining, co-training, robotization, rewards, policy inputs, evaluation |
+| Access | Hardware files, licensed software, dataset download/conditions, commercial availability — separately |
+
+### Research Roadmap
+
+The **Ego Data Pyramid** is one way to survey methods inside this larger field.
+It is a reading route, not a claim that every policy must reconstruct 3D.
+
+```mermaid
+flowchart LR
+    A[Capture & Datasets] --> B[Hand Reconstruction]
+    B --> C[World Motion]
+    C --> D[Hand-Object Interaction]
+    D --> E[Robot Demonstrations]
+    E --> F[Policy & Evaluation]
+    A --> G[Representations / Latent Actions]
+    G --> F
+```
+
+Full-body, EMG, tactile and force can enter at capture, supervision, interaction,
+or policy stages. They are not limited to an extra tag on hand reconstruction.
+
+### Evidence and Inclusion
+
+- **Observation ≠ estimate ≠ reference label ≠ policy input.** Measured depth is
+  different from monocular predicted depth; optical flow or contact prediction
+  is different from a tactile sensor. Haptic feedback is not measured touch.
+- **Camera frame ≠ world frame ≠ metric scale.** Inspect calibration, scale,
+  timing and drift before assuming trajectories can drive a robot.
+- **Retargeting ≠ executable action ground truth.** Distinguish kinematic
+  translation, simulation, playback and closed-loop real-robot policy evidence.
+- **Reported scale ≠ released scale.** Subsets, access conditions, licenses and
+  derived annotations remain explicit in dataset evidence.
+- **Commercial ≠ closed source.** Product availability and hardware/software/data
+  release are separate. Product claims are manufacturer-reported.
+- Every entry is linked to a primary paper or official public resource. Dates
+  use arXiv **v1** where available; `—` means no verified publication date.
+  Partial dates retain their original precision. For older papers uploaded to
+  arXiv later (e.g. MANO), the venue year can precede the Date column.
+- Keep UMI tool interfaces primarily in [Awesome-UMI](https://github.com/chang-xinhai/Awesome-UMI).
+  Include them here when a distinct ego/wearable contribution is central.
 
 ## Citation
 

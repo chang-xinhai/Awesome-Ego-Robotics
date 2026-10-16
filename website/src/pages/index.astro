@@ -101,6 +101,11 @@ const icon = {
         <button type="button" data-category="all" aria-pressed="true">All hardware <span>{hardware.length}</span></button>
         {CATEGORIES.hardware.map(c => <button type="button" data-category={c.key} aria-pressed="false" title={c.description}>{c.label}<span>{hardware.filter(w=>w.sections.some(s=>s.endsWith(" / "+c.section))).length}</span></button>)}
       </div>
+      <div class="tools-panel" id="tools-menu" role="dialog" aria-labelledby="tools-menu-title" hidden>
+        <div class="tools-menu-heading"><div><h2 id="tools-menu-title">Tools</h2><p id="tools-selection">All tools</p></div><button type="button" id="tools-close" aria-label="Close tools menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={icon.close}/></svg></button></div>
+        <div class="tools-menu-body" id="tools-body"><div class="tools-topics" id="tools-topics" role="group" aria-label="Tool categories"></div><div class="tools-content" id="tools-content"></div></div>
+        <div class="tools-menu-footer"><button type="button" class="button-dark" id="tools-done">View tools</button></div>
+      </div>
     </nav>
     <div class="library-meta">
       <p id="result-count" role="status" aria-live="polite">

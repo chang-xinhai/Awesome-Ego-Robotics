@@ -24,12 +24,18 @@ or links from README. IDs are explicit `<!-- work:stable-slug -->` markers insid
 
 ## Canonical section layout
 
-Keep these five top-level sections and a multi-level bilingual contents list:
-1. Overview and Taxonomy — 概览与分类
-2. Hardware and Capture Systems — 硬件与采集系统
-3. Datasets — 数据集
-4. Methods and Toolchains — 方法与工具链
-5. Robot Learning and Evaluation — 机器人学习与评测
+Use the English-only Awesome-UMI README presentation: centered title and scope,
+five navigation badges, About scope bullets, two credited figures, Must Read,
+bracketed News dates, a nested Contents list and compact six-column tables.
+Keep these five content sections, in this order:
+1. Hardware and Capture Systems
+2. Methods and Toolchains
+3. Datasets
+4. Robot Learning and Evaluation
+5. Overview and Taxonomy
+
+Do not add bilingual labels or Chinese prose to README. Use confirmed English
+organization names; manufacturer aliases may remain in website search metadata.
 
 Also retain About, Must Read, News, Contents, Citation and Acknowledgement.
 The Ego Data Pyramid is a roadmap through methods, not the entire taxonomy.
@@ -75,7 +81,7 @@ validation, retail availability, or proof of closed source.
 
 Use the same compact six columns as Awesome-UMI:
 
-| Date | Keywords | Institute (first) | Paper / Resource | Publication | Others |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 
 - Dates use arXiv **v1**, never revisions or conference acceptance. Use original
@@ -154,3 +160,21 @@ can be filtered for synthetic data but must stay separate from physical signals.
 Preserve field-level source URLs, measurement scope, unit qualifiers and new
 scale dimensions. Empty lists must render an honest unknown, never a blank fact.
 Restore keyboard focus when replacing filter controls and after closing sheets.
+
+## SLAM and capture processing
+
+SLAM, odometry, offline camera reconstruction, calibration and trajectory
+evaluation are explicit survey priorities. Include important general foundations
+as capture references, while separating verified Ego/UMI use from potential use.
+Do not equate odometry with a complete SLAM backend, learned monocular depth
+with measured metric depth, or an offline reconstruction with online tracking.
+Record sensor requirements, scale source, coordinate frame, loop closure,
+relocalization, runtime mode and calibration assumptions with primary sources.
+
+Under Evaluation and toolchains use fourth-level README headings for SLAM,
+Calibration and synchronization, Trajectory evaluation, Ego and UMI workflows,
+and Others. The website derives these subgroups without creating a second
+canonical bibliography. Tools uses an on-demand split menu, preserving the
+existing category bar, five-facet panels, state restoration and shared URLs.
+Cross-references to an existing method may appear in Tools through sourced
+SLAM metadata without duplicating the canonical work or its README row.

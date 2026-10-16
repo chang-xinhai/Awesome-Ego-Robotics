@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { CATEGORIES,FACETS,emptyView,matches,signalsFor,coverageFor,facetOptions } from '../src/lib/filters.ts';
+import { CATEGORIES,FACETS,TOOL_FACETS,facetsFor,emptyView,matches,signalsFor,coverageFor,facetOptions,categoriesFor } from '../src/lib/filters.ts';
+import { toolTopicsFor,slamFamilyFor } from '../src/lib/tooling.ts';
 const work=(values={})=>({id:'fixture',name:'Fixture',title:'Fixture',date:'2026-01-01',year:'2026',institute:'Lab',publication:'Paper',keywords:'',paperUrl:'https://example.org/',links:[],sections:['Methods and Toolchains / Hand reconstruction'],collections:['methods'],source:'Methods',kind:'Method',stage:'Hand reconstruction',form:'Glove',coverage:'Hands',tracking:'',signals:[],format:'',dataAccess:'Not verified',codeAccess:'',...values});
 test('each collection exposes only its own categories and at most five facets',()=>{
  assert.equal(CATEGORIES.methods.find(c=>c.key==='l1').section,'Hand reconstruction');
@@ -50,4 +51,30 @@ test('synthetic channels are filterable without becoming physical observations',
  assert.deepEqual(signalsFor(w,'datasets'),['Vision','Depth']);
  assert.ok(matches(w,'datasets',{...emptyView(),filters:{role:'synthetic'},signals:['Vision']}));
  assert.deepEqual(w.research.dataset.recordedSignals,[]);
+});
+test('README tool subheadings and sourced SLAM cross-references define Tools membership',()=>{
+ const calibrator=work({sections:['Robot Learning and Evaluation / Evaluation and toolchains'],subsections:['Robot Learning and Evaluation / Evaluation and toolchains / Calibration and synchronization']});
+ assert.deepEqual(toolTopicsFor(calibrator),['calibration']);
+ const existingBodyMethod=work({sections:['Methods and Toolchains / World-space and body motion'],research:{method:{slam:{family:'visual-inertial'}}}});
+ assert.deepEqual(categoriesFor(existingBodyMethod,'methods'),['l2','tools']);
+ assert.ok(matches(existingBodyMethod,'methods',{...emptyView(),category:'tools',toolTopic:'slam'}));
+ assert.ok(!matches(existingBodyMethod,'methods',{...emptyView(),category:'tools',toolTopic:'others'}));
+});
+test('SLAM family and tool facets restrict results without leaking into reconstruction layers',()=>{
+ const reference=work({research:{method:{slam:{family:'lidar-visual-inertial',role:'online',loopClosure:'no',relocalization:'unknown'},outputSpace:'world'}}});
+ assert.equal(slamFamilyFor(reference),'lidar');
+ assert.ok(matches(reference,'methods',{...emptyView(),category:'tools',toolTopic:'slam',slamFamily:'lidar',filters:{runtime:'online',loop:'no'}}));
+ assert.ok(!matches(reference,'methods',{...emptyView(),category:'tools',toolTopic:'slam',slamFamily:'learned'}));
+ assert.ok(!matches(reference,'methods',{...emptyView(),category:'tools',filters:{loop:'yes'}}));
+ assert.ok(matches(reference,'methods',{...emptyView(),category:'l1',filters:{loop:'yes'}}));
+ assert.equal(facetsFor('methods','tools'),TOOL_FACETS);
+ assert.equal(TOOL_FACETS.length,5);
+ assert.ok(!TOOL_FACETS.some(f=>f.key==='coverage'));
+});
+test('SLAM menu calibration and evaluation tools do not become SLAM algorithms',()=>{
+ const evaluation=work({sections:['Robot Learning and Evaluation / Evaluation and toolchains'],subsections:['Robot Learning and Evaluation / Evaluation and toolchains / Trajectory evaluation'],research:{method:{slam:{family:'evaluation',role:'offline'}}}});
+ assert.deepEqual(toolTopicsFor(evaluation),['evaluation']);
+ assert.ok(!matches(evaluation,'methods',{...emptyView(),category:'tools',toolTopic:'slam'}));
+ const fallback=work({sections:['Robot Learning and Evaluation / Evaluation and toolchains']});
+ assert.deepEqual(toolTopicsFor(fallback),['others']);
 });

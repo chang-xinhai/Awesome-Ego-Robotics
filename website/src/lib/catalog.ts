@@ -20,6 +20,7 @@ export interface Work {
   paperUrl: string;
   links: { label: string; url: string }[];
   sections: string[];
+  subsections?: string[];
   source: string;
   kind: string;
   stage: string;
@@ -74,10 +75,11 @@ const links = (s: string) => Array.from(s.matchAll(/\[([^\]]+)\]\((https?:\/\/[^
 export function getCatalog(): Work[] {
   const content = readFileSync(resolve(process.cwd(), "../README.md"), "utf8");
   const map = new Map<string, Work>();
-  let top = "", section = "", id = "";
+  let top = "", section = "", subsection = "", id = "";
   for (const line of content.split(/\r?\n/)) {
-    if (line.startsWith("## ")) { top = clean(line.slice(3)); section = ""; id = ""; continue; }
-    if (line.startsWith("### ")) { section = clean(line.slice(4)); continue; }
+    if (line.startsWith("## ")) { top = clean(line.slice(3)); section = ""; subsection = ""; id = ""; continue; }
+    if (line.startsWith("### ")) { section = clean(line.slice(4)); subsection = ""; continue; }
+    if (line.startsWith("#### ")) { subsection = clean(line.slice(5)); continue; }
     const marker = line.match(/<!-- work:([a-z0-9-]+) -->/);
     if (marker) id = marker[1];
     if (!SITE.headings.includes(top) || !/^\| (?:\d{4}|—)/.test(line)) continue;
@@ -93,10 +95,11 @@ export function getCatalog(): Work[] {
     if (old) {
       if (old.paperUrl !== paper.url || old.date !== c[0] || old.title !== paper.label) throw new Error(`Inconsistent repeated work: ${id}`);
       old.sections.push(location);
+      if (subsection) (old.subsections ??= []).push(`${location} / ${subsection}`);
       if (!old.collections.includes(collection)) old.collections.push(collection);
       for (const link of links(c[5])) if (!old.links.some(l => l.url === link.url)) old.links.push(link);
     } else map.set(id, {
-      id, title: paper.label, name: paper.label.split(":")[0], date: c[0], year: /^\d{4}/.test(c[0]) ? c[0].slice(0,4) : "Undated", institute: c[2], publication: c[4], keywords: c[1], paperUrl: paper.url, links: links(c[5]), sections: [location], source, kind: collection === "hardware" ? "System" : collection === "datasets" ? "Dataset" : "Method", collections: [collection], stage: section, form: "Not reported", coverage: "Not reported", tracking: "Not reported", signals: [], format: "Not reported", dataAccess: "Not verified", codeAccess: "Not verified",
+      id, title: paper.label, name: paper.label.split(":")[0], date: c[0], year: /^\d{4}/.test(c[0]) ? c[0].slice(0,4) : "Undated", institute: c[2], publication: c[4], keywords: c[1], paperUrl: paper.url, links: links(c[5]), sections: [location], subsections: subsection ? [`${location} / ${subsection}`] : [], source, kind: collection === "hardware" ? "System" : collection === "datasets" ? "Dataset" : "Method", collections: [collection], stage: section, form: "Not reported", coverage: "Not reported", tracking: "Not reported", signals: [], format: "Not reported", dataAccess: "Not verified", codeAccess: "Not verified",
     });
     id = "";
   }

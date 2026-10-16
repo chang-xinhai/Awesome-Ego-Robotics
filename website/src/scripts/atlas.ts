@@ -1,7 +1,9 @@
 import type { Work } from "../lib/catalog";
 import { compareDates } from "../lib/order";
 import { formatScale, scaleMetrics } from "../lib/scale";
-import { CATEGORIES, FACETS, LENS_COPY, emptyView, facetOptions, facetValues, categoriesFor, signalsFor, matches, type Lens, type ViewState } from "../lib/filters";
+import { CATEGORIES, LENS_COPY, emptyView, facetsFor, facetOptions, facetValues, categoriesFor, signalsFor, matches, type Lens, type ViewState } from "../lib/filters";
+import { TOOL_TOPICS, SLAM_FAMILIES, slamFor } from "../lib/tooling";
+import { createToolMenu } from "./tool-menu";
 const $ = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id)! as T;
 const settings = JSON.parse($("catalog-settings").textContent!) as {
@@ -81,7 +83,13 @@ let view = emptyView();
 view.query = params.get("q") ?? "";
 view.sort = Array.from(sort.options).some(o=>o.value===params.get("sort")) ? params.get("sort")! : "newest";
 view.category = CATEGORIES[collection].find(c=>c.key===(params.get("category")??params.get("layer")) || c.section===params.get("source"))?.key ?? "all";
-for (const f of FACETS[collection]) if(params.has(f.key)) view.filters[f.key]=params.get(f.key)!;
+if(collection==="methods"&&view.category==="tools"){
+  view.toolTopic=TOOL_TOPICS.find(t=>t.key===params.get("tool"))?.key??"all";
+  view.slamFamily=SLAM_FAMILIES.find(f=>f.key===params.get("family"))?.key??"all";
+  if(view.toolTopic==="all"&&view.slamFamily!=="all")view.toolTopic="slam";
+  if(!["all","slam"].includes(view.toolTopic))view.slamFamily="all";
+}
+for (const f of facetsFor(collection,view.category)) if(params.has(f.key)) view.filters[f.key]=params.get(f.key)!;
 view.signals = (params.get("signals") ?? "").split(",").filter(Boolean);
 const views = new Map<Lens,ViewState>([[collection,view]]);
 search.value=view.query;
@@ -94,13 +102,20 @@ let selected = new Set<string>(
 );
 const selections = new Map<string, Set<string>>([[collection, selected]]);
 const PAGE_SIZE = 12;
+const toolsMenu=createToolMenu({works:()=>works,state:()=>view,select:(topic,family)=>{
+  view.category="tools";view.toolTopic=topic;view.slamFamily=family;render();
+}});
 function syncUrl() {
   const p = new URLSearchParams();
   if(collection!=="hardware")p.set("collection",collection);
   if(view.category!=="all")p.set("category",view.category);
+  if(collection==="methods"&&view.category==="tools"){
+    if(view.toolTopic&&view.toolTopic!=="all")p.set("tool",view.toolTopic);
+    if(view.toolTopic==="slam"&&view.slamFamily&&view.slamFamily!=="all")p.set("family",view.slamFamily);
+  }
   if(view.query.trim())p.set("q",view.query.trim());
   if(view.sort!=="newest")p.set("sort",view.sort);
-  for(const f of FACETS[collection])if(view.filters[f.key]&&view.filters[f.key]!=="all")p.set(f.key,view.filters[f.key]);
+  for(const f of facetsFor(collection,view.category))if(view.filters[f.key]&&view.filters[f.key]!=="all")p.set(f.key,view.filters[f.key]);
   if(view.signals.length)p.set("signals",view.signals.join(","));
   if(selected.size)p.set("compare",[...selected].join(","));
   if(detail.open&&detail.dataset.work)p.set("item",detail.dataset.work);
@@ -109,13 +124,14 @@ function syncUrl() {
 const currentSignals = (w:Work) => signalsFor(w,collection);
 function buildFilterPanel() {
   const copy=LENS_COPY[collection];
-  $("filter-panel-title").textContent=copy.title;
-  $("filter-note").textContent=copy.note;
+  const tooling=collection==="methods"&&view.category==="tools";
+  $("filter-panel-title").textContent=tooling?"Tool filters":copy.title;
+  $("filter-note").textContent=tooling?"Choose a group in Tools. Sensor requirements, calibration and scale are detailed in each entry.":copy.note;
   search.placeholder=copy.placeholder;
   const activeSignal=document.activeElement instanceof HTMLInputElement&&document.activeElement.name==="signal"?document.activeElement.value:undefined;
   const activeFacet=document.activeElement instanceof HTMLSelectElement?document.activeElement.dataset.facet:undefined;
   const scroll=$("filter-body").scrollTop;
-  $("filter-fields").innerHTML=FACETS[collection].map(f=>{
+  $("filter-fields").innerHTML=facetsFor(collection,view.category).map(f=>{
     const global=facetOptions(works,collection,f);
     if(!global.some(o=>o.value===view.filters[f.key]))delete view.filters[f.key];
     const pool=works.filter(w=>matches(w,collection,view,f.key));
@@ -147,9 +163,10 @@ function renderCategories() {
   const label=collection==="methods"?"All methods":collection==="datasets"?"All datasets":collection==="hardware"?"All hardware":"All research";
   const options=[{key:"all",label,description:label,section:""},...CATEGORIES[collection]];
   nav.innerHTML=options.map(c=>{
-    const n=c.key==="all"?base.length:base.filter(w=>categoriesFor(w,collection).includes(c.key)).length;
+    const n=collection==="methods"&&c.key==="tools"?works.filter(w=>matches(w,collection,{...view,category:"tools",toolTopic:"all",slamFamily:"all"})).length:c.key==="all"?base.length:base.filter(w=>categoriesFor(w,collection).includes(c.key)).length;
     const code=collection==="methods"&&/^l[1-6]$/.test(c.key)?`<small>${c.key.toUpperCase()}</small>`:"";
-    return `<button type="button" data-category="${e(c.key)}" aria-pressed="${view.category===c.key}" title="${e(c.description)}">${code}${e(c.label)}<span>${n}</span></button>`;
+    const tools=collection==="methods"&&c.key==="tools";
+    return `<button type="button" data-category="${e(c.key)}" aria-pressed="${view.category===c.key}" title="${e(c.description)}"${tools?` aria-haspopup="dialog" aria-controls="tools-menu" aria-expanded="${toolsMenu.isOpen()}"`:""}>${code}${e(c.label)}<span>${n}</span>${tools?'<svg class="tools-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>':""}</button>`;
   }).join("");
   nav.parentElement!.setAttribute("aria-label",`${collection} categories`);
   nav.parentElement!.hidden=collection==="research";
@@ -304,7 +321,12 @@ function observe() {
 function filterChips() {
   const chips:{key:string;value:string;label:string}[]=[];
   if(view.query.trim())chips.push({key:"q",value:"",label:view.query.trim()});
-  for(const f of FACETS[collection])if(view.filters[f.key]&&view.filters[f.key]!=="all"){
+  if(collection==="methods"&&view.category==="tools"&&view.toolTopic&&view.toolTopic!=="all"){
+    const topic=TOOL_TOPICS.find(t=>t.key===view.toolTopic)?.label;
+    const family=view.toolTopic==="slam"&&view.slamFamily!=="all"?SLAM_FAMILIES.find(f=>f.key===view.slamFamily)?.label:undefined;
+    chips.push({key:"tool",value:"",label:[topic,family].filter(Boolean).join(" · ")});
+  }
+  for(const f of facetsFor(collection,view.category))if(view.filters[f.key]&&view.filters[f.key]!=="all"){
     const label=facetOptions(works,collection,f).find(o=>o.value===view.filters[f.key])?.label??view.filters[f.key];
     chips.push({key:f.key,value:"",label:`${f.label}: ${label}`});
   }
@@ -329,7 +351,7 @@ function render() {
   results.classList.toggle("dataset-view", collection === "datasets");
   const list = filtered();
   $("catalog-empty").hidden = !!list.length;
-  const noun = collection === "hardware" ? (list.length === 1 ? "hardware entry" : "hardware entries") : collection === "datasets" ? (list.length === 1 ? "dataset family" : "dataset families") : collection === "methods" ? (list.length === 1 ? "method / learning resource" : "methods & learning resources") : (list.length === 1 ? "research entry" : "research entries");
+  const noun = collection === "hardware" ? (list.length === 1 ? "hardware entry" : "hardware entries") : collection === "datasets" ? (list.length === 1 ? "dataset family" : "dataset families") : collection === "methods" ? (view.category==="tools"?(list.length===1?"tool / reference":"tools & references"):(list.length === 1 ? "method / learning resource" : "methods & learning resources")) : (list.length === 1 ? "research entry" : "research entries");
   $("result-count").textContent = `${list.length} ${noun}`;
   document
     .querySelectorAll<HTMLButtonElement>("[data-collection]")
@@ -341,12 +363,14 @@ function render() {
     );
   buildFilterPanel();
   renderCategories();
+  toolsMenu.refresh();
   filterChips();
   syncUrl();
   setBoundary(false, false);
   if (list.length) void loadNext();
 }
 function reset() {
+  toolsMenu.close();
   view=emptyView();views.set(collection,view);
   search.value="";sort.value="newest";
   buildFilterPanel();render();
@@ -446,17 +470,30 @@ function hardwareDataFacts(w:Work):[string,string][] {
 }
 function methodFacts(w: Work): [string, string][] {
   const m=record(w.research?.method);
+  if(Object.keys(slamFor(w)).length)return [["Input",text(m.input)],["Output",text(m.output)],
+    ["Representation",text(m.outputRepresentation)],["Coordinate frame",text(m.coordinateFrame)]];
   return [["Research layer",text(m.stage)],["Input",text(m.input)],["Output",text(m.output)],
     ["Representation",text(m.outputRepresentation)],["Coordinate frame",text(m.coordinateFrame)],
     ["Scale",text(m.scale)],["Temporal scope",text(m.temporal)],["Supervision",text(m.supervision)]];
 }
 function methodEvaluationFacts(w:Work):[string,string][] {
   const m=record(w.research?.method);
+  if(Object.keys(slamFor(w)).length)return [["Evaluation",text(m.evaluation)],
+    ["Implementation",text(m.implementation)],["Limits",text(m.limitations)]];
   return [["Evaluation",text(m.evaluation)],["Robot evidence",text(m.robotEvidence)],
     ["Robot platform",text(m.robotPlatform,"Not evaluated / not specified")],
     ...(m.policyInput?[["Policy input",text(m.policyInput)] as [string,string]]:[]),
     ...(m.implementation?[["Implementation",text(m.implementation)] as [string,string]]:[]),
     ...(m.limitations?[["Limits",text(m.limitations)] as [string,string]]:[])];
+}
+function trackingFacts(w:Work):[string,string][] {
+  const s=slamFor(w);if(!Object.keys(s).length)return [];
+  const status=(v:unknown)=>v==="yes"?"Yes":v==="no"?"None":v==="optional"?"Optional":"Not verified";
+  const mode=({online:"Online",offline:"Offline",hybrid:"Hybrid"} as Record<string,string>)[String(s.role)]??"Not specified";
+  const mapping=!["calibration","evaluation"].includes(String(s.family));
+  return [["System scope",text(s.systemType)],["Execution",mode],["Sensor setup",text(s.sensors)],
+    ...(mapping?[["Scale source",text(s.metricScale)],["Loop closure",status(s.loopClosure)],["Relocalization",status(s.relocalization)]] as [string,string][]:[]),
+    ["Calibration",text(s.calibration)],["Capture relevance",text(s.captureRelevance)]];
 }
 function datasetFacts(w: Work): [string, string][] {
   const d=record(w.research?.dataset);
@@ -479,7 +516,7 @@ function datasetReleaseFacts(w:Work):[string,string][] {
 }
 function facts(w: Work): [string, string][] {
   const rows: [string,string][] = [["Date", w.date], ["Institution", w.institute], ["Publication", w.publication]];
-  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Reported scope",text(record(w.research?.dataset?.reportedScale).scope)],["Public release",scaleText(record(w.research?.dataset?.publicScale))],["Public release scope",text(record(w.research?.dataset?.publicScale).scope)]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...methodEvaluationFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w)])];
+  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Reported scope",text(record(w.research?.dataset?.reportedScale).scope)],["Public release",scaleText(record(w.research?.dataset?.publicScale))],["Public release scope",text(record(w.research?.dataset?.publicScale).scope)]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...trackingFacts(w),...methodEvaluationFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w),...trackingFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w)])];
 }
 const scaleText = formatScale;
 const factsHtml = (rows: [string, string][]) =>
@@ -513,6 +550,7 @@ function variantsHtml(w: Work) {
 function showDetail(id: string) {
   const w = byId.get(id);
   if (!w) return;
+  toolsMenu.close();
   panel(false);
   detail.dataset.work = id;
   const h = record(w.research?.hardware),
@@ -539,7 +577,8 @@ function showDetail(id: string) {
     ...(Array.isArray(w.release?.notes) ? w.release.notes : [])].filter(Boolean);
   const section=(title:string,rows:[string,string][],note="")=>`<section class="detail-section"><h3>${e(title)}</h3>${factsHtml(rows)}${note?`<p class="detail-scope-note">${e(note)}</p>`:""}</section>`;
   const hardwareSection=w.research?.hardware?section("Hardware & sensing",hardwareFacts(w))+section("Capture & data",hardwareDataFacts(w)):"";
-  const methodSection=w.research?.method?section("Method at a glance",methodFacts(w))+section("Evaluation & deployment",methodEvaluationFacts(w)):"";
+  const tracking=trackingFacts(w);
+  const methodSection=w.research?.method?section("Method at a glance",methodFacts(w))+(tracking.length?section(["calibration","evaluation"].includes(String(slamFor(w).family))?"Tool setup":"Tracking & mapping",tracking):"")+section(tracking.length?"Evaluation & implementation":"Evaluation & deployment",methodEvaluationFacts(w)):"";
   const publicScale=scaleText(record(d.publicScale)),reportedScale=scaleText(record(d.reportedScale));
   const scaleColumns=`<div class="data-scale-columns">${publicScale!=="Not verified"?`<div class="data-scale-column"><span>Public release</span><p>${e(publicScale)}</p>${record(d.publicScale).scope?`<small>${e(record(d.publicScale).scope)}</small>`:""}</div>`:""}${reportedScale!=="Not verified"?`<div class="data-scale-column"><span>Reported</span><p>${e(reportedScale)}</p>${record(d.reportedScale).scope?`<small>${e(record(d.reportedScale).scope)}</small>`:""}</div>`:""}</div>`;
   const datasetSection=w.research?.dataset?`<section class="detail-section"><h3>Dataset</h3>${scaleColumns}${factsHtml(datasetFacts(w))}</section>`+section("Annotations & tasks",datasetAnnotationFacts(w))+section("Release & access",datasetReleaseFacts(w)):"";
@@ -563,8 +602,15 @@ function showCompare() {
   if (selected.size < 2) return;
   const items = [...selected].map((id) => byId.get(id)!);
   const keys = [...new Set(items.flatMap(w => facts(w).map(([k]) => k)))];
+  const note = items.some(w => Object.keys(slamFor(w)).length)
+    ? "Compare sensor requirements, scale, calibration and alignment. Online execution does not imply real-time performance or a complete SLAM backend."
+    : collection === "datasets"
+      ? "Public releases, gated data, announced corpora, and observation variants are different scopes. A reported total is not necessarily the downloadable portion."
+      : collection === "methods"
+        ? "Compare inputs, outputs and evaluation settings. Reported results depend on the original data and protocol."
+        : "Hardware files, software and data access are verified separately. A commercial product is not necessarily closed source.";
   $("compare-content").innerHTML =
-    `<div class="compare-heading"><h2>Side by side.</h2><p>Specifications and release conditions, with their original sources.</p></div><div class="compare-table-wrap" role="region" tabindex="0" aria-label="Comparison table, scroll horizontally"><table class="comparison-table"><thead><tr><th scope="col">Compare</th>${items.map((w) => `<th scope="col">${preview(w) ? `<img src="${e(preview(w)?.url)}" alt="${e(preview(w)?.alt)}"/>` : ""}<strong>${e(collectionName(w))}</strong><a href="${e(w.paperUrl)}" target="_blank" rel="noopener noreferrer">Primary source ↗</a></th>`).join("")}</tr></thead><tbody>${keys.map((key) => `<tr><th scope="row">${e(key)}</th>${items.map((w) => `<td>${e(facts(w).find(([k]) => k === key)?.[1])}</td>`).join("")}</tr>`).join("")}</tbody></table></div><p class="compare-footnote">Public releases, gated data, announced corpora, and observation variants are different scopes. A reported total is not necessarily the downloadable portion.</p>`;
+    `<div class="compare-heading"><h2>Side by side.</h2><p>Specifications and release conditions, with their original sources.</p></div><div class="compare-table-wrap" role="region" tabindex="0" aria-label="Comparison table, scroll horizontally"><table class="comparison-table" style="--compare-columns:${items.length}"><thead><tr><th scope="col">Compare</th>${items.map((w) => `<th scope="col">${preview(w) ? `<img src="${e(preview(w)?.url)}" alt="${e(preview(w)?.alt)}"/>` : ""}<strong>${e(collectionName(w))}</strong><a href="${e(w.paperUrl)}" target="_blank" rel="noopener noreferrer">Primary source ↗</a></th>`).join("")}</tr></thead><tbody>${keys.map((key) => `<tr><th scope="row">${e(key)}</th>${items.map((w) => `<td>${e(facts(w).find(([k]) => k === key)?.[1] ?? "—")}</td>`).join("")}</tr>`).join("")}</tbody></table></div><p class="compare-footnote">${e(note)}</p>`;
   compare.showModal();
   document.body.classList.add("dialog-open");
 }
@@ -631,6 +677,7 @@ detail.addEventListener("click", (event) => {
   if (b) toggle(b.dataset.detailCompare!);
 });
 document.querySelectorAll<HTMLButtonElement>("[data-collection]").forEach(b=>b.addEventListener("click",()=>{
+  toolsMenu.close();
   views.set(collection,view);selections.set(collection,selected);
   collection=b.dataset.collection as Lens;
   view=views.get(collection)??emptyView();views.set(collection,view);
@@ -640,7 +687,11 @@ document.querySelectorAll<HTMLButtonElement>("[data-collection]").forEach(b=>b.a
 }));
 $("category-options").addEventListener("click",event=>{
   const button=(event.target as HTMLElement).closest<HTMLButtonElement>("[data-category]");
-  if(!button)return;view.category=button.dataset.category!;render();
+  if(!button)return;
+  if(collection==="methods"&&button.dataset.category==="tools"){
+    const opened=toolsMenu.isOpen();view.category="tools";panel(false);render();
+    if(opened)toolsMenu.close();else toolsMenu.open();
+  }else{toolsMenu.close();view.category=button.dataset.category!;render();}
 });
 $("filter-fields").addEventListener("change",event=>{
   const control=event.target;if(!(control instanceof HTMLSelectElement)||!control.dataset.facet)return;
@@ -653,9 +704,7 @@ search.addEventListener("input",()=>{view.query=search.value;render();});
 sort.addEventListener("change",()=>{view.sort=sort.value;render();});
 $("reset-filters").addEventListener("click", reset);
 $("empty-reset").addEventListener("click", reset);
-$("filters-toggle").addEventListener("click", () =>
-  panel($("filter-panel").hidden),
-);
+$("filters-toggle").addEventListener("click", () => {toolsMenu.close();panel($("filter-panel").hidden);});
 $("apply-filters").addEventListener("click", () => panel(false));
 document.addEventListener("pointerdown", (event) => {
   if (!$("library-toolbar").contains(event.target as Node)) panel(false);
@@ -664,6 +713,7 @@ $("active-filters").addEventListener("click",event=>{
   const button=(event.target as HTMLElement).closest<HTMLElement>("[data-remove]");if(!button)return;
   const key=button.dataset.remove!;
   if(key==="q"){view.query="";search.value="";}
+  else if(key==="tool"){view.toolTopic="all";view.slamFamily="all";}
   else if(key==="signal")view.signals=view.signals.filter(s=>s!==button.dataset.value);
   else delete view.filters[key];
   buildFilterPanel();render();
@@ -694,7 +744,7 @@ document.querySelectorAll("[data-about]").forEach((b) =>
   }),
 );
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") panel(false);
+  if (event.key === "Escape") {toolsMenu.close(true);panel(false);}
   if (
     event.key === "/" &&
     ![detail, compare, about, roadmap].some((d) => d.open) &&
@@ -703,6 +753,7 @@ document.addEventListener("keydown", (event) => {
     )
   ) {
     event.preventDefault();
+    toolsMenu.close();
     search.focus();
   }
 });

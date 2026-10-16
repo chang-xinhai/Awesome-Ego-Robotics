@@ -28,6 +28,8 @@ npm run preview -- --host 0.0.0.0 --port 4342
 ## Organization
 
 - `src/lib/catalog.ts`: README parsing, deduplication and validation.
+- `src/lib/tooling.ts`: README-derived tool subgroups and SLAM families.
+- `src/scripts/tool-menu.ts`: accessible, responsive split menu for Tools.
 - `src/data/media.json`: display names, short summaries, modality and coverage
   facets, credited context-specific preview paths. Existing README IDs only.
 - `src/data/hardware-evidence.json`: capture form, tracking and measured sensing.
@@ -87,6 +89,12 @@ Datasets use data families, coverage, annotation evidence, data scope and access
 Methods use L1 hand reconstruction, L2 world/body motion, L3 interaction, L4
 robotization, L5 policy learning, L6 direct video-learning routes, and tools.
 Their additional filters cover output/representation, validation and learning.
+Tools opens an on-demand split menu for SLAM, calibration/synchronization,
+trajectory evaluation, Ego/UMI workflows and Others. SLAM further separates
+visual/inertial, learned/dense, LiDAR/fusion and capture-workflow references.
+This view uses execution mode, loop closure, relocalization, project release
+and year as its five facets. `tool=` and `family=` preserve the nested selection
+in shared URLs; switching collections retains each collection's state.
 Year is shared. Options/counts narrow to the category and other active filters.
 Query, sort, categories, facets, signals and comparison are remembered separately
 for each lens. Shared URLs contain only the active view; legacy `source=` links
@@ -99,3 +107,10 @@ release scope, or method geometry versus robot evaluation. `fieldSources`
 records primary evidence per field. Synthetic modalities remain separate from
 physical recordings. Scale formatting preserves new dimensions and avoids
 repeating units already present in source values.
+
+SLAM details and comparisons also show system scope, actual sensor requirements,
+online/offline execution, scale source, calibration and capture relevance.
+Odometry, complete SLAM, offline reconstruction and point-map methods remain
+explicitly distinct. README fourth-level tool headings supply the canonical
+subgroup. Sourced SLAM cross-references can expose a work already indexed in
+another research layer without duplicating its canonical row.

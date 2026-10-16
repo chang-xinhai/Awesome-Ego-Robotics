@@ -1,9 +1,10 @@
 import type { Work } from './catalog';
+import { toolTopicsFor, slamFamilyFor, slamFor } from './tooling.ts';
 export type Lens = 'hardware' | 'datasets' | 'methods' | 'research';
 export interface Category { key: string; label: string; description: string; section: string; }
 export interface Choice { value: string; label: string; }
 export interface Facet { key: string; label: string; options?: Choice[]; }
-export interface ViewState { category: string; filters: Record<string,string>; signals: string[]; query: string; sort: string; }
+export interface ViewState { category: string; toolTopic?: string; slamFamily?: string; filters: Record<string,string>; signals: string[]; query: string; sort: string; }
 const choices = (entries: [string,string][]): Choice[] => entries.map(([value,label]) => ({value,label}));
 export const CATEGORIES: Record<Lens, Category[]> = {
   hardware: [
@@ -53,17 +54,24 @@ export const FACETS: Record<Lens, Facet[]> = {
   ],
   research: [year],
 };
+export const TOOL_FACETS:Facet[] = [
+  {key:'runtime',label:'Execution',options:choices([['online','Online'],['offline','Offline'],['hybrid','Hybrid'],['unknown','Not specified']])},
+  {key:'loop',label:'Loop closure',options:choices([['yes','Yes'],['no','None'],['optional','Optional'],['unknown','Not verified']])},
+  {key:'relocalization',label:'Relocalization',options:choices([['yes','Yes'],['no','None'],['optional','Optional'],['unknown','Not verified']])},
+  {key:'openness',label:'Project release',options:choices([['open','Open source'],['partial','Partial release'],['closed','Closed source'],['unknown','Not verified']])},year,
+];
+export const facetsFor=(lens:Lens,category='all'):Facet[]=>lens==='methods'&&category==='tools'?TOOL_FACETS:FACETS[lens];
 export const LENS_COPY: Record<Lens,{title:string;signals:string;note:string;placeholder:string}> = {
   hardware:{title:'Hardware filters',signals:'Recorded signals',note:'Choose a device family above. Commercial availability and source release are separate.',placeholder:'Find a device, sensor, or manufacturer…'},
   datasets:{title:'Dataset filters',signals:'Data modalities',note:'Choose a data family above. Physical observations, synthetic channels and estimated labels are distinguished in Details.',placeholder:'Find a dataset, task, or annotation…'},
   methods:{title:'Method filters',signals:'Input signals',note:'Choose a research layer above. L6 is a parallel video-learning route; it can bypass explicit 3D reconstruction.',placeholder:'Find a method, output, or institution…'},
   research:{title:'Research index filters',signals:'Signals & representations',note:'The complete README-derived index, including every resource type.',placeholder:'Search the complete research index…'},
 };
-export const emptyView = ():ViewState => ({category:'all',filters:{},signals:[],query:'',sort:'newest'});
+export const emptyView = ():ViewState => ({category:'all',toolTopic:'all',slamFamily:'all',filters:{},signals:[],query:'',sort:'newest'});
 const record = (v:unknown):Record<string,unknown> => v && typeof v==='object' && !Array.isArray(v) ? v as Record<string,unknown> : {};
 const string = (v:unknown,fallback='unknown'):string => typeof v==='string' && v.trim() ? v : fallback;
 export function inLens(w:Work,lens:Lens) { return lens==='research' || w.collections.includes(lens); }
-export function categoriesFor(w:Work,lens:Lens) { return CATEGORIES[lens].filter(c=>w.sections.some(s=>s.endsWith(' / '+c.section))).map(c=>c.key); }
+export function categoriesFor(w:Work,lens:Lens) { return CATEGORIES[lens].filter(c=>w.sections.some(s=>s.endsWith(' / '+c.section))||(lens==='methods'&&c.key==='tools'&&toolTopicsFor(w).length>0)).map(c=>c.key); }
 export function coverageFor(w:Work,lens:Lens) {
   const evidence=record(w.research?.[lens==='datasets'?'dataset':lens==='methods'?'method':'hardware']);
   const v=string(evidence.bodyCoverage,w.coverage);
@@ -89,6 +97,9 @@ export function facetValues(w:Work,lens:Lens,key:string):string[] {
     case 'output':return [string(m.outputSpace)];
     case 'evidence':return [string(m.evidenceLevel)];
     case 'training':return [string(m.trainingType)];
+    case 'runtime':return [string(slamFor(w).role)];
+    case 'loop':return [string(slamFor(w).loopClosure)];
+    case 'relocalization':return [string(slamFor(w).relocalization)];
     default:return [];
   }
 }
@@ -100,11 +111,15 @@ const searchIndex=new WeakMap<Work,string>();
 export function matches(w:Work,lens:Lens,state:ViewState,excludeFacet?:string) {
   if(!inLens(w,lens))return false;
   if(state.category!=='all'&&!categoriesFor(w,lens).includes(state.category))return false;
+  if(lens==='methods'&&state.category==='tools'){
+    if(state.toolTopic&&state.toolTopic!=='all'&&!toolTopicsFor(w).includes(state.toolTopic))return false;
+    if((state.toolTopic==='slam'||!state.toolTopic||state.toolTopic==='all')&&state.slamFamily&&state.slamFamily!=='all'&&(!toolTopicsFor(w).includes('slam')||slamFamilyFor(w)!==state.slamFamily))return false;
+  }
   if(state.query.trim()){
     let haystack=searchIndex.get(w);
     if(!haystack){haystack=[w.name,...(w.aliases??[]),w.title,w.keywords,w.institute,w.publication,...w.sections,JSON.stringify(w.research??{}),JSON.stringify(w.release??{})].join(' ').toLowerCase();searchIndex.set(w,haystack);}
     if(!haystack.includes(state.query.trim().toLowerCase()))return false;
   }
   if(state.signals.some(s=>!signalsFor(w,lens).includes(s)))return false;
-  return FACETS[lens].every(f=>f.key===excludeFacet||!state.filters[f.key]||state.filters[f.key]==='all'||facetValues(w,lens,f.key).includes(state.filters[f.key]));
+  return facetsFor(lens,state.category).every(f=>f.key===excludeFacet||!state.filters[f.key]||state.filters[f.key]==='all'||facetValues(w,lens,f.key).includes(state.filters[f.key]));
 }
