@@ -1,4 +1,4 @@
-name: Deploy website (manual after preview approval)
+name: Deploy website to GitHub Pages
 
 "on":
   workflow_dispatch: {}

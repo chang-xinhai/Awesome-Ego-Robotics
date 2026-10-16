@@ -1,6 +1,6 @@
 # Awesome Ego Robotics · visual atlas
 
-A local review draft using the approved [Awesome-UMI](https://github.com/chang-xinhai/Awesome-UMI) visual system and Astro stack.
+A published visual atlas using the approved [Awesome-UMI](https://github.com/chang-xinhai/Awesome-UMI) visual system and Astro stack.
 The canonical curated collection is `../README.md`. Titles, dates, institutions,
 publications, links, and taxonomy are parsed from its six-column tables. A
 `<!-- work:stable-slug -->` comment inside every row’s final column supplies its persistent ID.
@@ -64,12 +64,17 @@ coverage overviews for datasets; method figures only for methods. Preserve
 image URL, original source page, alt text and review date. No available verified
 figure means a source card, not a fabricated image or unrelated fallback.
 
-## Deployment is pending preview approval
+## Deployment
 
-`validate.yml` only checks/builds source. `deploy-website.yml` is manual-only and
-has not been run. GitHub Pages must remain disabled until the user approves the
-local preview. When approved, enable Pages with GitHub Actions and dispatch the
-manual workflow; adding automatic deployment is a separate choice.
+The approved public atlas is available at
+<https://chang-xinhai.github.io/Awesome-Ego-Robotics/>. GitHub Pages uses GitHub
+Actions. `validate.yml` tests, checks and builds source pushes;
+`deploy-website.yml` publishes reviewed `main` revisions through its manual
+`workflow_dispatch` trigger. Local development and preview remain available.
+
+```sh
+gh workflow run deploy-website.yml --ref main
+```
 
 ## Verification
 

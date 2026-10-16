@@ -19,7 +19,7 @@
 
 </div>
 
-<p align="center"><a href="website/README.md"><strong>Preview the visual atlas →</strong></a> · Images, filters, details, and side-by-side comparison · Local review; deployment pending approval</p>
+<p align="center"><a href="https://chang-xinhai.github.io/Awesome-Ego-Robotics/"><strong>Explore the visual atlas →</strong></a> · Images, filters, details, and side-by-side comparison · <a href="website/README.md">Website source and local preview</a></p>
 
 ## About
 
@@ -63,6 +63,7 @@ Start here for the shortest path through the capture-to-learning ecosystem.
 
 ## News
 
+- [2026-10-16] Launched the [visual atlas](https://chang-xinhai.github.io/Awesome-Ego-Robotics/) with collection-specific discovery, sourced details and comparison.
 - [2026-10-16] Initialized the single-README collection and local visual atlas with independent hardware, dataset and method views.
 
 ## Contents

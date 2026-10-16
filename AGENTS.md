@@ -139,10 +139,11 @@ and source quality with subagents when the task requests parallel review.
 
 ## Deployment policy
 
-The current website is a **local review draft**. Do not enable GitHub Pages,
-trigger deployment, add push-triggered deployment, or advertise a live website
-until the user approves the local preview. Source pushes and validation CI are
-allowed. Keep deployment manual (`workflow_dispatch`) until approval.
+The user approved public release on **2026-10-16**. Publish the approved atlas
+at `https://chang-xinhai.github.io/Awesome-Ego-Robotics/` with GitHub Pages
+using GitHub Actions. Keep validation on source pushes and deployment manual
+(`workflow_dispatch`); deploy reviewed changes from `main`. Preserve the local
+preview workflow for future design iterations.
 
 ## Collection filters and evidence presentation
 
