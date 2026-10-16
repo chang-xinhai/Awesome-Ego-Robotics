@@ -3618,6 +3618,1406 @@
       "notes": [
         "UMI orchestration/processing wrapper: MIT. GoPro ORB-SLAM3 fork: GPL-3.0. These are separate components; the combined pipeline is not represented as wholly MIT. Docker images, calibration tools, datasets and other dependencies retain separate terms."
       ]
+    },
+    "abot-recon": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0 source; CC-BY-NC-4.0 weights with upstream Pi3 restrictions",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/amap-cvlab/ABot-Recon/blob/main/LICENSE"
+        },
+        {
+          "label": "Weight license",
+          "url": "https://github.com/amap-cvlab/ABot-Recon/blob/main/MODEL_LICENSE.md"
+        },
+        {
+          "label": "Third-party notices",
+          "url": "https://github.com/amap-cvlab/ABot-Recon/blob/main/THIRD_PARTY_NOTICES.md"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. Apache-2.0 source; CC-BY-NC-4.0 weights with upstream Pi3 restrictions"
+      ]
+    },
+    "horizonstream": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "HF checkpoint declares Apache-2.0; official source tree has no root license verified",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/3DAgentWorld/HorizonStream"
+        },
+        {
+          "label": "Official model license",
+          "url": "https://huggingface.co/NicolasCC/HorizonStream"
+        },
+        {
+          "label": "Optional loop module",
+          "url": "https://github.com/3DAgentWorld/HorizonStream#checkpoints"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. HF checkpoint declares Apache-2.0; official source tree has no root license verified"
+      ]
+    },
+    "vggt-omega": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "FAIR Noncommercial Research License; gated pretrained checkpoint access",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/facebookresearch/vggt-omega/blob/main/LICENSE"
+        },
+        {
+          "label": "Reference checkpoint reproduction",
+          "url": "https://github.com/facebookresearch/vggt-omega/blob/main/reproduction.md"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. FAIR Noncommercial Research License; gated pretrained checkpoint access"
+      ]
+    },
+    "retrievevggt": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0 wrapper; released setup downloads the CC-BY-NC-SA-4.0 StreamVGGT checkpoint",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/zzctmd/RetrieveVGGT/blob/main/LICENSE"
+        },
+        {
+          "label": "Backbone terms",
+          "url": "https://github.com/wzzheng/StreamVGGT/blob/main/LICENSE.txt"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. Apache-2.0 wrapper; released setup downloads the CC-BY-NC-SA-4.0 StreamVGGT checkpoint"
+      ]
+    },
+    "lingbot-map": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0 code; official model card repeats project terms without a separately scoped weight license",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/Robbyant/lingbot-map/blob/main/LICENSE.txt"
+        },
+        {
+          "label": "Official model release",
+          "url": "https://huggingface.co/robbyant/lingbot-map"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. Apache-2.0 code; official model card repeats project terms without a separately scoped weight license"
+      ]
+    },
+    "filt3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "Inherited CUT3R CC-BY-NC-SA-4.0 plus MIT material; upstream licenses apply",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/jinotter3/FILT3R/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. Inherited CUT3R CC-BY-NC-SA-4.0 plus MIT material; upstream licenses apply"
+      ]
+    },
+    "loger": {
+      "status": "unknown",
+      "commercial": false,
+      "softwareStatus": "No repository source-code license verified; checkpoint model terms not explicitly verified",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/Junyi42/LoGeR"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. No repository source-code license verified; checkpoint model terms not explicitly verified"
+      ]
+    },
+    "longstream": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "MIT code; separate public checkpoint has no explicit model license verified",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/3DAgentWorld/LongStream/blob/main/LICENSE"
+        },
+        {
+          "label": "Released checkpoint",
+          "url": "https://huggingface.co/NicolasCC/LongStream"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. MIT code; separate public checkpoint has no explicit model license verified"
+      ]
+    },
+    "infinitevggt": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0 wrapper; StreamVGGT checkpoint remains CC-BY-NC-SA-4.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/AutoLab-SAI-SJTU/InfiniteVGGT/blob/main/LICENSE.txt"
+        },
+        {
+          "label": "Backbone checkpoint terms",
+          "url": "https://github.com/wzzheng/StreamVGGT/blob/main/LICENSE.txt"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. Apache-2.0 wrapper; StreamVGGT checkpoint remains CC-BY-NC-SA-4.0"
+      ]
+    },
+    "depth-anything-3": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0 code; model table lists Apache-2.0 and CC-BY-NC-4.0 variants separately",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/ByteDance-Seed/Depth-Anything-3/blob/main/LICENSE"
+        },
+        {
+          "label": "Per-model licenses",
+          "url": "https://github.com/ByteDance-Seed/Depth-Anything-3#model-zoo"
+        },
+        {
+          "label": "Streaming wrapper",
+          "url": "https://github.com/ByteDance-Seed/Depth-Anything-3/tree/main/da3_streaming"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. Apache-2.0 code; model table lists Apache-2.0 and CC-BY-NC-4.0 variants separately"
+      ]
+    },
+    "ttt3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "Mixed repository license: inherited CUT3R CC-BY-NC-SA-4.0 plus MIT material",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/Inception3D/TTT3R/blob/main/LICENSE"
+        },
+        {
+          "label": "Source license mixture",
+          "url": "https://github.com/Inception3D/TTT3R/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. Mixed repository license: inherited CUT3R CC-BY-NC-SA-4.0 plus MIT material"
+      ]
+    },
+    "evict3r": {
+      "status": "unknown",
+      "commercial": false,
+      "softwareStatus": "No author implementation or source-code license verified from paper links",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Primary release evidence",
+          "url": "https://arxiv.org/abs/2509.17650"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. No author implementation or source-code license verified from paper links"
+      ]
+    },
+    "map-anything": {
+      "status": "open",
+      "commercial": false,
+      "softwareStatus": "Apache-2.0 code; Apache-2.0 and CC-BY-NC-4.0 checkpoint variants released",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/facebookresearch/map-anything/blob/main/LICENSE"
+        },
+        {
+          "label": "Apache checkpoint",
+          "url": "https://huggingface.co/facebook/map-anything-apache"
+        },
+        {
+          "label": "Checkpoint license variants",
+          "url": "https://github.com/facebookresearch/map-anything#code-license"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. Apache-2.0 code; Apache-2.0 and CC-BY-NC-4.0 checkpoint variants released"
+      ]
+    },
+    "stream3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "NTU S-Lab License 1.0, non-commercial use",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/NIRVANALAN/STream3R/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. NTU S-Lab License 1.0, non-commercial use"
+      ]
+    },
+    "long3r": {
+      "status": "unknown",
+      "commercial": false,
+      "softwareStatus": "No public implementation license verified; author repository still says Code Coming Soon",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/zgchen33/LONG3R"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. No public implementation license verified; author repository still says Code Coming Soon"
+      ]
+    },
+    "pi3": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "BSD-3-Clause code; Pi3 / Pi3X weights CC-BY-NC-4.0 per latest repository",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/yyfz/Pi3/blob/main/LICENSE"
+        },
+        {
+          "label": "Current dual-license statement",
+          "url": "https://github.com/yyfz/Pi3#-license"
+        },
+        {
+          "label": "Pi3X model terms",
+          "url": "https://huggingface.co/yyfz233/Pi3X"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. BSD-3-Clause code; Pi3 / Pi3X weights CC-BY-NC-4.0 per latest repository"
+      ]
+    },
+    "streamvggt": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC-BY-NC-SA-4.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/wzzheng/StreamVGGT/blob/main/LICENSE.txt"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. CC-BY-NC-SA-4.0"
+      ]
+    },
+    "point3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC-BY-NC-SA-4.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/YkiWu/Point3R/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. CC-BY-NC-SA-4.0"
+      ]
+    },
+    "vggt": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "Custom VGGT License; original model and designated commercial checkpoint have different usage terms",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/facebookresearch/vggt/blob/main/LICENSE.txt"
+        },
+        {
+          "label": "Model variants and terms",
+          "url": "https://github.com/facebookresearch/vggt#license"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. Custom VGGT License; original model and designated commercial checkpoint have different usage terms"
+      ]
+    },
+    "fast3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "FAIR Noncommercial Research License",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/facebookresearch/fast3r/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. FAIR Noncommercial Research License"
+      ]
+    },
+    "cut3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC-BY-NC-SA-4.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/CUT3R/CUT3R/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. CC-BY-NC-SA-4.0"
+      ]
+    },
+    "mv-dust3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC-BY-NC-4.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/facebookresearch/mvdust3r/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. CC-BY-NC-4.0"
+      ]
+    },
+    "spann3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC-BY-NC-SA-4.0",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/HengyiWang/spann3r/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. CC-BY-NC-SA-4.0"
+      ]
+    },
+    "mast3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC-BY-NC-SA-4.0 code / base models; CHECKPOINTS_NOTICE adds training-data terms",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/naver/mast3r/blob/main/LICENSE"
+        },
+        {
+          "label": "Checkpoint notices",
+          "url": "https://github.com/naver/mast3r/blob/main/CHECKPOINTS_NOTICE"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. CC-BY-NC-SA-4.0 code / base models; CHECKPOINTS_NOTICE adds training-data terms"
+      ]
+    },
+    "dust3r": {
+      "status": "partial",
+      "commercial": false,
+      "softwareStatus": "CC-BY-NC-SA-4.0 code and models; training-data terms also apply",
+      "availability": "Research method / tool",
+      "evidence": [
+        {
+          "label": "Implementation license / release status",
+          "url": "https://github.com/naver/dust3r/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Software and pretrained weights are checked separately. CC-BY-NC-SA-4.0 code and models; training-data terms also apply"
+      ]
+    },
+    "ultra-fusion": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/sjtuyinjie/Ultra-Fusion"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/sjtuyinjie/Ultra-Fusion/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT LICENSE covers the released repository; official README currently distributes executable binaries/demos and promises full source after paper acceptance. This is not a fully open-source estimator."
+      ]
+    },
+    "okvis2-x": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/ethz-mrl/OKVIS2-X"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/ethz-mrl/OKVIS2-X/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "BSD-3-Clause main code, confirmed from actual LICENSE; pretrained depth networks and dependencies have separate terms."
+      ]
+    },
+    "super-lio": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/Liansheng-Wang/Super-LIO"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/Liansheng-Wang/Super-LIO/blob/ros2/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-3.0 actual LICENSE; official ROS1 and ROS2 branches available."
+      ]
+    },
+    "super-odometry-2": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/superxslam/SuperOdom"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/superxslam/SuperOdom/blob/ros2/LICENSE"
+        }
+      ],
+      "notes": [
+        "SuperOdom component release has GPL-3.0-only LICENSE plus optional commercial licensing. Current README presents visual module as a future release; full learned-inertial hierarchy and weights are not verified released."
+      ]
+    },
+    "ellipselio": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/v4rl-ucy/ellipselio"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/v4rl-ucy/ellipselio/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT actual LICENSE; original paper and third-party benchmarks retain separate terms."
+      ]
+    },
+    "fire-livwo": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Paper and project media",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/KJ-Falloutlast/FIRE-LIVWO"
+        }
+      ],
+      "notes": [
+        "Paper says code will be open; current official tree contains project media only and no implementation LICENSE. Do not infer open-source software from a GitHub link."
+      ]
+    },
+    "kiss-slam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/PRBonn/kiss-slam"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/PRBonn/kiss-slam/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT main LICENSE; dependencies such as g2o have separate terms. Official IROS25 tag pins paper code."
+      ]
+    },
+    "voxel-slam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/hku-mars/Voxel-SLAM"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/hku-mars/Voxel-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-2.0 actual LICENSE."
+      ]
+    },
+    "r3live-plusplus": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/hku-mars/r3live"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/hku-mars/r3live/blob/master/LICENCE"
+        }
+      ],
+      "notes": [
+        "Shared repository has GPL-2.0 LICENCE but README also states personal/academic-only use and separate commercial negotiation. Preserve this ambiguity and verify ++ implementation coverage before reuse."
+      ]
+    },
+    "immesh": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/hku-mars/ImMesh"
+        }
+      ],
+      "notes": [
+        "Official README declares GPLv2 but adds personal/academic-only use and commercial negotiation; no root LICENSE file was found. Do not describe this as an unqualified permissive/open release."
+      ]
+    },
+    "kiss-icp": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/PRBonn/kiss-icp"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/PRBonn/kiss-icp/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT actual LICENSE."
+      ]
+    },
+    "ct-icp": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/jedeschaud/ct_icp"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/jedeschaud/ct_icp/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT actual LICENSE; official ICRA-2022 release identifies paper implementation."
+      ]
+    },
+    "dlio": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/vectr-ucla/direct_lidar_inertial_odometry"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/vectr-ucla/direct_lidar_inertial_odometry/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT actual LICENSE."
+      ]
+    },
+    "slict": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/brytsknguyen/slict"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/brytsknguyen/slict/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-2.0 actual LICENSE. Official slict.1.0 tag identifies original method; current repository also hosts SLICT2."
+      ]
+    },
+    "slict2": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/brytsknguyen/slict"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/brytsknguyen/slict/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-2.0 shared code LICENSE. Official noetic tag supplies SLICT2 ROS1, while current main targets ROS2 Jazzy; paper figures retain their original license."
+      ]
+    },
+    "hba": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/hku-mars/HBA"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/hku-mars/HBA/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-2.0 actual LICENSE."
+      ]
+    },
+    "voxelmap": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/hku-mars/VoxelMap"
+        }
+      ],
+      "notes": [
+        "README declares GPLv2 and asks commercial users to contact authors; no root LICENSE file is present in the current tree. Terms need checking before reuse."
+      ]
+    },
+    "faster-lio": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Release and licensing statement",
+          "url": "https://github.com/gaoxiang12/faster-lio"
+        },
+        {
+          "label": "Actual license file",
+          "url": "https://github.com/gaoxiang12/faster-lio/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "GPL-2.0 actual LICENSE."
+      ]
+    },
+    "gso-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Official source repository",
+          "url": "https://github.com/Lab-of-AI-and-Robotics/GSO-SLAM"
+        },
+        {
+          "label": "Rasterizer noncommercial research notice",
+          "url": "https://github.com/Lab-of-AI-and-Robotics/GSO-SLAM/blob/main/cuda_rasterizer/forward.cu"
+        }
+      ],
+      "notes": [
+        "Public source code has no root project license; included rasterizer headers state noncommercial research/evaluation terms. License is not verified as fully open."
+      ]
+    },
+    "lidargs-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Official source repository",
+          "url": "https://github.com/Lab-of-AI-and-Robotics/LiDAR-GS-SLAM"
+        },
+        {
+          "label": "Rasterizer noncommercial research notice",
+          "url": "https://github.com/Lab-of-AI-and-Robotics/LiDAR-GS-SLAM/blob/main/submodules/diff-surfel-spherical-rasterization/cuda_rasterizer/forward.cu"
+        },
+        {
+          "label": "Main MIT LICENSE",
+          "url": "https://github.com/Lab-of-AI-and-Robotics/LiDAR-GS-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Main project MIT LICENSE is verified. Required rasterizer headers retain Inria noncommercial research/evaluation terms; do not treat the complete dependency stack as unrestricted MIT."
+      ]
+    },
+    "mild-aprilvins": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Announced research system",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://mild-web.github.io/"
+        }
+      ],
+      "notes": [
+        "Code, datasets and evaluation manifests announced for release after acceptance; restricted pilot returns trajectories only."
+      ]
+    },
+    "robocap-grounded": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial API / technical report",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://www.gsi.company/"
+        }
+      ],
+      "notes": [
+        "Grounded API access is invite-based; no public algorithm/checkpoint license verified. Commercial availability does not itself prove closed source."
+      ]
+    },
+    "ha-slam": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial technical report",
+      "softwareStatus": "unknown",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://ha-slam.humanarchive.ai/"
+        }
+      ],
+      "notes": [
+        "No public software, model or benchmark-data license located in the technical report."
+      ]
+    },
+    "vidmap": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://github.com/cvg/vidmap/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "VidMap code is Apache-2.0. Learned dependencies and checkpoints retain their own terms; approximately 9 GB of checkpoints are downloaded by the default frontend."
+      ]
+    },
+    "mp-sfm": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://github.com/cvg/mpsfm/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "MP-SfM code is Apache-2.0; pretrained prior and matcher dependencies have separate terms."
+      ]
+    },
+    "egocentric-splats": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://github.com/facebookresearch/egocentric_splats/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Implementation is CC BY-NC 4.0; paper is CC BY-NC-SA 4.0 and dataset/services have separate terms. Noncommercial source is not unrestricted open source."
+      ]
+    },
+    "lamaria": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://github.com/cvg/lamaria/blob/main/LICENSE"
+        },
+        {
+          "label": "Dataset CC BY 4.0",
+          "url": "https://github.com/cvg/lamaria/blob/main/LICENSE-CC-BY"
+        }
+      ],
+      "notes": [
+        "Code MIT; dataset/documentation CC BY 4.0 under LICENSE-CC-BY. Test ground truth is withheld for server evaluation."
+      ],
+      "dataStatus": "open"
+    },
+    "lamar": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://github.com/microsoft/lamar-benchmark/blob/main/LICENSE-CODE"
+        },
+        {
+          "label": "Data/documentation CC BY 4.0",
+          "url": "https://github.com/microsoft/lamar-benchmark/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code MIT under LICENSE-CODE; dataset/documentation CC BY 4.0 under LICENSE; third-party APIs retain separate terms."
+      ],
+      "dataStatus": "open"
+    },
+    "umi-3d-processing": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://github.com/hku-mars/UMI-3D/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Processing repository GPL-2.0; dependencies and separate hardware/policy repositories retain their own terms."
+      ]
+    },
+    "egomotion-local-loops": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://github.com/IITD-COMPUTER-VISION-GROUP/Egomotion_with_Local_Loop_Closures/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "Author source GPL-3.0; MATLAB and old C++ dependencies are separate requirements."
+      ]
+    },
+    "ego-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "partial",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://github.com/IITD-COMPUTER-VISION-GROUP/ego-slam/blob/master/Readme.txt"
+        }
+      ],
+      "notes": [
+        "Author Readme restricts use to academic purposes and excludes commercial use; do not mark as unrestricted open source."
+      ]
+    },
+    "vins-fisheye": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://github.com/xuhao1/VINS-Fisheye/blob/master/LICENCE"
+        }
+      ],
+      "notes": [
+        "Fisheye fork GPL-3.0; VisionWorks/libSGM/OpenCV dependencies have separate terms."
+      ]
+    },
+    "tagslam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://github.com/berndpfrommer/tagslam/blob/master/LICENSE"
+        }
+      ],
+      "notes": [
+        "TagSLAM Apache-2.0; current ROS2 README is work in progress and should not be confused with mature ROS1 examples."
+      ]
+    },
+    "ucoslam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "open",
+      "evidence": [
+        {
+          "label": "Code and license",
+          "url": "https://www.uco.es/investiga/grupos/ava/portfolio/ucoslam/"
+        }
+      ],
+      "notes": [
+        "Official author page specifies GPL-3.0 (License-gpl.txt) and separately offers commercial closed-source licensing; dependency licenses remain separate."
+      ]
+    },
+    "unblur-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Apache-2.0 main code; required Inria research-only Gaussian rasterizer",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/SlamMate/Unblur-SLAM"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/SlamMate/Unblur-SLAM/blob/main/LICENSE"
+        },
+        {
+          "label": "Required rasterizer terms",
+          "url": "https://github.com/SlamMate/Unblur-SLAM/blob/main/thirdparty/diff-gaussian-rasterization-w-pose/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "Main code uses Apache-2.0; required Gaussian rasterizer retains Inria noncommercial research/evaluation terms. Main license does not make the full dependency stack unrestricted open source.",
+        "Official README phase 2 still marks deblurring-model training code as not released; inference weights and datasets are separately available."
+      ]
+    },
+    "sgad-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT main code; required Inria research-only Gaussian rasterizer",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/MachinePerceptionLab/SGAD-SLAM"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/MachinePerceptionLab/SGAD-SLAM/blob/main/LICENSE"
+        },
+        {
+          "label": "Required rasterizer terms",
+          "url": "https://github.com/pengchongH/gaussian_rasterizer_smallerGSradii/blob/master/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "Main code uses MIT; required Gaussian rasterizer retains Inria noncommercial research/evaluation terms. Main license does not make the full dependency stack unrestricted open source."
+      ]
+    },
+    "flow4dgs-slam": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Repository-level license not verified",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/wangys16/Flow4DGS-SLAM"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "Source files are public, but a root implementation license was not verified; public visibility is not a grant of open-source rights."
+      ]
+    },
+    "wildgs-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Apache-2.0 main code; required Inria research-only Gaussian rasterizer",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/GradientSpaces/WildGS-SLAM"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/GradientSpaces/WildGS-SLAM/blob/main/LICENSE"
+        },
+        {
+          "label": "Required rasterizer terms",
+          "url": "https://github.com/GradientSpaces/WildGS-SLAM/blob/main/thirdparty/gaussian_splatting/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "Main code uses Apache-2.0; required Gaussian rasterizer retains Inria noncommercial research/evaluation terms. Main license does not make the full dependency stack unrestricted open source."
+      ]
+    },
+    "vings-mono": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Repository-level license not verified",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/Fudan-MAGIC-Lab/VINGS-Mono"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "Source files are public, but a root implementation license was not verified; public visibility is not a grant of open-source rights."
+      ]
+    },
+    "hi-slam2": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "BSD-3-Clause main code; required Inria research-only Gaussian rasterizer",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/Willyzw/HI-SLAM2"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/Willyzw/HI-SLAM2/blob/main/LICENSE"
+        },
+        {
+          "label": "Required rasterizer terms",
+          "url": "https://github.com/Willyzw/HI-SLAM2/blob/main/thirdparty/diff-gaussian-rasterization/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "Main code uses BSD-3-Clause; required Gaussian rasterizer retains Inria noncommercial research/evaluation terms. Main license does not make the full dependency stack unrestricted open source."
+      ]
+    },
+    "loopsplat": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT main code; required Inria research-only Gaussian rasterizer",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/GradientSpaces/LoopSplat"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/GradientSpaces/LoopSplat/blob/main/LICENSE"
+        },
+        {
+          "label": "Required rasterizer terms",
+          "url": "https://github.com/rmurai0610/diff-gaussian-rasterization-w-pose/blob/main/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "Main code uses MIT; required Gaussian rasterizer retains Inria noncommercial research/evaluation terms. Main license does not make the full dependency stack unrestricted open source."
+      ]
+    },
+    "photo-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "GPL-3.0 main code; required Inria research-only Gaussian rasterizer",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/HuajianUP/Photo-SLAM"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/HuajianUP/Photo-SLAM/blob/main/LICENSE"
+        },
+        {
+          "label": "Required rasterizer terms",
+          "url": "https://github.com/HuajianUP/Photo-SLAM/blob/main/cuda_rasterizer/forward.cu"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "Main code uses GPL-3.0; required Gaussian rasterizer retains Inria noncommercial research/evaluation terms. Main license does not make the full dependency stack unrestricted open source."
+      ]
+    },
+    "rtg-slam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "GPL-3.0",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/MisEty/RTG-SLAM"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/MisEty/RTG-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights."
+      ]
+    },
+    "gaussian-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT main code; required Inria research-only Gaussian rasterizer",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/VladimirYugay/Gaussian-SLAM"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/VladimirYugay/Gaussian-SLAM/blob/main/LICENSE"
+        },
+        {
+          "label": "Required rasterizer terms",
+          "url": "https://github.com/VladimirYugay/gaussian_rasterizer/blob/master/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "Main code uses MIT; required Gaussian rasterizer retains Inria noncommercial research/evaluation terms. Main license does not make the full dependency stack unrestricted open source."
+      ]
+    },
+    "gs-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Inria Gaussian-Splatting research license; component release",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/yanchi-3dv/diff-gaussian-rasterization-for-gsslam"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/yanchi-3dv/diff-gaussian-rasterization-for-gsslam/blob/main/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "The official linked release is the modified rasterizer; a full end-to-end SLAM implementation is not verified. Rasterizer is under the Inria research license."
+      ]
+    },
+    "nerf-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "BSD-2-Clause wrapper; NVIDIA instant-NGP dependency terms",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/ToniRV/NeRF-SLAM"
+        },
+        {
+          "label": "Dependency license and scope",
+          "url": "https://github.com/ToniRV/NeRF-SLAM#license"
+        },
+        {
+          "label": "Actual wrapper BSD-2-Clause license",
+          "url": "https://github.com/ToniRV/NeRF-SLAM/blob/master/LICENSE.BSD"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "BSD-2-Clause wrapper; required instant-NGP fork retains NVIDIA license terms."
+      ]
+    },
+    "loopy-slam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Apache-2.0",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/eriksandstroem/Loopy-SLAM"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/eriksandstroem/Loopy-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights."
+      ]
+    },
+    "point-slam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "Apache-2.0",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/tfy14esa/Point-SLAM"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/tfy14esa/Point-SLAM/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights."
+      ]
+    },
+    "gs-icp-slam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "MIT main code; required Inria research-only Gaussian rasterizer",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/Lab-of-AI-and-Robotics/GS_ICP_SLAM"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/Lab-of-AI-and-Robotics/GS_ICP_SLAM/blob/main/LICENSE"
+        },
+        {
+          "label": "Required rasterizer terms",
+          "url": "https://github.com/Lab-of-AI-and-Robotics/diff-gaussian-rasterization/blob/main/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights.",
+        "Main code uses MIT; required Gaussian rasterizer retains Inria noncommercial research/evaluation terms. Main license does not make the full dependency stack unrestricted open source."
+      ]
+    },
+    "gps-slam": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research software",
+      "softwareStatus": "AGPL-3.0",
+      "hardwareStatus": "Not applicable",
+      "evidence": [
+        {
+          "label": "Official software and terms",
+          "url": "https://github.com/MisEty/GPS-SLAM"
+        },
+        {
+          "label": "Implementation license",
+          "url": "https://github.com/MisEty/GPS-SLAM/blob/release/LICENSE.txt"
+        }
+      ],
+      "notes": [
+        "The implementation license does not relicense pretrained models, datasets or third-party rasterizers. Paper figures retain the original authors’ rights."
+      ]
     }
   }
 }

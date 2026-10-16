@@ -78,3 +78,14 @@ test('SLAM menu calibration and evaluation tools do not become SLAM algorithms',
  const fallback=work({sections:['Robot Learning and Evaluation / Evaluation and toolchains']});
  assert.deepEqual(toolTopicsFor(fallback),['others']);
 });
+test('geometry foundations and streaming models have independent discovery without implying a SLAM backend',()=>{
+ const foundation=work({research:{method:{slam:{family:'foundation',systemType:'Geometry foundation',role:'offline',loopClosure:'no'}}}});
+ const streaming=work({research:{method:{slam:{family:'streaming',systemType:'Streaming reconstruction',role:'online',loopClosure:'optional'}}}});
+ assert.equal(slamFamilyFor(foundation),'foundation');
+ assert.equal(slamFamilyFor(streaming),'streaming');
+ assert.ok(matches(foundation,'methods',{...emptyView(),category:'tools',toolTopic:'slam',slamFamily:'foundation'}));
+ assert.ok(!matches(foundation,'methods',{...emptyView(),category:'tools',toolTopic:'slam',slamFamily:'learned'}));
+ assert.ok(!matches(foundation,'methods',{...emptyView(),category:'tools',filters:{loop:'yes'}}));
+ assert.ok(matches(streaming,'methods',{...emptyView(),category:'tools',slamFamily:'streaming',filters:{loop:'optional'}}));
+ assert.ok(!matches(streaming,'methods',{...emptyView(),category:'tools',filters:{loop:'yes'}}));
+});

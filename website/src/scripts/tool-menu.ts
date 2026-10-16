@@ -47,7 +47,7 @@ export function createToolMenu(options:Options) {
     }).join('');
     if(topic.key==='all'||topic.key==='slam'){
       const slam=pool.filter(w=>toolTopicsFor(w).includes('slam'));
-      content.innerHTML=`<p class="tools-eyebrow">SLAM families</p><div class="tools-families" role="group" aria-label="SLAM families">${SLAM_FAMILIES.map(f=>{
+      content.innerHTML=`<p class="tools-eyebrow">SLAM & reconstruction</p><div class="tools-families" role="group" aria-label="SLAM families">${SLAM_FAMILIES.map(f=>{
         const n=f.key==='all'?slam.length:slam.filter(w=>slamFamilyFor(w)===f.key).length;
         return `<button type="button" data-slam-family="${f.key}" aria-pressed="${topic.key==='slam'&&family===f.key}"><span>${escape(f.label)}<small>${n}</small></span><em>${escape(f.description)}</em></button>`;
       }).join('')}</div>`;
@@ -56,7 +56,7 @@ export function createToolMenu(options:Options) {
       content.innerHTML=`<div class="tools-topic-summary"><p class="tools-eyebrow">${escape(topic.label)}</p><h3>${n}<span> resources</span></h3><p>${escape(topic.description)}</p><p class="tools-context">Sensor requirements, outputs and sources are available in each entry.</p></div>`;
     }
     done.textContent=`View ${options.works().filter(w=>matches(w,'methods',{...state,category:'tools'})).length} resources`;
-    document.getElementById('tools-selection')!.textContent=topic.key==='slam'?(SLAM_FAMILIES.find(f=>f.key===family)?.label??'All SLAM'):topic.label;
+    document.getElementById('tools-selection')!.textContent=topic.key==='slam'?(SLAM_FAMILIES.find(f=>f.key===family)?.label??'All references'):topic.label;
     if(focused?.toolTopic)topics.querySelector<HTMLButtonElement>(`[data-tool-topic="${focused.toolTopic}"]`)?.focus({preventScroll:true});
     else if(focused?.slamFamily)content.querySelector<HTMLButtonElement>(`[data-slam-family="${focused.slamFamily}"]`)?.focus({preventScroll:true});
     document.getElementById('tools-body')!.scrollTop=scroll;

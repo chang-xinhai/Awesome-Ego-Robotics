@@ -170,6 +170,11 @@ Do not equate odometry with a complete SLAM backend, learned monocular depth
 with measured metric depth, or an offline reconstruction with online tracking.
 Record sensor requirements, scale source, coordinate frame, loop closure,
 relocalization, runtime mode and calibration assumptions with primary sources.
+Feed-forward geometry foundations and streaming reconstruction are also in
+scope. Give them independent website families, label their actual system scope
+on cards, and do not exclude an important reconstruction model just because it
+does not implement a complete SLAM backend. Distinguish base models from
+optional loop-closing wrappers and software licenses from model-weight terms.
 
 Under Evaluation and toolchains use fourth-level README headings for SLAM,
 Calibration and synchronization, Trajectory evaluation, Ego and UMI workflows,

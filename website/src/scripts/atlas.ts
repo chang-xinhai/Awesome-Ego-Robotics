@@ -2,7 +2,7 @@ import type { Work } from "../lib/catalog";
 import { compareDates } from "../lib/order";
 import { formatScale, scaleMetrics } from "../lib/scale";
 import { CATEGORIES, LENS_COPY, emptyView, facetsFor, facetOptions, facetValues, categoriesFor, signalsFor, matches, type Lens, type ViewState } from "../lib/filters";
-import { TOOL_TOPICS, SLAM_FAMILIES, slamFor } from "../lib/tooling";
+import { TOOL_TOPICS, SLAM_FAMILIES, slamFor, scopeLabelFor } from "../lib/tooling";
 import { createToolMenu } from "./tool-menu";
 const $ = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id)! as T;
@@ -186,7 +186,8 @@ function card(w: Work) {
   const tags =
     collection === "datasets"
       ? [...publicStats(w), text(d.access, "")].filter(Boolean).slice(0, 3)
-      : [...currentSignals(w).filter((s) => s !== "Not reported").slice(0, 2),
+      : [...(collection === "methods" && scopeLabelFor(w) ? [scopeLabelFor(w)] : []),
+        ...currentSignals(w).filter((s) => s !== "Not reported").slice(0, 2),
         ...(w.commercial ? [String(w.release?.availability ?? "").includes("Announced") ? "Announced" : String(w.release?.availability ?? "").includes("project") ? "Industry" : "Commercial"] : w.openness === "open" ? ["Open source"] : [])];
   const name = collection === "datasets" ? w.datasetName ?? text(d.name, w.name) : view.filters.availability === "commercial" ? text(w.release?.productName, w.name) : w.name;
   const description = collection === "datasets" ? w.datasetSummary ?? text(d.observations, w.summary ?? w.keywords) : collection === "methods" ? text(record(w.research?.method).summary, w.summary ?? w.keywords) : w.summary ?? w.keywords;
@@ -486,6 +487,11 @@ function methodEvaluationFacts(w:Work):[string,string][] {
     ...(m.implementation?[["Implementation",text(m.implementation)] as [string,string]]:[]),
     ...(m.limitations?[["Limits",text(m.limitations)] as [string,string]]:[])];
 }
+function methodReleaseFacts(w:Work):[string,string][] {
+  if(!w.release)return [];
+  const status=({open:"Open source",partial:"Partial release",closed:"Closed source",unknown:"Not verified"} as Record<string,string>)[String(w.release.status)]??"Not verified";
+  return [["Project release",status],["Software / model terms",text(w.release.softwareStatus,"Not verified")]];
+}
 function trackingFacts(w:Work):[string,string][] {
   const s=slamFor(w);if(!Object.keys(s).length)return [];
   const status=(v:unknown)=>v==="yes"?"Yes":v==="no"?"None":v==="optional"?"Optional":"Not verified";
@@ -516,7 +522,7 @@ function datasetReleaseFacts(w:Work):[string,string][] {
 }
 function facts(w: Work): [string, string][] {
   const rows: [string,string][] = [["Date", w.date], ["Institution", w.institute], ["Publication", w.publication]];
-  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Reported scope",text(record(w.research?.dataset?.reportedScale).scope)],["Public release",scaleText(record(w.research?.dataset?.publicScale))],["Public release scope",text(record(w.research?.dataset?.publicScale).scope)]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...trackingFacts(w),...methodEvaluationFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w),...trackingFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w)])];
+  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Reported scope",text(record(w.research?.dataset?.reportedScale).scope)],["Public release",scaleText(record(w.research?.dataset?.publicScale))],["Public release scope",text(record(w.research?.dataset?.publicScale).scope)]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...trackingFacts(w),...methodEvaluationFacts(w),...methodReleaseFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w),...trackingFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w)])];
 }
 const scaleText = formatScale;
 const factsHtml = (rows: [string, string][]) =>
@@ -578,7 +584,7 @@ function showDetail(id: string) {
   const section=(title:string,rows:[string,string][],note="")=>`<section class="detail-section"><h3>${e(title)}</h3>${factsHtml(rows)}${note?`<p class="detail-scope-note">${e(note)}</p>`:""}</section>`;
   const hardwareSection=w.research?.hardware?section("Hardware & sensing",hardwareFacts(w))+section("Capture & data",hardwareDataFacts(w)):"";
   const tracking=trackingFacts(w);
-  const methodSection=w.research?.method?section("Method at a glance",methodFacts(w))+(tracking.length?section(["calibration","evaluation"].includes(String(slamFor(w).family))?"Tool setup":"Tracking & mapping",tracking):"")+section(tracking.length?"Evaluation & implementation":"Evaluation & deployment",methodEvaluationFacts(w)):"";
+  const methodSection=w.research?.method?section("Method at a glance",methodFacts(w))+(tracking.length?section(["calibration","evaluation"].includes(String(slamFor(w).family))?"Tool setup":"Tracking & mapping",tracking):"")+section(tracking.length?"Evaluation & implementation":"Evaluation & deployment",methodEvaluationFacts(w))+(w.release?section("Release",methodReleaseFacts(w)):""):"";
   const publicScale=scaleText(record(d.publicScale)),reportedScale=scaleText(record(d.reportedScale));
   const scaleColumns=`<div class="data-scale-columns">${publicScale!=="Not verified"?`<div class="data-scale-column"><span>Public release</span><p>${e(publicScale)}</p>${record(d.publicScale).scope?`<small>${e(record(d.publicScale).scope)}</small>`:""}</div>`:""}${reportedScale!=="Not verified"?`<div class="data-scale-column"><span>Reported</span><p>${e(reportedScale)}</p>${record(d.reportedScale).scope?`<small>${e(record(d.reportedScale).scope)}</small>`:""}</div>`:""}</div>`;
   const datasetSection=w.research?.dataset?`<section class="detail-section"><h3>Dataset</h3>${scaleColumns}${factsHtml(datasetFacts(w))}</section>`+section("Annotations & tasks",datasetAnnotationFacts(w))+section("Release & access",datasetReleaseFacts(w)):"";

@@ -7962,6 +7962,683 @@
           "https://github.com/LawrenceZ22/ThermoHands"
         ]
       }
+    },
+    "mild-aprilvins": {
+      "name": "MILD",
+      "summary": "Instrumented real/sim benchmark of UMI-style end-effector trajectory accuracy and completion.",
+      "reportedScale": {
+        "sequences": 95,
+        "realSequences": 86,
+        "simulationSequences": 9,
+        "tasks": 15,
+        "minutes": 145.3,
+        "scope": "Paper Table I: 86 real recordings plus 9 listed simulator entries; 145.3 min and 307.83 GB accumulated from real-world TUM/bag files; simulation totals are not included."
+      },
+      "publicScale": {},
+      "access": "Announced",
+      "formats": [
+        "TUM",
+        "ROSbag"
+      ],
+      "observations": "Real X5 fisheye+IMU and Insight9 stereo/RGB-D+IMU; separate Isaac Sim fisheye/RGB streams.",
+      "labels": "Per-execution robot TCP trajectory, timestamps, calibration and task/scene/sensor identity.",
+      "bodyCoverage": "Hands and workspace",
+      "annotationEvidence": "Real TCP reference is robot-executed state logging, not external optical ground truth; simulation has synthetic reference.",
+      "limitations": "Preview videos are not an open benchmark release. Hardware variants and protocols are diagnostic, not a single matched method ranking.",
+      "sources": [
+        {
+          "label": "Primary paper / resource",
+          "url": "https://arxiv.org/abs/2610.09857"
+        },
+        {
+          "label": "Project",
+          "url": "https://mild-web.github.io/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "accessNote": "Announced corpus; project provides public previews and a restricted pilot trajectory-processing service. Full dataset/code/manifests promised after acceptance.",
+      "recordedSignals": [
+        "Vision",
+        "IMU",
+        "Depth"
+      ],
+      "datasetUrl": "https://mild-web.github.io/",
+      "annotationType": "mixed",
+      "dataRole": "reference",
+      "scaleType": "sequences",
+      "cameraSetup": "67 Insta360 X5 and 19 Insight9 real recordings; AGIbot G2 executes 15 tabletop tasks; MILD-Sim uses Isaac Sim/Franka.",
+      "recordedStreams": "Real X5 fisheye+IMU and Insight9 stereo/RGB-D+IMU; separate Isaac Sim fisheye/RGB streams.",
+      "coordinateFrame": "Calibrated sensor-to-TCP frame chain; SE(3)-aligned TCP-relative benchmark without scale fitting.",
+      "calibration": "Camera intrinsics, camera-IMU/sensor-TCP transforms and timing; known marker sizes/layout identity where present.",
+      "derivedSignals": [
+        "Executed TCP reference",
+        "Calibration assets",
+        "Task labels"
+      ],
+      "tasks": [
+        "Localization",
+        "Trajectory completeness",
+        "Manipulation replay tolerance"
+      ],
+      "splits": "Public train/test splits not yet verified.",
+      "dataLicense": "Full data/code release promised after acceptance; no explicit dataset license verified.",
+      "releaseScope": "Announced corpus; project provides public previews and a restricted pilot trajectory-processing service. Full dataset/code/manifests promised after acceptance.",
+      "contactType": "none",
+      "reviewed": "2026-10-16",
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "summary": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "formats": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "annotationEvidence": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "verified": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "annotationType": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "scaleType": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "calibration": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "derivedSignals": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "tasks": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "splits": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "contactType": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ],
+        "reviewed": [
+          "https://arxiv.org/abs/2610.09857",
+          "https://mild-web.github.io/"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ]
+    },
+    "lamaria": {
+      "name": "LaMAria",
+      "summary": "City-scale wearable localization benchmark with surveyed controls, challenge tracks and public conversion/evaluation tools.",
+      "reportedScale": {
+        "sequences": 63,
+        "hours": ">22",
+        "distanceKm": 70,
+        "scope": "Paper main benchmark; controlled/additional training captures are separate"
+      },
+      "publicScale": {},
+      "access": "Public download",
+      "formats": [
+        "VRS",
+        "ROSbag",
+        "ASL",
+        "JSON",
+        "TXT"
+      ],
+      "observations": "Aria two global-shutter grayscale streams, rolling-shutter RGB, dual IMU and additional radio/GNSS sensors in raw recordings.",
+      "labels": "Surveyed control points, per-frame CP observations, calibration and optimized dense pseudo-GT; test GT withheld.",
+      "bodyCoverage": "Head and environment",
+      "annotationEvidence": "Survey-grade controls; dense trajectories optimized with visual/inertial/CP factors and initialized using Aria MPS.",
+      "limitations": "Dense pseudo-GT is not exact sensor ground truth; city-scale pose validation around 20 cm. Test labels are withheld.",
+      "sources": [
+        {
+          "label": "Primary paper / resource",
+          "url": "https://arxiv.org/abs/2509.26639"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/cvg/lamaria"
+        },
+        {
+          "label": "Project",
+          "url": "https://lamaria.ethz.ch/"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://cvg-data.inf.ethz.ch/lamaria/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "accessNote": "Official raw archive and downloader verified; ~890 GB raw across train/test is documented. Public total hours not independently re-summed.",
+      "recordedSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "datasetUrl": "https://cvg-data.inf.ethz.ch/lamaria/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "Head-worn Aria; some handheld examples. RGB 10 Hz and two low-overlap SLAM cameras; not a standard rectified stereo pair.",
+      "recordedStreams": "Aria two global-shutter grayscale streams, rolling-shutter RGB, dual IMU and additional radio/GNSS sensors in raw recordings.",
+      "coordinateFrame": "Metric survey frame; dense pseudo-GT distinct from centimeter CP accuracy.",
+      "calibration": "Factory camera/IMU calibration and Aria-estimated time-varying intrinsics; intrinsics held fixed during dense VI pose/point optimization; surveyed control points.",
+      "derivedSignals": [
+        "Surveyed controls",
+        "Optimized camera poses",
+        "Online calibration"
+      ],
+      "tasks": [
+        "SLAM",
+        "Visual-inertial odometry",
+        "Trajectory evaluation"
+      ],
+      "splits": "Current release: 23 training sequences with GT and 63 test sequences evaluated through server.",
+      "dataLicense": "Dataset CC BY 4.0; tooling MIT.",
+      "releaseScope": "Official raw archive and downloader verified; ~890 GB raw across train/test is documented. Public total hours not independently re-summed.",
+      "contactType": "none",
+      "reviewed": "2026-10-16",
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "summary": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "formats": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "annotationEvidence": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "verified": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "annotationType": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "scaleType": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "calibration": [
+          "https://arxiv.org/html/2509.26639v1#S4.SS3"
+        ],
+        "derivedSignals": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "tasks": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "splits": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "contactType": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ],
+        "reviewed": [
+          "https://arxiv.org/abs/2509.26639",
+          "https://github.com/cvg/lamaria",
+          "https://lamaria.ethz.ch/",
+          "https://cvg-data.inf.ethz.ch/lamaria/"
+        ]
+      }
+    },
+    "lamar": {
+      "name": "LaMAR",
+      "summary": "Headset/phone localization corpus registered to laser-scanned reference maps across time and illumination.",
+      "reportedScale": {
+        "hours": 100,
+        "distanceKm": 40,
+        "locations": 3,
+        "areaM2": 45000,
+        "scope": "Paper aggregate AR-capture benchmark, not hours per sensor or simultaneous body-motion data"
+      },
+      "publicScale": {},
+      "access": "Public download",
+      "formats": [
+        "Images",
+        "TXT",
+        "JSON",
+        "PLY",
+        "Depth"
+      ],
+      "observations": "Headset grayscale/RGB or phone RGB, IMU, depth/IR where supported, WiFi/Bluetooth; separate NavVis laser-scan references.",
+      "labels": "Camera/rig poses in common scan frame, sparse/dense maps, calibration and visibility overlap.",
+      "bodyCoverage": "Head and environment",
+      "annotationEvidence": "Automated image-to-laser-scan registration, VIO trajectory constraints and cross-session bundle adjustment.",
+      "limitations": "Mixed head-mounted and handheld subsets; not a paired hand/robot-action dataset. Scan-derived depth/reference is distinct from physical wearable depth.",
+      "sources": [
+        {
+          "label": "Primary paper / resource",
+          "url": "https://arxiv.org/abs/2210.10770"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/microsoft/lamar-benchmark"
+        },
+        {
+          "label": "Project",
+          "url": "https://lamar.ethz.ch/"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://lamar.ethz.ch/lamar/"
+        }
+      ],
+      "verified": "2026-10-16",
+      "accessNote": "Evaluation data, benchmark, raw data and GT-generation pipeline are marked released in official README.",
+      "recordedSignals": [
+        "Vision",
+        "IMU",
+        "Depth"
+      ],
+      "datasetUrl": "https://lamar.ethz.ch/lamar/",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "cameraSetup": "HoloLens 2 head-mounted multi-camera rig and iPad/iPhone handheld streams; separate NavVis M6/VLX mapping sessions.",
+      "recordedStreams": "Headset grayscale/RGB or phone RGB, IMU, depth/IR where supported, WiFi/Bluetooth; separate NavVis laser-scan references.",
+      "coordinateFrame": "Common metric laser-scan reference world.",
+      "calibration": "AR per-frame intrinsics, calibrated headset rig, scan-session alignment and sequence-to-reference registration.",
+      "derivedSignals": [
+        "Global camera poses",
+        "Scan meshes",
+        "Visibility overlap"
+      ],
+      "tasks": [
+        "Visual localization",
+        "Sequence localization",
+        "Mapping"
+      ],
+      "splits": "Mapping/query splits; withheld query poses and evaluation server; raw capture is also released.",
+      "dataLicense": "Dataset/documentation CC BY 4.0; code MIT under LICENSE-CODE.",
+      "releaseScope": "Evaluation data, benchmark, raw data and GT-generation pipeline are marked released in official README.",
+      "contactType": "none",
+      "reviewed": "2026-10-16",
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "summary": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "formats": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "annotationEvidence": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "verified": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "annotationType": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "scaleType": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "calibration": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "derivedSignals": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "tasks": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "splits": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "contactType": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ],
+        "reviewed": [
+          "https://arxiv.org/abs/2210.10770",
+          "https://github.com/microsoft/lamar-benchmark",
+          "https://lamar.ethz.ch/",
+          "https://lamar.ethz.ch/lamar/"
+        ]
+      }
     }
   }
 }

@@ -4927,5 +4927,1369 @@
     "imageAlt": "UMI paper SLAM evaluation against motion capture; results are benchmark-specific",
     "imageType": "SLAM evaluation",
     "imageCredit": "UMI authors; paper Figure 12, original rights retained"
+  },
+  {
+    "id": "abot-recon",
+    "name": "ABot-Recon",
+    "summary": "Predicts local pointmaps and adjacent relative poses from a fixed 12-frame causal context.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "ABot-Recon",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/abot-recon-methods.webp",
+    "imageAlt": "ABot-Recon reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2608.27529v1/teaser-pc10.png",
+    "imagePage": "https://arxiv.org/html/2608.27529v1",
+    "imageType": "Method / tool output",
+    "credit": "ABot-Recon authors"
+  },
+  {
+    "id": "horizonstream",
+    "name": "HorizonStream",
+    "summary": "Separates local geometric matching from recurrent multi-timescale memory and metric readout.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "HorizonStream",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/horizonstream-methods.webp",
+    "imageAlt": "HorizonStream reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2605.23889v1/teaser_v7.png",
+    "imagePage": "https://arxiv.org/html/2605.23889v1",
+    "imageType": "Method / tool output",
+    "credit": "HorizonStream authors"
+  },
+  {
+    "id": "vggt-omega",
+    "name": "VGGT-Ω",
+    "summary": "Scales geometry pretraining using compact registers, simplified dense heads and more supervision.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "VGGT-Ω",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/vggt-omega-methods.webp",
+    "imageAlt": "VGGT-Ω reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2605.15195v1/qual_v6.png",
+    "imagePage": "https://arxiv.org/html/2605.15195v1",
+    "imageType": "Method / tool output",
+    "credit": "VGGT-Ω authors"
+  },
+  {
+    "id": "retrievevggt",
+    "name": "RetrieveVGGT",
+    "summary": "Retrieves relevant past frames using first-layer query-key similarity under a fixed context budget.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "RetrieveVGGT",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/retrievevggt-methods.webp",
+    "imageAlt": "RetrieveVGGT reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2605.09644v1/framework_overview.png",
+    "imagePage": "https://arxiv.org/html/2605.09644v1",
+    "imageType": "Method / tool output",
+    "credit": "RetrieveVGGT authors"
+  },
+  {
+    "id": "lingbot-map",
+    "name": "LingBot-Map",
+    "summary": "Combines anchor context, a pose window and trajectory memory for streaming camera and scene reconstruction.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "LingBot-Map",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/lingbot-map-methods.webp",
+    "imageAlt": "LingBot-Map reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2604.14141v3/teaser.png",
+    "imagePage": "https://arxiv.org/html/2604.14141v3",
+    "imageType": "Method / tool output",
+    "credit": "LingBot-Map authors"
+  },
+  {
+    "id": "filt3r",
+    "name": "FILT3R",
+    "summary": "Uses token-wise uncertainty and Kalman-style gains to update a frozen recurrent geometry state.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "FILT3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/filt3r-methods.webp",
+    "imageAlt": "FILT3R reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2603.18493v2/teaser.png",
+    "imagePage": "https://arxiv.org/html/2603.18493v2",
+    "imageType": "Method / tool output",
+    "credit": "FILT3R authors"
+  },
+  {
+    "id": "loger",
+    "name": "LoGeR",
+    "summary": "Bridges bidirectional reconstruction chunks with sliding-window context and test-time memory updates.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "LoGeR",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/loger-methods.webp",
+    "imageAlt": "LoGeR reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2603.03269v2/figure2v2.png",
+    "imagePage": "https://arxiv.org/html/2603.03269v2",
+    "imageType": "Method / tool output",
+    "credit": "LoGeR authors"
+  },
+  {
+    "id": "longstream",
+    "name": "LongStream",
+    "summary": "Decouples keyframe-relative geometry from scale and refreshes caches for long causal sequences.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "LongStream",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/longstream-methods.webp",
+    "imageAlt": "LongStream reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2602.13172v2/6.png",
+    "imagePage": "https://arxiv.org/html/2602.13172v2",
+    "imageType": "Method / tool output",
+    "credit": "LongStream authors"
+  },
+  {
+    "id": "infinitevggt",
+    "name": "InfiniteVGGT",
+    "summary": "Rolls a bounded KV cache forward using similarity pruning and adaptive layer allocation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "InfiniteVGGT",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/infinitevggt-methods.webp",
+    "imageAlt": "InfiniteVGGT reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2601.02281v1/method.png",
+    "imagePage": "https://arxiv.org/html/2601.02281v1",
+    "imageType": "Method / tool output",
+    "credit": "InfiniteVGGT authors"
+  },
+  {
+    "id": "depth-anything-3",
+    "name": "Depth Anything 3",
+    "summary": "Predicts depth and rays from any number of views, optionally conditioned on camera poses.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Depth Anything 3",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/depth-anything-3-methods.webp",
+    "imageAlt": "Depth Anything 3 reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2511.10647v1/x2.png",
+    "imagePage": "https://arxiv.org/html/2511.10647",
+    "imageType": "Method / tool output",
+    "credit": "Depth Anything 3 authors"
+  },
+  {
+    "id": "ttt3r",
+    "name": "TTT3R",
+    "summary": "Reinterprets recurrent geometry memory as test-time training and gates updates by alignment confidence.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "TTT3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/ttt3r-methods.webp",
+    "imageAlt": "TTT3R reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2509.26645v4/rec_vis_v2_compressed.png",
+    "imagePage": "https://arxiv.org/html/2509.26645v4",
+    "imageType": "Method / tool output",
+    "credit": "TTT3R authors"
+  },
+  {
+    "id": "evict3r",
+    "name": "Evict3R",
+    "summary": "Evicts redundant attention tokens to keep a streaming geometry transformer within a memory budget.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Evict3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/evict3r-methods.webp",
+    "imageAlt": "Evict3R reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2509.17650v2/figures/B02_pointmap.png",
+    "imagePage": "https://arxiv.org/html/2509.17650v2",
+    "imageType": "Method / tool output",
+    "credit": "Evict3R authors"
+  },
+  {
+    "id": "map-anything",
+    "name": "MapAnything",
+    "summary": "Uses images and optional geometric observations to predict a factored metric scene representation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "MapAnything",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/map-anything-methods.webp",
+    "imageAlt": "MapAnything reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2509.13414v3/MapAnything_Abstract_Fig.png",
+    "imagePage": "https://arxiv.org/html/2509.13414v3",
+    "imageType": "Method / tool output",
+    "credit": "MapAnything authors"
+  },
+  {
+    "id": "stream3r",
+    "name": "STream3R",
+    "summary": "Reformulates sequential pointmap prediction as a decoder-only causal transformer.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "STream3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/stream3r-methods.webp",
+    "imageAlt": "STream3R reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2508.10893v1/teaser_arxiv.png",
+    "imagePage": "https://arxiv.org/html/2508.10893v1",
+    "imageType": "Method / tool output",
+    "credit": "STream3R authors"
+  },
+  {
+    "id": "long3r",
+    "name": "LONG3R",
+    "summary": "Uses gated spatio-temporal memory and coarse-to-fine decoding for longer scene reconstruction.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "LONG3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/long3r-methods.webp",
+    "imageAlt": "LONG3R reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2507.18255v1/fig_teaser.png",
+    "imagePage": "https://arxiv.org/html/2507.18255v1",
+    "imageType": "Method / tool output",
+    "credit": "LONG3R authors"
+  },
+  {
+    "id": "pi3",
+    "name": "Pi3 / Pi3X",
+    "summary": "Removes the privileged reference view using permutation-equivariant visual geometry prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Pi3 / Pi3X",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/pi3-methods.webp",
+    "imageAlt": "Pi3 / Pi3X reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2507.13347v3/teaser.png",
+    "imagePage": "https://arxiv.org/html/2507.13347v3",
+    "imageType": "Method / tool output",
+    "credit": "Pi3 / Pi3X authors"
+  },
+  {
+    "id": "streamvggt",
+    "name": "StreamVGGT",
+    "summary": "Distills VGGT into a causal geometry transformer that caches past keys and values.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "StreamVGGT",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/streamvggt-methods.webp",
+    "imageAlt": "StreamVGGT reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2507.11539v2/framework.png",
+    "imagePage": "https://arxiv.org/html/2507.11539v2",
+    "imageType": "Method / tool output",
+    "credit": "StreamVGGT authors"
+  },
+  {
+    "id": "point3r",
+    "name": "Point3R",
+    "summary": "Associates memory pointers with explicit 3D locations to integrate incoming observations.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Point3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/point3r-methods.webp",
+    "imageAlt": "Point3R reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2507.02863v2/vis.png",
+    "imagePage": "https://arxiv.org/html/2507.02863v2",
+    "imageType": "Method / tool output",
+    "credit": "Point3R authors"
+  },
+  {
+    "id": "vggt",
+    "name": "VGGT",
+    "summary": "Jointly predicts cameras, dense geometry and point tracks using alternating frame and global attention.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "VGGT",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/vggt-methods.webp",
+    "imageAlt": "VGGT reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2503.11651v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2503.11651v1",
+    "imageType": "Method / tool output",
+    "credit": "VGGT authors"
+  },
+  {
+    "id": "fast3r",
+    "name": "Fast3R",
+    "summary": "Processes many views jointly instead of fusing independent two-view reconstructions.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Fast3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/fast3r-methods.webp",
+    "imageAlt": "Fast3R reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2501.13928v2/qualitative_examples.png",
+    "imagePage": "https://arxiv.org/html/2501.13928v2",
+    "imageType": "Method / tool output",
+    "credit": "Fast3R authors"
+  },
+  {
+    "id": "cut3r",
+    "name": "CUT3R",
+    "summary": "Maintains a recurrent latent scene state for continuous geometry and camera estimation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "CUT3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/cut3r-methods.webp",
+    "imageAlt": "CUT3R reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2501.12387v1/v6.png",
+    "imagePage": "https://arxiv.org/html/2501.12387v1",
+    "imageType": "Method / tool output",
+    "credit": "CUT3R authors"
+  },
+  {
+    "id": "mv-dust3r",
+    "name": "MV-DUSt3R+",
+    "summary": "Reconstructs sparse multi-view scenes in one stage and fuses multiple candidate reference views.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "MV-DUSt3R+",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/mv-dust3r-methods.webp",
+    "imageAlt": "MV-DUSt3R+ reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2412.06974v1/tsr_.png",
+    "imagePage": "https://arxiv.org/html/2412.06974v1",
+    "imageType": "Method / tool output",
+    "credit": "MV-DUSt3R+ authors"
+  },
+  {
+    "id": "spann3r",
+    "name": "Spann3R",
+    "summary": "Stores spatial memory to predict each new pointmap directly in a shared coordinate system.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Spann3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/spann3r-methods.webp",
+    "imageAlt": "Spann3R reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2408.16061v1/Figures/teaser/fig_teaser_v6.png",
+    "imagePage": "https://arxiv.org/html/2408.16061v1",
+    "imageType": "Method / tool output",
+    "credit": "Spann3R authors"
+  },
+  {
+    "id": "mast3r",
+    "name": "MASt3R",
+    "summary": "Adds dense matching descriptors and fast reciprocal matching to DUSt3R pointmap regression.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "MASt3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/mast3r-methods.webp",
+    "imageAlt": "MASt3R dense correspondence and local 3D matching results",
+    "imageSource": "https://raw.githubusercontent.com/naver/mast3r/main/assets/examples.jpg",
+    "imagePage": "https://github.com/naver/mast3r",
+    "imageType": "Method / tool output",
+    "credit": "MASt3R authors"
+  },
+  {
+    "id": "dust3r",
+    "name": "DUSt3R",
+    "summary": "Regresses paired pointmaps without camera calibration, then aligns pairs into a shared scene.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "DUSt3R",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/dust3r-methods.webp",
+    "imageAlt": "DUSt3R reconstruction results / method figure from the original authors",
+    "imageSource": "https://arxiv.org/html/2312.14132v3/figures/quali2.png",
+    "imagePage": "https://arxiv.org/html/2312.14132v3",
+    "imageType": "Method / tool output",
+    "credit": "DUSt3R authors"
+  },
+  {
+    "id": "ultra-fusion",
+    "name": "Ultra-Fusion",
+    "summary": "Schedules reliable LiDAR, vision, inertial, wheel and GNSS factors in one configurable sliding window.",
+    "signals": [
+      "LiDAR",
+      "Vision",
+      "IMU",
+      "Wheel",
+      "GNSS"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Ultra-Fusion authors",
+    "image": "images/catalog/ultra-fusion-methods.webp",
+    "imageAlt": "Ultra-Fusion official overview of supported sensors, platforms and degraded mapping scenarios",
+    "imagePage": "https://arxiv.org/html/2606.21223",
+    "imageSource": "https://arxiv.org/html/2606.21223v1/teaser0613-2.png",
+    "imageCredit": "Ultra-Fusion authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "okvis2-x",
+    "name": "OKVIS2-X",
+    "summary": "Extends visual-inertial SLAM with dense occupancy submaps, optional LiDAR/depth and GNSS.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "LiDAR",
+      "GNSS"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "OKVIS2-X authors",
+    "image": "images/catalog/okvis2-x-methods.webp",
+    "imageAlt": "OKVIS2-X reconstructions of VBR Spagna with LiDAR versus predicted depth, colored by submap",
+    "imagePage": "https://arxiv.org/html/2510.04612",
+    "imageSource": "https://arxiv.org/html/2510.04612v1/figures/top-figure-vertical.png",
+    "imageCredit": "OKVIS2-X authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "super-lio",
+    "name": "Super-LIO",
+    "summary": "Uses compact OctVox mapping and heuristic-guided neighbor search for efficient LiDAR-inertial tracking.",
+    "signals": [
+      "LiDAR",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Super-LIO authors",
+    "image": "images/catalog/super-lio-methods.webp",
+    "imageAlt": "Super-LIO system diagram with IMU propagation, OctVox mapping and heuristic-guided KNN",
+    "imagePage": "https://arxiv.org/html/2509.05723",
+    "imageSource": "https://raw.githubusercontent.com/Liansheng-Wang/Super-LIO/ros2/docs/system_overview.png",
+    "imageCredit": "Super-LIO authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "super-odometry-2",
+    "name": "SUPER ODOMETRY 2.0",
+    "summary": "Combines hierarchical geometric sensor adaptation with a learned inertial fallback for severe degradation.",
+    "signals": [
+      "LiDAR",
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "SUPER ODOMETRY 2.0 authors",
+    "image": "images/catalog/super-odometry-2-methods.webp",
+    "imageAlt": "SUPER ODOMETRY 2.0 hierarchy from visual and LiDAR adaptation to learned inertial fallback",
+    "imagePage": "https://arxiv.org/html/2608.25427",
+    "imageSource": "https://arxiv.org/html/2608.25427v1/figure1_method.png",
+    "imageCredit": "SUPER ODOMETRY 2.0 authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "ellipselio",
+    "name": "EllipseLIO",
+    "summary": "Adapts scan filtering and ellipsoid-based registration to different LiDARs and scene geometry.",
+    "signals": [
+      "LiDAR",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "EllipseLIO authors",
+    "image": "images/catalog/ellipselio-methods.webp",
+    "imageAlt": "EllipseLIO ellipsoids classified as lines, planes and balls on synthetic and real geometry",
+    "imagePage": "https://arxiv.org/html/2605.21150",
+    "imageSource": "https://arxiv.org/html/2605.21150v2/figures/ellipse_comb.png",
+    "imageCredit": "EllipseLIO authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "fire-livwo",
+    "name": "FIRE-LIVWO",
+    "summary": "Switches radar, vision and wheel constraints to maintain mine-robot odometry under smoke and degeneracy.",
+    "signals": [
+      "LiDAR",
+      "Vision",
+      "IMU",
+      "Radar",
+      "Wheel"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "FIRE-LIVWO authors",
+    "image": "images/catalog/fire-livwo-methods.webp",
+    "imageAlt": "FIRE-LIVWO system diagram with LiDAR, radar, visual, IMU and wheel constraints",
+    "imagePage": "https://arxiv.org/html/2609.05325",
+    "imageSource": "https://raw.githubusercontent.com/KJ-Falloutlast/FIRE-LIVWO/main/figs/Fig3-System-overview.JPG",
+    "imageCredit": "FIRE-LIVWO authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "kiss-slam",
+    "name": "KISS-SLAM",
+    "summary": "Adds local maps, place recognition and pose-graph correction to a simple LiDAR-only ICP pipeline.",
+    "signals": [
+      "LiDAR"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "KISS-SLAM authors",
+    "image": "images/catalog/kiss-slam-methods.webp",
+    "imageAlt": "KISS-SLAM official HeLiPR mapping overview and loop closures across different LiDAR sensors",
+    "imagePage": "https://arxiv.org/html/2503.12660",
+    "imageSource": "https://github.com/user-attachments/assets/66c3e50f-009a-4a36-9856-283a895c300f",
+    "imageCredit": "KISS-SLAM authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "voxel-slam",
+    "name": "Voxel-SLAM",
+    "summary": "Unifies initialization, odometry, local BA, loop closure and global mapping through adaptive voxels.",
+    "signals": [
+      "LiDAR",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Voxel-SLAM authors",
+    "image": "images/catalog/voxel-slam-methods.webp",
+    "imageAlt": "Voxel-SLAM five-module framework and data pyramid for odometry, loop closure and global mapping",
+    "imagePage": "https://arxiv.org/html/2410.08935",
+    "imageSource": "https://arxiv.org/html/2410.08935v1/figures/systemoverview.png",
+    "imageCredit": "Voxel-SLAM authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "r3live-plusplus",
+    "name": "R3LIVE++",
+    "summary": "Recovers radiance and camera exposure while tightly fusing LiDAR, inertial and visual tracking.",
+    "signals": [
+      "LiDAR",
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "R3LIVE++ authors",
+    "image": "images/catalog/r3live-plusplus-methods.webp",
+    "imageAlt": "R3LIVE++ official paper figure showing online radiance reconstruction of HKU and HKUST campuses",
+    "imagePage": "https://arxiv.org/html/2209.03666",
+    "imageSource": "https://arxiv.org/pdf/2209.03666",
+    "imageCredit": "R3LIVE++ authors; third-party figure, original rights retained",
+    "imageType": "Method overview",
+    "imageNote": "Paper Figure 1, extracted from the public arXiv PDF."
+  },
+  {
+    "id": "immesh",
+    "name": "ImMesh",
+    "summary": "Incrementally builds triangle meshes while estimating LiDAR motion on a standard CPU.",
+    "signals": [
+      "LiDAR"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "ImMesh authors",
+    "image": "images/catalog/immesh-methods.webp",
+    "imageAlt": "ImMesh official online triangle mesh and separately textured scene reconstruction",
+    "imagePage": "https://arxiv.org/html/2301.05206",
+    "imageSource": "https://raw.githubusercontent.com/ziv-lin/ImMesh_release/main/pics/cover_v4.jpg",
+    "imageCredit": "ImMesh authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "kiss-icp",
+    "name": "KISS-ICP",
+    "summary": "Combines point-to-point ICP, adaptive thresholds and simple motion compensation without an IMU.",
+    "signals": [
+      "LiDAR"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "KISS-ICP authors",
+    "image": "images/catalog/kiss-icp-methods.webp",
+    "imageAlt": "KISS-ICP map examples on automotive, drone, Segway and handheld LiDAR recordings",
+    "imagePage": "https://arxiv.org/html/2209.15397",
+    "imageSource": "https://user-images.githubusercontent.com/21349875/211829074-474bec08-0129-4e34-85e7-62265e44a7de.png",
+    "imageCredit": "KISS-ICP authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "ct-icp",
+    "name": "CT-ICP",
+    "summary": "Elastically aligns each scan in continuous time and adds LiDAR-only loop constraints.",
+    "signals": [
+      "LiDAR"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "CT-ICP authors",
+    "image": "images/catalog/ct-icp-methods.webp",
+    "imageAlt": "CT-ICP aggregated Newer College handheld LiDAR reconstruction",
+    "imagePage": "https://arxiv.org/html/2109.12979",
+    "imageSource": "https://arxiv.org/html/2109.12979v2/images/ncd_aggregated.png",
+    "imageCredit": "CT-ICP authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "dlio",
+    "name": "DLIO",
+    "summary": "Corrects point motion with a coarse-to-fine continuous trajectory before direct scan-to-map registration.",
+    "signals": [
+      "LiDAR",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "DLIO authors",
+    "image": "images/catalog/dlio-methods.webp",
+    "imageAlt": "DLIO UCLA campus LiDAR map and fine tree detail near Royce Hall",
+    "imagePage": "https://arxiv.org/html/2203.03749",
+    "imageSource": "https://arxiv.org/html/2203.03749v4/figures/introduction/main.png",
+    "imageCredit": "DLIO authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "slict",
+    "name": "SLICT",
+    "summary": "Registers multiple LiDAR streams to a multiscale surfel map with continuous-time inertial optimization.",
+    "signals": [
+      "LiDAR",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "SLICT authors",
+    "image": "images/catalog/slict-methods.webp",
+    "imageAlt": "SLICT continuous-time multi-LiDAR synchronization, surfel association and optimization workflow",
+    "imagePage": "https://arxiv.org/html/2211.03900",
+    "imageSource": "https://arxiv.org/html/2211.03900v2/diagram.png",
+    "imageCredit": "SLICT authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "slict2",
+    "name": "SLICT2",
+    "summary": "Reassociates LiDAR features inside each efficient linearized continuous-time optimization step.",
+    "signals": [
+      "LiDAR",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "SLICT2 authors",
+    "image": "images/catalog/slict2-methods.webp",
+    "imageAlt": "SLICT2 nested association and linear-solve pipeline for continuous-time LiDAR-inertial odometry",
+    "imagePage": "https://arxiv.org/html/2402.02337",
+    "imageSource": "https://arxiv.org/html/2402.02337v3/block_diagram.jpg",
+    "imageCredit": "SLICT2 authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "hba",
+    "name": "HBA",
+    "summary": "Refines large LiDAR maps through bottom-up hierarchical bundle adjustment and top-down pose correction.",
+    "signals": [
+      "LiDAR"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "HBA authors",
+    "image": "images/catalog/hba-methods.webp",
+    "imageAlt": "HBA hierarchical bundle-adjustment pyramid connecting LiDAR frames across scales",
+    "imagePage": "https://arxiv.org/html/2209.11939",
+    "imageSource": "https://raw.githubusercontent.com/hku-mars/HBA/main/figure/lidar_frame.png",
+    "imageCredit": "HBA authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "voxelmap",
+    "name": "VoxelMap",
+    "summary": "Models uncertain planes in an adaptive voxel map for efficient point-to-plane LiDAR registration.",
+    "signals": [
+      "LiDAR"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "VoxelMap authors",
+    "image": "images/catalog/voxelmap-methods.webp",
+    "imageAlt": "VoxelMap official adaptive-plane LiDAR mapping results in unstructured mountain terrain",
+    "imagePage": "https://arxiv.org/html/2109.07082",
+    "imageSource": "https://raw.githubusercontent.com/hku-mars/VoxelMap/master/pics/mountain_mapping.png",
+    "imageCredit": "VoxelMap authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "faster-lio",
+    "name": "Faster-LIO",
+    "summary": "Replaces tree searches with sparse incremental voxels for lightweight LiDAR-inertial updates.",
+    "signals": [
+      "LiDAR",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Faster-LIO authors",
+    "image": "images/catalog/faster-lio-methods.webp",
+    "imageAlt": "Faster-LIO official NCLT campus point-cloud reconstruction",
+    "imagePage": "https://github.com/gaoxiang12/faster-lio",
+    "imageSource": "https://raw.githubusercontent.com/gaoxiang12/faster-lio/main/doc/faster-lio-nclt.png",
+    "imageCredit": "Faster-LIO authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "gso-slam",
+    "name": "GSO-SLAM",
+    "summary": "Bidirectionally couples direct monocular odometry and Gaussian mapping through EM optimization.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "GSO-SLAM authors",
+    "image": "images/catalog/gso-slam-methods.webp",
+    "imageAlt": "GSO-SLAM direct-odometry and Gaussian mapping EM coupling overview",
+    "imagePage": "https://lab-of-ai-and-robotics.github.io/GS-SLAM-Family/",
+    "imageSource": "https://lab-of-ai-and-robotics.github.io/GS-SLAM-Family/images/gso_overview.png",
+    "imageCredit": "GSO-SLAM authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "lidargs-slam",
+    "name": "LiDARGS-SLAM",
+    "summary": "Reuses G-ICP covariances to couple LiDAR tracking, Gaussian geometry and online map-budget control.",
+    "signals": [
+      "LiDAR"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "LiDARGS-SLAM authors",
+    "image": "images/catalog/lidargs-slam-methods.webp",
+    "imageAlt": "LiDARGS-SLAM covariance-coupled G-ICP tracking, spherical mapping and Gaussian control overview",
+    "imagePage": "https://lab-of-ai-and-robotics.github.io/GS-SLAM-Family/",
+    "imageSource": "https://lab-of-ai-and-robotics.github.io/GS-SLAM-Family/images/LGS-Overview.png",
+    "imageCredit": "LiDARGS-SLAM authors; third-party figure, original rights retained",
+    "imageType": "Method overview"
+  },
+  {
+    "id": "mild-aprilvins",
+    "name": "MILD / AprilVINS",
+    "summary": "Pairs a manipulation-localization benchmark with AprilTag-aided fisheye VIO and guarded TCP-trajectory export.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Junjie Zhang and MILD/AprilVINS authors",
+    "image": "images/catalog/mild-aprilvins-methods.webp",
+    "imageSource": "https://arxiv.org/html/2610.09857v1/figures/aprilvins8.png",
+    "imagePage": "https://arxiv.org/abs/2610.09857",
+    "imageAlt": "AprilVINS fisheye/IMU and fiducial prior-gating pipeline",
+    "imageType": "Method figure / result",
+    "imageCredit": "Junjie Zhang and MILD/AprilVINS authors; original rights retained",
+    "datasetImage": "images/catalog/mild-aprilvins-datasets.webp",
+    "datasetImageAlt": "MILD real/sim recording overview",
+    "datasetImageSource": "https://arxiv.org/html/2610.09857v1/figures/dataview.png",
+    "datasetImagePage": "https://arxiv.org/abs/2610.09857",
+    "datasetImageType": "Dataset overview",
+    "datasetName": "MILD",
+    "datasetSummary": "Instrumented real/sim benchmark of UMI-style end-effector trajectory accuracy and completion."
+  },
+  {
+    "id": "robocap-grounded",
+    "name": "RoboCap / Grounded SLAM",
+    "summary": "Combines multi-camera inertial tracking, per-session calibration and offline global refinement for egocentric capture.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Grounded Superintelligence and BitRobot",
+    "image": "images/catalog/robocap-grounded-methods.webp",
+    "imageSource": "https://arxiv.org/html/2610.07217v1/figures/slam_recon.png",
+    "imagePage": "https://arxiv.org/abs/2610.07217",
+    "imageAlt": "RoboCap multi-session reconstruction and aligned head trajectories",
+    "imageType": "Method figure / result",
+    "imageCredit": "Grounded Superintelligence and BitRobot; original rights retained"
+  },
+  {
+    "id": "ha-slam",
+    "name": "HA-SLAM",
+    "summary": "Adapts feature matching, stereo-inertial estimation and global refinement to fast natural head motion.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Human Archive Research",
+    "image": "images/catalog/ha-slam-methods.webp",
+    "imageSource": "https://ha-slam.humanarchive.ai/",
+    "imagePage": "https://ha-slam.humanarchive.ai/",
+    "imageAlt": "Official HA-SLAM stereo head-motion tracking video poster",
+    "imageType": "Method figure / result",
+    "imageCredit": "Human Archive Research; original rights retained"
+  },
+  {
+    "id": "vidmap",
+    "name": "VidMap",
+    "summary": "Uses temporal tracks, provenance-aware loop constraints and learned depth priors for offline reconstruction of long videos.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Zador Pataki, Paul-Edouard Sarlin and Marc Pollefeys",
+    "image": "images/catalog/vidmap-methods.webp",
+    "imageSource": "https://arxiv.org/html/2607.27194v1/teaser_v3.png",
+    "imagePage": "https://arxiv.org/abs/2607.27194",
+    "imageAlt": "VidMap video reconstruction and temporal loop-consistency illustration",
+    "imageType": "Method figure / result",
+    "imageCredit": "Zador Pataki, Paul-Edouard Sarlin and Marc Pollefeys; original rights retained"
+  },
+  {
+    "id": "mp-sfm",
+    "name": "MP-SfM",
+    "summary": "Combines monocular depth/normal priors with multi-view geometry when overlap or parallax is weak.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Zador Pataki and MP-SfM authors",
+    "image": "images/catalog/mp-sfm-methods.webp",
+    "imageSource": "https://arxiv.org/html/2504.20040v1/teaser_v5.png",
+    "imagePage": "https://arxiv.org/abs/2504.20040",
+    "imageAlt": "MP-SfM depth/normal prior reconstruction under limited image overlap",
+    "imageType": "Method figure / result",
+    "imageCredit": "Zador Pataki and MP-SfM authors; original rights retained"
+  },
+  {
+    "id": "egocentric-splats",
+    "name": "Egocentric Splats",
+    "summary": "Uses high-frequency visual-inertial calibration and physical image formation to improve egocentric Gaussian reconstruction.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Zhaoyang Lv and Meta Reality Labs Research",
+    "image": "images/catalog/egocentric-splats-methods.webp",
+    "imageSource": "https://arxiv.org/html/2506.04444v1/sections/figures/teaser/teaser_gamma.jpg",
+    "imagePage": "https://arxiv.org/abs/2506.04444",
+    "imageAlt": "Photoreal egocentric Gaussian reconstruction comparisons under challenging lighting",
+    "imageType": "Method figure / result",
+    "imageCredit": "Zhaoyang Lv and Meta Reality Labs Research; original rights retained"
+  },
+  {
+    "id": "lamaria",
+    "name": "LaMAria",
+    "summary": "Benchmarks wearable VI trajectories with surveyed city-scale control points and an offline pose-refinement toolkit.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Anusha Krishnan and LaMAria authors",
+    "image": "images/catalog/lamaria-methods.webp",
+    "imageSource": "https://arxiv.org/html/2509.26639v1/teaser_final.png",
+    "imagePage": "https://arxiv.org/abs/2509.26639",
+    "imageAlt": "LaMAria capture devices, city trajectories, control points and challenge examples",
+    "imageType": "Method figure / result",
+    "imageCredit": "Anusha Krishnan and LaMAria authors; original rights retained",
+    "datasetImage": "images/catalog/lamaria-methods.webp",
+    "datasetImageAlt": "LaMAria capture devices, city trajectories, control points and challenge examples",
+    "datasetImageSource": "https://arxiv.org/html/2509.26639v1/teaser_final.png",
+    "datasetImagePage": "https://arxiv.org/abs/2509.26639",
+    "datasetImageType": "Dataset overview",
+    "datasetName": "LaMAria",
+    "datasetSummary": "City-scale wearable localization benchmark with surveyed controls, challenge tracks and public conversion/evaluation tools."
+  },
+  {
+    "id": "lamar",
+    "name": "LaMAR",
+    "summary": "Aligns natural AR trajectories to laser scans and benchmarks single-frame and sequence localization.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Depth"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Paul-Edouard Sarlin and LaMAR authors",
+    "image": "images/catalog/lamar-methods.webp",
+    "imageSource": "https://arxiv.org/html/2210.10770v1/teaser_v6_compressed.png",
+    "imagePage": "https://arxiv.org/abs/2210.10770",
+    "imageAlt": "LaMAR AR devices, benchmark environments, scans and registered trajectories",
+    "imageType": "Method figure / result",
+    "imageCredit": "Paul-Edouard Sarlin and LaMAR authors; original rights retained",
+    "datasetImage": "images/catalog/lamar-methods.webp",
+    "datasetImageAlt": "LaMAR AR devices, benchmark environments, scans and registered trajectories",
+    "datasetImageSource": "https://arxiv.org/html/2210.10770v1/teaser_v6_compressed.png",
+    "datasetImagePage": "https://arxiv.org/abs/2210.10770",
+    "datasetImageType": "Dataset overview",
+    "datasetName": "LaMAR",
+    "datasetSummary": "Headset/phone localization corpus registered to laser-scanned reference maps across time and illumination."
+  },
+  {
+    "id": "umi-3d-processing",
+    "name": "UMI-3D processing",
+    "summary": "Turns synchronized wrist camera/LiDAR/IMU recordings into trajectories and UMI-format training episodes.",
+    "signals": [
+      "Vision",
+      "LiDAR",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Ziming Wang and UMI-3D contributors",
+    "image": "images/catalog/umi-3d-processing-methods.webp",
+    "imageSource": "https://arxiv.org/html/2604.14089v1/image/slam_system.jpg",
+    "imagePage": "https://github.com/hku-mars/UMI-3D",
+    "imageAlt": "UMI-3D LiDAR-inertial state-estimation and voxel-map processing diagram",
+    "imageType": "Method figure / result",
+    "imageCredit": "Ziming Wang and UMI-3D contributors; original rights retained"
+  },
+  {
+    "id": "egomotion-local-loops",
+    "name": "Egomotion with Local Loop Closures",
+    "summary": "Uses repeated views during head sweeps for local loop constraints without depending on noisy 3D rotations.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Suvam Patra and ELLC authors",
+    "image": "images/catalog/egomotion-local-loops-methods.webp",
+    "imageSource": "https://arxiv.org/html/1701.04743v1/egotrajectory.png",
+    "imagePage": "https://arxiv.org/abs/1701.04743",
+    "imageAlt": "ELLC trajectory recovery from egocentric head motion compared with LSD-SLAM",
+    "imageType": "Method figure / result",
+    "imageCredit": "Suvam Patra and ELLC authors; original rights retained"
+  },
+  {
+    "id": "ego-slam",
+    "name": "EGO-SLAM",
+    "summary": "Solves shaky egocentric motion using global pose averaging and bundle adjustment inside temporal windows.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Suvam Patra and EGO-SLAM authors",
+    "image": "images/catalog/ego-slam-methods.webp",
+    "imageSource": "https://www.cse.iitd.ac.in/~chetan/papers/wacv19-egoslam.pdf",
+    "imagePage": "https://doi.org/10.1109/WACV.2019.00011",
+    "imageAlt": "EGO-SLAM paper Figure 1 camera trajectory and reconstructed scene from bike video",
+    "imageType": "Method figure / result",
+    "imageCredit": "Suvam Patra and EGO-SLAM authors; original rights retained"
+  },
+  {
+    "id": "vins-fisheye",
+    "name": "VINS-Fisheye",
+    "summary": "Extends VINS-Fusion to stereo fisheye tracking and optional stereo-depth estimation.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Hao Xu and VINS-Fisheye contributors",
+    "image": "images/catalog/vins-fisheye-methods.webp",
+    "imageSource": "https://raw.githubusercontent.com/xuhao1/VINS-Fisheye/master/support_files/feature_track.png",
+    "imagePage": "https://github.com/xuhao1/VINS-Fisheye",
+    "imageAlt": "VINS-Fisheye official fisheye feature tracking visualization",
+    "imageType": "Method figure / result",
+    "imageCredit": "Hao Xu and VINS-Fisheye contributors; original rights retained"
+  },
+  {
+    "id": "tagslam",
+    "name": "TagSLAM",
+    "summary": "Uses AprilTag factors to jointly estimate camera/body poses and tag maps with optional odometry.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Bernd Pfrommer and Kostas Daniilidis",
+    "image": "images/catalog/tagslam-methods.webp",
+    "imageSource": "https://arxiv.org/html/1910.00679v1/scene_with_block.png",
+    "imagePage": "https://arxiv.org/abs/1910.00679",
+    "imageAlt": "TagSLAM scene showing camera, tag and rigid-body coordinate frames",
+    "imageType": "Method figure / result",
+    "imageCredit": "Bernd Pfrommer and Kostas Daniilidis; original rights retained"
+  },
+  {
+    "id": "ucoslam",
+    "name": "UcoSLAM",
+    "summary": "Combines natural keypoints and planar markers for map building, metric scale and long-term relocalization.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-10-16",
+    "credit": "Rafael Muñoz-Salinas and Rafael Medina-Carnicer",
+    "image": "images/catalog/ucoslam-methods.webp",
+    "imageSource": "https://arxiv.org/html/1902.03729v1/figs/ucoceiling/reloc_composed.png",
+    "imagePage": "https://arxiv.org/abs/1902.03729",
+    "imageAlt": "UcoSLAM author-paper relocalization example using natural features and planar markers",
+    "imageType": "Method figure / result",
+    "imageCredit": "Rafael Muñoz-Salinas and Rafael Medina-Carnicer; original rights retained"
+  },
+  {
+    "id": "unblur-slam",
+    "name": "Unblur-SLAM",
+    "summary": "Combines physically constrained deblurring with Gaussian mapping for motion and defocus blur.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Unblur-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/unblur-slam-methods.webp",
+    "imageAlt": "Unblur-SLAM original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2603.26810v1/unblur-slam-overview.png",
+    "imagePage": "https://arxiv.org/html/2603.26810",
+    "imageType": "Method / reconstruction figure",
+    "credit": "Unblur-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "sgad-slam",
+    "name": "SGAD-SLAM",
+    "summary": "Uses depth-aligned Gaussian distributions for tracking and pixel-aligned appearance Gaussians for mapping.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "SGAD-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/sgad-slam-methods.webp",
+    "imageAlt": "SGAD-SLAM original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2603.21055v1/Overview1_zip.png",
+    "imagePage": "https://arxiv.org/html/2603.21055",
+    "imageType": "Method / reconstruction figure",
+    "credit": "SGAD-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "flow4dgs-slam",
+    "name": "Flow4DGS-SLAM",
+    "summary": "Separates ego-motion from optical flow to track the camera and reconstruct moving Gaussian geometry.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Flow4DGS-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/flow4dgs-slam-methods.webp",
+    "imageAlt": "Flow4DGS-SLAM original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2604.22339v2/framework.png",
+    "imagePage": "https://arxiv.org/html/2604.22339",
+    "imageType": "Method / reconstruction figure",
+    "credit": "Flow4DGS-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "wildgs-slam",
+    "name": "WildGS-SLAM",
+    "summary": "Learns per-pixel uncertainty to remove dynamic distractors while tracking and mapping static scenes.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "WildGS-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/wildgs-slam-methods.webp",
+    "imageAlt": "WildGS-SLAM original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2504.03886v1/pipeline_without_mosaic.png",
+    "imagePage": "https://arxiv.org/html/2504.03886",
+    "imageType": "Method / reconstruction figure",
+    "credit": "WildGS-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "vings-mono",
+    "name": "VINGS-Mono",
+    "summary": "Combines visual-inertial tracking, 2D Gaussian mapping and novel-view-synthesis loop detection.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "VINGS-Mono",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/vings-mono-methods.webp",
+    "imageAlt": "VINGS-Mono original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2501.08286v1/figure2-pipeline.png",
+    "imagePage": "https://arxiv.org/html/2501.08286",
+    "imageType": "Method / reconstruction figure",
+    "credit": "VINGS-Mono authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "hi-slam2",
+    "name": "HI-SLAM2",
+    "summary": "Keeps monocular Gaussian maps geometrically consistent with pose-graph BA and anchored map deformation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "HI-SLAM2",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/hi-slam2-methods.webp",
+    "imageAlt": "HI-SLAM2 original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2411.17982v3/pipeline.png",
+    "imagePage": "https://arxiv.org/html/2411.17982",
+    "imageType": "Method / reconstruction figure",
+    "credit": "HI-SLAM2 authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "loopsplat",
+    "name": "LoopSplat",
+    "summary": "Registers Gaussian submaps directly to close loops and correct dense RGB-D maps.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "LoopSplat",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/loopsplat-methods.webp",
+    "imageAlt": "LoopSplat original method or reconstruction figure",
+    "imageSource": "https://raw.githubusercontent.com/GradientSpaces/LoopSplat/main/assets/architecture.png",
+    "imagePage": "https://github.com/GradientSpaces/LoopSplat",
+    "imageType": "Method / reconstruction figure",
+    "credit": "LoopSplat authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "photo-slam",
+    "name": "Photo-SLAM",
+    "summary": "Adds photorealistic Gaussian mapping to feature-based localization for several camera input modes.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Photo-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/photo-slam-methods.webp",
+    "imageAlt": "Photo-SLAM original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2311.16728v2/teaser_v4.png",
+    "imagePage": "https://arxiv.org/html/2311.16728",
+    "imageType": "Method / reconstruction figure",
+    "credit": "Photo-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "rtg-slam",
+    "name": "RTG-SLAM",
+    "summary": "Separates stable and unstable Gaussians to reconstruct large RGB-D scenes efficiently.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "RTG-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/rtg-slam-methods.webp",
+    "imageAlt": "RTG-SLAM original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2404.19706v3/teaser.png",
+    "imagePage": "https://arxiv.org/html/2404.19706",
+    "imageType": "Method / reconstruction figure",
+    "credit": "RTG-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "gaussian-slam",
+    "name": "Gaussian-SLAM",
+    "summary": "Builds independently optimized Gaussian submaps with frame-to-model RGB-D tracking.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Gaussian-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/gaussian-slam-methods.webp",
+    "imageAlt": "Gaussian-SLAM own photo-realistic rendering of the TUM RGB-D fr3-office scene",
+    "imageSource": "https://arxiv.org/html/2312.10070v2/images/teaser_final/gslam_fr3_office_01250.png",
+    "imagePage": "https://arxiv.org/html/2312.10070",
+    "imageType": "Own reconstruction result",
+    "credit": "Gaussian-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "gs-slam",
+    "name": "GS-SLAM",
+    "summary": "Uses an adaptive Gaussian map and coarse-to-fine rendering-based RGB-D pose optimization.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "GS-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/gs-slam-methods.webp",
+    "imageAlt": "GS-SLAM original method or reconstruction figure",
+    "imageSource": "https://gs-slam.github.io/static/images/pipeline.png",
+    "imagePage": "https://gs-slam.github.io/",
+    "imageType": "Method / reconstruction figure",
+    "credit": "GS-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "nerf-slam",
+    "name": "NeRF-SLAM",
+    "summary": "Fuses uncertain dense monocular depth into a hierarchical neural radiance field.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "NeRF-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/nerf-slam-methods.webp",
+    "imageAlt": "NeRF-SLAM original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2210.13641v1/img/main_figure_2.png",
+    "imagePage": "https://arxiv.org/html/2210.13641",
+    "imageType": "Method / reconstruction figure",
+    "credit": "NeRF-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "loopy-slam",
+    "name": "Loopy-SLAM",
+    "summary": "Uses neural point submaps and online loop closure to correct large RGB-D reconstructions.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Loopy-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/loopy-slam-methods.webp",
+    "imageAlt": "Loopy-SLAM original method or reconstruction figure",
+    "imageSource": "https://raw.githubusercontent.com/eriksandstroem/Loopy-SLAM/main/media/architecture.jpg",
+    "imagePage": "https://github.com/eriksandstroem/Loopy-SLAM",
+    "imageType": "Method / reconstruction figure",
+    "credit": "Loopy-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "point-slam",
+    "name": "Point-SLAM",
+    "summary": "Anchors neural scene features on adaptive points for dense RGB-D tracking and mapping.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Point-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/point-slam-methods.webp",
+    "imageAlt": "Point-SLAM original method or reconstruction figure",
+    "imageSource": "https://raw.githubusercontent.com/tfy14esa/Point-SLAM/main/media/teaser.jpg",
+    "imagePage": "https://github.com/tfy14esa/Point-SLAM",
+    "imageType": "Method / reconstruction figure",
+    "credit": "Point-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "gs-icp-slam",
+    "name": "RGBD GS-ICP SLAM",
+    "summary": "Shares Gaussian covariance between G-ICP tracking and Gaussian scene optimization.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "RGBD GS-ICP SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/gs-icp-slam-methods.webp",
+    "imageAlt": "RGBD GS-ICP SLAM original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2403.12550v2/overview.png",
+    "imagePage": "https://arxiv.org/html/2403.12550v2",
+    "imageType": "Method / reconstruction figure",
+    "credit": "RGBD GS-ICP SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
+  },
+  {
+    "id": "gps-slam",
+    "name": "GPS-SLAM",
+    "summary": "Combines SDF fusion with Gaussians that refine residual appearance rather than model every surface.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "GPS-SLAM",
+    "reviewed": "2026-10-16",
+    "image": "images/catalog/gps-slam-methods.webp",
+    "imageAlt": "GPS-SLAM original method or reconstruction figure",
+    "imageSource": "https://arxiv.org/html/2509.11574v2/illustration.png",
+    "imagePage": "https://arxiv.org/html/2509.11574v2",
+    "imageType": "Method / reconstruction figure",
+    "credit": "GPS-SLAM authors",
+    "imageCredit": "Original authors; third-party figure, original rights retained"
   }
 ]

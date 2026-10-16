@@ -92,6 +92,9 @@ Their additional filters cover output/representation, validation and learning.
 Tools opens an on-demand split menu for SLAM, calibration/synchronization,
 trajectory evaluation, Ego/UMI workflows and Others. SLAM further separates
 visual/inertial, learned/dense, LiDAR/fusion and capture-workflow references.
+Streaming reconstruction and geometry foundations have independent groups;
+card labels distinguish full SLAM, odometry, streaming/offline reconstruction,
+and geometry models. Optional backend features remain explicit in Details.
 This view uses execution mode, loop closure, relocalization, project release
 and year as its five facets. `tool=` and `family=` preserve the nested selection
 in shared URLs; switching collections retains each collection's state.
