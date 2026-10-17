@@ -1,5 +1,6 @@
 import type { Work } from "../lib/catalog";
 import { compareDates } from "../lib/order";
+import { detailLinks } from "../lib/resource-links";
 import { formatScale, scaleMetrics } from "../lib/scale";
 import { CATEGORIES, LENS_COPY, emptyView, isDepthView, facetsFor, facetOptions, facetValues, categoriesFor, signalsFor, matches, type Lens, type ViewState } from "../lib/filters";
 import { TOOL_TOPICS, SLAM_FAMILIES, DEPTH_FAMILIES, PERCEPTION_LABELS, slamFor, perceptionFor, toolSelectionFrom, scopeLabelFor } from "../lib/tooling";
@@ -572,17 +573,7 @@ function showDetail(id: string) {
   detail.dataset.work = id;
   const h = record(w.research?.hardware),
     d = record(w.research?.dataset);
-  const links = [
-    { label: w.publication === "Product" ? "Product" : w.publication === "Solution" ? "Solution" : /arxiv\.org|doi\.org|openreview\.net|proceedings/i.test(w.paperUrl) ? "Paper" : "Source", url: w.paperUrl },
-    ...w.links.filter(l => !(d.datasetUrl && /dataset|^data$/i.test(l.label))).map(l => ({...l, label: /^github$|^code$|^software$|^sdk$/i.test(l.label) ? "Code" : /^project$/i.test(l.label) ? "Project" : l.label})),
-    { label: "Dataset", url: String(d.datasetUrl ?? "") },
-  ].filter((l) => l.url && /^https?:\/\//.test(l.url));
-  const seen = new Set<string>();
-  const unique = links.filter((l) => {
-    if (seen.has(l.url)) return false;
-    seen.add(l.url);
-    return true;
-  });
+  const unique = detailLinks(w);
   const sourceList = sources(w);
   const detailKind = collection === "research" ? (w.collections.includes("hardware") ? "hardware" : w.collections.includes("datasets") ? "datasets" : "methods") : collection;
   const selectedMedia=collection==="research"?media(w,detailKind):preview(w)??media(w);

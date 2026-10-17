@@ -128,6 +128,15 @@ comparison, shared diagonal skeleton sweep, one-viewport-ahead loading, three
 loading dots, final `end`, and reduced-motion support. Existing cards keep DOM
 and scroll position during append. Hardware/dataset/method compare fields differ.
 
+## Detail resource links
+
+Order website detail links as **Paper → Project → Code → Data → other resources**.
+Normalize common aliases (GitHub/software/SDK and dataset/data) while retaining
+release, access and license qualifiers. The first available link receives the
+dark primary style; prefer Paper whenever one exists. A product or project
+page is not a paper. Sort before deduplicating, preserve distinct data links,
+and apply the same rule across every collection.
+
 ## Maintenance and validation
 
 News records milestones, not routine additions. Conventional Commits:
