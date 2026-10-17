@@ -3231,6 +3231,1709 @@
           "https://www.nolovr.com/ego-page/index.html?v=3"
         ]
       }
+    },
+    "synapx-octos-ego": {
+      "interface": "SynapX OctoS-Ego",
+      "poseTracking": "SYNStereo reconstructs geometry; hand/body outputs depend on the paired pipeline",
+      "vision": "4 × 2 MP global-shutter fisheye; about 200° × 150° per camera; 60 mm front stereo baseline",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Quad-fisheye headband; optional OctoS-Band and OctoS-Glove",
+      "cameraSpecs": "4 × 2 MP global-shutter fisheye; about 200° × 150° per camera; 60 mm front stereo baseline",
+      "measuredSignals": "Fisheye RGB and 6-axis IMU; depth is reconstructed from stereo",
+      "synchronization": "Not specified",
+      "outputs": "Video/IMU plus downstream geometry; export format not specified",
+      "configuration": "Approx. 330° × 150° stitched FOV; no measured depth sensor inferred",
+      "softwareRelease": "Public software source/license not verified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://synapxdynamics.ai/en/products/octosense"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "vision": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "tactile": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "forceTorque": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "captureComponents": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "cameraSpecs": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "measuredSignals": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "synchronization": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "outputs": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "configuration": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "softwareRelease": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "hardwareRelease": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ]
+      }
+    },
+    "synapx-octos-band": {
+      "interface": "SynapX OctoS-Band",
+      "poseTracking": "SYNEMG estimates hand pose and contact force; these are model outputs",
+      "vision": "No integrated camera specified",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "EMG",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Wristband"
+      ],
+      "captureComponents": "16-channel EMG wristband; 9-axis IMU",
+      "cameraSpecs": "No integrated camera specified",
+      "measuredSignals": "Surface EMG and inertial signals; inferred force is not directly measured contact force",
+      "synchronization": "EMG sampling: 2,000 Hz; cross-device timing accuracy not specified",
+      "outputs": "EMG/IMU with optional learned hand/force estimates; raw export schema unspecified",
+      "configuration": "Vendor lists <80 g and ≥4 h; wired and wireless modes",
+      "softwareRelease": "Public software source/license not verified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://synapxdynamics.ai/en/products/octosense"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "vision": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "tactile": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "forceTorque": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "captureComponents": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "cameraSpecs": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "measuredSignals": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "synchronization": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "outputs": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "configuration": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "softwareRelease": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ],
+        "hardwareRelease": [
+          "https://synapxdynamics.ai/en/products/octosense"
+        ]
+      }
+    },
+    "synapx-octos-glove": {
+      "interface": "SynapX OctoS-Glove",
+      "poseTracking": "20+ DoF isomorphic hand; joint-angle resolution is a vendor specification",
+      "vision": "Wrist-mounted 2 MP global-shutter fisheye; 200° × 150° FOV",
+      "tactile": {
+        "status": "present",
+        "detail": "1,900 full-palm sensing points (vendor)"
+      },
+      "forceTorque": {
+        "status": "present",
+        "detail": "3D force sensing listed; no 6-axis wrench claim"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Tactile",
+        "Force"
+      ],
+      "interfaceForms": [
+        "Glove"
+      ],
+      "captureComponents": "Isomorphic exoskeleton, wrist camera, 6-axis IMU and palm tactile array",
+      "cameraSpecs": "Wrist-mounted 2 MP global-shutter fisheye; 200° × 150° FOV",
+      "measuredSignals": "Visual, inertial, hand-motion and tactile/force streams",
+      "synchronization": "Not specified",
+      "outputs": "Hand demonstration data aligned to the in-house dexterous-hand geometry",
+      "configuration": "Vendor table lists 1 mm tactile spatial and 0.1 N contact-force resolution; sensor rates and calibration unspecified",
+      "softwareRelease": "Public software source/license not verified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://synapxdynamics.ai/en/products/octosense"
+        },
+        {
+          "label": "Manufacturer glove specification figure",
+          "url": "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "vision": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "tactile": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "forceTorque": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "captureComponents": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "cameraSpecs": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "measuredSignals": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "synchronization": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "outputs": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "configuration": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "softwareRelease": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ],
+        "hardwareRelease": [
+          "https://synapxdynamics.ai/en/products/octosense",
+          "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        ]
+      }
+    },
+    "cyberorigin-opencyberglove": {
+      "interface": "CyberOrigin OpenCyberGlove",
+      "poseTracking": "Calibrated learned joint-angle estimation; not an independently tracked global wrist pose",
+      "vision": "No integrated camera specified",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "State"
+      ],
+      "interfaceForms": [
+        "Glove"
+      ],
+      "captureComponents": "19 flexible tensile sensors per glove; USB-C/UART",
+      "cameraSpecs": "No integrated camera specified",
+      "measuredSignals": "19 raw tensile values, temperature and timestamp; joint angles are estimated",
+      "synchronization": "120 Hz sensor acquisition; 1 Mbps serial transport; camera synchronization not specified",
+      "outputs": "Raw sensor packets, joint estimates and customizable forward kinematics",
+      "configuration": "25 g per glove; medium size; recalibration required across users",
+      "softwareRelease": "BSD-3-Clause Python SDK; ROS 2 and retargeting wrappers public",
+      "hardwareRelease": "Commercial glove; full fabrication/BOM release not established",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://cyberorigin2077.github.io/open_cyber_glove/"
+        },
+        {
+          "label": "User guide",
+          "url": "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/"
+        },
+        {
+          "label": "BSD-3-Clause SDK and raw-data schema",
+          "url": "https://github.com/CyberOrigin2077/open_cyber_glove"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "vision": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "tactile": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "forceTorque": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "captureComponents": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "cameraSpecs": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "measuredSignals": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "synchronization": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "outputs": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "configuration": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "softwareRelease": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ],
+        "hardwareRelease": [
+          "https://cyberorigin2077.github.io/open_cyber_glove/",
+          "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/",
+          "https://github.com/CyberOrigin2077/open_cyber_glove"
+        ]
+      }
+    },
+    "orbbec-wristcam": {
+      "interface": "Orbbec WristCam",
+      "poseTracking": "Visual–inertial recording; no standalone hand-pose solver established",
+      "vision": "1 × 2 MP fisheye; 1600×1200 at 30/60 fps; 165° × 130° FOV",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Wristband"
+      ],
+      "captureComponents": "Wrist-mounted RGB camera and 6-axis IMU",
+      "cameraSpecs": "1 × 2 MP fisheye; 1600×1200 at 30/60 fps; 165° × 130° FOV",
+      "measuredSignals": "RGB video and acceleration/angular velocity",
+      "synchronization": "Vendor lists ≤1 ms sync and 400/1000 Hz IMU",
+      "outputs": "Camera/IMU streams; device control, calibration and export integration offered",
+      "configuration": "<75 g; Wi-Fi 5 + BLE 5.2; separate asset from existing EGO headband",
+      "softwareRelease": "Vendor describes SDK integration; exact WristCam package/license unverified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "vision": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "tactile": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "forceTorque": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "captureComponents": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "cameraSpecs": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "measuredSignals": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "synchronization": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "outputs": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "configuration": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "softwareRelease": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ],
+        "hardwareRelease": [
+          "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        ]
+      }
+    },
+    "panoculon-trinet": {
+      "interface": "Panoculon Trinet family",
+      "poseTracking": "Raw visual–inertial capture; depth/point clouds are computed afterwards",
+      "vision": "Mono: 1080p30 fisheye; Stereo / GS: 2 RGB cameras, 70 mm baseline",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "interfaceForms": [
+        "Hybrid"
+      ],
+      "captureComponents": "Mono/stereo head unit; optional two-wrist kit and separate radio sync beacons",
+      "cameraSpecs": "Mono: 1080p30 fisheye; Stereo / GS: 2 RGB cameras, 70 mm baseline",
+      "measuredSignals": "RGB, 9-DoF inertial measurements and stereo microphones",
+      "synchronization": "400 Hz IMU; single-clock camera/IMU/audio; vendor <1 ms multi-unit alignment",
+      "outputs": "Onboard recordings or live streams; MP4 plus IMU/timestamp/calibration sidecars",
+      "configuration": "Stereo GS specifically uses global shutter; radio beacons sold separately",
+      "softwareRelease": "MIT Android/iOS SDK; public Python tools and calibration repository",
+      "hardwareRelease": "Commercial contact-based capture family; hardware fabrication source not established",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.panoculonlabs.com/trinet"
+        },
+        {
+          "label": "MIT capture SDK",
+          "url": "https://github.com/Panoculon-Labs/Trinet-SDK"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "vision": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "tactile": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "forceTorque": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "captureComponents": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "cameraSpecs": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "measuredSignals": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "synchronization": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "outputs": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "configuration": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "softwareRelease": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ],
+        "hardwareRelease": [
+          "https://www.panoculonlabs.com/trinet",
+          "https://github.com/Panoculon-Labs/Trinet-SDK"
+        ]
+      }
+    },
+    "opengraph-oglo": {
+      "interface": "OpenGraph OGLO",
+      "poseTracking": "Software offers 3D hand pose; tracking sensor configuration unspecified",
+      "vision": "No integrated camera specified",
+      "tactile": {
+        "status": "present",
+        "detail": "Finger contact/force traces and contact localization shown"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Tactile",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Glove"
+      ],
+      "captureComponents": "Modular tactile glove; wrist inertial trace appears in official capture demo",
+      "cameraSpecs": "No integrated camera specified",
+      "measuredSignals": "Tactile contact and wrist inertial signals; force units/calibration not disclosed",
+      "synchronization": "Company platform reports 1 kHz tactile and 400 Hz IMU; model-specific rates need confirmation",
+      "outputs": "Contact timelines, localization heatmaps, action segments and derived hand pose",
+      "configuration": "Vendor states field deployment; taxel count, detailed force calibration and public data release unspecified",
+      "softwareRelease": "Public software source/license not verified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.opengraphlabs.com/products/oglo"
+        },
+        {
+          "label": "Official capture demonstration",
+          "url": "https://www.opengraphlabs.com/oglo/assemble-lego.mp4"
+        },
+        {
+          "label": "Capture platform timing claims",
+          "url": "https://www.opengraphlabs.com/"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "vision": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "tactile": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "forceTorque": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "captureComponents": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "cameraSpecs": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "measuredSignals": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "synchronization": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "outputs": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "configuration": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "softwareRelease": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ],
+        "hardwareRelease": [
+          "https://www.opengraphlabs.com/products/oglo",
+          "https://www.opengraphlabs.com/oglo/assemble-lego.mp4",
+          "https://www.opengraphlabs.com/"
+        ]
+      }
+    },
+    "opengraph-ovision": {
+      "interface": "OpenGraph OVISION",
+      "poseTracking": "Software derives localization, 3D geometry and hand pose",
+      "vision": "3 cameras: 1 perception + 2 CV; 60 fps",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Three-camera calibrated sensor stack; several listed form factors",
+      "cameraSpecs": "3 cameras: 1 perception + 2 CV; 60 fps",
+      "measuredSignals": "Camera images; depth/hand poses are downstream reconstructions",
+      "synchronization": "Vendor reports sub-ms single calibrated timeline",
+      "outputs": "Video followed by segmented/reconstructed/retargeted data; exact export schema unspecified",
+      "configuration": "Factory intrinsics, extrinsics and distortion calibration; camera output is not measured RGB-D",
+      "softwareRelease": "Public software source/license not verified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.opengraphlabs.com/products/ovision"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "vision": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "tactile": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "forceTorque": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "captureComponents": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "cameraSpecs": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "measuredSignals": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "synchronization": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "outputs": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "configuration": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "softwareRelease": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ],
+        "hardwareRelease": [
+          "https://www.opengraphlabs.com/products/ovision"
+        ]
+      }
+    },
+    "physen-fmg-imu": {
+      "interface": "PhysenAI FMG + IMU",
+      "poseTracking": "Hand pose and fingertip pressure are proposed learned estimates",
+      "vision": "No integrated camera specified",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "FMG",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Armband"
+      ],
+      "captureComponents": "Modular FMG forearm array plus IMU; bilateral pairing with head stereo",
+      "cameraSpecs": "No integrated camera specified",
+      "measuredSignals": "Forearm contact/deformation-related FMG signals and inertial motion; no EMG channels",
+      "synchronization": "Demo labels 120 Hz; IMU rate and cross-device alignment unspecified",
+      "outputs": "Raw-signal and paired-video capture subject to confirmed hardware/interface configuration",
+      "configuration": "10×4 array appears in vendor demo; independent channel count and calibration remain unconfirmed",
+      "softwareRelease": "Public software source/license not verified",
+      "hardwareRelease": "Vendor-listed configurable research system; availability confirmed per project",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.physen.ai/products/fmg-imu/"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "vision": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "tactile": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "forceTorque": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "captureComponents": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "cameraSpecs": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "measuredSignals": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "synchronization": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "outputs": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "configuration": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "softwareRelease": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ],
+        "hardwareRelease": [
+          "https://www.physen.ai/products/fmg-imu/"
+        ]
+      }
+    },
+    "physen-tactile-glove": {
+      "interface": "PhysenAI tactile capture glove",
+      "poseTracking": "5 EM fingertip 6DoF measurements; derived 25DoF hand pose",
+      "vision": "No integrated camera specified",
+      "tactile": {
+        "status": "present",
+        "detail": "360 sites standard; 600-site option"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Tactile",
+        "State"
+      ],
+      "interfaceForms": [
+        "Glove"
+      ],
+      "captureComponents": "Piezoresistive fabric array and five electromagnetic fingertip trackers",
+      "cameraSpecs": "No integrated camera specified",
+      "measuredSignals": "Per-site raw ADC plus fingertip position/rotation; N/Pa require calibration",
+      "synchronization": "200 Hz tactile and 180 Hz tracking listed; shared hardware timing not established",
+      "outputs": "Raw tactile and fingertip pose streams; derived hand pose stored separately",
+      "configuration": "USB standard; wireless optional; EM reference source/accessories must be confirmed",
+      "softwareRelease": "Authorized Windows/macOS/Linux SDK offered; public source release unverified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.physen.ai/products/data-glove/"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "vision": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "tactile": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "forceTorque": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "captureComponents": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "cameraSpecs": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "measuredSignals": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "synchronization": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "outputs": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "configuration": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "softwareRelease": [
+          "https://www.physen.ai/products/data-glove/"
+        ],
+        "hardwareRelease": [
+          "https://www.physen.ai/products/data-glove/"
+        ]
+      }
+    },
+    "sunday-skill-capture": {
+      "interface": "Sunday Skill Capture Glove",
+      "poseTracking": "Kinematic observations transformed to Memo robot data by Skill Transform",
+      "vision": "The combined human-demonstration workflow includes visual observations; camera specifications undisclosed",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "State"
+      ],
+      "interfaceForms": [
+        "Glove"
+      ],
+      "captureComponents": "Wearable hand interface co-designed with Memo geometry and sensor layout",
+      "cameraSpecs": "The combined human-demonstration workflow includes visual observations; camera specifications undisclosed",
+      "measuredSignals": "Visual and kinematic observations; sensor count and raw tactile configuration unspecified",
+      "synchronization": "Not specified",
+      "outputs": "Company-managed demonstration-to-robot data pipeline",
+      "configuration": "Capture without controlling a robot during the demonstration; no generic retargeting guarantee",
+      "softwareRelease": "Proprietary managed workflow described; public SDK/license not verified",
+      "hardwareRelease": "Distributed to company Memory Developers; general retail availability unverified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.sunday.ai/blog/no-robot-data"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "vision": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "tactile": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "forceTorque": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "captureComponents": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "cameraSpecs": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "measuredSignals": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "synchronization": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "outputs": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "configuration": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "softwareRelease": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ],
+        "hardwareRelease": [
+          "https://www.sunday.ai/blog/no-robot-data"
+        ]
+      }
+    },
+    "aperdata-aperego": {
+      "interface": "AperData AperEgo family",
+      "poseTracking": "AperOS downstream reconstruction; not raw motion ground truth",
+      "vision": "2 / 4 / 6 × 2 MP global-shutter cameras; 4/6: 1600×1200 at 30 fps",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Multi-camera head unit, ICM-45686 6-axis IMU and MEMS microphones",
+      "cameraSpecs": "2 / 4 / 6 × 2 MP global-shutter cameras; 4/6: 1600×1200 at 30 fps",
+      "measuredSignals": "Camera video, IMU and microphone audio",
+      "synchronization": "Vendor <200 μs trigger latency; IMU 200/500 Hz",
+      "outputs": "H.265/MP4, IMU metadata, timestamps, PCM audio and calibration files",
+      "configuration": "4-camera model: >270° HFOV, 65 mm front baseline, ≤250 g excluding battery",
+      "softwareRelease": "AperOS managed platform; SDK offered, complete license/source unverified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://unionimage-aperdata.ai/"
+        },
+        {
+          "label": "Company-issued launch announcement (event date Aug 18)",
+          "url": "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html"
+        },
+        {
+          "label": "51WORLD official platform page",
+          "url": "https://www.51world.com.cn/aperdata"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "vision": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "tactile": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "forceTorque": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "captureComponents": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "cameraSpecs": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "measuredSignals": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "synchronization": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "outputs": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "configuration": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "softwareRelease": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "hardwareRelease": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html",
+          "https://www.51world.com.cn/aperdata"
+        ]
+      }
+    },
+    "aperdata-wristcam": {
+      "interface": "AperData WristCAM",
+      "poseTracking": "Raw wrist-view capture; derived robot motion requires processing",
+      "vision": "1 × 2 MP global-shutter camera; 1600×1200 at 60 fps; HFOV >157°",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "interfaceForms": [
+        "Wristband"
+      ],
+      "captureComponents": "Wrist-mounted camera, 6-axis IMU and microphone",
+      "cameraSpecs": "1 × 2 MP global-shutter camera; 1600×1200 at 60 fps; HFOV >157°",
+      "measuredSignals": "RGB, inertial motion and PCM audio",
+      "synchronization": "Vendor <200 μs hardware trigger; <1 ms Sub-G/GPIO multi-device sync; IMU 200/500 Hz",
+      "outputs": "MP4/H.265, IMU, timestamps, audio and calibration metadata",
+      "configuration": "Wearable accessory distinct from the head unit; deployment/configuration per quotation",
+      "softwareRelease": "Public software source/license not verified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://unionimage-aperdata.ai/"
+        },
+        {
+          "label": "51WORLD wrist-camera use",
+          "url": "https://www.51world.com.cn/aperdata"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "vision": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "tactile": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "forceTorque": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "captureComponents": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "cameraSpecs": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "measuredSignals": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "synchronization": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "outputs": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "configuration": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "softwareRelease": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ],
+        "hardwareRelease": [
+          "https://unionimage-aperdata.ai/",
+          "https://www.51world.com.cn/aperdata"
+        ]
+      }
+    },
+    "egoscale-capture-c1": {
+      "interface": "EgoScale Capture C1",
+      "poseTracking": "Camera and hand trajectories are downstream processing services",
+      "vision": "2 × 1920×1080 global-shutter cameras, 30 fps; 65 mm baseline; 120° × 90° per camera",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Headband"
+      ],
+      "captureComponents": "Stereo camera cap, 400 Hz IMU, replaceable battery and 128 GB storage",
+      "cameraSpecs": "2 × 1920×1080 global-shutter cameras, 30 fps; 65 mm baseline; 120° × 90° per camera",
+      "measuredSignals": "Stereo video and IMU with timestamps/calibration",
+      "synchronization": "Timestamped camera/IMU streams; hardware-trigger or cross-device sync accuracy not specified",
+      "outputs": "Downloadable camera video, IMU, timestamps, calibration and metadata",
+      "configuration": "Approx. 200 g including cap/battery; up to 10 h is a vendor claim",
+      "softwareRelease": "Public software source/license not verified",
+      "hardwareRelease": "Early-access reservation; page says orders opening soon",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.egoscale.com/capture-c1"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "vision": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "tactile": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "forceTorque": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "captureComponents": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "cameraSpecs": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "measuredSignals": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "synchronization": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "outputs": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "configuration": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "softwareRelease": [
+          "https://www.egoscale.com/capture-c1"
+        ],
+        "hardwareRelease": [
+          "https://www.egoscale.com/capture-c1"
+        ]
+      }
+    },
+    "hololens2-research-mode": {
+      "interface": "HoloLens 2 Research Mode",
+      "poseTracking": "6DoF headset tracking; hand/eye tracking are estimated SDK outputs",
+      "vision": "4 grayscale tracking cameras; depth/IR streams; photo/video camera through standard APIs",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "Gaze"
+      ],
+      "interfaceForms": [
+        "Headset"
+      ],
+      "captureComponents": "Commercial HoloLens 2 headset with research APIs and StreamRecorder",
+      "cameraSpecs": "4 grayscale tracking cameras; depth/IR streams; photo/video camera through standard APIs",
+      "measuredSignals": "Grayscale camera images, depth/IR, inertial streams; gaze and hand states are derived",
+      "synchronization": "Per-frame timestamps, intrinsics/extrinsics and headset pose; depth modes have different rates",
+      "outputs": "StreamRecorder captures depth/grayscale plus head, hand and eye tracking to disk",
+      "configuration": "AHAT: 45 fps pseudo-depth with phase wrap beyond 1 m; long-throw: 1–5 fps",
+      "softwareRelease": "MIT HoloLens2ForCV tools; Research Mode APIs subject to Microsoft device/platform terms",
+      "hardwareRelease": "Commercial legacy headset; research tooling is not open headset hardware",
+      "evidence": [
+        {
+          "label": "Author paper / project",
+          "url": "https://arxiv.org/abs/2008.11239"
+        },
+        {
+          "label": "Microsoft tools and StreamRecorder",
+          "url": "https://github.com/microsoft/HoloLens2ForCV"
+        },
+        {
+          "label": "Microsoft Research Mode sensor/depth semantics",
+          "url": "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "vision": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "tactile": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "forceTorque": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "captureComponents": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "cameraSpecs": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "synchronization": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/2008.11239",
+          "https://github.com/microsoft/HoloLens2ForCV",
+          "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        ]
+      }
+    },
+    "oymotion-gforcepro-plus": {
+      "interface": "OYMotion gForcePro+",
+      "poseTracking": "IMU orientation and trained gesture recognition; not articulated hand-pose ground truth",
+      "vision": "No integrated camera specified",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "EMG",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Armband"
+      ],
+      "captureComponents": "8 differential dry-electrode sEMG channels and 9-axis IMU",
+      "cameraSpecs": "No integrated camera specified",
+      "measuredSignals": "EMG and IMU raw data; quaternion/Euler orientation and gesture classes are derived",
+      "synchronization": "EMG configurable up to 1,000 Hz in user guide; no paired camera sync established",
+      "outputs": "EMG/IMU through SDK and BLE dongle; quaternion and gesture outputs available",
+      "configuration": "gForcePro+ provides raw EMG; gForce200 and discontinued gForcePro have different capabilities",
+      "softwareRelease": "Public SDK repositories; complete artifact licensing not verified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.oymotion.com/product32/149"
+        },
+        {
+          "label": "Official guide",
+          "url": "https://developer.oymotion.com/gForcePro/gForcePro/"
+        },
+        {
+          "label": "Raw-stream model matrix",
+          "url": "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "vision": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "tactile": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "forceTorque": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "captureComponents": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "cameraSpecs": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "measuredSignals": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "synchronization": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "outputs": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "configuration": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "softwareRelease": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ],
+        "hardwareRelease": [
+          "https://www.oymotion.com/product32/149",
+          "https://developer.oymotion.com/gForcePro/gForcePro/",
+          "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        ]
+      }
+    },
+    "forsense-g7": {
+      "interface": "Forsense ForMotion G7",
+      "poseTracking": "5 fingertip EMF+IMU modules and back-of-hand IMU per hand",
+      "vision": "No integrated camera specified",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "IMU",
+        "State"
+      ],
+      "interfaceForms": [
+        "Glove"
+      ],
+      "captureComponents": "Left/right gloves, fingertip modules and shared G7-Hub; optional forearm/wireless modules",
+      "cameraSpecs": "No integrated camera specified",
+      "measuredSignals": "Fingertip spatial pose and inertial motion; reconstructed joints are separate outputs",
+      "synchronization": "120 Hz sensor sampling; wired <20 ms / wireless <30 ms end-to-end latency (vendor)",
+      "outputs": "UDP fingertip/coil pose and joint-pose streams; Linux SDK",
+      "configuration": "115±5 g per glove; EMF susceptible to metal/magnetic interference; camera alignment needs separate integration",
+      "softwareRelease": "Public specifications and SDK documentation; SDK/hardware source licensing unverified",
+      "hardwareRelease": "Vendor-listed capture device; design-file release not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://forsense-sdk-docs.xin/hardware/G7-glove"
+        },
+        {
+          "label": "Manufacturer product identity",
+          "url": "https://www.forsense.cn/robot/"
+        },
+        {
+          "label": "Official G7 datasheet",
+          "url": "https://forsense-sdk-docs.xin/hardware/g7/specification"
+        },
+        {
+          "label": "TOBI integration and manufacturer image mirror",
+          "url": "https://www.tobi.cn/en/docs.html"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "vision": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "tactile": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "forceTorque": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "captureComponents": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "cameraSpecs": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "measuredSignals": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "synchronization": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "outputs": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "configuration": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "softwareRelease": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ],
+        "hardwareRelease": [
+          "https://forsense-sdk-docs.xin/hardware/G7-glove",
+          "https://www.forsense.cn/robot/",
+          "https://forsense-sdk-docs.xin/hardware/g7/specification",
+          "https://www.tobi.cn/en/docs.html"
+        ]
+      }
+    },
+    "egokit": {
+      "interface": "EgoKit",
+      "poseTracking": "XR devices log vendor head pose and 26-joint hand tracking; host-dependent",
+      "vision": "Host ego camera plus up to two USB wrist cameras; platform permissions vary",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision"
+      ],
+      "interfaceForms": [
+        "Hybrid"
+      ],
+      "captureComponents": "Head strap, USB-C hub and two wrist cameras/mounts with per-platform apps",
+      "cameraSpecs": "Host ego camera plus up to two USB wrist cameras; platform permissions vary",
+      "measuredSignals": "Ego/wrist video; XR head/hand states are estimated platform outputs",
+      "synchronization": "Common log/alignment workflow; cross-device hardware timing accuracy not established",
+      "outputs": "Local H.264 video and common log format; XR pose streams where supported",
+      "configuration": "Commodity accessories; approximately $151 accessory BOM excludes the host device",
+      "softwareRelease": "v1.0.0 / v1.1.0 Android/PICO/Quest APK assets verified; repo has no LICENSE; Apple apps contact-based",
+      "hardwareRelease": "Off-the-shelf accessory setup; not a custom open-hardware fabrication design",
+      "evidence": [
+        {
+          "label": "Author paper / project",
+          "url": "https://arxiv.org/abs/2605.16797"
+        },
+        {
+          "label": "Author project and configurations",
+          "url": "https://www.chuange.org/papers/EgoKit.html"
+        },
+        {
+          "label": "Verified application releases",
+          "url": "https://github.com/luffy-yu/EgoKit/releases"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "vision": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "tactile": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "forceTorque": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "captureComponents": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "cameraSpecs": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "synchronization": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "outputs": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "configuration": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/abs/2605.16797",
+          "https://www.chuange.org/papers/EgoKit.html",
+          "https://github.com/luffy-yu/EgoKit/releases"
+        ]
+      }
+    },
+    "seephys-hub": {
+      "interface": "PHANES AI SeePhys Hub",
+      "poseTracking": "Vision/inertial body and hand reconstruction; sensing/output details not fully published",
+      "vision": "Four-camera headband and wrist views; resolution/frame rate undisclosed",
+      "tactile": {
+        "status": "present",
+        "detail": "Announced suite includes tactile gloves"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Whole body",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Tactile"
+      ],
+      "interfaceForms": [
+        "Hybrid"
+      ],
+      "captureComponents": "Four-camera headband, two wristbands, three waist/lower-leg trackers and tactile gloves",
+      "cameraSpecs": "Four-camera headband and wrist views; resolution/frame rate undisclosed",
+      "measuredSignals": "Camera images, inertial motion and glove contact pressure; body pose is reconstructed",
+      "synchronization": "Launch interview reports headband camera/IMU/UWB ≤0.5 ms; cross-module timing unspecified",
+      "outputs": "Companion parsing, cleaning, segmentation and motion-retargeting platform; file schema unspecified",
+      "configuration": "Announced Oct 14; headband ≤220 g and each wristband ≤75 g reported by the company",
+      "softwareRelease": "No public SDK, source, model or data license established",
+      "hardwareRelease": "Announced system; retail/shipping terms and design-file release unknown",
+      "evidence": [
+        {
+          "label": "Launch-time company interview / vendor-reported announcement",
+          "url": "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        },
+        {
+          "label": "Author/team identity and technical lineage",
+          "url": "https://jianyi2004.github.io/"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "poseTracking": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "vision": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "tactile": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "forceTorque": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "captureComponents": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "cameraSpecs": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "measuredSignals": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "synchronization": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "outputs": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "configuration": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "softwareRelease": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ],
+        "hardwareRelease": [
+          "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        ]
+      }
     }
   }
 }

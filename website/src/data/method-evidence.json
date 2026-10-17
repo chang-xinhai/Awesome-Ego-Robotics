@@ -61238,6 +61238,3391 @@
           "https://arxiv.org/html/2409.14365"
         ]
       }
+    },
+    "rlhnd": {
+      "summary": "Uses video foundation features to recover bimanual pose, surface contact and inferred force from RGB clips.",
+      "input": "Monocular egocentric RGB clips and calibrated intrinsics",
+      "output": "Camera-space MANO pose/shape, contact probability and per-vertex force",
+      "supervision": "2D/3D pose labels; mesh-derived contact; glove/pad force labels",
+      "robotEvidence": "Real RB-Y1 / WUJI-hand DPP policy experiments; five-hand retargeting",
+      "target": "Bimanual hands and hand-surface interaction",
+      "outputRepresentation": "MANO meshes, wrist translations, 778-vertex contact/force",
+      "coordinateFrame": "Camera frame; world comparison uses external camera poses",
+      "scale": "Learned metric placement with calibrated intrinsics; optional actor-shape cache",
+      "temporal": "Clip-level features; shape cache across windows",
+      "evaluation": "HOT3D, ARCTIC, held-out EgoDex; OpenTouch and PVDB",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "evidenceLevel": "real-robot",
+      "limitations": "Contact and force are inferred, not measured. RGB-only wrist depth remains ambiguous; robot action conversion needs calibration and retargeting.",
+      "implementation": "Official repository currently says code coming soon; no runnable model/weights release verified.",
+      "stage": "L1",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.09455"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2610.09455"
+        },
+        {
+          "label": "Author project",
+          "url": "https://seungjun-moon.github.io/rlhnd/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/seungjun-moon/rlhnd"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "target": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "implementation": [
+          "https://github.com/seungjun-moon/rlhnd"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.09455"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.09455"
+        ]
+      }
+    },
+    "4d-hof": {
+      "summary": "Refines foundation-model hand and object states with conditional flow matching and interaction guidance.",
+      "input": "Monocular RGB interaction video; foundation-model hand/object/depth initialization",
+      "output": "Temporally aligned hand meshes, object geometry and 6D poses",
+      "supervision": "Multi-dataset 3D interaction supervision; image/physical test-time guidance",
+      "target": "Hands and previously unseen rigid objects",
+      "outputRepresentation": "MANO trajectory and generated object mesh with pose sequence",
+      "coordinateFrame": "Shared reconstruction frame, aligned through estimated camera geometry",
+      "scale": "MoGe-3 predicted metric geometry anchors object/hand scale",
+      "temporal": "Sequence flow refinement with temporal guidance",
+      "evaluation": "HO3D-v3 (18 sequences), DexYCB (20 sequences) and in-the-wild reconstruction",
+      "outputSpace": "mixed",
+      "trainingType": "mixed",
+      "limitations": "Depth/pointmap initialization errors can corrupt object scale. Retargeting visualizations do not establish a closed-loop robot policy.",
+      "implementation": "Official repository is cleaning up for release; runnable code and weights not verified.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.08782"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2610.08782"
+        },
+        {
+          "label": "Author project",
+          "url": "https://tamu-visual-ai.github.io/4D-HOF/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/TAMU-Visual-AI/4D-HOF"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "target": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "implementation": [
+          "https://github.com/TAMU-Visual-AI/4D-HOF"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.08782"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.08782"
+        ]
+      }
+    },
+    "handflow": {
+      "summary": "Generates coherent MANO motion windows with flow matching; optional ViPE adds a world-space trajectory.",
+      "input": "Monocular RGB video; HaMeR visual/keypoint features; intrinsics",
+      "output": "Temporal MANO hand mesh and translation; optional world trajectory",
+      "supervision": "Annotated hand-motion windows and rectified-flow training",
+      "target": "Hand motion over time",
+      "outputRepresentation": "Shared MANO shape; per-frame pose and translation",
+      "coordinateFrame": "Camera frame in the model; ViPE camera-to-world transform in moving-camera demo",
+      "scale": "Learned hand placement; world scale depends on the camera/ViPE estimate",
+      "temporal": "Overlapping bidirectional motion windows; no autoregressive decoding",
+      "evaluation": "DexYCB camera-space; HOT3D world-space and temporal metrics",
+      "outputSpace": "mixed",
+      "trainingType": "supervised",
+      "limitations": "V1 model is trained on right hands; left inputs must be mirrored. Camera drift affects world output; inference throughput is not full-pipeline latency.",
+      "implementation": "MIT V1 inference/visualization and HF checkpoints; training, preprocessing and evaluation code pending.",
+      "stage": "L2",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2607.11221"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2607.11221"
+        },
+        {
+          "label": "Author project",
+          "url": "https://mxxu00.github.io/HandFlow/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/mxxu00/HandFlow"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "input": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "output": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "target": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2607.11221",
+          "https://github.com/mxxu00/HandFlow"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2607.11221",
+          "https://github.com/mxxu00/HandFlow"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2607.11221",
+          "https://github.com/mxxu00/HandFlow"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2607.11221",
+          "https://github.com/mxxu00/HandFlow"
+        ],
+        "implementation": [
+          "https://github.com/mxxu00/HandFlow"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2607.11221"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2607.11221"
+        ]
+      }
+    },
+    "haptic": {
+      "summary": "Extends HaMeR with temporal and full-image attention to predict coherent 4D hand trajectories.",
+      "input": "Monocular hand video, hand tracks and camera intrinsics",
+      "output": "MANO articulation and coherent camera-referenced 4D trajectory",
+      "supervision": "Interspersed annotated image and video hand datasets",
+      "target": "Hand pose and trajectory",
+      "outputRepresentation": "MANO mesh sequence and directly regressed hand-root motion",
+      "coordinateFrame": "Camera-referenced global trajectory; does not solve moving-camera world recovery",
+      "scale": "Learned depth-change and hand-size prior; no measured metric reference",
+      "temporal": "Multi-frame attention; shared image backbone",
+      "evaluation": "ARCTIC-EGO/EXO, DexYCB; HInt and single-image hand benchmarks",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "limitations": "Requires reliable 2D hand tracks. The paper names world rather than camera coordinates as future work.",
+      "implementation": "Public inference/training repository and linked checkpoints; no explicit root software license verified.",
+      "stage": "L2",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2501.08329"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2501.08329"
+        },
+        {
+          "label": "Author project",
+          "url": "https://judyye.github.io/haptic-www/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/JudyYe/haptic"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "input": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "output": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "target": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "implementation": [
+          "https://github.com/JudyYe/haptic"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2501.08329"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2501.08329"
+        ]
+      }
+    },
+    "hmp": {
+      "summary": "Fits hand video through a learned motion-prior latent space to improve temporal and occlusion consistency.",
+      "input": "Monocular RGB hand video; initialized hand poses and 2D keypoints",
+      "output": "Temporally coherent MANO pose, shape and placement",
+      "supervision": "AMASS hand-motion prior; image/keypoint fitting objectives",
+      "target": "Hands",
+      "outputRepresentation": "MANO sequence optimized through a motion-prior latent",
+      "coordinateFrame": "Camera-referenced reconstruction",
+      "scale": "Hand-model dimensions and monocular image fitting; no independent scene scale",
+      "temporal": "Offline latent optimization over hand-motion sequences",
+      "evaluation": "HO3D, DexYCB, occlusion-focused HO3D subset",
+      "outputSpace": "camera",
+      "trainingType": "optimization",
+      "limitations": "Offline fitting relies on initialization and motion-prior coverage; no independent world tracking or robot policy.",
+      "implementation": "Public source; registered model downloads under a non-commercial scientific-research license.",
+      "stage": "L1",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2312.16737"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2312.16737"
+        },
+        {
+          "label": "Author project",
+          "url": "https://hmp.is.tue.mpg.de/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/enesduran/HMP"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "input": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "output": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "target": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "implementation": [
+          "https://github.com/enesduran/HMP"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2312.16737"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2312.16737"
+        ]
+      }
+    },
+    "handdgp": {
+      "summary": "Differentiates global hand positioning and rectifies images for camera-space mesh prediction.",
+      "input": "Single RGB hand image/crop with camera intrinsics",
+      "output": "Root-relative and camera-space 3D hand mesh",
+      "supervision": "FreiHAND annotated hand meshes and camera-space placement",
+      "target": "Hands",
+      "outputRepresentation": "Mesh vertices, joints and differentiable global root translation",
+      "coordinateFrame": "Camera frame",
+      "scale": "Supervised hand dimensions and differentiable 2D–3D positioning; monocular learned estimate",
+      "temporal": "Single image",
+      "evaluation": "FreiHAND, HO3D-v2 and out-of-domain image tests",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "limitations": "Rectification requires a camera model. Absolute monocular placement is inferred; no world trajectory or temporal consistency model.",
+      "implementation": "FreiHAND weights, model and evaluation code; custom Niantic non-commercial license.",
+      "stage": "L1",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2407.15844"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2407.15844"
+        },
+        {
+          "label": "Author project",
+          "url": "https://nianticlabs.github.io/handdgp/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/nianticlabs/HandDGP"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "input": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "output": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "target": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "implementation": [
+          "https://github.com/nianticlabs/HandDGP"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2407.15844"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2407.15844"
+        ]
+      }
+    },
+    "handos": {
+      "summary": "Unifies hand detection, 2D keypoints and 3D mesh reconstruction in one stage.",
+      "input": "Full RGB image",
+      "output": "Hand detections, 2D joints and camera-relative 3D meshes",
+      "supervision": "Mixed 2D/3D hand labels and a frozen pretrained detector",
+      "target": "Multiple visible hands",
+      "outputRepresentation": "2D joint queries, MANO-topology vertices and camera translation",
+      "coordinateFrame": "Camera frame",
+      "scale": "Learned image-based hand placement",
+      "temporal": "Single image; no sequence module",
+      "evaluation": "FreiHAND, HO3D-v3, DexYCB and HInt-Ego4D",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "limitations": "Paper explicitly lists temporal coherence and geometry priors as future work. Robot annotation is a proposed application, not evaluated policy learning.",
+      "implementation": "Primary paper and author project verified; no public runnable code/weights linked by the project.",
+      "stage": "L1",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2412.01537"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2412.01537"
+        },
+        {
+          "label": "Author project",
+          "url": "https://idea-research.github.io/HandOSweb/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "input": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "output": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "target": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "implementation": [
+          "https://idea-research.github.io/HandOSweb/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2412.01537"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2412.01537"
+        ]
+      }
+    },
+    "maskhand": {
+      "summary": "Reconstructs uncertain hand meshes through VQ-MANO tokens and confidence-guided masked sampling.",
+      "input": "Single RGB image and image-conditioned 2D hand context",
+      "output": "Camera-relative hand meshes with multiple confidence-ranked hypotheses",
+      "supervision": "Hand mesh annotations; VQ pose tokenizer and masked-model learning",
+      "target": "Occluded and in-the-wild hands",
+      "outputRepresentation": "Discrete MANO pose tokens decoded to mesh hypotheses",
+      "coordinateFrame": "Camera-relative hand representation",
+      "scale": "Learned single-image hand prior; no independent world scale",
+      "temporal": "Single image with iterative token sampling",
+      "evaluation": "FreiHAND, HO3D and HInt/in-the-wild occlusion examples",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "limitations": "Confidence-ranked hypotheses express ambiguity; they are not measured geometry or temporally tracked world motion.",
+      "implementation": "Primary paper and author project verified; no runnable code/weights linked by the project.",
+      "stage": "L1",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2412.13393"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2412.13393"
+        },
+        {
+          "label": "Author project",
+          "url": "https://m-usamasaleem.github.io/publication/MaskHand/MaskHand.html"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "input": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "output": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "target": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "implementation": [
+          "https://m-usamasaleem.github.io/publication/MaskHand/MaskHand.html"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2412.13393"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2412.13393"
+        ]
+      }
+    },
+    "unihand": {
+      "summary": "Unifies RGB-based hand recovery and structured motion conditioning in a latent diffusion model.",
+      "input": "RGB frames and/or partial 2D/3D skeletons or MANO conditions",
+      "output": "Conditioned, infilled 4D hand motion",
+      "supervision": "Hand-motion data; joint VAE and conditional latent diffusion",
+      "target": "Hand motion recovery and completion",
+      "outputRepresentation": "MANO pose/shape, orientation and root translation sequence",
+      "coordinateFrame": "Canonical camera frame of the first frame",
+      "scale": "Learned hand-motion scale; no explicit camera extrinsics",
+      "temporal": "Sequence diffusion with autoregressive VAE decoding",
+      "evaluation": "DexYCB, HO3D and HOT3D; incomplete/occluded conditioning",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "limitations": "Large camera motion still harms global alignment. This is distinct from IRMVLab Uni-Hand hand-trajectory forecasting.",
+      "implementation": "Paper and ICLR/OpenReview publication verified; matching public source/weights not verified.",
+      "stage": "L2",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2602.21631"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2602.21631"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "input": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "output": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "target": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "implementation": [
+          "https://arxiv.org/abs/2602.21631"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2602.21631"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2602.21631"
+        ]
+      }
+    },
+    "deformer": {
+      "summary": "Warps neighboring-frame hand predictions to support occluded or blurred observations.",
+      "input": "Monocular RGB hand-video windows",
+      "output": "Temporally fused 3D hand pose and mesh",
+      "supervision": "Annotated video hand pose/mesh; deformation consistency and maxMSE",
+      "target": "Hands under occlusion and motion blur",
+      "outputRepresentation": "MANO hand parameters and deformed/fused vertex predictions",
+      "coordinateFrame": "Camera-relative",
+      "scale": "Learned hand-model placement; no camera/world trajectory",
+      "temporal": "Spatial/temporal transformers plus forward/backward deformation",
+      "evaluation": "DexYCB and HO3D video reconstruction",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "limitations": "Requires usable neighboring observations and hand crops; temporal smoothing is not world tracking.",
+      "implementation": "Apache-2.0 training/evaluation source; licensed MANO assets downloaded separately.",
+      "stage": "L1",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2303.04991"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2303.04991"
+        },
+        {
+          "label": "Author project",
+          "url": "https://fuqichen1998.github.io/Deformer/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/fuqichen1998/Deformer"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "input": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "output": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "target": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "implementation": [
+          "https://github.com/fuqichen1998/Deformer"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2303.04991"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2303.04991"
+        ]
+      }
+    },
+    "ghost-hoi": {
+      "summary": "Fits hand and unknown-object Gaussian discs with geometric priors and grasp-aware alignment.",
+      "input": "Monocular RGB interaction video; masks, SfM and initialized hand estimates",
+      "output": "Animatable hand/object surfaces and interaction poses",
+      "supervision": "Per-video rendering, geometric-prior consistency and grasp alignment",
+      "target": "Category-agnostic rigid hand-object interactions",
+      "outputRepresentation": "Dense 2D Gaussian discs for hand and object",
+      "coordinateFrame": "SfM reconstruction and hand/object canonical frames",
+      "scale": "Refined object scale relative to initialized hand geometry",
+      "temporal": "Per-sequence Gaussian optimization",
+      "evaluation": "HO3D, ARCTIC and captured hand-object videos",
+      "outputSpace": "mixed",
+      "trainingType": "optimization",
+      "limitations": "SfM and hand initialization remain inputs; Gaussian completion is not a scanned object or independently measured scale.",
+      "implementation": "Runnable preprocessing/reconstruction repository; no explicit root code license verified.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2603.18912"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2603.18912"
+        },
+        {
+          "label": "Author project",
+          "url": "https://ataboukhadra.github.io/ghost/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/ATAboukhadra/GHOST"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "input": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "output": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "target": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "implementation": [
+          "https://github.com/ATAboukhadra/GHOST"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2603.18912"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2603.18912"
+        ]
+      }
+    },
+    "grasp-in-gaussians": {
+      "summary": "Tracks hand-object interaction efficiently using compact Gaussian mixtures initialized by foundation models.",
+      "input": "Monocular RGB video; DA3 geometry, Dyn-HaMR hands and SAM-3D object priors",
+      "output": "Refined hand trajectory, object geometry and 6D motion",
+      "supervision": "Pretrained priors; geometric and inferred-contact optimization",
+      "target": "Rigid hand-object interactions over long sequences",
+      "outputRepresentation": "Compact Sum-of-Gaussians plus MANO hand motion",
+      "coordinateFrame": "Shared DA3-estimated camera/reconstruction frame",
+      "scale": "Predicted camera/pointmap geometry; no measured depth required",
+      "temporal": "Sequence tracking and motion refinement after initialization",
+      "evaluation": "HO3D-v3, HOT3D and in-the-wild clips",
+      "outputSpace": "mixed",
+      "trainingType": "optimization",
+      "limitations": "Depends on initialization and foundation-model/contact predictions. Reported tracker efficiency excludes some model-preprocessing cost.",
+      "implementation": "MIT reconstruction source; SAM3, SAM-3D, Dyn-HaMR and other assets have separate terms.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2604.12929"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2604.12929"
+        },
+        {
+          "label": "Author project",
+          "url": "https://aidilayce.github.io/GraG-page/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/aidilayce/GraG"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "input": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "output": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "target": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "implementation": [
+          "https://github.com/aidilayce/GraG"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2604.12929"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2604.12929"
+        ]
+      }
+    },
+    "forehoi": {
+      "summary": "Reconstructs held-object geometry from RGB video using joint 2D mask and 3D shape completion.",
+      "input": "Monocular RGB hand-object interaction video",
+      "output": "Completed object geometry; supporting object masks/poses",
+      "supervision": "Synthetic hand-object videos with comprehensive 2D/3D annotations",
+      "target": "Unknown objects occluded by hands",
+      "outputRepresentation": "Sparse-structure/latent 3D object shape and mesh",
+      "coordinateFrame": "Object-centric canonical reconstruction; estimated per-view object pose",
+      "scale": "Normalized generated object; no independent metric world trajectory",
+      "temporal": "Feed-forward multi-frame aggregation; separate pose alignment",
+      "evaluation": "HO3D-v3 short clips; six HOT3D clips (5–15 frames); in-the-wild examples",
+      "outputSpace": "model",
+      "trainingType": "supervised",
+      "limitations": "Object reconstruction is its principal output, not a complete joint hand-motion or robot-control system.",
+      "implementation": "MIT inference/training source, HF checkpoints and synthetic dataset; upstream models separately licensed.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2602.06226"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2602.06226"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/Tao-11-chen/ForeHOI"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "input": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "output": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "target": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "implementation": [
+          "https://github.com/Tao-11-chen/ForeHOI"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2602.06226"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2602.06226"
+        ]
+      }
+    },
+    "follow-my-hold": {
+      "summary": "Guides object diffusion with hand geometry and image cues to recover plausible hand-object meshes.",
+      "input": "Single RGB hand-object image; estimated normals, depth, masks and hand",
+      "output": "Detailed object geometry and aligned hand-object meshes",
+      "supervision": "Pretrained generative object model; inference-time geometric guidance",
+      "target": "Hand-held object reconstruction",
+      "outputRepresentation": "Generated object mesh and optimized hand/object transforms",
+      "coordinateFrame": "Input-view and object/hand reconstruction coordinates",
+      "scale": "Inferred depth/normal and hand priors; no measured metric guarantee",
+      "temporal": "Single-image reconstruction; no 4D tracking",
+      "evaluation": "HO3D and in-the-wild single-image interaction reconstruction",
+      "outputSpace": "mixed",
+      "trainingType": "optimization",
+      "limitations": "Uses inferred normal/depth cues; contact plausibility does not prove observed force or physical correctness.",
+      "implementation": "MIT full source; Hunyuan3D, HaMeR, MANO and other acknowledged components separately licensed.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2508.18213"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2508.18213"
+        },
+        {
+          "label": "Author project",
+          "url": "https://aidilayce.github.io/FollowMyHold-page/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/aidilayce/FollowMyHold"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "input": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "output": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "target": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "implementation": [
+          "https://github.com/aidilayce/FollowMyHold"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2508.18213"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2508.18213"
+        ]
+      }
+    },
+    "arthoi": {
+      "summary": "Combines foundation models, scale refinement and contact reasoning for hand-articulated-object video reconstruction.",
+      "input": "Single monocular RGB video of articulated-object manipulation",
+      "output": "Articulated object parts/motion, hand pose and interaction alignment",
+      "supervision": "Foundation priors; geometric optimization and MLLM contact reasoning",
+      "target": "Hands interacting with articulated objects",
+      "outputRepresentation": "Part-wise 4D object reconstruction and hand/object poses",
+      "coordinateFrame": "Shared reconstruction frame with estimated pose and scale",
+      "scale": "Predicted metric-depth pointcloud initializes/refines object size",
+      "temporal": "Part-wise motion reconstruction and sequence alignment",
+      "evaluation": "Articulated HOI videos and authors’ ArtHOI benchmark",
+      "outputSpace": "mixed",
+      "trainingType": "optimization",
+      "limitations": "Metric depth and contact are model estimates. Articulated geometry and camera-motion errors can propagate across stages.",
+      "implementation": "Public source and HF dataset; explicit root software license not verified.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2603.25791"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2603.25791"
+        },
+        {
+          "label": "Author project",
+          "url": "https://arthoi-reconstruction.github.io/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/hitcs-zikaiwang/ArtHOI-4D-Reconstruction"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "input": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "output": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "target": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "implementation": [
+          "https://github.com/hitcs-zikaiwang/ArtHOI-4D-Reconstruction"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2603.25791"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2603.25791"
+        ]
+      }
+    },
+    "choir": {
+      "summary": "Rectifies open-world hand-object placement with generative depth correction and contact-aware optimization.",
+      "input": "Monocular RGB interaction video and inferred hand/object/camera priors",
+      "output": "4D hand/object geometry, pose trajectories and geometric contact evidence",
+      "supervision": "Synthetic GraspPair flow prior; visual/geometric/contact optimization",
+      "target": "Primarily one hand and one rigid object",
+      "outputRepresentation": "MANO motion, object mesh/6D poses and contact correspondences",
+      "coordinateFrame": "Shared reconstruction frame from initialized camera and object geometry",
+      "scale": "MoGe-2 predicted metric depth and hand-size/geometric alignment",
+      "temporal": "Three-stage sequence reconstruction and contact-aware temporal refinement",
+      "evaluation": "HO3D, TasteRob and in-house open-world video examples",
+      "outputSpace": "mixed",
+      "trainingType": "mixed",
+      "limitations": "Contact is geometrically inferred, not sensed. Bimanual extensions lack guaranteed joint global consistency.",
+      "implementation": "MIT three-stage source, release assets/checkpoints and 102 demo videos; third-party licenses separate.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2605.20992"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2605.20992"
+        },
+        {
+          "label": "Author project",
+          "url": "https://hxwork.github.io/collections/2026_CHOIR/index.html"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/hxwork/CHOIR"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "input": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "output": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "target": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "implementation": [
+          "https://github.com/hxwork/CHOIR"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2605.20992"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2605.20992"
+        ]
+      }
+    },
+    "agile-hoi": {
+      "summary": "Generates textured object meshes and tracks contact-consistent interaction without SfM initialization.",
+      "input": "Monocular RGB interaction video; segmentation, predicted metric depth and generative priors",
+      "output": "Textured object mesh, 6D poses and hand-object motion",
+      "supervision": "VLM-guided generation; geometric/image/contact fitting",
+      "target": "Simulation-ready hand-object interaction assets",
+      "outputRepresentation": "Watertight object mesh, MANO motion and real-to-sim retargeting",
+      "coordinateFrame": "Camera frame as world in the main static-camera setting",
+      "scale": "MoGe-2 predicted metric depth; camera/hand alignment",
+      "temporal": "Anchor-and-track sequence initialization, then contact-aware optimization",
+      "evaluation": "HO3D, DexYCB, in-the-wild videos and simulation retargeting",
+      "outputSpace": "mixed",
+      "trainingType": "optimization",
+      "evidenceLevel": "simulation",
+      "limitations": "Main pipeline assumes static cameras; dynamic-camera extensions require additional camera estimation. Real-to-sim replay is not a real closed-loop policy.",
+      "implementation": "Custom non-commercial research license; October source/data release starts with 18 prepared HO3D sequences.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2602.04672"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2602.04672"
+        },
+        {
+          "label": "Author project",
+          "url": "https://agile-hoi.github.io/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/Chuan-10/AGILE"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "input": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "output": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "target": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "implementation": [
+          "https://github.com/Chuan-10/AGILE"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2602.04672"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2602.04672"
+        ]
+      }
+    },
+    "magichoi": {
+      "summary": "Uses novel-view diffusion priors and visible contact to complete objects in short hand-interaction clips.",
+      "input": "Short monocular RGB interaction video with initialized camera/hand poses",
+      "output": "Hand/object surfaces and aligned interaction pose",
+      "supervision": "Novel-view synthesis prior; image rendering and visible-contact optimization",
+      "target": "Partially observed held objects",
+      "outputRepresentation": "Neural implicit object surface and MANO hand sequence",
+      "coordinateFrame": "Reconstruction and hand/object canonical frames",
+      "scale": "Initialized hand-model and optimized object-relative size",
+      "temporal": "Short-clip per-sequence reconstruction",
+      "evaluation": "HO3D and captured in-the-wild short videos",
+      "outputSpace": "mixed",
+      "trainingType": "optimization",
+      "limitations": "Short clips and COLMAP initialization can fail with severe ego-camera motion; generated unseen surfaces are prior-based.",
+      "implementation": "Apache-2.0 source and custom-video pipeline; external diffusion and MANO assets separately licensed.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2508.05506"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2508.05506"
+        },
+        {
+          "label": "Author project",
+          "url": "https://byran-wang.github.io/MagicHOI/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/byran-wang/MagicHOI"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "input": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "output": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "target": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "implementation": [
+          "https://github.com/byran-wang/MagicHOI"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2508.05506"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2508.05506"
+        ]
+      }
+    },
+    "bigs": {
+      "summary": "Jointly reconstructs two hands and an unknown object with Gaussian splatting and diffusion priors.",
+      "input": "Monocular bimanual RGB video with preprocessed hand/object initialization",
+      "output": "Two hand surfaces, unknown object geometry and interaction poses",
+      "supervision": "Rendering losses; diffusion SDS and interacting-subject refinement",
+      "target": "Bimanual category-agnostic interactions",
+      "outputRepresentation": "Shared hand Gaussian representation and object 3D Gaussians",
+      "coordinateFrame": "Reconstruction and hand/object canonical frames",
+      "scale": "MANO/initialization scale and optimized object alignment",
+      "temporal": "Per-sequence single-subject then joint Gaussian fitting",
+      "evaluation": "ARCTIC and HO3D reconstruction/rendering benchmarks",
+      "outputSpace": "mixed",
+      "trainingType": "optimization",
+      "limitations": "SfM and hand initialization remain necessary; Gaussian completion does not give independently measured object geometry.",
+      "implementation": "MIT core source; preprocessing, MANO and diffusion dependencies separately licensed.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2504.09097"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2504.09097"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/On-JungWoan/BIGS"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "input": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "output": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "target": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "implementation": [
+          "https://github.com/On-JungWoan/BIGS"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2504.09097"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2504.09097"
+        ]
+      }
+    },
+    "easyhoi": {
+      "summary": "Combines segmentation, inpainting and object generation with prior-guided hand-object alignment.",
+      "input": "Single RGB hand-object image",
+      "output": "Object geometry and physically constrained hand-object mesh alignment",
+      "supervision": "Off-the-shelf visual/generative priors; image and geometric optimization",
+      "target": "In-the-wild hand-held objects",
+      "outputRepresentation": "Generated object mesh, MANO hand mesh and optimized transforms",
+      "coordinateFrame": "Input camera and reconstructed object/hand frames",
+      "scale": "Hand-model/generative priors and optimized relative placement",
+      "temporal": "Single-image inference and refinement",
+      "evaluation": "ARCTIC, OakInk, DexYCB and diverse in-the-wild images",
+      "outputSpace": "mixed",
+      "trainingType": "optimization",
+      "limitations": "No temporal tracking or independently measured shape/scale; inpainting may hallucinate hidden object regions.",
+      "implementation": "MIT source; MANO and pretrained inpainting/3D-generation models separately licensed.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2411.14280"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2411.14280"
+        },
+        {
+          "label": "Author project",
+          "url": "https://lym29.github.io/EasyHOI-page/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/lym29/EasyHOI"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "input": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "output": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "target": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "implementation": [
+          "https://github.com/lym29/EasyHOI"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2411.14280"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2411.14280"
+        ]
+      }
+    },
+    "diffhoi": {
+      "summary": "Fits hand-object video using diffusion priors over object renderings conditioned on hand articulation and category.",
+      "input": "Monocular RGB clip, hand/object masks and object-category text",
+      "output": "Object implicit surface, time-varying hand articulation and relative motion",
+      "supervision": "Conditional diffusion prior; video reprojection and SDS",
+      "target": "Everyday hand-object interaction clips",
+      "outputRepresentation": "Object SDF, MANO mesh sequence and relative camera/hand/object transforms",
+      "coordinateFrame": "Object- and hand-centric frames with optimized camera transforms",
+      "scale": "Monocular hand-model/optimization scale; no independent metric scene anchor",
+      "temporal": "Per-video optimization",
+      "evaluation": "HOI4D across six object categories; first/third-person YouTube clips",
+      "outputSpace": "mixed",
+      "trainingType": "optimization",
+      "limitations": "Category-conditioned prior and uncertain initialization can limit unseen object shapes; hidden surfaces are inferred.",
+      "implementation": "MIT repository and reconstruction/checkpoint links; inherited rendering/model terms separate.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2309.05663"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2309.05663"
+        },
+        {
+          "label": "Author project",
+          "url": "https://judyye.github.io/diffhoi-www/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/JudyYe/diffhoi"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "input": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "output": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "target": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "implementation": [
+          "https://github.com/JudyYe/diffhoi"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2309.05663"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2309.05663"
+        ]
+      }
+    },
+    "ihoi": {
+      "summary": "Uses hand articulation to reconstruct an unknown held object as a hand-centric signed-distance field.",
+      "input": "Single RGB hand-object image and estimated hand articulation",
+      "output": "Generic held-object shape; optional hand-pose refinement",
+      "supervision": "3D shape/interaction supervision and articulation-conditioned implicit modeling",
+      "target": "Unknown hand-held object geometry",
+      "outputRepresentation": "Articulation-conditioned object SDF and hand mesh",
+      "coordinateFrame": "Normalized hand-centric object frame",
+      "scale": "Normalized shape/hand prior; not a measured world trajectory",
+      "temporal": "Single image; optional test-time optimization",
+      "evaluation": "ObMan, HO3D and MOW/in-the-wild images",
+      "outputSpace": "model",
+      "trainingType": "supervised",
+      "limitations": "Single-view occlusions and hand-pose errors affect shape. A reconstructed contact does not imply tactile/force observation.",
+      "implementation": "Public demo/training source and checkpoint links; explicit root license not verified.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2204.07153"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2204.07153"
+        },
+        {
+          "label": "Author project",
+          "url": "https://judyye.github.io/ihoi/"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/JudyYe/ihoi"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "input": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "output": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "target": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "implementation": [
+          "https://github.com/JudyYe/ihoi"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2204.07153"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2204.07153"
+        ]
+      }
+    },
+    "cpf": {
+      "summary": "Learns contact correspondences and refines hand-object poses with a spring-based potential field.",
+      "input": "RGB image, known object geometry and initialized hand-object estimates",
+      "output": "Refined hand/object pose and geometric contact alignment",
+      "supervision": "Pose/contact labels; learned contact affinity and fitting",
+      "target": "Hand-object pose and grasp consistency",
+      "outputRepresentation": "Contact-potential field, anatomical hand model and object pose",
+      "coordinateFrame": "Camera and local hand/object geometry",
+      "scale": "Known object dimensions and hand-model geometry",
+      "temporal": "Image-wise learning and pose fitting; not sequence tracking",
+      "evaluation": "First-person FHB and HO3D interaction benchmarks",
+      "outputSpace": "mixed",
+      "trainingType": "mixed",
+      "limitations": "Requires object geometry. Virtual spring forces are an optimization representation, not measured contact forces.",
+      "implementation": "Public training/evaluation/optimization source and HF assets; no explicit root code license verified.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2012.00924"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2012.00924"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/lixiny/CPF"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "input": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "output": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "target": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "implementation": [
+          "https://github.com/lixiny/CPF"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2012.00924"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2012.00924"
+        ]
+      }
+    },
+    "toch": {
+      "summary": "Denoises object-to-hand correspondences to refine implausible hand-object motion sequences.",
+      "input": "Noisy 3D hand mesh sequence and a known rigid-object mesh/pose",
+      "output": "Refined, temporally coherent hand-object motion",
+      "supervision": "GRAB motion-capture prior with synthetic pose/translation perturbations",
+      "target": "Hand-object motion refinement",
+      "outputRepresentation": "Object-centric dense correspondence field and fitted MANO motion",
+      "coordinateFrame": "Local object frame; object treated as fixed in that frame",
+      "scale": "Inherited from supplied object and hand geometry",
+      "temporal": "Temporal denoising autoencoder and sequence fitting",
+      "evaluation": "Perturbed GRAB; HO3D and RGB/RGB-D tracker refinement",
+      "outputSpace": "model",
+      "trainingType": "mixed",
+      "limitations": "This is a 3D refinement stage, not a raw RGB/RGB-D tracker; assumes a known object mesh and handles one hand/rigid object.",
+      "implementation": "Public training/GRAB inference code; custom-data path TODO; no explicit root code license verified.",
+      "stage": "L3",
+      "verified": "2026-10-17",
+      "bodyCoverage": "Hands",
+      "inputSignals": [
+        "State"
+      ],
+      "robotEvidence": "Reconstruction benchmarks; no robot policy evaluation",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2205.07982"
+        },
+        {
+          "label": "Paper method and results",
+          "url": "https://arxiv.org/html/2205.07982"
+        },
+        {
+          "label": "Official source/release",
+          "url": "https://github.com/kzhou23/toch"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "input": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "output": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "target": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "implementation": [
+          "https://github.com/kzhou23/toch"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2205.07982"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2205.07982"
+        ]
+      }
+    },
+    "pressurevision": {
+      "summary": "Infers planar hand pressure from RGB appearance; an adjacent foundation for egocentric touch estimation.",
+      "input": "Single RGB image",
+      "output": "Image-aligned normal-pressure map",
+      "supervision": "Measured planar pressure from 36 participants",
+      "robotEvidence": "Perception / reconstruction; no robot policy demonstrated",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "target": "Hand-object contact and pressure",
+      "outputRepresentation": "Image-aligned normal-pressure map",
+      "coordinateFrame": "Image / instrumented surface",
+      "scale": "Pressure magnitude supervised by a physical array; no shear force",
+      "temporal": "Single image; no video state",
+      "evaluation": "Held-out people in PressureVisionDB; RGB / lighting generalization",
+      "outputSpace": "representation",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "supervised",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2203.10385v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://github.com/facebookresearch/PressureVision"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "output": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "target": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2203.10385v1",
+          "https://github.com/facebookresearch/PressureVision"
+        ]
+      }
+    },
+    "pressurevision-plus-plus": {
+      "summary": "Learns fingertip pressure from measured pressure and prompted weak contact labels on diverse surfaces.",
+      "input": "Single RGB image",
+      "output": "Fingertip contact and image-aligned pressure",
+      "supervision": "Instrumented pressure plus prompted finger / force-level weak labels",
+      "robotEvidence": "Perception / reconstruction; no robot policy demonstrated",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "target": "Hand-object contact and pressure",
+      "outputRepresentation": "Fingertip contact and image-aligned pressure",
+      "coordinateFrame": "Image / surface contact",
+      "scale": "Weak force categories complement measured pressure; no measured force at inference",
+      "temporal": "Single image",
+      "evaluation": "51 participants across diverse objects and surfaces; mixed-reality interface",
+      "outputSpace": "representation",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "mixed",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2301.02310v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://pressurevision.github.io/"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://github.com/pgrady3/pressurevision2"
+        }
+      ],
+      "verified": "2026-10-17",
+      "dateNote": "Original v1 title: Visual Estimation of Fingertip Pressure on Diverse Surfaces using Easily Captured Data; current author project uses PressureVision++.",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "output": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "target": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ],
+        "dateNote": [
+          "https://arxiv.org/html/2301.02310v1",
+          "https://pressurevision.github.io/",
+          "https://github.com/pgrady3/pressurevision2"
+        ]
+      }
+    },
+    "hope": {
+      "summary": "Combines RGB video and reconstructed hand geometry to predict contact and normal pressure on MANO vertices.",
+      "input": "Monocular RGB clip with HaWoR-estimated MANO; frozen DINOv3 features",
+      "output": "778-vertex pressure and contact fields",
+      "supervision": "Glove pressure, planar pressure and contact-only HOI labels",
+      "robotEvidence": "Perception / reconstruction; no robot policy demonstrated",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "target": "Hand-object contact and pressure",
+      "outputRepresentation": "778-vertex pressure and contact fields",
+      "coordinateFrame": "Hand-centric MANO surface",
+      "scale": "Predicted normal pressure in kPa, supervised by sensor labels; not measured touch",
+      "temporal": "10-frame clips; vertex-wise temporal attention",
+      "evaluation": "OpenTouch, PressureVisionDB and contact benchmarks",
+      "outputSpace": "representation",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "supervised",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2608.06192v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://subin6.github.io/page-hope/"
+        }
+      ],
+      "verified": "2026-10-17",
+      "limitations": "Pressure loss is masked on contact-only samples. Results depend on estimated hand geometry; force-vector visualizations aggregate predicted pressure-derived values.",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "target": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2608.06192v1",
+          "https://subin6.github.io/page-hope/"
+        ]
+      }
+    },
+    "contactopt": {
+      "summary": "Refines a reconstructed hand pose by matching predicted hand-object contact with differentiable geometry.",
+      "input": "Initial MANO hand mesh and object mesh",
+      "output": "Contact-refined hand pose",
+      "supervision": "ContactPose contact supervision; differentiable contact optimization",
+      "robotEvidence": "Reconstruction / human grasp preference; no executable robot policy",
+      "inputSignals": [
+        "State"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "target": "Hand-object geometry refinement",
+      "outputRepresentation": "Contact-refined hand pose",
+      "coordinateFrame": "Input hand-object mesh coordinates",
+      "scale": "Inherits input geometry units; contact values are not pressure or force",
+      "temporal": "Per-grasp optimization",
+      "evaluation": "Perturbed ContactPose and image-derived poses; contact / kinematic metrics",
+      "outputSpace": "model",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "mixed",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2104.07267v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://github.com/facebookresearch/ContactOpt"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "output": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "target": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2104.07267v1",
+          "https://github.com/facebookresearch/ContactOpt"
+        ]
+      }
+    },
+    "egopressure": {
+      "summary": "Estimates hand pressure from RGB and hand geometry, separating reference-pose and image-estimated-pose protocols.",
+      "input": "RGB with hand geometry; optimized reference-pose benchmark and HaMeR-derived-pose variant",
+      "output": "Hand-mesh UV pressure and image-space reprojection",
+      "supervision": "Measured touchpad pressure; multiview hand reconstruction labels",
+      "robotEvidence": "Perception / reconstruction; no robot policy demonstrated",
+      "inputSignals": [
+        "Vision",
+        "State"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "target": "Hand-object contact and pressure",
+      "outputRepresentation": "Hand-mesh UV pressure and image-space reprojection",
+      "coordinateFrame": "MANO hand surface / UV map",
+      "scale": "Pressure calibrated on an instrumented plane; arbitrary-object performance is qualitative",
+      "temporal": "Frame-wise pressure prediction",
+      "evaluation": "EgoPressure held-out participants; reference versus HaMeR pose conditions; qualitative unseen-object transfer",
+      "outputSpace": "representation",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "supervised",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2409.02224v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://yiming-zhao.github.io/EgoPressure/"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "target": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2409.02224v1",
+          "https://yiming-zhao.github.io/EgoPressure/"
+        ]
+      },
+      "limitations": "Reference-pose benchmark conditions use capture annotations. HaMeR-derived poses support an image-based variant; those results are separate. PressureFormer UV outputs are documented by the current author project."
+    },
+    "egotactile": {
+      "summary": "Adapts video diffusion to generate full-hand grasp pressure with visual, text and prototype conditioning.",
+      "input": "Egocentric RGB video, hand mask, physical-attribute text and prototype heatmap",
+      "output": "Temporal full-hand pressure patterns",
+      "supervision": "Paired tactile glove recordings; weakly paired bare-hand transfer",
+      "robotEvidence": "Perception / reconstruction; no robot policy demonstrated",
+      "inputSignals": [
+        "Vision",
+        "Language"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "target": "Hand-object contact and pressure",
+      "outputRepresentation": "Temporal full-hand pressure patterns",
+      "coordinateFrame": "Glove-sensor / hand-pressure representation",
+      "scale": "Pressure learned from tactile measurements; appearance alone does not identify object load",
+      "temporal": "Stable Video Diffusion; prototype and text feature rectification",
+      "evaluation": "EgoTactile; weakly paired bare-hand and unseen-object transfer",
+      "outputSpace": "representation",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "mixed",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2606.09243v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://egotactile.github.io/"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "target": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2606.09243v1",
+          "https://egotactile.github.io/"
+        ]
+      },
+      "limitations": "Physical-attribute text and a constructed hand-pressure prototype condition inference; not a glove measurement or a guarantee of the true load."
+    },
+    "egotouch": {
+      "summary": "Fuses egocentric and optional wrist views to predict bimanual contact pressure.",
+      "input": "Egocentric RGB, optional wrist RGB, and 42 WiLoR-estimated hand joints",
+      "output": "Bimanual pressure distributions",
+      "supervision": "Synchronized wearable pressure measurements",
+      "robotEvidence": "Perception / reconstruction; no robot policy demonstrated",
+      "inputSignals": [
+        "Vision",
+        "State"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "target": "Hand-object contact and pressure",
+      "outputRepresentation": "Bimanual pressure distributions",
+      "coordinateFrame": "Hand-pressure / sensor representation",
+      "scale": "Pressure prediction supervised by real tactile sensing; no tactile input at inference",
+      "temporal": "8-frame clips with interval 2; cross-view attention and view dropout",
+      "evaluation": "EgoTouch tasks; ego-only versus wrist-assisted prediction",
+      "outputSpace": "representation",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "supervised",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2605.13083v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://jianyi2004.github.io/TouchAnything-Website/"
+        }
+      ],
+      "verified": "2026-10-17",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "target": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2605.13083v1",
+          "https://jianyi2004.github.io/TouchAnything-Website/"
+        ]
+      },
+      "limitations": "Ego-only refers to camera views. The baseline also uses WiLoR-estimated 3D hand joints; pressure is predicted, not measured at inference."
+    },
+    "honnotate": {
+      "summary": "Jointly fits hand and known-object poses over RGB-D video to annotate interaction sequences.",
+      "input": "One or several calibrated RGB-D camera sequences; known object mesh and hand model",
+      "output": "Sequence-aligned 3D hand and object pose annotations",
+      "supervision": "Silhouette, measured depth, 2D keypoints, geometric and temporal objectives",
+      "robotEvidence": "Annotation / hand-pose benchmarks; no robot policy",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "target": "Occluded hand-object interaction annotation",
+      "outputRepresentation": "MANO pose/shape, hand vertices/joints and object 6D pose",
+      "coordinateFrame": "Calibrated camera / common reconstruction frame",
+      "scale": "Measured RGB-D and known object geometry; hand pose is model-fitted",
+      "temporal": "Offline multi-frame joint optimization",
+      "evaluation": "HO-3D pose annotation and occlusion-robust single-image hand baseline",
+      "outputSpace": "mixed",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "optimization",
+      "implementation": "GPL-3.0 annotation source implements the single-RGB-D-camera setting; separate HO-3D viewer/evaluation repository.",
+      "limitations": "Released annotation code assumes marginal grasp change in the single-camera setting. Full paper also studies a multi-camera setting; fitted poses are estimates, not marker-mocap measurements.",
+      "verified": "2026-10-17",
+      "sources": [
+        {
+          "label": "Primary paper / author release",
+          "url": "https://arxiv.org/html/1907.01481"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://github.com/shreyashampali/HOnnotate"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://github.com/shreyashampali/ho3d"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "input": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "output": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "stage": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "target": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "scale": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/1907.01481",
+          "https://github.com/shreyashampali/HOnnotate",
+          "https://github.com/shreyashampali/ho3d"
+        ]
+      }
+    },
+    "hand2robot": {
+      "summary": "Turns RGB-D human demonstrations into object-consistent action labels for dexterous robot policy post-training.",
+      "input": "Human RGB-D task videos and camera intrinsics; limited target-robot demonstrations",
+      "output": "Retargeted robot-action supervision and a post-trained dexterous policy",
+      "supervision": "Foundation-model initialization, object-local contact / image fitting; mixed human and robot action supervision",
+      "robotEvidence": "Real Franka arm + xHand; Place Vase, Open Box and Insert Toast",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L4",
+      "target": "Dexterous hand-arm robot supervision from human demonstrations",
+      "outputRepresentation": "Reconstructed MANO / object trajectories; 18-D relative arm and xHand action offsets",
+      "coordinateFrame": "Camera → MapAnything-estimated world → robot via initial-object alignment and hand-eye calibration",
+      "scale": "RGB-D and camera intrinsics; generated metric object geometry; calibrated robot-domain alignment",
+      "temporal": "Per-clip object-trajectory selection, staged hand optimization and GeoRT retargeting",
+      "evaluation": "DexYCB, HO3D-v3; three real tasks, 20 trials each; target-task π0.5 post-training",
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "robotPlatform": "Franka arm with 12-DoF xHand",
+      "implementation": "Public primary paper; linked project website currently returns 404, and no runnable code/weights verified.",
+      "limitations": "Real-robot human and robot data share a fixed side-view camera setup, so this is adjacent to ego capture, not demonstrated in-the-wild ego transfer. RGB-D is an input, and the policy still uses limited robot data.",
+      "verified": "2026-10-17",
+      "sources": [
+        {
+          "label": "Primary paper / author release",
+          "url": "https://arxiv.org/html/2610.15769v1"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://arxiv.org/abs/2610.15769"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "target": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.15769v1",
+          "https://arxiv.org/abs/2610.15769"
+        ]
+      }
     }
   }
 }

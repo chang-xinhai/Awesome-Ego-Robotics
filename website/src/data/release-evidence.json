@@ -751,15 +751,23 @@
       "availability": "Research resource"
     },
     "egotouch": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "evidence": [
         {
           "label": "Primary source",
           "url": "https://arxiv.org/abs/2605.13083"
+        },
+        {
+          "label": "Official code and release",
+          "url": "https://github.com/Jianyi2004/TouchAnything"
         }
       ],
-      "availability": "Research resource"
+      "availability": "Research resource",
+      "softwareStatus": "MIT code; model and dataset assets require separate term checks",
+      "notes": [
+        "MIT source with actual scripts/configs/src verified; code license does not establish full dataset or weights licensing."
+      ]
     },
     "emg2pose": {
       "status": "partial",
@@ -1011,15 +1019,31 @@
       "availability": "Research resource"
     },
     "eventegohands-plus-plus": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "evidence": [
         {
           "label": "Primary source",
           "url": "https://arxiv.org/abs/2609.17189"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.17189"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://ryhara.github.io/EventEgoHandsV2/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/ryhara/EventEgoHandsV2"
         }
       ],
-      "availability": "Research resource"
+      "availability": "Research resource",
+      "notes": [
+        "Dataset terms require separate verification; HOT3D/MANO upstream conditions apply.",
+        "EEH-R real data and N-HOT3D synthetic extension are separate assets under one existing paper ID."
+      ]
     },
     "hawor": {
       "status": "unknown",
@@ -1939,11 +1963,19 @@
     "avi-ht": {
       "status": "unknown",
       "commercial": false,
-      "availability": "Research method",
-      "notes": "No verified implementation release found in checked primary sources.",
+      "availability": "Research resource",
+      "notes": [
+        "No verified implementation release found in checked primary sources.",
+        "Dataset license not reported.",
+        "Paper-described evaluation corpus; public release unverified."
+      ],
       "evidence": [
         {
           "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2605.21714"
+        },
+        {
+          "label": "Paper",
           "url": "https://arxiv.org/abs/2605.21714"
         }
       ]
@@ -9551,6 +9583,1633 @@
       ],
       "notes": [
         "Source code, checkpoint access, upstream models and datasets are distinct release scopes."
+      ]
+    },
+    "rlhnd": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.09455"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/seungjun-moon/rlhnd"
+        }
+      ],
+      "notes": [
+        "Paper/project and a placeholder repository are public; implementation and weights are announced, not released."
+      ]
+    },
+    "4d-hof": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.08782"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/TAMU-Visual-AI/4D-HOF"
+        }
+      ],
+      "notes": [
+        "Official repository explicitly says cleaning up for public release; no implementation or checkpoint release verified."
+      ]
+    },
+    "handflow": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2607.11221"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/mxxu00/HandFlow"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/mxxu00/HandFlow/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT inference code and HF weights are available; training/evaluation/preprocessing are pending. HaMeR, WiLoR detector, MANO and optional ViPE retain separate terms."
+      ]
+    },
+    "haptic": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2501.08329"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/JudyYe/haptic"
+        }
+      ],
+      "notes": [
+        "Code and model download instructions are public. Explicit root software license was not found; MANO requires its own license."
+      ]
+    },
+    "hmp": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2312.16737"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/enesduran/HMP"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/enesduran/HMP/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Source and models are research-only under the explicit HMP Data & Software license; model downloads require registration and separate MANO/SMPL-X terms."
+      ]
+    },
+    "handdgp": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2407.15844"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/nianticlabs/HandDGP"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/nianticlabs/HandDGP/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Code and FreiHAND checkpoint are released under the custom non-commercial HandDGP license; MANO/MobRecon are separate dependencies."
+      ]
+    },
+    "handos": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2412.01537"
+        }
+      ],
+      "notes": [
+        "Author project links the paper but no runnable repository/checkpoints. A plausible IDEA-Research/HandOS URL was checked and does not exist."
+      ]
+    },
+    "maskhand": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2412.13393"
+        }
+      ],
+      "notes": [
+        "Paper and author project are public. A secondary list advertises m-usamasaleem/MaskHand, but that repository was unavailable and is not linked as released code."
+      ]
+    },
+    "unihand": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2602.21631"
+        }
+      ],
+      "notes": [
+        "No matching official model release verified. Do not confuse this Fudan/Stanford work with IRMVLab/UniHand, a different forecasting paper."
+      ]
+    },
+    "deformer": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2303.04991"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/fuqichen1998/Deformer"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/fuqichen1998/Deformer/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Apache-2.0 source and training/evaluation setup are public; MANO and dataset assets require separate licenses."
+      ]
+    },
+    "ghost-hoi": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2603.18912"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/ATAboukhadra/GHOST"
+        }
+      ],
+      "notes": [
+        "Public implementation and preprocessing instructions verified. No root license found; MANO, HaMeR and bundled submodules retain their own terms."
+      ]
+    },
+    "grasp-in-gaussians": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2604.12929"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/aidilayce/GraG"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/aidilayce/GraG/blob/main/LICENSE.md"
+        }
+      ],
+      "notes": [
+        "MIT core source is public. SAM3 access, SAM-3D model terms, MANO and other third-party checkpoints are separately governed."
+      ]
+    },
+    "forehoi": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2602.06226"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/Tao-11-chen/ForeHOI"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/Tao-11-chen/ForeHOI/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT code, training/inference, model downloads and dataset links verified. Core model, dataset, SAM-3D and other upstream assets have separate release/usage terms."
+      ]
+    },
+    "follow-my-hold": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2508.18213"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/aidilayce/FollowMyHold"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/aidilayce/FollowMyHold/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Full source released January 2026 under MIT; third-party generators, checkpoints and MANO have separate licenses."
+      ]
+    },
+    "arthoi": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2603.25791"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/hitcs-zikaiwang/ArtHOI-4D-Reconstruction"
+        }
+      ],
+      "notes": [
+        "Code/documentation and dataset are released; no root software license was found. Foundation-model and dataset permissions are separate."
+      ]
+    },
+    "choir": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2605.20992"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/hxwork/CHOIR"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/hxwork/CHOIR/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT core source and release assets verified. Demo videos mix TasteRob and author captures; obey their distinct data and model terms."
+      ]
+    },
+    "agile-hoi": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2602.04672"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/Chuan-10/AGILE"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/aim-uofa/AGILE/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Public source under AGILE Non-Commercial Research License. HO3D configs/preprocessed inputs/generated assets released progressively; upstream model and source-video terms apply."
+      ]
+    },
+    "magichoi": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2508.05506"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/byran-wang/MagicHOI"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/byran-wang/MagicHOI/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Apache-2.0 repository, custom-video preparation and reconstruction are public; diffusion models, MANO and datasets retain separate terms."
+      ]
+    },
+    "bigs": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2504.09097"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/On-JungWoan/BIGS"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/On-JungWoan/BIGS/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT public implementation verified. Prepared HOLD data, MANO, datasets and diffusion checkpoints have separate access and usage terms."
+      ]
+    },
+    "easyhoi": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2411.14280"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/lym29/EasyHOI"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/lym29/EasyHOI/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "MIT core repository with preprocessing/inference instructions is public; MANO and large-model assets keep their own terms."
+      ]
+    },
+    "diffhoi": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2309.05663"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/JudyYe/diffhoi"
+        },
+        {
+          "label": "Software license",
+          "url": "https://github.com/JudyYe/diffhoi/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Official project code now resolves to JudyYe/diffhoi; MIT source and trained reconstruction/model links are public, with separate MANO and upstream terms."
+      ]
+    },
+    "ihoi": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2204.07153"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/JudyYe/ihoi"
+        }
+      ],
+      "notes": [
+        "Public code and model links verified; no explicit root software license was found. MANO and training-data terms are separate."
+      ]
+    },
+    "cpf": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2012.00924"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/lixiny/CPF"
+        }
+      ],
+      "notes": [
+        "Public source and model/output assets exist; no root code license verified. The TPAMI extension is linked but not duplicated as a second canonical work."
+      ]
+    },
+    "toch": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research method",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2205.07982"
+        },
+        {
+          "label": "Official release status",
+          "url": "https://github.com/kzhou23/toch"
+        }
+      ],
+      "notes": [
+        "Source and GRAB training/inference scripts are public; custom-data instructions remain TODO and no root software license was found. GRAB/MANO/SMPL-X require separate licenses."
+      ]
+    },
+    "synapx-octos-ego": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://synapxdynamics.ai/en/products/octosense"
+        }
+      ],
+      "notes": [
+        "OctoSense is the suite; OctoS-Ego is its camera component. Stereo-derived depth is not a raw depth stream.",
+        "SYNStereo precision claims and export/SDK terms were not independently verified."
+      ]
+    },
+    "synapx-octos-band": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://synapxdynamics.ai/en/products/octosense"
+        }
+      ],
+      "notes": [
+        "No force sensor is established by the EMG-based force prediction claim.",
+        "Code, model weights, hardware files and claimed zero-shot performance have no verified public release."
+      ]
+    },
+    "synapx-octos-glove": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://synapxdynamics.ai/en/products/octosense"
+        },
+        {
+          "label": "Manufacturer glove specification figure",
+          "url": "https://synapxdynamics.ai/static/images/octosense/en/octosense-glove-spec.webp?v=f2db004c"
+        }
+      ],
+      "notes": [
+        "The glove is a distinct sensor component, not a second entry for the whole OctoSense platform.",
+        "Isomorphic transfer, positioning accuracy and force resolution are manufacturer claims, not independently validated task performance."
+      ]
+    },
+    "cyberorigin-opencyberglove": {
+      "status": "partial",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://cyberorigin2077.github.io/open_cyber_glove/"
+        },
+        {
+          "label": "User guide",
+          "url": "https://cyberorigin2077.github.io/open_cyber_glove/setup/user_guide_en/"
+        },
+        {
+          "label": "BSD-3-Clause SDK and raw-data schema",
+          "url": "https://github.com/CyberOrigin2077/open_cyber_glove"
+        }
+      ],
+      "notes": [
+        "The SDK is BSD-3-Clause; this does not establish open glove fabrication files.",
+        "acc/gyro/mag raw fields are marked To be added: no IMU input tag was added. Flex values are not tactile/force measurements."
+      ]
+    },
+    "orbbec-wristcam": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.orbbec.com.cn/index/Product/info.html?cate=38&id=78"
+        }
+      ],
+      "notes": [
+        "RGB wrist camera; product-family RGB-D and tactile support are not attributed to this module.",
+        "Distinct from the existing orbbec-ego entry; listed model appearance/specifications may change."
+      ]
+    },
+    "panoculon-trinet": {
+      "status": "partial",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.panoculonlabs.com/trinet"
+        },
+        {
+          "label": "MIT capture SDK",
+          "url": "https://github.com/Panoculon-Labs/Trinet-SDK"
+        }
+      ],
+      "notes": [
+        "One family entry avoids counting Mono, Stereo, GS and mounts as separate independent platforms.",
+        "Depth and point clouds in the official sample are computed offline, not measured sensor channels; synchronization values are vendor-reported."
+      ]
+    },
+    "opengraph-oglo": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.opengraphlabs.com/products/oglo"
+        },
+        {
+          "label": "Official capture demonstration",
+          "url": "https://www.opengraphlabs.com/oglo/assemble-lego.mp4"
+        },
+        {
+          "label": "Capture platform timing claims",
+          "url": "https://www.opengraphlabs.com/"
+        }
+      ],
+      "notes": [
+        "The cover is a frame from the official glove demo, cropped to show the worn hardware.",
+        "The company lists force traces, but physical calibration, taxel count and an independent sensor accuracy study are not established."
+      ]
+    },
+    "opengraph-ovision": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.opengraphlabs.com/products/ovision"
+        }
+      ],
+      "notes": [
+        "The product page uses hardware illustrations; production quantities and SDK licensing are unverified.",
+        "Do not infer IMU, stereo RGB resolution or a measured depth sensor from the platform-wide multimodal claims."
+      ]
+    },
+    "physen-fmg-imu": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Vendor-listed configurable system",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.physen.ai/products/fmg-imu/"
+        }
+      ],
+      "notes": [
+        "FMG is mechanical muscle deformation, not EMG and not fingertip-object contact-force ground truth.",
+        "Do not infer 40 or 120 independent channels from a diagram; raw export, rates and SDK terms are version-specific."
+      ]
+    },
+    "physen-tactile-glove": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.physen.ai/products/data-glove/"
+        }
+      ],
+      "notes": [
+        "Raw ADC is not calibrated force. Five measured fingertip poses do not equal 25 independently measured joints.",
+        "400 Hz is a future upgrade direction, not the currently listed standard tactile rate."
+      ]
+    },
+    "sunday-skill-capture": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.sunday.ai/blog/no-robot-data"
+        }
+      ],
+      "notes": [
+        "The company explicitly describes human demonstrations, not robot teleoperation during capture.",
+        "No tactile taxel count, force range or raw camera stream specifications are inferred from Memo’s robot sensor capabilities."
+      ]
+    },
+    "aperdata-aperego": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://unionimage-aperdata.ai/"
+        },
+        {
+          "label": "Company-issued launch announcement (event date Aug 18)",
+          "url": "https://www.prnewswire.com/apac/news-releases/51world-unveils-two-embodied-ai-products-and-reveals-aerospace-strategy-from-low-altitude-to-deep-space-302855152.html"
+        },
+        {
+          "label": "51WORLD official platform page",
+          "url": "https://www.51world.com.cn/aperdata"
+        }
+      ],
+      "notes": [
+        "Camera-count variants remain one family entry. Launch date follows the company-issued announcement’s Aug 18 event, not the Aug 19 article timestamp.",
+        "Predicted depth/pose and optional gloves are not raw measured depth/tactile inputs of every headband."
+      ]
+    },
+    "aperdata-wristcam": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://unionimage-aperdata.ai/"
+        },
+        {
+          "label": "51WORLD wrist-camera use",
+          "url": "https://www.51world.com.cn/aperdata"
+        }
+      ],
+      "notes": [
+        "Values apply to the WristCAM table, not AperEgo’s camera counts or battery specifications.",
+        "No direct depth, tactile pressure or executable robot action sensor is implied."
+      ]
+    },
+    "egoscale-capture-c1": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Announced system",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.egoscale.com/capture-c1"
+        }
+      ],
+      "notes": [
+        "This commercial EgoScale product is distinct from the NVIDIA EgoScale research paper already in the atlas.",
+        "Orders opening soon: reservation does not establish shipping availability; timestamps do not prove hardware synchronization."
+      ]
+    },
+    "hololens2-research-mode": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Legacy research system",
+      "evidence": [
+        {
+          "label": "Author paper / project",
+          "url": "https://arxiv.org/abs/2008.11239"
+        },
+        {
+          "label": "Microsoft tools and StreamRecorder",
+          "url": "https://github.com/microsoft/HoloLens2ForCV"
+        },
+        {
+          "label": "Microsoft Research Mode sensor/depth semantics",
+          "url": "https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode"
+        }
+      ],
+      "notes": [
+        "Historical research system, not a claim of current retail availability.",
+        "AHAT wraps phase past one meter; raw eye-camera access is not provided merely by gaze tracking."
+      ]
+    },
+    "oymotion-gforcepro-plus": {
+      "status": "partial",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://www.oymotion.com/product32/149"
+        },
+        {
+          "label": "Official guide",
+          "url": "https://developer.oymotion.com/gForcePro/gForcePro/"
+        },
+        {
+          "label": "Raw-stream model matrix",
+          "url": "https://developer.oymotion.com/assets/downloads/gForce-EMG-ARMBAND-User-Guide-202108.pdf"
+        }
+      ],
+      "notes": [
+        "No ego camera is built in; this is a supporting wearable signal component.",
+        "SDK sources being public is not proof of an open hardware design or complete licensed model release."
+      ]
+    },
+    "forsense-g7": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Commercial product",
+      "evidence": [
+        {
+          "label": "Manufacturer product / documentation",
+          "url": "https://forsense-sdk-docs.xin/hardware/G7-glove"
+        },
+        {
+          "label": "Manufacturer product identity",
+          "url": "https://www.forsense.cn/robot/"
+        },
+        {
+          "label": "Official G7 datasheet",
+          "url": "https://forsense-sdk-docs.xin/hardware/g7/specification"
+        },
+        {
+          "label": "TOBI integration and manufacturer image mirror",
+          "url": "https://www.tobi.cn/en/docs.html"
+        }
+      ],
+      "notes": [
+        "G7 is manufactured by Forsense; TOBI is a capture-system integrator, not the glove manufacturer.",
+        "No tactile array inferred from motion tracking. Datasheet latency is used instead of an incompatible ≤1 ms marketing figure."
+      ]
+    },
+    "egokit": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research system",
+      "evidence": [
+        {
+          "label": "Author paper / project",
+          "url": "https://arxiv.org/abs/2605.16797"
+        },
+        {
+          "label": "Author project and configurations",
+          "url": "https://www.chuange.org/papers/EgoKit.html"
+        },
+        {
+          "label": "Verified application releases",
+          "url": "https://github.com/luffy-yu/EgoKit/releases"
+        }
+      ],
+      "notes": [
+        "The README still says placeholder downloads, but actual APK release assets exist; Apple downloads remain contact-based.",
+        "Hand-tracking availability varies by host; do not imply every supported phone exports XR tracking or raw depth."
+      ]
+    },
+    "seephys-hub": {
+      "status": "unknown",
+      "commercial": true,
+      "availability": "Announced system",
+      "evidence": [
+        {
+          "label": "Launch-time company interview / vendor-reported announcement",
+          "url": "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
+        },
+        {
+          "label": "Author/team identity and technical lineage",
+          "url": "https://jianyi2004.github.io/"
+        }
+      ],
+      "notes": [
+        "Source is the launch-time Leiphone report with company-supplied product figures and direct company attribution, not an official product specification sheet.",
+        "Reported specifications are not independently verified. General body force wording does not establish a measured 6-axis force/torque sensor.",
+        "The announced suite includes a pair of tactile gloves; the cited primary report does not establish an optional purchasing configuration."
+      ]
+    },
+    "ropedia-xperience-10m": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Official resource",
+          "url": "https://ropedia.com/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/Ropedia/HOMIE-toolkit"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/ropedia-ai/xperience-10m"
+        }
+      ],
+      "notes": [
+        "Research / non-commercial terms with controlled distribution; separate from commercial Xperience Enterprise.",
+        "Gated structured-data release; published file volume does not establish complete advertised corpus coverage."
+      ]
+    },
+    "rekadaily-10k": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Official resource",
+          "url": "https://reka.ai/news/rekadaily-10k-egocentric-household-manipulation-data"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/RekaAI/RekaDaily-10k-raw"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/RekaAI/RekaDaily-10k-processed"
+        }
+      ],
+      "notes": [
+        "Apache-2.0 data.",
+        "Raw 10,865 h and processed 10,200 h are two versions of overlapping footage."
+      ]
+    },
+    "egoviz-120": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/humaidtech/EgoViz-120"
+        }
+      ],
+      "notes": [
+        "CC BY 4.0 data.",
+        "Card repository is metadata only; recordings are in hf://buckets/humaidtech/EgoViz-120."
+      ]
+    },
+    "ace-data-0": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.28625"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://ace-data-engine.github.io/ACE-Data-0/"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/ACERobotics/ACE-Data-0"
+        }
+      ],
+      "notes": [
+        "ACE-Data-0 Research License: non-commercial academic research; personal access and redistribution restrictions.",
+        "Paper 150 h is reported scale; full release coverage unverified because README and visible file tree disagree."
+      ]
+    },
+    "open-aoe": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.14183"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/ant-research/Open-AoE"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/inclusionAI/OpenAoE-2000h"
+        }
+      ],
+      "notes": [
+        "Custom Open-AoE data license permits research/commercial video and annotation use with attribution; MANO-derived assets have additional MANO terms. Code Apache-2.0.",
+        "Public tiny tier plus ongoing full-tier uploads; 2,000 h is not confirmed complete."
+      ]
+    },
+    "mobileego-anywhere": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.05945"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/fpv-labs/stera-sdk"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/fpvlabs/stera-10m"
+        }
+      ],
+      "notes": [
+        "Dataset card states CC BY-NC 4.0 with WiLoR/MANO carve-outs; SDK Apache-2.0. Do not infer unrestricted commercial rights from contradictory prose.",
+        "Session dataset and open capture-processing stack; full download requires accepting HF conditions."
+      ]
+    },
+    "ego-exo4d-hm": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.30187"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://abhiram824.github.io/egoexo4d_human_meshes/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/Abhiram824/egoexo4d_human_meshes"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/Ego-Exo4D-HM/npz-datasets"
+        }
+      ],
+      "notes": [
+        "Mesh annotations CC BY 4.0; source Ego-Exo4D and SMPL-H model terms separately apply.",
+        "2,649 reconstructed takes; raw Ego-Exo4D video is not redistributed."
+      ]
+    },
+    "coherent4d": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.08636"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://corrineqiu.github.io/from-where-to-how/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/CorrineQiu/from-where-to-how"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/Qiu0710/Coherent4D"
+        }
+      ],
+      "notes": [
+        "No dataset license verified; source-video and body-model licenses remain separate.",
+        "Annotation-only release; HF viewer take-list rows are not the 233,828 training samples."
+      ]
+    },
+    "egophi": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.13014"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://siplab.org/projects/EgoPHI"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/eth-siplab/EgoPHI"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/eth-siplab/EgoPHI"
+        }
+      ],
+      "notes": [
+        "No dataset license verified on the data repository; source ARCTIC/H2O and body-model terms remain separate.",
+        "Public simulated per-vertex annotations; real evaluation scale is paper reported."
+      ]
+    },
+    "epic-contact": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.30598"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://sid2697.github.io/epic-contact/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/Sid2697/HOPformer"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/Sid2697/epic-contact"
+        }
+      ],
+      "notes": [
+        "CC BY-NC 4.0 plus MANO model terms; raw EPIC-KITCHENS frames are distributed through linked OneDrive bundle.",
+        "Manually checked central frame per clip; remaining frames are propagation estimates."
+      ]
+    },
+    "egoevhands": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Dataset announced",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.12297"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/ZJUWang01/EgoEV-HandPose"
+        }
+      ],
+      "notes": [
+        "Dataset and source-code license not verified.",
+        "Paper dataset; public download still pending in official repository."
+      ]
+    },
+    "egopoints": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2412.04592"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/AhmadDarKhalil/EgoPoints"
+        },
+        {
+          "label": "WACV 2025 proceedings",
+          "url": "https://openaccess.thecvf.com/content/WACV2025/html/Darkhalil_EgoPoints_Advancing_Point_Tracking_for_Egocentric_Videos_WACV_2025_paper.html"
+        }
+      ],
+      "notes": [
+        "Dataset license not verified; EPIC-KITCHENS and Kubric components retain upstream terms.",
+        "Real tracking benchmark plus separate semi-real training resource."
+      ]
+    },
+    "egoobjects": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2309.08816"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Zhu_EgoObjects_A_Large-Scale_Egocentric_Dataset_for_Fine-Grained_Object_Understanding_ICCV_2023_paper.html"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/facebookresearch/EgoObjects"
+        }
+      ],
+      "notes": [
+        "API code MIT; dataset download-page terms require separate verification.",
+        "v1 images (~40 GB) and unified category/instance detection metadata via official download page."
+      ]
+    },
+    "vost": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2212.06200"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://www.vostdataset.org/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/TRI-ML/VOST"
+        }
+      ],
+      "notes": [
+        "Dataset-specific license must be checked separately from evaluation-code terms.",
+        "Official video/mask release for semi-supervised segmentation."
+      ]
+    },
+    "visor": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2209.13064"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://epic-kitchens.github.io/VISOR"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/epic-kitchens/VISOR"
+        }
+      ],
+      "notes": [
+        "Consult VISOR and EPIC-KITCHENS dataset licenses; code license is separate.",
+        "Manual annotations and AI-interpolated masks are separate label tiers."
+      ]
+    },
+    "trek-150": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2108.13665"
+        },
+        {
+          "label": "Official resource",
+          "url": "http://machinelearning.uniud.it/datasets/trek150/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/matteo-dunnhofer/fpv-tracking-toolkit"
+        }
+      ],
+      "notes": [
+        "Annotation/code rights require separate checks; source EPIC-KITCHENS terms apply.",
+        "150-sequence tracking benchmark; 2021 initial paper kept distinct from later IJCV extension."
+      ]
+    },
+    "egotools": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.39378"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://ropedia.github.io/egotools/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/Ropedia/EgoTools"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/ropedia-ai/egotools-data"
+        }
+      ],
+      "notes": [
+        "Project license pending; raw recording metadata does not verify unrestricted redistribution rights.",
+        "Raw release is distinct from paper 646-video corpus, benchmark tables and unreleased SFT exports."
+      ]
+    },
+    "industreal": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2310.17323"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://openaccess.thecvf.com/content/WACV2024/html/Schoonbeek_IndustReal_A_Dataset_for_Procedure_Step_Recognition_Handling_Execution_Errors_WACV_2024_paper.html"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://timschoonbeek.github.io/industreal.html"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/TimSchoonbeek/IndustReal"
+        }
+      ],
+      "notes": [
+        "Project page CC BY-SA 4.0; verify dataset archive terms and repository license separately.",
+        "84 videos plus part geometries and task annotations; distinct from NVIDIA IndustReal robot simulation framework."
+      ]
+    },
+    "egoprocel": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2207.10883"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://sid2697.github.io/egoprocel/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/Sid2697/EgoProceL-egocentric-procedure-learning"
+        }
+      ],
+      "notes": [
+        "Code MIT; dataset components retain separate source terms.",
+        "62 hours, not 62 videos; overlaps CMU-MMAC, EGTEA, MECCANO and EPIC-Tent."
+      ]
+    },
+    "slugtrails": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.19876"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/Head-inthe-Cloud/SlugTrails"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails"
+        }
+      ],
+      "notes": [
+        "CC BY 4.0.",
+        "v1.0 omits raw VRS, SLAM-camera video and model-predicted depth."
+      ]
+    },
+    "egohtr": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.13472"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://egohtr.github.io/"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/leggedrobotics/egohtr"
+        }
+      ],
+      "notes": [
+        "HF metadata CC BY 4.0; gated access and body-model terms separately apply.",
+        "Capture of rough terrain; experiments include humanoid motion retargeting and policy deployment."
+      ]
+    },
+    "egotraj": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.19004"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/yehiahmad/EgoTraj"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://utexas.box.com/s/kszvh58csvk8duu3qywqxp05a9fhsvph"
+        }
+      ],
+      "notes": [
+        "Data CC BY-NC 4.0; code MIT.",
+        "10.7 h publisher corpus and official linked files; no raw mocap body/hand stream claimed."
+      ]
+    },
+    "oxdan": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2506.04224"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://oxdan.active.vision/"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/active-vision-lab/oxford-day-and-night"
+        }
+      ],
+      "notes": [
+        "CC BY 4.0 dataset.",
+        "Official NeurIPS dataset for egocentric NVS and visual relocalization."
+      ]
+    },
+    "captaincook4d": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2312.14556"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://captaincook4d.github.io/captain-cook/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/CaptainCook4D/CaptainCook4D"
+        }
+      ],
+      "notes": [
+        "Apache-2.0 dataset per official project.",
+        "384 normal/error recipe recordings; fine-grained coverage is partial."
+      ]
+    },
+    "indego": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2511.19684"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://indego-dataset.github.io/"
+        },
+        {
+          "label": "Official data",
+          "url": "https://huggingface.co/datasets/FraunhoferIPK/IndEgo"
+        }
+      ],
+      "notes": [
+        "CC BY 4.0.",
+        "197.1 h ego and 96.8 h exo are not additive wearer time; 7.1M RGB ego frames differ from SLAM/eye-frame counts."
+      ]
+    },
+    "egohumans": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Dataset release",
+      "evidence": [
+        {
+          "label": "Paper v1",
+          "url": "https://arxiv.org/abs/2305.16487"
+        },
+        {
+          "label": "Author project",
+          "url": "https://rawalkhirodkar.github.io/egohumans/"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/rawalkhirodkar/egohumans"
+        },
+        {
+          "label": "Data download and directory structure",
+          "url": "https://github.com/rawalkhirodkar/egohumans/blob/main/assets/DOWNLOAD.md"
+        },
+        {
+          "label": "Apache-2.0 code license",
+          "url": "https://github.com/rawalkhirodkar/egohumans/blob/main/LICENSE"
+        }
+      ],
+      "notes": [
+        "Repository code Apache-2.0; no separate dataset-wide license verified. SMPL model has its own terms.",
+        "Raw ego/exo frame folders, calibration, processed body reconstructions and separate benchmark annotations; no tactile/force or measured hand articulation claimed."
+      ]
+    },
+    "pressurevision": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research resource",
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2203.10385v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://github.com/facebookresearch/PressureVision"
+        }
+      ],
+      "notes": [
+        "Official README releases code and data under MIT; models and 3-fps small / full-data download modes linked.",
+        "Reference method trained on static cameras and planar surfaces; not an egocentric capture corpus."
+      ],
+      "softwareStatus": "MIT code / dataset; official model download"
+    },
+    "pressurevision-plus-plus": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2301.02310v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://pressurevision.github.io/"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://github.com/pgrady3/pressurevision2"
+        }
+      ],
+      "notes": [
+        "MIT code and a linked inference checkpoint; official README says dataset hosting is delayed, so training and evaluation are not currently possible.",
+        "Website template license is separate from code, data and model terms."
+      ],
+      "softwareStatus": "MIT code; inference checkpoint; dataset hosting delayed"
+    },
+    "hope": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2608.06192v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://subin6.github.io/page-hope/"
+        }
+      ],
+      "notes": [
+        "Author page marks both Code and Model as coming soon. arXiv CC BY 4.0 applies to the paper, not a code or weights release."
+      ],
+      "softwareStatus": "Code and model coming soon"
+    },
+    "contactopt": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "evidence": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2104.07267v1"
+        },
+        {
+          "label": "Primary source",
+          "url": "https://github.com/facebookresearch/ContactOpt"
+        }
+      ],
+      "notes": [
+        "MIT code and model download; MANO and ContactPose assets have separate access / license requirements.",
+        "Contact geometry is not measured tactile pressure."
+      ],
+      "softwareStatus": "MIT code; MANO / ContactPose terms separate"
+    },
+    "honnotate": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "evidence": [
+        {
+          "label": "Primary paper / author release",
+          "url": "https://arxiv.org/html/1907.01481"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://github.com/shreyashampali/HOnnotate"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://github.com/shreyashampali/ho3d"
+        }
+      ],
+      "notes": [
+        "GPL-3.0 applies to HOnnotate annotation code; pretrained networks, MANO and object assets have separate terms.",
+        "HO-3D data is custom academic/non-commercial with redistribution and modification restrictions; current v3 download is distinct from the original paper count."
+      ]
+    },
+    "dexycb": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "evidence": [
+        {
+          "label": "Primary paper / author release",
+          "url": "https://arxiv.org/html/2104.04631v1"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://dex-ycb.github.io/"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://github.com/NVlabs/dex-ycb-toolkit"
+        }
+      ],
+      "notes": [
+        "Data: CC BY-NC 4.0. Toolkit: GPL-3.0. MANO and other asset terms remain separate.",
+        "Full and per-subject downloads are listed by the original project; archive contents were not exhaustively re-downloaded."
+      ]
+    },
+    "contactpose": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "evidence": [
+        {
+          "label": "Primary paper / author release",
+          "url": "https://arxiv.org/html/2007.09545v1"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://contactpose.cc.gatech.edu/"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://github.com/facebookresearch/ContactPose"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://github.com/facebookresearch/ContactPose/blob/main/docs/doc.md"
+        }
+      ],
+      "notes": [
+        "MIT code and non-3D-model data; each object model has its own license.",
+        "Official README reports invalid original Dropbox links, most data on IEEE DataPort and a Google Drive sample; do not label the complete original corpus as verified frictionless download."
+      ]
+    },
+    "hand2robot": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "evidence": [
+        {
+          "label": "Primary paper / author release",
+          "url": "https://arxiv.org/html/2610.15769v1"
+        },
+        {
+          "label": "Primary paper / author release",
+          "url": "https://arxiv.org/abs/2610.15769"
+        }
+      ],
+      "notes": [
+        "Official arXiv-linked project URL https://hand2robot.github.io/ returned 404 at review; runnable code and weights not verified.",
+        "Original v1 is 2026-10-11 UTC, not the October 12 date some search indexes display."
       ]
     }
   }
