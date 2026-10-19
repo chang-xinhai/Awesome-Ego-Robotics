@@ -894,7 +894,7 @@
           "url": "https://arxiv.org/html/2606.30308v1"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "summary": "Adapts a pretrained video diffusion representation for detector-free bimanual motion reconstruction.",
       "inputSignals": [
         "Vision"
@@ -956,7 +956,8 @@
         "stage": [
           "https://arxiv.org/html/2606.30308v1"
         ]
-      }
+      },
+      "implementation": "No implementation files in the official repository; paper/project and announcement assets only."
     },
     "ace-ego-hand": {
       "input": "Pinhole RGB clip; K-given or K-free checkpoint",
@@ -1445,7 +1446,7 @@
           "url": "https://arxiv.org/html/2609.35743v1"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "summary": "Uses persistent spatiotemporal memory for streaming joint camera and hand motion estimation.",
       "inputSignals": [
         "Vision"
@@ -1507,7 +1508,8 @@
         "stage": [
           "https://arxiv.org/html/2609.35743v1"
         ]
-      }
+      },
+      "implementation": "No implementation files in the official repository; paper/project and announcement assets only."
     },
     "dyn-hamr": {
       "input": "Monocular video from a moving camera",
@@ -1786,7 +1788,7 @@
           "url": "https://arxiv.org/html/2601.01050v1"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "summary": "Combines body and interaction priors to recover open-category world-space hand-object motion.",
       "inputSignals": [
         "Vision"
@@ -1848,7 +1850,8 @@
         "stage": [
           "https://arxiv.org/html/2601.01050v1"
         ]
-      }
+      },
+      "implementation": "No implementation files in the official repository; paper/project and announcement assets only."
     },
     "whole": {
       "input": "Metric-SLAMed egocentric video and object templates",
@@ -1952,7 +1955,7 @@
           "url": "https://mint-sjtu.github.io/EgoFound3R.io/"
         },
         {
-          "label": "Current official release",
+          "label": "Official repository (README only)",
           "url": "https://github.com/MINT-SJTU/EgoFound3R"
         }
       ],
@@ -2019,10 +2022,11 @@
           "https://arxiv.org/html/2610.01210v1"
         ],
         "implementation": [
-          "https://github.com/MINT-SJTU/EgoFound3R"
+          "https://github.com/MINT-SJTU/EgoFound3R",
+          "https://github.com/MINT-SJTU/EgoFound3R/tree/main"
         ]
       },
-      "implementation": "Inference code is released under CC BY-NC-SA 4.0. The linked checkpoint could not be publicly retrieved during this audit; weights availability remains unverified."
+      "implementation": "Official repository contains only README.md; no inference source or license file is present. The linked checkpoint returned HTTP 401; public weights remain unverified."
     },
     "egofun3d": {
       "input": "Egocentric video of interactive objects",
@@ -29385,12 +29389,12 @@
       "target": "Depth / spatial perception",
       "evaluation": "NYU Depth v2, KITTI and zero-shot cross-dataset tests; desktop / Jetson deployment",
       "policyInput": "Not a policy-learning method",
-      "implementation": "Official inference and public model release; training / deployment scope follows the author repository",
+      "implementation": "Inference, evaluation and PC/Orin NX deployment code are present; training code/configurations, Jetson Nano validation and mobile app remain unreleased.",
       "limitations": "Distinct from the 2024 autoregressive DepthART paper; metric variants depend on camera information and domain-specific fine-tuning.",
       "outputSpace": "camera",
       "evidenceLevel": "reconstruction",
       "trainingType": "supervised",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "toolTopics": [
         "depth"
       ],
@@ -55318,8 +55322,8 @@
       "robotEvidence": "Capture-processing reference; no direct Ego / UMI robot-policy evidence asserted",
       "robotPlatform": "Not a robot-policy experiment",
       "policyInput": "Not a policy-learning method",
-      "implementation": "Public author implementation; no explicit project license verified",
-      "verified": "2026-10-16",
+      "implementation": "Official repository contains only README.md saying \"comming soon\"; implementation and model weights are not verified released.",
+      "verified": "2026-10-19",
       "toolTopics": [
         "depth"
       ],
@@ -55424,7 +55428,8 @@
           "https://arxiv.org/html/2208.13714"
         ],
         "implementation": [
-          "https://github.com/yanqswhu/SphereDepth"
+          "https://github.com/yanqswhu/SphereDepth",
+          "https://github.com/yanqswhu/SphereDepth/tree/main"
         ]
       }
     },
@@ -65047,10 +65052,17 @@
         ],
         "evaluation": [
           "https://arxiv.org/html/2609.40341v1"
+        ],
+        "implementation": [
+          "https://github.com/HorizonRobotics/Ego4WAM",
+          "https://huggingface.co/HorizonRobotics/Ego4WAM",
+          "https://huggingface.co/HorizonRobotics/Ego4WAM/tree/main",
+          "https://github.com/HorizonRobotics/Ego4WAM/tree/main"
         ]
       },
       "outputRepresentation": "World-action policy with shared action interfaces",
-      "evaluation": "Real robots and RoboDojo"
+      "evaluation": "Real robots and RoboDojo",
+      "implementation": "Official GitHub tree contains only README.md. Two actual model.safetensors checkpoints are listed on the official Hugging Face release; implementation files and a GitHub LICENSE file are absent."
     },
     "lambda0": {
       "input": "Egocentric video with synchronized human body/hand motion; robot data",
@@ -65167,10 +65179,14 @@
         ],
         "evaluation": [
           "https://arxiv.org/html/2609.24411v1"
+        ],
+        "implementation": [
+          "https://github.com/air-embodied-brain/Zeva/tree/feature/zeva_ego"
         ]
       },
       "outputRepresentation": "Action-centered video latents and context-conditioned robot actions",
-      "evaluation": "RoboTwin and real-robot adaptation"
+      "evaluation": "RoboTwin and real-robot adaptation",
+      "implementation": "Apache-2.0 Zeva-Ego branch: visual action encoder training/inference, RoboTwin policies and real-robot integration utilities; Gemma/dependency terms separate."
     },
     "simdex": {
       "input": "Human egocentric samples and target robot demonstrations",

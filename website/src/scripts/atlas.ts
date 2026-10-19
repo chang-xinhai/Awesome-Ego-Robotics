@@ -493,7 +493,10 @@ function methodEvaluationFacts(w:Work):[string,string][] {
 function methodReleaseFacts(w:Work):[string,string][] {
   if(!w.release)return [];
   const status=({open:"Open source",partial:"Partial release",closed:"Closed source",unknown:"Not verified"} as Record<string,string>)[String(w.release.status)]??"Not verified";
-  return [["Project release",status],["Software / model terms",text(w.release.softwareStatus,"Not verified")]];
+  return [["Project release",status],["Software / model terms",text(w.release.softwareStatus,"Not verified")],
+    ...(w.release.modelStatus?[["Model files / access",text(w.release.modelStatus)] as [string,string]]:[]),
+    ...(w.release.dataStatus?[["Data files / access",text(w.release.dataStatus)] as [string,string]]:[]),
+    ...(w.release.verified?[["Release checked",text(w.release.verified)] as [string,string]]:[])];
 }
 function perceptionFacts(w:Work):[string,string][] {
   const p=perceptionFor(w);if(!Object.keys(p).length)return [];
@@ -530,6 +533,9 @@ function datasetReleaseFacts(w:Work):[string,string][] {
   const d=record(w.research?.dataset);
   return [["Access",text(d.access,w.dataAccess)],["Release scope",text(d.releaseScope)],
     ["Format",text(d.formats,w.format)],["Data license",text(d.dataLicense,d.license?text(d.license):"Not verified")],
+    ...(w.release?.dataStatus?[["Verified data files",text(w.release.dataStatus)] as [string,string]]:[]),
+    ...(w.release?.softwareStatus?[["Software",text(w.release.softwareStatus)] as [string,string]]:[]),
+    ...(w.release?.modelStatus?[["Model files / access",text(w.release.modelStatus)] as [string,string]]:[]),
     ...(d.limitations?[["Limits",text(d.limitations)] as [string,string]]:[])];
 }
 function facts(w: Work): [string, string][] {
@@ -592,6 +598,8 @@ function showDetail(id: string) {
   const datasetSection=w.research?.dataset?`<section class="detail-section"><h3>Dataset</h3>${scaleColumns}${factsHtml(datasetFacts(w))}</section>`+section("Annotations & tasks",datasetAnnotationFacts(w))+section("Release & access",datasetReleaseFacts(w)):"";
   const release = w.release ? `<div class="release-specifications">${factsHtml([
     ["Hardware", text(w.release.hardwareStatus, "Unknown")], ["Software", text(w.release.softwareStatus, "Unknown")],
+    ...(w.release.modelStatus?[["Model files / access",text(w.release.modelStatus)] as [string,string]]:[]),
+    ...(w.release.dataStatus?[["Data files / access",text(w.release.dataStatus)] as [string,string]]:[]),
     ...(w.commercial ? [["Availability", text(w.release?.availability, "Commercial product")] as [string, string]] : []),
   ])}</div>` : "";
   const specifications: [string, string][] = [

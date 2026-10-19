@@ -816,7 +816,7 @@
         }
       ],
       "name": "Assembly101",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "accessNote": "Official download scripts and noncommercial dataset terms.",
       "recordedSignals": [
         "Vision",
@@ -901,6 +901,9 @@
           "https://arxiv.org/abs/2203.14712",
           "https://github.com/assembly-101/assembly101-annotations",
           "https://huggingface.co/datasets/cvml-nus/assembly101"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/cvml-nus/assembly101/tree/main"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -1984,7 +1987,7 @@
         }
       ],
       "name": "SHOW3D",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "accessNote": "Hugging Face release and official loader; test poses are withheld.",
       "recordedSignals": [
         "Monochrome"
@@ -2070,6 +2073,9 @@
           "https://arxiv.org/abs/2603.28760",
           "https://github.com/facebookresearch/show3d",
           "https://huggingface.co/datasets/facebook/show3d-dataset"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/facebook/show3d-dataset/tree/main"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -2113,7 +2119,7 @@
         }
       ],
       "name": "Ego-1K",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "accessNote": "Official release under FAIR noncommercial research license.",
       "recordedSignals": [
         "Vision"
@@ -2214,6 +2220,9 @@
           "https://huggingface.co/datasets/facebook/ego-1k",
           "https://arxiv.org/abs/2603.13741",
           "https://huggingface.co/datasets/facebook/ego-1k"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/facebook/ego-1k/tree/main"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -3287,7 +3296,7 @@
         }
       ],
       "name": "EgoTouch / TouchAnything",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "accessNote": "Official Hugging Face repository is public and ungated; download listing verified 2026-10-16.",
       "recordedSignals": [
         "Vision",
@@ -3381,6 +3390,9 @@
           "https://arxiv.org/abs/2605.13083",
           "https://github.com/Jianyi2004/TouchAnything",
           "https://huggingface.co/datasets/zhouzhoujy/EgoTouch"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/zhouzhoujy/EgoTouch/tree/main"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -3551,7 +3563,7 @@
         }
       ],
       "name": "TouchScale",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "accessNote": "Official dataset card: CC BY-NC 4.0; full 500-hour release planned before November 2026.",
       "recordedSignals": [
         "Vision",
@@ -3670,6 +3682,9 @@
         "dataLicense": [
           "https://github.com/phai-lab/touchscale",
           "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/2077AIDataFoundation/TouchScale/tree/main"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -5076,7 +5091,7 @@
           "url": "https://huggingface.co/datasets/edessa/feel"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-16",
       "fieldSources": {
         "reportedScale": [
@@ -5091,8 +5106,9 @@
         ],
         "access": [
           "https://arxiv.org/abs/2603.15847",
-          "https://www.cs.umd.edu/~edessale/feel",
-          "https://huggingface.co/datasets/edessa/feel"
+          "https://huggingface.co/datasets/edessa/feel",
+          "https://huggingface.co/datasets/edessa/feel/tree/main",
+          "https://www.cs.umd.edu/~edessale/feel"
         ],
         "formats": [
           "https://arxiv.org/abs/2603.15847",
@@ -5242,7 +5258,7 @@
           "url": "https://huggingface.co/datasets/HustleHard/EgoTactile"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-16",
       "fieldSources": {
         "reportedScale": [
@@ -5261,7 +5277,8 @@
           "https://arxiv.org/abs/2606.09243",
           "https://egotactile.github.io/",
           "https://github.com/Russell-Zeng/EgoTactile",
-          "https://huggingface.co/datasets/HustleHard/EgoTactile"
+          "https://huggingface.co/datasets/HustleHard/EgoTactile",
+          "https://huggingface.co/datasets/HustleHard/EgoTactile/tree/main"
         ],
         "formats": [
           "https://arxiv.org/abs/2606.09243",
@@ -5431,7 +5448,7 @@
           "url": "https://huggingface.co/datasets/wkzhang/EgoTac-SC"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-16",
       "fieldSources": {
         "reportedScale": [
@@ -5450,7 +5467,8 @@
           "https://arxiv.org/abs/2608.15060",
           "https://egotac.github.io/",
           "https://github.com/Mr-Zwkid/EgoTac",
-          "https://huggingface.co/datasets/wkzhang/EgoTac-SC"
+          "https://huggingface.co/datasets/wkzhang/EgoTac-SC",
+          "https://huggingface.co/datasets/wkzhang/EgoTac-SC/tree/main"
         ],
         "formats": [
           "https://arxiv.org/abs/2608.15060",
@@ -5618,7 +5636,7 @@
           "url": "https://huggingface.co/datasets/hyf015/EgoExoLearn"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-16",
       "fieldSources": {
         "reportedScale": [
@@ -5637,7 +5655,8 @@
           "https://arxiv.org/abs/2403.16182",
           "https://egoexolearn.github.io/",
           "https://github.com/OpenGVLab/EgoExoLearn",
-          "https://huggingface.co/datasets/hyf015/EgoExoLearn"
+          "https://huggingface.co/datasets/hyf015/EgoExoLearn",
+          "https://huggingface.co/datasets/hyf015/EgoExoLearn/tree/main"
         ],
         "formats": [
           "https://arxiv.org/abs/2403.16182",
@@ -6575,7 +6594,7 @@
         "scope": "publisher-listed sample in this 1.48 TB repository; LeRobot and MCAP represent the same episodes"
       },
       "access": "Access conditions",
-      "accessNote": "Hugging Face account and acceptance of access terms are required.",
+      "accessNote": "Current HF metadata marks manual approval; unauthenticated transfer-guide access returned HTTP 401. Public indexes do not establish recording-download access.",
       "formats": [
         "LeRobot v3",
         "MCAP / Protobuf",
@@ -6627,7 +6646,7 @@
           "url": "https://huggingface.co/blog/LightwheelAI/egosuite-open100k"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-16",
       "fieldSources": {
         "reportedScale": [
@@ -6795,7 +6814,7 @@
           "url": "https://github.com/genrobot-ai/das-datakit"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-16",
       "fieldSources": {
         "reportedScale": [
@@ -6979,7 +6998,7 @@
           "url": "https://huggingface.co/datasets/fpvlabs/stereo-550"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-16",
       "fieldSources": {
         "reportedScale": [
@@ -6995,7 +7014,8 @@
         "access": [
           "https://arxiv.org/abs/2608.08285",
           "https://github.com/fpv-labs/ego-oscar",
-          "https://huggingface.co/datasets/fpvlabs/stereo-550"
+          "https://huggingface.co/datasets/fpvlabs/stereo-550",
+          "https://huggingface.co/datasets/fpvlabs/stereo-550/tree/main"
         ],
         "formats": [
           "https://arxiv.org/abs/2608.08285",
@@ -8768,7 +8788,7 @@
     },
     "rekadaily-10k": {
       "name": "RekaDaily-10k",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "hours": 10865,
@@ -8881,6 +8901,10 @@
           "https://reka.ai/news/rekadaily-10k-egocentric-household-manipulation-data",
           "https://huggingface.co/datasets/RekaAI/RekaDaily-10k-raw",
           "https://huggingface.co/datasets/RekaAI/RekaDaily-10k-processed"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/RekaAI/RekaDaily-10k-processed/tree/main",
+          "https://huggingface.co/datasets/RekaAI/RekaDaily-10k-raw/tree/main"
         ]
       }
     },
@@ -8977,7 +9001,7 @@
     },
     "ace-data-0": {
       "name": "ACE-Data-0",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "hours": 150,
@@ -8987,7 +9011,7 @@
         "scope": "200 household task categories across two environments"
       },
       "publicScale": {
-        "scope": "HF files and table/room-scale directory schemas are visible; card still labels data files Coming Soon and scales planned-release statistics"
+        "scope": "Verified Room-scale motion CSV/BVH, IMU CSV, MJPEG binary and audio files, plus Table-scale IMU Parquet shards. Paper 150h coverage was not independently counted; the README Coming Soon statement is not an absence-of-files indicator."
       },
       "access": "Access conditions",
       "accessNote": "Paper 150 h is reported scale; full release coverage unverified because README and visible file tree disagree.",
@@ -9038,7 +9062,7 @@
       ],
       "splits": "See official release protocol.",
       "dataLicense": "ACE-Data-0 Research License: non-commercial academic research; personal access and redistribution restrictions.",
-      "releaseScope": "Paper 150 h is reported scale; full release coverage unverified because README and visible file tree disagree.",
+      "releaseScope": "Actual Room-scale raw capture/mocap and Table-scale IMU files are listed. Complete 150h/all-modalities coverage is not independently established.",
       "contactType": "measured",
       "evidenceNote": "Observed streams, derived estimates, reference labels and reported/released scope are separated.",
       "fieldSources": {
@@ -9096,7 +9120,7 @@
     },
     "open-aoe": {
       "name": "Open-AoE",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "hours": 2000,
@@ -9211,7 +9235,7 @@
     },
     "mobileego-anywhere": {
       "name": "Stera-10M / MobileEgo Anywhere",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "hours": 200,
@@ -9324,12 +9348,15 @@
           "https://arxiv.org/abs/2605.05945",
           "https://github.com/fpv-labs/stera-sdk",
           "https://huggingface.co/datasets/fpvlabs/stera-10m"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/fpvlabs/stera-10m/tree/main"
         ]
       }
     },
     "ego-exo4d-hm": {
       "name": "Ego-Exo4D Human Meshes",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "hours": 104.6,
@@ -9453,6 +9480,9 @@
           "https://abhiram824.github.io/egoexo4d_human_meshes/",
           "https://github.com/Abhiram824/egoexo4d_human_meshes",
           "https://huggingface.co/datasets/Ego-Exo4D-HM/npz-datasets"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/Ego-Exo4D-HM/npz-datasets/tree/main"
         ]
       }
     },
@@ -9573,7 +9603,7 @@
     },
     "coherent4d": {
       "name": "Coherent4D",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "samples": 233828,
@@ -9694,12 +9724,15 @@
           "https://corrineqiu.github.io/from-where-to-how/",
           "https://github.com/CorrineQiu/from-where-to-how",
           "https://huggingface.co/datasets/Qiu0710/Coherent4D"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/Qiu0710/Coherent4D/tree/main"
         ]
       }
     },
     "egophi": {
       "name": "EgoPHI force data",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "frames": "~2000",
@@ -9822,12 +9855,15 @@
           "https://siplab.org/projects/EgoPHI",
           "https://github.com/eth-siplab/EgoPHI",
           "https://huggingface.co/datasets/eth-siplab/EgoPHI"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/eth-siplab/EgoPHI/tree/main"
         ]
       }
     },
     "epic-contact": {
       "name": "EPIC-Contact",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "sequences": 2272,
@@ -9952,6 +9988,9 @@
           "https://sid2697.github.io/epic-contact/",
           "https://github.com/Sid2697/HOPformer",
           "https://huggingface.co/datasets/Sid2697/epic-contact"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/Sid2697/epic-contact/tree/main"
         ]
       }
     },
@@ -10697,7 +10736,7 @@
     },
     "egotools": {
       "name": "EgoTools-Data / EgoTools-Bench",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "hours": 100.37,
@@ -10706,10 +10745,10 @@
       },
       "publicScale": {
         "episodes": 131,
-        "scope": "recording-data release: 3,681 files / 723.43 GB; SFT folder remains placeholder"
+        "scope": "Publisher raw-recording snapshot: 131 episodes / 3,681 files / 723.43 GB; separate 184,679-row SFT export documented and actual JSONL files listed. Sizes/counts are publisher/file metadata, not an independent full-corpus audit."
       },
       "access": "Public download",
-      "accessNote": "Raw release is distinct from paper 646-video corpus, benchmark tables and unreleased SFT exports.",
+      "accessNote": "Public raw and SFT file trees; model checkpoint access requires manual approval. Dataset-wide redistribution terms remain unverified.",
       "formats": [
         "MP4",
         "HDF5",
@@ -10759,7 +10798,7 @@
       ],
       "splits": "See official release protocol.",
       "dataLicense": "Project license pending; raw recording metadata does not verify unrestricted redistribution rights.",
-      "releaseScope": "Raw release is distinct from paper 646-video corpus, benchmark tables and unreleased SFT exports.",
+      "releaseScope": "131 raw recording episodes remain separate from the paper corpus. SFT train_184679.swift.jsonl (161,393,109-byte listed file) and smoke_128.swift.jsonl now exist; the SFT subfolder documents 184,679 rows. The root README still calls SFT a placeholder. Complete benchmark/experiment reproduction is not established.",
       "contactType": "unknown",
       "evidenceNote": "Observed streams, derived estimates, reference labels and reported/released scope are separated.",
       "fieldSources": {
@@ -11078,7 +11117,7 @@
     },
     "slugtrails": {
       "name": "SlugTrails",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "sequences": 6,
@@ -11187,12 +11226,15 @@
           "https://arxiv.org/abs/2609.19876",
           "https://github.com/Head-inthe-Cloud/SlugTrails",
           "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
         ]
       }
     },
     "egohtr": {
       "name": "EgoHTR",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "sequences": 55,
@@ -11204,7 +11246,7 @@
       "publicScale": {
         "scope": "Official HF gated release lists 6,090 files; paper-scale completeness not independently downloaded"
       },
-      "access": "Request access",
+      "access": "Access conditions",
       "accessNote": "Capture of rough terrain; experiments include humanoid motion retargeting and policy deployment.",
       "formats": [
         "VRS",
@@ -11304,6 +11346,9 @@
           "https://arxiv.org/abs/2607.13472",
           "https://egohtr.github.io/",
           "https://huggingface.co/datasets/leggedrobotics/egohtr"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/leggedrobotics/egohtr/tree/main"
         ]
       }
     },
@@ -11424,7 +11469,7 @@
     },
     "oxdan": {
       "name": "Oxford Day-and-Night",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "scope": ">30 km trajectories / ~40,000 m² across five Oxford sites under day/dusk/night light"
@@ -11532,6 +11577,9 @@
           "https://arxiv.org/abs/2506.04224",
           "https://oxdan.active.vision/",
           "https://huggingface.co/datasets/active-vision-lab/oxford-day-and-night"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/active-vision-lab/oxford-day-and-night/tree/main"
         ]
       }
     },
@@ -11659,7 +11707,7 @@
     },
     "indego": {
       "name": "IndEgo",
-      "verified": "2026-10-17",
+      "verified": "2026-10-19",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "hours": 197.1,
@@ -11772,6 +11820,9 @@
           "https://arxiv.org/abs/2511.19684",
           "https://indego-dataset.github.io/",
           "https://huggingface.co/datasets/FraunhoferIPK/IndEgo"
+        ],
+        "access": [
+          "https://huggingface.co/datasets/FraunhoferIPK/IndEgo/tree/main"
         ]
       }
     },
@@ -12508,10 +12559,10 @@
         "scope": "paper construction scale; not independently verified public file count"
       },
       "publicScale": {
-        "scope": "public HF test-samples and evaluation assets; full-scale release not established"
+        "scope": "Train and test sequence-shard TAR files plus train-samples/test-samples NPZ files are listed. The full reported >200M instance count was not independently audited."
       },
       "access": "Public download",
-      "accessNote": "Public test samples; full 200M-instance availability remains unverified.",
+      "accessNote": "Public train/test archive and sample listings; full 200M-instance coverage remains unverified.",
       "formats": [
         "Images",
         "Masks",
@@ -12528,7 +12579,7 @@
       "labels": "Target embodiment, masks and rendered image-editing pseudo-reference.",
       "bodyCoverage": "Hands",
       "annotationEvidence": "Retargeting, robot rendering, compositing and quality screening.",
-      "limitations": "Image editing benchmark; not executable robot-action ground truth. Reported scale exceeds verified public sample scope.",
+      "limitations": "Image editing benchmark; not executable robot-action ground truth. Full reported scale has not been independently counted.",
       "datasetUrl": "https://huggingface.co/datasets/HandEdit/HandEdit",
       "annotationType": "synthetic",
       "dataRole": "egocentric",
@@ -12543,7 +12594,7 @@
         "Embodiment-aware image editing"
       ],
       "dataLicense": "HF card: CC BY-NC-ND 4.0; source-corpus terms also apply.",
-      "releaseScope": "Public test samples and evaluation assets; code and data are separate resources.",
+      "releaseScope": "Train and test TAR sequence shards and separate NPZ sample assets verified; code and data have separate terms.",
       "verified": "2026-10-19",
       "sources": [
         {
@@ -12874,9 +12925,11 @@
           "https://huggingface.co/datasets/taegyoun88/egoxtreme"
         ],
         "access": [
-          "https://github.com/taegyoun88/EgoXtreme",
           "https://arxiv.org/html/2603.25135v1",
-          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme-test/tree/main",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme/tree/main"
         ],
         "accessNote": [
           "https://github.com/taegyoun88/EgoXtreme",
@@ -13036,7 +13089,8 @@
         ],
         "access": [
           "https://github.com/TX-Leo/HumanEgo",
-          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo/tree/main"
         ],
         "accessNote": [
           "https://github.com/TX-Leo/HumanEgo",
