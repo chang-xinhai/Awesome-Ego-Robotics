@@ -120,6 +120,7 @@ export function getCatalog(): Work[] {
     const h = hardware[work.id], d = datasets[work.id], m = methods[work.id];
     work.research = {hardware: h, dataset: d, method: m};
     work.release = releases[work.id];
+    if (work.release?.softwareStatus) work.codeAccess = String(work.release.softwareStatus);
     work.openness = String(work.release?.status ?? "unknown");
     work.commercial = work.release?.commercial === true;
     work.tactileStatus = String((h?.tactile as Record<string, unknown>)?.status ?? "unknown");
