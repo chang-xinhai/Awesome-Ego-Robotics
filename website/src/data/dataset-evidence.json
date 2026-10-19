@@ -1412,7 +1412,10 @@
         "participants": 2087,
         "scope": "arXiv v2, 2026-07-07; living collection may differ"
       },
-      "publicScale": {},
+      "publicScale": {
+        "hours": 4003,
+        "scope": "publisher current-release snapshot on 2026-10-19; complete file-level total not independently verified"
+      },
       "access": "Access conditions",
       "formats": [
         "Zarr"
@@ -1421,7 +1424,7 @@
       "labels": "Hand/body tracking, camera pose and language; annotation fields vary by source.",
       "bodyCoverage": "Bimanual",
       "annotationEvidence": "Source-specific tracking pipelines normalized into EgoDB.",
-      "limitations": "Do not combine paper scale with changing browser totals or count older reprocessed hashes twice.",
+      "limitations": "Do not combine paper scale with changing browser totals or count older reprocessed hashes twice. Current official site lists 4,003 hours; keep this living release snapshot separate from the 1,362-hour paper snapshot.",
       "sources": [
         {
           "label": "Official project / release",
@@ -1438,10 +1441,14 @@
         {
           "label": "Dataset release",
           "url": "https://egoverse-research-workbench.vercel.app/"
+        },
+        {
+          "label": "Current release snapshot",
+          "url": "https://egoverse.ai/"
         }
       ],
       "name": "EgoVerse",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "accessNote": "Use the official dataset browser and download instructions; verify source-specific terms.",
       "recordedSignals": [
         "Vision"
@@ -1535,6 +1542,9 @@
           "https://arxiv.org/abs/2604.07607",
           "https://github.com/GaTech-RL2/EgoVerse",
           "https://egoverse-research-workbench.vercel.app/"
+        ],
+        "publicScale": [
+          "https://egoverse.ai/"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -12487,6 +12497,618 @@
           "https://contactpose.cc.gatech.edu/",
           "https://github.com/facebookresearch/ContactPose",
           "https://github.com/facebookresearch/ContactPose/blob/main/docs/doc.md"
+        ]
+      }
+    },
+    "handedit": {
+      "name": "HandEdit",
+      "reportedScale": {
+        "editingInstances": ">200M",
+        "embodiments": 26,
+        "scope": "paper construction scale; not independently verified public file count"
+      },
+      "publicScale": {
+        "scope": "public HF test-samples and evaluation assets; full-scale release not established"
+      },
+      "access": "Public download",
+      "accessNote": "Public test samples; full 200M-instance availability remains unverified.",
+      "formats": [
+        "Images",
+        "Masks",
+        "JSON",
+        "URDF"
+      ],
+      "observations": "Real source ego frames paired with synthesized robot-hand/arm views.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "syntheticSignals": [
+        "Rendered robot RGB"
+      ],
+      "labels": "Target embodiment, masks and rendered image-editing pseudo-reference.",
+      "bodyCoverage": "Hands",
+      "annotationEvidence": "Retargeting, robot rendering, compositing and quality screening.",
+      "limitations": "Image editing benchmark; not executable robot-action ground truth. Reported scale exceeds verified public sample scope.",
+      "datasetUrl": "https://huggingface.co/datasets/HandEdit/HandEdit",
+      "annotationType": "synthetic",
+      "dataRole": "egocentric",
+      "scaleType": "mixed",
+      "cameraSetup": "Heterogeneous source datasets; no newly captured camera rig.",
+      "recordedStreams": "Source ego images and synthetic embodiment-edited images.",
+      "derivedSignals": [
+        "Rendered embodiment edits",
+        "Masks"
+      ],
+      "tasks": [
+        "Embodiment-aware image editing"
+      ],
+      "dataLicense": "HF card: CC BY-NC-ND 4.0; source-corpus terms also apply.",
+      "releaseScope": "Public test samples and evaluation assets; code and data are separate resources.",
+      "verified": "2026-10-19",
+      "sources": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/html/2608.12122v1"
+        },
+        {
+          "label": "Author release",
+          "url": "https://github.com/HandEdit/HandEdit"
+        },
+        {
+          "label": "Data files and terms",
+          "url": "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "access": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "accessNote": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "syntheticSignals": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "annotationEvidence": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "scaleType": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "derivedSignals": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2608.12122v1",
+          "https://github.com/HandEdit/HandEdit",
+          "https://huggingface.co/datasets/HandEdit/HandEdit/tree/main"
+        ]
+      }
+    },
+    "egolive": {
+      "name": "EgoLive",
+      "reportedScale": {
+        "hours": 1680,
+        "episodes": 65866,
+        "tasks": 346,
+        "scope": "paper v1 reported collection"
+      },
+      "publicScale": {},
+      "access": "Not verified",
+      "accessNote": "The paper-linked JD marketplace returned HTTP 400 during unauthenticated review; public access and full-download extent are unverified.",
+      "formats": [],
+      "observations": "Head-mounted stereo RGB of natural human work.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "labels": "Derived hand motion, depth and language annotations.",
+      "bodyCoverage": "Hands",
+      "annotationEvidence": "Automated reconstruction and semantic annotation.",
+      "limitations": "Reported collection scale is not verified public-download scale. Derived depth is not a measured depth stream.",
+      "datasetUrl": "https://robotdata-market.jdcloud.com/console/market",
+      "annotationType": "estimated",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Head-mounted stereo capture at 60 fps.",
+      "recordedStreams": "Stereo video; per-paper collection specifications.",
+      "derivedSignals": [
+        "Estimated depth",
+        "Hand reconstruction",
+        "Language"
+      ],
+      "tasks": [
+        "Human demonstration learning"
+      ],
+      "dataLicense": "Not verified; consult publisher portal.",
+      "releaseScope": "Paper-reported corpus; the named data portal was unavailable during review.",
+      "verified": "2026-10-19",
+      "sources": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/html/2604.23570v1"
+        },
+        {
+          "label": "Publisher dataset portal",
+          "url": "https://robotdata-market.jdcloud.com/console/market"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "access": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "accessNote": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "annotationEvidence": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "scaleType": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "derivedSignals": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2604.23570v1",
+          "https://robotdata-market.jdcloud.com/console/market"
+        ]
+      }
+    },
+    "egoxtreme": {
+      "name": "EgoXtreme",
+      "reportedScale": {
+        "hours": 12.9,
+        "frames": "~1.3M",
+        "participants": 15,
+        "objects": 13,
+        "scope": "official repository / paper collection"
+      },
+      "publicScale": {},
+      "access": "Public download",
+      "accessNote": "Separate HF train/validation and test archives; test ground truth is withheld.",
+      "formats": [
+        "BOP",
+        "TAR",
+        "JSON",
+        "PLY"
+      ],
+      "observations": "Aria egocentric fisheye RGB and undistorted views under challenging conditions.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "labels": "6D object poses and object models.",
+      "bodyCoverage": "Hands",
+      "annotationEvidence": "Object-pose reference annotation; see original protocol.",
+      "limitations": "Known object roster and adverse-condition benchmark; not robot actions or tactile measurements.",
+      "datasetUrl": "https://huggingface.co/datasets/taegyoun88/egoxtreme",
+      "annotationType": "measured",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Project Aria RGB at 30 fps; 1408×1408 fisheye plus undistorted images.",
+      "recordedStreams": "Egocentric RGB sequences.",
+      "derivedSignals": [
+        "6D object poses"
+      ],
+      "tasks": [
+        "6D object pose estimation",
+        "Object tracking"
+      ],
+      "dataLicense": "CC BY-NC 4.0",
+      "releaseScope": "Public train/validation and test-without-GT repositories; file-level total not independently recounted.",
+      "verified": "2026-10-19",
+      "sources": [
+        {
+          "label": "Author repository",
+          "url": "https://github.com/taegyoun88/EgoXtreme"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/html/2603.25135v1"
+        },
+        {
+          "label": "Data and terms",
+          "url": "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "publicScale": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "access": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "accessNote": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "formats": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "observations": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "recordedSignals": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "labels": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "bodyCoverage": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "annotationEvidence": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "limitations": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "datasetUrl": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "annotationType": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "dataRole": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "scaleType": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "cameraSetup": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "recordedStreams": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "derivedSignals": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "tasks": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "dataLicense": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ],
+        "releaseScope": [
+          "https://github.com/taegyoun88/EgoXtreme",
+          "https://arxiv.org/html/2603.25135v1",
+          "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        ]
+      }
+    },
+    "humanego": {
+      "name": "HumanEgo",
+      "reportedScale": {
+        "recordings": 122,
+        "tasks": 2,
+        "scope": "current official dataset card"
+      },
+      "publicScale": {
+        "recordings": 122,
+        "scope": "publisher-listed release with raw inputs and precomputed outputs"
+      },
+      "access": "Public download",
+      "accessNote": "Ungated HF release; dataset CC BY-NC 4.0.",
+      "formats": [
+        "VRS",
+        "CSV",
+        "JSON",
+        "TAR"
+      ],
+      "observations": "Project Aria ego RGB and raw device recordings.",
+      "recordedSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "labels": "MPS trajectories, hand tracking, masks, tracks and training targets.",
+      "bodyCoverage": "Hands",
+      "annotationEvidence": "Aria MPS plus learned segmentation, tracking and triangulation.",
+      "limitations": "Two tasks; MPS and learned labels are estimates, not independent motion-capture or robot-action ground truth.",
+      "datasetUrl": "https://huggingface.co/datasets/Leo-TX/HumanEgo",
+      "annotationType": "estimated",
+      "dataRole": "egocentric",
+      "scaleType": "mixed",
+      "cameraSetup": "Project Aria Gen 1, RGB 30 fps.",
+      "recordedStreams": "Raw Aria recordings and precomputed RGB/mask/track outputs.",
+      "derivedSignals": [
+        "MPS SLAM and hand tracking",
+        "Object tracks",
+        "Training targets"
+      ],
+      "tasks": [
+        "Human-to-robot transfer"
+      ],
+      "dataLicense": "CC BY-NC 4.0",
+      "releaseScope": "122 recordings across serve_bread and water_flowers; checkpoints released separately.",
+      "verified": "2026-10-19",
+      "sources": [
+        {
+          "label": "Official code and release guide",
+          "url": "https://github.com/TX-Leo/HumanEgo"
+        },
+        {
+          "label": "Official data card",
+          "url": "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "publicScale": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "access": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "accessNote": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "formats": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "observations": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "recordedSignals": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "labels": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "bodyCoverage": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "annotationEvidence": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "limitations": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "datasetUrl": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "annotationType": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "dataRole": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "scaleType": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "cameraSetup": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "recordedStreams": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "derivedSignals": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "tasks": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "dataLicense": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
+        ],
+        "releaseScope": [
+          "https://github.com/TX-Leo/HumanEgo",
+          "https://huggingface.co/datasets/Leo-TX/HumanEgo"
         ]
       }
     }

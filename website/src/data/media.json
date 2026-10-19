@@ -11535,5 +11535,244 @@
     "imageSource": "https://arxiv.org/html/2610.15769v1/teaser.png",
     "imagePage": "https://arxiv.org/html/2610.15769v1",
     "imageAlt": "Hand2Robot primary paper overview of RGB-D human reconstruction, action supervision and real robot post-training"
+  },
+  {
+    "id": "ego2contact",
+    "name": "Ego2Contact",
+    "summary": "Transfers visual touch priors from human hands to robot tactile layouts.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/ego2contact-method.webp",
+    "credit": "Carnegie Mellon University / original authors",
+    "imagePage": "https://arxiv.org/html/2610.22932v1",
+    "imageSource": "https://arxiv.org/html/2610.22932v1/teaser.png",
+    "imageAlt": "Ego2Contact: original method and evaluation overview"
+  },
+  {
+    "id": "p3-wam",
+    "name": "P3-WAM",
+    "summary": "Jointly reconstructs hand motion, predicts video and plans action-video sequences.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/p3-wam-method.webp",
+    "credit": "HKUST (Guangzhou) / original authors",
+    "imagePage": "https://arxiv.org/html/2610.22363v1",
+    "imageSource": "https://arxiv.org/html/2610.22363v1/01-teaser.png",
+    "imageAlt": "Perceive, Predict, and Plan: original method and evaluation overview"
+  },
+  {
+    "id": "egomatrix",
+    "name": "EgoMatrix",
+    "summary": "Converts human videos into contact-aware robot trajectories and paired rendered observations.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/egomatrix-method.webp",
+    "credit": "Shanghai Jiao Tong University / original authors",
+    "imagePage": "https://arxiv.org/html/2610.18822v1",
+    "imageSource": "https://arxiv.org/html/2610.18822v1/figs/teaser_final.jpg",
+    "imageAlt": "EgoMatrix: original method and evaluation overview"
+  },
+  {
+    "id": "egoreveal",
+    "name": "EgoReveal",
+    "summary": "Learns viewpoint repositioning and manipulation from human ego demonstrations under occlusion.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/egoreveal-method.webp",
+    "credit": "Keio University / original authors",
+    "imagePage": "https://arxiv.org/html/2610.12999v1",
+    "imageSource": "https://arxiv.org/html/2610.12999v1/teaser.png",
+    "imageAlt": "EgoReveal: original method and evaluation overview"
+  },
+  {
+    "id": "egolap",
+    "name": "EgoLAP",
+    "summary": "Aligns human and robot experience through language actions and motion-level reasoning.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/egolap-method.webp",
+    "credit": "Princeton University / original authors",
+    "imagePage": "https://arxiv.org/html/2610.08726v1",
+    "imageSource": "https://arxiv.org/html/2610.08726v1/figures/fig1_teaser.png",
+    "imageAlt": "EgoLAP: original method and evaluation overview"
+  },
+  {
+    "id": "ego4wam",
+    "name": "Ego4WAM",
+    "summary": "Studies alignment, task coverage, supervision and use of human data under a fixed world-action model.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/ego4wam-method.webp",
+    "credit": "Fudan University / original authors",
+    "imagePage": "https://arxiv.org/html/2609.40341v1",
+    "imageSource": "https://arxiv.org/html/2609.40341v1/figure/method.png",
+    "imageAlt": "Ego4WAM: original method and evaluation overview"
+  },
+  {
+    "id": "lambda0",
+    "name": "λ₀ / HumanVerse-500",
+    "summary": "Transfers hand interaction and whole-body human capture to a humanoid VLA through staged training.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/lambda0-method.webp",
+    "credit": "Alibaba Group / original authors",
+    "imagePage": "https://arxiv.org/html/2610.00438v1",
+    "imageSource": "https://arxiv.org/html/2610.00438v1/teaser_complete_figma.png",
+    "imageAlt": "Towards a General Humanoid Loco-Manipulation Model via Egocentric Whole-Body Human Data Pretraining: original method and evaluation overview"
+  },
+  {
+    "id": "zeva-ego",
+    "name": "Zeva-Ego",
+    "summary": "Combines action-centered human-video mid-training with deployment-time interaction memory.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/zeva-ego-method.webp",
+    "credit": "Tsinghua University / original authors",
+    "imagePage": "https://arxiv.org/html/2609.24411v1",
+    "imageSource": "https://arxiv.org/html/2609.24411v1/zeva_ego_teaser.png",
+    "imageAlt": "Zeva-Ego: original method and evaluation overview"
+  },
+  {
+    "id": "simdex",
+    "name": "SiMDex",
+    "summary": "Selects task-relevant human clips for dexterous VLA training through similarity-based mining.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/simdex-method.webp",
+    "credit": "The University of Tokyo / original authors",
+    "imagePage": "https://arxiv.org/html/2608.04196v1",
+    "imageSource": "https://arxiv.org/html/2608.04196v1/x1.png",
+    "imageAlt": "SiMDex: original method and evaluation overview"
+  },
+  {
+    "id": "handedit",
+    "name": "HandEdit",
+    "summary": "Benchmarks URDF-conditioned human-to-robot hand and arm image editing.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/handedit-dataset.webp",
+    "credit": "Fudan University / original authors",
+    "imagePage": "https://arxiv.org/html/2608.12122v1",
+    "imageSource": "https://handedit.github.io/assets/videos/teaser-poster.jpg",
+    "imageAlt": "HandEdit: original dataset examples and benchmark overview",
+    "datasetImage": "images/catalog/handedit-dataset.webp",
+    "datasetImageSource": "https://handedit.github.io/assets/videos/teaser-poster.jpg",
+    "datasetImagePage": "https://arxiv.org/html/2608.12122v1",
+    "datasetImageAlt": "HandEdit: original dataset examples and benchmark overview",
+    "datasetSummary": "Benchmarks URDF-conditioned human-to-robot hand and arm image editing.",
+    "datasetName": "HandEdit"
+  },
+  {
+    "id": "egolive",
+    "name": "EgoLive",
+    "summary": "Captures natural human work routines with stereo video and derived motion, depth and language annotations.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/egolive-dataset.webp",
+    "credit": "Joy Future Academy, JD / original authors",
+    "imagePage": "https://arxiv.org/html/2604.23570v1",
+    "imageSource": "https://arxiv.org/html/2604.23570v1/figs/cover.png",
+    "imageAlt": "EgoLive: original dataset examples and benchmark overview",
+    "datasetImage": "images/catalog/egolive-dataset.webp",
+    "datasetImageSource": "https://arxiv.org/html/2604.23570v1/figs/cover.png",
+    "datasetImagePage": "https://arxiv.org/html/2604.23570v1",
+    "datasetImageAlt": "EgoLive: original dataset examples and benchmark overview",
+    "datasetSummary": "Captures natural human work routines with stereo video and derived motion, depth and language annotations.",
+    "datasetName": "EgoLive"
+  },
+  {
+    "id": "egoxtreme",
+    "name": "EgoXtreme",
+    "summary": "Tests egocentric object pose estimation under blur, lighting shifts and smoke.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/egoxtreme-dataset.webp",
+    "credit": "Seoul National University / original authors",
+    "imagePage": "https://arxiv.org/html/2603.25135v1",
+    "imageSource": "https://arxiv.org/html/2603.25135v1/egoxtreme_sample.png",
+    "imageAlt": "EgoXtreme: original dataset examples and benchmark overview",
+    "datasetImage": "images/catalog/egoxtreme-dataset.webp",
+    "datasetImageSource": "https://arxiv.org/html/2603.25135v1/egoxtreme_sample.png",
+    "datasetImagePage": "https://arxiv.org/html/2603.25135v1",
+    "datasetImageAlt": "EgoXtreme: original dataset examples and benchmark overview",
+    "datasetSummary": "Tests egocentric object pose estimation under blur, lighting shifts and smoke.",
+    "datasetName": "EgoXtreme"
+  },
+  {
+    "id": "egojepa",
+    "name": "EgoJEPA",
+    "summary": "Learns effect-aware latent actions from human video, then adapts them to robot control.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-19",
+    "image": "images/catalog/egojepa-method.webp",
+    "credit": "MBZUAI / original authors",
+    "imagePage": "https://arxiv.org/html/2610.20904v1",
+    "imageSource": "https://arxiv.org/html/2610.20904v1/pipelineV4.png",
+    "imageAlt": "EgoJEPA: original three-stage training pipeline"
   }
 ]

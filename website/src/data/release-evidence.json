@@ -597,15 +597,24 @@
       "availability": "Research resource"
     },
     "egoverse": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "evidence": [
         {
           "label": "Primary source",
           "url": "https://arxiv.org/abs/2604.07607"
+        },
+        {
+          "label": "Current official release",
+          "url": "https://github.com/GaTech-RL2/EgoVerse"
         }
       ],
-      "availability": "Research resource"
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "notes": [
+        "MIT processing/training tools; dataset access and provider terms are separate."
+      ],
+      "softwareStatus": "MIT software; separate data provider access/terms"
     },
     "fpha": {
       "status": "unknown",
@@ -1134,15 +1143,24 @@
       "availability": "Research resource"
     },
     "egofound3r": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "evidence": [
         {
           "label": "Primary source",
           "url": "https://arxiv.org/abs/2610.01210"
+        },
+        {
+          "label": "Current official release",
+          "url": "https://github.com/MINT-SJTU/EgoFound3R"
         }
       ],
-      "availability": "Research resource"
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "notes": [
+        "Inference source is available under CC BY-NC-SA 4.0; model retrieval remains unverified."
+      ],
+      "softwareStatus": "CC BY-NC-SA 4.0 inference source; checkpoint access unverified"
     },
     "egofun3d": {
       "status": "unknown",
@@ -1216,15 +1234,24 @@
       "availability": "Research resource"
     },
     "egoengine": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "evidence": [
         {
           "label": "Primary source",
           "url": "https://arxiv.org/abs/2606.12604"
+        },
+        {
+          "label": "Current official release",
+          "url": "https://github.com/GaTech-RL2/EgoEngine-CoRL2026"
         }
       ],
-      "availability": "Research resource"
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "notes": [
+        "Released pipeline begins with preprocessed inputs. Earlier perception/reconstruction is outside the release; component licenses differ."
+      ],
+      "softwareStatus": "Public visual/action branches; component-specific licenses; early reconstruction excluded"
     },
     "egoaero": {
       "status": "unknown",
@@ -1425,26 +1452,44 @@
       "availability": "Research resource"
     },
     "humanego": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "evidence": [
         {
           "label": "Primary source",
           "url": "https://arxiv.org/abs/2605.24934"
+        },
+        {
+          "label": "Current official release",
+          "url": "https://github.com/TX-Leo/HumanEgo"
         }
       ],
-      "availability": "Research resource"
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "notes": [
+        "PolyForm Noncommercial source, CC BY-NC 4.0 data and public checkpoints with separate terms."
+      ],
+      "softwareStatus": "PolyForm Noncommercial source; CC BY-NC 4.0 data; model terms separate"
     },
     "egohumanoid": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "evidence": [
         {
           "label": "Primary source",
           "url": "https://arxiv.org/abs/2602.10106"
+        },
+        {
+          "label": "Current official release",
+          "url": "https://github.com/OpenDriveLab/EgoHumanoid"
         }
       ],
-      "availability": "Research resource"
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "notes": [
+        "Apache-2.0 software and public human/robot sample data; not a verified full training-data release."
+      ],
+      "softwareStatus": "Apache-2.0 software; sample data with separate access/terms"
     },
     "dexroam": {
       "status": "unknown",
@@ -11210,6 +11255,246 @@
       "notes": [
         "Official arXiv-linked project URL https://hand2robot.github.io/ returned 404 at review; runnable code and weights not verified.",
         "Original v1 is 2026-10-11 UTC, not the October 12 date some search indexes display."
+      ]
+    },
+    "ego2contact": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.22932"
+        }
+      ]
+    },
+    "p3-wam": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.22363"
+        },
+        {
+          "label": "Project",
+          "url": "https://p3-wam.pages.dev/"
+        }
+      ]
+    },
+    "egomatrix": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.18822"
+        },
+        {
+          "label": "Project",
+          "url": "https://spikew726.github.io/EgoMatrix/"
+        }
+      ]
+    },
+    "egoreveal": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.12999"
+        }
+      ]
+    },
+    "egolap": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.08726"
+        },
+        {
+          "label": "Project",
+          "url": "https://ego-lap.github.io/"
+        }
+      ],
+      "notes": [
+        "Official project says code and checkpoints are coming soon."
+      ]
+    },
+    "ego4wam": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.40341"
+        },
+        {
+          "label": "Project",
+          "url": "https://sunzhihao18.github.io/Ego4WAM/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/HorizonRobotics/Ego4WAM"
+        },
+        {
+          "label": "Models",
+          "url": "https://huggingface.co/HorizonRobotics/Ego4WAM"
+        }
+      ],
+      "softwareStatus": "Public training/inference code; model card declares Apache-2.0; upstream terms remain separate"
+    },
+    "lambda0": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.00438"
+        }
+      ],
+      "notes": [
+        "HumanVerse-500, code and models are announced; no public release verified."
+      ]
+    },
+    "zeva-ego": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.24411"
+        },
+        {
+          "label": "Project",
+          "url": "https://air-embodied-brain.github.io/Zeva-Ego"
+        }
+      ]
+    },
+    "simdex": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2608.04196"
+        },
+        {
+          "label": "Project",
+          "url": "https://lin-nie.github.io/SiMDex/"
+        }
+      ]
+    },
+    "handedit": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2608.12122"
+        },
+        {
+          "label": "Project",
+          "url": "https://handedit.github.io/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/HandEdit/HandEdit"
+        },
+        {
+          "label": "Data",
+          "url": "https://huggingface.co/datasets/HandEdit/HandEdit"
+        }
+      ],
+      "notes": [
+        "Public Hugging Face files include test samples; the paper reports over 200M editing instances. Full-scale availability is not independently established. Data card: CC BY-NC-ND 4.0."
+      ]
+    },
+    "egolive": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2604.23570"
+        },
+        {
+          "label": "Data portal",
+          "url": "https://robotdata-market.jdcloud.com/console/market"
+        }
+      ],
+      "notes": [
+        "The paper names a JD marketplace URL, but unauthenticated review returned HTTP 400. Public access remains unverified."
+      ]
+    },
+    "egoxtreme": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2603.25135"
+        },
+        {
+          "label": "Project",
+          "url": "https://taegyoun88.github.io/EgoXtreme/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/taegyoun88/EgoXtreme"
+        },
+        {
+          "label": "Train / val",
+          "url": "https://huggingface.co/datasets/taegyoun88/egoxtreme"
+        },
+        {
+          "label": "Test data",
+          "url": "https://huggingface.co/datasets/taegyoun88/egoxtreme-test"
+        }
+      ]
+    },
+    "egojepa": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-19",
+      "notes": [
+        "No public implementation or pretrained weights verified."
+      ],
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.20904"
+        },
+        {
+          "label": "Author project",
+          "url": "https://mengcaopku.github.io/EgoJEPA/"
+        }
       ]
     }
   }
