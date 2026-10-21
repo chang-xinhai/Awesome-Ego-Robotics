@@ -11243,11 +11243,13 @@
     "id": "slugtrails",
     "datasetName": "SlugTrails",
     "datasetSummary": "Aria walks and panorama sweeps localize into surveyed large-building floor plans.",
-    "reviewed": "2026-10-17",
+    "reviewed": "2026-10-21",
     "name": "SlugTrails",
     "summary": "Aria walks and panorama sweeps localize into surveyed large-building floor plans.",
     "signals": [
-      "Vision"
+      "Vision",
+      "IMU",
+      "Audio"
     ],
     "coverage": "Head and environment",
     "form": "Not reported",
@@ -11774,5 +11776,476 @@
     "imagePage": "https://arxiv.org/html/2610.20904v1",
     "imageSource": "https://arxiv.org/html/2610.20904v1/pipelineV4.png",
     "imageAlt": "EgoJEPA: original three-stage training pipeline"
+  },
+  {
+    "id": "dexoak",
+    "name": "DexOAK",
+    "summary": "Learns object-aware kinematic references that preserve human hand–object interaction geometry.",
+    "signals": [
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/dexoak-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.26762v1",
+    "imageSource": "https://arxiv.org/html/2610.26762v1/teaser_real_robot_1509_1930_compressed.png",
+    "imageAlt": "DexOAK: original paper method or experimental overview",
+    "credit": "Inria / original authors"
+  },
+  {
+    "id": "egorayformer",
+    "name": "EgoRayFormer",
+    "summary": "Refines wearer body pose using shared stereo hypotheses and ray-space geometry.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/egorayformer-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.26641v1",
+    "imageSource": "https://arxiv.org/html/2610.26641v1/fig_teaser.png",
+    "imageAlt": "EgoRayFormer: original paper method or experimental overview",
+    "credit": "Boden AI / original authors"
+  },
+  {
+    "id": "anchorflow-vio",
+    "name": "AnchorFlow-VIO",
+    "summary": "Provides a frozen Basalt-derived monocular VIO configuration and reproducible LaMAria evaluation.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21"
+  },
+  {
+    "id": "ssio",
+    "name": "SSIO",
+    "summary": "Trains inertial odometry from short-window IMU integration and pose-graph distillation.",
+    "signals": [
+      "IMU"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/ssio-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.25988v1",
+    "imageSource": "https://arxiv.org/html/2610.25988v1/fig1_corrected_legend.png",
+    "imageAlt": "SSIO: original paper method or experimental overview",
+    "credit": "Amazon FAR / original authors"
+  },
+  {
+    "id": "acts",
+    "name": "ACTS",
+    "summary": "Learns action-conditioned visual and tactile dynamics only from human physical interaction.",
+    "signals": [
+      "Vision",
+      "Tactile",
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/acts-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.24285v1",
+    "imageSource": "https://arxiv.org/html/2610.24285v1/teaser_force.png",
+    "imageAlt": "ACTS: original paper method or experimental overview",
+    "credit": "Massachusetts Institute of Technology / original authors"
+  },
+  {
+    "id": "mocap",
+    "name": "MoCaP",
+    "summary": "Uses spatial memory from passive human videos to guide an agent that writes mobile-manipulation code.",
+    "signals": [
+      "Vision",
+      "Depth",
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/mocap-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.20998v1",
+    "imageSource": "https://arxiv.org/html/2610.20998v1/mocap_teaser_v3.png",
+    "imageAlt": "MoCaP: original paper method or experimental overview",
+    "credit": "New York University / original authors"
+  },
+  {
+    "id": "koda",
+    "name": "KODA",
+    "summary": "Aligns human ego demonstrations to robot kinematics, onboard views and controller interfaces.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/koda-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.21152v1",
+    "imageSource": "https://arxiv.org/html/2610.21152v1/figure1_blurred_extended.png",
+    "imageAlt": "KODA: original paper method or experimental overview",
+    "credit": "Gamma Robotics / original authors"
+  },
+  {
+    "id": "egovine",
+    "name": "EgoVine",
+    "summary": "Compiles real egocentric video annotations into branching symbolic environments for planner post-training.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/egovine-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.23907v1",
+    "imageSource": "https://arxiv.org/html/2610.23907v1/figure/framework.png",
+    "imageAlt": "EgoVine: original paper method or experimental overview",
+    "credit": "Xi’an Jiaotong University / original authors"
+  },
+  {
+    "id": "cbst",
+    "name": "CBST",
+    "summary": "Transfers human-video subtask conditions through causal-beam-guided semantic representations.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/cbst-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.21798v1",
+    "imageSource": "https://arxiv.org/html/2610.21798v1/headfigure_examples.png",
+    "imageAlt": "CBST: original paper method or experimental overview",
+    "credit": "University of Chinese Academy of Sciences / original authors"
+  },
+  {
+    "id": "tdv",
+    "name": "TDV",
+    "summary": "Extracts object trajectories from one human video to generate diffusion-policy training data.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/tdv-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.21792v1",
+    "imageSource": "https://arxiv.org/html/2610.21792v1/img/CORL2025-new.jpg",
+    "imageAlt": "TDV: original paper method or experimental overview",
+    "credit": "Tsinghua University / original authors"
+  },
+  {
+    "id": "cappro",
+    "name": "CapPro",
+    "summary": "Conditions a pretrained VLA on a compact phase-aware representation of a single new human demonstration.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/cappro-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.19746v1",
+    "imageSource": "https://arxiv.org/html/2610.19746v1/overview.png",
+    "imageAlt": "CapPro: original paper method or experimental overview",
+    "credit": "Beijing Institute of Technology / original authors"
+  },
+  {
+    "id": "fact",
+    "name": "FACT",
+    "summary": "Combines human force-rich demonstrations with visual planning and force-aware action refinement.",
+    "signals": [
+      "Vision",
+      "Tactile",
+      "Force"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/fact-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.19155v1",
+    "imageSource": "https://arxiv.org/html/2610.19155v1/fact-method_v16.png",
+    "imageAlt": "FACT: original paper method or experimental overview",
+    "credit": "University of Michigan / original authors"
+  },
+  {
+    "id": "egoexplorer",
+    "name": "EgoExplorer",
+    "summary": "Aligns wearable video, reconstructed whole-body/finger motion and measured touch in natural loco-manipulation.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Tactile"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/egoexplorer-dataset.webp",
+    "imagePage": "https://arxiv.org/html/2610.18872v1",
+    "imageSource": "https://arxiv.org/html/2610.18872v1/teaser-fig.png",
+    "imageAlt": "EgoExplorer: original paper dataset examples and overview",
+    "credit": "Shanghai AI Laboratory / original authors"
+  },
+  {
+    "id": "steertuning",
+    "name": "Steertuning",
+    "summary": "Pretrains on random human interactions and adapts from five videos with diffusion steering.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/steertuning-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.18711v1",
+    "imageSource": "https://arxiv.org/html/2610.18711v1/intro.png",
+    "imageAlt": "Steertuning: original paper method or experimental overview",
+    "credit": "New York University / original authors"
+  },
+  {
+    "id": "dexstitch",
+    "name": "DexStitch",
+    "summary": "Segments human videos into skills, retargets contacts and inpaints aligned robot training observations.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/dexstitch-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.17789v1",
+    "imageSource": "https://arxiv.org/html/2610.17789v1/overview_v5.png",
+    "imageAlt": "DexStitch: original paper method or experimental overview",
+    "credit": "Seoul National University / original authors"
+  },
+  {
+    "id": "egocpt",
+    "name": "EgoCPT",
+    "summary": "Searches robot-side contacts, forces and motion to explain a single human egocentric interaction.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/egocpt-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.17572v1",
+    "imageSource": "https://arxiv.org/html/2610.17572v1/teaser.png",
+    "imageAlt": "EgoCPT: original paper method or experimental overview",
+    "credit": "Ant Group / original authors"
+  },
+  {
+    "id": "v-jepa-hand",
+    "name": "V-JEPA Hand",
+    "summary": "Jointly predicts bilateral hand motion and camera motion from egocentric clips in one forward pass.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/v-jepa-hand-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.26780v1",
+    "imageSource": "https://arxiv.org/html/2610.26780v1/teaservjepa.png",
+    "imageAlt": "V-JEPA Hand: original paper method or experimental overview",
+    "credit": "Tsinghua University / original authors"
+  },
+  {
+    "id": "egoxperience",
+    "name": "EgoXperience",
+    "summary": "Builds aligned camera, scene, hand and object supervision and a unified world-space reconstruction model.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/egoxperience-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.26625v1",
+    "imageSource": "https://arxiv.org/html/2610.26625v1/teaser.png",
+    "imageAlt": "EgoXperience: original paper method or experimental overview",
+    "credit": "Ropedia / original authors"
+  },
+  {
+    "id": "cowear",
+    "name": "CoWear",
+    "summary": "Provides synchronized phone, watch and glasses IMU with per-device motion-capture reference.",
+    "signals": [
+      "IMU"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/cowear-dataset.webp",
+    "imagePage": "https://arxiv.org/html/2610.20596v1",
+    "imageSource": "https://arxiv.org/html/2610.20596v1/architecture.png",
+    "imageAlt": "CoWear: original paper dataset examples and overview",
+    "credit": "Beihang University / original authors"
+  },
+  {
+    "id": "gazeagent",
+    "name": "GazeAgent",
+    "summary": "Uses natural egocentric behavior to update AI-glasses gaze calibration without an explicit calibration routine.",
+    "signals": [
+      "Vision",
+      "Gaze",
+      "IMU"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/gazeagent-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.24364v1",
+    "imageSource": "https://arxiv.org/html/2610.24364v1/figures/fig1_overview.png",
+    "imageAlt": "GazeAgent: original paper method or experimental overview",
+    "credit": "University of California San Diego / original authors"
+  },
+  {
+    "id": "foundationvio",
+    "name": "FoundationVIO",
+    "summary": "Adds inertial physical-scale constraints to feed-forward geometry for visual-inertial odometry and SLAM.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/foundationvio-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.14951v1",
+    "imageSource": "https://arxiv.org/html/2610.14951v1/hero.png",
+    "imageAlt": "FoundationVIO: original paper method or experimental overview",
+    "credit": "University of Oxford / original authors"
+  },
+  {
+    "id": "rootslam",
+    "name": "RootSLAM",
+    "summary": "Extends Basalt with efficient square-root optimization, persistent maps and loop detection.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/rootslam-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.15157v1",
+    "imageSource": "https://arxiv.org/html/2610.15157v1/00001.png",
+    "imageAlt": "RootSLAM: original paper method or experimental overview",
+    "credit": "National University of Rosario / original authors"
+  },
+  {
+    "id": "oath",
+    "name": "OATH",
+    "summary": "Learns object-agnostic contact-error residual control for physics-based human-to-hand retargeting.",
+    "signals": [
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/oath-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.14379v1",
+    "imageSource": "https://arxiv.org/html/2610.14379v1/figures/figure1_vertical.png",
+    "imageAlt": "OATH: original paper method or experimental overview",
+    "credit": "Multiply Labs / original authors"
+  },
+  {
+    "id": "dexcast",
+    "name": "DexCast",
+    "summary": "Learns real dexterous control from reconstructed human hand–object interaction and temporal motion latents.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/dexcast-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.14691v1",
+    "imageSource": "https://arxiv.org/html/2610.14691v1/pipeline.png",
+    "imageAlt": "DexCast: original paper method or experimental overview",
+    "credit": "Tsinghua University / original authors"
+  },
+  {
+    "id": "watch",
+    "name": "WATCH",
+    "summary": "Pretrains world-action models across task-paired human demonstrations rather than only within-video futures.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/watch-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.14351v1",
+    "imageSource": "https://arxiv.org/html/2610.14351v1/teaser2.png",
+    "imageAlt": "WATCH: original paper method or experimental overview",
+    "credit": "NAVER AI Lab / original authors"
+  },
+  {
+    "id": "flowavatar",
+    "name": "FlowAvatar",
+    "summary": "Recovers full-body avatars, hands, face and gaze from sparse consumer-headset inputs.",
+    "signals": [
+      "State",
+      "Gaze"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/flowavatar-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.16277v1",
+    "imageSource": "https://arxiv.org/html/2610.16277v1/figures/Teaser1.png",
+    "imageAlt": "FlowAvatar: original paper method or experimental overview",
+    "credit": "Northwestern University / original authors"
+  },
+  {
+    "id": "vista",
+    "name": "VISTA",
+    "summary": "Benchmarks first-person assistance with synchronized wearable video and sensor context.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Audio"
+    ],
+    "form": "Not reported",
+    "coverage": "Head and environment",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/vista-dataset.webp",
+    "imagePage": "https://arxiv.org/html/2610.22822v1",
+    "imageSource": "https://arxiv.org/html/2610.22822v1/figs/samplevideos_figure_r.png",
+    "imageAlt": "VISTA: original paper dataset examples and overview",
+    "credit": "Harvard University / original authors"
   }
 ]

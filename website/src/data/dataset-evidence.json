@@ -11117,30 +11117,31 @@
     },
     "slugtrails": {
       "name": "SlugTrails",
-      "verified": "2026-10-19",
-      "reviewed": "2026-10-17",
+      "verified": "2026-10-21",
+      "reviewed": "2026-10-21",
       "reportedScale": {
         "sequences": 6,
         "scope": "3 buildings / 6 floors / 22,089 m² footprint / ~1.80 km including panorama turns"
       },
       "publicScale": {
         "sequences": 6,
-        "scope": "v1.0 ~10 GB; 1,296 single-frame samples / 2,880 sweeps / 600 sequence manifests"
+        "scope": "Current actual file listing: six recordings / 82,845,394,070 bytes; 1,296 single-frame samples / 2,880 sweeps / 600 sequence manifests."
       },
       "access": "Public download",
-      "accessNote": "v1.0 omits raw VRS, SLAM-camera video and model-predicted depth.",
+      "accessNote": "Six blurred fisheye VRS and separately blurred undistorted RGB MP4s; original unblurred VRS not released.",
       "formats": [
+        "VRS",
         "MP4",
         "CSV",
         "JSON",
         "CAD maps"
       ],
-      "observations": "Anonymized Aria RGB; public release includes derived MPS trajectories and semidense points.",
-      "recordedStreams": "Anonymized Aria RGB; public release includes derived MPS trajectories and semidense points.",
+      "observations": "Blurred fisheye RGB and both SLAM cameras; IMU, audio, barometer and calibration retained in Aria VRS; eye images copied unblurred.",
+      "recordedStreams": "Blurred RGB/SLAM-camera VRS streams; IMU/audio/barometer/calibration; separately blurred undistorted RGB MP4.",
       "labels": "Floor-plan-aligned poses from laser-surveyed anchors and factor-graph alignment; semantic CAD maps.",
       "bodyCoverage": "Head and environment",
       "annotationEvidence": "Floor-plan-aligned poses from laser-surveyed anchors and factor-graph alignment; semantic CAD maps.",
-      "limitations": "Map-frame ground truth is aligned MPS plus anchors; no independent per-frame motion-capture measurement.",
+      "limitations": "Map-frame GT is aligned MPS plus surveyed anchors. Eye-camera images are not blurred. Fisheye/VRS and undistorted/RGB blur projections differ.",
       "sources": [
         {
           "label": "Paper",
@@ -11156,13 +11157,15 @@
         }
       ],
       "recordedSignals": [
-        "Vision"
+        "Vision",
+        "IMU",
+        "Audio"
       ],
       "datasetUrl": "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails",
       "annotationType": "mixed",
       "dataRole": "egocentric",
       "scaleType": "sequences",
-      "cameraSetup": "Anonymized Aria RGB; public release includes derived MPS trajectories and semidense points.",
+      "cameraSetup": "Aria Gen1: fisheye RGB plus left/right SLAM cameras in VRS; separate undistorted RGB MP4 has its own intrinsics.",
       "coordinateFrame": "Floor-plan meters; raw MPS and map-aligned trajectories are separate frames.",
       "calibration": "Floor-plan meters; raw MPS and map-aligned trajectories are separate frames.",
       "derivedSignals": [
@@ -11173,7 +11176,7 @@
       ],
       "splits": "See official release protocol.",
       "dataLicense": "CC BY 4.0.",
-      "releaseScope": "v1.0 omits raw VRS, SLAM-camera video and model-predicted depth.",
+      "releaseScope": "Six recordings with actual blurred VRS, RGB MP4, MPS trajectories/semidense points, maps and manifests. Original unblurred VRS and undistorted SLAM MP4 are excluded.",
       "contactType": "none",
       "evidenceNote": "Observed streams, derived estimates, reference labels and reported/released scope are separated.",
       "fieldSources": {
@@ -11183,19 +11186,16 @@
           "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails"
         ],
         "publicScale": [
-          "https://arxiv.org/abs/2609.19876",
           "https://github.com/Head-inthe-Cloud/SlugTrails",
-          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails"
+          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
         ],
         "cameraSetup": [
-          "https://arxiv.org/abs/2609.19876",
           "https://github.com/Head-inthe-Cloud/SlugTrails",
-          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails"
+          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
         ],
         "recordedStreams": [
-          "https://arxiv.org/abs/2609.19876",
           "https://github.com/Head-inthe-Cloud/SlugTrails",
-          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails"
+          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
         ],
         "coordinateFrame": [
           "https://arxiv.org/abs/2609.19876",
@@ -11218,9 +11218,8 @@
           "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails"
         ],
         "releaseScope": [
-          "https://arxiv.org/abs/2609.19876",
           "https://github.com/Head-inthe-Cloud/SlugTrails",
-          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails"
+          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
         ],
         "contactType": [
           "https://arxiv.org/abs/2609.19876",
@@ -11228,6 +11227,26 @@
           "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails"
         ],
         "access": [
+          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
+        ],
+        "accessNote": [
+          "https://github.com/Head-inthe-Cloud/SlugTrails",
+          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
+        ],
+        "formats": [
+          "https://github.com/Head-inthe-Cloud/SlugTrails",
+          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
+        ],
+        "observations": [
+          "https://github.com/Head-inthe-Cloud/SlugTrails",
+          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
+        ],
+        "recordedSignals": [
+          "https://github.com/Head-inthe-Cloud/SlugTrails",
+          "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
+        ],
+        "limitations": [
+          "https://github.com/Head-inthe-Cloud/SlugTrails",
           "https://huggingface.co/datasets/Head-inthe-Cloud/SlugTrails/tree/main"
         ]
       }
@@ -13165,6 +13184,390 @@
           "https://huggingface.co/datasets/Leo-TX/HumanEgo"
         ]
       }
+    },
+    "egoexplorer": {
+      "reportedScale": {
+        "hours": 100,
+        "scope": "Reported full collection"
+      },
+      "publicScale": {
+        "hours": 1,
+        "scope": "Official one-hour mini release; gated listing, download needs approval"
+      },
+      "access": "Access conditions",
+      "accessNote": "One-hour mini release listed on official gated Hub; CC BY-NC 4.0; form/account approval required. 100-hour collection is reported, not fully released.",
+      "formats": [
+        "LeRobot",
+        "Parquet",
+        "MP4",
+        "JSON"
+      ],
+      "observations": "Egocentric RGB, sparse wearable motion sensing and measured tactile observations.",
+      "recordedStreams": "Synchronized wearable video, sparse motion sensors and tactile sensing.",
+      "recordedSignals": [
+        "Vision",
+        "IMU",
+        "Tactile"
+      ],
+      "labels": "Reconstructed SMPL-X body/finger motion and step-level language; unobserved joints are inferred.",
+      "derivedSignals": [
+        "SMPL-X body/finger motion",
+        "Camera/world alignment",
+        "Contact estimates"
+      ],
+      "annotationEvidence": "Sparse measurements plus Calibrate-Complete-Constrain temporal inference.",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "coordinateFrame": "Reconstructed whole-body motion in shared capture world frame.",
+      "dataLicense": "CC BY-NC 4.0; gated access and separate toolkit terms.",
+      "datasetUrl": "https://huggingface.co/datasets/InternRobotics/EgoExplorer",
+      "releaseScope": "One-hour mini release; 100-hour full collection not publicly verified.",
+      "limitations": "100 hours reported; official Hub lists a gated one-hour mini release, not a public 100-hour download.",
+      "contactType": "measured",
+      "name": "EgoExplorer",
+      "verified": "2026-10-21",
+      "reviewed": "2026-10-21",
+      "bodyCoverage": "Whole body",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.18872v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://internrobotics.github.io/egoexplorer.github.io/"
+        },
+        {
+          "label": "Toolkit (forthcoming)",
+          "url": "https://github.com/InternRobotics/EgoExplorer"
+        },
+        {
+          "label": "Data (gated mini release)",
+          "url": "https://huggingface.co/datasets/InternRobotics/EgoExplorer"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "access": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "accessNote": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "derivedSignals": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "annotationEvidence": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "scaleType": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "contactType": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "name": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.18872v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2610.18872v1"
+        ]
+      },
+      "cameraSetup": "Head-mounted egocentric RGB and sparse wearable motion/tactile sensing."
+    },
+    "cowear": {
+      "reportedScale": {
+        "hours": ">30",
+        "participants": ">30",
+        "sessions": ">300",
+        "scope": ">100 km; aggregate device trajectories, not wearer hours"
+      },
+      "publicScale": {
+        "scope": "No primary-linked full download verified"
+      },
+      "access": "Not verified",
+      "formats": [],
+      "observations": "Synchronized IMU from smartphone, smartwatch and smart glasses; no camera stream established.",
+      "recordedStreams": "Per-device inertial measurements with synchronized motion capture.",
+      "recordedSignals": [
+        "IMU"
+      ],
+      "labels": "Device-specific motion-capture trajectories and aligned reference-device displacements.",
+      "derivedSignals": [
+        "Collaborative inertial displacement",
+        "World-frame fused trajectory"
+      ],
+      "annotationEvidence": "Each wearable is separately tracked by motion capture.",
+      "annotationType": "measured",
+      "dataRole": "reference",
+      "scaleType": "hours",
+      "coordinateFrame": "Motion-capture world frame; device/reference transformations.",
+      "dataLicense": "Not verified from a primary-linked release.",
+      "releaseScope": "Paper reports dataset and baseline; complete release not verified.",
+      "limitations": "Over 30 hours and 100 km refer to aggregate device trajectories, not independent wearer hours. Glasses do not imply recorded RGB.",
+      "contactType": "none",
+      "name": "CoWear",
+      "verified": "2026-10-21",
+      "reviewed": "2026-10-21",
+      "bodyCoverage": "Whole body",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.20596v1"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "access": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "derivedSignals": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "annotationEvidence": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "scaleType": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "contactType": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "name": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.20596v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2610.20596v1"
+        ]
+      },
+      "cameraSetup": "No camera stream established; synchronized phone/watch/glasses IMU plus individual motion-capture reference."
+    },
+    "vista": {
+      "reportedScale": {
+        "sequences": "~1000",
+        "scope": "Project Aria clips across ten assistive categories"
+      },
+      "publicScale": {
+        "sequences": 997,
+        "scope": "497 train / 50 validation / 450 test; independently counted from actual CSVs"
+      },
+      "access": "Public download",
+      "accessNote": "Public annotation CSVs and MP4/sensor files; no raw VRS container claimed.",
+      "formats": [
+        "MP4",
+        "CSV",
+        "JSON",
+        "WAV"
+      ],
+      "observations": "Aria RGB, SLAM/eye camera video and IMU/environmental sensors. Spoken task-request WAVs are generated annotations; captured environmental audio is not established by the release.",
+      "recordedStreams": "Aria RGB/SLAM/eye videos and inertial/environmental measurements. Task-request WAVs are generated annotations; captured environmental audio is not established by the release.",
+      "recordedSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "labels": "1063 scene descriptions, 1191 QA pairs and 2067 goal–instruction pairs; MPS-derived gaze/hand/trajectory outputs.",
+      "derivedSignals": [
+        "MPS gaze",
+        "MPS hand tracking",
+        "MPS trajectory",
+        "Generated spoken requests"
+      ],
+      "annotationEvidence": "Human-verified assistance annotations plus model-derived MPS sensor products.",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "scaleType": "sequences",
+      "coordinateFrame": "Aria sensor frames and derived world trajectories.",
+      "dataLicense": "CC BY 4.0 dataset; MIT evaluation code.",
+      "datasetUrl": "https://huggingface.co/datasets/harvardairobotics/VISTA",
+      "releaseScope": "997 clips; annotation CSVs counted and one actual MP4 accessibility checked.",
+      "limitations": "997 released clips are not 997 hours. Task-request WAVs are generated speech; gaze, hands and trajectories include MPS-derived outputs. Official card reports missing hand tracking for 15 clips and missing derived SLAM for 11 other clips (26 total).",
+      "contactType": "none",
+      "name": "VISTA",
+      "verified": "2026-10-21",
+      "reviewed": "2026-10-21",
+      "bodyCoverage": "Head and environment",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.22822v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://harvard-ai-and-robotics-lab.github.io/VISTA"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/Harvard-AI-and-Robotics-Lab/VISTA"
+        },
+        {
+          "label": "Data",
+          "url": "https://huggingface.co/datasets/harvardairobotics/VISTA"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "access": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "accessNote": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "observations": [
+          "https://huggingface.co/datasets/harvardairobotics/VISTA"
+        ],
+        "recordedStreams": [
+          "https://huggingface.co/datasets/harvardairobotics/VISTA"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "derivedSignals": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "annotationEvidence": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "scaleType": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "limitations": [
+          "https://huggingface.co/datasets/harvardairobotics/VISTA"
+        ],
+        "contactType": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "name": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.22822v1"
+        ],
+        "syntheticSignals": [
+          "https://huggingface.co/datasets/harvardairobotics/VISTA"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/harvardairobotics/VISTA"
+        ]
+      },
+      "syntheticSignals": [
+        "Audio"
+      ],
+      "cameraSetup": "Project Aria RGB, left/right SLAM-camera and eye-camera videos; MPS-derived gaze and hand outputs are separate."
     }
   }
 }
