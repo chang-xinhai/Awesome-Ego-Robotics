@@ -401,29 +401,34 @@
       "commercial": false,
       "evidence": [
         {
-          "label": "Official source",
-          "url": "https://arxiv.org/abs/2606.26093"
+          "label": "Actual EMG2Force implementation",
+          "url": "https://github.com/Bottle101/ForceBand/blob/main/emg2force/model.py"
         },
         {
-          "label": "Software license",
-          "url": "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+          "label": "Actual model checkpoint",
+          "url": "https://github.com/Bottle101/ForceBand/tree/main/checkpoints"
         },
         {
-          "hardware": "Build/BOM information; licensed hardware design files not established",
-          "software": "Apache-2.0 in the official repository",
-          "data": "See dataset release separately"
+          "label": "Actual public dataset",
+          "url": "https://huggingface.co/datasets/boootaooo/forceband-emg2force/tree/main"
         },
         {
-          "label": "Verified source file (2026-10-19)",
-          "url": "https://github.com/Bottle101/ForceBand/blob/main/scripts/train.py"
+          "label": "Dataset format/license",
+          "url": "https://huggingface.co/datasets/boootaooo/forceband-emg2force"
+        },
+        {
+          "label": "Exact public segment and recording totals",
+          "url": "https://huggingface.co/datasets/boootaooo/forceband-emg2force/blob/main/summary.json"
         }
       ],
       "notes": [
-        "Apache-2.0 software is released. Project describes the band and build/BOM; explicit hardware CAD/license coverage was not verified. Task-time force is inferred from EMG/IMU."
+        "Fingertip force is predicted from the wrist band; measured reference force belongs to training data. Validation is teacher-forced with previous force; deployment requires calibration, and reported sensor units convert approximately by division by 18."
       ],
       "availability": "Research system",
-      "softwareStatus": "Public source files verified (ForceBand: Apache-2.0). Model/data and third-party terms remain separate.",
-      "verified": "2026-10-19"
+      "softwareStatus": "Actual EMG2Force training, inference, calibration and evaluation source verified; Apache-2.0. Hardware CAD/license coverage remains unverified.",
+      "verified": "2026-10-26",
+      "modelStatus": "Actual DINOv2 EMG2Force checkpoint verified via Git LFS delivery: 116,115,839 bytes, HEAD 200; Apache-2.0 release. DINOv3 comparison does not imply released DINOv3 weights.",
+      "dataStatus": "Actual public 53-recording dataset: reported 8.6 hours cleaned EMG/IMU/force, 6.4 hours with RGB; 76 actual segment HDF5 files verified (53 recording-level sources reported) in 8,244,332,053-byte tree. Apache-2.0 card; seven held-out Git LFS validation sessions and demo calibration/validation splits also exist."
     },
     "osmo": {
       "status": "partial",
@@ -5230,35 +5235,23 @@
     "horizonstream": {
       "status": "partial",
       "commercial": false,
-      "softwareStatus": "HF checkpoint declares Apache-2.0; official source tree has no root license verified",
+      "softwareStatus": "Actual inference/evaluation source; root LICENSE is CC BY-NC-SA 4.0. Training code is withheld. This differs from the Apache-2.0 model-Hub card.",
       "availability": "Research method / tool",
       "evidence": [
         {
-          "label": "Implementation license / release status",
-          "url": "https://github.com/3DAgentWorld/HorizonStream"
+          "label": "Actual source LICENSE",
+          "url": "https://github.com/3DAgentWorld/HorizonStream/blob/main/LICENSE"
         },
         {
-          "label": "Official model license",
-          "url": "https://huggingface.co/NicolasCC/HorizonStream"
-        },
-        {
-          "label": "Optional loop module",
-          "url": "https://github.com/3DAgentWorld/HorizonStream#checkpoints"
-        },
-        {
-          "label": "Verified source file (2026-10-19)",
-          "url": "https://github.com/3DAgentWorld/HorizonStream/blob/main/infer.py"
-        },
-        {
-          "label": "Verified model file manifest",
+          "label": "Separate model terms/files",
           "url": "https://huggingface.co/NicolasCC/HorizonStream/tree/main"
         }
       ],
       "notes": [
-        "Software and pretrained weights are checked separately. HF checkpoint declares Apache-2.0; official source tree has no root license verified"
+        "Source license newly verified independently of model-weight terms. Causal base prediction and optional after-stream loop closure remain distinct."
       ],
-      "verified": "2026-10-19",
-      "modelStatus": "Model files verified; public file listing; apache-2.0."
+      "verified": "2026-10-26",
+      "modelStatus": "Actual public HorizonStream, optional loop and sky-mask files verified; official Hub card declares Apache-2.0. Source uses separate CC BY-NC-SA 4.0 terms."
     },
     "vggt-omega": {
       "status": "partial",
@@ -12768,28 +12761,30 @@
       "softwareStatus": "No implementation files in the official repository; paper/project and announcement assets only."
     },
     "4d-hof": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "availability": "Research method",
       "evidence": [
         {
-          "label": "Primary paper",
-          "url": "https://arxiv.org/abs/2610.08782"
+          "label": "Actual inference source",
+          "url": "https://github.com/TAMU-Visual-AI/4D-HOF/blob/main/eval_ho3d.py"
         },
         {
-          "label": "Official release status",
-          "url": "https://github.com/TAMU-Visual-AI/4D-HOF"
+          "label": "Checkpoint and initialization payloads",
+          "url": "https://huggingface.co/eggplant71/4D-HOF/tree/main"
         },
         {
-          "label": "Verified announcement-only tree (2026-10-19)",
-          "url": "https://github.com/TAMU-Visual-AI/4D-HOF/tree/main"
+          "label": "Package terms and scope",
+          "url": "https://huggingface.co/eggplant71/4D-HOF"
         }
       ],
       "notes": [
-        "Official repository explicitly says cleaning up for public release; no implementation or checkpoint release verified."
+        "Released HO3D inference and checkpoint supersede the prior announcement-only status. MANO and foundation-model initialization remain separate dependencies."
       ],
-      "verified": "2026-10-19",
-      "softwareStatus": "No implementation files in the official repository; paper/project and announcement assets only."
+      "verified": "2026-10-26",
+      "softwareStatus": "Actual HO3D-v3 inference/evaluation sources verified; no root software LICENSE. Complete training and all benchmark pipelines are not included.",
+      "modelStatus": "Actual checkpoints/4dhof.pth verified: 1,411,076,804 bytes, public HEAD 200; MIT Hub-card declaration applies to that package, not an absent source license.",
+      "dataStatus": "Actual HO3D-v3 initialization archive verified (260,583,886 bytes) with manifest/checksums. This is not the complete HO3D dataset; original dataset and MANO access/terms apply."
     },
     "handflow": {
       "status": "partial",
@@ -14993,7 +14988,7 @@
       "status": "partial",
       "commercial": false,
       "availability": "Research resource",
-      "verified": "2026-10-21",
+      "verified": "2026-10-26",
       "evidence": [
         {
           "label": "New principal report",
@@ -15022,12 +15017,16 @@
         {
           "label": "Actual model license file",
           "url": "https://huggingface.co/lambda-humanoid/lambda0-midtrain-100k/raw/main/LICENSE"
+        },
+        {
+          "label": "Actual human capture collector",
+          "url": "https://github.com/LambdaHumanoid/openlambda/blob/main/data_collection/human/src/collect.py"
         }
       ],
       "notes": [
         "The October 13 report and September 30 related paper belong to one λ₀ project entry; 500 hours is reported training data, not public download scope."
       ],
-      "softwareStatus": "OpenLambda alignment and Stage I/II model-training source/configs verified; Apache-2.0. Complete Stage III evaluation/deployment and recording converters remain unreleased.",
+      "softwareStatus": "Actual OpenLambda alignment, Stage I/II model-training and human GoPro/PICO collection/sync/resampling sources verified; Apache-2.0. Complete Stage III evaluation/deployment, robot recording alignment and conversion remain unreleased.",
       "modelStatus": "Actual lambda0-midtrain-100k model.safetensors verified; Apache-2.0; Stage II initialization, not a fully deployed Stage III policy.",
       "dataStatus": "Four alignment-example trajectories and release assets are available. HumanVerse-500 and pretraining datasets are not included; linked sample Hub returned HTTP 401."
     },
@@ -15462,26 +15461,30 @@
       "status": "partial",
       "commercial": false,
       "availability": "Research resource",
-      "verified": "2026-10-21",
+      "verified": "2026-10-26",
       "evidence": [
         {
-          "label": "Primary v1 paper",
-          "url": "https://arxiv.org/html/2610.18872v1"
+          "label": "Actual capture source",
+          "url": "https://github.com/InternRobotics/EgoExplorer/blob/main/capture/devices/vive_tracker.py"
         },
         {
-          "label": "Official project",
-          "url": "https://internrobotics.github.io/egoexplorer.github.io/"
+          "label": "Actual LeRobot conversion",
+          "url": "https://github.com/InternRobotics/EgoExplorer/blob/main/scripts/build_lerobot_dataset.py"
         },
         {
-          "label": "Official repository file tree",
-          "url": "https://github.com/InternRobotics/EgoExplorer/tree/main"
+          "label": "Official toolkit scope and limitations",
+          "url": "https://github.com/InternRobotics/EgoExplorer"
+        },
+        {
+          "label": "Current gated mini dataset listing",
+          "url": "https://huggingface.co/datasets/InternRobotics/EgoExplorer"
         }
       ],
-      "softwareStatus": "Toolkit repository contains README and media only; toolkit planned for early November 2026.",
+      "softwareStatus": "Actual capture, synchronization, C³ five-tracker reconstruction, glove/tactile processing, export, viewers and LeRobot conversion sources verified; no root software LICENSE. Hardware BOM and print settings remain pending.",
       "notes": [
-        "100 hours reported; official Hub lists a gated one-hour mini release, not a public 100-hour download."
+        "Sparse tracker position/orientation and glove/tactile streams are exported. Raw tracker IMU is not established by the released capture code. Missing synthetic-data generator and uncalibrated camera-to-head-tracker extrinsics limit reproduction."
       ],
-      "dataStatus": "One-hour mini release listed on official gated Hub; CC BY-NC 4.0; form/account approval required. 100-hour collection is reported, not fully released."
+      "dataStatus": "Official gated one-hour mini release remains listed; CC BY-NC 4.0. Reported 100-hour collection is not a full public download."
     },
     "steertuning": {
       "status": "unknown",
@@ -15783,6 +15786,575 @@
         "997 released clips are not 997 hours. Task-request WAVs are generated speech; gaze, hands and trajectories include MPS-derived outputs."
       ],
       "dataStatus": "997 actual disjoint CSV clip records and MP4/sensor files listed; CC BY 4.0. Generated task-request WAVs are not captured environmental audio."
+    },
+    "vit-h": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.32966v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://awfuact.github.io/vit-h/"
+        }
+      ],
+      "softwareStatus": "Official linked repository unavailable (HTTP 404); no public implementation verified.",
+      "notes": [
+        "Tracker-feedback post-training is distinct from visual-policy training; sub-400 ms is reported system latency."
+      ]
+    },
+    "cocarry": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.32460v1"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "220 sequences / about 61 minutes are reported human data; geometric retargeting validity is not closed-loop policy success."
+      ]
+    },
+    "egoforesight": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.31845v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://lin-shan.com/EgoForesight"
+        },
+        {
+          "label": "Official repository file tree",
+          "url": "https://github.com/LinShan-Bin/EgoForesight/tree/main"
+        },
+        {
+          "label": "Verified source file",
+          "url": "https://github.com/LinShan-Bin/EgoForesight/blob/main/deployment/model_server/r1pro_policy.py"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/LinShan-Bin/EgoForesight/blob/main/LICENSE"
+        },
+        {
+          "label": "Actual pretrain checkpoint manifest",
+          "url": "https://huggingface.co/LinShan/EgoForesight-pretrain/tree/main"
+        },
+        {
+          "label": "Actual RoboCasa GR1 checkpoint manifest",
+          "url": "https://huggingface.co/LinShan/EgoForesight-RobocasaGR1/tree/main"
+        },
+        {
+          "label": "Actual RoboTwin checkpoint manifest",
+          "url": "https://huggingface.co/LinShan/EgoForesight-RoboTwin/tree/main"
+        }
+      ],
+      "softwareStatus": "Model, post-training, data conversion, evaluation and R1Pro deployment sources verified; MIT. Private human recordings and pretraining pipelines are not included.",
+      "notes": [
+        "30,000 hours is reported pretraining scale. Clean future observations are privileged training supervision, not deployment inputs; 20.5% is open-loop MSE reduction."
+      ],
+      "modelStatus": "Three actual .pt model bundles verified: pretrain 15,682,402,324 bytes, RoboCasa GR1 13,111,570,587 bytes, RoboTwin 13,111,624,314 bytes. MIT project terms; DINOv3 and other backbone terms remain separate.",
+      "dataStatus": "Data preparation scripts are public; reported 30,000-hour human/robot pretraining corpus is not released by this project."
+    },
+    "stamp": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.30817v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://childtoy.github.io/STAMP-project"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Human motion supplies transition references; generated motion alone is not a general visual manipulation policy."
+      ]
+    },
+    "spatialdex": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.29716v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://spatial-dex.github.io/"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "About one million human clips are reported; geometry is predicted from RGB, not measured depth. Robot fine-tuning is required."
+      ]
+    },
+    "smr": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.29169v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://logosroboticsgroup.github.io/SMR/"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Human pose is retargeting input; expert execution trajectories are simulation supervision. No physical deployment verified."
+      ]
+    },
+    "real2sem2real": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.28880v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://real2sem2real.github.io/"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Object poses and metric depth are estimates. Over 2,000 generated episodes in about two hours is synthesis throughput; deployment uses a robot-trained VLA."
+      ]
+    },
+    "react-hhi": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.28523v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://yutoshibata07.github.io/REACT/"
+        },
+        {
+          "label": "Official repository file tree",
+          "url": "https://github.com/YutoShibata07/REACT-HHI/tree/main"
+        }
+      ],
+      "softwareStatus": "README/media only; implementation is forthcoming.",
+      "notes": [
+        "Human motion/contact supervision and deployed depth sensing are separate stages; inferred contact is not a measured tactile input."
+      ]
+    },
+    "frdv": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.28470v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://daroslab.github.io/frdv/"
+        }
+      ],
+      "softwareStatus": "Official linked repository unavailable (HTTP 404); no public implementation verified.",
+      "notes": [
+        "Up to 9,156 FPS measures retargeting throughput on selected hardware, not physical controller frequency."
+      ]
+    },
+    "hutact": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.27995v1"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Human pretraining has no measured tactile signals. Macro-F1 on grasp classification is not manipulation success."
+      ]
+    },
+    "egohand": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.30293v1"
+        },
+        {
+          "label": "Official repository file tree",
+          "url": "https://github.com/NVIDIA/IsaacCapture/tree/main"
+        },
+        {
+          "label": "Verified source file",
+          "url": "https://github.com/NVIDIA/IsaacCapture/blob/main/.github/scripts/docs_preview.py"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/NVIDIA/IsaacCapture/blob/main/LICENSE.md"
+        },
+        {
+          "label": "Actual checkpoint and OpenMDW card",
+          "url": "https://huggingface.co/nvidia/EgoHand-v1/tree/main"
+        },
+        {
+          "label": "Per-file EgoHand source license",
+          "url": "https://github.com/NVIDIA/IsaacCapture/blob/main/src/python/isaaccapture_egopost/egohand/models/egohand.py"
+        },
+        {
+          "label": "GEM-X training source",
+          "url": "https://github.com/NVlabs/GEM-X/blob/main/gem/pose/model.py"
+        }
+      ],
+      "softwareStatus": "Actual EgoHand inference source in IsaacCapture EgoPost uses OpenMDW-1.1 per-file notices. GEM-X training source has Apache-2.0 default plus OpenMDW/third-party exceptions; do not apply the root license to every component.",
+      "notes": [
+        "14 million training images are reported, not a released corpus. Camera-relative hands do not provide a world camera trajectory; SOMA assets have separate terms."
+      ],
+      "modelStatus": "Actual egohand_s060000.ckpt verified: 10,657,169,753 bytes, public HEAD 200; OpenMDW-1.1. SOMA model assets and third-party dependencies retain separate terms.",
+      "dataStatus": "The reported 14-million-image training mixture is not a public dataset release."
+    },
+    "dewhand": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.29936v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://narusuzuki.github.io/projects/26-dewhand/"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Metric geometry is learned from supervision, not measured depth; no robot policy deployment is established."
+      ]
+    },
+    "egoact": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.27946v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://ego-act.github.io/"
+        },
+        {
+          "label": "Official repository file tree",
+          "url": "https://github.com/mayuelala/EgoACT/tree/main"
+        },
+        {
+          "label": "Verified source file",
+          "url": "https://github.com/mayuelala/EgoACT/blob/main/diffsynth/benchmarks.py"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/mayuelala/EgoACT/blob/main/LICENSE.md"
+        }
+      ],
+      "softwareStatus": "Actual generation/inference sources verified; MIT. Pretrained video backbone weights have separate terms.",
+      "notes": [
+        "Generated videos are synthetic observations, not measured robot actions or evidence of closed-loop policy execution."
+      ],
+      "dataStatus": "EgoActionBench announced in paper; complete released benchmark payload not independently verified."
+    },
+    "gaze2hoi": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.27877v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://gaze2hoi.github.io/"
+        },
+        {
+          "label": "Official repository file tree",
+          "url": "https://github.com/gaze2hoi/Gaze2HOI/tree/main"
+        },
+        {
+          "label": "Verified source file",
+          "url": "https://github.com/gaze2hoi/Gaze2HOI/blob/main/src/gaze2hoi/__main__.py"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/gaze2hoi/Gaze2HOI/blob/main/LICENSE"
+        },
+        {
+          "label": "Actual model files and component terms",
+          "url": "https://huggingface.co/gaze2hoi/Gaze2HOI/blob/main/LICENSE.md"
+        },
+        {
+          "label": "Actual demo file tree",
+          "url": "https://huggingface.co/datasets/gaze2hoi/EgoAIM-Demo/tree/main"
+        }
+      ],
+      "softwareStatus": "Actual intention and full forecasting inference sources verified; MIT. Training, baseline reproduction and reconstructing prepared 3D inputs from arbitrary video are not included.",
+      "notes": [
+        "Full forecasting also requires prepared 3D state and scene inputs, not RGB/gaze alone. Contact fields are inferred, not tactile measurements; demo data is not the full EgoAIM release."
+      ],
+      "modelStatus": "Actual acg.pt (4,157,925 bytes), motion.pt (167,434,268 bytes) and intention LoRA adapter (176,762,280 bytes) verified. Authors’ learned parameters use MIT; fixed assets retain HOT3D CC BY-SA / CC BY-NC-SA and object-model restrictions. Qwen base and MANO have separate terms.",
+      "dataStatus": "EgoAIM-Demo actual sample files total 174,484,029 bytes in the current tree; demonstration examples only, not complete EgoAIM. Underlying source/data and model terms remain separate."
+    },
+    "lapt-scale": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.13732v1"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "23.3k hours is the reported source pool; 5.1k hours the annotated clean subset. The protocol also uses 250 hours of robot alignment data."
+      ]
+    },
+    "exmr": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.26213v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://twehrbein.github.io/exmr-website/"
+        },
+        {
+          "label": "Official repository file tree",
+          "url": "https://github.com/twehrbein/ExMR/tree/main"
+        },
+        {
+          "label": "Verified source file",
+          "url": "https://github.com/twehrbein/ExMR/blob/main/exmr/assets.py"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/twehrbein/ExMR/blob/main/LICENSE"
+        },
+        {
+          "label": "Actual model file manifest",
+          "url": "https://huggingface.co/twehrbein/ExMR/tree/main"
+        }
+      ],
+      "softwareStatus": "Actual demo reconstruction sources verified. GVHMR-derived license permits educational, research and nonprofit use; commercial use requires separate permission. Training/evaluation code not yet released.",
+      "notes": [
+        "Exocentric motion-recovery reference adjacent to wearable capture; not a paired ego-robot dataset or robot controller."
+      ],
+      "modelStatus": "Actual exmr.safetensors verified (235,766,520 bytes); model card uses separate other terms. Gated SAM 3D Body, SMPL-family assets and other dependencies require their own access/terms."
+    },
+    "orin-depth-benchmark": {
+      "status": "open",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.27199v1"
+        },
+        {
+          "label": "Official repository file tree",
+          "url": "https://github.com/nodarhub/orin-depth-benchmark/tree/main"
+        },
+        {
+          "label": "Verified source file",
+          "url": "https://github.com/nodarhub/orin-depth-benchmark/blob/main/common/export_attention.py"
+        },
+        {
+          "label": "Repository license",
+          "url": "https://github.com/nodarhub/orin-depth-benchmark/blob/main/LICENSE"
+        }
+      ],
+      "softwareStatus": "Actual benchmark/evaluation and export sources verified; MIT. Each evaluated model/checkpoint retains its own terms.",
+      "notes": [
+        "Non-occluded disparities below 256 pixels; per-scene oracle scale alignment for selected monocular models is not deployable metric scale."
+      ]
+    },
+    "str": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/pdf/2610.30540v1"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Contact anchoring uses an approximate object-wrench model; optimized/simulated force is not a measured tactile input."
+      ]
+    },
+    "pihand": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.31299v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://virtualhumans.mpi-inf.mpg.de/PiHand/"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Simulated anatomical hands rather than real hardware deployment; processed data and checkpoints are promised."
+      ]
+    },
+    "embodyhoi": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.27242v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://embodyhoi.github.io/"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Generated references are synthetic. Reported 68→79% and 62→76% are simulation task success; no physical deployment established."
+      ]
+    },
+    "t-wla": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.28814v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://anonymous-submission-20.github.io/T-WLA.github.io/"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Future image/pressure prediction is training-only. Human hand-motion MPJPE and roughly 50% robot task success measure different evaluations."
+      ]
+    },
+    "stream4d": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.31320v1"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Capture-processing reference, not a complete loop-closing SLAM backend or robot policy. Predicted geometry is not a measured depth input."
+      ]
+    },
+    "situhoi": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.23980v1"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "About 86 hours is reported, not verified public download. This is an exocentric reference; trajectories are estimated and full data release is promised upon acceptance."
+      ],
+      "dataStatus": "Reported 18,429 clips / about 86 hours; no complete release verified."
+    },
+    "touch-jepa": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.28519v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://touch-jepa.github.io"
+        }
+      ],
+      "softwareStatus": "Official repository is an empty placeholder; no runnable source, weights or dataset release verified.",
+      "notes": [
+        "Video-only pretraining still uses human tactile labels for readout fitting. Joint training adds measured tactile supervision; inferred touch is not a sensor stream."
+      ]
     }
   }
 }

@@ -1427,7 +1427,7 @@
       "labels": "Hand/body tracking, camera pose and language; annotation fields vary by source.",
       "bodyCoverage": "Bimanual",
       "annotationEvidence": "Source-specific tracking pipelines normalized into EgoDB.",
-      "limitations": "Do not combine paper scale with changing browser totals or count older reprocessed hashes twice. Current official site lists 4,003 hours; keep this living release snapshot separate from the 1,362-hour paper snapshot.",
+      "limitations": "Do not combine paper scale with changing browser totals or count older reprocessed hashes twice. Current official site lists 4,003 hours; keep this living release snapshot separate from the 1,362-hour paper snapshot. Current public toolkit corrects both Aria wrist rotations and requires per-episode intrinsics; stale cached episodes can fail validation.",
       "sources": [
         {
           "label": "Official project / release",
@@ -1448,10 +1448,14 @@
         {
           "label": "Current release snapshot",
           "url": "https://egoverse.ai/"
+        },
+        {
+          "label": "Current schema and reprocessing guidance",
+          "url": "https://github.com/GaTech-RL2/EgoVerse"
         }
       ],
       "name": "EgoVerse",
-      "verified": "2026-10-19",
+      "verified": "2026-10-26",
       "accessNote": "Use the official dataset browser and download instructions; verify source-specific terms.",
       "recordedSignals": [
         "Vision"
@@ -1461,7 +1465,7 @@
       "dataRole": "egocentric",
       "scaleType": "hours",
       "cameraSetup": "Heterogeneous contributor capture systems; modality layout is episode/source specific.",
-      "coordinateFrame": "EgoDB normalized episode schema; verify frame definitions and tracking per source.",
+      "coordinateFrame": "Current EgoDB schema normalizes both Aria wrist rotations to Eva canonical camera convention; episode-specific intrinsics are required.",
       "calibration": "Camera intrinsics mandatory in current Zarr schema; source-specific extrinsics.",
       "derivedSignals": [
         "Hand/head tracking",
@@ -1475,9 +1479,9 @@
       ],
       "splits": "Shared lab/task evaluation protocols; active episode hashes can change after reprocessing.",
       "dataLicense": "Source-specific access and license terms",
-      "releaseScope": "Living EgoDB browser; current downloadable aggregate not independently counted.",
+      "releaseScope": "Existing release; current reprocessed Aria episodes add mandatory zarr.json camera intrinsics and corrected bimanual rotations. Re-download obsolete cached episodes; do not count reprocessed hashes as new data.",
       "contactType": "none",
-      "reviewed": "2026-10-16",
+      "reviewed": "2026-10-26",
       "recordedStreams": "Egocentric recordings from heterogeneous capture systems and operators.",
       "fieldSources": {
         "reportedScale": [
@@ -1493,10 +1497,7 @@
           "https://egoverse-research-workbench.vercel.app/"
         ],
         "coordinateFrame": [
-          "https://egoverse.ai/",
-          "https://arxiv.org/abs/2604.07607",
-          "https://github.com/GaTech-RL2/EgoVerse",
-          "https://egoverse-research-workbench.vercel.app/"
+          "https://github.com/GaTech-RL2/EgoVerse"
         ],
         "calibration": [
           "https://egoverse.ai/",
@@ -1529,16 +1530,10 @@
           "https://egoverse-research-workbench.vercel.app/"
         ],
         "releaseScope": [
-          "https://egoverse.ai/",
-          "https://arxiv.org/abs/2604.07607",
-          "https://github.com/GaTech-RL2/EgoVerse",
-          "https://egoverse-research-workbench.vercel.app/"
+          "https://github.com/GaTech-RL2/EgoVerse"
         ],
         "limitations": [
-          "https://egoverse.ai/",
-          "https://arxiv.org/abs/2604.07607",
-          "https://github.com/GaTech-RL2/EgoVerse",
-          "https://egoverse-research-workbench.vercel.app/"
+          "https://github.com/GaTech-RL2/EgoVerse"
         ],
         "contactType": [
           "https://egoverse.ai/",
@@ -13195,27 +13190,27 @@
         "scope": "Official one-hour mini release; gated listing, download needs approval"
       },
       "access": "Access conditions",
-      "accessNote": "One-hour mini release listed on official gated Hub; CC BY-NC 4.0; form/account approval required. 100-hour collection is reported, not fully released.",
+      "accessNote": "Official gated one-hour mini release remains listed; CC BY-NC 4.0. Reported 100-hour collection is not a full public download.",
       "formats": [
         "LeRobot",
         "Parquet",
         "MP4",
         "JSON"
       ],
-      "observations": "Egocentric RGB, sparse wearable motion sensing and measured tactile observations.",
-      "recordedStreams": "Synchronized wearable video, sparse motion sensors and tactile sensing.",
+      "observations": "Head-coupled RGB, five sparse 6DoF tracker poses, glove articulation and measured tactile streams.",
+      "recordedStreams": "RGB plus tracker positions/orientations and finger/tactile observations; no raw tracker IMU stream established in released capture code.",
       "recordedSignals": [
         "Vision",
-        "IMU",
+        "State",
         "Tactile"
       ],
-      "labels": "Reconstructed SMPL-X body/finger motion and step-level language; unobserved joints are inferred.",
+      "labels": "C³ reconstructed SMPL-X whole-body/finger motion, pooled tactile contact and language; most body joints are inferred.",
       "derivedSignals": [
         "SMPL-X body/finger motion",
         "Camera/world alignment",
         "Contact estimates"
       ],
-      "annotationEvidence": "Sparse measurements plus Calibrate-Complete-Constrain temporal inference.",
+      "annotationEvidence": "Inside-out tracker poses plus glove articulation; calibrated five-anchor body completion and constrained refinement.",
       "annotationType": "mixed",
       "dataRole": "egocentric",
       "scaleType": "hours",
@@ -13223,11 +13218,11 @@
       "dataLicense": "CC BY-NC 4.0; gated access and separate toolkit terms.",
       "datasetUrl": "https://huggingface.co/datasets/InternRobotics/EgoExplorer",
       "releaseScope": "One-hour mini release; 100-hour full collection not publicly verified.",
-      "limitations": "100 hours reported; official Hub lists a gated one-hour mini release, not a public 100-hour download.",
+      "limitations": "Sparse tracker position/orientation and glove/tactile streams are exported. Raw tracker IMU is not established by the released capture code. Missing synthetic-data generator and uncalibrated camera-to-head-tracker extrinsics limit reproduction.",
       "contactType": "measured",
       "name": "EgoExplorer",
-      "verified": "2026-10-21",
-      "reviewed": "2026-10-21",
+      "verified": "2026-10-26",
+      "reviewed": "2026-10-26",
       "bodyCoverage": "Whole body",
       "sources": [
         {
@@ -13239,12 +13234,20 @@
           "url": "https://internrobotics.github.io/egoexplorer.github.io/"
         },
         {
-          "label": "Toolkit (forthcoming)",
-          "url": "https://github.com/InternRobotics/EgoExplorer"
-        },
-        {
           "label": "Data (gated mini release)",
           "url": "https://huggingface.co/datasets/InternRobotics/EgoExplorer"
+        },
+        {
+          "label": "Actual capture source",
+          "url": "https://github.com/InternRobotics/EgoExplorer/blob/main/capture/devices/vive_tracker.py"
+        },
+        {
+          "label": "Actual LeRobot conversion",
+          "url": "https://github.com/InternRobotics/EgoExplorer/blob/main/scripts/build_lerobot_dataset.py"
+        },
+        {
+          "label": "Official toolkit scope and limitations",
+          "url": "https://github.com/InternRobotics/EgoExplorer"
         }
       ],
       "fieldSources": {
@@ -13258,28 +13261,40 @@
           "https://arxiv.org/html/2610.18872v1"
         ],
         "accessNote": [
-          "https://arxiv.org/html/2610.18872v1"
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/capture/devices/vive_tracker.py",
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/scripts/build_lerobot_dataset.py",
+          "https://github.com/InternRobotics/EgoExplorer"
         ],
         "formats": [
           "https://arxiv.org/html/2610.18872v1"
         ],
         "observations": [
-          "https://arxiv.org/html/2610.18872v1"
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/capture/devices/vive_tracker.py",
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/scripts/build_lerobot_dataset.py",
+          "https://github.com/InternRobotics/EgoExplorer"
         ],
         "recordedStreams": [
-          "https://arxiv.org/html/2610.18872v1"
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/capture/devices/vive_tracker.py",
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/scripts/build_lerobot_dataset.py",
+          "https://github.com/InternRobotics/EgoExplorer"
         ],
         "recordedSignals": [
-          "https://arxiv.org/html/2610.18872v1"
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/capture/devices/vive_tracker.py",
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/scripts/build_lerobot_dataset.py",
+          "https://github.com/InternRobotics/EgoExplorer"
         ],
         "labels": [
-          "https://arxiv.org/html/2610.18872v1"
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/capture/devices/vive_tracker.py",
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/scripts/build_lerobot_dataset.py",
+          "https://github.com/InternRobotics/EgoExplorer"
         ],
         "derivedSignals": [
           "https://arxiv.org/html/2610.18872v1"
         ],
         "annotationEvidence": [
-          "https://arxiv.org/html/2610.18872v1"
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/capture/devices/vive_tracker.py",
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/scripts/build_lerobot_dataset.py",
+          "https://github.com/InternRobotics/EgoExplorer"
         ],
         "annotationType": [
           "https://arxiv.org/html/2610.18872v1"
@@ -13303,7 +13318,9 @@
           "https://arxiv.org/html/2610.18872v1"
         ],
         "limitations": [
-          "https://arxiv.org/html/2610.18872v1"
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/capture/devices/vive_tracker.py",
+          "https://github.com/InternRobotics/EgoExplorer/blob/main/scripts/build_lerobot_dataset.py",
+          "https://github.com/InternRobotics/EgoExplorer"
         ],
         "contactType": [
           "https://arxiv.org/html/2610.18872v1"
@@ -13568,6 +13585,116 @@
         "Audio"
       ],
       "cameraSetup": "Project Aria RGB, left/right SLAM-camera and eye-camera videos; MPS-derived gaze and hand outputs are separate."
+    },
+    "situhoi": {
+      "name": "SituHOI",
+      "reportedScale": {
+        "hours": 86,
+        "clips": 18429,
+        "scenes": 16,
+        "scope": "Quality-screened reported dataset"
+      },
+      "publicScale": {
+        "scope": "Complete dataset download not verified; release promised upon acceptance"
+      },
+      "access": "Not verified",
+      "accessNote": "Paper promises full data upon acceptance; no actual complete payload verified.",
+      "formats": [],
+      "observations": "One moving exocentric RGB-D camera plus static scene scans.",
+      "recordedStreams": "Measured RGB and depth; scene scans as registration reference.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "labels": "Estimated human/object trajectories and language in a common floor-aligned frame.",
+      "derivedSignals": [
+        "Human mesh motion",
+        "Object poses",
+        "Scene registration"
+      ],
+      "annotationEvidence": "Depth-aligned camera localization and temporally refined reconstruction; not direct all-joint mocap.",
+      "annotationType": "mixed",
+      "dataRole": "reference",
+      "scaleType": "hours",
+      "coordinateFrame": "Shared floor-aligned scene frame",
+      "dataLicense": "Not verified",
+      "releaseScope": "Reported 18,429 clips / about 86 hours; no complete release verified.",
+      "limitations": "About 86 hours is reported, not verified public download. This is an exocentric reference; trajectories are estimated and full data release is promised upon acceptance.",
+      "contactType": "unknown",
+      "bodyCoverage": "Whole body",
+      "verified": "2026-10-26",
+      "reviewed": "2026-10-26",
+      "sources": [
+        {
+          "label": "Primary dataset and release statement",
+          "url": "https://arxiv.org/html/2610.23980v1"
+        }
+      ],
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "access": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "accessNote": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "derivedSignals": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "annotationEvidence": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "scaleType": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "contactType": [
+          "https://arxiv.org/html/2610.23980v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.23980v1"
+        ]
+      }
     }
   }
 }

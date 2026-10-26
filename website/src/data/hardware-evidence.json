@@ -1452,15 +1452,15 @@
           "url": "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-26",
       "interfaceForms": [
         "Wristband"
       ],
       "captureComponents": "Muscle-aware wrist sEMG band + IMU; egocentric video; fingertip force sensors only for pretraining/calibration",
       "measuredSignals": "8-channel sEMG and 10-dimensional IMU representation; model streams at 250 Hz",
       "outputs": "EMG2Force per-finger contact/force estimates; force-enriched robot demonstrations",
-      "configuration": "Target-task demonstrations remove fingertip force sensors; predicted force is not directly measured task-time force",
-      "softwareRelease": "Authors release code; repository license linked",
+      "configuration": "Task-time force is predicted from EMG/IMU after setup calibration; validation results use previous-force teacher forcing, not sensor-free closed-loop force measurement.",
+      "softwareRelease": "Actual EMG2Force training, inference and calibration sources plus DINOv2 checkpoint verified; Apache-2.0.",
       "hardwareRelease": "Paper describes reproducible commodity-component design; full fabrication package licensing unknown",
       "fieldSources": {
         "captureComponents": [
@@ -1476,12 +1476,10 @@
           "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
         ],
         "configuration": [
-          "https://arxiv.org/abs/2606.26093",
-          "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+          "https://github.com/Bottle101/ForceBand"
         ],
         "softwareRelease": [
-          "https://arxiv.org/abs/2606.26093",
-          "https://github.com/Bottle101/ForceBand/blob/main/LICENSE"
+          "https://github.com/Bottle101/ForceBand"
         ],
         "hardwareRelease": [
           "https://arxiv.org/abs/2606.26093",

@@ -540,7 +540,7 @@ function datasetReleaseFacts(w:Work):[string,string][] {
 }
 function facts(w: Work): [string, string][] {
   const rows: [string,string][] = [["Date", w.date], ["Institution", w.institute], ["Publication", w.publication]];
-  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Reported scope",text(record(w.research?.dataset?.reportedScale).scope)],["Public release",scaleText(record(w.research?.dataset?.publicScale))],["Public release scope",text(record(w.research?.dataset?.publicScale).scope)]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...perceptionFacts(w),...trackingFacts(w),...methodEvaluationFacts(w),...methodReleaseFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w),...perceptionFacts(w),...trackingFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w)])];
+  return [...rows, ...(collection === "datasets" ? [...datasetFacts(w),...datasetAnnotationFacts(w),...datasetReleaseFacts(w),["Reported scale",scaleText(record(w.research?.dataset?.reportedScale))],["Reported scope",text(record(w.research?.dataset?.reportedScale).scope)],["Public release",scaleText(record(w.research?.dataset?.publicScale))],["Public release scope",text(record(w.research?.dataset?.publicScale).scope)]] as [string,string][] : collection === "methods" ? [...methodFacts(w),...perceptionFacts(w),...trackingFacts(w),...methodEvaluationFacts(w),...methodReleaseFacts(w)] : collection === "research" ? [["Resource", w.collections.join(" · ")] as [string,string], ...methodFacts(w),...perceptionFacts(w),...trackingFacts(w)] : [...hardwareFacts(w),...hardwareDataFacts(w),...methodReleaseFacts(w)])];
 }
 const scaleText = formatScale;
 const factsHtml = (rows: [string, string][]) =>
@@ -590,7 +590,7 @@ function showDetail(id: string) {
     ...(Array.isArray(d.scopeNotes) ? d.scopeNotes : []),
     ...(Array.isArray(w.release?.notes) ? w.release.notes : [])].filter(Boolean);
   const section=(title:string,rows:[string,string][],note="")=>`<section class="detail-section"><h3>${e(title)}</h3>${factsHtml(rows)}${note?`<p class="detail-scope-note">${e(note)}</p>`:""}</section>`;
-  const hardwareSection=w.research?.hardware?section("Hardware & sensing",hardwareFacts(w))+section("Capture & data",hardwareDataFacts(w)):"";
+  const hardwareSection=w.research?.hardware?section("Hardware & sensing",hardwareFacts(w))+section("Capture & data",hardwareDataFacts(w))+(w.release?section("Release",methodReleaseFacts(w)):""):"";
   const tracking=trackingFacts(w),perception=perceptionFacts(w);
   const methodSection=w.research?.method?section("Method at a glance",methodFacts(w))+(perception.length?section("Depth & camera setup",perception):"")+(tracking.length?section(["calibration","evaluation"].includes(String(slamFor(w).family))?"Tool setup":"Tracking & mapping",tracking):"")+section(tracking.length||perception.length?"Evaluation & implementation":"Evaluation & deployment",methodEvaluationFacts(w))+(w.release?section("Release",methodReleaseFacts(w)):""):"";
   const publicScale=scaleText(record(d.publicScale)),reportedScale=scaleText(record(d.reportedScale));

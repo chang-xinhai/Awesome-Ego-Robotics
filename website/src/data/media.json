@@ -11989,13 +11989,13 @@
     "summary": "Aligns wearable video, reconstructed whole-body/finger motion and measured touch in natural loco-manipulation.",
     "signals": [
       "Vision",
-      "IMU",
+      "State",
       "Tactile"
     ],
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
-    "reviewed": "2026-10-21",
+    "reviewed": "2026-10-26",
     "image": "images/catalog/egoexplorer-dataset.webp",
     "imagePage": "https://arxiv.org/html/2610.18872v1",
     "imageSource": "https://arxiv.org/html/2610.18872v1/teaser-fig.png",
@@ -12247,5 +12247,413 @@
     "imageSource": "https://arxiv.org/html/2610.22822v1/figs/samplevideos_figure_r.png",
     "imageAlt": "VISTA: original paper dataset examples and overview",
     "credit": "Harvard University / original authors"
+  },
+  {
+    "id": "vit-h",
+    "name": "ViT-H",
+    "summary": "Generates humanoid motion references directly from human video and refines them with tracking feedback.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/vit-h-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.32966v1",
+    "imageSource": "https://arxiv.org/html/2610.32966v1/fig_teaser_v9.png",
+    "imageAlt": "ViT-H: original paper method or experimental overview",
+    "credit": "Peking University / original authors"
+  },
+  {
+    "id": "cocarry",
+    "name": "CoCarry",
+    "summary": "Transfers coordinated two-human carrying motions using shared object, grasp and support constraints.",
+    "signals": [
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/cocarry-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.32460v1",
+    "imageSource": "https://arxiv.org/html/2610.32460v1/cocarry_overview.png",
+    "imageAlt": "CoCarry: original paper method or experimental overview",
+    "credit": "Tongji University / original authors"
+  },
+  {
+    "id": "egoforesight",
+    "name": "EgoForesight",
+    "summary": "Scales policy learning from noisy egocentric action labels using reliability weighting and future-outcome distillation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/egoforesight-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.31845v1",
+    "imageSource": "https://arxiv.org/html/2610.31845v1/pipeline_page1.png",
+    "imageAlt": "EgoForesight: original paper method or experimental overview",
+    "credit": "Tsinghua University / original authors"
+  },
+  {
+    "id": "stamp",
+    "name": "STAMP",
+    "summary": "Builds human-motion bridges to connect distinct robot skills with boundary-aligned transitions.",
+    "signals": [
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/stamp-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.30817v1",
+    "imageSource": "https://arxiv.org/html/2610.30817v1/figure_overview_v9.png",
+    "imageAlt": "STAMP: original paper method or experimental overview",
+    "credit": "Korea University / original authors"
+  },
+  {
+    "id": "spatialdex",
+    "name": "SpatialDex",
+    "summary": "Learns spatial dexterous action priors from reconstructed human-video geometry before robot adaptation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/spatialdex-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.29716v1",
+    "imageSource": "https://arxiv.org/html/2610.29716v1/teaser_v27.png",
+    "imageAlt": "SpatialDex: original paper method or experimental overview",
+    "credit": "Cornell University / original authors"
+  },
+  {
+    "id": "smr",
+    "name": "SMR",
+    "summary": "Learns strictly causal motion retargeting from semantic-conditioned physics experts.",
+    "signals": [
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/smr-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.29169v1",
+    "imageSource": "https://arxiv.org/html/2610.29169v1/qualitative-comparison.png",
+    "imageAlt": "SMR: original paper method or experimental overview",
+    "credit": "Fudan University / original authors"
+  },
+  {
+    "id": "real2sem2real",
+    "name": "Real2Sem2Real",
+    "summary": "Turns a single human RGB demonstration into semantically varied robot demonstrations using reconstructed object motion.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/real2sem2real-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.28880v1",
+    "imageSource": "https://arxiv.org/html/2610.28880v1/teaser.png",
+    "imageAlt": "Real2Sem2Real: original paper method or experimental overview",
+    "credit": "Stanford University / original authors"
+  },
+  {
+    "id": "react-hhi",
+    "name": "REACT",
+    "summary": "Transfers contact-aware human interaction demonstrations to humanoid policies using rendered egocentric depth.",
+    "signals": [
+      "State",
+      "Depth"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/react-hhi-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.28523v1",
+    "imageSource": "https://arxiv.org/html/2610.28523v1/images/CoRL2026-teaser-v3.jpg",
+    "imageAlt": "REACT: original paper method or experimental overview",
+    "credit": "Carnegie Mellon University / original authors"
+  },
+  {
+    "id": "frdv",
+    "name": "FRDV",
+    "summary": "Combines rapid kinematic retargeting with optional dynamics validation for scalable humanoid references.",
+    "signals": [
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/frdv-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.28470v1",
+    "imageSource": "https://arxiv.org/html/2610.28470v1/multi_robot_test.png",
+    "imageAlt": "FRDV: original paper method or experimental overview",
+    "credit": "University of Massachusetts Amherst / original authors"
+  },
+  {
+    "id": "hutact",
+    "name": "HuTact",
+    "summary": "Transfers interaction structure from human hand-object motion to robotic tactile representations.",
+    "signals": [
+      "State",
+      "Tactile"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/hutact-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.27995v1",
+    "imageSource": "https://arxiv.org/html/2610.27995v1/figures/framework.png",
+    "imageAlt": "HuTact: original paper method or experimental overview",
+    "credit": "Electronics and Telecommunications Research Institute / original authors"
+  },
+  {
+    "id": "egohand",
+    "name": "EgoHand",
+    "summary": "Reconstructs SOMA-Hand geometry from monocular egocentric hand crops with camera-aware features.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/egohand-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.30293v1",
+    "imageSource": "https://arxiv.org/html/2610.30293v1/egohand_teaser_mesh_skeleton.png",
+    "imageAlt": "EgoHand: original paper method or experimental overview",
+    "credit": "NVIDIA / original authors"
+  },
+  {
+    "id": "dewhand",
+    "name": "DewHand",
+    "summary": "Jointly estimates global hand motion and camera geometry with generative trajectory refinement.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/dewhand-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.29936v1",
+    "imageSource": "https://arxiv.org/html/2610.29936v1/overview.png",
+    "imageAlt": "DewHand: original paper method or experimental overview",
+    "credit": "The University of Tokyo / original authors"
+  },
+  {
+    "id": "egoact",
+    "name": "EgoACT",
+    "summary": "Transfers an egocentric action to new visual contexts by calibrating diffusion velocity correspondences.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/egoact-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.27946v1",
+    "imageSource": "https://arxiv.org/html/2610.27946v1/teaser.png",
+    "imageAlt": "EgoACT: original paper method or experimental overview",
+    "credit": "The Hong Kong University of Science and Technology / original authors"
+  },
+  {
+    "id": "gaze2hoi",
+    "name": "Gaze2HOI",
+    "summary": "Uses gaze-conditioned intent and contact/support fields to forecast hand-object interactions.",
+    "signals": [
+      "Vision",
+      "Gaze"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/gaze2hoi-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.27877v1",
+    "imageSource": "https://arxiv.org/html/2610.27877v1/Figure_1.png",
+    "imageAlt": "Gaze2HOI: original paper method or experimental overview",
+    "credit": "Beijing University of Posts and Telecommunications / original authors"
+  },
+  {
+    "id": "lapt-scale",
+    "name": "LAPT-Scale",
+    "summary": "Scales continuous latent-action pretraining on human egocentric video before robot embodiment alignment.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/lapt-scale-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.13732v1",
+    "imageSource": "https://arxiv.org/html/2610.13732v1/pipeline_overview.png",
+    "imageAlt": "LAPT-Scale: original paper method or experimental overview",
+    "credit": "Joy Future Academy, JD / original authors"
+  },
+  {
+    "id": "exmr",
+    "name": "ExMR",
+    "summary": "Refines hand and foot articulation in monocular full-body motion recovery.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/exmr-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.26213v1",
+    "imageSource": "https://arxiv.org/html/2610.26213v1/wehrbein-fig1.png",
+    "imageAlt": "ExMR: original paper method or experimental overview",
+    "credit": "Leibniz University Hannover / original authors"
+  },
+  {
+    "id": "orin-depth-benchmark",
+    "name": "Orin Depth Benchmark",
+    "summary": "General embedded depth-estimator selection reference for capture processing; no direct Ego/UMI deployment established.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/orin-depth-benchmark-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.27199v1",
+    "imageSource": "https://arxiv.org/html/2610.27199v1/edge_pointclouds.png",
+    "imageAlt": "Orin Depth Benchmark: original paper method or experimental overview",
+    "credit": "NODAR Inc. / original authors"
+  },
+  {
+    "id": "str",
+    "name": "STR",
+    "summary": "Allocates retargeting computation to interaction-critical body parts and keyframes using spatiotemporal preferences.",
+    "signals": [
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": "pihand",
+    "name": "PiHand",
+    "summary": "Distills human mocap interaction experts into a shared hand-object prior for bounded latent exploration.",
+    "signals": [
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/pihand-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.31299v1",
+    "imageSource": "https://arxiv.org/html/2610.31299v1/teaser_600dpi.png",
+    "imageAlt": "PiHand: original paper method or experimental overview",
+    "credit": "University of Tübingen / original authors"
+  },
+  {
+    "id": "embodyhoi",
+    "name": "EmbodyHOI",
+    "summary": "Guides a human HOI generator with embodiment-specific differentiable inverse kinematics during sampling.",
+    "signals": [
+      "State"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/embodyhoi-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.27242v1",
+    "imageSource": "https://arxiv.org/html/2610.27242v1/pipeline_icra_final.png",
+    "imageAlt": "EmbodyHOI: original paper method or experimental overview",
+    "credit": "Carnegie Mellon University / original authors"
+  },
+  {
+    "id": "t-wla",
+    "name": "T-WLA",
+    "summary": "Caches visual memory to guide fast tactile residual corrections between slower visual policy updates.",
+    "signals": [
+      "Vision",
+      "Tactile"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/t-wla-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.28814v1",
+    "imageSource": "https://arxiv.org/html/2610.28814v1/fig1.png",
+    "imageAlt": "T-WLA: original paper method or experimental overview",
+    "credit": "Massachusetts Institute of Technology / original authors"
+  },
+  {
+    "id": "stream4d",
+    "name": "Stream4D",
+    "summary": "Decouples dynamic motion from streaming geometry using causal KV-cache attention without retraining.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/stream4d-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.31320v1",
+    "imageSource": "https://arxiv.org/html/2610.31320v1/teaser-png.png",
+    "imageAlt": "Stream4D: original paper method or experimental overview",
+    "credit": "Northwestern Polytechnical University / original authors"
+  },
+  {
+    "id": "situhoi",
+    "name": "SituHOI",
+    "summary": "Captures full-body human-object interactions with moving RGB-D video registered to static scene scans.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/situhoi-dataset.webp",
+    "imagePage": "https://arxiv.org/html/2610.23980v1",
+    "imageSource": "https://arxiv.org/html/2610.23980v1/pipeline.png",
+    "imageAlt": "SituHOI: original paper dataset examples and overview",
+    "credit": "The University of Hong Kong / original authors"
+  },
+  {
+    "id": "touch-jepa",
+    "name": "Touch-JEPA",
+    "summary": "Learns contact-sensitive hand-surface representations through geometry-guided masked visual prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/touch-jepa-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.28519v1",
+    "imageSource": "https://arxiv.org/html/2610.28519v1/TouchJEPA-Teaser-v4.png",
+    "imageAlt": "Touch-JEPA: original paper method or experimental overview",
+    "credit": "University of Minnesota / original authors"
   }
 ]
