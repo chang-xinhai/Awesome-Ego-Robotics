@@ -16430,12 +16430,21 @@
         {
           "label": "Project",
           "url": "https://cnai.epfl.ch/soma/"
+        },
+        {
+          "label": "Official placeholder repository",
+          "url": "https://github.com/amathislab/soma"
+        },
+        {
+          "label": "Project-linked data endpoint",
+          "url": "https://huggingface.co/datasets/amathislab/SOMA"
         }
       ],
-      "softwareStatus": "Paper announces code and benchmark data; complete public payload not independently verified.",
+      "softwareStatus": "Official repository contains only a LICENSE file; no implementation released.",
       "notes": [
         "Body-motion understanding benchmark; not an assessment of robot policy execution. Code and full benchmark are announced but release unverified."
-      ]
+      ],
+      "dataStatus": "The project-linked dataset endpoint returns HTTP 401; public access and payload are not verified."
     },
     "linggs": {
       "status": "unknown",

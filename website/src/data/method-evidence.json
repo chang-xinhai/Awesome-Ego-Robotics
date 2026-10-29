@@ -69636,7 +69636,7 @@
       "bodyCoverage": "Whole body",
       "supervision": "See primary paper for training and evaluation protocol.",
       "evaluation": "1,632 human-verified questions and 37 evaluated models",
-      "implementation": "Paper announces code and benchmark data; complete public payload not independently verified.",
+      "implementation": "Official repository contains only LICENSE; no implementation released. Project-linked dataset endpoint returns HTTP 401; accessible data payload is unverified.",
       "verified": "2026-10-30",
       "sources": [
         {
@@ -69646,6 +69646,14 @@
         {
           "label": "Project",
           "url": "https://cnai.epfl.ch/soma/"
+        },
+        {
+          "label": "Official placeholder repository",
+          "url": "https://github.com/amathislab/soma"
+        },
+        {
+          "label": "Project-linked data endpoint",
+          "url": "https://huggingface.co/datasets/amathislab/SOMA"
         }
       ],
       "fieldSources": {
@@ -69692,7 +69700,9 @@
           "https://arxiv.org/html/2610.36384v1"
         ],
         "implementation": [
-          "https://arxiv.org/html/2610.36384v1"
+          "https://arxiv.org/html/2610.36384v1",
+          "https://github.com/amathislab/soma",
+          "https://huggingface.co/datasets/amathislab/SOMA"
         ]
       }
     },
