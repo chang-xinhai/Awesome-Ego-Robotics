@@ -14988,7 +14988,7 @@
       "status": "partial",
       "commercial": false,
       "availability": "Research resource",
-      "verified": "2026-10-26",
+      "verified": "2026-10-30",
       "evidence": [
         {
           "label": "New principal report",
@@ -15021,12 +15021,20 @@
         {
           "label": "Actual human capture collector",
           "url": "https://github.com/LambdaHumanoid/openlambda/blob/main/data_collection/human/src/collect.py"
+        },
+        {
+          "label": "Released robot collection guide",
+          "url": "https://github.com/LambdaHumanoid/openlambda/blob/main/data_collection/robot/README.md"
+        },
+        {
+          "label": "Robot recording source",
+          "url": "https://github.com/LambdaHumanoid/openlambda/blob/main/data_collection/robot/src/lambda_robot_data/record.py"
         }
       ],
       "notes": [
         "The October 13 report and September 30 related paper belong to one λ₀ project entry; 500 hours is reported training data, not public download scope."
       ],
-      "softwareStatus": "Actual OpenLambda alignment, Stage I/II model-training and human GoPro/PICO collection/sync/resampling sources verified; Apache-2.0. Complete Stage III evaluation/deployment, robot recording alignment and conversion remain unreleased.",
+      "softwareStatus": "OpenLambda human capture, motion alignment, Stage I/II training, and Unitree G1 robot demonstration recording, synchronization and export sources verified. Stage III training example is present; complete evaluation and robot policy deployment remain TODO. Repository uses Apache-2.0 with separate robot model and third-party notices.",
       "modelStatus": "Actual lambda0-midtrain-100k model.safetensors verified; Apache-2.0; Stage II initialization, not a fully deployed Stage III policy.",
       "dataStatus": "Four alignment-example trajectories and release assets are available. HumanVerse-500 and pretraining datasets are not included; linked sample Hub returned HTTP 401."
     },
@@ -15543,33 +15551,30 @@
       ]
     },
     "v-jepa-hand": {
-      "status": "partial",
+      "status": "unknown",
       "commercial": false,
       "availability": "Research resource",
-      "verified": "2026-10-21",
+      "verified": "2026-10-30",
       "evidence": [
         {
           "label": "Primary v1 paper",
           "url": "https://arxiv.org/html/2610.26780v1"
         },
         {
-          "label": "Official project",
-          "url": "https://qft-333.github.io/V-JEPA-Hand-Page/"
+          "label": "Official current release notice",
+          "url": "https://github.com/qft-333/V-JEPA-Hand"
         },
         {
-          "label": "Official repository file tree",
-          "url": "https://github.com/qft-333/V-JEPA-Hand/tree/main"
-        },
-        {
-          "label": "Verified source file",
-          "url": "https://github.com/qft-333/V-JEPA-Hand/blob/main/demo.py"
+          "label": "Current model repository",
+          "url": "https://huggingface.co/qft-333/V-JEPA-Hand"
         }
       ],
-      "softwareStatus": "Inference/demo implementation verified; no root LICENSE. User-supplied MANO assets have separate access/terms.",
+      "softwareStatus": "Release paused during Microsoft internal review; the default branch contains project information only. Early access is subject to approval.",
       "notes": [
-        "Learned metric geometry is not measured RGB-D. Reported 93.4 FPS is forward-pass throughput on RTX A6000."
+        "Current release status supersedes the previously verified inference and model availability.",
+        "Learned metric geometry is not measured RGB-D; 93.4 FPS is forward-pass throughput on RTX A6000."
       ],
-      "modelStatus": "Actual model.safetensors file verified (2,428,637,772 bytes); no model-license declaration verified."
+      "modelStatus": "Previously available weights are temporarily unavailable according to the official repository; current model repository contains only README and attributes."
     },
     "egoxperience": {
       "status": "unknown",
@@ -16354,6 +16359,130 @@
       "softwareStatus": "Official repository is an empty placeholder; no runnable source, weights or dataset release verified.",
       "notes": [
         "Video-only pretraining still uses human tactile labels for readout fitting. Joint training adds measured tactile supervision; inferred touch is not a sensor stream."
+      ]
+    },
+    "ego-cevr": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.37509v1"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Human-video global pretraining does not require paired wrist or robot action labels; later policy alignment does."
+      ]
+    },
+    "huge-vla": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.34186v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://yliu-cs.github.io/HuGe/"
+        },
+        {
+          "label": "Code (license unverified)",
+          "url": "https://github.com/yliu-cs/HuGe"
+        }
+      ],
+      "softwareStatus": "Public training and evaluation source files verified; no root software LICENSE found. Model weights and training datasets not independently verified.",
+      "notes": [
+        "Reported over 2,000 hours combine human and robot data; pseudo-state is derived, not measured human proprioception."
+      ]
+    },
+    "exe-ego": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.33685v1"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Human-specific latent tokens are learned representations, not measured robot action labels."
+      ]
+    },
+    "soma-motion": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.36384v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://cnai.epfl.ch/soma/"
+        }
+      ],
+      "softwareStatus": "Paper announces code and benchmark data; complete public payload not independently verified.",
+      "notes": [
+        "Body-motion understanding benchmark; not an assessment of robot policy execution. Code and full benchmark are announced but release unverified."
+      ]
+    },
+    "linggs": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.36853v1"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Predicted depth is not measured RGB-D; general capture reference without established Ego/UMI integration."
+      ]
+    },
+    "tleio": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.33356v1"
+        }
+      ],
+      "softwareStatus": "No runnable public implementation verified.",
+      "notes": [
+        "Event-inertial odometry is not evidence of loop closure or a full SLAM backend; generic capture reference."
+      ]
+    },
+    "e3stereo": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.33704v1"
+        }
+      ],
+      "softwareStatus": "Paper promises code upon acceptance; no public implementation verified.",
+      "notes": [
+        "Code promised upon acceptance; disparity is estimated, and conversion to metric depth requires calibration."
       ]
     }
   }

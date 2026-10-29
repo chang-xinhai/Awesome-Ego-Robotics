@@ -65109,7 +65109,7 @@
       "inputSignals": [
         "Vision"
       ],
-      "verified": "2026-10-26",
+      "verified": "2026-10-30",
       "sources": [
         {
           "label": "Primary paper and experiments",
@@ -65138,6 +65138,14 @@
         {
           "label": "Four alignment examples",
           "url": "https://github.com/LambdaHumanoid/openlambda/releases/tag/v0.1.1"
+        },
+        {
+          "label": "Released robot collection guide",
+          "url": "https://github.com/LambdaHumanoid/openlambda/blob/main/data_collection/robot/README.md"
+        },
+        {
+          "label": "Robot recording source",
+          "url": "https://github.com/LambdaHumanoid/openlambda/blob/main/data_collection/robot/src/lambda_robot_data/record.py"
         }
       ],
       "fieldSources": {
@@ -65195,12 +65203,14 @@
           "https://huggingface.co/lambda-humanoid/lambda0-midtrain-100k/tree/main",
           "https://github.com/LambdaHumanoid/openlambda/releases/tag/v0.1.1",
           "https://huggingface.co/lambda-humanoid/lambda0-midtrain-100k/raw/main/LICENSE",
-          "https://github.com/LambdaHumanoid/openlambda/blob/main/data_collection/human/src/collect.py"
+          "https://github.com/LambdaHumanoid/openlambda/blob/main/data_collection/human/src/collect.py",
+          "https://github.com/LambdaHumanoid/openlambda/blob/main/data_collection/robot/README.md",
+          "https://github.com/LambdaHumanoid/openlambda/blob/main/data_collection/robot/src/lambda_robot_data/record.py"
         ]
       },
       "outputRepresentation": "Whole-body humanoid actions with embodiment-specific interfaces",
       "evaluation": "SIMPLE, real G1 loco-manipulation, and new-report RoboDojo study",
-      "implementation": "Actual OpenLambda alignment, Stage I/II model-training and human GoPro/PICO collection/sync/resampling sources verified; Apache-2.0. Complete Stage III evaluation/deployment, robot recording alignment and conversion remain unreleased. Actual lambda0-midtrain-100k model.safetensors verified; Apache-2.0; Stage II initialization, not a fully deployed Stage III policy."
+      "implementation": "OpenLambda human capture, motion alignment, Stage I/II training, and Unitree G1 robot demonstration recording, synchronization and export sources verified. Stage III training example is present; complete evaluation and robot policy deployment remain TODO. Repository uses Apache-2.0 with separate robot model and third-party notices. Actual lambda0-midtrain-100k model.safetensors verified; Apache-2.0; Stage II initialization, not a fully deployed Stage III policy."
     },
     "zeva-ego": {
       "input": "Egocentric videos, robot demonstrations and action-effect context",
@@ -66660,8 +66670,8 @@
       "bodyCoverage": "Hands",
       "supervision": "See primary method and training protocol.",
       "evaluation": "ARCTIC, HOT3D and EgoStandard reconstruction benchmarks",
-      "implementation": "Inference/demo implementation verified; no root LICENSE. User-supplied MANO assets have separate access/terms.",
-      "verified": "2026-10-21",
+      "implementation": "Release paused during Microsoft internal review; current default branch has no implementation. Model weights and demo are temporarily unavailable per the official repository.",
+      "verified": "2026-10-30",
       "sources": [
         {
           "label": "Primary v1 method, affiliations and evaluation",
@@ -66672,16 +66682,12 @@
           "url": "https://qft-333.github.io/V-JEPA-Hand-Page/"
         },
         {
-          "label": "Code (inference)",
+          "label": "Official current release notice",
           "url": "https://github.com/qft-333/V-JEPA-Hand"
         },
         {
-          "label": "Models",
+          "label": "Current model repository",
           "url": "https://huggingface.co/qft-333/V-JEPA-Hand"
-        },
-        {
-          "label": "Demo",
-          "url": "https://huggingface.co/spaces/qft-333/V-JEPA-Hand"
         }
       ],
       "fieldSources": {
@@ -66728,10 +66734,8 @@
           "https://arxiv.org/html/2610.26780v1"
         ],
         "implementation": [
-          "https://arxiv.org/html/2610.26780v1",
-          "https://qft-333.github.io/V-JEPA-Hand-Page/",
-          "https://github.com/qft-333/V-JEPA-Hand/tree/main",
-          "https://github.com/qft-333/V-JEPA-Hand/blob/main/demo.py"
+          "https://github.com/qft-333/V-JEPA-Hand",
+          "https://huggingface.co/qft-333/V-JEPA-Hand"
         ]
       }
     },
@@ -69385,6 +69389,572 @@
         "implementation": [
           "https://arxiv.org/html/2610.28519v1",
           "https://touch-jepa.github.io"
+        ]
+      }
+    },
+    "ego-cevr": {
+      "summary": "Learns global task representations from egocentric video and locally grounded interaction representations from robot demonstrations.",
+      "input": "Human and robot egocentric video, wrist images and robot actions for training",
+      "output": "Global and interaction representations for robot policy",
+      "robotEvidence": "LIBERO, RoboTwin 2.0 and cross-embodiment real-robot evaluations",
+      "limitations": "Human-video global pretraining does not require paired wrist or robot action labels; later policy alignment does.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Global and interaction representations for robot policy",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper for training and evaluation protocol.",
+      "evaluation": "LIBERO, RoboTwin 2.0 and cross-embodiment real-robot evaluations",
+      "implementation": "No runnable public implementation verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.37509v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.37509v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2610.37509v1"
+        ]
+      }
+    },
+    "huge-vla": {
+      "summary": "Pretrains humanoid VLAs on egocentric experience, then adapts and fine-tunes for whole-body control.",
+      "input": "Egocentric human and robot video; pseudo-proprioception generated via simulation playback",
+      "output": "Latent motion tokens and hand commands for a pretrained whole-body controller",
+      "robotEvidence": "HumanoidArena and Unitree G1 pick-and-drop experiments",
+      "limitations": "Reported over 2,000 hours combine human and robot data; pseudo-state is derived, not measured human proprioception.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Latent motion tokens and hand commands for a pretrained whole-body controller",
+      "bodyCoverage": "Whole body",
+      "supervision": "See primary paper for training and evaluation protocol.",
+      "evaluation": "HumanoidArena and Unitree G1 pick-and-drop experiments",
+      "implementation": "Public training and evaluation source files verified; no root software LICENSE found. Model weights and training datasets not independently verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.34186v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://yliu-cs.github.io/HuGe/"
+        },
+        {
+          "label": "Code (license unverified)",
+          "url": "https://github.com/yliu-cs/HuGe"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.34186v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2610.34186v1"
+        ]
+      }
+    },
+    "exe-ego": {
+      "summary": "Factorizes egocentric action representations into shared manipulation priors and embodiment-specific components for VLA pretraining.",
+      "input": "Human egocentric manipulation video plus robot demonstrations",
+      "output": "Shared and embodiment-specific latent action tokens",
+      "robotEvidence": "RoboTwin 2.0, RoboCasa GR1 and real robot manipulation",
+      "limitations": "Human-specific latent tokens are learned representations, not measured robot action labels.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Shared and embodiment-specific latent action tokens",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper for training and evaluation protocol.",
+      "evaluation": "RoboTwin 2.0, RoboCasa GR1 and real robot manipulation",
+      "implementation": "No runnable public implementation verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.33685v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.33685v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2610.33685v1"
+        ]
+      }
+    },
+    "soma-motion": {
+      "summary": "Evaluates fine-grained egocentric body configuration, motion and temporal reasoning.",
+      "input": "Egocentric video and natural-language questions",
+      "output": "Answers about body motion and temporal behavior",
+      "robotEvidence": "1,632 human-verified questions and 37 evaluated models",
+      "limitations": "Body-motion understanding benchmark; not an assessment of robot policy execution. Code and full benchmark are announced but release unverified.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "latent",
+      "evidenceLevel": "tool",
+      "trainingType": "model-based",
+      "stage": "tool",
+      "outputRepresentation": "Answers about body motion and temporal behavior",
+      "bodyCoverage": "Whole body",
+      "supervision": "See primary paper for training and evaluation protocol.",
+      "evaluation": "1,632 human-verified questions and 37 evaluated models",
+      "implementation": "Paper announces code and benchmark data; complete public payload not independently verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.36384v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://cnai.epfl.ch/soma/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.36384v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2610.36384v1"
+        ]
+      }
+    },
+    "linggs": {
+      "summary": "Combines streaming monocular geometry prediction, geometric camera tracking and Gaussian scene mapping.",
+      "input": "Monocular RGB video",
+      "output": "Online camera poses and Gaussian scene map",
+      "robotEvidence": "Indoor and outdoor tracking and reconstruction; about 7 FPS on one RTX 4090",
+      "limitations": "Predicted depth is not measured RGB-D; general capture reference without established Ego/UMI integration.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "world",
+      "evidenceLevel": "tool",
+      "trainingType": "model-based",
+      "stage": "tool",
+      "outputRepresentation": "Online camera poses and Gaussian scene map",
+      "bodyCoverage": "Scene",
+      "supervision": "See primary paper for training and evaluation protocol.",
+      "evaluation": "Indoor and outdoor tracking and reconstruction; about 7 FPS on one RTX 4090",
+      "implementation": "No runnable public implementation verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.36853v1"
+        }
+      ],
+      "slam": {
+        "family": "gaussian",
+        "role": "online",
+        "systemType": "Monocular Gaussian mapping with learned geometry and explicit tracking",
+        "loopClosure": "unknown",
+        "relocalization": "unknown",
+        "metricScale": "Learned predicted geometry; not measured depth",
+        "calibration": "Camera intrinsics initialized by geometry backbone; see paper",
+        "captureRelevance": "General capture reference; no Ego/UMI integration established"
+      },
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2610.36853v1"
+        ],
+        "slam": [
+          "https://arxiv.org/html/2610.36853v1"
+        ]
+      }
+    },
+    "tleio": {
+      "summary": "Fuses learned event-camera motion constraints with inertial propagation in a stochastic-cloning EKF.",
+      "input": "Event stream and IMU",
+      "output": "Metric odometry trajectory",
+      "robotEvidence": "TartanAir/TartanEvent simulation and DAVIS240c real sequences",
+      "limitations": "Event-inertial odometry is not evidence of loop closure or a full SLAM backend; generic capture reference.",
+      "inputSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "outputSpace": "world",
+      "evidenceLevel": "tool",
+      "trainingType": "model-based",
+      "stage": "tool",
+      "outputRepresentation": "Metric odometry trajectory",
+      "bodyCoverage": "Scene",
+      "supervision": "See primary paper for training and evaluation protocol.",
+      "evaluation": "TartanAir/TartanEvent simulation and DAVIS240c real sequences",
+      "implementation": "No runnable public implementation verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.33356v1"
+        }
+      ],
+      "slam": {
+        "family": "visual-inertial",
+        "role": "online",
+        "systemType": "Event-inertial learned odometry",
+        "loopClosure": "no",
+        "relocalization": "unknown",
+        "metricScale": "Learned displacement with inertial fusion",
+        "calibration": "Synchronized event camera and IMU",
+        "captureRelevance": "General event-inertial odometry reference"
+      },
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2610.33356v1"
+        ],
+        "slam": [
+          "https://arxiv.org/html/2610.33356v1"
+        ]
+      }
+    },
+    "e3stereo": {
+      "summary": "Improves stereo disparity near depth boundaries using learned geometric edge cues.",
+      "input": "Rectified stereo image pairs and backbone disparity",
+      "output": "Refined disparity map",
+      "robotEvidence": "Scene Flow, ETH3D and KITTI 2012/2015",
+      "limitations": "Code promised upon acceptance; disparity is estimated, and conversion to metric depth requires calibration.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "camera",
+      "evidenceLevel": "tool",
+      "trainingType": "model-based",
+      "stage": "tool",
+      "outputRepresentation": "Refined disparity map",
+      "bodyCoverage": "Scene",
+      "supervision": "See primary paper for training and evaluation protocol.",
+      "evaluation": "Scene Flow, ETH3D and KITTI 2012/2015",
+      "implementation": "Paper promises code upon acceptance; no public implementation verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.33704v1"
+        }
+      ],
+      "perception": {
+        "task": "depth",
+        "families": [
+          "stereo-active"
+        ],
+        "scale": "conditional",
+        "inputArrangement": "Rectified stereo pair",
+        "cameraGeometry": "Rectified stereo",
+        "temporalBehavior": "Per-pair estimation",
+        "calibration": "Intrinsics and baseline needed to convert disparity to metric depth",
+        "outputGeometry": "Estimated disparity",
+        "captureRelevance": "General stereo capture processing reference"
+      },
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2610.33704v1"
+        ],
+        "perception": [
+          "https://arxiv.org/html/2610.33704v1"
         ]
       }
     }

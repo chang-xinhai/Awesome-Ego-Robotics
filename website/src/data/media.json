@@ -12655,5 +12655,125 @@
     "imageSource": "https://arxiv.org/html/2610.28519v1/TouchJEPA-Teaser-v4.png",
     "imageAlt": "Touch-JEPA: original paper method or experimental overview",
     "credit": "University of Minnesota / original authors"
+  },
+  {
+    "id": "ego-cevr",
+    "name": "Ego-CEVR",
+    "summary": "Learns global task representations from egocentric video and locally grounded interaction representations from robot demonstrations.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/ego-cevr-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.37509v1",
+    "imageSource": "https://arxiv.org/html/2610.37509v1/fig2.png",
+    "imageAlt": "Ego-CEVR original paper overview",
+    "credit": "— / original authors"
+  },
+  {
+    "id": "huge-vla",
+    "name": "HuGe",
+    "summary": "Pretrains humanoid VLAs on egocentric experience, then adapts and fine-tunes for whole-body control.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/huge-vla-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.34186v1",
+    "imageSource": "https://arxiv.org/html/2610.34186v1/arch.png",
+    "imageAlt": "HuGe original paper overview",
+    "credit": "Westlake University / original authors"
+  },
+  {
+    "id": "exe-ego",
+    "name": "EXE",
+    "summary": "Factorizes egocentric action representations into shared manipulation priors and embodiment-specific components for VLA pretraining.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/exe-ego-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.33685v1",
+    "imageSource": "https://arxiv.org/html/2610.33685v1/framework.png",
+    "imageAlt": "EXE original paper overview",
+    "credit": "ROBOTERA / original authors"
+  },
+  {
+    "id": "soma-motion",
+    "name": "SOMA",
+    "summary": "Evaluates fine-grained egocentric body configuration, motion and temporal reasoning.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/soma-motion-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.36384v1",
+    "imageSource": "https://arxiv.org/html/2610.36384v1/teaser_figure_vf.png",
+    "imageAlt": "SOMA original paper overview",
+    "credit": "EPFL / original authors"
+  },
+  {
+    "id": "linggs",
+    "name": "LingGS",
+    "summary": "Combines streaming monocular geometry prediction, geometric camera tracking and Gaussian scene mapping.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/linggs-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.36853v1",
+    "imageSource": "https://arxiv.org/html/2610.36853v1/overview.png",
+    "imageAlt": "LingGS original paper overview",
+    "credit": "King Abdullah University of Science and Technology / original authors"
+  },
+  {
+    "id": "tleio",
+    "name": "TLEIO",
+    "summary": "Fuses learned event-camera motion constraints with inertial propagation in a stochastic-cloning EKF.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/tleio-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.33356v1",
+    "imageSource": "https://arxiv.org/html/2610.33356v1/model_arch.png",
+    "imageAlt": "TLEIO original paper overview",
+    "credit": "ETH Zürich / original authors"
+  },
+  {
+    "id": "e3stereo",
+    "name": "E3Stereo",
+    "summary": "Improves stereo disparity near depth boundaries using learned geometric edge cues.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Scene",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/e3stereo-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.33704v1",
+    "imageSource": "https://arxiv.org/html/2610.33704v1/overview.png",
+    "imageAlt": "E3Stereo original paper overview",
+    "credit": "Xidian University / original authors"
   }
 ]
