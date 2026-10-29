@@ -71007,12 +71007,13 @@
     },
     "egoavflow": {
       "summary": "Transfers manipulation and active camera control from human egocentric video using predicted 3D flow.",
-      "input": "Human egocentric video and inferred scene/hand motion",
+      "input": "Human head-mounted RGB-D video and tracked point depths for 3D flow; real robot viewpoint uses a D435-mounted camera.",
       "output": "Robot actions and optimized camera trajectories",
       "robotEvidence": "Real-world active-view robot manipulation",
-      "limitations": "Reported training avoids robot demonstrations; predicted flow is estimated geometry.",
+      "limitations": "Observed depth unprojects point tracks; future 3D flow is predicted. Reported training avoids robot demonstrations.",
       "inputSignals": [
-        "Vision"
+        "Vision",
+        "Depth"
       ],
       "outputSpace": "robot",
       "evidenceLevel": "real-robot",
@@ -71022,7 +71023,7 @@
       "bodyCoverage": "Hands",
       "supervision": "See primary paper; human video and robot labels have distinct provenance.",
       "evaluation": "Real-world active-view robot manipulation",
-      "implementation": "No implementation release verified.",
+      "implementation": "Public author source and MIT root LICENSE verified; weights and data require separate verification.",
       "verified": "2026-10-30",
       "sources": [
         {
@@ -71032,6 +71033,10 @@
         {
           "label": "Project",
           "url": "https://dscho1234.github.io/egoavflow/"
+        },
+        {
+          "label": "Official MIT code",
+          "url": "https://github.com/dscho1234/Ego-AV-Flow"
         }
       ],
       "fieldSources": {

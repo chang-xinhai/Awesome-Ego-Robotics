@@ -13022,7 +13022,8 @@
     "name": "EgoAVFlow",
     "summary": "Transfers manipulation and active camera control from human egocentric video using predicted 3D flow.",
     "signals": [
-      "Vision"
+      "Vision",
+      "Depth"
     ],
     "form": "Not reported",
     "coverage": "Hands",

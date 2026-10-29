@@ -16830,7 +16830,7 @@
       ]
     },
     "egoavflow": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "availability": "Research resource",
       "verified": "2026-10-30",
@@ -16842,11 +16842,15 @@
         {
           "label": "Project",
           "url": "https://dscho1234.github.io/egoavflow/"
+        },
+        {
+          "label": "Official MIT code",
+          "url": "https://github.com/dscho1234/Ego-AV-Flow"
         }
       ],
-      "softwareStatus": "No implementation release verified.",
+      "softwareStatus": "Public source code and root MIT LICENSE verified; model and dataset releases not independently verified.",
       "notes": [
-        "Reported training avoids robot demonstrations; predicted flow is estimated geometry."
+        "Observed RGB-D in human capture; 3D future flow is estimated."
       ]
     },
     "mitty": {
