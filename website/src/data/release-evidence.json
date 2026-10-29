@@ -16644,7 +16644,7 @@
       ],
       "softwareStatus": "Public author code with Apache-2.0 LICENSE and model files verified; upstream models and datasets have separate terms.",
       "notes": [
-        "Dataset depth and flow include pseudo-labels; predicted depth is not measured input."
+        "Training depth and flow are pseudo-labels; the real-robot policy lists monocular DA3 depth estimation, not verified measured depth input."
       ],
       "modelStatus": "Official model weights available; 16-byte Range request returned HTTP 206. Model card declares Apache-2.0; check upstream terms."
     },

@@ -70228,13 +70228,12 @@
     },
     "rynnworld-4d": {
       "summary": "Pretrains a 4D RGB-depth-flow world model on ego human and robot video and extracts a robot action head.",
-      "input": "Egocentric human and robot video for training; RGB-D for prediction",
+      "input": "Egocentric human and robot RGB video for training; RGB with DA3-estimated depth and language for policy inference.",
       "output": "Predicted future RGB, depth, optical flow and robot actions",
       "robotEvidence": "Real dexterous bimanual manipulation",
-      "limitations": "Dataset depth and flow include pseudo-labels; predicted depth is not measured input.",
+      "limitations": "Training depth and flow are pseudo-labels. The real-robot evaluation lists monocular DA3 depth estimation; generated depth is not a measured depth input.",
       "inputSignals": [
-        "Vision",
-        "Depth"
+        "Vision"
       ],
       "outputSpace": "robot",
       "evidenceLevel": "real-robot",

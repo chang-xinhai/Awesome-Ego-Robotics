@@ -12851,8 +12851,7 @@
     "name": "RynnWorld-4D",
     "summary": "Pretrains a 4D RGB-depth-flow world model on ego human and robot video and extracts a robot action head.",
     "signals": [
-      "Vision",
-      "Depth"
+      "Vision"
     ],
     "form": "Not reported",
     "coverage": "Hands",
