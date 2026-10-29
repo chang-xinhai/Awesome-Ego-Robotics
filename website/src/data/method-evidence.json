@@ -69967,6 +69967,92 @@
           "https://arxiv.org/html/2610.33704v1"
         ]
       }
+    },
+    "ropedia-w0": {
+      "summary": "Predicts cross-embodiment egocentric video using shared camera pose and projected skeleton conditioning.",
+      "input": "Egocentric RGB video, camera poses and projected kinematic skeletons",
+      "output": "Conditioned future egocentric video",
+      "robotEvidence": "Human held-out video and five robot video prediction benchmarks, with interactive VR rollout applications",
+      "limitations": "Predicts video conditioned on given kinematics, not an executable action policy. Reported ~10k human and ~3k robot training hours include multiple sources.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "latent",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "self-supervised",
+      "stage": "L6",
+      "outputRepresentation": "Cross-embodiment future video",
+      "bodyCoverage": "Whole body",
+      "supervision": "Human-video and robot-video pretraining with camera and skeleton conditioning",
+      "evaluation": "Human held-out video and five robot video prediction benchmarks",
+      "implementation": "5B inference implementation available; project code Apache-2.0 with upstream components and terms separate. Post-training and benchmark evaluation are pending.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.26855v1"
+        },
+        {
+          "label": "Inference code",
+          "url": "https://github.com/Ropedia/ropedia-w0"
+        },
+        {
+          "label": "Model files and license",
+          "url": "https://huggingface.co/ropedia-ai/Ropedia-W0"
+        },
+        {
+          "label": "Xp-Teleop data",
+          "url": "https://huggingface.co/datasets/ropedia-ai/Xp-Teleop"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.26855v1"
+        ],
+        "implementation": [
+          "https://github.com/Ropedia/ropedia-w0",
+          "https://huggingface.co/ropedia-ai/Ropedia-W0"
+        ]
+      }
     }
   }
 }

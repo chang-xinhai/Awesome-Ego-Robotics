@@ -12775,5 +12775,41 @@
     "imageSource": "https://arxiv.org/html/2610.33704v1/overview.png",
     "imageAlt": "E3Stereo original paper overview",
     "credit": "Xidian University / original authors"
+  },
+  {
+    "id": "homie-gen2",
+    "name": "HOMIE Gen2",
+    "summary": "Head-mounted four-camera multimodal human experience capture device.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Audio"
+    ],
+    "form": "Headset",
+    "coverage": "Whole body",
+    "tracking": "Stereo-derived visual localization and downstream motion estimates",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/homie-gen2-hardware.webp",
+    "imagePage": "https://ropedia.com/homie",
+    "imageSource": "https://ropedia.com/hardware/homie-gen2-product.png",
+    "imageAlt": "Ropedia HOMIE Gen2 head-mounted capture device",
+    "credit": "Ropedia"
+  },
+  {
+    "id": "ropedia-w0",
+    "name": "Ropedia W0",
+    "summary": "Predicts cross-embodiment egocentric video conditioned on camera motion and projected skeletons.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/ropedia-w0-method.webp",
+    "imagePage": "https://arxiv.org/html/2610.26855v1",
+    "imageSource": "https://arxiv.org/html/2610.26855v1/pipeline.png",
+    "imageAlt": "Ropedia W0 paper data and annotation pipeline",
+    "credit": "Nanyang Technological University / original authors"
   }
 ]

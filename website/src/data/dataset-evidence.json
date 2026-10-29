@@ -8667,8 +8667,8 @@
     },
     "ropedia-xperience-10m": {
       "name": "Xperience-10M",
-      "verified": "2026-10-17",
-      "reviewed": "2026-10-17",
+      "verified": "2026-10-30",
+      "reviewed": "2026-10-30",
       "reportedScale": {
         "hours": 10000,
         "episodes": "10M",
@@ -8679,7 +8679,7 @@
         "scope": "HF lists 31.9 TB of files behind manual DocuSign access; complete 10,000 h coverage not independently verified"
       },
       "access": "Request access",
-      "accessNote": "Gated structured-data release; published file volume does not establish complete advertised corpus coverage.",
+      "accessNote": "Full release requires manual approval and non-commercial agreement. A separate CC BY-NC 4.0 sample provides one example recording with annotation and six synchronized videos.",
       "formats": [
         "MP4",
         "HDF5",
@@ -8703,6 +8703,10 @@
         {
           "label": "Official data",
           "url": "https://huggingface.co/datasets/ropedia-ai/xperience-10m"
+        },
+        {
+          "label": "Public sample, files and license",
+          "url": "https://huggingface.co/datasets/ropedia-ai/xperience-10m-sample"
         }
       ],
       "recordedSignals": [
@@ -8725,7 +8729,7 @@
       ],
       "splits": "See official release protocol.",
       "dataLicense": "Research / non-commercial terms with controlled distribution; separate from commercial Xperience Enterprise.",
-      "releaseScope": "Gated structured-data release; published file volume does not establish complete advertised corpus coverage.",
+      "releaseScope": "Public sample is separate from the manually gated full-release file listing and the publisher corpus-scale claims.",
       "contactType": "unknown",
       "evidenceNote": "Observed streams, derived estimates, reference labels and reported/released scope are separated.",
       "fieldSources": {
@@ -8770,13 +8774,16 @@
           "https://huggingface.co/datasets/ropedia-ai/xperience-10m"
         ],
         "releaseScope": [
-          "https://ropedia.com/",
-          "https://github.com/Ropedia/HOMIE-toolkit",
+          "https://huggingface.co/datasets/ropedia-ai/xperience-10m-sample",
           "https://huggingface.co/datasets/ropedia-ai/xperience-10m"
         ],
         "contactType": [
           "https://ropedia.com/",
           "https://github.com/Ropedia/HOMIE-toolkit",
+          "https://huggingface.co/datasets/ropedia-ai/xperience-10m"
+        ],
+        "accessNote": [
+          "https://huggingface.co/datasets/ropedia-ai/xperience-10m-sample",
           "https://huggingface.co/datasets/ropedia-ai/xperience-10m"
         ]
       }

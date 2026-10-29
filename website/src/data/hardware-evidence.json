@@ -4932,6 +4932,117 @@
           "https://m.leiphone.com/category/robot/HYxX8W4aXp8UgmIO.html"
         ]
       }
+    },
+    "homie-gen2": {
+      "interface": "HOMIE Gen2 head-mounted capture",
+      "interfaceForms": [
+        "Headset"
+      ],
+      "poseTracking": "Downstream spatial localization and body/hand estimates; not directly measured joint motion",
+      "vision": "Four cameras; 1080p at 30 fps",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Whole body",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "captureComponents": "Four cameras, 200 Hz IMU and four microphones",
+      "cameraSpecs": "Manufacturer lists 1080p at 30 fps and 162° horizontal × 109° vertical camera FOV",
+      "measuredSignals": "Camera images, inertial measurements and microphone audio",
+      "synchronization": "Manufacturer describes synchronized capture; independent precision not verified",
+      "outputs": "Stereo-estimated depth, SLAM, hand/body mocap and other annotations are derived processing outputs",
+      "configuration": "HOMIE Gen2; 380 g, 300 × 240 × 138 mm, up to 90-minute recording per manufacturer",
+      "softwareRelease": "HOMIE toolkit provides Xperience dataset loading and visualization under MIT; proprietary annotation stack release not established",
+      "hardwareRelease": "Manufacturer-listed device; hardware design files and license not verified",
+      "evidence": [
+        {
+          "label": "Manufacturer product specifications",
+          "url": "https://ropedia.com/homie"
+        },
+        {
+          "label": "Actual toolkit source and license",
+          "url": "https://github.com/Ropedia/HOMIE-toolkit"
+        },
+        {
+          "label": "Associated dataset",
+          "url": "https://huggingface.co/datasets/ropedia-ai/xperience-10m"
+        }
+      ],
+      "verified": "2026-10-30",
+      "fieldSources": {
+        "interface": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "interfaceForms": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "poseTracking": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "vision": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "tactile": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "forceTorque": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "bodyCoverage": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "observationSignals": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "captureComponents": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "cameraSpecs": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "measuredSignals": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "synchronization": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "outputs": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "configuration": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "softwareRelease": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ],
+        "hardwareRelease": [
+          "https://ropedia.com/homie",
+          "https://github.com/Ropedia/HOMIE-toolkit"
+        ]
+      }
     }
   }
 }

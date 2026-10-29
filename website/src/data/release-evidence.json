@@ -13766,6 +13766,10 @@
         {
           "label": "Repository license file",
           "url": "https://github.com/Ropedia/HOMIE-toolkit/blob/main/LICENSE"
+        },
+        {
+          "label": "Public sample and terms",
+          "url": "https://huggingface.co/datasets/ropedia-ai/xperience-10m-sample"
         }
       ],
       "notes": [
@@ -13773,7 +13777,8 @@
         "Gated structured-data release; published file volume does not establish complete advertised corpus coverage."
       ],
       "softwareStatus": "Public source files verified (HOMIE-toolkit: MIT). Model/data and third-party terms remain separate.",
-      "verified": "2026-10-19"
+      "verified": "2026-10-30",
+      "dataStatus": "A public sample with annotation and six synchronized videos is listed separately under CC BY-NC 4.0; the full structured-data release requires manual approval and a noncommercial agreement."
     },
     "rekadaily-10k": {
       "status": "open",
@@ -16492,6 +16497,66 @@
       "softwareStatus": "Paper promises code upon acceptance; no public implementation verified.",
       "notes": [
         "Code promised upon acceptance; disparity is estimated, and conversion to metric depth requires calibration."
+      ]
+    },
+    "homie-gen2": {
+      "status": "partial",
+      "commercial": true,
+      "availability": "Manufacturer-listed device",
+      "verified": "2026-10-30",
+      "softwareStatus": "Xperience loader and visualization sources publicly available under MIT; no released proprietary annotation stack established.",
+      "hardwareStatus": "Commercial device listed; hardware design files and license not verified.",
+      "dataStatus": "Separate Xperience-10M data has controlled access; a public sample is available under CC BY-NC 4.0.",
+      "notes": [
+        "Predicted depth and body/hand motion are processing outputs, not directly measured depth or joint signals."
+      ],
+      "evidence": [
+        {
+          "label": "Manufacturer product",
+          "url": "https://ropedia.com/homie"
+        },
+        {
+          "label": "Toolkit source",
+          "url": "https://github.com/Ropedia/HOMIE-toolkit"
+        },
+        {
+          "label": "Toolkit license",
+          "url": "https://github.com/Ropedia/HOMIE-toolkit/blob/main/LICENSE"
+        },
+        {
+          "label": "Public sample",
+          "url": "https://huggingface.co/datasets/ropedia-ai/xperience-10m-sample"
+        }
+      ]
+    },
+    "ropedia-w0": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "softwareStatus": "5B inference implementation available; project code Apache-2.0 with upstream components and terms separate. Post-training and benchmark evaluation are pending.",
+      "modelStatus": "5B pretraining and midtraining safetensors available; CC BY-NC 4.0. A14B and benchmark fine-tuned checkpoints remain pending.",
+      "dataStatus": "Xp-Teleop data listed under CC BY 4.0; full Xp-Data training mixture is not claimed as a single released corpus.",
+      "notes": [
+        "Generates conditioned egocentric video; not itself a closed-loop robot action policy."
+      ],
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2610.26855v1"
+        },
+        {
+          "label": "Inference code",
+          "url": "https://github.com/Ropedia/ropedia-w0"
+        },
+        {
+          "label": "Model files and license",
+          "url": "https://huggingface.co/ropedia-ai/Ropedia-W0"
+        },
+        {
+          "label": "Xp-Teleop data",
+          "url": "https://huggingface.co/datasets/ropedia-ai/Xp-Teleop"
+        }
       ]
     }
   }
