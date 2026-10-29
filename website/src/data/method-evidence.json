@@ -2048,9 +2048,13 @@
         {
           "label": "Paper affiliations",
           "url": "https://arxiv.org/html/2604.11038v1"
+        },
+        {
+          "label": "Dataset access and license",
+          "url": "https://huggingface.co/datasets/3dlg-hcvc/EgoFun3D"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-30",
       "summary": "Models interactive objects with function templates that can be compiled for simulation.",
       "inputSignals": [
         "Vision"
@@ -2131,9 +2135,13 @@
         {
           "label": "Paper affiliations",
           "url": "https://arxiv.org/html/2608.15060v1"
+        },
+        {
+          "label": "Official model weights",
+          "url": "https://huggingface.co/wkzhang/EgoTac"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-30",
       "summary": "Learns tactile priors from paired data and predicts contact and force from vision.",
       "inputSignals": [
         "Vision"
@@ -2195,7 +2203,8 @@
         "stage": [
           "https://arxiv.org/html/2608.15060v1"
         ]
-      }
+      },
+      "implementation": "Public source files verified (EgoTac: no repository-wide source license verified). Model/data and third-party terms remain separate."
     },
     "touchsight": {
       "input": "Bare-hand or gloved egocentric RGB video",
@@ -3754,9 +3763,25 @@
         {
           "label": "Method and experiments",
           "url": "https://arxiv.org/html/2607.09701v1"
+        },
+        {
+          "label": "Base weights",
+          "url": "https://huggingface.co/EgoSteer/EgoSteer-3B-Base"
+        },
+        {
+          "label": "RealMan weights",
+          "url": "https://huggingface.co/EgoSteer/EgoSteer-3B-RealMan"
+        },
+        {
+          "label": "Human annotations",
+          "url": "https://huggingface.co/datasets/EgoSteer/EgoSteer-Egocentric"
+        },
+        {
+          "label": "Real robot data",
+          "url": "https://huggingface.co/datasets/EgoSteer/EgoSteer-RealWorld"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-10-30",
       "summary": "Combines an egocentric data pipeline with robot grounding and correction for steerable policies.",
       "inputSignals": [
         "Vision"
@@ -3822,7 +3847,8 @@
           "https://arxiv.org/html/2607.09701v1"
         ]
       },
-      "policyInput": "Robot vision, language and state"
+      "policyInput": "Robot vision, language and state",
+      "implementation": "Public source files verified (egosteer: Apache-2.0). Model/data and third-party terms remain separate."
     },
     "metis": {
       "input": "Multi-source human and robot demonstrations",
@@ -66756,8 +66782,8 @@
       "bodyCoverage": "Hands",
       "supervision": "See primary method and training protocol.",
       "evaluation": "EgoX-Bench reconstruction; no robot policy claimed",
-      "implementation": "README/media only; implementation is forthcoming.",
-      "verified": "2026-10-21",
+      "implementation": "Official GitHub default branch contains README, citation and media but no method source; model/data repository remains pending.",
+      "verified": "2026-10-30",
       "sources": [
         {
           "label": "Primary v1 method, affiliations and evaluation",
@@ -70051,6 +70077,1565 @@
         "implementation": [
           "https://github.com/Ropedia/ropedia-w0",
           "https://huggingface.co/ropedia-ai/Ropedia-W0"
+        ]
+      }
+    },
+    "egorecovery": {
+      "summary": "Learns a gated corrective intent from human recovery demonstrations and a small set of robot recoveries.",
+      "input": "Human ego recovery videos and robot demonstrations",
+      "output": "Shared corrective intent and robot recovery actions",
+      "robotEvidence": "Real-robot failure recovery comparisons",
+      "limitations": "More than 10x collection throughput is specific to the authors’ protocol; repository endpoint returned 404.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Shared corrective intent and robot recovery actions",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Real-robot failure recovery comparisons",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2607.19745v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2607.19745v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2607.19745v1"
+        ]
+      }
+    },
+    "agenticfocus": {
+      "summary": "Synthesizes robot-aligned demonstration observations by recovering objects and full-hand motion from human FPV video.",
+      "input": "Monocular first-person human video",
+      "output": "Retargeted hand motion and composite robot observations",
+      "robotEvidence": "Trajectory error and motion smoothness comparisons",
+      "limitations": "Synthesized action labels are retargeted estimates; not a verified closed-loop real-robot policy.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "representation",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "mixed",
+      "stage": "L4",
+      "outputRepresentation": "Retargeted hand motion and composite robot observations",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Trajectory error and motion smoothness comparisons",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2607.08857v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2607.08857v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2607.08857v1"
+        ]
+      }
+    },
+    "rynnworld-4d": {
+      "summary": "Pretrains a 4D RGB-depth-flow world model on ego human and robot video and extracts a robot action head.",
+      "input": "Egocentric human and robot video for training; RGB-D for prediction",
+      "output": "Predicted future RGB, depth, optical flow and robot actions",
+      "robotEvidence": "Real dexterous bimanual manipulation",
+      "limitations": "Dataset depth and flow include pseudo-labels; predicted depth is not measured input.",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Predicted future RGB, depth, optical flow and robot actions",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Real dexterous bimanual manipulation",
+      "implementation": "Public author code with Apache-2.0 LICENSE and model files verified; upstream models and datasets have separate terms.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2607.06559v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://alibaba-damo-academy.github.io/RynnWorld-4D.github.io"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/alibaba-damo-academy/RynnWorld-4D"
+        },
+        {
+          "label": "Weights",
+          "url": "https://huggingface.co/Alibaba-DAMO-Academy/RynnWorld-4D"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2607.06559v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2607.06559v1"
+        ]
+      }
+    },
+    "rynnworld-teleop": {
+      "summary": "Transforms a tracked operator hand-pose stream into robot-view video and retargetable actions via a digital-teleoperation world model.",
+      "input": "Operator hand-pose stream and reference image",
+      "output": "Generated robot-centric video and retargeted action trajectories",
+      "robotEvidence": "Zero-shot sim-to-real bimanual manipulation and data augmentation",
+      "limitations": "Generated video is synthetic; hand-pose retargeting does not constitute measured robot action ground truth.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L4",
+      "outputRepresentation": "Generated robot-centric video and retargeted action trajectories",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Zero-shot sim-to-real bimanual manipulation and data augmentation",
+      "implementation": "Public author code with Apache-2.0 LICENSE and model files verified; upstream models and datasets have separate terms.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2607.06558v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://alibaba-damo-academy.github.io/RynnWorld-Teleop.github.io"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/alibaba-damo-academy/RynnWorld-Teleop"
+        },
+        {
+          "label": "Weights",
+          "url": "https://huggingface.co/Alibaba-DAMO-Academy/RynnWorld-Teleop"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2607.06558v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2607.06558v1"
+        ]
+      }
+    },
+    "lingbot-vla-2": {
+      "summary": "Pretrains a whole-body VLA on mixed robot trajectories and egocentric human videos.",
+      "input": "Reported 50,000 hours robot trajectories plus 10,000 hours ego human video",
+      "output": "Whole-body language-conditioned robot actions",
+      "robotEvidence": "GM-100 and cross-embodiment mobile manipulation",
+      "limitations": "Reported pretraining corpus is mixed human and robot data; do not treat all hours as egocentric.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Whole-body language-conditioned robot actions",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "GM-100 and cross-embodiment mobile manipulation",
+      "implementation": "Public author implementation and Apache-2.0 root LICENSE verified; model access and dataset terms are separate.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2607.06403v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://technology.robbyant.com/lingbot-vla-v2"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/robbyant/lingbot-vla-v2"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2607.06403v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2607.06403v1"
+        ]
+      }
+    },
+    "humanoidumi": {
+      "summary": "Uses VR keypoints and wrist observations from a portable human capture setup for whole-body humanoid policy learning.",
+      "input": "VR tracked keypoints, wrist camera and handheld gripper actions",
+      "output": "Retargeted whole-body references and high-level future-keypoint policy",
+      "robotEvidence": "Five real-world humanoid manipulation scenarios",
+      "limitations": "Gripper action and tracked human keypoints are captured signals; references are retargeted.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Retargeted whole-body references and high-level future-keypoint policy",
+      "bodyCoverage": "Whole body",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Five real-world humanoid manipulation scenarios",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2606.27239v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://baai-aether.github.io/HumanoidUMI/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2606.27239v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2606.27239v1"
+        ]
+      }
+    },
+    "qwen-robotmanip": {
+      "summary": "Aligns human-video-derived and robot trajectories across embodiments to pretrain a generalist manipulation VLA.",
+      "input": "Open robot datasets and human egocentric videos",
+      "output": "Cross-embodiment robot manipulation actions",
+      "robotEvidence": "Multiple OOD benchmarks and AgileX, Franka, UR and ARX robots",
+      "limitations": "Reported 38,100 hours is the combined heterogeneous corpus. Human-to-robot trajectories are synthesized.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Cross-embodiment robot manipulation actions",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Multiple OOD benchmarks and AgileX, Franka, UR and ARX robots",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2606.17846v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2606.17846v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2606.17846v1"
+        ]
+      }
+    },
+    "caip": {
+      "summary": "Contrastively pretrains visual representations using 3D hand keypoints from human egocentric video as action proxies.",
+      "input": "Egocentric human video and estimated 3D hand keypoints",
+      "output": "Action-centric visual encoder for downstream robot policies",
+      "robotEvidence": "Real Dexmate Vega and Sharpa Wave tasks",
+      "limitations": "Human hand keypoints are proxy supervision, not robot action labels.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Action-centric visual encoder for downstream robot policies",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Real Dexmate Vega and Sharpa Wave tasks",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2606.17256v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2606.17256v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2606.17256v1"
+        ]
+      }
+    },
+    "gaze2act": {
+      "summary": "Maps first-person human gaze into robot views to condition VLA target selection and actions.",
+      "input": "Human first-person gaze and robot observations",
+      "output": "Gaze-conditioned VLA robot actions",
+      "robotEvidence": "16 real Unitree G1 tasks across seven categories",
+      "limitations": "Gaze is a user intent input, not autonomous robot attention ground truth.",
+      "inputSignals": [
+        "Vision",
+        "Gaze"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Gaze-conditioned VLA robot actions",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "16 real Unitree G1 tasks across seven categories",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2605.30282v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://zuo-kuangji.github.io/Gaze2Act/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2605.30282v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2605.30282v1"
+        ]
+      }
+    },
+    "demian": {
+      "summary": "Creates dense multi-aspect language annotations for robot and egocentric videos and uses a learned instructor during execution.",
+      "input": "Robot clips and EgoVerse egocentric video",
+      "output": "Dense language annotations and task-conditioned instructor",
+      "robotEvidence": "RoboCasa and robot/world-action policy training evaluation",
+      "limitations": "VLM-generated annotations are derived labels; human-video and robot clips are separate sources.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "representation",
+      "evidenceLevel": "simulation",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Dense language annotations and task-conditioned instructor",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "RoboCasa and robot/world-action policy training evaluation",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2605.17077v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2605.17077v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2605.17077v1"
+        ]
+      }
+    },
+    "spot-egospt": {
+      "summary": "Predicts future 3D end-effector trajectories from spatial prompts and an egocentric observation history.",
+      "input": "Egocentric video, initial object-target points and motion history",
+      "output": "Open-loop 3D end-effector trajectory chunks",
+      "robotEvidence": "2,841 fork pick-and-place episodes and trajectory prediction",
+      "limitations": "The evaluation is open-loop trajectory prediction, not closed-loop robot execution.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "representation",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "mixed",
+      "stage": "L4",
+      "outputRepresentation": "Open-loop 3D end-effector trajectory chunks",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "2,841 fork pick-and-place episodes and trajectory prediction",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2605.20085v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://jackyfl.github.io/SP-VTP-project-page/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2605.20085v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2605.20085v1"
+        ]
+      }
+    },
+    "warped": {
+      "summary": "Synthesizes robot wrist-view images and action trajectories from monocular egocentric human demonstrations.",
+      "input": "Monocular human first-person RGB video",
+      "output": "Retargeted robot actions and Gaussian-splat wrist views",
+      "robotEvidence": "Robot tabletop rigid and articulated manipulation",
+      "limitations": "Rendered wrist views and retargeted trajectories are generated, not recorded wrist cameras.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L4",
+      "outputRepresentation": "Retargeted robot actions and Gaussian-splat wrist views",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Robot tabletop rigid and articulated manipulation",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2604.10809v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://kantor-lab.github.io/WARPED/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2604.10809v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2604.10809v1"
+        ]
+      }
+    },
+    "egoavflow": {
+      "summary": "Transfers manipulation and active camera control from human egocentric video using predicted 3D flow.",
+      "input": "Human egocentric video and inferred scene/hand motion",
+      "output": "Robot actions and optimized camera trajectories",
+      "robotEvidence": "Real-world active-view robot manipulation",
+      "limitations": "Reported training avoids robot demonstrations; predicted flow is estimated geometry.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Robot actions and optimized camera trajectories",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Real-world active-view robot manipulation",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2602.22461v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://dscho1234.github.io/egoavflow/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2602.22461v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2602.22461v1"
+        ]
+      }
+    },
+    "mitty": {
+      "summary": "Translates human demonstration video to robot-execution video using a diffusion transformer.",
+      "input": "Human video and task conditioning",
+      "output": "Generated robot-execution video",
+      "robotEvidence": "Human2Robot and EPIC-Kitchens video-generation evaluation",
+      "limitations": "Generated robot video is not an executable action policy.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "representation",
+      "evidenceLevel": "reconstruction",
+      "trainingType": "mixed",
+      "stage": "L4",
+      "outputRepresentation": "Generated robot-execution video",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Human2Robot and EPIC-Kitchens video-generation evaluation",
+      "implementation": "Author source files available; root software LICENSE not verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2512.17253v1"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/showlab/Mitty"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2512.17253v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2512.17253v1"
+        ]
+      }
+    },
+    "vitra": {
+      "summary": "Derives hand motion and language supervision from unscripted egocentric video for dexterous VLA pretraining.",
+      "input": "In-the-wild human hand videos with derived 3D hand and camera motion",
+      "output": "Hand-action VLA pretraining and robot fine-tuning",
+      "robotEvidence": "Real dexterous robot fine-tuning and zero-shot hand-action predictions",
+      "limitations": "One million episodes are paper-reported processed human video, not necessarily released robot demonstrations.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Hand-action VLA pretraining and robot fine-tuning",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Real dexterous robot fine-tuning and zero-shot hand-action predictions",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2510.21571v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://microsoft.github.io/VITRA/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2510.21571v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2510.21571v1"
+        ]
+      }
+    },
+    "unidex": {
+      "summary": "Learns a cross-hand dexterous VLA from human-in-the-loop retargeted egocentric RGB-D demonstrations.",
+      "input": "Egocentric RGB-D human interactions and retargeted robot-hand trajectories",
+      "output": "Function-aligned dexterous-hand robot policy",
+      "robotEvidence": "Tool-use experiments across two hands and cross-hand transfer",
+      "limitations": "Original input datasets and MANO or hand assets have their own terms; the repository lacks a verified root LICENSE.",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Function-aligned dexterous-hand robot policy",
+      "bodyCoverage": "Hands",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Tool-use experiments across two hands and cross-hand transfer",
+      "implementation": "Public preprocessing and training source available; no root LICENSE found despite README badge. Checkpoint and annotation file bytes verified; underlying source datasets require separate access.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2603.22264v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://unidex-ai.github.io/"
+        },
+        {
+          "label": "Code (license unverified)",
+          "url": "https://github.com/unidex-ai/UniDex"
+        },
+        {
+          "label": "Weights and annotations",
+          "url": "https://huggingface.co/UniDex-ai/UniDex"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2603.22264v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2603.22264v1"
+        ]
+      }
+    },
+    "halomi": {
+      "summary": "Transfers human ego and wrist-view demonstrations to humanoid loco-manipulation with active head-hand control.",
+      "input": "Human head and wrist observations plus tracked head-hand trajectories",
+      "output": "Controller-aware whole-body references and active perception",
+      "robotEvidence": "Unitree G1 across three quantitative and two qualitative real-world tasks",
+      "limitations": "Only three reported tasks have quantitative success rates.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Controller-aware whole-body references and active perception",
+      "bodyCoverage": "Whole body",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Unitree G1 across three quantitative and two qualitative real-world tasks",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2606.18772v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://halomi-humanoid.github.io"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2606.18772v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2606.18772v1"
+        ]
+      }
+    },
+    "unit-human-humanoid": {
+      "summary": "Aligns visual consequences and embodiment-specific actions into shared tokens for humanoid policy and world modeling.",
+      "input": "Egocentric human video and humanoid visual-action training",
+      "output": "Discrete cross-embodiment physical-intent tokens",
+      "robotEvidence": "Humanoid simulation and real-world zero-shot transfer",
+      "limitations": "Latent tokens are learned representations, not measured robot actions in the human videos.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Discrete cross-embodiment physical-intent tokens",
+      "bodyCoverage": "Whole body",
+      "supervision": "See primary paper; human video and robot labels have distinct provenance.",
+      "evaluation": "Humanoid simulation and real-world zero-shot transfer",
+      "implementation": "No implementation release verified.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2604.19734v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://xpeng-robotics.github.io/unit/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2604.19734v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2604.19734v1"
+        ]
+      }
+    },
+    "openhlm": {
+      "summary": "Learns a whole-body VLA from joint-based teleoperation and co-training with HuMI human demonstrations.",
+      "input": "HuMI human demonstrations and robot teleoperation",
+      "output": "Language-conditioned whole-body humanoid actions",
+      "robotEvidence": "Real-robot long-horizon humanoid loco-manipulation",
+      "limitations": "HuMI demonstrations are distinct from full-body robot teleoperation; reported comparisons are specific to the evaluated long-horizon task.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Language-conditioned whole-body humanoid actions",
+      "bodyCoverage": "Whole body",
+      "supervision": "Human and robot data have distinct provenance.",
+      "evaluation": "Real-robot long-horizon humanoid loco-manipulation",
+      "implementation": "Public author source files and repository LICENSE verified; external assets retain separate terms.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2606.22174v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://openhlm-project.github.io/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/OpenHLM-project/OpenHLM"
+        },
+        {
+          "label": "Weights",
+          "url": "https://huggingface.co/OpenHLM/OpenHLM-ckpts"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2606.22174v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2606.22174v1"
+        ]
+      }
+    },
+    "x-planner": {
+      "summary": "Learns event-structured task plans from ego, UMI and teleoperation annotations.",
+      "input": "Human egocentric video, UMI and teleoperation annotations",
+      "output": "Event-state plans for downstream robot actions",
+      "robotEvidence": "Offline two-step planning and real-robot evaluation",
+      "limitations": "The planner produces intermediate plans; it is not the low-level action controller.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "outputSpace": "robot",
+      "evidenceLevel": "real-robot",
+      "trainingType": "mixed",
+      "stage": "L5",
+      "outputRepresentation": "Event-state plans for downstream robot actions",
+      "bodyCoverage": "Hands",
+      "supervision": "Human and robot data have distinct provenance.",
+      "evaluation": "Offline two-step planning and real-robot evaluation",
+      "implementation": "Public author source files and repository LICENSE verified; external assets retain separate terms.",
+      "verified": "2026-10-30",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2609.25187v1"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/X-Square-Robot/Xplanner"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2609.25187v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2609.25187v1"
         ]
       }
     }

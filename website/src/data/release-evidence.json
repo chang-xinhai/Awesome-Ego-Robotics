@@ -1760,11 +1760,16 @@
         {
           "label": "Verified source file (2026-10-19)",
           "url": "https://github.com/3dlg-hcvc/EgoFun3D/blob/main/main.py"
+        },
+        {
+          "label": "Dataset access and license",
+          "url": "https://huggingface.co/datasets/3dlg-hcvc/EgoFun3D"
         }
       ],
       "availability": "Research resource",
       "softwareStatus": "Public source files verified (EgoFun3D: no repository-wide source license verified). Model/data and third-party terms remain separate.",
-      "verified": "2026-10-19"
+      "verified": "2026-10-30",
+      "dataStatus": "Dataset Hub is auto-gated under a CC BY-NC card; anonymous data files return HTTP 401. Access approval required."
     },
     "egotac": {
       "status": "partial",
@@ -1793,6 +1798,10 @@
         {
           "label": "Verified data file manifest",
           "url": "https://huggingface.co/datasets/wkzhang/EgoTac-SC/tree/main"
+        },
+        {
+          "label": "Official model weights",
+          "url": "https://huggingface.co/wkzhang/EgoTac"
         }
       ],
       "availability": "Research resource",
@@ -1801,8 +1810,9 @@
         "Official download links; no full-corpus integrity audit performed."
       ],
       "softwareStatus": "Public source files verified (EgoTac: no repository-wide source license verified). Model/data and third-party terms remain separate.",
-      "verified": "2026-10-19",
-      "dataStatus": "Data files verified; public file listing; apache-2.0."
+      "verified": "2026-10-30",
+      "dataStatus": "EgoTac-SC ZIP volumes are public; first volume byte-range verified. HF card declares Apache-2.0; external source datasets and MANO remain separate.",
+      "modelStatus": "Two downloadable inference checkpoints H1/H4; byte-range verified. HF model card declares Apache-2.0; source repository has no verified root LICENSE."
     },
     "touchsight": {
       "status": "unknown",
@@ -2117,11 +2127,29 @@
         {
           "label": "Repository license file",
           "url": "https://github.com/egosteer/egosteer/blob/main/LICENSE"
+        },
+        {
+          "label": "Base weights",
+          "url": "https://huggingface.co/EgoSteer/EgoSteer-3B-Base"
+        },
+        {
+          "label": "RealMan weights",
+          "url": "https://huggingface.co/EgoSteer/EgoSteer-3B-RealMan"
+        },
+        {
+          "label": "Human annotations",
+          "url": "https://huggingface.co/datasets/EgoSteer/EgoSteer-Egocentric"
+        },
+        {
+          "label": "Real robot data",
+          "url": "https://huggingface.co/datasets/EgoSteer/EgoSteer-RealWorld"
         }
       ],
       "availability": "Research resource",
       "softwareStatus": "Public source files verified (egosteer: Apache-2.0). Model/data and third-party terms remain separate.",
-      "verified": "2026-10-19"
+      "verified": "2026-10-30",
+      "modelStatus": "Base and RealMan 3B checkpoints are downloadable; byte-range checks succeeded. HF cards declare Apache-2.0; upstream base-model terms are separate.",
+      "dataStatus": "EgoSteer-Egocentric distributes annotations only; original videos have independent licenses and access. RealWorld robot datasets include downloadable LeRobot files; HF card Apache-2.0."
     },
     "metis": {
       "status": "partial",
@@ -15585,7 +15613,7 @@
       "status": "unknown",
       "commercial": false,
       "availability": "Research resource",
-      "verified": "2026-10-21",
+      "verified": "2026-10-30",
       "evidence": [
         {
           "label": "Primary v1 paper",
@@ -15600,7 +15628,7 @@
           "url": "https://github.com/Ropedia/EgoXperience/tree/main"
         }
       ],
-      "softwareStatus": "README/media only; implementation is forthcoming.",
+      "softwareStatus": "Official GitHub default branch contains README, citation and media but no method source; model/data repository remains pending.",
       "notes": [
         "EgoX-Data-6M reports 50 hours and EgoX-Bench one hour. Repository and model Hub contain announcements only; code, data and weights are coming soon."
       ],
@@ -16557,6 +16585,431 @@
           "label": "Xp-Teleop data",
           "url": "https://huggingface.co/datasets/ropedia-ai/Xp-Teleop"
         }
+      ]
+    },
+    "egorecovery": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2607.19745v1"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "More than 10x collection throughput is specific to the authors’ protocol; repository endpoint returned 404."
+      ]
+    },
+    "agenticfocus": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2607.08857v1"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "Synthesized action labels are retargeted estimates; not a verified closed-loop real-robot policy."
+      ]
+    },
+    "rynnworld-4d": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2607.06559v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://alibaba-damo-academy.github.io/RynnWorld-4D.github.io"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/alibaba-damo-academy/RynnWorld-4D"
+        },
+        {
+          "label": "Weights",
+          "url": "https://huggingface.co/Alibaba-DAMO-Academy/RynnWorld-4D"
+        }
+      ],
+      "softwareStatus": "Public author code with Apache-2.0 LICENSE and model files verified; upstream models and datasets have separate terms.",
+      "notes": [
+        "Dataset depth and flow include pseudo-labels; predicted depth is not measured input."
+      ],
+      "modelStatus": "Official model weights available; 16-byte Range request returned HTTP 206. Model card declares Apache-2.0; check upstream terms."
+    },
+    "rynnworld-teleop": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2607.06558v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://alibaba-damo-academy.github.io/RynnWorld-Teleop.github.io"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/alibaba-damo-academy/RynnWorld-Teleop"
+        },
+        {
+          "label": "Weights",
+          "url": "https://huggingface.co/Alibaba-DAMO-Academy/RynnWorld-Teleop"
+        }
+      ],
+      "softwareStatus": "Public author code with Apache-2.0 LICENSE and model files verified; upstream models and datasets have separate terms.",
+      "notes": [
+        "Generated video is synthetic; hand-pose retargeting does not constitute measured robot action ground truth."
+      ],
+      "modelStatus": "Official model weights available; 16-byte Range request returned HTTP 206. Model card declares Apache-2.0; check upstream terms."
+    },
+    "lingbot-vla-2": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2607.06403v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://technology.robbyant.com/lingbot-vla-v2"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/robbyant/lingbot-vla-v2"
+        }
+      ],
+      "softwareStatus": "Public author implementation and Apache-2.0 root LICENSE verified; model access and dataset terms are separate.",
+      "notes": [
+        "Reported pretraining corpus is mixed human and robot data; do not treat all hours as egocentric."
+      ]
+    },
+    "humanoidumi": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2606.27239v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://baai-aether.github.io/HumanoidUMI/"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "Gripper action and tracked human keypoints are captured signals; references are retargeted."
+      ]
+    },
+    "qwen-robotmanip": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2606.17846v1"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "Reported 38,100 hours is the combined heterogeneous corpus. Human-to-robot trajectories are synthesized."
+      ]
+    },
+    "caip": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2606.17256v1"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "Human hand keypoints are proxy supervision, not robot action labels."
+      ]
+    },
+    "gaze2act": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2605.30282v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://zuo-kuangji.github.io/Gaze2Act/"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "Gaze is a user intent input, not autonomous robot attention ground truth."
+      ]
+    },
+    "demian": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2605.17077v1"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "VLM-generated annotations are derived labels; human-video and robot clips are separate sources."
+      ]
+    },
+    "spot-egospt": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2605.20085v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://jackyfl.github.io/SP-VTP-project-page/"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "The evaluation is open-loop trajectory prediction, not closed-loop robot execution."
+      ]
+    },
+    "warped": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2604.10809v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://kantor-lab.github.io/WARPED/"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "Rendered wrist views and retargeted trajectories are generated, not recorded wrist cameras."
+      ]
+    },
+    "egoavflow": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2602.22461v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://dscho1234.github.io/egoavflow/"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "Reported training avoids robot demonstrations; predicted flow is estimated geometry."
+      ]
+    },
+    "mitty": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2512.17253v1"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/showlab/Mitty"
+        }
+      ],
+      "softwareStatus": "Author source files available; root software LICENSE not verified.",
+      "notes": [
+        "Generated robot video is not an executable action policy."
+      ]
+    },
+    "vitra": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2510.21571v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://microsoft.github.io/VITRA/"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "One million episodes are paper-reported processed human video, not necessarily released robot demonstrations."
+      ]
+    },
+    "unidex": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2603.22264v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://unidex-ai.github.io/"
+        },
+        {
+          "label": "Code (license unverified)",
+          "url": "https://github.com/unidex-ai/UniDex"
+        },
+        {
+          "label": "Weights and annotations",
+          "url": "https://huggingface.co/UniDex-ai/UniDex"
+        }
+      ],
+      "softwareStatus": "Public preprocessing and training source available; no root LICENSE found despite README badge. Checkpoint and annotation file bytes verified; underlying source datasets require separate access.",
+      "notes": [
+        "Original input datasets and MANO or hand assets have their own terms; the repository lacks a verified root LICENSE."
+      ],
+      "modelStatus": "Two official checkpoints and separate dataset annotations listed; checkpoint and annotation byte retrieval verified. Model license unspecified."
+    },
+    "halomi": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2606.18772v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://halomi-humanoid.github.io"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "Only three reported tasks have quantitative success rates."
+      ]
+    },
+    "unit-human-humanoid": {
+      "status": "unknown",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2604.19734v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://xpeng-robotics.github.io/unit/"
+        }
+      ],
+      "softwareStatus": "No implementation release verified.",
+      "notes": [
+        "Latent tokens are learned representations, not measured robot actions in the human videos."
+      ]
+    },
+    "openhlm": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2606.22174v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://openhlm-project.github.io/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/OpenHLM-project/OpenHLM"
+        },
+        {
+          "label": "Weights",
+          "url": "https://huggingface.co/OpenHLM/OpenHLM-ckpts"
+        },
+        {
+          "label": "Official example data",
+          "url": "https://huggingface.co/datasets/OpenHLM/OpenHLM-data"
+        }
+      ],
+      "softwareStatus": "Public source, Apache-2.0 root license; model and data terms are separate.",
+      "notes": [
+        "HuMI demonstrations are distinct from full-body robot teleoperation; reported comparisons are specific to the evaluated long-horizon task."
+      ],
+      "modelStatus": "Official model file byte-range verified: 7,473,107,856 bytes. Model terms distinct from source.",
+      "dataStatus": "Example video byte-range verified; sample availability does not establish complete training data release."
+    },
+    "x-planner": {
+      "status": "partial",
+      "commercial": false,
+      "availability": "Research resource",
+      "verified": "2026-10-30",
+      "evidence": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2609.25187v1"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/X-Square-Robot/Xplanner"
+        }
+      ],
+      "softwareStatus": "Public source, MIT root license; pretrained models and data terms are separate.",
+      "notes": [
+        "The planner produces intermediate plans; it is not the low-level action controller."
       ]
     }
   }

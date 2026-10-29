@@ -12811,5 +12811,348 @@
     "imageSource": "https://arxiv.org/html/2610.26855v1/pipeline.png",
     "imageAlt": "Ropedia W0 paper data and annotation pipeline",
     "credit": "Nanyang Technological University / original authors"
+  },
+  {
+    "id": "egorecovery",
+    "name": "EgoRecovery",
+    "summary": "Learns a gated corrective intent from human recovery demonstrations and a small set of robot recoveries.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/egorecovery-method.webp",
+    "imagePage": "https://arxiv.org/html/2607.19745v1",
+    "imageSource": "https://arxiv.org/html/2607.19745v1/teaser.png",
+    "imageAlt": "EgoRecovery official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "agenticfocus",
+    "name": "AgenticFocus",
+    "summary": "Synthesizes robot-aligned demonstration observations by recovering objects and full-hand motion from human FPV video.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/agenticfocus-method.webp",
+    "imagePage": "https://arxiv.org/html/2607.08857v1",
+    "imageSource": "https://arxiv.org/html/2607.08857v1/figures/human_to_robot_dataset.png",
+    "imageAlt": "AgenticFocus official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "rynnworld-4d",
+    "name": "RynnWorld-4D",
+    "summary": "Pretrains a 4D RGB-depth-flow world model on ego human and robot video and extracts a robot action head.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/rynnworld-4d-method.webp",
+    "imagePage": "https://arxiv.org/html/2607.06559v1",
+    "imageSource": "https://arxiv.org/html/2607.06559v1/teasor.png",
+    "imageAlt": "RynnWorld-4D official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "rynnworld-teleop",
+    "name": "RynnWorld-Teleop",
+    "summary": "Transforms a tracked operator hand-pose stream into robot-view video and retargetable actions via a digital-teleoperation world model.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/rynnworld-teleop-method.webp",
+    "imagePage": "https://arxiv.org/html/2607.06558v1",
+    "imageSource": "https://arxiv.org/html/2607.06558v1/teasor.png",
+    "imageAlt": "RynnWorld-Teleop official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "lingbot-vla-2",
+    "name": "LingBot-VLA 2.0",
+    "summary": "Pretrains a whole-body VLA on mixed robot trajectories and egocentric human videos.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/lingbot-vla-2-method.webp",
+    "imagePage": "https://arxiv.org/html/2607.06403v1",
+    "imageSource": "https://arxiv.org/html/2607.06403v1/framework.png",
+    "imageAlt": "LingBot-VLA 2.0 official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "humanoidumi",
+    "name": "HumanoidUMI",
+    "summary": "Uses VR keypoints and wrist observations from a portable human capture setup for whole-body humanoid policy learning.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/humanoidumi-method.webp",
+    "imagePage": "https://arxiv.org/html/2606.27239v1",
+    "imageSource": "https://arxiv.org/html/2606.27239v1/hardware.png",
+    "imageAlt": "HumanoidUMI official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "qwen-robotmanip",
+    "name": "Qwen-RobotManip",
+    "summary": "Aligns human-video-derived and robot trajectories across embodiments to pretrain a generalist manipulation VLA.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/qwen-robotmanip-method.webp",
+    "imagePage": "https://arxiv.org/html/2606.17846v1",
+    "imageSource": "https://arxiv.org/html/2606.17846v1/myteaser_V6.png",
+    "imageAlt": "Qwen-RobotManip official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "caip",
+    "name": "CAIP",
+    "summary": "Contrastively pretrains visual representations using 3D hand keypoints from human egocentric video as action proxies.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/caip-method.webp",
+    "imagePage": "https://arxiv.org/html/2606.17256v1",
+    "imageSource": "https://arxiv.org/html/2606.17256v1/teaser_figure.png",
+    "imageAlt": "CAIP official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "gaze2act",
+    "name": "Gaze2Act",
+    "summary": "Maps first-person human gaze into robot views to condition VLA target selection and actions.",
+    "signals": [
+      "Vision",
+      "Gaze"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/gaze2act-method.webp",
+    "imagePage": "https://arxiv.org/html/2605.30282v1",
+    "imageSource": "https://arxiv.org/html/2605.30282v1/teaser_final_outlined.png",
+    "imageAlt": "Gaze2Act official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "demian",
+    "name": "DeMiAn",
+    "summary": "Creates dense multi-aspect language annotations for robot and egocentric videos and uses a learned instructor during execution.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/demian-method.webp",
+    "imagePage": "https://arxiv.org/html/2605.17077v1",
+    "imageSource": "https://arxiv.org/html/2605.17077v1/main.png",
+    "imageAlt": "DeMiAn official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "spot-egospt",
+    "name": "SP-VTP / EgoSPT",
+    "summary": "Predicts future 3D end-effector trajectories from spatial prompts and an egocentric observation history.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/spot-egospt-method.webp",
+    "imagePage": "https://arxiv.org/html/2605.20085v1",
+    "imageSource": "https://arxiv.org/html/2605.20085v1/EgoSPT-intro.png",
+    "imageAlt": "SP-VTP / EgoSPT official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "warped",
+    "name": "WARPED",
+    "summary": "Synthesizes robot wrist-view images and action trajectories from monocular egocentric human demonstrations.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/warped-method.webp",
+    "imagePage": "https://arxiv.org/html/2604.10809v1",
+    "imageSource": "https://arxiv.org/html/2604.10809v1/figures/front_page.png",
+    "imageAlt": "WARPED official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "egoavflow",
+    "name": "EgoAVFlow",
+    "summary": "Transfers manipulation and active camera control from human egocentric video using predicted 3D flow.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/egoavflow-method.webp",
+    "imagePage": "https://arxiv.org/html/2602.22461v1",
+    "imageSource": "https://arxiv.org/html/2602.22461v1/thumbnail-v11.png",
+    "imageAlt": "EgoAVFlow official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "mitty",
+    "name": "Mitty",
+    "summary": "Translates human demonstration video to robot-execution video using a diffusion transformer.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/mitty-method.webp",
+    "imagePage": "https://arxiv.org/html/2512.17253v1",
+    "imageSource": "https://arxiv.org/html/2512.17253v1/method.png",
+    "imageAlt": "Mitty official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "vitra",
+    "name": "VITRA",
+    "summary": "Derives hand motion and language supervision from unscripted egocentric video for dexterous VLA pretraining.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/vitra-method.webp",
+    "imagePage": "https://arxiv.org/html/2510.21571v1",
+    "imageSource": "https://arxiv.org/html/2510.21571v1/teaser.png",
+    "imageAlt": "VITRA official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "unidex",
+    "name": "UniDex",
+    "summary": "Learns a cross-hand dexterous VLA from human-in-the-loop retargeted egocentric RGB-D demonstrations.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/unidex-method.webp",
+    "imagePage": "https://arxiv.org/html/2603.22264v1",
+    "imageSource": "https://arxiv.org/html/2603.22264v1/retarget_new.png",
+    "imageAlt": "UniDex official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "halomi",
+    "name": "HALOMI",
+    "summary": "Transfers human ego and wrist-view demonstrations to humanoid loco-manipulation with active head-hand control.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/halomi-method.webp",
+    "imagePage": "https://arxiv.org/html/2606.18772v1",
+    "imageSource": "https://arxiv.org/html/2606.18772v1/figures/data_collect_new.png",
+    "imageAlt": "HALOMI official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "unit-human-humanoid",
+    "name": "UniT",
+    "summary": "Aligns visual consequences and embodiment-specific actions into shared tokens for humanoid policy and world modeling.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/unit-human-humanoid-method.webp",
+    "imagePage": "https://arxiv.org/html/2604.19734v1",
+    "imageSource": "https://arxiv.org/html/2604.19734v1/teaser.png",
+    "imageAlt": "UniT official paper method and evaluation figure",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "openhlm",
+    "name": "OpenHLM",
+    "summary": "Learns a whole-body VLA from joint-based teleoperation and co-training with HuMI human demonstrations.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Whole body",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/openhlm-method.webp",
+    "imagePage": "https://arxiv.org/html/2606.22174v1",
+    "imageSource": "https://arxiv.org/html/2606.22174v1/teaser.png",
+    "imageAlt": "OpenHLM official paper overview",
+    "credit": "Original authors / paper"
+  },
+  {
+    "id": "x-planner",
+    "name": "X-Planner",
+    "summary": "Learns event-structured task plans from ego, UMI and teleoperation annotations.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not reported",
+    "coverage": "Hands",
+    "tracking": "Not reported",
+    "reviewed": "2026-10-30",
+    "image": "images/catalog/x-planner-method.webp",
+    "imagePage": "https://arxiv.org/html/2609.25187v1",
+    "imageSource": "https://arxiv.org/html/2609.25187v1/X-Planner.png",
+    "imageAlt": "X-Planner official paper overview",
+    "credit": "Original authors / paper"
   }
 ]
