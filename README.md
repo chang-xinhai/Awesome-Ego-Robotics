@@ -511,7 +511,7 @@ Learning directly from human data, translating to robot skills, and the tools an
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2026-11-03 | RoboTryOn, Human video, Vision | KAIST | [RoboTryOn: Synthesizing Dexterous Robot Demonstrations from Human Videos via Virtual Try-On](https://arxiv.org/abs/2611.05163) | arXiv | — <!-- work:robotryon --> |
+| 2026-11-03 | RoboTryOn, Human video, Vision | KAIST | [RoboTryOn: Synthesizing Dexterous Robot Demonstrations from Human Videos via Virtual Try-On](https://arxiv.org/abs/2611.05163) | arXiv | [Project](https://ryan-seungyong-lee.github.io/RoboTryOn/) / [Code (license unverified)](https://github.com/ryan-seungyong-lee/RoboTryOn) <!-- work:robotryon --> |
 | 2026-11-03 | FloMo, Human video, Vision | Georgia Institute of Technology | [FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video](https://arxiv.org/abs/2611.05062) | arXiv | [Project](https://flomo-icra.github.io/) <!-- work:flomo --> |
 | 2026-11-03 | Action Intent Transfer, Human video, Vision | Southeast University | [Action Intent as a Bridge: Transferring Manipulation Knowledge from Human-Centric Videos to Robots](https://arxiv.org/abs/2611.04522) | arXiv | — <!-- work:action-intent-transfer --> |
 | 2026-10-30 | HandMimicX, Human video, Vision, Depth | Tsinghua University | [HandMimicX: Learning Human-Like Dexterous Manipulation via an Object-Centric Policy from Egocentric Videos](https://arxiv.org/abs/2610.41336) | arXiv | — <!-- work:handmimicx --> |

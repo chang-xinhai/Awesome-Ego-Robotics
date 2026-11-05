@@ -71653,6 +71653,14 @@
         {
           "label": "Primary paper",
           "url": "https://arxiv.org/abs/2611.05163"
+        },
+        {
+          "label": "Official project",
+          "url": "https://ryan-seungyong-lee.github.io/RoboTryOn/"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/ryan-seungyong-lee/RoboTryOn"
         }
       ],
       "verified": "2026-11-05",
