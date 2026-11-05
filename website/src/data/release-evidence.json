@@ -15899,6 +15899,14 @@
         {
           "label": "Official implementation",
           "url": "https://github.com/mileret/ViT-H-release"
+        },
+        {
+          "label": "Offline checkpoint file manifest",
+          "url": "https://huggingface.co/datasets/eerrr1/ViT-H-checkpoints/tree/main"
+        },
+        {
+          "label": "Preprocessed training archives",
+          "url": "https://huggingface.co/datasets/eerrr1/ViT-H/tree/main"
         }
       ],
       "softwareStatus": "Offline inference and pretraining code available; teleoperation deployment and pre/post-training components remain forthcoming.",
@@ -15911,7 +15919,9 @@
         "availability": "Public source",
         "license": "MIT",
         "licenseURL": "https://github.com/mileret/ViT-H-release/blob/main/LICENSE"
-      }
+      },
+      "modelStatus": "Offline ViT-H and tracker checkpoint files verified publicly accessible; third-party model and body-model assets have separate terms.",
+      "dataStatus": "Four preprocessed data archives are accessible for research use; original source videos and annotations must be obtained separately."
     },
     "cocarry": {
       "status": "unknown",

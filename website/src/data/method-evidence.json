@@ -67489,7 +67489,7 @@
       "bodyCoverage": "Whole body",
       "supervision": "Human-video motion-reference generation and tracking-feedback DPO post-training",
       "evaluation": "Real Unitree G1 motion tracking and video teleoperation",
-      "implementation": "Offline inference and pretraining code available; teleoperation deployment and pre/post-training components remain forthcoming.",
+      "implementation": "Offline inference and offline pretraining code, checkpoints and four preprocessed datasets are released; online teleoperation deployment, its pretraining and post-training remain forthcoming. Original videos, body assets and dependencies have separate research terms.",
       "verified": "2026-10-26",
       "sources": [
         {
@@ -67503,6 +67503,14 @@
         {
           "label": "Official implementation",
           "url": "https://github.com/mileret/ViT-H-release"
+        },
+        {
+          "label": "Offline checkpoint files",
+          "url": "https://huggingface.co/datasets/eerrr1/ViT-H-checkpoints"
+        },
+        {
+          "label": "Preprocessed training data",
+          "url": "https://huggingface.co/datasets/eerrr1/ViT-H"
         }
       ],
       "fieldSources": {
