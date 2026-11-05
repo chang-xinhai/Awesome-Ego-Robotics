@@ -71668,7 +71668,7 @@
         "Vision"
       ],
       "bodyCoverage": "Hands",
-      "stage": "L4",
+      "stage": "L5",
       "fieldSources": {
         "input": [
           "https://arxiv.org/html/2611.05163v1/"
@@ -71704,7 +71704,7 @@
         "Vision"
       ],
       "bodyCoverage": "Hands",
-      "stage": "L4",
+      "stage": "L5",
       "fieldSources": {
         "input": [
           "https://arxiv.org/html/2611.04522v1/"
@@ -71740,7 +71740,7 @@
         "Vision"
       ],
       "bodyCoverage": "Hands",
-      "stage": "L4",
+      "stage": "L5",
       "fieldSources": {
         "input": [
           "https://arxiv.org/html/2611.05062v1/"
@@ -71777,7 +71777,7 @@
         "Depth"
       ],
       "bodyCoverage": "Hands",
-      "stage": "L4",
+      "stage": "L5",
       "fieldSources": {
         "input": [
           "https://arxiv.org/html/2610.41336v1/"
