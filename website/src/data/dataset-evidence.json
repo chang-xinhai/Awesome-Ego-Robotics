@@ -13706,7 +13706,8 @@
     "egocontact": {
       "name": "EgoContact",
       "reportedScale": {
-        "scope": "22.5K manually verified interaction events, as reported in the paper"
+        "interactionEvents": 22500,
+        "scope": "Manually verified events reported in the paper; downloadable release scale not verified."
       },
       "access": "Not verified",
       "observations": "Egocentric video with pre-contact frames.",
