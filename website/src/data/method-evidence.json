@@ -71642,6 +71642,297 @@
           "https://arxiv.org/html/2609.25187v1"
         ]
       }
+    },
+    "robotryon": {
+      "summary": "Human egocentric video is translated into robot video and labeled by an inverse dynamics model for policy learning.",
+      "input": "Egocentric human video and robot reference image",
+      "output": "Synthetic robot demonstrations and action labels",
+      "supervision": "See primary paper",
+      "robotEvidence": "Real humanoid manipulation tasks",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.05163"
+        }
+      ],
+      "verified": "2026-11-05",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L4",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2611.05163v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.05163v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.05163v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.05163v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.05163v1/"
+        ]
+      }
+    },
+    "action-intent-transfer": {
+      "summary": "Transfers human-video manipulation knowledge through a shared action-intent representation.",
+      "input": "Human-centric manipulation video",
+      "output": "Aligned human and robot action intents",
+      "supervision": "See primary paper",
+      "robotEvidence": "Simulation and real robot manipulation",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.04522"
+        }
+      ],
+      "verified": "2026-11-05",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L4",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2611.04522v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.04522v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.04522v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.04522v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.04522v1/"
+        ]
+      }
+    },
+    "flomo": {
+      "summary": "Jointly predicts 3D scene flow and actions after co-training on human videos and robot teleoperation.",
+      "input": "Human videos and action-labeled robot demonstrations",
+      "output": "Predicted 3D scene flow and robot actions",
+      "supervision": "See primary paper",
+      "robotEvidence": "Robot manipulation experiments",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.05062"
+        }
+      ],
+      "verified": "2026-11-05",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L4",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2611.05062v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.05062v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.05062v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.05062v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.05062v1/"
+        ]
+      }
+    },
+    "handmimicx": {
+      "summary": "Reconstructs hand–object motion from an egocentric demonstration and trains an object-centric dexterous policy in simulation for transfer.",
+      "input": "Egocentric human RGB-D demonstration",
+      "output": "Object-centric manipulation policy",
+      "supervision": "See primary paper",
+      "robotEvidence": "Real dexterous robot manipulation",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.41336"
+        }
+      ],
+      "verified": "2026-11-05",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L4",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2610.41336v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.41336v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.41336v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.41336v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.41336v1/"
+        ]
+      },
+      "policyInput": "RGB-D camera observations at robot execution"
+    },
+    "touchbridge": {
+      "summary": "Transfers human manipulation demonstrations to a tactile-conditioned robot manipulation policy.",
+      "input": "Human demonstrations with tactile observations",
+      "output": "Robot manipulation demonstrations and tactile-conditioned policy",
+      "supervision": "See primary paper",
+      "robotEvidence": "Real robot dexterous manipulation",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.40349"
+        }
+      ],
+      "verified": "2026-11-05",
+      "inputSignals": [
+        "Vision",
+        "Tactile"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L4",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2610.40349v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.40349v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.40349v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.40349v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.40349v1/"
+        ]
+      }
+    },
+    "cimi": {
+      "summary": "Uses a contact imitation interface to transfer human dexterous manipulation skills to robots.",
+      "input": "Human dexterous manipulation demonstrations",
+      "output": "Contact-informed robot manipulation",
+      "supervision": "See primary paper",
+      "robotEvidence": "Robot dexterous manipulation",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.41028"
+        }
+      ],
+      "verified": "2026-11-05",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L4",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2610.41028v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.41028v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.41028v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.41028v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.41028v1/"
+        ]
+      }
+    },
+    "egomo3r": {
+      "summary": "Jointly reconstructs body motion and scene geometry from monocular egocentric video.",
+      "input": "Monocular egocentric video",
+      "output": "Human motion, camera trajectory and scene reconstruction",
+      "supervision": "See primary paper",
+      "robotEvidence": "Reconstruction evaluation on ego datasets",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.01627"
+        }
+      ],
+      "verified": "2026-11-05",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body",
+      "stage": "L2",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2611.01627v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.01627v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.01627v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.01627v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.01627v1/"
+        ]
+      }
+    },
+    "egohsi3r": {
+      "summary": "Reconstructs camera motion, scene geometry, hand trajectories and visual contact estimates from egocentric video.",
+      "input": "Monocular egocentric video",
+      "output": "Hand and scene reconstruction with estimated visual contact",
+      "supervision": "See primary paper",
+      "robotEvidence": "Egocentric hand–scene reconstruction benchmarks",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.40832"
+        }
+      ],
+      "verified": "2026-11-05",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L2",
+      "fieldSources": {
+        "input": [
+          "https://arxiv.org/html/2610.40832v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.40832v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.40832v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.40832v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.40832v1/"
+        ]
+      }
     }
   }
 }

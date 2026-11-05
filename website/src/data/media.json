@@ -2392,7 +2392,12 @@
     "credit": "Original authors / official project",
     "imagePage": "https://arxiv.org/html/2605.24934v1",
     "imageSource": "https://arxiv.org/html/2605.24934v1/teaser.png",
-    "imageAlt": "HumanEgo: official method overview"
+    "imageAlt": "HumanEgo: official method overview",
+    "datasetImage": "images/catalog/humanego-dataset.webp",
+    "datasetImagePage": "https://arxiv.org/html/2605.24934v1/",
+    "datasetImageSource": "https://arxiv.org/html/2605.24934v1/figs/data_collection_noface.png",
+    "datasetImageAlt": "HumanEgo human demonstration collection with Aria glasses",
+    "datasetImageType": "Dataset capture"
   },
   {
     "id": "egohumanoid",
@@ -12000,7 +12005,12 @@
     "imagePage": "https://arxiv.org/html/2610.18872v1",
     "imageSource": "https://arxiv.org/html/2610.18872v1/teaser-fig.png",
     "imageAlt": "EgoExplorer: original paper dataset examples and overview",
-    "credit": "Shanghai AI Laboratory / original authors"
+    "credit": "Shanghai AI Laboratory / original authors",
+    "datasetImage": "images/catalog/egoexplorer-dataset.webp",
+    "datasetImagePage": "https://arxiv.org/html/2610.18872v1",
+    "datasetImageSource": "https://arxiv.org/html/2610.18872v1/teaser-fig.png",
+    "datasetImageAlt": "EgoExplorer: original paper dataset examples and overview",
+    "datasetImageType": "Dataset overview"
   },
   {
     "id": "steertuning",
@@ -12102,7 +12112,12 @@
     "imagePage": "https://arxiv.org/html/2610.20596v1",
     "imageSource": "https://arxiv.org/html/2610.20596v1/architecture.png",
     "imageAlt": "CoWear: original paper dataset examples and overview",
-    "credit": "Beihang University / original authors"
+    "credit": "Beihang University / original authors",
+    "datasetImage": "images/catalog/cowear-dataset.webp",
+    "datasetImagePage": "https://arxiv.org/html/2610.20596v1",
+    "datasetImageSource": "https://arxiv.org/html/2610.20596v1/architecture.png",
+    "datasetImageAlt": "CoWear: original paper dataset examples and overview",
+    "datasetImageType": "Dataset overview"
   },
   {
     "id": "gazeagent",
@@ -12246,7 +12261,12 @@
     "imagePage": "https://arxiv.org/html/2610.22822v1",
     "imageSource": "https://arxiv.org/html/2610.22822v1/figs/samplevideos_figure_r.png",
     "imageAlt": "VISTA: original paper dataset examples and overview",
-    "credit": "Harvard University / original authors"
+    "credit": "Harvard University / original authors",
+    "datasetImage": "images/catalog/vista-dataset.webp",
+    "datasetImagePage": "https://arxiv.org/html/2610.22822v1",
+    "datasetImageSource": "https://arxiv.org/html/2610.22822v1/figs/samplevideos_figure_r.png",
+    "datasetImageAlt": "VISTA: original paper dataset examples and overview",
+    "datasetImageType": "Dataset overview"
   },
   {
     "id": "vit-h",
@@ -12637,7 +12657,12 @@
     "imagePage": "https://arxiv.org/html/2610.23980v1",
     "imageSource": "https://arxiv.org/html/2610.23980v1/pipeline.png",
     "imageAlt": "SituHOI: original paper dataset examples and overview",
-    "credit": "The University of Hong Kong / original authors"
+    "credit": "The University of Hong Kong / original authors",
+    "datasetImage": "images/catalog/situhoi-dataset.webp",
+    "datasetImagePage": "https://arxiv.org/html/2610.23980v1",
+    "datasetImageSource": "https://arxiv.org/html/2610.23980v1/pipeline.png",
+    "datasetImageAlt": "SituHOI: original paper dataset examples and overview",
+    "datasetImageType": "Dataset overview"
   },
   {
     "id": "touch-jepa",
@@ -13154,5 +13179,156 @@
     "imageSource": "https://arxiv.org/html/2609.25187v1/X-Planner.png",
     "imageAlt": "X-Planner official paper overview",
     "credit": "Original authors / paper"
+  },
+  {
+    "id": "robotryon",
+    "name": "RoboTryOn",
+    "summary": "Human egocentric video is translated into robot video and labeled by an inverse dynamics model for policy learning.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-05",
+    "credit": "Original paper authors",
+    "imagePage": "https://arxiv.org/html/2611.05163v1/",
+    "imageSource": "https://arxiv.org/html/2611.05163v1/assets/method.jpg",
+    "imageAlt": "RoboTryOn original paper overview figure",
+    "image": "images/catalog/nov05-robotryon.webp"
+  },
+  {
+    "id": "action-intent-transfer",
+    "name": "Action Intent Transfer",
+    "summary": "Transfers human-video manipulation knowledge through a shared action-intent representation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-05",
+    "credit": "Original paper authors",
+    "imagePage": "https://arxiv.org/html/2611.04522v1/",
+    "imageSource": "https://arxiv.org/html/2611.04522v1/first.png",
+    "imageAlt": "Action Intent Transfer original paper overview figure",
+    "image": "images/catalog/nov05-action-intent-transfer.webp"
+  },
+  {
+    "id": "flomo",
+    "name": "FloMo",
+    "summary": "Jointly predicts 3D scene flow and actions after co-training on human videos and robot teleoperation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-05",
+    "credit": "Original paper authors",
+    "imagePage": "https://arxiv.org/html/2611.05062v1/",
+    "imageSource": "https://arxiv.org/html/2611.05062v1/figures/figure_arch.png",
+    "imageAlt": "FloMo original paper overview figure",
+    "image": "images/catalog/nov05-flomo.webp"
+  },
+  {
+    "id": "handmimicx",
+    "name": "HandMimicX",
+    "summary": "Reconstructs hand–object motion from an egocentric demonstration and trains an object-centric dexterous policy in simulation for transfer.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-05",
+    "credit": "Original paper authors",
+    "imagePage": "https://arxiv.org/html/2610.41336v1/",
+    "imageSource": "https://arxiv.org/html/2610.41336v1/figs/pipeline_handmimicx_v6.jpg",
+    "imageAlt": "HandMimicX original paper overview figure",
+    "image": "images/catalog/nov05-handmimicx.webp"
+  },
+  {
+    "id": "touchbridge",
+    "name": "TouchBridge",
+    "summary": "Transfers human manipulation demonstrations to a tactile-conditioned robot manipulation policy.",
+    "signals": [
+      "Vision",
+      "Tactile"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-05",
+    "credit": "Original paper authors",
+    "imagePage": "https://arxiv.org/html/2610.40349v1/",
+    "imageSource": "https://arxiv.org/html/2610.40349v1/teaser_new.png",
+    "imageAlt": "TouchBridge original paper overview figure",
+    "image": "images/catalog/nov05-touchbridge.webp"
+  },
+  {
+    "id": "cimi",
+    "name": "CIMI",
+    "summary": "Uses a contact imitation interface to transfer human dexterous manipulation skills to robots.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-05",
+    "credit": "Original paper authors",
+    "imagePage": "https://arxiv.org/html/2610.41028v1/",
+    "imageSource": "https://arxiv.org/html/2610.41028v1/teaser.png",
+    "imageAlt": "CIMI original paper overview figure",
+    "image": "images/catalog/nov05-cimi.webp"
+  },
+  {
+    "id": "egomo3r",
+    "name": "EgoMo3R",
+    "summary": "Jointly reconstructs body motion and scene geometry from monocular egocentric video.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Whole body",
+    "reviewed": "2026-11-05",
+    "credit": "Original paper authors",
+    "imagePage": "https://arxiv.org/html/2611.01627v1/",
+    "imageSource": "https://arxiv.org/html/2611.01627v1/teaser-crop_lq.png",
+    "imageAlt": "EgoMo3R original paper overview figure",
+    "image": "images/catalog/nov05-egomo3r.webp"
+  },
+  {
+    "id": "egohsi3r",
+    "name": "EgoHSI3R",
+    "summary": "Reconstructs camera motion, scene geometry, hand trajectories and visual contact estimates from egocentric video.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-05",
+    "credit": "Original paper authors",
+    "imagePage": "https://arxiv.org/html/2610.40832v1/",
+    "imageSource": "https://arxiv.org/html/2610.40832v1/teaser_demo.png",
+    "imageAlt": "EgoHSI3R original paper overview figure",
+    "image": "images/catalog/nov05-egohsi3r.webp"
+  },
+  {
+    "id": "egocontact",
+    "name": "EgoContact",
+    "summary": "Egocentric interaction dataset with manually verified contact events and intent labels for contact prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-05",
+    "credit": "Original paper authors",
+    "imagePage": "https://arxiv.org/html/2610.39167v1/",
+    "imageSource": "https://arxiv.org/html/2610.39167v1/hifiego_sunburst.png",
+    "imageAlt": "EgoContact original paper overview figure",
+    "image": "images/catalog/nov05-egocontact.webp",
+    "datasetImage": "images/catalog/nov05-egocontact.webp",
+    "datasetImagePage": "https://arxiv.org/html/2610.39167v1/",
+    "datasetImageSource": "https://arxiv.org/html/2610.39167v1/hifiego_sunburst.png",
+    "datasetImageAlt": "EgoContact interaction category distribution from the original paper",
+    "datasetImageType": "Dataset coverage"
   }
 ]

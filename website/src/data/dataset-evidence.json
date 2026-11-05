@@ -13702,6 +13702,34 @@
           "https://arxiv.org/html/2610.23980v1"
         ]
       }
+    },
+    "egocontact": {
+      "name": "EgoContact",
+      "reportedScale": {
+        "scope": "22.5K manually verified interaction events, as reported in the paper"
+      },
+      "access": "Not verified",
+      "observations": "Egocentric video with pre-contact frames.",
+      "labels": "Manually verified semantic intents and pixel-precise contact locations.",
+      "bodyCoverage": "Hands",
+      "annotationType": "manual",
+      "dataRole": "egocentric",
+      "annotationEvidence": "22.5K manually verified interaction events.",
+      "limitations": "Paper-reported scale; downloadable release scale and terms not verified.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2610.39167"
+        },
+        {
+          "label": "Project",
+          "url": "https://egocontact.github.io/"
+        }
+      ],
+      "verified": "2026-11-05",
+      "recordedSignals": [
+        "Vision"
+      ]
     }
   }
 }

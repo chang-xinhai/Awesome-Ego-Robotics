@@ -236,6 +236,8 @@ Organized by the transformation they perform; inputs, output frame/scale, superv
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-11-01 | EgoMo3R, Human video, Vision | Stanford University | [EgoMo3R: Joint Egocentric Motion and Scene Reconstruction](https://arxiv.org/abs/2611.01627) | arXiv | [Project](https://chaitanya100100.github.io/EgoMo3R/) / [Code (license unverified)](https://github.com/chaitanya100100/EgoMo3R) <!-- work:egomo3r --> |
+| 2026-10-29 | EgoHSI3R, Human video, Vision | Tsinghua University | [EgoHSI3R: Online 4D Hand-Scene Interaction Reconstruction from Egocentric Video](https://arxiv.org/abs/2610.40832) | arXiv | [Project](https://pmz-enterprise.github.io/egohsi3r-page/) / [Code (license unverified)](https://github.com/pmz-enterprise/egohsi3r) <!-- work:egohsi3r --> |
 | 2026-10-21 | DewHand, Human video, Vision | The University of Tokyo | [DewHand: Direct Metric World-Space Hand Motion Reconstruction from Egocentric Videos](https://arxiv.org/abs/2610.29936) | arXiv | [Project](https://narusuzuki.github.io/projects/26-dewhand/) <!-- work:dewhand --> |
 | 2026-10-19 | ExMR, Exocentric reference, Vision | Leibniz University Hannover | [ExMR: Extremity Motion Refinement for Monocular Human Motion Capture](https://arxiv.org/abs/2610.26213) | arXiv | [Project](https://twehrbein.github.io/exmr-website/) / [Code (demo, noncommercial)](https://github.com/twehrbein/ExMR) / [Models](https://huggingface.co/twehrbein/ExMR) <!-- work:exmr --> |
 | 2026-10-19 | EgoRayFormer, Human video, Vision | Boden AI | [EgoRayFormer: Ray-Space Stereo Refinement for Egocentric 3D Human Pose Estimation](https://arxiv.org/abs/2610.26641) | arXiv | — <!-- work:egorayformer --> |
@@ -305,6 +307,8 @@ Organized by the transformation they perform; inputs, output frame/scale, superv
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-29 | TouchBridge, Human video, Vision, Tactile | Tsinghua University | [TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation](https://arxiv.org/abs/2610.40349) | arXiv | [Project](https://touchbridge2026.github.io/) <!-- work:touchbridge --> |
+| 2026-10-29 | CIMI, Human video, Vision | National University of Singapore | [Contact Imitation Interface: Transferring Dexterous Skills by Showing How Contact Unfolds](https://arxiv.org/abs/2610.41028) | arXiv | [Project](https://nus-lins-lab.github.io/CIMIWeb/) / [Code (license unverified)](https://github.com/ariszxxu/CIMI) <!-- work:cimi --> |
 | 2026-10-23 | ViT-H, Human video, Vision | Peking University | [ViT-H: Generative Video-To-Humanoid Control with Motion Tracking Feedback](https://arxiv.org/abs/2610.32966) | arXiv | [Project](https://awfuact.github.io/vit-h/) <!-- work:vit-h --> |
 | 2026-10-23 | CoCarry, Human motion, State | Tongji University | [CoCarry: Contact-Support-Structured Retargeting for Dual-Humanoid Cooperative Carrying](https://arxiv.org/abs/2610.32460) | arXiv | — <!-- work:cocarry --> |
 | 2026-10-22 | STAMP, Human motion, State | Korea University | [Robot Motion Transition with a Human Motion Prior](https://arxiv.org/abs/2610.30817) | arXiv | [Project](https://childtoy.github.io/STAMP-project) <!-- work:stamp --> |
@@ -401,6 +405,7 @@ Video, pose, whole-body, touch/force/EMG and robot-transfer assets. Reference an
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-29 | EgoContact, Egocentric video, Contact annotations | University of Cambridge | [EgoContact: Evaluating Physical Intelligence with Egocentric Video](https://arxiv.org/abs/2610.39167) | arXiv | [Project](https://egocontact.github.io/) <!-- work:egocontact --> |
 | 2026-09-15 | Hand reconstruction, Wearable capture, Hand, Event | Keio University | [EventEgoHands++: Event-based Egocentric 3D Hand Mesh Reconstruction with Real Dataset](https://arxiv.org/abs/2609.17189) | IEEE Access 2026 | [Code](https://github.com/ryhara/EventEgoHandsV2) / [Project](https://ryhara.github.io/EventEgoHandsV2/) <!-- work:eventegohands-plus-plus --> |
 | 2026-06-29 | Egocentric, RGB, Hands | University of Bristol | [Towards in-the-wild Egocentric 3D Hand-Object Pose Estimation](https://arxiv.org/abs/2606.30598) | ECCV 2026 | [Project](https://sid2697.github.io/epic-contact/) / [Code](https://github.com/Sid2697/HOPformer) / [Data](https://huggingface.co/datasets/Sid2697/epic-contact) <!-- work:epic-contact --> |
 | 2026-05-20 | Hand reconstruction, Vision, IMU, Hands | Meta Reality Labs | [AVI-HT: Adaptive Vision-IMU Fusion for 3D Hand Tracking](https://arxiv.org/abs/2605.21714) | arXiv | — <!-- work:avi-ht --> |
@@ -506,6 +511,10 @@ Learning directly from human data, translating to robot skills, and the tools an
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-11-03 | RoboTryOn, Human video, Vision | KAIST | [RoboTryOn: Synthesizing Dexterous Robot Demonstrations from Human Videos via Virtual Try-On](https://arxiv.org/abs/2611.05163) | arXiv | — <!-- work:robotryon --> |
+| 2026-11-03 | FloMo, Human video, Vision | Georgia Institute of Technology | [FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video](https://arxiv.org/abs/2611.05062) | arXiv | [Project](https://flomo-icra.github.io/) <!-- work:flomo --> |
+| 2026-11-03 | Action Intent Transfer, Human video, Vision | Southeast University | [Action Intent as a Bridge: Transferring Manipulation Knowledge from Human-Centric Videos to Robots](https://arxiv.org/abs/2611.04522) | arXiv | — <!-- work:action-intent-transfer --> |
+| 2026-10-30 | HandMimicX, Human video, Vision, Depth | Tsinghua University | [HandMimicX: Learning Human-Like Dexterous Manipulation via an Object-Centric Policy from Egocentric Videos](https://arxiv.org/abs/2610.41336) | arXiv | — <!-- work:handmimicx --> |
 | 2026-10-27 | Ego-CEVR, Egocentric learning, Vision | — | [Ego-CEVR: Learning Cross-Embodiment Visual Representations from Human Egocentric Videos](https://arxiv.org/abs/2610.37509) | arXiv | — <!-- work:ego-cevr --> |
 | 2026-10-25 | HuGe, Egocentric learning, Vision | Westlake University | [HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience](https://arxiv.org/abs/2610.34186) | arXiv | [Project](https://yliu-cs.github.io/HuGe/) / [Code (license unverified)](https://github.com/yliu-cs/HuGe) <!-- work:huge-vla --> |
 | 2026-10-22 | EgoForesight, Human video, Vision | Tsinghua University | [EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions](https://arxiv.org/abs/2610.31845) | arXiv | [Project](https://lin-shan.com/EgoForesight) / [Code (MIT)](https://github.com/LinShan-Bin/EgoForesight) / [Models](https://huggingface.co/collections/LinShan/egoforesight) <!-- work:egoforesight --> |
