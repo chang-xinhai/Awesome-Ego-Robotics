@@ -1602,11 +1602,18 @@
         {
           "label": "Repository license file",
           "url": "https://github.com/wuji-technology/wuji-ego-mint/blob/main/LICENSE"
+        },
+        {
+          "label": "Current author release",
+          "url": "https://github.com/wuji-technology/wuji-ego-mint"
         }
       ],
       "availability": "Research resource",
       "softwareStatus": "Public source files verified (wuji-ego-mint: MIT). Model/data and third-party terms remain separate.",
-      "verified": "2026-10-19"
+      "verified": "2026-10-19",
+      "notes": [
+        "Models and non-video annotations are released; annotations have a documented enlarged scale and are not valid metric evaluation ground truth. The pipeline omits restricted upstream components; source videos require separate licenses."
+      ]
     },
     "infinihand": {
       "status": "unknown",
@@ -1924,15 +1931,24 @@
       "verified": "2026-10-19"
     },
     "ego2robot": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
       "evidence": [
         {
           "label": "Primary source",
           "url": "https://arxiv.org/abs/2608.02580"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/www-Ye/ego2robot_blog"
         }
       ],
-      "availability": "Research resource"
+      "availability": "Research method / tool",
+      "softwareStatus": "Synthesis pipeline and RoboTwin evaluation available; root license not established.",
+      "verified": "2026-11-05",
+      "notes": [
+        "Synthesis pipeline and RoboTwin evaluation available; root license not established."
+      ]
     },
     "vividex": {
       "status": "partial",
@@ -2143,13 +2159,20 @@
         {
           "label": "Real robot data",
           "url": "https://huggingface.co/datasets/EgoSteer/EgoSteer-RealWorld"
+        },
+        {
+          "label": "Current author release",
+          "url": "https://github.com/egosteer/egosmith"
         }
       ],
       "availability": "Research resource",
       "softwareStatus": "Public source files verified (egosteer: Apache-2.0). Model/data and third-party terms remain separate.",
       "verified": "2026-10-30",
       "modelStatus": "Base and RealMan 3B checkpoints are downloadable; byte-range checks succeeded. HF cards declare Apache-2.0; upstream base-model terms are separate.",
-      "dataStatus": "EgoSteer-Egocentric distributes annotations only; original videos have independent licenses and access. RealWorld robot datasets include downloadable LeRobot files; HF card Apache-2.0."
+      "dataStatus": "EgoSteer-Egocentric distributes annotations only; original videos have independent licenses and access. RealWorld robot datasets include downloadable LeRobot files; HF card Apache-2.0.",
+      "notes": [
+        "EgoSmith pipeline released separately under Apache-2.0. Human annotations omit RGB/depth; obtain source media under original terms."
+      ]
     },
     "metis": {
       "status": "partial",
@@ -14471,7 +14494,7 @@
     "egohtr": {
       "status": "partial",
       "commercial": false,
-      "availability": "Dataset release",
+      "availability": "Research method / tool",
       "evidence": [
         {
           "label": "Paper",
@@ -14488,14 +14511,20 @@
         {
           "label": "Verified data file manifest",
           "url": "https://huggingface.co/datasets/leggedrobotics/egohtr/tree/main"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/leggedrobotics/egohtr"
         }
       ],
       "notes": [
         "HF metadata CC BY 4.0; gated access and body-model terms separately apply.",
-        "Capture of rough terrain; experiments include humanoid motion retargeting and policy deployment."
+        "Capture of rough terrain; experiments include humanoid motion retargeting and policy deployment.",
+        "EgoHTG generation, optimization, retargeting and evaluation pipeline with G1 trajectories; root license not established."
       ],
       "dataStatus": "Data files verified; manual approval required; cc-by-4.0.",
-      "verified": "2026-10-19"
+      "verified": "2026-11-05",
+      "softwareStatus": "EgoHTG generation, optimization, retargeting and evaluation pipeline with G1 trajectories; root license not established."
     },
     "egotraj": {
       "status": "partial",
@@ -14720,9 +14749,9 @@
       "verified": "2026-10-19"
     },
     "hope": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
-      "availability": "Research resource",
+      "availability": "Research method / tool",
       "evidence": [
         {
           "label": "Primary source",
@@ -14731,12 +14760,24 @@
         {
           "label": "Primary source",
           "url": "https://subin6.github.io/page-hope/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/subin6/hope"
         }
       ],
       "notes": [
-        "Author page marks both Code and Model as coming soon. arXiv CC BY 4.0 applies to the paper, not a code or weights release."
+        "Author page marks both Code and Model as coming soon. arXiv CC BY 4.0 applies to the paper, not a code or weights release.",
+        "Code, released data and checkpoints use noncommercial terms; MANO, HaWoR, DINOv3 and other dependencies retain separate terms."
       ],
-      "softwareStatus": "Code and model coming soon"
+      "softwareStatus": "Code, released data and checkpoints use noncommercial terms; MANO, HaWoR, DINOv3 and other dependencies retain separate terms.",
+      "verified": "2026-11-05",
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "CC BY-NC 4.0",
+        "licenseURL": "https://github.com/subin6/hope/blob/main/LICENSE"
+      }
     },
     "contactopt": {
       "status": "partial",
@@ -15313,10 +15354,10 @@
       ]
     },
     "ssio": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
-      "availability": "Research resource",
-      "verified": "2026-10-21",
+      "availability": "Research method / tool",
+      "verified": "2026-11-05",
       "evidence": [
         {
           "label": "Primary v1 paper",
@@ -15325,12 +15366,23 @@
         {
           "label": "Official project",
           "url": "https://SSIO-IMU.github.io"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/amazon-far/SSIO"
         }
       ],
-      "softwareStatus": "No runnable public implementation verified.",
+      "softwareStatus": "Integration self-supervision, pose-graph distillation, evaluation and dataset loaders available; third-party terms remain separate.",
       "notes": [
-        "Models are trained separately per platform; reference attitude and estimated attitude regimes must be distinguished."
-      ]
+        "Models are trained separately per platform; reference attitude and estimated attitude regimes must be distinguished.",
+        "Integration self-supervision, pose-graph distillation, evaluation and dataset loaders available; third-party terms remain separate."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/amazon-far/SSIO/blob/main/LICENSE"
+      }
     },
     "acts": {
       "status": "unknown",
@@ -15519,11 +15571,16 @@
         {
           "label": "Current gated mini dataset listing",
           "url": "https://huggingface.co/datasets/InternRobotics/EgoExplorer"
+        },
+        {
+          "label": "Current author release",
+          "url": "https://github.com/InternRobotics/EgoExplorer"
         }
       ],
       "softwareStatus": "Actual capture, synchronization, C³ five-tracker reconstruction, glove/tactile processing, export, viewers and LeRobot conversion sources verified; no root software LICENSE. Hardware BOM and print settings remain pending.",
       "notes": [
-        "Sparse tracker position/orientation and glove/tactile streams are exported. Raw tracker IMU is not established by the released capture code. Missing synthetic-data generator and uncalibrated camera-to-head-tracker extrinsics limit reproduction."
+        "Sparse tracker position/orientation and glove/tactile streams are exported. Raw tracker IMU is not established by the released capture code. Missing synthetic-data generator and uncalibrated camera-to-head-tracker extrinsics limit reproduction.",
+        "Capture and reconstruction toolkit is released; exact AvatarPoser training reproduction requires unavailable B01–B10 synthetic data and separate AvatarPoser/AMASS access."
       ],
       "dataStatus": "Official gated one-hour mini release remains listed; CC BY-NC 4.0. Reported 100-hour collection is not a full public download."
     },
@@ -15826,10 +15883,10 @@
       "dataStatus": "997 actual disjoint CSV clip records and MP4/sensor files listed; CC BY 4.0. Generated task-request WAVs are not captured environmental audio."
     },
     "vit-h": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
-      "availability": "Research resource",
-      "verified": "2026-10-26",
+      "availability": "Research method / tool",
+      "verified": "2026-11-05",
       "evidence": [
         {
           "label": "Primary v1 paper",
@@ -15838,12 +15895,23 @@
         {
           "label": "Official project",
           "url": "https://awfuact.github.io/vit-h/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/mileret/ViT-H-release"
         }
       ],
-      "softwareStatus": "Official linked repository unavailable (HTTP 404); no public implementation verified.",
+      "softwareStatus": "Offline inference and pretraining code available; teleoperation deployment and pre/post-training components remain forthcoming.",
       "notes": [
-        "Tracker-feedback post-training is distinct from visual-policy training; sub-400 ms is reported system latency."
-      ]
+        "Tracker-feedback post-training is distinct from visual-policy training; sub-400 ms is reported system latency.",
+        "Offline inference and pretraining code available; teleoperation deployment and pre/post-training components remain forthcoming."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/mileret/ViT-H-release/blob/main/LICENSE"
+      }
     },
     "cocarry": {
       "status": "unknown",
@@ -16012,10 +16080,10 @@
       ]
     },
     "frdv": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
-      "availability": "Research resource",
-      "verified": "2026-10-26",
+      "availability": "Research method / tool",
+      "verified": "2026-11-05",
       "evidence": [
         {
           "label": "Primary v1 paper",
@@ -16024,12 +16092,23 @@
         {
           "label": "Official project",
           "url": "https://daroslab.github.io/frdv/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/DARoSLab/FRDV"
         }
       ],
-      "softwareStatus": "Official linked repository unavailable (HTTP 404); no public implementation verified.",
+      "softwareStatus": "Kinematic retargeting code available; dynamics validation is not released.",
       "notes": [
-        "Up to 9,156 FPS measures retargeting throughput on selected hardware, not physical controller frequency."
-      ]
+        "Up to 9,156 FPS measures retargeting throughput on selected hardware, not physical controller frequency.",
+        "Kinematic retargeting code available; dynamics validation is not released."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/DARoSLab/FRDV/blob/main/LICENSE"
+      }
     },
     "hutact": {
       "status": "unknown",
@@ -16943,10 +17022,10 @@
       ]
     },
     "unit-human-humanoid": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
-      "availability": "Research resource",
-      "verified": "2026-10-30",
+      "availability": "Research method / tool",
+      "verified": "2026-11-05",
       "evidence": [
         {
           "label": "Primary v1 paper",
@@ -16955,12 +17034,23 @@
         {
           "label": "Project",
           "url": "https://xpeng-robotics.github.io/unit/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/xpeng-robotics/UniT"
         }
       ],
-      "softwareStatus": "No implementation release verified.",
+      "softwareStatus": "Training and simulation evaluation code available; checkpoints have separate terms.",
       "notes": [
-        "Latent tokens are learned representations, not measured robot actions in the human videos."
-      ]
+        "Latent tokens are learned representations, not measured robot actions in the human videos.",
+        "Training and simulation evaluation code available; checkpoints have separate terms."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "Apache-2.0",
+        "licenseURL": "https://github.com/xpeng-robotics/UniT/blob/main/LICENSE"
+      }
     },
     "openhlm": {
       "status": "partial",
@@ -17015,6 +17105,174 @@
       "notes": [
         "The planner produces intermediate plans; it is not the low-level action controller."
       ]
+    },
+    "egosmith": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Code is public; annotations omit RGB and depth; source media and third-party dependencies have separate terms.",
+      "verified": "2026-11-05",
+      "evidence": [
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/egosteer/egosmith"
+        }
+      ],
+      "notes": [
+        "Code is public; annotations omit RGB and depth; source media and third-party dependencies have separate terms."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "Apache-2.0",
+        "licenseURL": "https://github.com/egosteer/egosmith/blob/main/license.txt"
+      }
+    },
+    "roboreview": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Local review app and training code are public; example evaluation covers one shirt-packing task.",
+      "verified": "2026-11-05",
+      "evidence": [
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/abhishek0093/roboreview"
+        }
+      ],
+      "notes": [
+        "Local review app and training code are public; example evaluation covers one shirt-packing task."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "AGPL-3.0",
+        "licenseURL": "https://github.com/abhishek0093/roboreview/blob/main/LICENSE"
+      }
+    },
+    "openvio": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Visual-inertial odometry implementation is public; benchmark datasets have separate terms.",
+      "verified": "2026-11-05",
+      "evidence": [
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/93won/openvio"
+        }
+      ],
+      "notes": [
+        "Visual-inertial odometry implementation is public; benchmark datasets have separate terms."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/93won/openvio/blob/master/LICENSE"
+      }
+    },
+    "argus-panorama": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Source is Apache-2.0; model weights are gated and subject to noncommercial terms.",
+      "verified": "2026-11-05",
+      "evidence": [
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/realsee-developer/Argus"
+        }
+      ],
+      "notes": [
+        "Source is Apache-2.0; model weights are gated and subject to noncommercial terms."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "Apache-2.0",
+        "licenseURL": "https://github.com/realsee-developer/Argus/blob/main/LICENSE"
+      }
+    },
+    "reviv": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Source is Apache-2.0; model weights use a separate noncommercial Sample Code License.",
+      "verified": "2026-11-05",
+      "evidence": [
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/lvsean/reviv4d"
+        }
+      ],
+      "notes": [
+        "Source is Apache-2.0; model weights use a separate noncommercial Sample Code License."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "Apache-2.0",
+        "licenseURL": "https://github.com/lvsean/reviv4d/blob/main/LICENSE"
+      }
+    },
+    "empire-hand-forecast": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Source is public; repository identifies the reported dataset as forthcoming.",
+      "verified": "2026-11-05",
+      "evidence": [
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/wangwen-banban/EMPIRE"
+        }
+      ],
+      "notes": [
+        "Source is public; repository identifies the reported dataset as forthcoming."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/wangwen-banban/EMPIRE/blob/main/LICENSE"
+      }
+    },
+    "tactus": {
+      "status": "unknown",
+      "availability": "Research prototype",
+      "softwareStatus": "Hardware design and software release not established",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.39076v1/"
+        }
+      ],
+      "notes": [
+        "Publication does not establish release of hardware files."
+      ],
+      "verified": "2026-11-05"
+    },
+    "head-camera-umi-glove": {
+      "status": "unknown",
+      "availability": "Research prototype",
+      "softwareStatus": "Hardware design and software release not established",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.27622v1/"
+        }
+      ],
+      "notes": [
+        "Publication does not establish release of hardware files."
+      ],
+      "verified": "2026-11-05"
+    },
+    "openicc": {
+      "status": "partial",
+      "availability": "Research software",
+      "softwareStatus": "AGPL-3.0 code; dependencies have separate terms.",
+      "evidence": [
+        {
+          "label": "Official source",
+          "url": "https://github.com/urbste/OpenImuCameraCalibrator"
+        }
+      ],
+      "verified": "2026-11-05"
     }
   }
 }

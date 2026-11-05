@@ -5043,6 +5043,65 @@
           "https://github.com/Ropedia/HOMIE-toolkit"
         ]
       }
+    },
+    "tactus": {
+      "interface": "tactus",
+      "interfaceForms": [
+        "Glove"
+      ],
+      "poseTracking": "Inertial-fused hand pose",
+      "vision": "Not reported",
+      "tactile": {
+        "status": "yes",
+        "detail": "47 capacitive textile tactile elements, with fingertip pressure calibration"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "IMU",
+        "Tactile",
+        "State"
+      ],
+      "captureComponents": "Textile glove, 15 finger-mounted IMUs plus dorsum IMU, capacitive tactile sensing",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.39076v1/"
+        }
+      ],
+      "verified": "2026-11-05"
+    },
+    "head-camera-umi-glove": {
+      "interface": "head-camera-umi-glove",
+      "interfaceForms": [
+        "Glove"
+      ],
+      "poseTracking": "Head-camera fiducial localization against paper workspace tiles",
+      "vision": "Single head-mounted camera",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not reported"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "State"
+      ],
+      "captureComponents": "Head-mounted camera and electronics-free fiducial glove; deployment uses robot-mounted camera",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.27622v1/"
+        }
+      ],
+      "verified": "2026-11-05"
     }
   }
 }

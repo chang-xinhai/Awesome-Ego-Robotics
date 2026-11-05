@@ -1357,6 +1357,10 @@
         {
           "label": "Paper affiliations",
           "url": "https://arxiv.org/html/2609.04958v1"
+        },
+        {
+          "label": "Current author release",
+          "url": "https://github.com/wuji-technology/wuji-ego-mint"
         }
       ],
       "verified": "2026-10-16",
@@ -1424,8 +1428,12 @@
         ],
         "limitations": [
           "https://arxiv.org/html/2609.04958v1"
+        ],
+        "implementation": [
+          "https://github.com/wuji-technology/wuji-ego-mint"
         ]
-      }
+      },
+      "implementation": "Models and non-video annotations are released; annotations have a documented enlarged scale and are not valid metric evaluation ground truth. The pipeline omits restricted upstream components; source videos require separate licenses."
     },
     "infinihand": {
       "input": "Streaming uncalibrated egocentric RGB",
@@ -2774,6 +2782,10 @@
         {
           "label": "Paper affiliations",
           "url": "https://arxiv.org/html/2608.02580v1"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/www-Ye/ego2robot_blog"
         }
       ],
       "verified": "2026-10-16",
@@ -2840,9 +2852,13 @@
         ],
         "stage": [
           "https://arxiv.org/html/2608.02580v1"
+        ],
+        "implementation": [
+          "https://github.com/www-Ye/ego2robot_blog"
         ]
       },
-      "policyInput": "Robot RGB, language and robot state"
+      "policyInput": "Robot RGB, language and robot state",
+      "implementation": "Synthesis pipeline and RoboTwin evaluation available; root license not established."
     },
     "vividex": {
       "input": "Human videos and reconstructed motion",
@@ -3779,6 +3795,10 @@
         {
           "label": "Real robot data",
           "url": "https://huggingface.co/datasets/EgoSteer/EgoSteer-RealWorld"
+        },
+        {
+          "label": "Current author release",
+          "url": "https://github.com/egosteer/egosmith"
         }
       ],
       "verified": "2026-10-30",
@@ -3845,10 +3865,13 @@
         ],
         "stage": [
           "https://arxiv.org/html/2607.09701v1"
+        ],
+        "implementation": [
+          "https://github.com/egosteer/egosmith"
         ]
       },
       "policyInput": "Robot vision, language and state",
-      "implementation": "Public source files verified (egosteer: Apache-2.0). Model/data and third-party terms remain separate."
+      "implementation": "EgoSmith pipeline released separately under Apache-2.0. Human annotations omit RGB/depth; obtain source media under original terms."
     },
     "metis": {
       "input": "Multi-source human and robot demonstrations",
@@ -63974,6 +63997,10 @@
         {
           "label": "Primary source",
           "url": "https://subin6.github.io/page-hope/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/subin6/hope"
         }
       ],
       "verified": "2026-10-17",
@@ -64046,8 +64073,12 @@
         "limitations": [
           "https://arxiv.org/html/2608.06192v1",
           "https://subin6.github.io/page-hope/"
+        ],
+        "implementation": [
+          "https://github.com/subin6/hope"
         ]
-      }
+      },
+      "implementation": "Code, released data and checkpoints use noncommercial terms; MANO, HaWoR, DINOv3 and other dependencies retain separate terms."
     },
     "contactopt": {
       "summary": "Refines a reconstructed hand pose by matching predicted hand-object contact with differentiable geometry.",
@@ -65713,7 +65744,7 @@
       "bodyCoverage": "Scene",
       "supervision": "See primary method and training protocol.",
       "evaluation": "Six datasets across pedestrians, drones, quadrupeds and a humanoid",
-      "implementation": "No runnable public implementation verified.",
+      "implementation": "Integration self-supervision, pose-graph distillation, evaluation and dataset loaders available; third-party terms remain separate.",
       "verified": "2026-10-21",
       "sources": [
         {
@@ -65723,6 +65754,10 @@
         {
           "label": "Project",
           "url": "https://SSIO-IMU.github.io"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/amazon-far/SSIO"
         }
       ],
       "fieldSources": {
@@ -65769,8 +65804,7 @@
           "https://arxiv.org/html/2610.25988v1"
         ],
         "implementation": [
-          "https://arxiv.org/html/2610.25988v1",
-          "https://SSIO-IMU.github.io"
+          "https://github.com/amazon-far/SSIO"
         ],
         "slam": [
           "https://arxiv.org/html/2610.25988v1"
@@ -67455,7 +67489,7 @@
       "bodyCoverage": "Whole body",
       "supervision": "Human-video motion-reference generation and tracking-feedback DPO post-training",
       "evaluation": "Real Unitree G1 motion tracking and video teleoperation",
-      "implementation": "Official linked repository unavailable (HTTP 404); no public implementation verified.",
+      "implementation": "Offline inference and pretraining code available; teleoperation deployment and pre/post-training components remain forthcoming.",
       "verified": "2026-10-26",
       "sources": [
         {
@@ -67465,6 +67499,10 @@
         {
           "label": "Project",
           "url": "https://awfuact.github.io/vit-h/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/mileret/ViT-H-release"
         }
       ],
       "fieldSources": {
@@ -67511,8 +67549,7 @@
           "https://arxiv.org/html/2610.32966v1"
         ],
         "implementation": [
-          "https://arxiv.org/html/2610.32966v1",
-          "https://awfuact.github.io/vit-h/"
+          "https://github.com/mileret/ViT-H-release"
         ],
         "robotPlatform": [
           "https://arxiv.org/html/2610.32966v1"
@@ -68127,7 +68164,7 @@
       "bodyCoverage": "Whole body",
       "supervision": "See primary method and training protocol.",
       "evaluation": "Real G1 tracking with a separate downstream controller",
-      "implementation": "Official linked repository unavailable (HTTP 404); no public implementation verified.",
+      "implementation": "Kinematic retargeting code available; dynamics validation is not released.",
       "verified": "2026-10-26",
       "sources": [
         {
@@ -68137,6 +68174,10 @@
         {
           "label": "Project",
           "url": "https://daroslab.github.io/frdv/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/DARoSLab/FRDV"
         }
       ],
       "fieldSources": {
@@ -68183,8 +68224,7 @@
           "https://arxiv.org/html/2610.28470v1"
         ],
         "implementation": [
-          "https://arxiv.org/html/2610.28470v1",
-          "https://daroslab.github.io/frdv/"
+          "https://github.com/DARoSLab/FRDV"
         ]
       }
     },
@@ -71421,7 +71461,7 @@
       "bodyCoverage": "Whole body",
       "supervision": "See primary paper; human video and robot labels have distinct provenance.",
       "evaluation": "Humanoid simulation and real-world zero-shot transfer",
-      "implementation": "No implementation release verified.",
+      "implementation": "Training and simulation evaluation code available; checkpoints have separate terms.",
       "verified": "2026-10-30",
       "sources": [
         {
@@ -71431,6 +71471,10 @@
         {
           "label": "Project",
           "url": "https://xpeng-robotics.github.io/unit/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/xpeng-robotics/UniT"
         }
       ],
       "fieldSources": {
@@ -71477,7 +71521,7 @@
           "https://arxiv.org/html/2604.19734v1"
         ],
         "implementation": [
-          "https://arxiv.org/html/2604.19734v1"
+          "https://github.com/xpeng-robotics/UniT"
         ]
       }
     },
@@ -71941,6 +71985,514 @@
           "https://arxiv.org/html/2610.40832v1/"
         ]
       }
+    },
+    "reself": {
+      "summary": "Jointly infers metric scene geometry and the camera wearer’s full-body motion from monocular ego video.",
+      "input": "Monocular egocentric RGB video",
+      "output": "Metric scene, camera trajectory and generated body motion",
+      "outputRepresentation": "Metric scene, camera trajectory and generated body motion",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body",
+      "stage": "L2",
+      "robotEvidence": "Capture-processing reference; robot policy deployment is not asserted.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2609.01276v1/"
+        }
+      ],
+      "verified": "2026-11-05",
+      "limitations": "Generated body motion is inferred, not a direct measurement; code, model and dataset repositories are placeholders.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.01276v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.01276v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.01276v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.01276v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.01276v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.01276v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.01276v1/"
+        ]
+      }
+    },
+    "reviv": {
+      "summary": "Jointly reconstructs camera, scene depth, gaze and body / hand motion from one egocentric video.",
+      "input": "Monocular egocentric RGB video",
+      "output": "Predicted camera trajectory, gaze, body and hands, and depth",
+      "outputRepresentation": "Predicted camera trajectory, gaze, body and hands, and depth",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body",
+      "stage": "L2",
+      "robotEvidence": "Capture-processing reference; robot policy deployment is not asserted.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2607.17790v1/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/lvsean/reviv4d"
+        }
+      ],
+      "verified": "2026-11-05",
+      "toolTopics": [
+        "depth"
+      ],
+      "perception": {
+        "families": [
+          "multiview"
+        ],
+        "inputSetup": [
+          "monocular"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "metric-predicted",
+          "relative"
+        ],
+        "outputType": "Predicted depth and joint scene / body reconstruction",
+        "scaleSource": "Relative and metric checkpoints have distinct scale assumptions",
+        "calibration": "Monocular video; no depth sensor required",
+        "temporal": "Joint video reconstruction",
+        "captureRelevance": "Egocentric body / scene reconstruction reference",
+        "limitations": "Predicted depth, gaze and body motion are not measured sensor signals."
+      },
+      "limitations": "Separate relative and metric checkpoints; model weights have noncommercial terms.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2607.17790v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2607.17790v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2607.17790v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2607.17790v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2607.17790v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2607.17790v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2607.17790v1/"
+        ],
+        "implementation": [
+          "https://github.com/lvsean/reviv4d"
+        ]
+      },
+      "implementation": "Source is Apache-2.0; model weights use a separate noncommercial Sample Code License."
+    },
+    "hf-wm": {
+      "summary": "An action-conditioned world model uses egocentric human interaction and failure-aware training to predict robot outcomes.",
+      "input": "Human and robot interaction videos, action conditioning",
+      "output": "Predicted action-conditioned video and failure outcomes",
+      "outputRepresentation": "Predicted action-conditioned video and failure outcomes",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Capture-processing reference; robot policy deployment is not asserted.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2610.13522v1/"
+        }
+      ],
+      "verified": "2026-11-05",
+      "limitations": "A world-model and policy-evaluation method, not an independently demonstrated robot policy.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.13522v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.13522v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.13522v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.13522v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.13522v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.13522v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.13522v1/"
+        ]
+      }
+    },
+    "empire-hand-forecast": {
+      "summary": "Predicts future bimanual human hand motions using explicit plans from egocentric video.",
+      "input": "Egocentric RGB, inferred depth features, language and field of view",
+      "output": "Future human hand motion conditioned on a predicted plan",
+      "outputRepresentation": "Future human hand motion conditioned on a predicted plan",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Capture-processing reference; robot policy deployment is not asserted.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2608.22449v1/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/wangwen-banban/EMPIRE"
+        }
+      ],
+      "verified": "2026-11-05",
+      "limitations": "Forecasts human hand motion, not executable robot actions; the repository lists the reported dataset as forthcoming.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2608.22449v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2608.22449v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2608.22449v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2608.22449v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2608.22449v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2608.22449v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2608.22449v1/"
+        ],
+        "implementation": [
+          "https://github.com/wangwen-banban/EMPIRE"
+        ]
+      },
+      "implementation": "Source is public; repository identifies the reported dataset as forthcoming."
+    },
+    "argus-panorama": {
+      "summary": "Feed-forward metric 3D reconstruction from sparse, unordered panoramic images.",
+      "input": "Multiple ERP panoramic RGB images",
+      "output": "Predicted metric depth, camera poses and 3D points",
+      "outputRepresentation": "Predicted metric depth, camera poses and 3D points",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "robotEvidence": "Capture-processing reference; robot policy deployment is not asserted.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2606.30047v1/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/realsee-developer/Argus"
+        }
+      ],
+      "verified": "2026-11-05",
+      "toolTopics": [
+        "depth"
+      ],
+      "target": "Depth and spatial perception",
+      "scale": "Learned metric reconstruction, not measured depth",
+      "temporal": "Offline feed-forward unordered multi-view reconstruction",
+      "outputSpace": "world",
+      "evidenceLevel": "reconstruction",
+      "perception": {
+        "families": [
+          "multiview",
+          "panoramic"
+        ],
+        "inputSetup": [
+          "multiview"
+        ],
+        "cameraGeometry": [
+          "erp",
+          "spherical"
+        ],
+        "scaleType": [
+          "metric-predicted"
+        ],
+        "outputType": "Predicted depth, camera pose and 3D point maps",
+        "scaleSource": "Learned metric scale from Realsee3D training",
+        "calibration": "ERP spherical projection; sparse unordered panoramic RGB views",
+        "temporal": "Offline feed-forward reconstruction",
+        "captureRelevance": "Potential wide-FoV capture-processing reference; no direct Ego / UMI robot-policy validation claimed",
+        "limitations": "No measured depth input; pretrained weights gated and noncommercial."
+      },
+      "limitations": "Offline multi-view geometry, not an online SLAM backend; model terms differ from the code license.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2606.30047v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2606.30047v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2606.30047v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2606.30047v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2606.30047v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2606.30047v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.30047v1/"
+        ],
+        "implementation": [
+          "https://github.com/realsee-developer/Argus"
+        ]
+      },
+      "implementation": "Source is Apache-2.0; model weights are gated and subject to noncommercial terms."
+    },
+    "openvio": {
+      "summary": "Open-source visual-inertial odometry for pinhole, fisheye and stitched 360° cameras.",
+      "input": "Monocular or stereo camera and IMU; or stitched dual-lens panoramic image and IMU",
+      "output": "Metric visual-inertial trajectory",
+      "outputRepresentation": "Metric visual-inertial trajectory",
+      "inputSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "robotEvidence": "Capture-processing reference; robot policy deployment is not asserted.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2610.41671v1/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/93won/openvio"
+        }
+      ],
+      "verified": "2026-11-05",
+      "toolTopics": [
+        "slam"
+      ],
+      "outputSpace": "world",
+      "slam": {
+        "family": "visual-inertial",
+        "role": "online",
+        "systemType": "Visual-inertial odometry",
+        "loopClosure": "no",
+        "relocalization": "unknown",
+        "metricScale": "Inertial constraints",
+        "calibration": "Camera–IMU timing and extrinsics; online calibration supports lens and stitching parameters as documented.",
+        "captureRelevance": "Camera-tracking reference; evaluated on EuRoC MAV, TUM-VI and PanoAir."
+      },
+      "limitations": "VIO is not equivalent to a loop-closing SLAM backend.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.41671v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.41671v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.41671v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.41671v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.41671v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.41671v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.41671v1/"
+        ],
+        "implementation": [
+          "https://github.com/93won/openvio"
+        ]
+      },
+      "implementation": "Visual-inertial odometry implementation is public; benchmark datasets have separate terms."
+    },
+    "egosmith": {
+      "summary": "Filters and reconstructs egocentric video into hand/camera trajectories and language annotations.",
+      "input": "Egocentric human video",
+      "output": "Curated hand poses, camera trajectories, language and source-frame mappings",
+      "outputRepresentation": "Curated hand poses, camera trajectories, language and source-frame mappings",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "tool",
+      "robotEvidence": "Capture-processing reference; robot policy deployment is not asserted.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://github.com/egosteer/egosmith"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/egosteer/egosmith"
+        }
+      ],
+      "verified": "2026-11-05",
+      "toolTopics": [
+        "capture"
+      ],
+      "target": "Ego data curation",
+      "limitations": "Released annotations contain no RGB images or depth maps; original media and third-party models require their own access and licenses.",
+      "fieldSources": {
+        "summary": [
+          "https://github.com/egosteer/egosmith"
+        ],
+        "input": [
+          "https://github.com/egosteer/egosmith"
+        ],
+        "output": [
+          "https://github.com/egosteer/egosmith"
+        ],
+        "outputRepresentation": [
+          "https://github.com/egosteer/egosmith"
+        ],
+        "inputSignals": [
+          "https://github.com/egosteer/egosmith"
+        ],
+        "stage": [
+          "https://github.com/egosteer/egosmith"
+        ],
+        "robotEvidence": [
+          "https://github.com/egosteer/egosmith"
+        ],
+        "implementation": [
+          "https://github.com/egosteer/egosmith"
+        ]
+      },
+      "implementation": "Code is public; annotations omit RGB and depth; source media and third-party dependencies have separate terms."
+    },
+    "roboreview": {
+      "summary": "Predicts temporal action steps for human review and export from egocentric video.",
+      "input": "Egocentric RGB video and predicted temporal steps",
+      "output": "Reviewed temporal segments and text labels in JSONL",
+      "outputRepresentation": "Reviewed temporal segments and text labels in JSONL",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "robotEvidence": "Capture-processing reference; robot policy deployment is not asserted.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://github.com/abhishek0093/roboreview"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/abhishek0093/roboreview"
+        }
+      ],
+      "verified": "2026-11-05",
+      "toolTopics": [
+        "capture",
+        "evaluation"
+      ],
+      "target": "Ego video annotation",
+      "limitations": "Author evaluation covers a small shirt-packing example; labels are not robot action trajectories and broad generalization is not established.",
+      "fieldSources": {
+        "summary": [
+          "https://github.com/abhishek0093/roboreview"
+        ],
+        "input": [
+          "https://github.com/abhishek0093/roboreview"
+        ],
+        "output": [
+          "https://github.com/abhishek0093/roboreview"
+        ],
+        "outputRepresentation": [
+          "https://github.com/abhishek0093/roboreview"
+        ],
+        "inputSignals": [
+          "https://github.com/abhishek0093/roboreview"
+        ],
+        "stage": [
+          "https://github.com/abhishek0093/roboreview"
+        ],
+        "robotEvidence": [
+          "https://github.com/abhishek0093/roboreview"
+        ],
+        "implementation": [
+          "https://github.com/abhishek0093/roboreview"
+        ]
+      },
+      "implementation": "Local review app and training code are public; example evaluation covers one shirt-packing task."
+    },
+    "openicc": {
+      "summary": "Calibrates camera intrinsics, camera–IMU extrinsics and time offset for action-camera capture.",
+      "input": "Camera imagery and IMU telemetry",
+      "output": "Camera intrinsics, IMU-to-camera transformation and timing offset",
+      "inputSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "toolTopics": [
+        "calibration"
+      ],
+      "robotEvidence": "Action-camera calibration reference; no robot-policy claim",
+      "limitations": "Rolling-shutter line-delay estimation is experimental and described as not reliable by the author.",
+      "implementation": "AGPL-3.0 implementation; dependencies have separate terms.",
+      "sources": [
+        {
+          "label": "Official repository and limitations",
+          "url": "https://github.com/urbste/OpenImuCameraCalibrator"
+        }
+      ],
+      "fieldSources": {
+        "input": [
+          "https://github.com/urbste/OpenImuCameraCalibrator"
+        ],
+        "output": [
+          "https://github.com/urbste/OpenImuCameraCalibrator"
+        ],
+        "limitations": [
+          "https://github.com/urbste/OpenImuCameraCalibrator"
+        ],
+        "implementation": [
+          "https://github.com/urbste/OpenImuCameraCalibrator"
+        ]
+      },
+      "verified": "2026-11-05"
     }
   }
 }

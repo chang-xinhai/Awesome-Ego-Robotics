@@ -11827,7 +11827,12 @@
     "form": "Not reported",
     "coverage": "Scene",
     "tracking": "Not reported",
-    "reviewed": "2026-10-21"
+    "reviewed": "2026-10-21",
+    "image": "images/catalog/deepnov05-anchorflow-vio.webp",
+    "imagePage": "https://arxiv.org/abs/2610.26210",
+    "imageSource": "https://arxiv.org/pdf/2610.26210",
+    "imageAlt": "AnchorFlow-VIO training and test results, paper figure 1",
+    "credit": "Original authors; third-party figure rights retained"
   },
   {
     "id": "ssio",
@@ -12570,7 +12575,12 @@
     "form": "Not reported",
     "coverage": "Whole body",
     "tracking": "Not reported",
-    "reviewed": "2026-10-26"
+    "reviewed": "2026-10-26",
+    "image": "images/catalog/deepnov05-str.webp",
+    "imagePage": "https://arxiv.org/abs/2610.30540",
+    "imageSource": "https://arxiv.org/pdf/2610.30540",
+    "imageAlt": "STR human motion and robot retargeting diagram, paper figure 1",
+    "credit": "Original authors; third-party figure rights retained"
   },
   {
     "id": "pihand",
@@ -12818,7 +12828,12 @@
     "imagePage": "https://ropedia.com/homie",
     "imageSource": "https://ropedia.com/hardware/homie-gen2-product.png",
     "imageAlt": "Ropedia HOMIE Gen2 head-mounted capture device",
-    "credit": "Ropedia"
+    "credit": "Ropedia",
+    "hardwareImage": "images/catalog/homie-gen2-hardware.webp",
+    "hardwareImagePage": "https://ropedia.com/homie",
+    "hardwareImageSource": "https://ropedia.com/hardware/homie-gen2-product.png",
+    "hardwareImageAlt": "Ropedia HOMIE Gen2 head-mounted capture device",
+    "hardwareImageType": "Hardware / capture system"
   },
   {
     "id": "ropedia-w0",
@@ -13330,5 +13345,178 @@
     "datasetImageSource": "https://arxiv.org/html/2610.39167v1/hifiego_sunburst.png",
     "datasetImageAlt": "EgoContact interaction category distribution from the original paper",
     "datasetImageType": "Dataset coverage"
+  },
+  {
+    "id": "tactus",
+    "name": "Tactus",
+    "summary": "Tactus: Tactile & Pose Sensing Glove for Natural Dexterity Data Collection",
+    "signals": [
+      "IMU",
+      "Tactile",
+      "State"
+    ],
+    "reviewed": "2026-11-05",
+    "hardwareImage": "images/catalog/deepnov05-tactus.webp",
+    "imagePage": "https://arxiv.org/html/2610.39076v1/",
+    "imageSource": "https://arxiv.org/html/2610.39076v1/figures/main.jpg",
+    "imageAlt": "Tactus tactile and inertial sensing glove hardware diagram",
+    "credit": "Original authors; third-party figure rights retained",
+    "hardwareImagePage": "https://arxiv.org/html/2610.39076v1/",
+    "hardwareImageSource": "https://arxiv.org/html/2610.39076v1/figures/main.jpg",
+    "hardwareImageAlt": "Tactus tactile and inertial sensing glove hardware diagram",
+    "hardwareImageType": "Hardware / capture system",
+    "form": "Glove",
+    "coverage": "Hands"
+  },
+  {
+    "id": "head-camera-umi-glove",
+    "name": "A Head Camera Is (Almost) All You Need",
+    "summary": "A Head Camera Is (Almost) All You Need: An Electronics-Free UMI Glove Labelled and Observed by One Moving Camera",
+    "signals": [
+      "Vision",
+      "State"
+    ],
+    "reviewed": "2026-11-05",
+    "hardwareImage": "images/catalog/deepnov05-head-camera-glove.webp",
+    "imagePage": "https://arxiv.org/html/2610.27622v1/",
+    "imageSource": "https://arxiv.org/html/2610.27622v1/fig/teaser.jpg",
+    "imageAlt": "Head-mounted camera and fiducial glove capture setup",
+    "credit": "Original authors; third-party figure rights retained",
+    "hardwareImagePage": "https://arxiv.org/html/2610.27622v1/",
+    "hardwareImageSource": "https://arxiv.org/html/2610.27622v1/fig/teaser.jpg",
+    "hardwareImageAlt": "Head-mounted camera and fiducial glove capture setup",
+    "hardwareImageType": "Hardware / capture system",
+    "form": "Glove",
+    "coverage": "Hands"
+  },
+  {
+    "id": "argus-panorama",
+    "name": "Argus",
+    "summary": "Argus: Metric Panoramic 3D Reconstruction for Indoor Scenes",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-05",
+    "image": "images/catalog/deepnov05-argus.webp",
+    "imagePage": "https://arxiv.org/html/2606.30047v1/",
+    "imageSource": "https://arxiv.org/html/2606.30047v1/teaser.png",
+    "imageAlt": "Argus panoramic multi-view 3D reconstruction",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "openvio",
+    "name": "OpenVIO",
+    "summary": "OpenVIO: A Versatile Open-Source Visual-Inertial Odometry System",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-11-05",
+    "image": "images/catalog/deepnov05-openvio.webp",
+    "imagePage": "https://github.com/93won/openvio",
+    "imageSource": "https://raw.githubusercontent.com/93won/openvio/master/doc/media/openvio_demo.png",
+    "imageAlt": "OpenVIO example tracking in panoramic, fisheye and pinhole views",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "egosmith",
+    "name": "EgoSmith",
+    "summary": "EgoSmith: Egocentric data curation pipeline",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-05",
+    "image": "images/catalog/deepnov05-egosmith.webp",
+    "imagePage": "https://github.com/egosteer/egosmith",
+    "imageSource": "https://raw.githubusercontent.com/egosteer/egosmith/main/assets/overview.png",
+    "imageAlt": "EgoSmith egocentric data curation pipeline",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "roboreview",
+    "name": "RoboReview",
+    "summary": "RoboReview: Egocentric video labeling and human review",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-05",
+    "image": "images/catalog/deepnov05-roboreview.webp",
+    "imagePage": "https://github.com/abhishek0093/roboreview",
+    "imageSource": "https://raw.githubusercontent.com/abhishek0093/roboreview/main/docs/images/review-demo.gif",
+    "imageAlt": "RoboReview human review interface, first frame of author demo",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "hf-wm",
+    "name": "Beyond Successful Robot Demonstrations",
+    "summary": "Beyond Successful Robot Demonstrations: Learning from Human Interactions and Modeling Failure Dynamics",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-05",
+    "image": "images/catalog/deepnov05-hf-wm.webp",
+    "imagePage": "https://arxiv.org/html/2610.13522v1/",
+    "imageSource": "https://arxiv.org/html/2610.13522v1/hfwm_overview.png",
+    "imageAlt": "HF-WM human and robot video and failure modeling method overview",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "reviv",
+    "name": "ReViV",
+    "summary": "ReViV: Reconstructing the Viewer and the View in 4D from Monocular Egocentric Video",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-05",
+    "image": "images/catalog/deepnov05-reviv.webp",
+    "imagePage": "https://arxiv.org/html/2607.17790v1",
+    "imageSource": "https://arxiv.org/html/2607.17790v1/teaser_skel.png",
+    "imageAlt": "ReViV author overview of the viewer and scene reconstruction",
+    "credit": "Original authors; third-party figure rights retained",
+    "coverage": "Whole body"
+  },
+  {
+    "id": "reself",
+    "name": "Seeing the World and the Self from Egocentric Video",
+    "summary": "Seeing the World and the Self from Egocentric Video",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-05",
+    "image": "images/catalog/deepnov05-reself.webp",
+    "imagePage": "https://arxiv.org/html/2609.01276v1",
+    "imageSource": "https://arxiv.org/html/2609.01276v1/fig_teaser.png",
+    "imageAlt": "RESELF author overview of body and scene reconstruction",
+    "credit": "Original authors; third-party figure rights retained",
+    "coverage": "Whole body"
+  },
+  {
+    "id": "empire-hand-forecast",
+    "name": "EMPIRE",
+    "summary": "EMPIRE: Explicit Manipulation Planning as a Learnable Intermediate Representation for Egocentric Hand-Motion Forecasting",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-05",
+    "image": "images/catalog/deepnov05-empire-hand-forecast.webp",
+    "imagePage": "https://arxiv.org/html/2608.22449v1",
+    "imageSource": "https://arxiv.org/html/2608.22449v1/empire_method_teaser_v2.png",
+    "imageAlt": "EMPIRE author overview of planning and hand-motion prediction",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "openicc",
+    "name": "OpenICC",
+    "summary": "Calibrates camera intrinsics, camera–IMU extrinsics and time offset for action-camera capture.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-11-05",
+    "image": "images/catalog/deepnov05-openicc.webp",
+    "imageSource": "https://raw.githubusercontent.com/urbste/OpenImuCameraCalibrator/master/docs/imgs/ExampleSplineFit.png",
+    "imagePage": "https://github.com/urbste/OpenImuCameraCalibrator",
+    "imageAlt": "OpenICC calibration spline example from the official repository",
+    "credit": "OpenICC author; original figure rights retained"
   }
 ]
