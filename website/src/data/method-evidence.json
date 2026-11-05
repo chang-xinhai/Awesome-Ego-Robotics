@@ -72245,8 +72245,7 @@
           "multiview"
         ],
         "cameraGeometry": [
-          "erp",
-          "spherical"
+          "erp"
         ],
         "scaleType": [
           "metric-predicted"
