@@ -15601,10 +15601,15 @@
         {
           "label": "Author repository",
           "url": "https://github.com/billy-yibo-yan/steertuning_release"
+        },
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.18711v1"
         }
       ],
       "notes": [
-        "MIT source; checkpoint and adapters depend on upstream components with CC-BY-NC 4.0 terms."
+        "MIT source; checkpoint and adapters depend on upstream components with CC-BY-NC 4.0 terms.",
+        "Paper reports 100 hours of pretraining; downloaded dataset scale was not independently verified."
       ],
       "verified": "2026-11-08"
     },
@@ -16890,10 +16895,15 @@
         {
           "label": "Author repository",
           "url": "https://github.com/JackYFL/SP-VTP"
+        },
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2605.20085v1"
         }
       ],
       "notes": [
-        "MIT-licensed capture, processing, training and evaluation code; dataset is separately hosted and weights not bundled."
+        "MIT-licensed capture, processing, training and evaluation code; dataset is separately hosted and weights not bundled.",
+        "The paper evaluates open-loop trajectory prediction, not closed-loop robot execution."
       ],
       "verified": "2026-11-08"
     },
