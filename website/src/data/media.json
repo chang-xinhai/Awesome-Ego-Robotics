@@ -13743,5 +13743,403 @@
     "imageSource": "https://arxiv.org/html/2610.36150v1/any3r_method.png",
     "imageAlt": "Any3R ray-field conditioned multi-view reconstruction architecture",
     "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "lome",
+    "name": "LOME",
+    "summary": "Generates egocentric hand-object interaction video from a reference image, text, and per-frame human body and hand actions.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-08",
+    "credit": "LOME authors",
+    "imagePage": "https://arxiv.org/html/2603.27449v1",
+    "imageSource": "https://arxiv.org/html/2603.27449v1/teaser.png",
+    "imageAlt": "LOME method overview from the authors’ paper",
+    "image": "images/catalog/lome-nov08.webp"
+  },
+  {
+    "id": "generated-reality",
+    "name": "Generated Reality",
+    "summary": "Generates interactive egocentric video from tracked hand and head poses in a VR headset.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-08",
+    "credit": "Generated Reality authors",
+    "imagePage": "https://arxiv.org/html/2602.18422v1",
+    "imageSource": "https://arxiv.org/html/2602.18422v1/teaser_final3.png",
+    "imageAlt": "Generated Reality method overview from the authors’ paper",
+    "image": "images/catalog/generated-reality-nov08.webp"
+  },
+  {
+    "id": "maple-ego-priors",
+    "name": "MAPLE",
+    "summary": "Learns visual manipulation priors from egocentric hand-object contact and hand-pose predictions.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-08",
+    "credit": "MAPLE authors",
+    "imagePage": "https://arxiv.org/html/2504.06084v1",
+    "imageSource": "https://arxiv.org/html/2504.06084v1/teaser_v4.png",
+    "imageAlt": "MAPLE method overview from the authors’ paper",
+    "image": "images/catalog/maple-ego-priors-nov08.webp"
+  },
+  {
+    "id": "nexus-vla",
+    "name": "Nexus-VLA",
+    "summary": "Aligns task intent and interactions in a shared human–robot latent for action generation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Human video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08b-nexus-vla.webp",
+    "imagePage": "https://arxiv.org/html/2610.42021v1/",
+    "imageSource": "https://arxiv.org/html/2610.42021v1/framework.png",
+    "imageAlt": "Nexus-VLA research overview from the authors’ paper",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "skel-wam",
+    "name": "Skel-WAM",
+    "summary": "A shared 2.5-D hand skeleton supports human–robot dynamics learning and robot action prediction.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Human video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08b-skel-wam.webp",
+    "imagePage": "https://arxiv.org/html/2609.21514v1/",
+    "imageSource": "https://arxiv.org/html/2609.21514v1/method_overview_pdf.png",
+    "imageAlt": "Skel-WAM research overview from the authors’ paper",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "geolam",
+    "name": "GeoLAM",
+    "summary": "Uses training-only 4D geometric supervision to learn motion-grounded latent actions from human video.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Human video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08b-geolam.webp",
+    "imagePage": "https://arxiv.org/html/2609.17099v1/",
+    "imageSource": "https://arxiv.org/html/2609.17099v1/LAM_model.png",
+    "imageAlt": "GeoLAM research overview from the authors’ paper",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "megovista",
+    "name": "MEgoVista",
+    "summary": "Reconstructs metric hand motion and head trajectories offline from calibrated multi-view wearable capture.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Head-mounted wearable",
+    "coverage": "Hands and head",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08b-megovista.webp",
+    "imagePage": "https://arxiv.org/html/2609.16684v1/",
+    "imageSource": "https://arxiv.org/html/2609.16684v1/Figures/all1_3.jpg",
+    "imageAlt": "MEgoVista research overview from the authors’ paper",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "reweight",
+    "name": "ReWeight",
+    "summary": "Retrieves relevant human demonstrations and weights samples to adapt robot VLA policies.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Human video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08b-reweight.webp",
+    "imagePage": "https://arxiv.org/html/2609.13851v1/",
+    "imageSource": "https://arxiv.org/html/2609.13851v1/figures/fig2.png",
+    "imageAlt": "ReWeight research overview from the authors’ paper",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "humanscale",
+    "name": "HumanScale",
+    "summary": "Compares egocentric-human and robot data under fixed model post-training and evaluation protocols.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Human video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08b-humanscale.webp",
+    "imagePage": "https://arxiv.org/html/2606.20521v1/",
+    "imageSource": "https://arxiv.org/html/2606.20521v1/teaser.png",
+    "imageAlt": "HumanScale research overview from the authors’ paper",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "ace-ego-0",
+    "name": "ACE-Ego-0",
+    "summary": "Combines video-derived pseudo-actions with robot and simulation data using morphology and reliability conditioning.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Human video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08b-ace-ego-0.webp",
+    "imagePage": "https://arxiv.org/html/2606.17200v1/",
+    "imageSource": "https://arxiv.org/html/2606.17200v1/teaser.png",
+    "imageAlt": "ACE-Ego-0 research overview from the authors’ paper",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "ego-pi",
+    "name": "Ego-Pi",
+    "summary": "Investigates co-training a gripper-based VLA for dexterous control from human and humanoid demonstrations.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Human video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08b-ego-pi.webp",
+    "imagePage": "https://arxiv.org/html/2606.08107v1/",
+    "imageSource": "https://arxiv.org/html/2606.08107v1/intro_v14.png",
+    "imageAlt": "Ego-Pi research overview from the authors’ paper",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "hap-bottle",
+    "name": "HAP / Bottle",
+    "summary": "Predicts future human head motion from egocentric hand motion and target context.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Egocentric RGB-D video",
+    "coverage": "Hands and head",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-extra-hap.webp",
+    "imageSource": "https://arxiv.org/html/2609.18548v1/figures/hap_framework.png",
+    "imagePage": "https://arxiv.org/html/2609.18548v1/",
+    "imageAlt": "HAP / Bottle overview from the paper",
+    "credit": "Original authors; third-party figure rights retained",
+    "datasetImage": "images/catalog/nov08-extra-hap-dataset.webp",
+    "datasetImageSource": "https://arxiv.org/html/2609.18548v1/figures/bottle_dataset_onecol.png",
+    "datasetImagePage": "https://arxiv.org/html/2609.18548v1/",
+    "datasetImageAlt": "HAP / Bottle dataset and interaction overview",
+    "datasetImageCredit": "Original authors; third-party figure rights retained",
+    "datasetImageReviewed": "2026-11-08"
+  },
+  {
+    "id": "vlaff",
+    "name": "VLAff / EgoAffordance",
+    "summary": "Learns actionable visual, grasp and trajectory affordances from egocentric human video.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-extra-vlaff.webp",
+    "imageSource": "https://arxiv.org/html/2608.05215v1/overview.png",
+    "imagePage": "https://arxiv.org/html/2608.05215v1/",
+    "imageAlt": "VLAff / EgoAffordance overview from the paper",
+    "credit": "Original authors; third-party figure rights retained",
+    "datasetImage": "images/catalog/nov08-extra-vlaff.webp",
+    "datasetImageSource": "https://arxiv.org/html/2608.05215v1/overview.png",
+    "datasetImagePage": "https://arxiv.org/html/2608.05215v1/",
+    "datasetImageAlt": "VLAff / EgoAffordance dataset and interaction overview",
+    "datasetImageCredit": "Original authors; third-party figure rights retained",
+    "datasetImageReviewed": "2026-11-08"
+  },
+  {
+    "id": "ttp-htac",
+    "name": "TTP / H-Tac",
+    "summary": "Pretrains a human-to-robot policy with visual, action and tactile supervision.",
+    "signals": [
+      "Vision",
+      "Tactile"
+    ],
+    "form": "Egocentric and reference data",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-extra-ttp.webp",
+    "imageSource": "https://arxiv.org/html/2607.01067v1/TTP.png",
+    "imagePage": "https://arxiv.org/html/2607.01067v1/",
+    "imageAlt": "TTP / H-Tac overview from the paper",
+    "credit": "Original authors; third-party figure rights retained",
+    "datasetImage": "images/catalog/nov08-extra-ttp-dataset.webp",
+    "datasetImageSource": "https://arxiv.org/html/2607.01067v1/datasets.png",
+    "datasetImagePage": "https://arxiv.org/html/2607.01067v1/",
+    "datasetImageAlt": "TTP / H-Tac dataset and interaction overview",
+    "datasetImageCredit": "Original authors; third-party figure rights retained",
+    "datasetImageReviewed": "2026-11-08"
+  },
+  {
+    "id": "ht-bench",
+    "name": "HT-Bench / HandTouch",
+    "summary": "Benchmarks learned tactile representations using full-hand tactile and egocentric vision.",
+    "signals": [
+      "Vision",
+      "Tactile"
+    ],
+    "form": "Egocentric video and tactile",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-extra-htbench.webp",
+    "imageSource": "https://arxiv.org/html/2606.19161v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2606.19161v1/",
+    "imageAlt": "HT-Bench / HandTouch overview from the paper",
+    "credit": "Original authors; third-party figure rights retained",
+    "datasetImage": "images/catalog/nov08-extra-htbench.webp",
+    "datasetImageSource": "https://arxiv.org/html/2606.19161v1/teaser.png",
+    "datasetImagePage": "https://arxiv.org/html/2606.19161v1/",
+    "datasetImageAlt": "HT-Bench / HandTouch dataset and interaction overview",
+    "datasetImageCredit": "Original authors; third-party figure rights retained",
+    "datasetImageReviewed": "2026-11-08"
+  },
+  {
+    "id": "hrdexdb",
+    "name": "HRDexDB",
+    "summary": "Grasp demonstrations and executions across a human hand and four robotic embodiments.",
+    "signals": [
+      "Vision",
+      "Tactile"
+    ],
+    "form": "Multiview and egocentric capture",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "datasetImage": "images/catalog/nov08-extra-hrdexdb.webp",
+    "datasetImageSource": "https://arxiv.org/html/2604.14944v3/ICRA_fig1_teaser_reduced.png",
+    "datasetImagePage": "https://arxiv.org/html/2604.14944v3/",
+    "datasetImageAlt": "HRDexDB dataset and interaction overview",
+    "datasetImageCredit": "Original authors; third-party figure rights retained",
+    "datasetImageReviewed": "2026-11-08"
+  },
+  {
+    "id": "hice-touchmoment",
+    "name": "HiCE / TouchMoment",
+    "summary": "Detects frame-level hand-object contact onset in egocentric video.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-extra-hice.webp",
+    "imageSource": "https://arxiv.org/html/2604.12343v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2604.12343v1/",
+    "imageAlt": "HiCE / TouchMoment overview from the paper",
+    "credit": "Original authors; third-party figure rights retained",
+    "datasetImage": "images/catalog/nov08-extra-hice.webp",
+    "datasetImageSource": "https://arxiv.org/html/2604.12343v1/teaser.png",
+    "datasetImagePage": "https://arxiv.org/html/2604.12343v1/",
+    "datasetImageAlt": "HiCE / TouchMoment dataset and interaction overview",
+    "datasetImageCredit": "Original authors; third-party figure rights retained",
+    "datasetImageReviewed": "2026-11-08"
+  },
+  {
+    "id": "egogeneralist",
+    "name": "EgoGeneralist",
+    "summary": "Unifies action-conditioned human egocentric video generation, 3D pose estimation and joint action-video generation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-egogeneralist.optimized.webp",
+    "imageSource": "https://arxiv.org/html/2611.08477v1/teaser_preview.png",
+    "imagePage": "https://arxiv.org/html/2611.08477v1",
+    "imageAlt": "EgoGeneralist action-conditioned video generation, pose estimation and joint action-video generation tasks",
+    "credit": "EgoGeneralist authors; third-party figure rights retained"
+  },
+  {
+    "id": "anyworld",
+    "name": "AnyWorld",
+    "summary": "Factorizes human interaction by action, camera and embodiment to generate robot-domain video-action experiences.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-anyworld.optimized.webp",
+    "imageSource": "https://arxiv.org/html/2608.29242v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2608.29242v1",
+    "imageAlt": "AnyWorld recomposes human actions into different robot embodiments, scenes and viewpoints",
+    "credit": "AnyWorld authors; third-party figure rights retained"
+  },
+  {
+    "id": "egogenesis",
+    "name": "EgoGenesis",
+    "summary": "Generates geometry-conditioned egocentric video-action pairs for human and robot embodiments.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-egogenesis.optimized.webp",
+    "imageSource": "https://egogenesis.github.io/static/images/media/teaser.jpg",
+    "imagePage": "https://egogenesis.github.io/",
+    "imageAlt": "EgoGenesis augments video-action demonstrations across end effectors, objects and environments",
+    "credit": "EgoGenesis authors; third-party figure rights retained"
+  },
+  {
+    "id": "affordancewam",
+    "name": "AffordanceWAM",
+    "summary": "Jointly learns affordance-aware world prediction and robot actions from human egocentric videos and robot trajectories.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-affordancewam.optimized.webp",
+    "imageSource": "https://arxiv.org/html/2609.22332v1/Teaser.png",
+    "imagePage": "https://arxiv.org/html/2609.22332v1",
+    "imageAlt": "AffordanceWAM connects human and robot videos via shared affordance representations",
+    "credit": "AffordanceWAM authors; third-party figure rights retained"
+  },
+  {
+    "id": "being-h07",
+    "name": "Being-H0.7",
+    "summary": "Uses future-aware latent alignment to train an egocentric-video-pretrained robot policy.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-being-h07.optimized.webp",
+    "imageSource": "https://research.beingbeyond.com/being-h07/images/arch.webp",
+    "imagePage": "https://research.beingbeyond.com/being-h07",
+    "imageAlt": "Being-H0.7 latent prior-posterior alignment architecture",
+    "credit": "Being-H0.7 authors; third-party figure rights retained"
+  },
+  {
+    "id": "being-m07",
+    "name": "Being-M0.7",
+    "summary": "Pretrains a latent egocentric video-motion prior and adapts it to humanoid loco-manipulation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Whole body",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-being-m07.optimized.webp",
+    "imageSource": "https://research.beingbeyond.com/being-m07/images/method.webp",
+    "imagePage": "https://research.beingbeyond.com/being-m07",
+    "imageAlt": "Being-M0.7 video-motion prior and humanoid action expert",
+    "credit": "Being-M0.7 authors; third-party figure rights retained"
   }
 ]

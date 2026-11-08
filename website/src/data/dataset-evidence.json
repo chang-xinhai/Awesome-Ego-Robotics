@@ -14029,6 +14029,444 @@
           "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
         ]
       }
+    },
+    "hap-bottle": {
+      "name": "HAP / Bottle",
+      "reportedScale": {
+        "scope": "382 clips from 12 recording sessions, as reported by the paper."
+      },
+      "publicScale": {
+        "scope": "Data availability and license unverified."
+      },
+      "access": "Not verified",
+      "accessNote": "Data availability and license unverified.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Egocentric RGB-D interaction sequences with head and hand motion.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "syntheticSignals": [],
+      "labels": "Coordinated head and hand motion and target visibility.",
+      "bodyCoverage": "Hands and head",
+      "dataRole": "egocentric",
+      "scaleType": "unknown",
+      "releaseScope": "Data availability and license unverified.",
+      "limitations": "Bottle includes 382 clips from 12 sessions; human head-motion forecasts are not robot actions. Repository is a placeholder.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.18548"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2609.18548"
+        ]
+      }
+    },
+    "vlaff": {
+      "name": "VLAff / EgoAffordance",
+      "reportedScale": {
+        "scope": "204,000 episodes; 5.6M visual and 11.6M grasp/trajectory affordances reported."
+      },
+      "publicScale": {
+        "scope": "Project lists dataset as forthcoming."
+      },
+      "access": "Not verified",
+      "accessNote": "Project lists dataset as forthcoming.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Egocentric human videos from source datasets.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "syntheticSignals": [],
+      "labels": "Visual, grasp and trajectory affordances inferred using SfM and hand reconstruction.",
+      "bodyCoverage": "Hands",
+      "dataRole": "egocentric",
+      "scaleType": "unknown",
+      "releaseScope": "Project lists dataset as forthcoming.",
+      "limitations": "Actionable affordances are derived from SfM and hand reconstruction, not measured robot ground-truth actions. Code, dataset and model are listed as forthcoming.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2608.05215"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2608.05215"
+        ]
+      }
+    },
+    "ttp-htac": {
+      "name": "TTP / H-Tac",
+      "reportedScale": {
+        "scope": "160 h reported composite: ~106 h HOI-Tac, 37.2 h DeskTask-Tac, 17.8 h InternData-Tac."
+      },
+      "publicScale": {
+        "scope": "The paper describes an open-source dataset; an independently accessible release was not verified."
+      },
+      "access": "Not verified",
+      "accessNote": "The paper describes an open-source dataset; an independently accessible release was not verified.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Mixed-source human hand-object data, real DeskTask-Tac with glove and simulated robot interactions.",
+      "recordedSignals": [
+        "Vision",
+        "Tactile"
+      ],
+      "syntheticSignals": [],
+      "labels": "Glove tactile readings for DeskTask-Tac; geometry-derived binary contact for HOI-Tac; simulated force and proximity for InternData-Tac.",
+      "bodyCoverage": "Hands",
+      "dataRole": "mixed",
+      "scaleType": "unknown",
+      "releaseScope": "The paper describes an open-source dataset; an independently accessible release was not verified.",
+      "limitations": "The reported 160 h composite mixes about 106 h of geometry-derived contact from multiple source datasets, 37.2 h glove-measured DeskTask-Tac, and 17.8 h simulated robot contacts; it is not all measured egocentric tactile data. Public code/data access unverified.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2607.01067"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2607.01067"
+        ]
+      }
+    },
+    "ht-bench": {
+      "name": "HT-Bench / HandTouch",
+      "reportedScale": {
+        "scope": "10M RGB frames, 7.8M tactile frames and 226 tasks reported."
+      },
+      "publicScale": {
+        "scope": "Public code and dataset access not independently verified."
+      },
+      "access": "Not verified",
+      "accessNote": "Public code and dataset access not independently verified.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Egocentric RGB and full-hand tactile recordings from existing and newly collected sources.",
+      "recordedSignals": [
+        "Vision",
+        "Tactile"
+      ],
+      "syntheticSignals": [],
+      "labels": "Measured tactile responses, task labels and cross-modal evaluation targets.",
+      "bodyCoverage": "Hands",
+      "dataRole": "egocentric",
+      "scaleType": "unknown",
+      "releaseScope": "Public code and dataset access not independently verified.",
+      "limitations": "Combines previously published datasets with newly collected sequences; code and data release unverified. Predicted tactile outputs must be distinguished from measured inputs.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2606.19161"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2606.19161"
+        ]
+      }
+    },
+    "hrdexdb": {
+      "name": "HRDexDB",
+      "reportedScale": {
+        "scope": "3.2K trials across five embodiments and 100 objects, reported by paper v3."
+      },
+      "publicScale": {
+        "scope": "HF dataset lists 507 Inspire F1 episodes; full corpus availability not verified."
+      },
+      "access": "Open access",
+      "accessNote": "HF dataset lists 507 Inspire F1 episodes; full corpus availability not verified.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Synchronized egocentric and multiview RGB, robot state and tactile data for equipped robot hands.",
+      "recordedSignals": [
+        "Vision",
+        "Tactile"
+      ],
+      "syntheticSignals": [],
+      "labels": "Reconstructed 3D hand geometry and object trajectories, success/failure and geometric robot contact labels.",
+      "bodyCoverage": "Hands",
+      "dataRole": "mixed",
+      "scaleType": "unknown",
+      "releaseScope": "HF dataset lists 507 Inspire F1 episodes; full corpus availability not verified.",
+      "limitations": "Paper v3 reports 3.2K trials; HF currently lists an Inspire F1 subset of 507 episodes. Demonstration associations are not frame-aligned. Contact labels are geometry-derived; fingertip tactile readings are noisy/sparse.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2604.14944"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        }
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/hahahataeyun/hrdexdb",
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2604.14944",
+          "https://huggingface.co/datasets/hahahataeyun/hrdexdb"
+        ]
+      }
+    },
+    "hice-touchmoment": {
+      "name": "HiCE / TouchMoment",
+      "reportedScale": {
+        "scope": "4,021 videos and 8,456 contact moments reported."
+      },
+      "publicScale": {
+        "scope": "Authors list Box data download; access not independently verified."
+      },
+      "access": "Not verified",
+      "accessNote": "Authors list Box data download; access not independently verified.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Egocentric RGB videos selected from HOI4D and TACO.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "syntheticSignals": [],
+      "labels": "4,021 videos and 8,456 frame-level contact moments (paper); manual and automatic visual annotations.",
+      "bodyCoverage": "Hands",
+      "dataRole": "egocentric",
+      "scaleType": "unknown",
+      "releaseScope": "Authors list Box data download; access not independently verified.",
+      "limitations": "Training labels combine manual annotation and automatic visual annotation from HOI4D and TACO. Contact moments are visually inferred, not direct tactile sensor readings. Box data and model links are listed by authors; download access not independently verified.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2604.12343"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        }
+      ],
+      "datasetUrl": "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj",
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ]
+      }
     }
   }
 }

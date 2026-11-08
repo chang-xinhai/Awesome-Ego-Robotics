@@ -17486,6 +17486,199 @@
       "notes": [
         "Code and weights have different terms; external dependencies retain their own licenses."
       ]
+    },
+    "egogeneralist": {
+      "status": "unknown",
+      "availability": "Paper and project page; code and models not verified as available.",
+      "softwareStatus": "Paper and project page; code and models not verified as available.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://peaceneil.github.io/egogeneralist_page/"
+        }
+      ]
+    },
+    "anyworld": {
+      "status": "partial",
+      "availability": "Image-editing training/inference and world-model inference source are public under Apache-2.0; public checkpoint download not verified.",
+      "softwareStatus": "Image-editing training/inference and world-model inference source are public under Apache-2.0; public checkpoint download not verified.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://xpeng-robotics.github.io/anyworld/"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/xpeng-robotics/AnyWorld"
+        }
+      ],
+      "codeRelease": {
+        "status": "partial",
+        "availability": "Public source; scope and model access described separately",
+        "license": "Apache-2.0",
+        "licenseURL": "https://github.com/xpeng-robotics/AnyWorld/blob/main/LICENSE"
+      }
+    },
+    "egogenesis": {
+      "status": "unknown",
+      "availability": "Project lists code coming soon; no public model weights verified.",
+      "softwareStatus": "Project lists code coming soon; no public model weights verified.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://egogenesis.github.io/"
+        }
+      ]
+    },
+    "affordancewam": {
+      "status": "partial",
+      "availability": "MIT training and inference source is public; trained task-specific checkpoint downloads not verified.",
+      "softwareStatus": "MIT training and inference source is public; trained task-specific checkpoint downloads not verified.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://skywalker-yqz.github.io/AffordanceWAM/"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/Skywalker-yqz/AffordanceWAM"
+        }
+      ],
+      "codeRelease": {
+        "status": "partial",
+        "availability": "Public source; scope and model access described separately",
+        "license": "MIT",
+        "licenseURL": "https://github.com/Skywalker-yqz/AffordanceWAM/blob/main/LICENSE"
+      }
+    },
+    "being-h07": {
+      "status": "unknown",
+      "availability": "Being-H07 directory is a README-only placeholder; code and checkpoints listed as coming soon.",
+      "softwareStatus": "Being-H07 directory is a README-only placeholder; code and checkpoints listed as coming soon.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://research.beingbeyond.com/being-h07"
+        }
+      ]
+    },
+    "being-m07": {
+      "status": "unknown",
+      "availability": "Company technical report and project page; public code, checkpoints and data not verified.",
+      "softwareStatus": "Company technical report and project page; public code, checkpoints and data not verified.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://research.beingbeyond.com/being-m07"
+        }
+      ]
+    },
+    "skel-wam": {
+      "status": "partial",
+      "availability": "Research source",
+      "softwareStatus": "Public training, robot preprocessing and simulation evaluation code; remaining components and upstream assets have separate terms.",
+      "modelStatus": "Official model files accessible by HTTP range on 2026-11-08.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official code",
+          "url": "https://github.com/HealorCai/Skel-WAM"
+        },
+        {
+          "label": "Official models",
+          "url": "https://huggingface.co/Healor/Skel-WAM"
+        }
+      ],
+      "codeRelease": {
+        "status": "partial",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/HealorCai/Skel-WAM/blob/main/LICENSE"
+      }
+    },
+    "ace-ego-0": {
+      "status": "partial",
+      "availability": "Research source",
+      "softwareStatus": "Public RoboCasa 24 inference/evaluation and Common23 fine-tuning; full mixture pretraining and real robot deployment are not included.",
+      "modelStatus": "Official pretraining checkpoint accessible by HTTP range on 2026-11-08.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official code",
+          "url": "https://github.com/ACERobotics-VLA/ACE-Ego-0"
+        },
+        {
+          "label": "Official models",
+          "url": "https://huggingface.co/acerobotics2025/ACE-Ego-0"
+        }
+      ],
+      "codeRelease": {
+        "status": "partial",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/ACERobotics-VLA/ACE-Ego-0/blob/main/LICENSE"
+      }
+    },
+    "generated-reality": {
+      "status": "partial",
+      "availability": "Research source",
+      "softwareStatus": "Public training and inference source; pretrained backbone and model weights have separate terms.",
+      "modelStatus": "Weights availability and terms not independently verified.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official code",
+          "url": "https://github.com/LafouCC/generated-reality"
+        }
+      ],
+      "codeRelease": {
+        "status": "partial",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/LafouCC/generated-reality/blob/main/LICENSE"
+      }
+    },
+    "maple-ego-priors": {
+      "status": "partial",
+      "availability": "Research source",
+      "softwareStatus": "Encoder inference code and checkpoint download script; further code planned; license not specified.",
+      "modelStatus": "A checkpoint download is linked by authors; full download and terms not independently verified.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official code",
+          "url": "https://github.com/algvr/maple"
+        }
+      ],
+      "codeRelease": {
+        "status": "unknown",
+        "availability": "Public source"
+      }
+    },
+    "hice-touchmoment": {
+      "status": "partial",
+      "availability": "Research source",
+      "softwareStatus": "Official implementation is public under GPL-3.0; included third-party components have separate license notices.",
+      "modelStatus": "Author-listed Box model and dataset share pages respond; actual file download and terms not independently verified.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official code",
+          "url": "https://github.com/bbvisual/hice"
+        }
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source; check bundled third-party component terms",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/bbvisual/hice/blob/main/LICENSE"
+      }
     }
   }
 }

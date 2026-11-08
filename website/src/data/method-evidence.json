@@ -73323,6 +73323,1246 @@
         ]
       },
       "verified": "2026-11-08"
+    },
+    "lome": {
+      "summary": "Generates egocentric hand-object interaction video from a reference image, text, and per-frame human body and hand actions.",
+      "input": "Reference image, text prompt, human body poses and hand gestures",
+      "output": "Action-conditioned synthetic egocentric interaction video",
+      "outputRepresentation": "Action-conditioned synthetic egocentric interaction video",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Evaluation on egocentric human-object interaction video generation.",
+      "limitations": "Synthesized video is not a physical robot rollout or a demonstrated robot policy.",
+      "implementation": "No author code or weights linked from the v1 paper.",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2603.27449v1"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2603.27449v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2603.27449v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2603.27449v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2603.27449v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2603.27449v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2603.27449v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2603.27449v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2603.27449v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2603.27449v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2603.27449v1"
+        ]
+      }
+    },
+    "generated-reality": {
+      "summary": "Generates interactive egocentric video from tracked hand and head poses in a VR headset.",
+      "input": "Reference image or text and tracked head and hand poses",
+      "output": "Synthetic egocentric video responsive to tracked motion",
+      "outputRepresentation": "Synthetic egocentric video responsive to tracked motion",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Egocentric video benchmarks and VR user study; not physical robot deployment.",
+      "limitations": "Interactive virtual user studies do not establish robot manipulation performance.",
+      "implementation": "Official repository contains training and inference code; model weights have separate terms.",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2602.18422v1"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/LafouCC/generated-reality"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2602.18422v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2602.18422v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2602.18422v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2602.18422v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2602.18422v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2602.18422v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2602.18422v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2602.18422v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2602.18422v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2602.18422v1",
+          "https://github.com/LafouCC/generated-reality"
+        ]
+      }
+    },
+    "maple-ego-priors": {
+      "summary": "Learns visual manipulation priors from egocentric hand-object contact and hand-pose predictions.",
+      "input": "Egocentric human video for visual encoder pretraining; robot images and hand state for downstream policy",
+      "output": "Visual features for dexterous robot policies and predicted contact or hand pose",
+      "outputRepresentation": "Visual features for dexterous robot policies and predicted contact or hand pose",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Evaluated downstream in simulation and on a physical dexterous robot hand.",
+      "limitations": "Contact and hand-pose training targets are extracted estimates; released code currently exposes encoder inference, not a full training pipeline.",
+      "implementation": "Official repository supplies encoder inference and checkpoint download script; further code planned; license not specified.",
+      "sources": [
+        {
+          "label": "Primary v1 paper",
+          "url": "https://arxiv.org/html/2504.06084v1"
+        },
+        {
+          "label": "Official encoder code",
+          "url": "https://github.com/algvr/maple"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2504.06084v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2504.06084v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2504.06084v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2504.06084v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2504.06084v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2504.06084v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2504.06084v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2504.06084v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2504.06084v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2504.06084v1",
+          "https://github.com/algvr/maple"
+        ]
+      }
+    },
+    "nexus-vla": {
+      "summary": "Aligns task intent and interactions in a shared human–robot latent for action generation.",
+      "input": "Egocentric human and robot demonstrations, image and language",
+      "output": "Shared manipulation latent and continuous robot actions",
+      "outputRepresentation": "Shared manipulation latent and continuous robot actions",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "RoboCasa-GR1 simulation and physical robot experiments.",
+      "limitations": "Shared human wrist estimates are inferred; alignment and robot action space are not measured human actions.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.42021v1/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.42021v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.42021v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.42021v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.42021v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.42021v1/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.42021v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.42021v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.42021v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.42021v1/"
+        ]
+      }
+    },
+    "skel-wam": {
+      "summary": "A shared 2.5-D hand skeleton supports human–robot dynamics learning and robot action prediction.",
+      "input": "Human and robot video, skeleton overlays, 2.5-D hand keypoints and task prompt",
+      "output": "Predicted future video and keypoints; robot action chunks",
+      "outputRepresentation": "Predicted future video and keypoints; robot action chunks",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "Four real bimanual tasks and seven EgoVLA-Sim tasks.",
+      "limitations": "The action expert is trained on robot data; human videos do not supply robot action labels. Repository releases training, robot preprocessing and evaluation; upstream assets and model terms are separate.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.21514v1/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/HealorCai/Skel-WAM"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://huggingface.co/Healor/Skel-WAM"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.21514v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.21514v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.21514v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.21514v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.21514v1/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.21514v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.21514v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.21514v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.21514v1/",
+          "https://github.com/HealorCai/Skel-WAM",
+          "https://huggingface.co/Healor/Skel-WAM"
+        ]
+      }
+    },
+    "geolam": {
+      "summary": "Uses training-only 4D geometric supervision to learn motion-grounded latent actions from human video.",
+      "input": "Action-free human RGB video, including egocentric datasets; robot action labels for downstream training",
+      "output": "Geometry-grounded latent actions and robot action chunks",
+      "outputRepresentation": "Geometry-grounded latent actions and robot action chunks",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "LIBERO, RoboTwin and one real-world manipulation task.",
+      "limitations": "The geometry teacher provides estimated training targets, not measured depth or force; the teacher and future-video generation are not needed at deployment.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.17099v1/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.17099v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.17099v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.17099v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.17099v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.17099v1/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.17099v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.17099v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.17099v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.17099v1/"
+        ]
+      }
+    },
+    "megovista": {
+      "summary": "Reconstructs metric hand motion and head trajectories offline from calibrated multi-view wearable capture.",
+      "input": "Synchronized head-mounted fisheye RGB, calibrated rig and IMU",
+      "output": "Dual-hand meshes and head trajectory in a gravity-aligned world frame",
+      "outputRepresentation": "Dual-hand meshes and head trajectory in a gravity-aligned world frame",
+      "inputSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "bodyCoverage": "Hands and head",
+      "stage": "L2",
+      "robotEvidence": "Independent optical motion-capture evaluation; no robot policy claimed.",
+      "limitations": "Metric gauge comes from calibrated stereo initialization; IMU gravity alignment follows visual reconstruction. It is an offline reconstruction, and subsequent scale drift remains possible.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.16684v1/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2609.16684v1/"
+        ]
+      },
+      "coordinateFrame": "Gravity-aligned world frame",
+      "scale": "Calibrated stereo baseline",
+      "temporal": "Offline multi-view reconstruction",
+      "outputSpace": "world",
+      "evidenceLevel": "reconstruction"
+    },
+    "reweight": {
+      "summary": "Retrieves relevant human demonstrations and weights samples to adapt robot VLA policies.",
+      "input": "Human egocentric demonstrations, robot demonstrations and derived actions",
+      "output": "Demonstration retrieval and sample weights for robot VLA post-training",
+      "outputRepresentation": "Demonstration retrieval and sample weights for robot VLA post-training",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "Eight simulated tasks and four real-robot tasks; randomized simulation uses a subset.",
+      "limitations": "Retargeted human actions and sample weights are computed estimates, not measured robot ground truth.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.13851v1/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://reweight-vla.github.io/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.13851v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.13851v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.13851v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.13851v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.13851v1/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.13851v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.13851v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.13851v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.13851v1/",
+          "https://reweight-vla.github.io/"
+        ]
+      }
+    },
+    "humanscale": {
+      "summary": "Compares egocentric-human and robot data under fixed model post-training and evaluation protocols.",
+      "input": "Egocentric human videos or teleoperated robot data for pretraining, then robot data for adaptation",
+      "output": "World-action model policy trained with filtered and labeled egocentric data",
+      "outputRepresentation": "World-action model policy trained with filtered and labeled egocentric data",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "Robot action prediction and physical-robot ID/OOD task evaluation.",
+      "limitations": "Comparative results apply to the reported data, filtering, models and tasks; author repository distinguishes planned HumanNet validation release from unrelated available code.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2606.20521v1/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/DAGroup-PKU/HumanNet"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2606.20521v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2606.20521v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2606.20521v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2606.20521v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2606.20521v1/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2606.20521v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2606.20521v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.20521v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2606.20521v1/",
+          "https://github.com/DAGroup-PKU/HumanNet"
+        ]
+      }
+    },
+    "ace-ego-0": {
+      "summary": "Combines video-derived pseudo-actions with robot and simulation data using morphology and reliability conditioning.",
+      "input": "Human egocentric RGB video, robot and simulation demonstrations",
+      "output": "Camera-space pseudo-actions and embodiment-conditioned VLA actions",
+      "outputRepresentation": "Camera-space pseudo-actions and embodiment-conditioned VLA actions",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "RoboCasa and RoboTwin simulation plus real bimanual robot tasks.",
+      "limitations": "Human actions are inferred pseudo-labels. Public code covers RoboCasa 24 inference/evaluation and Common23 SFT; full mixture pretraining and real-robot deployment are excluded.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2606.17200v1/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://github.com/ACERobotics-VLA/ACE-Ego-0"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://huggingface.co/acerobotics2025/ACE-Ego-0"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2606.17200v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2606.17200v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2606.17200v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2606.17200v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2606.17200v1/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2606.17200v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2606.17200v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.17200v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2606.17200v1/",
+          "https://github.com/ACERobotics-VLA/ACE-Ego-0",
+          "https://huggingface.co/acerobotics2025/ACE-Ego-0"
+        ]
+      }
+    },
+    "ego-pi": {
+      "summary": "Investigates co-training a gripper-based VLA for dexterous control from human and humanoid demonstrations.",
+      "input": "Human egocentric and humanoid robot demonstrations, image and action estimates",
+      "output": "Fine-tuned vision–language–action policy and dexterous robot commands",
+      "outputRepresentation": "Fine-tuned vision–language–action policy and dexterous robot commands",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "Real humanoid dexterous manipulation experiments.",
+      "limitations": "Human-to-robot hand mapping and visual alignment are design choices; the paper is an expanded version of an earlier CVPR 2026 paper.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2606.08107v1/"
+        },
+        {
+          "label": "Official resource",
+          "url": "https://egopipaper.github.io/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2606.08107v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2606.08107v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2606.08107v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2606.08107v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2606.08107v1/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2606.08107v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2606.08107v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.08107v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2606.08107v1/",
+          "https://egopipaper.github.io/"
+        ]
+      }
+    },
+    "hap-bottle": {
+      "summary": "Predicts future human head motion from egocentric hand motion and target context.",
+      "input": "Observed hand and head motion and object geometry",
+      "output": "Predicted future 6-DoF head trajectory",
+      "outputRepresentation": "Predicted future 6-DoF head trajectory",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Hands and head",
+      "stage": "L2",
+      "robotEvidence": "Offline human motion forecasting; no robot policy evaluation claimed.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.18548"
+        }
+      ],
+      "verified": "2026-11-08",
+      "limitations": "Bottle includes 382 clips from 12 sessions; human head-motion forecasts are not robot actions. Repository is a placeholder.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "stage": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/abs/2609.18548"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2609.18548"
+        ]
+      }
+    },
+    "vlaff": {
+      "summary": "Learns actionable visual, grasp and trajectory affordances from egocentric human video.",
+      "input": "Egocentric video for training; visual observation and instruction at inference",
+      "output": "Visual affordance heatmaps, grasp poses and trajectories",
+      "outputRepresentation": "Visual affordance heatmaps, grasp poses and trajectories",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "Real-robot zero-shot manipulation and affordance-guided robot learning.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2608.05215"
+        }
+      ],
+      "verified": "2026-11-08",
+      "limitations": "Actionable affordances are derived from SfM and hand reconstruction, not measured robot ground-truth actions. Code, dataset and model are listed as forthcoming.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "stage": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/abs/2608.05215"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2608.05215"
+        ]
+      }
+    },
+    "ttp-htac": {
+      "summary": "Pretrains a human-to-robot policy with visual, action and tactile supervision.",
+      "input": "RGB, language, state and tactile history",
+      "output": "Future action chunks and tactile predictions",
+      "outputRepresentation": "Future action chunks and tactile predictions",
+      "inputSignals": [
+        "Vision",
+        "Tactile"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "Real-robot post-training and simulation experiments.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2607.01067"
+        }
+      ],
+      "verified": "2026-11-08",
+      "limitations": "The reported 160 h composite mixes about 106 h of geometry-derived contact from multiple source datasets, 37.2 h glove-measured DeskTask-Tac, and 17.8 h simulated robot contacts; it is not all measured egocentric tactile data. Public code/data access unverified.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "stage": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/abs/2607.01067"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2607.01067"
+        ]
+      }
+    },
+    "ht-bench": {
+      "summary": "Benchmarks learned tactile representations using full-hand tactile and egocentric vision.",
+      "input": "Egocentric RGB and full-hand tactile data",
+      "output": "Discrete tactile representations and cross-modal predictions",
+      "outputRepresentation": "Discrete tactile representations and cross-modal predictions",
+      "inputSignals": [
+        "Vision",
+        "Tactile"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Real-robot evaluation on four contact-rich manipulation tasks is reported in the revised paper.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2606.19161"
+        },
+        {
+          "label": "Revised robot evaluation",
+          "url": "https://arxiv.org/html/2606.19161v2/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "limitations": "Combines previously published datasets with newly collected sequences; code and data release unverified. Predicted tactile outputs must be distinguished from measured inputs.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "stage": [
+          "https://arxiv.org/abs/2606.19161"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2606.19161v2/"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2606.19161"
+        ]
+      }
+    },
+    "hice-touchmoment": {
+      "summary": "Detects frame-level hand-object contact onset in egocentric video.",
+      "input": "Egocentric RGB video and hand regions",
+      "output": "Predicted temporal hand-object contact events",
+      "outputRepresentation": "Predicted temporal hand-object contact events",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "robotEvidence": "Video-based contact estimation; no robot policy evaluation claimed.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2604.12343"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        }
+      ],
+      "verified": "2026-11-08",
+      "limitations": "Training labels combine manual annotation and automatic visual annotation from HOI4D and TACO. Contact moments are visually inferred, not direct tactile sensor readings. Box data and model links are listed by authors; download access not independently verified.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "stage": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2604.12343",
+          "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
+        ]
+      }
+    },
+    "egogeneralist": {
+      "summary": "Unifies action-conditioned human egocentric video generation, 3D pose estimation and joint action-video generation.",
+      "input": "Egocentric video and metric 3D human action conditioning, depending on task",
+      "output": "Generated video, reconstructed human pose or jointly generated action-video sequences",
+      "outputRepresentation": "Generated video, reconstructed human pose or jointly generated action-video sequences",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "No physical robot evaluation reported; evaluates human-video generation, egocentric pose and joint action-video tasks.",
+      "limitations": "Human action estimates and generated videos are not executable robot actions; the project does not report a real-robot policy evaluation.",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.08477v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://peaceneil.github.io/egogeneralist_page/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.08477v1",
+          "https://peaceneil.github.io/egogeneralist_page/"
+        ]
+      }
+    },
+    "anyworld": {
+      "summary": "Factorizes human interaction by action, camera and embodiment to generate robot-domain video-action experiences.",
+      "input": "Human egocentric videos, action and camera conditions, target embodiment and scene context",
+      "output": "Recomposed robot-domain video-action experiences",
+      "outputRepresentation": "Recomposed robot-domain video-action experiences",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "RoboCasa simulation and manipulation on a physical IRON humanoid.",
+      "limitations": "Synthetic robot-domain video-action pairs are generated supervision, not measured demonstrations; the code describes local weight paths but public weight downloads were not verified.",
+      "evidenceLevel": "real-robot",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2608.29242v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://xpeng-robotics.github.io/anyworld/"
+        },
+        {
+          "label": "Official source",
+          "url": "https://github.com/xpeng-robotics/AnyWorld"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2608.29242v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2608.29242v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2608.29242v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2608.29242v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2608.29242v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2608.29242v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2608.29242v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2608.29242v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2608.29242v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2608.29242v1",
+          "https://xpeng-robotics.github.io/anyworld/",
+          "https://github.com/xpeng-robotics/AnyWorld"
+        ]
+      }
+    },
+    "egogenesis": {
+      "summary": "Generates geometry-conditioned egocentric video-action pairs for human and robot embodiments.",
+      "input": "Egocentric demonstrations, action geometry and camera-aware 3D conditioning",
+      "output": "Synthetic action-aligned egocentric video trajectories",
+      "outputRepresentation": "Synthetic action-aligned egocentric video trajectories",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Synthetic trajectory augmentation evaluated on real single-arm and dual-arm robot tasks.",
+      "limitations": "Generated trajectories are synthetic and do not themselves establish real-world demonstrations; project lists code as coming soon.",
+      "evidenceLevel": "real-robot",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2607.28243v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://egogenesis.github.io/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2607.28243v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2607.28243v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2607.28243v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2607.28243v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2607.28243v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2607.28243v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2607.28243v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2607.28243v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2607.28243v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2607.28243v1",
+          "https://egogenesis.github.io/"
+        ]
+      }
+    },
+    "affordancewam": {
+      "summary": "Jointly learns affordance-aware world prediction and robot actions from human egocentric videos and robot trajectories.",
+      "input": "Human video and robot trajectories with affordance supervision",
+      "output": "Future RGB, scalar affordance, heatmaps and continuous robot actions",
+      "outputRepresentation": "Future RGB, scalar affordance, heatmaps and continuous robot actions",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Evaluated in RoboCasa and CALVIN simulations and on real robot manipulation.",
+      "limitations": "Human videos supervise world streams; action supervision comes from robot trajectories. Pretrained base weights are distinct from the trained AffordanceWAM checkpoints.",
+      "evidenceLevel": "real-robot",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.22332v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://skywalker-yqz.github.io/AffordanceWAM/"
+        },
+        {
+          "label": "Official source",
+          "url": "https://github.com/Skywalker-yqz/AffordanceWAM"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.22332v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.22332v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.22332v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.22332v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.22332v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.22332v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.22332v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.22332v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2609.22332v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.22332v1",
+          "https://skywalker-yqz.github.io/AffordanceWAM/",
+          "https://github.com/Skywalker-yqz/AffordanceWAM"
+        ]
+      }
+    },
+    "being-h07": {
+      "summary": "Uses future-aware latent alignment to train an egocentric-video-pretrained robot policy.",
+      "input": "Egocentric human videos and robot demonstrations for training; instruction, observation history and state at inference",
+      "output": "Robot actions via future-aware latent reasoning",
+      "outputRepresentation": "Robot actions via future-aware latent reasoning",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Six simulation benchmarks and real-world tasks on three robot platforms.",
+      "limitations": "The posterior branch is training-only; no explicit future-image rollout occurs at inference. The Being-H07 repository directory contains a README and does not yet provide H0.7 code or checkpoints.",
+      "evidenceLevel": "real-robot",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2605.00078v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://research.beingbeyond.com/being-h07"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2605.00078v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2605.00078v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2605.00078v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2605.00078v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2605.00078v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2605.00078v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2605.00078v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2605.00078v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2605.00078v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2605.00078v1",
+          "https://research.beingbeyond.com/being-h07"
+        ]
+      }
+    },
+    "being-m07": {
+      "summary": "Pretrains a latent egocentric video-motion prior and adapts it to humanoid loco-manipulation.",
+      "input": "Egocentric video, human motion sequences and paired video-motion, followed by robot data",
+      "output": "Future visual and motion latents with robot-specific action chunks",
+      "outputRepresentation": "Future visual and motion latents with robot-specific action chunks",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body",
+      "stage": "L6",
+      "robotEvidence": "Report describes Unitree G1 VR teleoperation data and a closed-loop humanoid controller.",
+      "limitations": "More than 10,000 hours describes the raw pre-filtering mixed-modality corpus, not publicly released data or entirely paired ego recordings. Public code and checkpoints were not verified.",
+      "evidenceLevel": "real-robot",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://research.beingbeyond.com/being-m07"
+        },
+        {
+          "label": "Project",
+          "url": "https://research.beingbeyond.com/being-m07"
+        }
+      ],
+      "verified": "2026-11-08",
+      "fieldSources": {
+        "summary": [
+          "https://research.beingbeyond.com/being-m07"
+        ],
+        "input": [
+          "https://research.beingbeyond.com/being-m07"
+        ],
+        "output": [
+          "https://research.beingbeyond.com/being-m07"
+        ],
+        "outputRepresentation": [
+          "https://research.beingbeyond.com/being-m07"
+        ],
+        "inputSignals": [
+          "https://research.beingbeyond.com/being-m07"
+        ],
+        "bodyCoverage": [
+          "https://research.beingbeyond.com/being-m07"
+        ],
+        "stage": [
+          "https://research.beingbeyond.com/being-m07"
+        ],
+        "robotEvidence": [
+          "https://research.beingbeyond.com/being-m07"
+        ],
+        "evidenceLevel": [
+          "https://research.beingbeyond.com/being-m07"
+        ],
+        "limitations": [
+          "https://research.beingbeyond.com/being-m07",
+          "https://research.beingbeyond.com/being-m07"
+        ]
+      }
     }
   }
 }
