@@ -72657,7 +72657,7 @@
       "target": "Depth representation and perception",
       "robotEvidence": "Simulated dexterous grasping and real-world navigation; direct egocentric capture or UMI use not established.",
       "implementation": "Official source and published model card are Apache-2.0. Model variants and upstream data may have separate terms.",
-      "limitations": "Requires depth-image input; not an RGB-to-depth estimator, SLAM system, or end-to-end robot action policy. Real-world navigation must not be conflated with simulated manipulation.",
+      "limitations": "Requires depth-image input; not an RGB-to-depth estimator, SLAM system or end-to-end action policy. Predicted-depth training examples include pseudo-metric scale; real-world navigation is distinct from simulated grasping.",
       "sources": [
         {
           "label": "Paper",
@@ -72701,9 +72701,25 @@
         "implementation": [
           "https://github.com/leggedrobotics/defm",
           "https://huggingface.co/leggedrobotics/defm"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2601.18923v1/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2601.18923v1/"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2601.18923v1/"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2601.18923v1/"
         ]
       },
-      "verified": "2026-11-08"
+      "verified": "2026-11-08",
+      "supervision": "Self-supervised DINOv2-style teacher–student distillation on depth images; smaller models are distilled from ViT-L.",
+      "scale": "Metric-aware normalization; absolute and lateral scale ambiguities remain, especially without camera intrinsics.",
+      "evaluation": "Depth representation benchmarks; simulated dexterous grasping and locomotion, plus navigation evaluation.",
+      "robotPlatform": "KUKA arm with Allegro hand for simulated grasping; ANYmal for ladder-climbing evaluation; Unitree B2W for real-world navigation."
     },
     "metrictrail": {
       "summary": "Combines a learned metric-depth prior with local optimization for streaming reconstruction.",
