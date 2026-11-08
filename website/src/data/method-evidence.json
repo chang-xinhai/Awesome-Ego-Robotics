@@ -74261,8 +74261,28 @@
         "limitations": [
           "https://arxiv.org/html/2611.08477v1",
           "https://peaceneil.github.io/egogeneralist_page/"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.08477v1"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2611.08477v1"
         ]
-      }
+      },
+      "coordinateFrame": "Metric human joints and camera pose are expressed in the initial camera frame.",
+      "scale": "Metric 3D human motion",
+      "supervision": "Adapted on EgoDex training clips with action and video streams.",
+      "evaluation": "Action-conditioned video generation and pose recovery on EgoDex and Xperience-10M; HOT3D target-reaching analysis for joint action-video generation.",
+      "temporal": "41-frame training clips; longer generation explored in supplementary examples."
     },
     "anyworld": {
       "summary": "Factorizes human interaction by action, camera and embodiment to generate robot-domain video-action experiences.",
@@ -74324,8 +74344,12 @@
           "https://arxiv.org/html/2608.29242v1",
           "https://xpeng-robotics.github.io/anyworld/",
           "https://github.com/xpeng-robotics/AnyWorld"
+        ],
+        "robotPlatform": [
+          "https://arxiv.org/html/2608.29242v1"
         ]
-      }
+      },
+      "robotPlatform": "IRON humanoid; RoboCasa GR1 in simulation"
     },
     "egogenesis": {
       "summary": "Generates geometry-conditioned egocentric video-action pairs for human and robot embodiments.",
