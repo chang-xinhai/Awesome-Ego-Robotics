@@ -17292,6 +17292,200 @@
         }
       ],
       "verified": "2026-11-05"
+    },
+    "defm": {
+      "status": "open",
+      "availability": "Research model / tool",
+      "softwareStatus": "Apache-2.0 source; official model card lists Apache-2.0 pretrained weights. External datasets have independent terms.",
+      "modelStatus": "Twelve official checkpoints listed; defm_efficientnet_b0.pth was accessible by HTTP Range (206) on 2026-11-08.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/leggedrobotics/defm"
+        },
+        {
+          "label": "Official model card",
+          "url": "https://huggingface.co/leggedrobotics/defm"
+        }
+      ],
+      "notes": [
+        "Model learns depth representations rather than predicting depth or robot actions."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "Apache-2.0",
+        "licenseURL": "https://github.com/leggedrobotics/defm/blob/main/LICENSE"
+      }
+    },
+    "metrictrail": {
+      "status": "partial",
+      "availability": "Research reference",
+      "softwareStatus": "Apache-2.0 ViPE code includes MetricTrail. MetricTrail checkpoint uses NVIDIA OneWay Noncommercial terms; dependencies have separate licenses.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official project or implementation",
+          "url": "https://github.com/nv-tlabs/vipe"
+        },
+        {
+          "label": "Official MetricTrail weights",
+          "url": "https://huggingface.co/nvidia/MetricTrail"
+        }
+      ],
+      "notes": [
+        "Not a measured depth input; loop closure uses an optional separate component."
+      ],
+      "modelStatus": "Author checkpoint returned HTTP 206 for a byte-range request; noncommercial terms apply.",
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "Apache-2.0",
+        "licenseURL": "https://github.com/nv-tlabs/vipe/blob/main/LICENSE"
+      },
+      "modelRelease": {
+        "status": "partial",
+        "availability": "Public author checkpoint",
+        "license": "NVIDIA OneWay Noncommercial License",
+        "licenseURL": "https://huggingface.co/nvidia/MetricTrail"
+      }
+    },
+    "insta360-imu-scale": {
+      "status": "unknown",
+      "availability": "Research reference",
+      "softwareStatus": "Source code is present; no root software license verified. The linked survey dataset requires access.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official project or implementation",
+          "url": "https://github.com/OVR-Platform/imu-metric-scale"
+        }
+      ],
+      "notes": [
+        "Requires a precomputed SfM model; not an online VIO or a complete reconstruction system."
+      ]
+    },
+    "omniray": {
+      "status": "unknown",
+      "availability": "Research reference",
+      "softwareStatus": "Author project says code and models are to be released; linked website source is not model code.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official project or implementation",
+          "url": "https://nam1410.github.io/omniray/"
+        }
+      ],
+      "notes": [
+        "Does not recover metric scale by itself; author project lists code and models as TBD."
+      ]
+    },
+    "fisheye3r": {
+      "status": "unknown",
+      "availability": "Research reference",
+      "softwareStatus": "Author repository lists implementation as coming soon.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official project or implementation",
+          "url": "https://github.com/android-xr/fisheye3r"
+        }
+      ],
+      "notes": [
+        "Official repository is a placeholder with implementation coming soon; no direct Ego / UMI deployment claim."
+      ]
+    },
+    "ceres-capture": {
+      "status": "open",
+      "availability": "Research capture software",
+      "softwareStatus": "Public MIT-licensed capture and export code.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official repository",
+          "url": "https://github.com/hcltech-robotics/ceres"
+        }
+      ],
+      "notes": [
+        "Quest browser capture; LeRobot v3-compatible export."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/hcltech-robotics/ceres/blob/main/LICENCE.md"
+      }
+    },
+    "tactohand": {
+      "status": "unknown",
+      "availability": "Paper and preview repository",
+      "softwareStatus": "Author repository contains a README preview; method code not yet released.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official repository",
+          "url": "https://github.com/zhenqis123/Tactohand"
+        }
+      ],
+      "notes": [
+        "Monocular predictions are not physical tactile measurements."
+      ]
+    },
+    "open-humanwam": {
+      "status": "partial",
+      "availability": "Paper, partial source and dataset access",
+      "softwareStatus": "Official branch contains model and evaluation source; model collection and complete dataset availability vary.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official release README",
+          "url": "https://github.com/DAGroup-PKU/HumanNet/tree/Open-HumanWAM"
+        },
+        {
+          "label": "Official dataset",
+          "url": "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        }
+      ],
+      "notes": [
+        "Corpus gated and uploading; complete downloadable volume unverified."
+      ],
+      "codeRelease": {
+        "status": "partial",
+        "availability": "Public source; see component-specific terms"
+      }
+    },
+    "any3r": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Inference and evaluation source is MIT; model weights are FAIR noncommercial.",
+      "modelStatus": "Author checkpoint returned HTTP 206 for a one-byte range request; noncommercial terms apply.",
+      "verified": "2026-11-08",
+      "evidence": [
+        {
+          "label": "Official code",
+          "url": "https://github.com/Jingong-Chen/Any3R"
+        },
+        {
+          "label": "Official model",
+          "url": "https://huggingface.co/Jingong/Any3R"
+        }
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/Jingong-Chen/Any3R/blob/main/LICENSE"
+      },
+      "modelRelease": {
+        "status": "partial",
+        "availability": "Public author checkpoint",
+        "license": "FAIR Noncommercial Research License",
+        "licenseURL": "https://huggingface.co/Jingong/Any3R/blob/main/LICENSE"
+      },
+      "notes": [
+        "Code and weights have different terms; external dependencies retain their own licenses."
+      ]
     }
   }
 }

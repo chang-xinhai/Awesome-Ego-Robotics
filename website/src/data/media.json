@@ -13568,5 +13568,180 @@
     "imageSource": "https://arxiv.org/html/2607.11588v1/teaser.png",
     "imageAlt": "FoundationGeo metric 3D reconstruction examples in indoor, outdoor, and manipulation scenes",
     "image": "images/catalog/foundationgeo-nov08.webp"
+  },
+  {
+    "id": "defm",
+    "name": "DeFM",
+    "summary": "A self-supervised depth encoder learns metric-aware geometric and semantic representations for robotics.",
+    "signals": [
+      "Depth"
+    ],
+    "form": "Depth imagery",
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-08",
+    "credit": "DeFM authors",
+    "imagePage": "https://de-fm.github.io/",
+    "imageSource": "https://de-fm.github.io/static/images/self_distillation.png",
+    "imageAlt": "DeFM depth-image teacher–student self-distillation architecture",
+    "image": "images/catalog/defm-nov08.webp"
+  },
+  {
+    "id": "metrictrail",
+    "name": "MetricTrail",
+    "summary": "Combines a learned metric-depth prior with local optimization for streaming reconstruction.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/metrictrail-nov08.webp",
+    "imagePage": "https://arxiv.org/html/2611.07555v1/",
+    "imageSource": "https://arxiv.org/html/2611.07555v1/pipeline.png",
+    "imageAlt": "MetricTrail long-sequence metric-depth and local optimization pipeline",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "insta360-imu-scale",
+    "name": "Insta360 IMU Scale",
+    "summary": "Uses embedded IMU telemetry to recover metric scale and camera–IMU synchronization for a precomputed SfM model.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/insta360-imu-scale-nov08.webp",
+    "imagePage": "https://arxiv.org/html/2610.35554v2/",
+    "imageSource": "https://arxiv.org/html/2610.35554v2/fig2_sync.png",
+    "imageAlt": "Video–gyro timing and angular-velocity alignment from the Insta360 scale paper",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "omniray",
+    "name": "OmniRay",
+    "summary": "Predicts camera-frame geometry from one image across diverse central camera types.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/omniray-nov08.webp",
+    "imagePage": "https://arxiv.org/html/2610.31645v1/",
+    "imageSource": "https://arxiv.org/html/2610.31645v1/teaser.drawio_lates.png",
+    "imageAlt": "OmniRay camera-frame geometry predictions across perspective, fisheye and panoramic imagery",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "fisheye3r",
+    "name": "Fisheye3R",
+    "summary": "Adapts feed-forward multi-view geometry foundations to fisheye and mixed-camera input.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/fisheye3r-nov08.webp",
+    "imagePage": "https://arxiv.org/html/2603.28896v2/",
+    "imageSource": "https://arxiv.org/html/2603.28896v2/method_fig.png",
+    "imageAlt": "Fisheye3R adaptation tokens for fisheye and perspective reconstruction models",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "tactohand",
+    "name": "TactoHand",
+    "summary": "Monocular human video predicts hand-surface contact, proximity and force.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Human video (ego and exocentric)",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-tactohand.webp",
+    "imageSource": "https://arxiv.org/html/2610.39585v1/pipeline.png",
+    "imagePage": "https://arxiv.org/html/2610.39585v1/",
+    "imageAlt": "TactoHand video-based contact, proximity and force prediction pipeline",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "recontact",
+    "name": "ReContact",
+    "summary": "Contact plans from human video support whole-body humanoid retargeting.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Human video",
+    "coverage": "Whole body",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-recontact.webp",
+    "imageSource": "https://arxiv.org/html/2611.02968v1/framework_spine.png",
+    "imagePage": "https://arxiv.org/html/2611.02968v1/",
+    "imageAlt": "ReContact reconstruction, contact plan and retargeting overview",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "ceres-capture",
+    "name": "CERES",
+    "summary": "A Quest browser workflow records directed egocentric capture and exports LeRobot-compatible episodes.",
+    "signals": [
+      "Vision",
+      "Audio"
+    ],
+    "form": "Headset",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-ceres.webp",
+    "imageSource": "https://ceres.cam/assets/guides/capture-director-monitor.png",
+    "imagePage": "https://ceres.cam/about/",
+    "imageAlt": "CERES capture director monitoring interface",
+    "credit": "Original authors; third-party figure rights retained"
+  },
+  {
+    "id": "open-humanwam",
+    "name": "Open-HumanWAM",
+    "summary": "Human and robot data scale a world-action model for manipulation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/nov08-open-humanwam.webp",
+    "imageSource": "https://arxiv.org/html/2611.06817v2/teaser.png",
+    "imagePage": "https://arxiv.org/html/2611.06817v2/",
+    "imageAlt": "Open-HumanWAM human and robot pretraining results overview",
+    "credit": "Original authors; third-party figure rights retained",
+    "datasetImage": "images/catalog/nov08-open-humanwam-dataset.webp",
+    "datasetImageSource": "https://arxiv.org/html/2611.06817v2/data_overview.png",
+    "datasetImagePage": "https://arxiv.org/html/2611.06817v2/",
+    "datasetImageAlt": "Open-HumanWAM source corpora, data curation and action alignment",
+    "datasetImageCredit": "Open-HumanWAM authors",
+    "datasetImageReviewed": "2026-11-08"
+  },
+  {
+    "id": "egoactionbench",
+    "name": "EgoActionBench",
+    "summary": "Dense left-, right- and both-hand temporal action captions for egocentric human video.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric video",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "datasetImage": "images/catalog/nov08-egoactionbench.webp",
+    "datasetImageSource": "https://arxiv.org/html/2611.03646v1/teaser.png",
+    "datasetImagePage": "https://arxiv.org/html/2611.03646v1/",
+    "datasetImageAlt": "EgoActionBench examples and hand-associated temporal captions",
+    "datasetImageCredit": "EgoActionBench authors",
+    "datasetImageReviewed": "2026-11-08"
+  },
+  {
+    "id": "any3r",
+    "name": "Any3R",
+    "summary": "Reconstructs scenes from multiple heterogeneous central cameras using per-pixel ray fields.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-08",
+    "image": "images/catalog/any3r-nov08.webp",
+    "imagePage": "https://arxiv.org/html/2610.36150v1/",
+    "imageSource": "https://arxiv.org/html/2610.36150v1/any3r_method.png",
+    "imageAlt": "Any3R ray-field conditioned multi-view reconstruction architecture",
+    "credit": "Original authors; third-party figure rights retained"
   }
 ]

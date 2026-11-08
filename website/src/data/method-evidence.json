@@ -72639,6 +72639,674 @@
         ]
       },
       "verified": "2026-11-08"
+    },
+    "defm": {
+      "summary": "Self-supervised depth-image encoder learns metric-aware geometric and semantic features for robotic perception.",
+      "input": "Depth images with metric-aware normalization",
+      "output": "Dense geometric and semantic feature representations",
+      "outputRepresentation": "Self-supervised depth features; no depth image or robot action predicted",
+      "inputSignals": [
+        "Depth"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "toolTopics": [
+        "depth"
+      ],
+      "evidenceLevel": "tool",
+      "target": "Depth representation and perception",
+      "robotEvidence": "Simulated dexterous grasping and real-world navigation; direct egocentric capture or UMI use not established.",
+      "implementation": "Official source and published model card are Apache-2.0. Model variants and upstream data may have separate terms.",
+      "limitations": "Requires depth-image input; not an RGB-to-depth estimator, SLAM system, or end-to-end robot action policy. Real-world navigation must not be conflated with simulated manipulation.",
+      "sources": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.18923"
+        },
+        {
+          "label": "Project",
+          "url": "https://de-fm.github.io/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/leggedrobotics/defm"
+        },
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/leggedrobotics/defm"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2601.18923"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2601.18923"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2601.18923"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2601.18923"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2601.18923"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/abs/2601.18923"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2601.18923"
+        ],
+        "implementation": [
+          "https://github.com/leggedrobotics/defm",
+          "https://huggingface.co/leggedrobotics/defm"
+        ]
+      },
+      "verified": "2026-11-08"
+    },
+    "metrictrail": {
+      "summary": "Combines a learned metric-depth prior with local optimization for streaming reconstruction.",
+      "input": "Monocular RGB video; optionally calibrated stereo and camera intrinsics",
+      "output": "Camera trajectories and predicted dense 3D reconstruction",
+      "outputRepresentation": "Camera trajectories and predicted dense 3D reconstruction",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "robotEvidence": "Capture-processing reference; direct Ego / UMI robot policy deployment is not claimed.",
+      "scale": "Learned metric depth prior; calibrated stereo optional",
+      "temporal": "Streaming local optimization; loop closure is optional",
+      "limitations": "Not a measured depth input; loop closure uses an optional separate component.",
+      "implementation": "MetricTrail source is released inside ViPE; DINO-DPVO weights and other dependencies have separate license terms.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.07555v1/"
+        },
+        {
+          "label": "Official project or implementation",
+          "url": "https://github.com/nv-tlabs/vipe"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.07555v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.07555v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.07555v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.07555v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.07555v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.07555v1/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2611.07555v1/"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2611.07555v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.07555v1/"
+        ],
+        "implementation": [
+          "https://github.com/nv-tlabs/vipe"
+        ]
+      },
+      "verified": "2026-11-08",
+      "toolTopics": [
+        "slam"
+      ],
+      "slam": {
+        "family": "streaming",
+        "role": "online",
+        "systemType": "Streaming geometry with local optimization",
+        "loopClosure": "optional",
+        "relocalization": "unknown",
+        "metricScale": "Predicted metric depth prior; optional calibrated stereo",
+        "calibration": "RGB-only or supplied intrinsics; stereo requires rectified images and baseline.",
+        "captureRelevance": "Reference for long capture reconstruction; no direct Ego or UMI robot-policy evaluation claimed."
+      },
+      "outputSpace": "world",
+      "evidenceLevel": "reconstruction"
+    },
+    "insta360-imu-scale": {
+      "summary": "Uses embedded IMU telemetry to recover metric scale and camera–IMU synchronization for a precomputed SfM model.",
+      "input": "Existing COLMAP SfM camera poses and X5 / X6 gyroscope and accelerometer telemetry",
+      "output": "Estimated metric scale, gravity direction, camera–IMU rotation and timing diagnostics",
+      "outputRepresentation": "Estimated metric scale, gravity direction, camera–IMU rotation and timing diagnostics",
+      "inputSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "robotEvidence": "Capture-processing reference; direct Ego / UMI robot policy deployment is not claimed.",
+      "scale": "Inertial alignment recovers scale for an existing arbitrary-scale SfM model",
+      "temporal": "Offline segment-wise visual–inertial alignment",
+      "limitations": "Requires a precomputed SfM model; not an online VIO or a complete reconstruction system.",
+      "implementation": "Source code is present; no root software license verified. The linked survey dataset requires access.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.35554v2/"
+        },
+        {
+          "label": "Official project or implementation",
+          "url": "https://github.com/OVR-Platform/imu-metric-scale"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.35554v2/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.35554v2/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.35554v2/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.35554v2/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.35554v2/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.35554v2/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2610.35554v2/"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2610.35554v2/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.35554v2/"
+        ],
+        "implementation": [
+          "https://github.com/OVR-Platform/imu-metric-scale"
+        ]
+      },
+      "verified": "2026-11-08",
+      "toolTopics": [
+        "calibration"
+      ]
+    },
+    "omniray": {
+      "summary": "Predicts camera-frame geometry from one image across diverse central camera types.",
+      "input": "One RGB image from a central camera; no camera-type label or intrinsics required",
+      "output": "Per-pixel ray direction, relative radial distance and camera-frame 3D points",
+      "outputRepresentation": "Per-pixel ray direction, relative radial distance and camera-frame 3D points",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "robotEvidence": "Capture-processing reference; direct Ego / UMI robot policy deployment is not claimed.",
+      "scale": "Predicted geometry is up to a single global scale",
+      "temporal": "Single-image feed-forward inference",
+      "limitations": "Does not recover metric scale by itself; author project lists code and models as TBD.",
+      "implementation": "Author project says code and models are to be released; linked website source is not model code.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.31645v1/"
+        },
+        {
+          "label": "Official project or implementation",
+          "url": "https://nam1410.github.io/omniray/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.31645v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.31645v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.31645v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.31645v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.31645v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.31645v1/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2610.31645v1/"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2610.31645v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.31645v1/"
+        ],
+        "implementation": [
+          "https://nam1410.github.io/omniray/"
+        ]
+      },
+      "verified": "2026-11-08",
+      "toolTopics": [
+        "depth"
+      ],
+      "perception": {
+        "families": [
+          "monocular",
+          "fisheye",
+          "panoramic"
+        ],
+        "inputSetup": [
+          "monocular"
+        ],
+        "cameraGeometry": [
+          "pinhole",
+          "fisheye",
+          "erp"
+        ],
+        "scaleType": [
+          "relative"
+        ],
+        "outputType": "Per-pixel ray direction, relative radial distance and 3D camera-frame point map",
+        "scaleSource": "Predicted only up to a global scale",
+        "calibration": "No intrinsics, distortion coefficients or camera-type label required",
+        "temporal": "Per-image, feed-forward",
+        "captureRelevance": "Potential wide-angle capture reference; no dedicated Ego / UMI transfer is claimed.",
+        "limitations": "Radial distance is predicted; not measured depth or a metric-scale guarantee."
+      },
+      "target": "Depth and spatial perception",
+      "outputSpace": "camera",
+      "evidenceLevel": "reconstruction"
+    },
+    "fisheye3r": {
+      "summary": "Adapts feed-forward multi-view geometry foundations to fisheye and mixed-camera input.",
+      "input": "Multiple RGB views with fisheye or perspective camera imagery",
+      "output": "Predicted camera pose, ray directions and depth / point maps from adapted backbones",
+      "outputRepresentation": "Predicted camera pose, ray directions and depth / point maps from adapted backbones",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "robotEvidence": "Capture-processing reference; direct Ego / UMI robot policy deployment is not claimed.",
+      "scale": "Depends on the adapted geometry backbone and inference setting",
+      "temporal": "Feed-forward unordered image-set reconstruction",
+      "limitations": "Official repository is a placeholder with implementation coming soon; no direct Ego / UMI deployment claim.",
+      "implementation": "Author repository lists implementation as coming soon.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2603.28896v2/"
+        },
+        {
+          "label": "Official project or implementation",
+          "url": "https://github.com/android-xr/fisheye3r"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2603.28896v2/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2603.28896v2/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2603.28896v2/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2603.28896v2/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2603.28896v2/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2603.28896v2/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2603.28896v2/"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2603.28896v2/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2603.28896v2/"
+        ],
+        "implementation": [
+          "https://github.com/android-xr/fisheye3r"
+        ]
+      },
+      "verified": "2026-11-08",
+      "toolTopics": [
+        "depth"
+      ],
+      "perception": {
+        "families": [
+          "fisheye",
+          "multiview"
+        ],
+        "inputSetup": [
+          "multiview"
+        ],
+        "cameraGeometry": [
+          "fisheye",
+          "pinhole"
+        ],
+        "scaleType": [
+          "unknown"
+        ],
+        "outputType": "Predicted geometry, camera pose and depth from the adapted foundation model",
+        "scaleSource": "Dependent on underlying geometry model",
+        "calibration": "Adapts fisheye and perspective views; camera model assumptions depend on the underlying backbone",
+        "temporal": "Feed-forward multi-view reconstruction",
+        "captureRelevance": "Potential wide-angle capture reference; no direct Ego / UMI validation claimed.",
+        "limitations": "Author repository has no implementation at review; metric scale not independently established."
+      },
+      "target": "Depth and spatial perception",
+      "outputSpace": "unknown",
+      "evidenceLevel": "reconstruction"
+    },
+    "tactohand": {
+      "summary": "Predicts dense hand-surface contact, proximity and force fields from monocular video.",
+      "input": "Human monocular video",
+      "output": "Predicted hand-surface contact, proximity and 3D force fields",
+      "outputRepresentation": "Predicted hand-surface contact, proximity and 3D force fields",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "robotEvidence": "Downstream human hand-object reconstruction; no robot policy evaluation asserted.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2610.39585v1/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "limitations": "Contact/proximity labels derive from geometry and force labels from object motion; none is a direct tactile or force measurement. Repository is a preview.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.39585v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.39585v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.39585v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.39585v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.39585v1/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.39585v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.39585v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.39585v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.39585v1/"
+        ]
+      }
+    },
+    "recontact": {
+      "summary": "Recovers and retargets contact plans from human videos for whole-body humanoid manipulation.",
+      "input": "Human demonstration videos and object geometry",
+      "output": "Contact plan and retargeted whole-body trajectories",
+      "outputRepresentation": "Contact plan and retargeted whole-body trajectories",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body",
+      "stage": "L4",
+      "robotEvidence": "Seven contact-rich and two loco-manipulation tasks demonstrated on real Unitree G1.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2611.02968v1/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "limitations": "Egocentric AGILE hand-object recovery is used in a specific task; do not generalize the viewpoint to every experiment. Retargeted trajectories and predicted contacts are not measured robot actions.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.02968v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.02968v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.02968v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.02968v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.02968v1/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.02968v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.02968v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.02968v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.02968v1/"
+        ]
+      }
+    },
+    "open-humanwam": {
+      "summary": "Studies scaling egocentric pretraining and human–robot world-action modeling.",
+      "input": "Egocentric human video and derived hand-motion/action supervision; robot data in hybrid pretraining",
+      "output": "HumanWAM action and future-video predictions",
+      "outputRepresentation": "HumanWAM action and future-video predictions",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "Simulation evaluation and physical robot manipulation experiments.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/html/2611.06817v2/"
+        }
+      ],
+      "verified": "2026-11-08",
+      "limitations": "50,000 hours is the authors’ reported curated corpus; dataset is gated and uploading, so downloadable scale is unverified. Do not sum overlapping source corpora.",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.06817v2/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.06817v2/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.06817v2/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.06817v2/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.06817v2/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.06817v2/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.06817v2/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.06817v2/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.06817v2/"
+        ]
+      }
+    },
+    "ceres-capture": {
+      "summary": "Records directed Meta Quest egocentric capture sessions to a LeRobot v3-compatible format.",
+      "input": "Meta Quest browser outward video, optional audio and WebXR tracking",
+      "output": "Time-aligned capture records, task metadata and explicit gaps",
+      "outputRepresentation": "Time-aligned capture records, task metadata and explicit gaps",
+      "inputSignals": [
+        "Vision",
+        "Audio"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "tool",
+      "robotEvidence": "Capture tool; no direct robot policy evaluation asserted.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://ceres.cam/about/"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/hcltech-robotics/ceres"
+        }
+      ],
+      "verified": "2026-11-08",
+      "limitations": "Requires a compatible Quest browser. Head and hand tracking are estimates; not metric robot-action ground truth.",
+      "fieldSources": {
+        "summary": [
+          "https://ceres.cam/about/"
+        ],
+        "input": [
+          "https://ceres.cam/about/"
+        ],
+        "output": [
+          "https://ceres.cam/about/"
+        ],
+        "outputRepresentation": [
+          "https://ceres.cam/about/"
+        ],
+        "inputSignals": [
+          "https://ceres.cam/about/"
+        ],
+        "bodyCoverage": [
+          "https://ceres.cam/about/"
+        ],
+        "stage": [
+          "https://ceres.cam/about/"
+        ],
+        "robotEvidence": [
+          "https://ceres.cam/about/"
+        ],
+        "limitations": [
+          "https://ceres.cam/about/"
+        ]
+      },
+      "toolTopics": [
+        "capture"
+      ]
+    },
+    "any3r": {
+      "summary": "Reconstructs scenes from multiple heterogeneous central cameras using per-pixel ray fields.",
+      "input": "Multiple RGB views and a known per-pixel ray field for each camera",
+      "output": "Predicted camera poses, per-ray distance and fused 3D point maps",
+      "outputRepresentation": "Multi-view point maps and camera poses",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "robotEvidence": "Potential capture-processing reference; no direct Ego / UMI robot-policy claim.",
+      "toolTopics": [
+        "depth"
+      ],
+      "target": "Depth and spatial perception",
+      "outputSpace": "world",
+      "evidenceLevel": "reconstruction",
+      "limitations": "Ray fields must be supplied or derived from camera calibration; predicted geometry is not measured depth.",
+      "implementation": "MIT inference and evaluation code; pretrained weights are FAIR noncommercial.",
+      "perception": {
+        "families": [
+          "multiview",
+          "fisheye",
+          "panoramic"
+        ],
+        "inputSetup": [
+          "multiview"
+        ],
+        "cameraGeometry": [
+          "pinhole",
+          "fisheye",
+          "erp"
+        ],
+        "scaleType": [
+          "unknown"
+        ],
+        "outputType": "Per-pixel predicted radial distance, camera poses and fused points",
+        "scaleSource": "Scale depends on learned reconstruction and alignment; no metric guarantee claimed",
+        "calibration": "Each view requires a ray field derived from its central camera calibration",
+        "temporal": "Feed-forward multi-view inference",
+        "captureRelevance": "Potential wide-FoV capture-processing reference; no Ego / UMI validation claimed.",
+        "limitations": "Mixed lenses supported with supplied ray fields; not a complete online SLAM pipeline."
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.36150v1/"
+        },
+        {
+          "label": "Official implementation",
+          "url": "https://github.com/Jingong-Chen/Any3R"
+        },
+        {
+          "label": "Official model and terms",
+          "url": "https://huggingface.co/Jingong/Any3R"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.36150v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.36150v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.36150v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.36150v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.36150v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.36150v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.36150v1/"
+        ],
+        "implementation": [
+          "https://github.com/Jingong-Chen/Any3R",
+          "https://huggingface.co/Jingong/Any3R"
+        ]
+      },
+      "verified": "2026-11-08"
     }
   }
 }

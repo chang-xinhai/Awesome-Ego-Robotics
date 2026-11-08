@@ -13853,6 +13853,182 @@
         ]
       },
       "verified": "2026-11-08"
+    },
+    "egoactionbench": {
+      "name": "EgoActionBench",
+      "reportedScale": {
+        "episodes": 1407,
+        "scope": "paper: 41,132 human-refined temporal action annotations"
+      },
+      "publicScale": {
+        "scope": "Public dataset lists videos, metadata and annotations; annotation sample downloaded by HTTP range."
+      },
+      "access": "Open access",
+      "accessNote": "Dataset files publicly listed; annotations sample HTTP 206; license not verified.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Egocentric human videos.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "syntheticSignals": [],
+      "labels": "Time-localized left, right or both-hand action captions.",
+      "bodyCoverage": "Hands",
+      "dataRole": "egocentric",
+      "scaleType": "episodes",
+      "datasetUrl": "https://huggingface.co/datasets/play0718/EgoActionBench",
+      "releaseScope": "Dataset files publicly listed; annotations sample HTTP 206; license not verified.",
+      "limitations": "Human action captions, not robot action ground truth; evaluation toolkit and model checkpoints forthcoming.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.03646"
+        },
+        {
+          "label": "Official dataset",
+          "url": "https://huggingface.co/datasets/play0718/EgoActionBench"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2611.03646",
+          "https://huggingface.co/datasets/play0718/EgoActionBench"
+        ]
+      }
+    },
+    "open-humanwam": {
+      "name": "Open-HumanWAM-50K",
+      "reportedScale": {
+        "hours": 50000,
+        "scope": "author-reported composite pretraining corpus"
+      },
+      "publicScale": {
+        "scope": "Gated and uploading; complete accessible hours not independently verified."
+      },
+      "access": "Access conditions",
+      "accessNote": "Dataset repository is gated; anonymous data range returned 401 and authors state uploading.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Egocentric human videos from multiple source datasets.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "syntheticSignals": [],
+      "labels": "Derived hand motion and language annotations.",
+      "bodyCoverage": "Hands",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "datasetUrl": "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K",
+      "releaseScope": "Dataset repository is gated; anonymous data range returned 401 and authors state uploading.",
+      "limitations": "Derived action representation is not directly measured robot-action ground truth; source data licenses and overlap remain distinct.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.06817"
+        },
+        {
+          "label": "Official dataset",
+          "url": "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2611.06817",
+          "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K"
+        ]
+      }
     }
   }
 }
