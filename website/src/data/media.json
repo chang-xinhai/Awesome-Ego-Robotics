@@ -13518,5 +13518,55 @@
     "imagePage": "https://github.com/urbste/OpenImuCameraCalibrator",
     "imageAlt": "OpenICC calibration spline example from the official repository",
     "credit": "OpenICC author; original figure rights retained"
+  },
+  {
+    "id": "vrego",
+    "name": "VREgo",
+    "summary": "PICO headset recordings train manipulation policies evaluated in simulation on tabletop tasks.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "VR headset",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "credit": "VREgo author",
+    "imagePage": "https://arxiv.org/html/2611.07272v1/",
+    "imageSource": "https://arxiv.org/html/2611.07272v1/protocol_mosaic.png",
+    "imageAlt": "Comparison of PICO and Aria recordings used for tabletop demonstration capture",
+    "image": "images/catalog/vrego-nov08.webp"
+  },
+  {
+    "id": "robocap-10k",
+    "name": "RoboCap-10k",
+    "summary": "A reported occupational egocentric corpus pairs synchronized camera and IMU streams with estimated head and hand poses.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Head-mounted",
+    "coverage": "Hands",
+    "reviewed": "2026-11-08",
+    "credit": "Grounded Superintelligence",
+    "datasetImagePage": "https://www.gsi.company/blogs/robocap-10k",
+    "datasetImageSource": "https://www.gsi.company/blogs/robocap-10k/02_hands.jpg",
+    "datasetImageAlt": "RoboCap egocentric workplace examples with estimated hand meshes",
+    "datasetImage": "images/catalog/robocap-nov08.webp",
+    "datasetImageType": "Dataset examples and estimated hand meshes"
+  },
+  {
+    "id": "foundationgeo",
+    "name": "FoundationGeo",
+    "summary": "A monocular model predicts metric point maps using learned spatial calibration fields.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Monocular camera",
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-08",
+    "credit": "FoundationGeo authors",
+    "imagePage": "https://arxiv.org/html/2607.11588v1/",
+    "imageSource": "https://arxiv.org/html/2607.11588v1/teaser.png",
+    "imageAlt": "FoundationGeo metric 3D reconstruction examples in indoor, outdoor, and manipulation scenes",
+    "image": "images/catalog/foundationgeo-nov08.webp"
   }
 ]

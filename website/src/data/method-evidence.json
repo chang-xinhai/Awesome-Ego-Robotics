@@ -72500,6 +72500,145 @@
         ]
       },
       "verified": "2026-11-05"
+    },
+    "vrego": {
+      "summary": "Headset human demonstrations support imitation policy learning in simulation.",
+      "input": "PICO 4 Ultra headset video with tracked head and hands; stereo is used for object localization during preprocessing.",
+      "output": "Robot manipulation policy and simulated trajectories",
+      "supervision": "Recorded human demonstrations; robot action representation adapted from HumanEgo",
+      "robotEvidence": "Simulation only, two tabletop tasks; one recording operator",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "limitations": "No physical robot policy deployment demonstrated; the task-specific two-stage rule evaluation uses simulator object positions and layouts also informed rule design.",
+      "sources": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/html/2611.07272v1/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.07272v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.07272v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.07272v1/"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2611.07272v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.07272v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.07272v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.07272v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.07272v1/"
+        ]
+      },
+      "verified": "2026-11-08"
+    },
+    "foundationgeo": {
+      "summary": "Monocular geometry model uses pixelwise scale and ray correction fields to recover predicted metric point maps.",
+      "input": "A single RGB image",
+      "output": "Predicted metric 3D point map; inferred depth",
+      "outputRepresentation": "Metric point map and depth estimate",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "toolTopics": [
+        "depth"
+      ],
+      "target": "Depth and spatial perception",
+      "scale": "Predicted metric scale",
+      "temporal": "Single frame",
+      "outputSpace": "camera",
+      "evidenceLevel": "reconstruction",
+      "robotEvidence": "General geometry and manipulation-scene examples; no direct Ego/UMI policy deployment established.",
+      "perception": {
+        "families": [
+          "monocular"
+        ],
+        "inputSetup": [
+          "monocular"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "metric-predicted"
+        ],
+        "outputType": "Predicted metric point map and depth",
+        "scaleSource": "Learned metric fields; not physical depth measurement",
+        "calibration": "Focal-length distribution affects metric generalization; model predicts ray correction.",
+        "temporal": "Single-image inference",
+        "captureRelevance": "Potential single-view capture processing reference, not validated as a complete SLAM system.",
+        "limitations": "Estimated depth may degrade outside training camera-intrinsic distributions."
+      },
+      "implementation": "MIT-licensed source and model card; v1.1 checkpoint is separately published.",
+      "limitations": "Predicted metric geometry is not measured depth; evidence of direct Ego/UMI deployment is not established.",
+      "sources": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/html/2607.11588v1/"
+        },
+        {
+          "label": "Implementation",
+          "url": "https://github.com/mx-liu6/FoundationGeo"
+        },
+        {
+          "label": "Model",
+          "url": "https://huggingface.co/mxliu-hku/FoundationGeo-1.1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2607.11588v1/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2607.11588v1/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2607.11588v1/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2607.11588v1/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2607.11588v1/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2607.11588v1/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2607.11588v1/"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2607.11588v1/"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2607.11588v1/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2607.11588v1/"
+        ],
+        "implementation": [
+          "https://github.com/mx-liu6/FoundationGeo",
+          "https://huggingface.co/mxliu-hku/FoundationGeo-1.1"
+        ]
+      },
+      "verified": "2026-11-08"
     }
   }
 }

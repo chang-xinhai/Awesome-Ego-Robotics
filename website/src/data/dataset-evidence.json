@@ -13731,6 +13731,128 @@
       "recordedSignals": [
         "Vision"
       ]
+    },
+    "robocap-10k": {
+      "name": "RoboCap-10k",
+      "reportedScale": {
+        "hours": 10000,
+        "episodes": 1363915,
+        "tasks": 619,
+        "scope": "author-reported curated occupational-work corpus"
+      },
+      "publicScale": {
+        "scope": "Manual access request; downloadable corpus not independently verified"
+      },
+      "access": "Access conditions",
+      "accessNote": "Hugging Face repository requires manual approval; full corpus download not verified.",
+      "formats": [
+        "Video",
+        "Pose annotations"
+      ],
+      "observations": "Six synchronized camera streams and dual IMU; estimated head and hand pose.",
+      "recordedSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "syntheticSignals": [],
+      "labels": "Estimated world-frame MANO hand poses, head trajectories, sparse and dense text captions.",
+      "bodyCoverage": "Hands",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "cameraSetup": "Calibrated head-mounted multi-camera rig.",
+      "recordedStreams": "Multicamera images and inertial streams; annotations are derived estimates.",
+      "coordinateFrame": "Reported gravity-aligned head trajectory and world-frame MANO poses.",
+      "calibration": "Stereo and multi-camera calibration per author report.",
+      "derivedSignals": [
+        "Head trajectory",
+        "Hand pose",
+        "Text captions"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/groundedsi/RoboCap-10k",
+      "dataLicense": "CC BY 4.0 on dataset card; access requires request approval.",
+      "releaseScope": "Reported 10,000 hours; full downloadable extent unverified.",
+      "limitations": "Head and hand coordinates are model estimates; they are not direct tactile sensing or robot action labels.",
+      "sources": [
+        {
+          "label": "Technical report and project",
+          "url": "https://www.gsi.company/blogs/robocap-10k"
+        },
+        {
+          "label": "Dataset access and license",
+          "url": "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "publicScale": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "access": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "accessNote": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "observations": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "recordedSignals": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "labels": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "bodyCoverage": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "dataRole": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "cameraSetup": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "recordedStreams": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "coordinateFrame": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "calibration": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "derivedSignals": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "dataLicense": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "releaseScope": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "limitations": [
+          "https://www.gsi.company/blogs/robocap-10k",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ]
+      },
+      "verified": "2026-11-08"
     }
   }
 }

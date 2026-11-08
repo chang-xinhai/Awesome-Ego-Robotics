@@ -7348,12 +7348,16 @@
         {
           "label": "Verified source file (2026-10-19)",
           "url": "https://github.com/apple/ml-depth-pro/blob/main/get_pretrained_models.sh"
+        },
+        {
+          "label": "Apple checkpoint",
+          "url": "https://ml-site.cdn-apple.com/models/depth-pro/depth_pro.pt"
         }
       ],
       "notes": [
         "Software and pretrained checkpoint terms are recorded separately. Apple custom permissive copyright license for sample code and weights; upstream notices retained"
       ],
-      "verified": "2026-10-19"
+      "verified": "2026-11-08"
     },
     "lotus": {
       "status": "partial",
@@ -7907,12 +7911,17 @@
         {
           "label": "Verified source file (2026-10-19)",
           "url": "https://github.com/NVlabs/FoundationStereo/blob/master/dinov2/dinov2/train/train.py"
+        },
+        {
+          "label": "Separate commercial model (NVIDIA Open Model License)",
+          "url": "https://huggingface.co/nvidia/c-foundationstereo-s"
         }
       ],
       "notes": [
-        "Source, model weights and training datasets have independent terms. NVIDIA non-commercial research source / checkpoints; TAO commercial model is separately licensed"
+        "Source, model weights and training datasets have independent terms. NVIDIA non-commercial research source / checkpoints; TAO commercial model is separately licensed",
+        "Commercial FoundationStereo S model is separately provided under NVIDIA Open Model License; it is not the same artifact as research weights."
       ],
-      "verified": "2026-10-19"
+      "verified": "2026-11-08"
     },
     "defom-stereo": {
       "status": "partial",
@@ -15585,24 +15594,19 @@
       "dataStatus": "Official gated one-hour mini release remains listed; CC BY-NC 4.0. Reported 100-hour collection is not a full public download."
     },
     "steertuning": {
-      "status": "unknown",
-      "commercial": false,
-      "availability": "Research resource",
-      "verified": "2026-10-21",
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT source; checkpoint and adapters depend on upstream components with CC-BY-NC 4.0 terms.",
       "evidence": [
         {
-          "label": "Primary v1 paper",
-          "url": "https://arxiv.org/html/2610.18711v1"
-        },
-        {
-          "label": "Official project",
-          "url": "https://steertuning.github.io"
+          "label": "Author repository",
+          "url": "https://github.com/billy-yibo-yan/steertuning_release"
         }
       ],
-      "softwareStatus": "No runnable public implementation verified.",
       "notes": [
-        "100 hours is reported pretraining scale. Dataset, weights and code are announced, with no actual release verified on the project page."
-      ]
+        "MIT source; checkpoint and adapters depend on upstream components with CC-BY-NC 4.0 terms."
+      ],
+      "verified": "2026-11-08"
     },
     "dexstitch": {
       "status": "unknown",
@@ -16879,24 +16883,19 @@
       ]
     },
     "spot-egospt": {
-      "status": "unknown",
-      "commercial": false,
-      "availability": "Research resource",
-      "verified": "2026-10-30",
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT-licensed capture, processing, training and evaluation code; dataset is separately hosted and weights not bundled.",
       "evidence": [
         {
-          "label": "Primary v1 paper",
-          "url": "https://arxiv.org/html/2605.20085v1"
-        },
-        {
-          "label": "Project",
-          "url": "https://jackyfl.github.io/SP-VTP-project-page/"
+          "label": "Author repository",
+          "url": "https://github.com/JackYFL/SP-VTP"
         }
       ],
-      "softwareStatus": "No implementation release verified.",
       "notes": [
-        "The evaluation is open-loop trajectory prediction, not closed-loop robot execution."
-      ]
+        "MIT-licensed capture, processing, training and evaluation code; dataset is separately hosted and weights not bundled."
+      ],
+      "verified": "2026-11-08"
     },
     "warped": {
       "status": "unknown",
