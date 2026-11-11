@@ -15125,7 +15125,7 @@
       "status": "partial",
       "commercial": false,
       "availability": "Research resource",
-      "verified": "2026-10-19",
+      "verified": "2026-11-11",
       "evidence": [
         {
           "label": "Primary paper",
@@ -15146,12 +15146,25 @@
         {
           "label": "Ego-branch Apache-2.0 license",
           "url": "https://github.com/air-embodied-brain/Zeva/blob/feature/zeva_ego/LICENSE"
+        },
+        {
+          "label": "Official model collection",
+          "url": "https://huggingface.co/collections/BEN12324/zeva-ego-models-and-checkpoints"
+        },
+        {
+          "label": "Encoder weights and license",
+          "url": "https://huggingface.co/BEN12324/zeva-ego-action-encoder"
+        },
+        {
+          "label": "RoboTwin model and terms",
+          "url": "https://huggingface.co/BEN12324/zeva-ego-robotwin-jax-60k"
         }
       ],
       "softwareStatus": "Apache-2.0 Zeva-Ego branch: visual action encoder training/inference, RoboTwin policies and real-robot integration utilities; Gemma/dependency terms separate.",
       "notes": [
         "The default branch implements Zeva; Zeva-Ego is released on feature/zeva_ego. Released RoboTwin checkpoints are not ready-to-run real-robot policies."
-      ]
+      ],
+      "modelStatus": "Official collection lists four checkpoints; action encoder weight returned HTTP 206. Encoder is Apache-2.0; the RoboTwin policy checkpoint lists Gemma terms."
     },
     "simdex": {
       "status": "unknown",
@@ -17678,6 +17691,115 @@
         "availability": "Public source; check bundled third-party component terms",
         "license": "GPL-3.0",
         "licenseURL": "https://github.com/bbvisual/hice/blob/main/LICENSE"
+      }
+    },
+    "ego-guidance-spar": {
+      "status": "partial",
+      "availability": "Research release",
+      "softwareStatus": "MIT pretraining, fine-tuning and evaluation source is public; trained checkpoint distribution not independently verified.",
+      "verified": "2026-11-11",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.13685v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://llong-cs.github.io/EgoGuidance"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/llong-cs/EgoGuidance"
+        }
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Source code",
+        "license": "MIT",
+        "licenseURL": "https://github.com/llong-cs/EgoGuidance/blob/main/LICENSE"
+      }
+    },
+    "motorsense": {
+      "status": "partial",
+      "availability": "Research release",
+      "softwareStatus": "MIT implementation is public; checkpoints listed separately in the dataset repository.",
+      "verified": "2026-11-11",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.41127v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://www.cs.umd.edu/~edessale/motorsense/"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/edessa/motorsense"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/edess442/MotorSense"
+        }
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Source code",
+        "license": "MIT",
+        "licenseURL": "https://github.com/edess442/MotorSense/blob/main/LICENSE"
+      }
+    },
+    "ego2act-benchmark": {
+      "status": "partial",
+      "availability": "Research release",
+      "softwareStatus": "Judge and analysis source are public under MIT; dataset is separately CC BY 4.0.",
+      "verified": "2026-11-11",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.01092v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://ego2act.github.io/"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/ego2act/ego2act-bench"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/ego2act/ego2act"
+        }
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Source code",
+        "license": "MIT",
+        "licenseURL": "https://github.com/ego2act/ego2act/blob/main/LICENSE"
+      }
+    },
+    "touchannotator": {
+      "status": "partial",
+      "availability": "Research source and checkpoint",
+      "softwareStatus": "MIT implementation; Qwen and third-party components have separate terms.",
+      "modelStatus": "Official model.pth returned HTTP 206; model and upstream license terms require independent review.",
+      "verified": "2026-11-11",
+      "evidence": [
+        {
+          "label": "Official code",
+          "url": "https://github.com/RammusLeo/TouchAnnotator"
+        },
+        {
+          "label": "Official checkpoint",
+          "url": "https://huggingface.co/RammusLeo/TouchAnnotator"
+        }
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/RammusLeo/TouchAnnotator/blob/main/LICENSE"
       }
     }
   }

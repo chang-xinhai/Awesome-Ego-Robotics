@@ -14141,5 +14141,149 @@
     "imagePage": "https://research.beingbeyond.com/being-m07",
     "imageAlt": "Being-M0.7 video-motion prior and humanoid action expert",
     "credit": "Being-M0.7 authors; third-party figure rights retained"
+  },
+  {
+    "id": "ego-guidance-spar",
+    "name": "Ego Guidance",
+    "summary": "Trains robot action and future-visual-representation experts jointly using action-free egocentric video.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-11",
+    "image": "images/catalog/nov11-ego-guidance-spar.webp",
+    "imagePage": "https://arxiv.org/html/2611.13685v1/",
+    "imageSource": "https://arxiv.org/html/2611.13685v1/ego_guidance_main.png",
+    "imageAlt": "Ego Guidance overview from the original paper",
+    "credit": "Ego Guidance authors; third-party figure rights retained"
+  },
+  {
+    "id": "grasping-the-future",
+    "name": "Grasping the Future",
+    "summary": "Forecasts joint 3D hand and object motion from partial human interactions.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-11",
+    "image": "images/catalog/nov11-grasping-the-future.webp",
+    "imagePage": "https://arxiv.org/html/2611.12879v1/",
+    "imageSource": "https://arxiv.org/html/2611.12879v1/teaser_tasks.png",
+    "imageAlt": "Grasping the Future overview from the original paper",
+    "credit": "Grasping the Future authors; third-party figure rights retained"
+  },
+  {
+    "id": "eventhoi",
+    "name": "EventHOI",
+    "summary": "Uses low-power event frames and IMU motion compensation to trigger selective RGB capture of hand-object interactions.",
+    "signals": [
+      "Events",
+      "IMU",
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-11",
+    "image": "images/catalog/nov11-eventhoi.webp",
+    "imagePage": "https://arxiv.org/html/2611.09089v1/",
+    "imageSource": "https://arxiv.org/html/2611.09089v1/teaser.png",
+    "imageAlt": "EventHOI overview from the original paper",
+    "credit": "EventHOI authors; third-party figure rights retained"
+  },
+  {
+    "id": "ego2robot-learning-survey",
+    "name": "Ego2Robot Learning Survey",
+    "summary": "Surveys four paradigms for transferring egocentric human video experience to robot manipulation.",
+    "signals": [],
+    "coverage": "Hands",
+    "reviewed": "2026-11-11",
+    "image": "images/catalog/nov11-ego2robot-learning-survey.webp",
+    "imagePage": "https://arxiv.org/html/2611.13610v1/",
+    "imageSource": "https://arxiv.org/html/2611.13610v1/20261010-1637-MilestoneDiagram.png",
+    "imageAlt": "Ego2Robot Learning Survey overview from the original paper",
+    "credit": "Ego2Robot Learning Survey authors; third-party figure rights retained"
+  },
+  {
+    "id": "robomocap",
+    "name": "RoboMoCap",
+    "summary": "Pairs wearable multi-camera vision and IMU with optical full-body motion capture for humanoid learning.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Audio"
+    ],
+    "coverage": "Whole body",
+    "reviewed": "2026-11-11",
+    "datasetImage": "images/catalog/nov11-robomocap.webp",
+    "datasetImagePage": "https://arxiv.org/html/2611.10994v1/",
+    "datasetImageSource": "https://arxiv.org/html/2611.10994v1/figures/figure1_centered_logo_montage.png",
+    "datasetImageAlt": "RoboMoCap data and observation overview from the original paper",
+    "datasetImageCredit": "RoboMoCap authors; third-party figure rights retained",
+    "datasetImageReviewed": "2026-11-11"
+  },
+  {
+    "id": "tooldex",
+    "name": "ToolDex",
+    "summary": "Records egocentric and eight external camera views of creative human tool use.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-11",
+    "datasetImage": "images/catalog/nov11-tooldex.webp",
+    "datasetImagePage": "https://arxiv.org/html/2611.09036v1/",
+    "datasetImageSource": "https://arxiv.org/html/2611.09036v1/tooldex_teaser.png",
+    "datasetImageAlt": "ToolDex data and observation overview from the original paper",
+    "datasetImageCredit": "ToolDex authors; third-party figure rights retained",
+    "datasetImageReviewed": "2026-11-11"
+  },
+  {
+    "id": "motorsense",
+    "name": "MotorSense",
+    "summary": "Pairs egocentric video with bimanual forearm EMG and IMU during everyday manipulation.",
+    "signals": [
+      "Vision",
+      "EMG",
+      "IMU",
+      "Audio"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-11",
+    "datasetImage": "images/catalog/nov11-motorsense.webp",
+    "datasetImagePage": "https://arxiv.org/html/2610.41127v1/",
+    "datasetImageSource": "https://arxiv.org/html/2610.41127v1/Fig_2_2.png",
+    "datasetImageAlt": "MotorSense data and observation overview from the original paper",
+    "datasetImageCredit": "MotorSense authors; third-party figure rights retained",
+    "datasetImageReviewed": "2026-11-11"
+  },
+  {
+    "id": "ego2act-benchmark",
+    "name": "Ego2Act",
+    "summary": "Benchmarks goal-directed egocentric video generation using human and generated manipulation trials.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-11",
+    "datasetImage": "images/catalog/nov11-ego2act-benchmark.webp",
+    "datasetImagePage": "https://arxiv.org/html/2610.01092v1/",
+    "datasetImageSource": "https://arxiv.org/html/2610.01092v1/assets/original/ego2act-overview.png",
+    "datasetImageAlt": "Ego2Act data and observation overview from the original paper",
+    "datasetImageCredit": "Ego2Act authors; third-party figure rights retained",
+    "datasetImageReviewed": "2026-11-11"
+  },
+  {
+    "id": "touchannotator",
+    "name": "TouchAnnotator",
+    "summary": "Predicts hand contact and relative pressure from egocentric video using cross-view distillation.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-11",
+    "image": "images/catalog/nov11-touchannotator.webp",
+    "imagePage": "https://rammusleo.github.io/",
+    "imageSource": "https://rammusleo.github.io/images/touchannotator.png",
+    "imageAlt": "TouchAnnotator multimodal supervision and predicted contact examples",
+    "credit": "TouchAnnotator authors; third-party figure rights retained"
   }
 ]

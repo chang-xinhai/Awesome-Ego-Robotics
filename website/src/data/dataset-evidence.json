@@ -14467,6 +14467,424 @@
           "https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj"
         ]
       }
+    },
+    "robomocap": {
+      "name": "RoboMoCap",
+      "reportedScale": {
+        "hours": ">200",
+        "participants": 14,
+        "scope": "Paper reports more than 290 actions."
+      },
+      "publicScale": {
+        "scope": "Official repository lists session files; one annotations file returned HTTP 206. Full 5 TB corpus was not independently downloaded."
+      },
+      "access": "Public download",
+      "accessNote": "Official repository lists session files; one annotations file returned HTTP 206. Full 5 TB corpus was not independently downloaded.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Six head-mounted and two wrist-mounted cameras, IMUs, audio and external optical marker mocap.",
+      "recordedSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "syntheticSignals": [],
+      "labels": "Optical whole-body and object motion, fitted body/hand poses and calibrated camera trajectories.",
+      "bodyCoverage": "Whole body",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "releaseScope": "Official repository lists session files; one annotations file returned HTTP 206. Full 5 TB corpus was not independently downloaded.",
+      "limitations": "Marker-based human capture and retargeting benchmark are not executable robot action ground truth; code is announced as coming soon.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.10994v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://bitrobot-foundation.github.io/robomocap/"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/BitRobot/robomocap"
+        }
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/BitRobot/robomocap",
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ],
+        "access": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ],
+        "accessNote": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.10994v1/",
+          "https://bitrobot-foundation.github.io/robomocap/",
+          "https://huggingface.co/datasets/BitRobot/robomocap"
+        ]
+      }
+    },
+    "tooldex": {
+      "name": "ToolDex",
+      "reportedScale": {
+        "hours": 60,
+        "trials": 10853,
+        "scope": "6,158,809 annotated frames reported by the paper."
+      },
+      "publicScale": {
+        "scope": "Author website offers a visualizer and task statistics; downloadable complete recording corpus not verified."
+      },
+      "access": "Not verified",
+      "accessNote": "Author website offers a visualizer and task statistics; downloadable complete recording corpus not verified.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Synchronized egocentric stereo and eight exocentric camera views of human tool-use interactions.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "syntheticSignals": [],
+      "labels": "Hand, tool and target annotations; hand-optimized object poses for a subset.",
+      "bodyCoverage": "Hands",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "releaseScope": "Author website offers a visualizer and task statistics; downloadable complete recording corpus not verified.",
+      "limitations": "Human recordings and derived annotations are not robot actions; project visualizer availability does not establish full dataset release.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.09036v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://tooluse-dataset.github.io/"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ],
+        "access": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ],
+        "accessNote": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.09036v1/",
+          "https://tooluse-dataset.github.io/"
+        ]
+      }
+    },
+    "motorsense": {
+      "name": "MotorSense",
+      "reportedScale": {
+        "hours": 100,
+        "scope": "Paper reports 100 hours; original observation modalities are not all direct force measurements."
+      },
+      "publicScale": {
+        "hours": 70.4,
+        "scope": "Official dataset card lists 70.4 video hours; an annotation CSV was accessible by HTTP range. Full archive not independently downloaded."
+      },
+      "access": "Public download",
+      "accessNote": "Official dataset card lists 70.4 video hours; an annotation CSV was accessible by HTTP range. Full archive not independently downloaded.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Egocentric RGB, bimanual forearm surface EMG and IMU; audio is collected subject to release filtering.",
+      "recordedSignals": [
+        "Vision",
+        "EMG",
+        "IMU",
+        "Audio"
+      ],
+      "syntheticSignals": [],
+      "labels": "Action segments, hand boxes and hand-contact intervals; coverage varies by annotation type.",
+      "bodyCoverage": "Hands",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "releaseScope": "Official dataset card lists 70.4 video hours; an annotation CSV was accessible by HTTP range. Full archive not independently downloaded.",
+      "limitations": "EMG measures muscle electrical activity, not direct contact force; paper 100 h differs from the released card’s 70.4 video h. Code MIT; data license listed as other.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.41127v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://www.cs.umd.edu/~edessale/motorsense/"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/edessa/motorsense"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/edess442/MotorSense"
+        }
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/edessa/motorsense",
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ],
+        "access": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ],
+        "accessNote": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.41127v1/",
+          "https://www.cs.umd.edu/~edessale/motorsense/",
+          "https://huggingface.co/datasets/edessa/motorsense",
+          "https://github.com/edess442/MotorSense"
+        ]
+      }
+    },
+    "ego2act-benchmark": {
+      "name": "Ego2Act",
+      "reportedScale": {
+        "videos": 2640,
+        "scope": "660 human recordings plus 1,980 generated videos across 110 tasks."
+      },
+      "publicScale": {
+        "scope": "Official benchmark repository lists individual human examples and cases; a start image returned HTTP 206. Full corpus not downloaded."
+      },
+      "access": "Public download",
+      "accessNote": "Official benchmark repository lists individual human examples and cases; a start image returned HTTP 206. Full corpus not downloaded.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Human egocentric task recordings, initial scene images and generated model videos.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "syntheticSignals": [],
+      "labels": "Task goals, human ratings and reference-free task and physical plausibility scores.",
+      "bodyCoverage": "Hands",
+      "dataRole": "mixed",
+      "scaleType": "mixed",
+      "releaseScope": "Official benchmark repository lists individual human examples and cases; a start image returned HTTP 206. Full corpus not downloaded.",
+      "limitations": "Evaluates generated videos and an automatic judge, not closed-loop physical robot execution. The 2,640 videos include synthetic generations.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.01092v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://ego2act.github.io/"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/ego2act/ego2act-bench"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/ego2act/ego2act"
+        }
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/ego2act/ego2act-bench",
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ],
+        "access": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ],
+        "accessNote": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.01092v1/",
+          "https://ego2act.github.io/",
+          "https://huggingface.co/datasets/ego2act/ego2act-bench",
+          "https://github.com/ego2act/ego2act"
+        ]
+      }
     }
   }
 }

@@ -65284,7 +65284,7 @@
       "inputSignals": [
         "Vision"
       ],
-      "verified": "2026-10-19",
+      "verified": "2026-11-11",
       "sources": [
         {
           "label": "Primary paper and experiments",
@@ -65326,12 +65326,13 @@
           "https://arxiv.org/html/2609.24411v1"
         ],
         "implementation": [
-          "https://github.com/air-embodied-brain/Zeva/tree/feature/zeva_ego"
+          "https://github.com/air-embodied-brain/Zeva/tree/feature/zeva_ego",
+          "https://huggingface.co/collections/BEN12324/zeva-ego-models-and-checkpoints"
         ]
       },
       "outputRepresentation": "Action-centered video latents and context-conditioned robot actions",
       "evaluation": "RoboTwin and real-robot adaptation",
-      "implementation": "Apache-2.0 Zeva-Ego branch: visual action encoder training/inference, RoboTwin policies and real-robot integration utilities; Gemma/dependency terms separate."
+      "implementation": "Apache-2.0 Zeva-Ego branch: visual action encoder training/inference, RoboTwin policies and real-robot integration utilities; Gemma/dependency terms separate. Official checkpoint collection is available; action-encoder and RoboTwin policy weights have separate terms."
     },
     "simdex": {
       "input": "Human egocentric samples and target robot demonstrations",
@@ -74585,6 +74586,357 @@
         "limitations": [
           "https://research.beingbeyond.com/being-m07",
           "https://research.beingbeyond.com/being-m07"
+        ]
+      }
+    },
+    "ego-guidance-spar": {
+      "summary": "Trains robot action and future-visual-representation experts jointly using action-free egocentric video.",
+      "input": "Robot demonstrations and action-free human egocentric video during training; robot observation and instruction at inference",
+      "output": "Robot action chunks",
+      "outputRepresentation": "Robot action chunks",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "LIBERO simulation and real robot manipulation evaluation.",
+      "limitations": "Human videos supervise visual state prediction without robot action labels; the generation expert is removed at inference.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.13685v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://llong-cs.github.io/EgoGuidance"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/llong-cs/EgoGuidance"
+        }
+      ],
+      "verified": "2026-11-11",
+      "evidenceLevel": "real-robot",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.13685v1/",
+          "https://llong-cs.github.io/EgoGuidance"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.13685v1/",
+          "https://llong-cs.github.io/EgoGuidance"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.13685v1/",
+          "https://llong-cs.github.io/EgoGuidance"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.13685v1/",
+          "https://llong-cs.github.io/EgoGuidance"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.13685v1/",
+          "https://llong-cs.github.io/EgoGuidance"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.13685v1/",
+          "https://llong-cs.github.io/EgoGuidance"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.13685v1/",
+          "https://llong-cs.github.io/EgoGuidance"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.13685v1/",
+          "https://llong-cs.github.io/EgoGuidance"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.13685v1/",
+          "https://llong-cs.github.io/EgoGuidance"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.13685v1/",
+          "https://llong-cs.github.io/EgoGuidance"
+        ]
+      }
+    },
+    "grasping-the-future": {
+      "summary": "Forecasts joint 3D hand and object motion from partial human interactions.",
+      "input": "Partially observed human hand and object trajectories recovered from human video",
+      "output": "Predicted 3D articulated hand and object trajectories",
+      "outputRepresentation": "Predicted 3D articulated hand and object trajectories",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "robotEvidence": "Predicted trajectories retargeted to simulated robot hands.",
+      "limitations": "Training includes both ego and third-person video. Robot evaluation is simulated retargeting, not a physical robot policy; code and data are marked coming soon.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.12879v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://grasping-the-future.github.io/"
+        }
+      ],
+      "verified": "2026-11-11",
+      "evidenceLevel": "simulation",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.12879v1/",
+          "https://grasping-the-future.github.io/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.12879v1/",
+          "https://grasping-the-future.github.io/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.12879v1/",
+          "https://grasping-the-future.github.io/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.12879v1/",
+          "https://grasping-the-future.github.io/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.12879v1/",
+          "https://grasping-the-future.github.io/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.12879v1/",
+          "https://grasping-the-future.github.io/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.12879v1/",
+          "https://grasping-the-future.github.io/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.12879v1/",
+          "https://grasping-the-future.github.io/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.12879v1/",
+          "https://grasping-the-future.github.io/"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.12879v1/",
+          "https://grasping-the-future.github.io/"
+        ]
+      }
+    },
+    "eventhoi": {
+      "summary": "Uses low-power event frames and IMU motion compensation to trigger selective RGB capture of hand-object interactions.",
+      "input": "Event camera frames and head IMU, with selective RGB capture",
+      "output": "Selected and spatially encoded RGB observations for hand-object interaction logging",
+      "outputRepresentation": "Selected and spatially encoded RGB observations for hand-object interaction logging",
+      "inputSignals": [
+        "Events",
+        "IMU",
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "tool",
+      "robotEvidence": "Smartglasses logging prototype and human activity evaluation; no robot policy evaluation claimed.",
+      "limitations": "Nymeria benchmark event frames are simulated from RGB, while the 20-hour real-world testbed records an event camera and IMU. Testbed release is not independently verified.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.09089v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://eventhoi.github.io/"
+        }
+      ],
+      "verified": "2026-11-11",
+      "toolTopics": [
+        "capture"
+      ],
+      "evidenceLevel": "tool",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ],
+        "toolTopics": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.09089v1/",
+          "https://eventhoi.github.io/"
+        ]
+      }
+    },
+    "ego2robot-learning-survey": {
+      "summary": "Surveys four paradigms for transferring egocentric human video experience to robot manipulation.",
+      "input": "Published egocentric video and robot learning research",
+      "output": "Taxonomy of embodiment transfer, explicit supervision, visual representation and latent dynamics",
+      "outputRepresentation": "Taxonomy of embodiment transfer, explicit supervision, visual representation and latent dynamics",
+      "inputSignals": [],
+      "bodyCoverage": "Hands",
+      "stage": "tool",
+      "robotEvidence": "Literature review; does not report a new robot policy evaluation.",
+      "limitations": "A survey of published evidence; its taxonomy does not make video-derived human motion ground-truth robot action.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.13610v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://mikewu597.github.io/Ego2Robot_Learning/"
+        }
+      ],
+      "verified": "2026-11-11",
+      "toolTopics": [
+        "evaluation"
+      ],
+      "evidenceLevel": "tool",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ],
+        "toolTopics": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.13610v1/",
+          "https://mikewu597.github.io/Ego2Robot_Learning/"
+        ]
+      }
+    },
+    "touchannotator": {
+      "summary": "Predicts hand contact and relative pressure from egocentric video using cross-view distillation.",
+      "input": "Egocentric RGB video and estimated hand pose at inference",
+      "output": "Predicted bimanual contact and sensor-relative pressure fields",
+      "outputRepresentation": "Predicted bimanual contact and sensor-relative pressure fields",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "robotEvidence": "Evaluation on human glove recordings and geometry-derived contact; robot examples are qualitative cross-embodiment predictions.",
+      "limitations": "Visual predictions are not measured tactile pressure or metric force; wrist views are privileged training inputs. Supervision mixes measured glove pressure with geometry-derived contact and robot optical deformation.",
+      "evidenceLevel": "reconstruction",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.09129v1"
+        },
+        {
+          "label": "Author project",
+          "url": "https://rammusleo.github.io/"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/RammusLeo/TouchAnnotator"
+        },
+        {
+          "label": "Official model",
+          "url": "https://huggingface.co/RammusLeo/TouchAnnotator"
+        }
+      ],
+      "verified": "2026-11-11",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.09129v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.09129v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.09129v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.09129v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.09129v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.09129v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.09129v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.09129v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.09129v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.09129v1"
         ]
       }
     }
