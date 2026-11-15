@@ -14972,8 +14972,37 @@
         "limitations": [
           "https://arxiv.org/abs/2611.17060",
           "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "dataLicense": [
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2",
+          "https://arxiv.org/abs/2611.17060"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2",
+          "https://arxiv.org/abs/2611.17060"
+        ],
+        "coordinateFrame": [
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2",
+          "https://arxiv.org/abs/2611.17060"
+        ],
+        "annotationType": [
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2",
+          "https://arxiv.org/abs/2611.17060"
+        ],
+        "derivedSignals": [
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2",
+          "https://arxiv.org/abs/2611.17060"
         ]
-      }
+      },
+      "dataLicense": "CC BY-NC 4.0; separate Apache-2.0 code terms.",
+      "cameraSetup": "HOMIE Gen 2: four head-mounted fisheye cameras; separate handheld LiDAR scene scan.",
+      "coordinateFrame": "Reported gravity-aligned metric scene, with recordings registered to scan.",
+      "annotationType": "estimated",
+      "derivedSignals": [
+        "Estimated hand and body motion",
+        "Camera trajectories",
+        "Model-generated captions"
+      ]
     },
     "egohandbench": {
       "name": "EgoHandBench",
