@@ -17825,7 +17825,11 @@
           "label": "Official code",
           "url": "https://github.com/egox-dream/egox"
         }
-      ]
+      ],
+      "codeRelease": {
+        "status": "unknown",
+        "availability": "Public source; license not specified"
+      }
     },
     "ropedia-xperience-2": {
       "status": "partial",
@@ -17842,7 +17846,13 @@
           "label": "Official dataset",
           "url": "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
         }
-      ]
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public scene-registration tools",
+        "license": "Apache-2.0",
+        "licenseURL": "https://github.com/Ropedia/Ropedia-Xperience-2/blob/main/LICENSE"
+      }
     },
     "egohandbench": {
       "status": "partial",
@@ -17859,7 +17869,11 @@
           "label": "Official benchmark resources",
           "url": "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
         }
-      ]
+      ],
+      "codeRelease": {
+        "status": "unknown",
+        "availability": "Public evaluator and baseline source; repository-wide license not verified"
+      }
     }
   }
 }
