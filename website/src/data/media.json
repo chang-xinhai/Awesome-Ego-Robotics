@@ -14285,5 +14285,162 @@
     "imageSource": "https://rammusleo.github.io/images/touchannotator.png",
     "imageAlt": "TouchAnnotator multimodal supervision and predicted contact examples",
     "credit": "TouchAnnotator authors; third-party figure rights retained"
+  },
+  {
+    "id": "ropedia-xperience-2",
+    "name": "Ropedia Xperience 2",
+    "summary": "Pairs LiDAR-scanned scenes with wearable egocentric recordings and reconstructed body and hand motion.",
+    "signals": [
+      "Vision",
+      "IMU",
+      "Audio"
+    ],
+    "coverage": "Whole body",
+    "reviewed": "2026-11-15",
+    "datasetImage": "images/catalog/nov15-ropedia-xperience-2.webp",
+    "datasetImagePage": "https://arxiv.org/html/2611.17060v1",
+    "datasetImageSource": "https://arxiv.org/html/2611.17060v1/teaser.png",
+    "datasetImageAlt": "Ropedia Xperience 2 dataset overview from author source",
+    "datasetImageCredit": "Ropedia; original figure rights retained",
+    "datasetImageReviewed": "2026-11-15"
+  },
+  {
+    "id": "egohandbench",
+    "name": "EgoHandBench",
+    "summary": "Standardizes seven egocentric hand datasets and evaluates hand reconstruction with shared splits and metrics.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-15",
+    "datasetImage": "images/catalog/nov15-egohandbench.webp",
+    "datasetImagePage": "https://egohandbench.github.io/",
+    "datasetImageSource": "https://egohandbench.github.io/assets/overview_samples.jpg",
+    "datasetImageAlt": "EgoHandBench dataset overview from author source",
+    "datasetImageCredit": "Nanyang Technological University; original figure rights retained",
+    "datasetImageReviewed": "2026-11-15"
+  },
+  {
+    "id": "heir-egocentric-intent",
+    "name": "HEIR",
+    "summary": "Pairs human egocentric observations, gaze and speech with robot navigation and manipulation episodes.",
+    "signals": [
+      "Vision",
+      "Gaze",
+      "Audio"
+    ],
+    "coverage": "Unknown",
+    "reviewed": "2026-11-15",
+    "datasetImage": "images/catalog/nov15-heir-egocentric-intent.webp",
+    "datasetImagePage": "https://arxiv.org/html/2611.17238v1",
+    "datasetImageSource": "https://arxiv.org/html/2611.17238v1/figures/dataset.png",
+    "datasetImageAlt": "HEIR dataset overview from author source",
+    "datasetImageCredit": "Tsinghua University; original figure rights retained",
+    "datasetImageReviewed": "2026-11-15"
+  },
+  {
+    "id": "sala-vla",
+    "name": "SALA",
+    "summary": "Aligns latent human and robot actions using semantic similarity from unpaired language descriptions.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-15",
+    "image": "images/catalog/nov15-sala-vla.webp",
+    "imagePage": "https://arxiv.org/html/2611.17110v1",
+    "imageSource": "https://arxiv.org/html/2611.17110v1/method_overview.png",
+    "imageAlt": "SALA author method overview",
+    "credit": "Sharpa Robotics; original figure rights retained"
+  },
+  {
+    "id": "egox-embodiment-dreaming",
+    "name": "EgoX",
+    "summary": "Pretrains a modular cross-embodiment policy with future latent state prediction and adapts to target robots.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-15",
+    "image": "images/catalog/nov15-egox-embodiment-dreaming.webp",
+    "imagePage": "https://arxiv.org/html/2611.16728v1",
+    "imageSource": "https://arxiv.org/html/2611.16728v1/egox-teaser.png",
+    "imageAlt": "EgoX author method overview",
+    "credit": "Carnegie Mellon University; original figure rights retained"
+  },
+  {
+    "id": "vbot-exo2ego",
+    "name": "VBot Exo2Ego",
+    "summary": "Generates a selected actor’s first-person view from third-person video using learned cross-view correspondence.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-15",
+    "image": "images/catalog/nov15-vbot-exo2ego.webp",
+    "imagePage": "https://arxiv.org/html/2611.16417v1",
+    "imageSource": "https://arxiv.org/html/2611.16417v1/vbot-exo2ego-policy-teaser.png",
+    "imageAlt": "VBot Exo2Ego author method overview",
+    "credit": "VBot Physical AI Lab; original figure rights retained"
+  },
+  {
+    "id": "contact-transition",
+    "name": "ContactTransition",
+    "summary": "Locates hand-object touch and release boundaries from egocentric video.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-15",
+    "image": "images/catalog/nov15-contact-transition.webp",
+    "imagePage": "https://arxiv.org/html/2611.13486v1",
+    "imageSource": "https://arxiv.org/html/2611.13486v1/hice_v2.png",
+    "imageAlt": "ContactTransition author method overview",
+    "credit": "Adelaide University; original figure rights retained"
+  },
+  {
+    "id": "egolabel",
+    "name": "EgoLabel",
+    "summary": "Registers independently estimated egocentric geometry, objects and human pose with consistency diagnostics.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-15",
+    "image": "images/catalog/nov15-egolabel.webp",
+    "imagePage": "https://arxiv.org/html/2611.12149v1",
+    "imageSource": "https://arxiv.org/html/2611.12149v1/media/fig_architecture_overview.png",
+    "imageAlt": "EgoLabel author method overview",
+    "credit": "Country Garden Services; original figure rights retained"
+  },
+  {
+    "id": "macrodata-hand-actions",
+    "name": "Macrodata hand-action pipeline",
+    "summary": "Combines monocular hand reconstruction and camera estimation into 3D human hand-action trajectories.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-15",
+    "image": "images/catalog/nov15-macrodata-hand-actions.webp",
+    "imagePage": "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions",
+    "imageSource": "https://macrodata.co/blog-assets/turning-egocentric-video-into-3d-hand-actions/assets/figures/the-best-performing-rgb-only-hand-action-pipeline-we-found-in-our-evaluation.webp",
+    "imageAlt": "Macrodata hand-action pipeline author method overview",
+    "credit": "Macrodata Labs; original figure rights retained"
+  },
+  {
+    "id": "topo-ego",
+    "name": "Topo-4DGS / TopoEgo",
+    "summary": "Reconstructs 4D object interactions across split, merge and visibility events in egocentric video.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-15",
+    "image": "images/catalog/nov15-topo-ego.webp",
+    "imageSource": "https://arxiv.org/html/2611.16012v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2611.16012v1",
+    "imageAlt": "TopoEgo object reconstructions before and after a topology-changing interaction",
+    "credit": "TopoEgo authors; original figure rights retained"
   }
 ]

@@ -73050,10 +73050,18 @@
         {
           "label": "Primary source",
           "url": "https://arxiv.org/html/2610.39585v1/"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/zhenqis123/Tactohand"
+        },
+        {
+          "label": "Official checkpoint",
+          "url": "https://huggingface.co/zhenqis123/TactoHand"
         }
       ],
-      "verified": "2026-11-08",
-      "limitations": "Contact/proximity labels derive from geometry and force labels from object motion; none is a direct tactile or force measurement. Repository is a preview.",
+      "verified": "2026-11-15",
+      "limitations": "Contact/proximity labels derive from geometry and force labels from object motion; none is a direct tactile or force measurement. Dataset remains forthcoming.",
       "fieldSources": {
         "summary": [
           "https://arxiv.org/html/2610.39585v1/"
@@ -73080,9 +73088,15 @@
           "https://arxiv.org/html/2610.39585v1/"
         ],
         "limitations": [
-          "https://arxiv.org/html/2610.39585v1/"
+          "https://arxiv.org/html/2610.39585v1/",
+          "https://github.com/zhenqis123/Tactohand"
+        ],
+        "implementation": [
+          "https://github.com/zhenqis123/Tactohand",
+          "https://huggingface.co/zhenqis123/TactoHand"
         ]
-      }
+      },
+      "implementation": "MIT source covers training, inference and evaluation; official checkpoint available with upstream model terms."
     },
     "recontact": {
       "summary": "Recovers and retargets contact plans from human videos for whole-body humanoid manipulation.",
@@ -74937,6 +74951,354 @@
         ],
         "evidenceLevel": [
           "https://arxiv.org/html/2611.09129v1"
+        ]
+      }
+    },
+    "sala-vla": {
+      "summary": "Aligns latent human and robot actions using semantic similarity from unpaired language descriptions.",
+      "input": "Unpaired human egocentric and robot video with language descriptions; robot actions for grounding",
+      "output": "Shared latent actions and robot action predictions",
+      "outputRepresentation": "Shared latent actions and robot action predictions",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Simulation and real robot evaluations reported in the paper.",
+      "limitations": "Human clips are unpaired and do not supply measured robot actions; code and model availability not established.",
+      "verified": "2026-11-15",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2611.17110"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2611.17110"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2611.17110"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2611.17110"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2611.17110"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2611.17110"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2611.17110"
+        ],
+        "stage": [
+          "https://arxiv.org/abs/2611.17110"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/abs/2611.17110"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2611.17110"
+        ]
+      }
+    },
+    "egox-embodiment-dreaming": {
+      "summary": "Pretrains a modular cross-embodiment policy with future latent state prediction and adapts to target robots.",
+      "input": "Human egocentric and robot observations and actions during pretraining; target-robot observations at deployment",
+      "output": "Embodiment-specific robot action predictions",
+      "outputRepresentation": "Embodiment-specific robot action predictions",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "robotEvidence": "Five physical robot embodiments and one simulated humanoid across 13 task-embodiment pairs.",
+      "limitations": "Embodiment dreaming is training-only. Official source provides model training and inference; example dataset, collection pipeline and checkpoint are pending.",
+      "verified": "2026-11-15",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2611.16728"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/egox-dream/egox"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2611.16728"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2611.16728"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2611.16728"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2611.16728"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2611.16728"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2611.16728"
+        ],
+        "stage": [
+          "https://arxiv.org/abs/2611.16728"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/abs/2611.16728"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2611.16728"
+        ]
+      }
+    },
+    "vbot-exo2ego": {
+      "summary": "Generates a selected actor’s first-person view from third-person video using learned cross-view correspondence.",
+      "input": "Third-person video and optional actor reference; paired camera geometry used during training",
+      "output": "Generated egocentric operation video",
+      "outputRepresentation": "Generated egocentric operation video",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L6",
+      "robotEvidence": "Cross-view video synthesis evaluation; no physical robot policy execution asserted.",
+      "limitations": "Despite the title, the documented output is synthetic first-person video rather than executable robot actions; target-camera calibration is removed at inference.",
+      "verified": "2026-11-15",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2611.16417"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2611.16417"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2611.16417"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2611.16417"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2611.16417"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2611.16417"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2611.16417"
+        ],
+        "stage": [
+          "https://arxiv.org/abs/2611.16417"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/abs/2611.16417"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2611.16417"
+        ]
+      }
+    },
+    "contact-transition": {
+      "summary": "Locates hand-object touch and release boundaries from egocentric video.",
+      "input": "Egocentric RGB video",
+      "output": "Predicted temporal touch and release events",
+      "outputRepresentation": "Predicted temporal touch and release events",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "robotEvidence": "Video-based event spotting and downstream hand-object reasoning evaluation.",
+      "limitations": "The events are visually inferred, not measured tactile sensor readings. The reported benchmark contains 4,021 videos; code link in paper was unavailable when checked.",
+      "verified": "2026-11-15",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2611.13486"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2611.13486"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2611.13486"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2611.13486"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2611.13486"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2611.13486"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2611.13486"
+        ],
+        "stage": [
+          "https://arxiv.org/abs/2611.13486"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/abs/2611.13486"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2611.13486"
+        ]
+      }
+    },
+    "egolabel": {
+      "summary": "Registers independently estimated egocentric geometry, objects and human pose with consistency diagnostics.",
+      "input": "Egocentric video and, for main hand evaluation, measured H2O depth",
+      "output": "Registered camera, object and human pose estimates and diagnostics",
+      "outputRepresentation": "Registered camera, object and human pose estimates and diagnostics",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L2",
+      "robotEvidence": "H2O hand-depth consistency and separate RGB-only camera trajectory evaluation.",
+      "limitations": "Main hand evaluation uses sensor depth. Hand-depth residual measures shared-map consistency, not independent hand accuracy; Sim(3)-aligned ATE is not metric scale evidence.",
+      "verified": "2026-11-15",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2611.12149"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/abs/2611.12149"
+        ],
+        "input": [
+          "https://arxiv.org/abs/2611.12149"
+        ],
+        "output": [
+          "https://arxiv.org/abs/2611.12149"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/abs/2611.12149"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/abs/2611.12149"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2611.12149"
+        ],
+        "stage": [
+          "https://arxiv.org/abs/2611.12149"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/abs/2611.12149"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2611.12149"
+        ]
+      }
+    },
+    "macrodata-hand-actions": {
+      "summary": "Combines monocular hand reconstruction and camera estimation into 3D human hand-action trajectories.",
+      "input": "Monocular egocentric RGB video and camera calibration when available",
+      "output": "Predicted 21-joint hand trajectories in a shared scene frame",
+      "outputRepresentation": "Predicted 21-joint hand trajectories in a shared scene frame",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L2",
+      "robotEvidence": "Company reports HOT3D evaluation on ten episodes; no robot policy experiment established.",
+      "limitations": "Estimated human hand trajectories require robot-specific adaptation and are not measured robot actions; proprietary production pipeline is separate from described open-source components.",
+      "verified": "2026-11-15",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions"
+        ],
+        "input": [
+          "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions"
+        ],
+        "output": [
+          "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions"
+        ],
+        "outputRepresentation": [
+          "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions"
+        ],
+        "inputSignals": [
+          "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions"
+        ],
+        "bodyCoverage": [
+          "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions"
+        ],
+        "stage": [
+          "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions"
+        ],
+        "robotEvidence": [
+          "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions"
+        ],
+        "limitations": [
+          "https://macrodata.co/blog/turning-egocentric-video-into-3d-hand-actions"
+        ]
+      }
+    },
+    "topo-ego": {
+      "summary": "Reconstructs dynamic object geometry and appearance across egocentric topological events.",
+      "input": "Monocular egocentric video",
+      "output": "Part motions and time-varying 4D Gaussian geometry",
+      "outputRepresentation": "Dynamic Gaussian object reconstruction",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "robotEvidence": "Evaluated as 4D reconstruction on TopoEgo; no robot policy experiment asserted.",
+      "limitations": "TopoEgo is a 24-sequence derived benchmark with 34 events; project reports code and benchmark data as forthcoming. Reconstructed geometry is not measured robot action.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.16012v1"
+        }
+      ],
+      "verified": "2026-11-15",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.16012v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.16012v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.16012v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.16012v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.16012v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.16012v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.16012v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.16012v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.16012v1"
         ]
       }
     }

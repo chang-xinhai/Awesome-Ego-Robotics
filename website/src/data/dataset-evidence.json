@@ -14885,6 +14885,271 @@
           "https://github.com/ego2act/ego2act"
         ]
       }
+    },
+    "ropedia-xperience-2": {
+      "name": "Ropedia Xperience 2",
+      "reportedScale": {
+        "scope": "Paper reports 1,589 scene scans and 4,230 recordings across 74 tasks and 131 hours."
+      },
+      "publicScale": {
+        "scope": "Dataset card identifies first batch of 126 scenes, approximately 1.07 TB; further uploads planned."
+      },
+      "access": "Public download",
+      "accessNote": "Dataset card identifies first batch of 126 scenes, approximately 1.07 TB; further uploads planned.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Handheld LiDAR scene scans; HOMIE head-mounted four fisheye cameras, IMU and four-channel audio.",
+      "recordedSignals": [
+        "Vision",
+        "IMU",
+        "Audio"
+      ],
+      "syntheticSignals": [],
+      "labels": "Estimated camera trajectories, SMPL-H style body and MANO hands, model-generated language captions and scene registration.",
+      "bodyCoverage": "Whole body",
+      "dataRole": "egocentric",
+      "scaleType": "mixed",
+      "datasetUrl": "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2",
+      "releaseScope": "Dataset card identifies first batch of 126 scenes, approximately 1.07 TB; further uploads planned.",
+      "limitations": "Hand/body motion and captions are inferred, not mocap ground truth. The 131 hours and 4,230 recordings describe the collection inventory, not independently verified as fully released. Data CC BY-NC-4.0; code Apache-2.0.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2611.17060"
+        },
+        {
+          "label": "Official dataset",
+          "url": "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2611.17060",
+          "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        ]
+      }
+    },
+    "egohandbench": {
+      "name": "EgoHandBench",
+      "reportedScale": {
+        "scope": "Official website reports 4,305 clips from seven source datasets."
+      },
+      "publicScale": {
+        "scope": "Public Hugging Face tree lists source-specific videos, annotations and baseline checkpoints; complete download not independently audited."
+      },
+      "access": "Public download",
+      "accessNote": "Public Hugging Face tree lists source-specific videos, annotations and baseline checkpoints; complete download not independently audited.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Egocentric RGB video from seven public source datasets.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "syntheticSignals": [],
+      "labels": "Camera-frame MANO hand parameters, pinhole camera intrinsics, fixed splits and quality-filtered evaluation annotations.",
+      "bodyCoverage": "Hands",
+      "dataRole": "mixed",
+      "scaleType": "mixed",
+      "datasetUrl": "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench",
+      "releaseScope": "Public Hugging Face tree lists source-specific videos, annotations and baseline checkpoints; complete download not independently audited.",
+      "limitations": "Camera-relative reconstruction is not a world-frame action; source datasets and baseline checkpoints retain separate licenses. No formal paper date found.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://egohandbench.github.io/"
+        },
+        {
+          "label": "Official dataset",
+          "url": "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "publicScale": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "access": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "accessNote": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "observations": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "recordedSignals": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "labels": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "bodyCoverage": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "dataRole": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "datasetUrl": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "releaseScope": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ],
+        "limitations": [
+          "https://egohandbench.github.io/",
+          "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        ]
+      }
+    },
+    "heir-egocentric-intent": {
+      "name": "HEIR",
+      "reportedScale": {
+        "scope": "See primary paper for collection and evaluation protocol."
+      },
+      "publicScale": {
+        "scope": "Official dataset repository lists metadata, annotations and release artifacts; complete recordings not independently audited."
+      },
+      "access": "Public download",
+      "accessNote": "Official dataset repository lists metadata, annotations and release artifacts; complete recordings not independently audited.",
+      "formats": [
+        "Video",
+        "Annotations"
+      ],
+      "observations": "Human first-person video, speech and measured gaze plus robot observations and teleoperated navigation/manipulation.",
+      "recordedSignals": [
+        "Vision",
+        "Gaze",
+        "Audio"
+      ],
+      "syntheticSignals": [],
+      "labels": "Human-authored request, task and subtask annotations.",
+      "bodyCoverage": "Unknown",
+      "dataRole": "egocentric",
+      "scaleType": "mixed",
+      "datasetUrl": "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset",
+      "releaseScope": "Official dataset repository lists metadata, annotations and release artifacts; complete recordings not independently audited.",
+      "limitations": "Gaze and speech are human intent observations; robot trajectories are teleoperated execution, not human action ground truth.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2611.17238"
+        },
+        {
+          "label": "Official dataset",
+          "url": "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        }
+      ],
+      "fieldSources": {
+        "reportedScale": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "publicScale": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "access": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "accessNote": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "observations": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "labels": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "dataRole": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ],
+        "limitations": [
+          "https://arxiv.org/abs/2611.17238",
+          "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
+        ]
+      }
     }
   }
 }

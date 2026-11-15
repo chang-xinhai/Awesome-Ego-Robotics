@@ -17431,19 +17431,31 @@
       }
     },
     "tactohand": {
-      "status": "unknown",
-      "availability": "Paper and preview repository",
-      "softwareStatus": "Author repository contains a README preview; method code not yet released.",
-      "verified": "2026-11-08",
+      "status": "partial",
+      "availability": "Source and checkpoint public; dataset pending",
+      "softwareStatus": "MIT training, inference and evaluation source; third-party dependencies have independent terms.",
+      "modelStatus": "Checkpoint and configuration listed; tactohand.ckpt returned HTTP 206 on 2026-11-15.",
+      "dataStatus": "Dataset coming soon.",
+      "verified": "2026-11-15",
       "evidence": [
         {
-          "label": "Official repository",
+          "label": "Official code",
           "url": "https://github.com/zhenqis123/Tactohand"
+        },
+        {
+          "label": "Official model",
+          "url": "https://huggingface.co/zhenqis123/TactoHand"
         }
       ],
       "notes": [
-        "Monocular predictions are not physical tactile measurements."
-      ]
+        "Monocular contact and force predictions are not tactile or force measurements."
+      ],
+      "codeRelease": {
+        "status": "open",
+        "availability": "Public source",
+        "license": "MIT",
+        "licenseURL": "https://github.com/zhenqis123/Tactohand/blob/main/LICENSE"
+      }
     },
     "open-humanwam": {
       "status": "partial",
@@ -17800,6 +17812,22 @@
         "availability": "Public source",
         "license": "MIT",
         "licenseURL": "https://github.com/RammusLeo/TouchAnnotator/blob/main/LICENSE"
+      }
+    },
+    "egox-embodiment-dreaming": {
+      "status": "partial",
+      "softwareStatus": "Official source includes model training and inference; example dataset and checkpoint pending.",
+      "availability": "Research implementation",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Official repository",
+          "url": "https://github.com/egox-dream/egox"
+        }
+      ],
+      "codeRelease": {
+        "status": "unknown",
+        "availability": "Public source; license not specified"
       }
     }
   }
