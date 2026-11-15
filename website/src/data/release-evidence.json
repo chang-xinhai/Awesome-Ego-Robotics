@@ -17816,19 +17816,50 @@
     },
     "egox-embodiment-dreaming": {
       "status": "partial",
-      "softwareStatus": "Official source includes model training and inference; example dataset and checkpoint pending.",
-      "availability": "Research implementation",
+      "availability": "Training and inference source public",
+      "softwareStatus": "Training and inference source public; repository-wide software license not verified.",
+      "dataStatus": "Example dataset and policy checkpoint pending.",
       "verified": "2026-11-15",
       "evidence": [
         {
-          "label": "Official repository",
+          "label": "Official code",
           "url": "https://github.com/egox-dream/egox"
         }
-      ],
-      "codeRelease": {
-        "status": "unknown",
-        "availability": "Public source; license not specified"
-      }
+      ]
+    },
+    "ropedia-xperience-2": {
+      "status": "partial",
+      "availability": "Public scene-registration source and first dataset batch",
+      "softwareStatus": "Scene-registration tools and examples public under Apache-2.0; dataset has separate CC BY-NC 4.0 terms.",
+      "dataStatus": "First batch public; full collection not independently verified as released.",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Official code",
+          "url": "https://github.com/Ropedia/Ropedia-Xperience-2"
+        },
+        {
+          "label": "Official dataset",
+          "url": "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        }
+      ]
+    },
+    "egohandbench": {
+      "status": "partial",
+      "availability": "Public evaluator, baselines and benchmark resources",
+      "softwareStatus": "Evaluator and baseline source files public; repository-wide software license not verified.",
+      "dataStatus": "Benchmark data and checkpoints available; source dataset terms vary.",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Official code",
+          "url": "https://github.com/NTUYWANG103/EgoHandBench"
+        },
+        {
+          "label": "Official benchmark resources",
+          "url": "https://huggingface.co/datasets/WANG-XIXI/EgoHandBench"
+        }
+      ]
     }
   }
 }
