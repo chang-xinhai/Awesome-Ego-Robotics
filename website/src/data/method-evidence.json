@@ -75301,6 +75301,33 @@
           "https://arxiv.org/html/2611.16012v1"
         ]
       }
+    },
+    "hoi-detr": {
+      "summary": "Detects hands, directly held objects and objects manipulated via tools, and infers their pairwise visual interaction links.",
+      "input": "RGB images or video frames",
+      "output": "Hand and object bounding boxes and interaction links",
+      "supervision": "Visual hand-object interaction annotations",
+      "robotEvidence": "Egocentric and other visual benchmarks; no robot policy evaluation claimed",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "sources": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.17384"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/AhmadDarKhalil/HOI-DETR"
+        },
+        {
+          "label": "Model",
+          "url": "https://huggingface.co/ahmaddarkhalil/hoi-detr"
+        }
+      ],
+      "verified": "2026-11-15"
     }
   }
 }

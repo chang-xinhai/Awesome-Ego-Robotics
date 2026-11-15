@@ -5102,6 +5102,80 @@
         }
       ],
       "verified": "2026-11-05"
+    },
+    "eidon-glove": {
+      "interface": "Wearable finger tracker",
+      "poseTracking": "16 Hall-effect sensing channels; optional BNO085 orientation IMU",
+      "vision": "Not reported",
+      "tactile": {
+        "status": "unknown",
+        "detail": "No tactile output specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "No force or torque measurement specified"
+      },
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "State",
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Glove"
+      ],
+      "captureComponents": "Finger-mounted magnets, 16 Hall sensors, ESP32-C3, optional IMU",
+      "measuredSignals": "Magnetic-sensor finger joint signals; optional inertial orientation",
+      "outputs": "BLE HID finger positions; optional orientation",
+      "hardwareRelease": "CAD and PCB files published; repository-wide license not established",
+      "softwareRelease": "Firmware source public; repository-wide license not established",
+      "evidence": [
+        {
+          "label": "Author repository",
+          "url": "https://github.com/Eidon-AI/eidon-glove"
+        },
+        {
+          "label": "Author project",
+          "url": "https://eidonai.online/"
+        }
+      ],
+      "verified": "2026-11-15"
+    },
+    "eidon-tracker": {
+      "interface": "Seven wearable inertial modules",
+      "poseTracking": "IMU orientations over BLE; upper-body positions derived via a kinematics solver",
+      "vision": "No camera in tracker module; paired dataset uses a separate head camera",
+      "tactile": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "Not specified"
+      },
+      "bodyCoverage": "Upper body",
+      "observationSignals": [
+        "IMU"
+      ],
+      "interfaceForms": [
+        "Hybrid"
+      ],
+      "captureComponents": "Seven BNO085 inertial modules worn on hands, upper arms, forearms and chest",
+      "measuredSignals": "Orientation; raw accelerometer, gyroscope and magnetometer availability depends on recording",
+      "synchronization": "Dataset camera and IMU starts are sequential, without hardware synchronization",
+      "outputs": "Quaternion orientations over BLE",
+      "hardwareRelease": "CAD, PCB and assembly files public; repository-wide license not established",
+      "softwareRelease": "Firmware source public; repository-wide license not established",
+      "evidence": [
+        {
+          "label": "Hardware repository",
+          "url": "https://github.com/Eidon-AI/eidon-tracker"
+        },
+        {
+          "label": "Dataset card",
+          "url": "https://huggingface.co/datasets/eidon-ai/tracker-pov"
+        }
+      ],
+      "verified": "2026-11-15"
     }
   }
 }

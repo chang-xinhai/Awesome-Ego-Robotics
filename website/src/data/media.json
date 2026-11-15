@@ -14442,5 +14442,128 @@
     "imagePage": "https://arxiv.org/html/2611.16012v1",
     "imageAlt": "TopoEgo object reconstructions before and after a topology-changing interaction",
     "credit": "TopoEgo authors; original figure rights retained"
+  },
+  {
+    "id": "eidon-glove",
+    "name": "Eidon Glove",
+    "summary": "A wearable Hall-sensor finger tracker supplies human hand articulation for demonstration capture.",
+    "signals": [
+      "State",
+      "IMU"
+    ],
+    "form": "Glove",
+    "coverage": "Hands",
+    "tracking": "16 Hall-effect sensors; optional IMU",
+    "hardwareImage": "images/catalog/eidon-glove.webp",
+    "hardwareImageAlt": "Eidon glove finger-tracking wearable CAD model",
+    "hardwareImageSource": "https://raw.githubusercontent.com/Eidon-AI/eidon-glove/main/images/eidon-glove-fusion-model-top.png",
+    "hardwareImagePage": "https://github.com/Eidon-AI/eidon-glove",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Eidon AI; third-party figure rights retained",
+    "reviewed": "2026-11-15"
+  },
+  {
+    "id": "eidon-tracker",
+    "name": "Eidon Tracker",
+    "summary": "Seven wearable inertial modules capture upper-body orientations, with camera video available in a separate dataset.",
+    "signals": [
+      "IMU"
+    ],
+    "form": "Hybrid",
+    "coverage": "Upper body",
+    "tracking": "Seven wearable IMU orientation streams",
+    "hardwareImage": "images/catalog/eidon-tracker.webp",
+    "hardwareImageAlt": "Eidon Tracker wearable IMU module CAD rendering",
+    "hardwareImageSource": "https://raw.githubusercontent.com/Eidon-AI/eidon-tracker/main/images/eidon-tracker-closed.png",
+    "hardwareImagePage": "https://github.com/Eidon-AI/eidon-tracker",
+    "hardwareImageType": "Hardware / capture system",
+    "hardwareImageCredit": "Eidon AI; third-party figure rights retained",
+    "reviewed": "2026-11-15"
+  },
+  {
+    "id": "eidon-tracker-pov",
+    "name": "Eidon Tracker POV",
+    "summary": "Head-mounted videos paired with upper-body IMU orientation streams during household work.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "coverage": "Upper body",
+    "datasetImage": "images/catalog/eidon-tracker-pov.webp",
+    "datasetImageAlt": "Frame from Eidon Tracker POV recording 1, showing hands preparing an egg with a wrist-mounted tracker",
+    "datasetImageSource": "https://huggingface.co/datasets/eidon-ai/tracker-pov/resolve/main/recordings/data/000/1_video.mp4",
+    "datasetImagePage": "https://huggingface.co/datasets/eidon-ai/tracker-pov",
+    "datasetImageType": "Dataset overview / example",
+    "datasetImageCredit": "Eidon AI / Solidic Labs Inc; CC BY 4.0",
+    "reviewed": "2026-11-15"
+  },
+  {
+    "id": "eidon-egocentric-pov",
+    "name": "Eidon Egocentric POV",
+    "summary": "Video-only head-camera recordings of household activities, shared separately from the paired tracker release.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-15"
+  },
+  {
+    "id": "egointeract",
+    "name": "EgoInteract",
+    "summary": "A controllable simulator generates synthetic egocentric interaction videos with spatial and temporal annotations.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "datasetImage": "images/catalog/egointeract.webp",
+    "datasetImageAlt": "EgoInteract synthetic first-person hand-object interaction episodes",
+    "datasetImageSource": "https://arxiv.org/html/2605.18214v2/images/episodes_small.png",
+    "datasetImagePage": "https://arxiv.org/html/2605.18214v2",
+    "datasetImageCredit": "EgoInteract authors; third-party figure rights retained",
+    "datasetImageType": "Dataset overview / examples",
+    "reviewed": "2026-11-15"
+  },
+  {
+    "id": "hoi-synth",
+    "name": "HOI-Synth",
+    "summary": "Synthetic hand-object interaction images supplement real egocentric detection datasets.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "datasetImage": "images/catalog/hoi-synth.webp",
+    "datasetImageAlt": "Examples of synthetic egocentric hand-object interactions from HOI-Synth",
+    "datasetImageSource": "https://arxiv.org/html/2603.29733v1/images/fig_examples_sim.jpg",
+    "datasetImagePage": "https://arxiv.org/html/2603.29733v1",
+    "datasetImageCredit": "HOI-Synth authors; third-party figure rights retained",
+    "datasetImageType": "Dataset overview / examples",
+    "reviewed": "2026-11-15"
+  },
+  {
+    "id": "hoi-detr",
+    "name": "HOI-DETR",
+    "summary": "Detects hands, held objects, tool-acted objects and their interaction links from RGB images.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Egocentric RGB video",
+    "coverage": "Hands",
+    "image": "images/catalog/hoi-detr.webp",
+    "imageAlt": "HOI-DETR hand, object and tool interaction detections in varied scenes",
+    "imageSource": "https://arxiv.org/html/2606.17384v1/teaser-compressed.png",
+    "imagePage": "https://arxiv.org/html/2606.17384v1",
+    "credit": "HOI-DETR authors; third-party figure rights retained",
+    "reviewed": "2026-11-15"
+  },
+  {
+    "id": "eidon-sim",
+    "name": "Eidon Sim",
+    "summary": "Visualizes Eidon tracker orientations and computes upper-body kinematics for synchronized playback.",
+    "signals": [
+      "IMU"
+    ],
+    "form": "Wearable capture tool",
+    "coverage": "Upper body",
+    "reviewed": "2026-11-15"
   }
 ]

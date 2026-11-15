@@ -17874,6 +17874,132 @@
         "status": "unknown",
         "availability": "Public evaluator and baseline source; repository-wide license not verified"
       }
+    },
+    "eidon-glove": {
+      "status": "partial",
+      "availability": "Public CAD, PCB, firmware; license unverified",
+      "softwareStatus": "Firmware source is public; no repository-wide license file found.",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/Eidon-AI/eidon-glove"
+        }
+      ]
+    },
+    "eidon-tracker": {
+      "status": "partial",
+      "availability": "Public CAD, PCB, firmware; license unverified",
+      "softwareStatus": "Hardware design and firmware source are public; no repository-wide license file found.",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/Eidon-AI/eidon-tracker"
+        }
+      ]
+    },
+    "eidon-tracker-pov": {
+      "status": "open",
+      "availability": "Public video and IMU datasets",
+      "dataStatus": "Video and paired IMU files available under CC BY 4.0; not independent datasets for counting hours.",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Video",
+          "url": "https://huggingface.co/datasets/eidon-ai/tracker-pov"
+        },
+        {
+          "label": "IMU",
+          "url": "https://huggingface.co/datasets/eidon-ai/tracker-pov-imu"
+        }
+      ]
+    },
+    "eidon-egocentric-pov": {
+      "status": "open",
+      "availability": "Public video-only storage bucket",
+      "dataStatus": "Publisher describes CC BY 4.0; files in a storage bucket rather than a dataset repository.",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Bucket",
+          "url": "https://huggingface.co/buckets/eidon-ai/egocentric-pov"
+        },
+        {
+          "label": "Publisher",
+          "url": "https://eidonai.online/"
+        }
+      ]
+    },
+    "egointeract": {
+      "status": "partial",
+      "availability": "Simulator and dataset public under CC BY-NC 4.0",
+      "softwareStatus": "Unity simulator source public; external assets have separate terms.",
+      "dataStatus": "Synthetic dataset public; external asset licenses may apply.",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Simulator",
+          "url": "https://github.com/fpv-iplab/EgoInteract"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/EgoInteract/EgoInteract"
+        }
+      ]
+    },
+    "hoi-synth": {
+      "status": "partial",
+      "availability": "Public synthetic image and annotation archives",
+      "softwareStatus": "Repository tree has README and assets only; code release not verified.",
+      "dataStatus": "Official ZIP endpoints respond; full archives not independently audited. Repository states CC BY-NC 4.0; source asset terms may vary.",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/fpv-iplab/HOI-Synth"
+        },
+        {
+          "label": "Project",
+          "url": "https://fpv-iplab.github.io/HOI-Synth/"
+        },
+        {
+          "label": "Annotations download",
+          "url": "https://iplab.dmi.unict.it/sharing/hoi-synth/annotations.zip"
+        },
+        {
+          "label": "Images download",
+          "url": "https://iplab.dmi.unict.it/sharing/hoi-synth/images.zip"
+        }
+      ]
+    },
+    "hoi-detr": {
+      "status": "partial",
+      "availability": "Public code and model",
+      "softwareStatus": "Source and inference demos available under MIT; third-party component terms apply.",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Code",
+          "url": "https://github.com/AhmadDarKhalil/HOI-DETR"
+        },
+        {
+          "label": "Model",
+          "url": "https://huggingface.co/ahmaddarkhalil/hoi-detr"
+        }
+      ]
+    },
+    "eidon-sim": {
+      "status": "open",
+      "availability": "Public source under MIT",
+      "softwareStatus": "Kinematics and visualization code public under MIT.",
+      "verified": "2026-11-15",
+      "evidence": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/Eidon-AI/eidon-sim"
+        }
+      ]
     }
   }
 }

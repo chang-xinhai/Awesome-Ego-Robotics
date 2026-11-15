@@ -1427,7 +1427,7 @@
       "labels": "Hand/body tracking, camera pose and language; annotation fields vary by source.",
       "bodyCoverage": "Bimanual",
       "annotationEvidence": "Source-specific tracking pipelines normalized into EgoDB.",
-      "limitations": "Do not combine paper scale with changing browser totals or count older reprocessed hashes twice. Current official site lists 4,003 hours; keep this living release snapshot separate from the 1,362-hour paper snapshot. Current public toolkit corrects both Aria wrist rotations and requires per-episode intrinsics; stale cached episodes can fail validation.",
+      "limitations": "Do not combine paper scale with changing browser totals or count older reprocessed hashes twice. Current official site lists 4,003 hours; keep this living release snapshot separate from the 1,362-hour paper snapshot. Current public toolkit corrects both Aria wrist rotations and requires per-episode intrinsics; stale cached episodes can fail validation. The official episode explorer exposes a separate changing filtered total; do not sum it with the project snapshot.",
       "sources": [
         {
           "label": "Official project / release",
@@ -1452,11 +1452,15 @@
         {
           "label": "Current schema and reprocessing guidance",
           "url": "https://github.com/GaTech-RL2/EgoVerse"
+        },
+        {
+          "label": "Official episode explorer",
+          "url": "https://partners.mecka.ai/egoverse"
         }
       ],
       "name": "EgoVerse",
-      "verified": "2026-10-26",
-      "accessNote": "Use the official dataset browser and download instructions; verify source-specific terms.",
+      "verified": "2026-11-15",
+      "accessNote": "Official browser and episode explorer display evolving, differently scoped totals; verify source-specific download terms.",
       "recordedSignals": [
         "Vision"
       ],
@@ -15179,6 +15183,193 @@
           "https://huggingface.co/datasets/Anonymous-HEIR123/HEIR-Dataset"
         ]
       }
+    },
+    "eidon-tracker-pov": {
+      "name": "Eidon Tracker POV",
+      "reportedScale": {
+        "hours": 1273.8,
+        "videos": 13451,
+        "scope": "Publisher reports 27 contributors; video and paired IMU are the same recordings."
+      },
+      "publicScale": {
+        "hours": 1273.8,
+        "videos": 13451,
+        "scope": "Publisher reports full video and IMU release; full files not independently audited."
+      },
+      "access": "Public download",
+      "accessNote": "Paired video and IMU are in separate datasets joined on recording_id.",
+      "formats": [
+        "MP4",
+        "Parquet"
+      ],
+      "observations": "Head-mounted video and 24 Hz seven-slot body IMU orientation; 129 recordings have incomplete rig.",
+      "recordedStreams": "Head camera video; quaternion orientation for seven upper-body slots; raw motion sensors are present only for a subset.",
+      "recordedSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "labels": "Automated quality scores and activity labels; some object tags are model-derived.",
+      "bodyCoverage": "Upper body",
+      "cameraSetup": "Head-mounted camera, video resolution and frame rate vary by recording.",
+      "coordinateFrame": "IMU orientation streams; torso-relative pose can be derived when chest reference is present.",
+      "calibration": "No hardware sync: camera and IMU capture begin sequentially; align by timestamps.",
+      "tasks": [
+        "Household manipulation",
+        "Human motion capture"
+      ],
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "dataLicense": "CC BY 4.0",
+      "releaseScope": "Publisher lists 13,451 video recordings with separately hosted matching IMU streams.",
+      "limitations": "67.5% of hours are laundry; 472 invalid and 1,138 flagged clips remain included. Raw acceleration/gyro/magnetometer available for 2,841 recordings. Split by contributor to avoid leakage.",
+      "datasetUrl": "https://huggingface.co/datasets/eidon-ai/tracker-pov",
+      "sources": [
+        {
+          "label": "Video and metadata",
+          "url": "https://huggingface.co/datasets/eidon-ai/tracker-pov"
+        },
+        {
+          "label": "Paired IMU",
+          "url": "https://huggingface.co/datasets/eidon-ai/tracker-pov-imu"
+        }
+      ],
+      "verified": "2026-11-15"
+    },
+    "eidon-egocentric-pov": {
+      "name": "Eidon Egocentric POV",
+      "reportedScale": {
+        "hours": 305.7,
+        "videos": 1370,
+        "scope": "Publisher reports video-only capture from 37 contributors."
+      },
+      "publicScale": {
+        "hours": 305.7,
+        "videos": 1370,
+        "scope": "Publisher reports a 1.55 TB bucket; full files not independently audited."
+      },
+      "access": "Public download",
+      "accessNote": "Hugging Face storage bucket, not a standard datasets repository.",
+      "formats": [
+        "MP4",
+        "Parquet"
+      ],
+      "observations": "Head-mounted video of household activities; no tracker IMU streams.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "labels": "Activity metadata and automated QC flags.",
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "dataLicense": "CC BY 4.0, per publisher project page.",
+      "releaseScope": "Separate video-only recordings; contributor identities can overlap the Tracker POV release.",
+      "limitations": "14 contributors also occur in the tracker dataset; split by contributor. Automated QC includes flagged and invalid footage.",
+      "datasetUrl": "https://huggingface.co/buckets/eidon-ai/egocentric-pov",
+      "sources": [
+        {
+          "label": "Dataset bucket",
+          "url": "https://huggingface.co/buckets/eidon-ai/egocentric-pov"
+        },
+        {
+          "label": "Publisher overview",
+          "url": "https://eidonai.online/"
+        }
+      ],
+      "verified": "2026-11-15"
+    },
+    "egointeract": {
+      "name": "EgoInteract",
+      "reportedScale": {
+        "episodes": 10534,
+        "scope": "Publisher reports approximately 1.9M frames and 61,211 task-specific HOI/next-object frames."
+      },
+      "publicScale": {
+        "episodes": 10534,
+        "scope": "Dataset card lists 10,534 generated episodes; full download not independently audited."
+      },
+      "access": "Public download",
+      "formats": [
+        "Video",
+        "Images",
+        "Annotations"
+      ],
+      "observations": "Simulator-rendered egocentric hand-object interactions, not physical camera recordings.",
+      "recordedSignals": [],
+      "syntheticSignals": [
+        "Vision"
+      ],
+      "labels": "Synthetic hand-object interaction, temporal action segmentation, next-active-object and anticipation annotations.",
+      "bodyCoverage": "Hands",
+      "dataRole": "synthetic",
+      "scaleType": "episodes",
+      "datasetUrl": "https://huggingface.co/datasets/EgoInteract/EgoInteract",
+      "tasks": [
+        "Hand-object interaction",
+        "Action segmentation",
+        "Anticipation"
+      ],
+      "dataLicense": "CC BY-NC 4.0; third-party asset terms may apply.",
+      "releaseScope": "Dataset and simulator repository available; external HM3D and Objaverse-XL required for full generation.",
+      "limitations": "Procedurally generated interactions; not real human video or robot action ground truth.",
+      "sources": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.18214"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/EgoInteract/EgoInteract"
+        },
+        {
+          "label": "Simulator",
+          "url": "https://github.com/fpv-iplab/EgoInteract"
+        }
+      ],
+      "verified": "2026-11-15"
+    },
+    "hoi-synth": {
+      "name": "HOI-Synth",
+      "access": "Public download",
+      "formats": [
+        "Images",
+        "Annotations"
+      ],
+      "observations": "Synthetic first-person hand-object interaction images.",
+      "recordedSignals": [],
+      "syntheticSignals": [
+        "Vision"
+      ],
+      "labels": "Synthetic bounding boxes, masks and contact-state labels.",
+      "bodyCoverage": "Hands",
+      "dataRole": "synthetic",
+      "scaleType": "mixed",
+      "limitations": "Synthetic visual contact labels are not measured tactile signals; repository currently contains README and visual asset only, not the stated implementation.",
+      "datasetUrl": "https://iplab.dmi.unict.it/sharing/hoi-synth/annotations.zip",
+      "sources": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.29733"
+        },
+        {
+          "label": "Project",
+          "url": "https://fpv-iplab.github.io/HOI-Synth/"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/fpv-iplab/HOI-Synth"
+        },
+        {
+          "label": "Annotations download",
+          "url": "https://iplab.dmi.unict.it/sharing/hoi-synth/annotations.zip"
+        },
+        {
+          "label": "Images download",
+          "url": "https://iplab.dmi.unict.it/sharing/hoi-synth/images.zip"
+        }
+      ],
+      "verified": "2026-11-15",
+      "dataLicense": "Repository states CC BY-NC 4.0; source asset terms may vary.",
+      "releaseScope": "Official linked images and annotations ZIP endpoints respond; full archives not independently audited."
     }
   }
 }
