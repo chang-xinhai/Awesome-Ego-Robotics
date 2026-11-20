@@ -14565,5 +14565,444 @@
     "form": "Wearable capture tool",
     "coverage": "Upper body",
     "reviewed": "2026-11-15"
+  },
+  {
+    "id": "deq-stereo",
+    "name": "DEQ-Stereo",
+    "summary": "Warm-starts each stereo pair from the preceding hidden state and stops disparity refinement by convergence.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Streaming stereo",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/deq-stereo-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2610.39701v1/main_pipeline.png",
+    "imagePage": "https://arxiv.org/html/2610.39701v1/",
+    "imageAlt": "Pipeline for adaptive disparity refinement and hidden-state transfer between stereo frames",
+    "imageType": "Method / depth output",
+    "credit": "DEQ-Stereo authors. Third-party figure rights retained",
+    "imageCredit": "DEQ-Stereo authors. Third-party figure rights retained"
+  },
+  {
+    "id": "depth-anyviewpoint",
+    "name": "Depth Anyviewpoint?",
+    "summary": "Benchmarks depth consistency under camera motion using warp error, temporal drift, and annotated points.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Video-depth benchmark",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/depth-anyviewpoint-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2611.02203v1/figure_1.png",
+    "imagePage": "https://arxiv.org/html/2611.02203v1/",
+    "imageAlt": "RGB and relative-depth outputs in temporally nearby frames from the forest sequence",
+    "imageType": "Method / depth output",
+    "credit": "Depth Anyviewpoint? authors. Third-party figure rights retained",
+    "imageCredit": "Depth Anyviewpoint? authors. Third-party figure rights retained"
+  },
+  {
+    "id": "virtualrect",
+    "name": "VirtualRect",
+    "summary": "Rectifies stereo pairs under extrinsic drift while preserving a camera model consistent with downstream depth computation.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Online stereo rectification",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/virtualrect-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2611.10518v1/figures/figure2_paper_rows.png",
+    "imagePage": "https://arxiv.org/html/2611.10518v1/",
+    "imageAlt": "Downstream disparity estimates under different online stereo rectifiers",
+    "imageType": "Method / depth output",
+    "credit": "VirtualRect authors. Third-party figure rights retained",
+    "imageCredit": "VirtualRect authors. Third-party figure rights retained"
+  },
+  {
+    "id": "s2d-fvo",
+    "name": "S²D-FVO",
+    "summary": "Learns a consistent-scale depth prior from calibrated fisheye video and uses it in spherical visual odometry.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Fisheye VO and depth",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/s2d-fvo-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2611.11934v1/pipeline.png",
+    "imagePage": "https://arxiv.org/html/2611.11934v1/",
+    "imageAlt": "Pipeline from fisheye video through spherical bundle adjustment, depth learning and visual odometry",
+    "imageType": "Method / depth output",
+    "credit": "S²D-FVO authors. Third-party figure rights retained",
+    "imageCredit": "S²D-FVO authors. Third-party figure rights retained"
+  },
+  {
+    "id": "esharp-event-depth",
+    "name": "eSharp",
+    "summary": "Predicts metric depth from a single event camera in difficult exposure and low-light conditions.",
+    "signals": [
+      "Event"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Event-camera depth",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/esharp-event-depth-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2611.08731v1/intro.png",
+    "imagePage": "https://arxiv.org/html/2611.08731v1/",
+    "imageAlt": "Event-to-depth predictions on high-dynamic-range, saturated and low-light examples",
+    "imageType": "Method / depth output",
+    "credit": "eSharp authors. Third-party figure rights retained",
+    "imageCredit": "eSharp authors. Third-party figure rights retained"
+  },
+  {
+    "id": "free-omnimvs",
+    "name": "FreeOmniMVS",
+    "summary": "Combines pairwise evidence from a calibrated four-fisheye rig without selecting one image as reference.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Multi-fisheye stereo",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/free-omnimvs-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2603.15019v1/Framework.png",
+    "imagePage": "https://arxiv.org/html/2603.15019v1/",
+    "imageAlt": "Four calibrated fisheye views enter spherical sweeping and cross-view correlation",
+    "imageType": "Method / depth output",
+    "credit": "FreeOmniMVS authors. Third-party figure rights retained",
+    "imageCredit": "FreeOmniMVS authors. Third-party figure rights retained"
+  },
+  {
+    "id": "depthagent-experts",
+    "name": "DepthAgent",
+    "summary": "An agent selects and combines depth experts per image across perspective, fisheye and panoramic inputs.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Camera-aware depth routing",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/depthagent-experts-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2605.23281v1/overview.png",
+    "imagePage": "https://arxiv.org/html/2605.23281v1/",
+    "imageAlt": "DepthAgent routes an image to different depth estimators and fuses tool responses",
+    "imageType": "Method / depth output",
+    "credit": "DepthAgent authors. Third-party figure rights retained",
+    "imageCredit": "DepthAgent authors. Third-party figure rights retained"
+  },
+  {
+    "id": "pdf-omni",
+    "name": "PDF-Omni",
+    "summary": "Uses distortion-dependent updates to improve omnidirectional stereo around overlapping fisheye seams.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Multi-fisheye stereo",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/pdf-omni-nov20.webp",
+    "imageSource": "https://ynskyang.github.io/pdf-omni-page/static/images/overview.png",
+    "imagePage": "https://ynskyang.github.io/pdf-omni-page/",
+    "imageAlt": "Four-fisheye spherical sweep and distortion-aware recurrent disparity refinement",
+    "imageType": "Method / depth output",
+    "credit": "PDF-Omni authors. Third-party figure rights retained",
+    "imageCredit": "PDF-Omni authors. Third-party figure rights retained"
+  },
+  {
+    "id": "horsevision",
+    "name": "HorseVision",
+    "summary": "Fuses two back-to-back fisheye predictions into panoramic depth and confidence maps.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Dual-fisheye depth",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/horsevision-nov20.webp",
+    "imageSource": "https://koshokai.github.io/HorseVision/assets/outdoor_pano_left_depth.jpg",
+    "imagePage": "https://koshokai.github.io/HorseVision/",
+    "imageAlt": "HorseVision panoramic depth on an outdoor dual-fisheye example",
+    "imageType": "Method / depth output",
+    "credit": "HorseVision authors. Third-party figure rights retained",
+    "imageCredit": "HorseVision authors. Third-party figure rights retained"
+  },
+  {
+    "id": "aria-gen2-depth-stereo",
+    "name": "Aria Gen 2 Depth from Stereo",
+    "summary": "Exports metric stereo depth and optional poses from recordings from Aria Gen 2 glasses.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Ego stereo exporter",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/aria-gen2-depth-stereo-nov20.webp",
+    "imageSource": "https://i.ytimg.com/vi/cN0wVUyIC1M/hqdefault.jpg",
+    "imagePage": "https://www.youtube.com/watch?v=cN0wVUyIC1M",
+    "imageAlt": "Meta Open Source release video cover for the Aria Gen 2 stereo depth exporter",
+    "imageType": "Method / depth output",
+    "credit": "Meta Open Source. Third-party figure rights retained",
+    "imageCredit": "Meta Open Source. Third-party figure rights retained"
+  },
+  {
+    "id": "ptc-depth",
+    "name": "PTC-Depth",
+    "summary": "Uses metric platform displacement and recursive scale updates to stabilize monocular depth across frames.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Streaming scale recovery",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/ptc-depth-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2604.01791v1/fig/Fig_2.jpg",
+    "imagePage": "https://arxiv.org/html/2604.01791v1/",
+    "imageAlt": "PTC-Depth fuses optical flow, wheel odometry and monocular depth predictions",
+    "imageType": "Method / depth output",
+    "credit": "PTC-Depth authors. Third-party figure rights retained",
+    "imageCredit": "PTC-Depth authors. Third-party figure rights retained"
+  },
+  {
+    "id": "stabledepth",
+    "name": "StableDepth",
+    "summary": "Trains a single-frame predictor with video consistency so it can run online on a moving camera.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Online monocular depth",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/stabledepth-nov20.webp",
+    "imageSource": "https://stabledepth.github.io/img/method.png",
+    "imagePage": "https://stabledepth.github.io/",
+    "imageAlt": "StableDepth scene-consistent and scale-invariant depth architecture",
+    "imageType": "Method / depth output",
+    "credit": "StableDepth authors. Third-party figure rights retained",
+    "imageCredit": "StableDepth authors. Third-party figure rights retained"
+  },
+  {
+    "id": "multiheaddepth-homodepth",
+    "name": "MultiHeadDepth / HomoDepth",
+    "summary": "Uses lightweight matching heads for AR stereo, including a homography-conditioned model for misaligned cameras.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Wearable stereo depth",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/multiheaddepth-homodepth-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2411.10013v2/mulh.png",
+    "imagePage": "https://arxiv.org/html/2411.10013v2/",
+    "imageAlt": "MultiHeadDepth structure with an example from the Aria Digital Twin dataset",
+    "imageType": "Method / depth output",
+    "credit": "MultiHeadDepth / HomoDepth authors. Third-party figure rights retained",
+    "imageCredit": "MultiHeadDepth / HomoDepth authors. Third-party figure rights retained"
+  },
+  {
+    "id": "xr-stereo",
+    "name": "Stereo Matching in Time",
+    "summary": "Reuses stereo cost aggregation across time for headset stereo and introduces XR-Stereo.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Streaming headset stereo",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/xr-stereo-nov20.webp",
+    "imageSource": "https://raw.githubusercontent.com/za-cheng/XR-Stereo/master/paper.png",
+    "imagePage": "https://github.com/za-cheng/XR-Stereo",
+    "imageAlt": "XR-Stereo dataset overview with an HMD recording and synthetic indoor scene trajectories",
+    "imageType": "Method / depth output",
+    "credit": "Stereo Matching in Time authors. Third-party figure rights retained",
+    "imageCredit": "Stereo Matching in Time authors. Third-party figure rights retained"
+  },
+  {
+    "id": "point-fusion-video-depth",
+    "name": "Point-Based Online Depth Fusion",
+    "summary": "Fuses past point-cloud estimates with current monocular or stereo depth to reduce flicker in an online stream.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Online depth fusion",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/point-fusion-video-depth-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2304.07435v3/overview.png",
+    "imagePage": "https://arxiv.org/html/2304.07435v3/",
+    "imageAlt": "Online reprojection of a prior point cloud and spatial fusion with a depth estimate",
+    "imageType": "Method / depth output",
+    "credit": "Point-Based Online Depth Fusion authors. Third-party figure rights retained",
+    "imageCredit": "Point-Based Online Depth Fusion authors. Third-party figure rights retained"
+  },
+  {
+    "id": "em-vit-depth",
+    "name": "EM-ViT",
+    "summary": "Updates monocular depth online using sparse metric observations and separates disparity refinement from metric scale.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Online monocular adaptation",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/em-vit-depth-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2611.14958v1/figures/egomde_system_overview_nolabel.png",
+    "imagePage": "https://arxiv.org/html/2611.14958v1/",
+    "imageAlt": "Online depth adaptation combining image, sparse range observations and robot motion",
+    "imageType": "Method / depth output",
+    "credit": "EM-ViT authors. Third-party figure rights retained",
+    "imageCredit": "EM-ViT authors. Third-party figure rights retained"
+  },
+  {
+    "id": "eg360-depth",
+    "name": "EG360",
+    "summary": "Distills panoramic and perspective depth teachers into a compact single-image panoramic model.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Panoramic depth",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/eg360-depth-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2611.16793v1/cross_level_pipeline.png",
+    "imagePage": "https://arxiv.org/html/2611.16793v1/",
+    "imageAlt": "Spherical feature-fusion stage of EG360 panoramic depth prediction",
+    "imageType": "Method / depth output",
+    "credit": "EG360 authors. Third-party figure rights retained",
+    "imageCredit": "EG360 authors. Third-party figure rights retained"
+  },
+  {
+    "id": "dimed-metric-depth",
+    "name": "DIMED",
+    "summary": "Diagnoses scale failures in monocular metric depth with per-image alignment and failure labels.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Metric-depth benchmark",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/dimed-metric-depth-nov20.webp",
+    "imageSource": "https://antigravity-tech.github.io/DIMED/assets/quiz_empty_rgb.jpg",
+    "imagePage": "https://antigravity-tech.github.io/DIMED/",
+    "imageAlt": "Robot-mounted camera view of the empty table used to illustrate scale failure",
+    "imageType": "Method / depth output",
+    "credit": "DIMED authors. Third-party figure rights retained",
+    "imageCredit": "DIMED authors. Third-party figure rights retained"
+  },
+  {
+    "id": "ego2x",
+    "name": "Ego2X",
+    "summary": "Uses object-frame contact estimates to align reconstructed hands and retarget monocular human interactions to robots.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Hands and objects",
+    "tracking": "Depth estimation",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/ego2x-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2611.24138v1/CORE_pipeline_v3.png",
+    "imagePage": "https://arxiv.org/html/2611.24138v1/",
+    "imageAlt": "Object-frame contact extraction, depth alignment and robot retargeting in Ego2X",
+    "imageType": "Method / evaluation",
+    "credit": "Ego2X authors. Third-party figure rights retained",
+    "imageCredit": "Ego2X authors. Third-party figure rights retained"
+  },
+  {
+    "id": "shape-egodex",
+    "name": "SHAPE",
+    "summary": "Uses separate end-effector and robot joint action streams with discrete supervision to learn from egocentric human and robot data.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Hands and arms",
+    "tracking": "Depth estimation",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/shape-egodex-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2611.24585v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2611.24585v1/",
+    "imageAlt": "Human and robot pretraining streams and task transfer in SHAPE",
+    "imageType": "Method / evaluation",
+    "credit": "SHAPE authors. Third-party figure rights retained",
+    "imageCredit": "SHAPE authors. Third-party figure rights retained"
+  },
+  {
+    "id": "ppm-stereo",
+    "name": "PPMStereo",
+    "summary": "Selects useful stereo observations for a bounded temporal memory and adaptively weighs them during disparity refinement.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Scene / camera",
+    "tracking": "Video stereo with memory",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/ppm-stereo-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2510.20178v1/overview_2.png",
+    "imagePage": "https://arxiv.org/html/2510.20178v1/",
+    "imageAlt": "PPMStereo memory selection and disparity aggregation from stereo video",
+    "imageType": "Method / depth output",
+    "credit": "PPMStereo authors. Third-party figure rights retained",
+    "imageCredit": "PPMStereo authors. Third-party figure rights retained"
+  },
+  {
+    "id": "head2wrist",
+    "name": "Head2Wrist",
+    "summary": "Builds a scene from posed Quest 3 footage and renders robot wrist views to train a real wrist-camera policy.",
+    "signals": [
+      "Vision"
+    ],
+    "form": "Not applicable",
+    "coverage": "Hands and scene",
+    "tracking": "Depth estimation",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/head2wrist-nov20.webp",
+    "imageSource": "https://raw.githubusercontent.com/teamROBI/Head2Wrist/main/docs/overview.png",
+    "imagePage": "https://teamrobi.github.io/projects/head2wrist/",
+    "imageAlt": "Head2Wrist projects human head-camera demonstrations into simulated robot wrist-camera views",
+    "imageType": "Method / evaluation",
+    "credit": "Head2Wrist authors. Third-party figure rights retained",
+    "imageCredit": "Head2Wrist authors. Third-party figure rights retained"
+  },
+  {
+    "id": "hubego-100k",
+    "name": "HubEgo-100K",
+    "summary": "Collects first-person recordings of skilled work with synchronized inertial data from a head-mounted phone.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "form": "Not applicable",
+    "coverage": "Hands, head and environment",
+    "tracking": "Egocentric workplace video",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/hubego-100k-nov20.webp",
+    "imageSource": "https://arxiv.org/html/2611.21938v1/figures/teaser22/t02.jpg",
+    "imagePage": "https://arxiv.org/html/2611.21938v1/",
+    "imageAlt": "Example skilled work from a head-mounted phone video in the authors’ reported release",
+    "imageType": "Dataset sample",
+    "credit": "HubEgo-100K authors. Third-party figure rights retained",
+    "imageCredit": "HubEgo-100K authors. Third-party figure rights retained"
   }
 ]

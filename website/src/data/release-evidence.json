@@ -7263,6 +7263,14 @@
         {
           "label": "Verified source file (2026-10-19)",
           "url": "https://github.com/DepthAnything/Video-Depth-Anything/blob/main/benchmark/infer/infer.py"
+        },
+        {
+          "label": "Verified streaming script",
+          "url": "https://github.com/DepthAnything/Video-Depth-Anything/blob/main/run_streaming.py"
+        },
+        {
+          "label": "Metric Small checkpoint files",
+          "url": "https://huggingface.co/depth-anything/Metric-Video-Depth-Anything-Small/tree/main"
         }
       ],
       "notes": [
@@ -8518,10 +8526,10 @@
       "verified": "2026-10-19"
     },
     "depth-any-camera": {
-      "status": "partial",
+      "status": "open",
       "commercial": false,
       "availability": "Research software",
-      "softwareStatus": "MIT code; model-weight license not independently verified",
+      "softwareStatus": "MIT author implementation and MIT model card. Public indoor and outdoor checkpoints and configs.",
       "evidence": [
         {
           "label": "Author implementation",
@@ -8534,12 +8542,17 @@
         {
           "label": "Verified source file (2026-10-19)",
           "url": "https://github.com/yuliangguo/depth_any_camera/blob/main/dac/models/ops/src/vision.cpp"
+        },
+        {
+          "label": "Author checkpoint manifest and terms",
+          "url": "https://huggingface.co/yuliangguo/depth-any-camera/tree/main"
         }
       ],
       "notes": [
         "Software and model-weight / dataset permissions are separate; public availability is not a permissive license."
       ],
-      "verified": "2026-10-19"
+      "verified": "2026-11-20",
+      "modelStatus": "Ungated MIT checkpoint files and configurations. Separate source-dataset terms."
     },
     "panda-depth": {
       "status": "partial",
@@ -11341,10 +11354,10 @@
       "verified": "2026-10-19"
     },
     "dex-fisheye": {
-      "status": "unknown",
+      "status": "partial",
       "commercial": false,
-      "availability": "Paper / announced implementation",
-      "softwareStatus": "Official repository currently contains only an Apache-2.0 LICENSE; implementation and model weights not verified",
+      "availability": "Research software",
+      "softwareStatus": "Apache-2.0 author code and DEX adapter files. Backbone model weights and source datasets retain separate terms.",
       "evidence": [
         {
           "label": "Official repository",
@@ -11353,11 +11366,29 @@
         {
           "label": "Source license",
           "url": "https://github.com/Suchisrit/DEX/blob/main/LICENSE"
+        },
+        {
+          "label": "Released author training entry point",
+          "url": "https://github.com/Suchisrit/DEX/blob/main/train.py"
+        },
+        {
+          "label": "Released author evaluation entry point",
+          "url": "https://github.com/Suchisrit/DEX/blob/main/eval.py"
+        },
+        {
+          "label": "Public DEX adapter files",
+          "url": "https://huggingface.co/Rit888/DEX/tree/main"
+        },
+        {
+          "label": "KITTI-360 evaluation subset",
+          "url": "https://huggingface.co/datasets/Rit888/DEX_KITTI360_Eval"
         }
       ],
       "notes": [
         "Software, model weights and source datasets retain separate terms; public repository availability alone is not a permissive model license."
-      ]
+      ],
+      "modelStatus": "Ungated Apache-2.0 DEX adapters for Depth Anything, MiDaS and UniDepth.",
+      "verified": "2026-11-20"
     },
     "x-lens": {
       "status": "partial",
@@ -11393,7 +11424,7 @@
       "notes": [
         "Software, model weights and source datasets retain separate terms; public repository availability alone is not a permissive model license."
       ],
-      "verified": "2026-10-19",
+      "verified": "2026-11-20",
       "dataStatus": "Data files verified; public file listing; cc-by-nc-4.0.",
       "modelStatus": "Model files verified; automatic access agreement required; cc-by-nc-4.0."
     },
@@ -11450,6 +11481,10 @@
         {
           "label": "Verified data file manifest",
           "url": "https://huggingface.co/datasets/Soon122/PanoCARLA/tree/main"
+        },
+        {
+          "label": "PanoCARLA generation source",
+          "url": "https://github.com/ChuanxinSong/PanoCARLA"
         }
       ],
       "notes": [
@@ -18000,6 +18035,215 @@
           "url": "https://github.com/Eidon-AI/eidon-sim"
         }
       ]
+    },
+    "esharp-event-depth": {
+      "status": "partial",
+      "availability": "Research reference",
+      "evidence": [
+        {
+          "label": "Implementation and release status",
+          "url": "https://github.com/rice-computational-imaging/eSharp"
+        },
+        {
+          "label": "Code license",
+          "url": "https://github.com/rice-computational-imaging/eSharp/blob/main/LICENSE"
+        },
+        {
+          "label": "Model file manifest",
+          "url": "https://huggingface.co/Rogerdai2026/esharp-checkpoints/tree/main"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "MIT implementation",
+      "modelStatus": "Ungated Lotus and Marigold files. Model license unverified"
+    },
+    "pdf-omni": {
+      "status": "partial",
+      "availability": "Research reference",
+      "evidence": [
+        {
+          "label": "Repository and terms",
+          "url": "https://github.com/ynskyang/PDF-Omni"
+        },
+        {
+          "label": "Checkpoints",
+          "url": "https://github.com/ynskyang/PDF-Omni/blob/main/scripts/download_checkpoints.sh"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "CC BY-NC 4.0 source. Public research checkpoint downloader"
+    },
+    "horsevision": {
+      "status": "partial",
+      "availability": "Research reference",
+      "evidence": [
+        {
+          "label": "Project repository",
+          "url": "https://github.com/koshokai/HorseVision"
+        },
+        {
+          "label": "Release assets",
+          "url": "https://github.com/koshokai/HorseVision/releases/tag/v1.0"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "Source visible, license unverified. Six trained checkpoint files available"
+    },
+    "aria-gen2-depth-stereo": {
+      "status": "partial",
+      "availability": "Public capture tool",
+      "evidence": [
+        {
+          "label": "Exporter source",
+          "url": "https://github.com/facebookresearch/projectaria_gen2_depth_from_stereo/blob/main/export_depth_from_stereo.py"
+        },
+        {
+          "label": "FoundationStereo dependency",
+          "url": "https://github.com/NVlabs/FoundationStereo"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "Apache-2.0 exporter. Separate FoundationStereo model terms"
+    },
+    "ptc-depth": {
+      "status": "open",
+      "availability": "Research reference",
+      "evidence": [
+        {
+          "label": "Repository release and scope",
+          "url": "https://github.com/ajou-arrl/ptc-depth"
+        },
+        {
+          "label": "Code license",
+          "url": "https://github.com/ajou-arrl/ptc-depth/blob/main/LICENSE"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "BSD-3-Clause implementation with Python segmentation example"
+    },
+    "stabledepth": {
+      "status": "unknown",
+      "availability": "Research reference",
+      "evidence": [
+        {
+          "label": "Release status",
+          "url": "https://stabledepth.github.io/"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "Code listed as forthcoming on the official project page"
+    },
+    "multiheaddepth-homodepth": {
+      "status": "open",
+      "availability": "Public capture tool",
+      "evidence": [
+        {
+          "label": "Implementation",
+          "url": "https://github.com/UCI-ISA-Lab/MultiHeadDepth-HomoDepth"
+        },
+        {
+          "label": "Checkpoint files",
+          "url": "https://github.com/UCI-ISA-Lab/MultiHeadDepth-HomoDepth/tree/main/ckpt"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "MIT source. Author checkpoint directory available"
+    },
+    "xr-stereo": {
+      "status": "partial",
+      "availability": "Public capture tool",
+      "evidence": [
+        {
+          "label": "Data and license",
+          "url": "https://github.com/za-cheng/XR-Stereo"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "Author XR-Stereo dataset links. Implementation not verified"
+    },
+    "point-fusion-video-depth": {
+      "status": "partial",
+      "availability": "Research reference",
+      "evidence": [
+        {
+          "label": "Archived implementation and checkpoints",
+          "url": "https://github.com/facebookresearch/TemporallyConsistentDepth"
+        },
+        {
+          "label": "Source terms",
+          "url": "https://github.com/facebookresearch/TemporallyConsistentDepth/blob/main/LICENSE"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "Archived implementation with repository-specific terms and separate dependencies"
+    },
+    "dimed-metric-depth": {
+      "status": "partial",
+      "availability": "Research reference",
+      "evidence": [
+        {
+          "label": "Evaluation source",
+          "url": "https://github.com/antigravity-tech/DIMED"
+        },
+        {
+          "label": "Diagnostic data",
+          "url": "https://huggingface.co/datasets/hljiang/DIMED"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "Evaluation source and diagnostic data are accessible. Repository code license was not verified"
+    },
+    "ppm-stereo": {
+      "status": "partial",
+      "availability": "Research reference",
+      "evidence": [
+        {
+          "label": "Author implementation and checkpoint links",
+          "url": "https://github.com/cocowy1/PPMStereo"
+        },
+        {
+          "label": "MIT implementation license",
+          "url": "https://github.com/cocowy1/PPMStereo/blob/main/LICENSE"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "MIT implementation and two public checkpoint links. Checkpoint-specific license not verified."
+    },
+    "head2wrist": {
+      "status": "open",
+      "availability": "Public capture tool",
+      "evidence": [
+        {
+          "label": "Code terms",
+          "url": "https://github.com/teamROBI/Head2Wrist/blob/main/LICENSE"
+        },
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/jkim50104/Head2Wrist-policy-cube-bowl"
+        },
+        {
+          "label": "Dataset card",
+          "url": "https://huggingface.co/datasets/jkim50104/Head2Wrist-cube-bowl-252ep"
+        }
+      ],
+      "verified": "2026-11-20",
+      "softwareStatus": "MIT code. Public author model and dataset cards carry their own terms."
+    },
+    "hubego-100k": {
+      "status": "partial",
+      "availability": "Research dataset",
+      "evidence": [
+        {
+          "label": "Dataset card and terms",
+          "url": "https://huggingface.co/datasets/HubLabs/HubEgo-100K"
+        },
+        {
+          "label": "Published metadata and files",
+          "url": "https://huggingface.co/datasets/HubLabs/HubEgo-100K/tree/main"
+        }
+      ],
+      "verified": "2026-11-20",
+      "dataStatus": "Public CC BY 4.0 data card. Automatic access gating"
     }
   }
 }

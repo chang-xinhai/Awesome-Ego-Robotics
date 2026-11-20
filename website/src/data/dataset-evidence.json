@@ -15370,6 +15370,56 @@
       "verified": "2026-11-15",
       "dataLicense": "Repository states CC BY-NC 4.0; source asset terms may vary.",
       "releaseScope": "Official linked images and annotations ZIP endpoints respond; full archives not independently audited."
+    },
+    "hubego-100k": {
+      "name": "HubEgo-100K",
+      "reportedScale": {
+        "hours": 10124,
+        "scope": "Paper reports 12,227 contributors across 15,548 settings and 30 work categories for v1.0.",
+        "episodes": 72754
+      },
+      "access": "Gated download",
+      "accessNote": "Hugging Face automatic access requires acknowledging the terms. The complete archive was not independently audited.",
+      "formats": [
+        "LeRobot",
+        "MCAP"
+      ],
+      "observations": "1080p egocentric video and 100 Hz phone IMU",
+      "recordedStreams": "1080p egocentric video and 100 Hz phone IMU",
+      "recordedSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "labels": "Machine-generated action and language annotations",
+      "bodyCoverage": "Hands, head and environment",
+      "cameraSetup": "One head-mounted phone",
+      "coordinateFrame": "First-person RGB and device inertial frame",
+      "calibration": "Time-aligned RGB and IMU",
+      "tasks": [
+        "Skilled work",
+        "Daily manipulation"
+      ],
+      "dataRole": "egocentric",
+      "scaleType": "hours",
+      "dataLicense": "CC BY 4.0",
+      "releaseScope": "v1.0 metadata and file tree available under the public dataset card. 100K is the project’s target.",
+      "limitations": "Data card is public. Download requires Hugging Face access acknowledgment. Pose and robot actions are not provided as ground truth.",
+      "datasetUrl": "https://huggingface.co/datasets/HubLabs/HubEgo-100K",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.21938"
+        },
+        {
+          "label": "Detailed method",
+          "url": "https://arxiv.org/html/2611.21938v1/"
+        },
+        {
+          "label": "Data (CC BY 4.0, gated)",
+          "url": "https://huggingface.co/datasets/HubLabs/HubEgo-100K"
+        }
+      ],
+      "verified": "2026-11-20"
     }
   }
 }
