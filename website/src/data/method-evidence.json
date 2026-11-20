@@ -75652,6 +75652,10 @@
         {
           "label": "Detailed method",
           "url": "https://arxiv.org/html/2611.10518v1/"
+        },
+        {
+          "label": "NeurIPS 2026 conference poster",
+          "url": "https://neurips.cc/virtual/2026/poster/151291"
         }
       ],
       "toolTopics": [
@@ -77268,7 +77272,7 @@
       "target": "Panoramic depth",
       "scale": "Learned depth scale. Paper reports metric evaluation without ground-truth scale alignment.",
       "temporal": "Per-panorama inference. Jetson Orin NX timings are per image.",
-      "limitations": "Evaluation covers panoramic datasets and a specified embedded runtime. No public implementation was verified.",
+      "limitations": "Evaluated on panoramic datasets. The paper reports 35 FPS on Jetson Orin NX 16 GB in MAXN mode and announces a future code release.",
       "robotEvidence": "Capture-processing reference. Direct ego-robotics use is unverified.",
       "verified": "2026-11-20",
       "sources": [
@@ -77304,7 +77308,7 @@
         "calibration": "Assumes equirectangular projection and spherical direction encoding. No native fisheye input is documented.",
         "temporal": "Per-panorama inference. Jetson Orin NX timings are per image.",
         "captureRelevance": "Capture-processing reference. Direct ego-robotics use is unverified.",
-        "limitations": "Evaluation covers panoramic datasets and a specified embedded runtime. No public implementation was verified.",
+        "limitations": "Evaluated on panoramic datasets. The paper reports 35 FPS on Jetson Orin NX 16 GB in MAXN mode and announces a future code release.",
         "systemType": "Panoramic depth"
       },
       "fieldSources": {
