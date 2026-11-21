@@ -15719,7 +15719,7 @@
           "url": "https://huggingface.co/datasets/humanola-inc/egocentric-sample"
         },
         {
-          "label": "Data files (CC BY 4.0)",
+          "label": "Data (CC BY 4.0, file tree)",
           "url": "https://huggingface.co/datasets/humanola-inc/egocentric-sample/tree/main"
         }
       ],
@@ -15769,7 +15769,7 @@
           "url": "https://huggingface.co/datasets/arete-robotics/stereo-hands-sample"
         },
         {
-          "label": "Data files (CC BY 4.0)",
+          "label": "Data (CC BY 4.0, file tree)",
           "url": "https://huggingface.co/datasets/arete-robotics/stereo-hands-sample/tree/main"
         },
         {
@@ -15822,7 +15822,7 @@
           "url": "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled"
         },
         {
-          "label": "Data files (CC BY 4.0)",
+          "label": "Data (CC BY 4.0, file tree)",
           "url": "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled/tree/main"
         }
       ],
@@ -15926,11 +15926,11 @@
           "url": "https://drive.google.com/drive/folders/1YdC2a0_KTZ9xix_HyqNMPCrClpm0-XFU"
         },
         {
-          "label": "Download (3 GB sample)",
+          "label": "Data (3 GB sample)",
           "url": "https://drive.google.com/file/d/1dJwK5x8xsaCazz5xPGJ2OKFIWrd9rQT5/view"
         },
         {
-          "label": "Paper training recipe",
+          "label": "Paper",
           "url": "https://arxiv.org/html/2501.09898v1#S4.SS1"
         }
       ],
@@ -16023,7 +16023,7 @@
           "url": "https://sintel.is.tuebingen.mpg.de/stereo"
         },
         {
-          "label": "Download (2.5 GB)",
+          "label": "Data (2.5 GB archive)",
           "url": "https://files.is.tue.mpg.de/jwulff/sintel/MPI-Sintel-stereo-training-20150305.zip"
         }
       ],
@@ -16120,7 +16120,7 @@
           "url": "https://github.com/megvii-research/CREStereo"
         },
         {
-          "label": "Related paper",
+          "label": "Paper",
           "url": "https://arxiv.org/abs/2203.11483"
         }
       ],
@@ -16453,7 +16453,7 @@
           "url": "https://huggingface.co/datasets/facebook/xrstereo"
         },
         {
-          "label": "Data files (CC BY-NC 4.0)",
+          "label": "Data (CC BY-NC 4.0, file tree)",
           "url": "https://huggingface.co/datasets/facebook/xrstereo/tree/main"
         },
         {
@@ -16522,7 +16522,7 @@
           "url": "https://huggingface.co/datasets/nvidia/ffs_stereo4d"
         },
         {
-          "label": "Data files (disparity only)",
+          "label": "Data (disparity files only)",
           "url": "https://huggingface.co/datasets/nvidia/ffs_stereo4d/tree/main"
         },
         {
@@ -16530,7 +16530,7 @@
           "url": "https://stereo4d.github.io/"
         },
         {
-          "label": "Fast-FoundationStereo paper",
+          "label": "Paper",
           "url": "https://arxiv.org/abs/2512.11130"
         }
       ],
@@ -16882,7 +16882,7 @@
           "url": "https://huggingface.co/datasets/songlinwei/HISS"
         },
         {
-          "label": "Data files (CC BY-NC 4.0)",
+          "label": "Data (CC BY-NC 4.0, file tree)",
           "url": "https://huggingface.co/datasets/songlinwei/HISS/tree/main"
         },
         {
