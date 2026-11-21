@@ -33226,7 +33226,7 @@
       "summary": "Uses a plain Vision Transformer to predict stereo disparity without cost volumes or iterative GRUs.",
       "input": "Rectified left / right camera images",
       "output": "Dense disparity; calibrated camera-frame depth / point cloud",
-      "supervision": "Supervised stereo disparity training",
+      "supervision": "Base pretraining uses FSD alone. High-resolution training uses an internal 2.4M-scene rendered corpus plus the public sources named in §3.4. The separate ETH3D leaderboard recipe uses FSD and official Middlebury/ETH3D train splits.",
       "robotEvidence": "Capture-processing reference; no robot-policy result asserted",
       "inputSignals": [
         "Vision"
@@ -33238,14 +33238,14 @@
       "coordinateFrame": "Reference camera",
       "scale": "Metric conversion requires calibrated focal length and baseline",
       "temporal": "Per stereo pair",
-      "evaluation": "ETH3D, SimpleProc and XYZ-IBD stereo evaluations",
+      "evaluation": "ETH3D, Middlebury, KITTI and authors’ SimpleProc / reprocessed XYZ-IBD protocols. SimpleProc and XYZ-IBD serve evaluation.",
       "policyInput": "Not a policy-learning method",
       "implementation": "Public paper, project results and supplementary benchmark material",
       "limitations": "Model code / checkpoint release is not verified; reported A100 timing is hardware-specific.",
       "outputSpace": "camera",
       "evidenceLevel": "reconstruction",
       "trainingType": "supervised",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "toolTopics": [
         "depth"
       ],
@@ -33281,6 +33281,10 @@
         {
           "label": "Official project",
           "url": "https://intrinsic-experimental.github.io/nbs-website/"
+        },
+        {
+          "url": "https://arxiv.org/html/2608.28933v1#S3.SS4",
+          "label": "Training and evaluation setup"
         }
       ],
       "fieldSources": {
@@ -33294,7 +33298,7 @@
           "https://arxiv.org/html/2608.28933v1"
         ],
         "supervision": [
-          "https://arxiv.org/html/2608.28933v1"
+          "https://arxiv.org/html/2608.28933v1#S3.SS4"
         ],
         "robotEvidence": [
           "https://arxiv.org/html/2608.28933v1"
@@ -33324,7 +33328,7 @@
           "https://arxiv.org/html/2608.28933v1"
         ],
         "evaluation": [
-          "https://arxiv.org/html/2608.28933v1"
+          "https://arxiv.org/html/2608.28933v1#S3.SS4"
         ],
         "policyInput": [
           "https://arxiv.org/html/2608.28933v1"
@@ -33376,8 +33380,12 @@
         ],
         "perception.limitations": [
           "https://arxiv.org/html/2608.28933v1"
+        ],
+        "trainingData": [
+          "https://arxiv.org/html/2608.28933v1#S3.SS4"
         ]
-      }
+      },
+      "trainingData": "Base pretraining uses FSD alone. High-resolution training uses an internal 2.4M-scene rendered corpus plus the public sources named in §3.4. The separate ETH3D leaderboard recipe uses FSD and official Middlebury/ETH3D train splits."
     },
     "nsl": {
       "summary": "Decodes active structured-light images in neural feature space, with optional depth-prior refinement.",
@@ -33550,7 +33558,7 @@
       "summary": "Distills and prunes a stereo foundation model for faster zero-shot disparity inference.",
       "input": "Rectified left / right camera images",
       "output": "Dense disparity; calibrated camera-frame depth / point cloud",
-      "supervision": "Synthetic disparity, real-image pseudo-labels and teacher distillation",
+      "supervision": "Synthetic disparity and FFS Stereo4D disparity pseudo-labels derived by the FoundationStereo teacher on real VR180 video.",
       "robotEvidence": "Capture-processing reference; no robot-policy result asserted",
       "inputSignals": [
         "Vision"
@@ -33562,14 +33570,14 @@
       "coordinateFrame": "Reference camera",
       "scale": "Metric conversion requires calibrated focal length and baseline",
       "temporal": "Per stereo pair",
-      "evaluation": "Middlebury, ETH3D, KITTI, Booster and captured manipulation scenes",
+      "evaluation": "Middlebury, ETH3D, KITTI, Booster and captured manipulation scenes.",
       "policyInput": "Not a policy-learning method",
       "implementation": "Official PyTorch / TensorRT inference, checkpoints and deployment documentation",
       "limitations": "Reported speed depends on model, GPU, resolution and iteration count; commercial TAO variant has separate terms.",
       "outputSpace": "camera",
       "evidenceLevel": "reconstruction",
       "trainingType": "supervised",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "toolTopics": [
         "depth"
       ],
@@ -33609,6 +33617,10 @@
         {
           "label": "Official project",
           "url": "https://nvlabs.github.io/Fast-FoundationStereo/"
+        },
+        {
+          "url": "https://huggingface.co/datasets/nvidia/ffs_stereo4d",
+          "label": "FFS Stereo4D label release"
         }
       ],
       "fieldSources": {
@@ -33622,7 +33634,8 @@
           "https://arxiv.org/html/2512.11130v1"
         ],
         "supervision": [
-          "https://arxiv.org/html/2512.11130v1"
+          "https://arxiv.org/html/2512.11130v1",
+          "https://huggingface.co/datasets/nvidia/ffs_stereo4d"
         ],
         "robotEvidence": [
           "https://arxiv.org/html/2512.11130v1"
@@ -33704,8 +33717,13 @@
         ],
         "perception.limitations": [
           "https://arxiv.org/html/2512.11130v1"
+        ],
+        "trainingData": [
+          "https://arxiv.org/html/2512.11130v1",
+          "https://huggingface.co/datasets/nvidia/ffs_stereo4d"
         ]
-      }
+      },
+      "trainingData": "Synthetic disparity and FFS Stereo4D disparity pseudo-labels derived by the FoundationStereo teacher on real VR180 video."
     },
     "bridgedepth": {
       "summary": "Aligns monocular context with stereo hypotheses during iterative depth reasoning.",
@@ -33868,7 +33886,7 @@
       "summary": "Uses scalable global correspondence to jointly estimate stereo disparity, occlusion and confidence.",
       "input": "Rectified left / right camera images",
       "output": "Disparity, occlusion and confidence; metric conversion needs calibration",
-      "supervision": "Supervised stereo disparity training",
+      "supervision": "Original recipe: Scene Flow, TartanAir and CREStereo. Expanded recipes add FSD and additional sources including IRS, Falling Things, Virtual KITTI 2, DrivingStereo and SMD-Nets data, with later multiple-resolution training.",
       "robotEvidence": "Capture-processing reference; no robot-policy result asserted",
       "inputSignals": [
         "Vision"
@@ -33880,14 +33898,14 @@
       "coordinateFrame": "Reference camera",
       "scale": "Metric conversion requires calibrated focal length and baseline",
       "temporal": "Per stereo pair",
-      "evaluation": "ETH3D, Middlebury v3 and Booster",
+      "evaluation": "Zero-shot protocols include ETH3D, Middlebury and KITTI; later revisions have distinct leaderboard/checkpoint versions.",
       "policyInput": "Not a policy-learning method",
       "implementation": "Official inference checkpoints and ONNX / TensorRT export; no training pipeline",
       "limitations": "Released model differs from some leaderboard versions; ideal pinhole rectification is required; research-only terms.",
       "outputSpace": "camera",
       "evidenceLevel": "reconstruction",
       "trainingType": "supervised",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "toolTopics": [
         "depth"
       ],
@@ -33927,6 +33945,14 @@
         {
           "label": "Official project",
           "url": "https://junhong-3dv.github.io/s2m2-project/"
+        },
+        {
+          "url": "https://www.openaccess.thecvf.com/content/ICCV2025/supplemental/Min_S2M2_Scalable_Stereo_ICCV_2025_supplemental.pdf",
+          "label": "ICCV training recipe supplement"
+        },
+        {
+          "url": "https://arxiv.org/html/2507.13229v3",
+          "label": "Versioned paper and expanded training protocol"
         }
       ],
       "fieldSources": {
@@ -33940,7 +33966,8 @@
           "https://arxiv.org/html/2507.13229v1"
         ],
         "supervision": [
-          "https://arxiv.org/html/2507.13229v1"
+          "https://www.openaccess.thecvf.com/content/ICCV2025/supplemental/Min_S2M2_Scalable_Stereo_ICCV_2025_supplemental.pdf",
+          "https://arxiv.org/html/2507.13229v3"
         ],
         "robotEvidence": [
           "https://arxiv.org/html/2507.13229v1"
@@ -33970,7 +33997,7 @@
           "https://arxiv.org/html/2507.13229v1"
         ],
         "evaluation": [
-          "https://arxiv.org/html/2507.13229v1"
+          "https://www.openaccess.thecvf.com/content/ICCV2025/supplemental/Min_S2M2_Scalable_Stereo_ICCV_2025_supplemental.pdf"
         ],
         "policyInput": [
           "https://arxiv.org/html/2507.13229v1"
@@ -34022,8 +34049,13 @@
         ],
         "perception.limitations": [
           "https://arxiv.org/html/2507.13229v1"
+        ],
+        "trainingData": [
+          "https://www.openaccess.thecvf.com/content/ICCV2025/supplemental/Min_S2M2_Scalable_Stereo_ICCV_2025_supplemental.pdf",
+          "https://arxiv.org/html/2507.13229v3"
         ]
-      }
+      },
+      "trainingData": "Original recipe: Scene Flow, TartanAir and CREStereo. Expanded recipes add FSD and additional sources including IRS, Falling Things, Virtual KITTI 2, DrivingStereo and SMD-Nets data, with later multiple-resolution training."
     },
     "smoe-stereo": {
       "summary": "Selectively adapts vision foundation features with mixture-of-experts modules for robust stereo.",
@@ -34186,7 +34218,7 @@
       "summary": "Adapts monocular foundation features and long-range cost filtering for zero-shot stereo disparity.",
       "input": "Rectified left / right camera images",
       "output": "Dense disparity; calibrated camera-frame depth / point cloud",
-      "supervision": "Synthetic stereo disparity with frozen monocular feature priors",
+      "supervision": "FSD, Scene Flow, MPI Sintel Stereo, CREStereo, Falling Things, InStereo2K and Virtual KITTI 2.",
       "robotEvidence": "Capture-processing reference; no robot-policy result asserted",
       "inputSignals": [
         "Vision"
@@ -34198,14 +34230,14 @@
       "coordinateFrame": "Reference camera",
       "scale": "Metric conversion requires calibrated focal length and baseline",
       "temporal": "Per stereo pair",
-      "evaluation": "Scene Flow, Middlebury, ETH3D, KITTI and captured indoor / outdoor stereo",
+      "evaluation": "Middlebury, ETH3D and KITTI zero-shot; Scene Flow and captured indoor/outdoor stereo also reported.",
       "policyInput": "Not a policy-learning method",
       "implementation": "Official inference, research checkpoints, FSD synthetic data and deployment examples",
       "limitations": "Research release is non-commercial; NVIDIA TAO commercial models have separate terms.",
       "outputSpace": "camera",
       "evidenceLevel": "reconstruction",
       "trainingType": "supervised",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "toolTopics": [
         "depth"
       ],
@@ -34245,6 +34277,14 @@
         {
           "label": "Official project",
           "url": "https://nvlabs.github.io/FoundationStereo/"
+        },
+        {
+          "url": "https://arxiv.org/html/2501.09898v1#S4.SS1",
+          "label": "Original research training mixture"
+        },
+        {
+          "url": "https://github.com/NVlabs/FoundationStereo#fsd-dataset",
+          "label": "FSD author distribution"
         }
       ],
       "fieldSources": {
@@ -34258,7 +34298,8 @@
           "https://arxiv.org/html/2501.09898v1"
         ],
         "supervision": [
-          "https://arxiv.org/html/2501.09898v1"
+          "https://arxiv.org/html/2501.09898v1#S4.SS1",
+          "https://github.com/NVlabs/FoundationStereo#fsd-dataset"
         ],
         "robotEvidence": [
           "https://arxiv.org/html/2501.09898v1"
@@ -34288,7 +34329,7 @@
           "https://arxiv.org/html/2501.09898v1"
         ],
         "evaluation": [
-          "https://arxiv.org/html/2501.09898v1"
+          "https://arxiv.org/html/2501.09898v1#S4.SS1"
         ],
         "policyInput": [
           "https://arxiv.org/html/2501.09898v1"
@@ -34340,8 +34381,13 @@
         ],
         "perception.limitations": [
           "https://arxiv.org/html/2501.09898v1"
+        ],
+        "trainingData": [
+          "https://arxiv.org/html/2501.09898v1#S4.SS1",
+          "https://github.com/NVlabs/FoundationStereo#fsd-dataset"
         ]
-      }
+      },
+      "trainingData": "FSD, Scene Flow, MPI Sintel Stereo, CREStereo, Falling Things, InStereo2K and Virtual KITTI 2."
     },
     "defom-stereo": {
       "summary": "Uses a depth foundation model to initialize and guide recurrent stereo matching.",
@@ -61214,7 +61260,7 @@
       "coordinateFrame": "Reference / left camera; RGB-aligned frame for the corresponding restoration variant",
       "scale": "Stereo baseline / focal calibration or supplied raw-depth units anchor scale; restored pixels remain estimates.",
       "temporal": "Independent stereo-pair inference; internal refinement iterations are not video memory.",
-      "supervision": "Synthetic indoor / tabletop disparity supervision with material-diverse rendering; stereo consistency guides diffusion inference.",
+      "supervision": "HISS rendered RGB and IR training data with stereo geometry. The official HISS release contains separate train and validation archives.",
       "robotEvidence": "Real-robot transparent / reflective-object manipulation experiments; not a general policy-learning model",
       "inputSignals": [
         "Vision",
@@ -61231,7 +61277,7 @@
       "outputSpace": "camera",
       "evidenceLevel": "reconstruction",
       "trainingType": "supervised",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "sources": [
         {
           "label": "Primary paper",
@@ -61248,6 +61294,10 @@
         {
           "label": "Official project",
           "url": "https://pku-epic.github.io/D3RoMa/"
+        },
+        {
+          "label": "HISS training archives",
+          "url": "https://huggingface.co/datasets/songlinwei/HISS"
         }
       ],
       "toolTopics": [
@@ -61299,7 +61349,8 @@
           "https://arxiv.org/html/2409.14365"
         ],
         "supervision": [
-          "https://arxiv.org/html/2409.14365"
+          "https://huggingface.co/datasets/songlinwei/HISS",
+          "https://github.com/songlin/d3roma#training"
         ],
         "robotEvidence": [
           "https://arxiv.org/html/2409.14365"
@@ -61379,8 +61430,13 @@
         ],
         "perception.systemType": [
           "https://arxiv.org/html/2409.14365"
+        ],
+        "trainingData": [
+          "https://huggingface.co/datasets/songlinwei/HISS",
+          "https://github.com/songlin/d3roma#training"
         ]
-      }
+      },
+      "trainingData": "HISS rendered RGB and IR training data with stereo geometry. The official HISS release contains separate train and validation archives."
     },
     "rlhnd": {
       "summary": "Uses video foundation features to recover bimanual pose, surface contact and inferred force from RGB clips.",
@@ -77806,6 +77862,1356 @@
           "https://huggingface.co/jkim50104/Head2Wrist-policy-cube-bowl",
           "https://huggingface.co/datasets/jkim50104/Head2Wrist-cube-bowl-252ep"
         ]
+      }
+    },
+    "foundationstereo-fsd": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Rendered training pairs with diverse illumination, objects and environments used by FoundationStereo and subsequent stereo models.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered rectified RGB pairs from a large diverse scene generator.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Dense rendered disparity.",
+      "implementation": "Public archive links",
+      "evidenceLevel": "tool",
+      "limitations": "The authors link separate full (>1 TB) and sample distributions. FSD is distinct from the real-image FFS Stereo4D pseudo-labels.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://github.com/NVlabs/FoundationStereo#fsd-dataset"
+        },
+        {
+          "label": "Data (full archive)",
+          "url": "https://drive.google.com/drive/folders/1YdC2a0_KTZ9xix_HyqNMPCrClpm0-XFU"
+        },
+        {
+          "label": "Download (3 GB sample)",
+          "url": "https://drive.google.com/file/d/1dJwK5x8xsaCazz5xPGJ2OKFIWrd9rQT5/view"
+        },
+        {
+          "label": "Paper training recipe",
+          "url": "https://arxiv.org/html/2501.09898v1#S4.SS1"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Render cameras define the stereo geometry.",
+        "captureRelevance": "FoundationStereo training, S²M² expanded recipe and initial NBS training.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "scene-flow-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "FlyingThings3D, Monkaa and Driving provide synthetic binocular observations and pixelwise geometry.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered left/right images in clean/final passes across three subsets.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Ground-truth rendered disparity, flow and disparity change.",
+      "implementation": "Public download",
+      "evidenceLevel": "tool",
+      "limitations": "FlyingThings3D, Driving and Monkaa are parts of the same release. Standard training lists may omit difficult FlyingThings3D samples.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/1512.02134"
+        },
+        {
+          "label": "Data",
+          "url": "https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use subset camera data and explicit scene splits.",
+        "captureRelevance": "Reported training source for FoundationStereo, S²M² and NBS.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "mpi-sintel-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Procedurally rendered right view and dense disparity for the Sintel training scenes.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered left/right views in clean and final passes.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Dense rendered disparity with occlusion and out-of-frame masks.",
+      "implementation": "Public download",
+      "evidenceLevel": "tool",
+      "limitations": "The stereo release has its own download and is separate from optical-flow test data.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://sintel.is.tuebingen.mpg.de/stereo"
+        },
+        {
+          "label": "Download (2.5 GB)",
+          "url": "https://files.is.tue.mpg.de/jwulff/sintel/MPI-Sintel-stereo-training-20150305.zip"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "The right camera is translated 0.10 m parallel to the image plane.",
+        "captureRelevance": "FoundationStereo training and video stereo evaluation for other models.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "tartanair-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Photorealistic virtual navigation trajectories ship synchronized binocular RGB, simulator depth and camera poses.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered left/right RGB, depth and poses across diverse indoor and outdoor trajectories.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Rendered per-view depth and derived disparity when converted with the rig geometry.",
+      "implementation": "Public download",
+      "evidenceLevel": "tool",
+      "limitations": "TartanAir, TartanAir v2, and TartanGround have separate data contracts.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2003.14338"
+        },
+        {
+          "label": "Data",
+          "url": "https://theairlab.org/tartanair-dataset/"
+        },
+        {
+          "label": "Tools",
+          "url": "https://github.com/castacks/tartanair_tools"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use release-specific camera intrinsics, baseline and pose conventions.",
+        "captureRelevance": "Training source in S²M²’s original recipe and NBS’s high-resolution recipe.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "crestereo-training-data": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Synthetic training distribution with detailed objects and challenging disparity fields for iterative stereo.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered stereo RGB pairs.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Dense ground-truth rendered disparity.",
+      "implementation": "Public author download links",
+      "evidenceLevel": "tool",
+      "limitations": "The training dataset is distinct from CREStereo model weights and code.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://github.com/megvii-research/CREStereo#datasets"
+        },
+        {
+          "label": "Data (author downloads)",
+          "url": "https://github.com/megvii-research/CREStereo"
+        },
+        {
+          "label": "Related paper",
+          "url": "https://arxiv.org/abs/2203.11483"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use the released left/right pairing and disparity units.",
+        "captureRelevance": "Reported in the FoundationStereo, S²M² and NBS recipes.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "falling-things": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Stereo renderings of household objects settling in photorealistic environments.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Binocular RGB with per-view rendered depth.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Rendered depth; disparity from calibration",
+      "outputRepresentation": "Rendered depth; disparity from calibration",
+      "supervision": "Dense rendered depth, segmentation, object poses and bounding boxes.",
+      "implementation": "Public author downloads",
+      "evidenceLevel": "tool",
+      "limitations": "The paper reports 61,500 snapshots and provides stereo imagery across single-object and mixed-object subsets.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/1804.06534"
+        },
+        {
+          "label": "Project and data",
+          "url": "https://research.nvidia.com/publication/2018-06_falling-things-synthetic-dataset-3d-object-detection-and-pose-estimation"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Rendered depth; disparity from calibration",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use the camera settings included with the release for depth-to-disparity conversion.",
+        "captureRelevance": "Reported FoundationStereo, expanded S²M² and NBS training source.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "instereo2k": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Full-resolution real indoor stereo pairs provided for training and testing.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Captured left/right RGB images in indoor scenes.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Dense ground-truth disparity; see valid-pixel masks and acquisition details.",
+      "implementation": "Public author download links",
+      "evidenceLevel": "tool",
+      "limitations": "Separate 2,000 training and 50 test pairs in the official repository.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://doi.org/10.1007/s11432-019-2803-x"
+        },
+        {
+          "label": "Data (author downloads)",
+          "url": "https://github.com/yuhuaxu/stereodataset"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use released rectified pairs and disparity convention.",
+        "captureRelevance": "Reported real indoor source in FoundationStereo and NBS training.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "virtual-kitti-2": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Simulated stereo RGB and dense geometry for the KITTI-derived driving scenes.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Two rendered camera streams, with matched RGB, depth and scene conditions.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Rendered depth; disparity from calibration",
+      "outputRepresentation": "Rendered depth; disparity from calibration",
+      "supervision": "Rendered depth, flow and scene labels; disparity follows the released rig geometry.",
+      "implementation": "Public author downloads",
+      "evidenceLevel": "tool",
+      "limitations": "This is the two-camera Virtual KITTI 2 release. Weather and viewpoint variants are not independent real captures.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2001.10773"
+        },
+        {
+          "label": "Data",
+          "url": "https://europe.naverlabs.com/research/computer-vision/proxy-virtual-worlds-vkitti-2/"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Rendered depth; disparity from calibration",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Separate intrinsic and extrinsic tables; each scenario has aligned camera positions.",
+        "captureRelevance": "Reported FoundationStereo, expanded S²M² and NBS training source.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "wmgstereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Procedurally generated Infinigen stereo from the study of synthetic training data for zero-shot matching.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered RGB stereo across controlled variations of scenes and camera parameters.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Rendered ground-truth disparity.",
+      "implementation": "Public tar archives",
+      "evidenceLevel": "tool",
+      "limitations": "The official published dataset is WMGStereo. MatchLab publishes InfinigenSV separately.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2504.16930"
+        },
+        {
+          "label": "Data (BSD-3-Clause)",
+          "url": "https://huggingface.co/datasets/princeton-vl/WMGStereo"
+        },
+        {
+          "label": "Generator",
+          "url": "https://github.com/princeton-vl/InfinigenStereo"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use the release geometry and disparity conventions.",
+        "captureRelevance": "Yan et al. is expressly cited in NBS high-resolution training.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "unrealstereo4k": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "High-resolution rendered stereo with pixel-accurate disparity, published alongside SMD-Nets.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered 3840 × 2160 binocular imagery across indoor and outdoor scenes.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Dense rendered disparity.",
+      "implementation": "Public archives",
+      "evidenceLevel": "tool",
+      "limitations": "Eight original training scenes and a 200-pair domain-shift scene; the quarter-resolution archive is an alternative distribution.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2104.03866"
+        },
+        {
+          "label": "Data (full / quarter archives)",
+          "url": "https://github.com/fabiotosi92/SMD-Nets#datasets"
+        },
+        {
+          "label": "Data (quarter release)",
+          "url": "https://huggingface.co/datasets/fabiotosi92/UnrealStereo4K"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use the matching resolution and geometry for the chosen bundle.",
+        "captureRelevance": "SMD-Nets dataset in expanded S²M² and NBS training references.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "irs-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Naturalistic synthetic indoor stereo for training disparity and surface-normal estimation.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered binocular RGB from indoor navigation viewpoints.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Dense rendered disparity and surface normals.",
+      "implementation": "Author archive links",
+      "evidenceLevel": "tool",
+      "limitations": "Reported 103,316 pairs across four indoor environment classes.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/1912.09678"
+        },
+        {
+          "label": "Data",
+          "url": "https://github.com/blackjack2015/IRS"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Disparity is paired with the official left/right images.",
+        "captureRelevance": "Reported in the expanded S²M² and NBS training recipes.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "stereosplat-xrstereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Five-frame binocular sequences with rendered disparities and calibrated moving-camera geometry.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rectified 1024 × 1024 stereo RGB from camera motion through static rendered scenes.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Dense left/right disparity, camera poses and per-sequence intrinsics and baseline.",
+      "implementation": "Public download",
+      "evidenceLevel": "tool",
+      "limitations": "The public train release has 17,922 sequences and 72 TAR shards. Its larger paper corpus and earlier XR-Stereo (Stereo Matching in Time) are distinct.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/facebook/xrstereo"
+        },
+        {
+          "label": "Data files (CC BY-NC 4.0)",
+          "url": "https://huggingface.co/datasets/facebook/xrstereo/tree/main"
+        },
+        {
+          "label": "Project",
+          "url": "https://vladimiryugay.github.io/stereosplat/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/facebookresearch/stereo-splat"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.35902"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Shared pinhole intrinsics and baseline 40–120 mm. Camera poses use Blender axes.",
+        "captureRelevance": "StereoSplat training split; general synthetic stereo reference.",
+        "temporal": "Five ordered binocular observations per clip from static virtual scenes."
+      }
+    },
+    "ffs-stereo4d": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "FoundationStereo-generated disparity for internet VR180, released separately from the source video.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Inputs were real VR180 binocular videos from Stereo4D. The release includes metadata and disparity images.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Model-generated disparity PNGs",
+      "outputRepresentation": "Model-generated disparity PNGs",
+      "supervision": "Model-generated disparity; no independently captured depth ground truth.",
+      "implementation": "Public disparity archives",
+      "evidenceLevel": "tool",
+      "limitations": "The download does not bundle left/right RGB. Source videos may no longer be available. The catalog provides metadata and 26 disparity archives.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/nvidia/ffs_stereo4d"
+        },
+        {
+          "label": "Data files (disparity only)",
+          "url": "https://huggingface.co/datasets/nvidia/ffs_stereo4d/tree/main"
+        },
+        {
+          "label": "Source project",
+          "url": "https://stereo4d.github.io/"
+        },
+        {
+          "label": "Fast-FoundationStereo paper",
+          "url": "https://arxiv.org/abs/2512.11130"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "conditional"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Model-generated disparity PNGs",
+        "scaleSource": "Only after recovering the corresponding stereo calibration and rectification.",
+        "calibration": "Disparities apply to the source rectification and frame indices.",
+        "captureRelevance": "Real-image pseudo-labels used for Fast-FoundationStereo training.",
+        "temporal": "Indexed frames from stereo video"
+      }
+    },
+    "princeton365-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Diverse real captures include a separately downloadable ZED stereo subset with global pose references.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "ZED left/right imagery on stereo recordings; 360° capture is a separate camera modality.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Stereo RGB pairs and pose references",
+      "outputRepresentation": "Stereo RGB pairs and pose references",
+      "supervision": "Camera-pose references and geometry products described by release variant.",
+      "implementation": "Public download",
+      "evidenceLevel": "tool",
+      "limitations": "Use published effective sampling rates. The stereo subset should not be conflated with all 360° videos.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2506.09035"
+        },
+        {
+          "label": "Project",
+          "url": "https://princeton365.cs.princeton.edu/"
+        },
+        {
+          "label": "Data (BSD-3-Clause)",
+          "url": "https://huggingface.co/datasets/princeton-vl/princeton365"
+        },
+        {
+          "label": "Stereo archive instructions",
+          "url": "https://princeton365.cs.princeton.edu/download/"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "conditional"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Stereo RGB pairs and pose references",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Match left/right timestamp maps, calibration and effective FPS to the selected stereo sequence.",
+        "captureRelevance": "Real calibrated stereo capture reference.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "real3ext": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "A controlled sensor comparison with active and passive stereo, ToF, and independently scanned ground truth.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "RealSense R200 active stereo, ZED passive stereo, and Kinect v2 ToF under varying illumination.",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Measured laser depth and sensor-specific observations",
+      "outputRepresentation": "Measured laser depth and sensor-specific observations",
+      "supervision": "Independent line-laser depth used as reference.",
+      "implementation": "Public archive",
+      "evidenceLevel": "tool",
+      "limitations": "Ten static indoor scenes under four lighting conditions; choose the sensor-specific stream.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://doi.org/10.1016/j.dib.2019.104619"
+        },
+        {
+          "label": "Project",
+          "url": "https://lttm.dei.unipd.it/paper_data/real3ext/"
+        },
+        {
+          "label": "Data",
+          "url": "https://lttm.dei.unipd.it/paper_data/real3ext/data/REAL3EXT.zip"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Measured laser depth and sensor-specific observations",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Capture rig calibration ships with the dataset.",
+        "captureRelevance": "Controlled evaluation across active/passive stereo and illumination.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "active-event-stereo-data": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Synchronizes projected-pattern stereo events and depth reference labels in real and simulated sequences.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Two event streams with a fixed projected IR pattern; separate events simulated from active RealSense IR videos.",
+      "inputSignals": [
+        "Events"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Event pairs and metric depth references",
+      "outputRepresentation": "Event pairs and metric depth references",
+      "supervision": "Synchronized depth labels from the collection/calibration pipeline.",
+      "implementation": "Author repository and ModelScope downloads",
+      "evidenceLevel": "tool",
+      "limitations": "85 real sequences and about 21.5K labels; 119 original IR sequences used for simulation and about 23.8K simulated labels.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2607.23684"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/jianing-li/active_event_based_stereo"
+        },
+        {
+          "label": "Data (real)",
+          "url": "https://www.modelscope.cn/datasets/jianingli/Active-Event-Stereo/files"
+        },
+        {
+          "label": "Data (simulated)",
+          "url": "https://www.modelscope.cn/datasets/jianingli/RealSense-Event-Sim/files"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Event pairs and metric depth references",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use the published camera parameters, projector setup and sequence timestamps.",
+        "captureRelevance": "Active projected-pattern event stereo. Event streams and RGB pairs require distinct processing.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "dreds-active-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Simulates an active stereo depth pipeline for learning restoration on reflective and transparent objects.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered color images and active-stereo sensor-depth simulation.",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Rendered and synthetic sensor depth",
+      "outputRepresentation": "Rendered and synthetic sensor depth",
+      "supervision": "Clean rendered depth and noisy simulated sensor depth, with material-specific scenes.",
+      "implementation": "Author dataset archives",
+      "evidenceLevel": "tool",
+      "limitations": "Use as an RGB-D restoration resource. Check a particular archive for native left/right IR rather than assuming it is bundled.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2208.03792"
+        },
+        {
+          "label": "Project and data",
+          "url": "https://pku-epic.github.io/DREDS/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/PKU-EPIC/DREDS"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Rendered and synthetic sensor depth",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use the dataset’s synthetic camera configuration; separate real evaluation capture has different provenance.",
+        "captureRelevance": "Active stereo simulation and RGB-D restoration for challenging materials.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "asgrasp-active-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Synthetic active IR stereo generated from GraspNet object scenes for challenging material reconstruction.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Native left/right rendered IR and RGB with active patterns.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "IR pairs and clean rendered depth",
+      "outputRepresentation": "IR pairs and clean rendered depth",
+      "supervision": "Clean simulated depth for geometry supervision.",
+      "implementation": "Public example files",
+      "evidenceLevel": "tool",
+      "limitations": "The public repository supplies one explicit left/right IR and RGB example. The full synthetic training corpus was not confirmed to be downloadable.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2405.05648"
+        },
+        {
+          "label": "Project",
+          "url": "https://pku-epic.github.io/ASGrasp/"
+        },
+        {
+          "label": "Data (one released IR/RGB example)",
+          "url": "https://github.com/jun7-shi/ASGrasp/tree/main/test_data"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "IR pairs and clean rendered depth",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use the stated camera settings and IR/RGB alignment conventions.",
+        "captureRelevance": "Active stereo training in transparent-object manipulation.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "booster-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Real balanced and unbalanced stereo designed to reveal transparent and specular material failure modes.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Passive stereo input pairs, with separate controlled illumination for obtaining reference labels.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Disparity and material masks from the capture and labeling pipeline.",
+      "implementation": "Public institutional download",
+      "evidenceLevel": "tool",
+      "limitations": "The journal paper reports 606 labeled pairs in 85 scenes. The original deposit documents 419 labeled pairs in 64 scenes plus unlabeled pairs.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2301.08245"
+        },
+        {
+          "label": "Project",
+          "url": "https://cvlab.unibo.it/booster-web/"
+        },
+        {
+          "label": "Data (institutional deposit)",
+          "url": "https://amsacta.unibo.it/id/eprint/6876/"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use the balanced/unbalanced configuration and matching camera calibration.",
+        "captureRelevance": "Difficult-material stereo evaluation; not asserted as a training split of the named foundation models.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "hiss-active-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Photorealistic active-IR simulation for learning disparity on difficult materials.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered active IR left/right streams and color observations from material-randomized scenes.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Rendered stereo geometry and clean depth target",
+      "outputRepresentation": "Rendered stereo geometry and clean depth target",
+      "supervision": "Clean rendered scene geometry and stereo supervision.",
+      "implementation": "Public download",
+      "evidenceLevel": "tool",
+      "limitations": "Official manifest contains four training archives and a validation archive. Rendered matching targets are separate from sensor observations.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/songlinwei/HISS"
+        },
+        {
+          "label": "Data files (CC BY-NC 4.0)",
+          "url": "https://huggingface.co/datasets/songlinwei/HISS/tree/main"
+        },
+        {
+          "label": "Training tools and configuration",
+          "url": "https://github.com/songlin/d3roma#training"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2409.14365"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Rendered stereo geometry and clean depth target",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use the training configuration and per-sample camera geometry.",
+        "captureRelevance": "D3RoMa training data for active stereo and difficult materials.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "spring-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "High-resolution animated stereo video with dense disparity and flow supervision.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Rendered stereo frames from the Blender film Spring.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Dense disparity, optical flow and scene flow with distinct evaluation submissions.",
+      "implementation": "Public benchmark resources",
+      "evidenceLevel": "tool",
+      "limitations": "Use official train and held-out benchmark splits. This is a separate film dataset from MPI Sintel.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2303.01943"
+        },
+        {
+          "label": "Data",
+          "url": "https://spring-benchmark.org/"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use paired stereo frames and benchmark disparity convention.",
+        "captureRelevance": "Spring is named in the NBS high-resolution training references.",
+        "temporal": "Synthetic binocular sequences with moving foregrounds."
+      }
+    },
+    "drivingstereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Real stereo road imagery spanning lighting, weather and traffic conditions.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Left/right stereo pairs from moving vehicles.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Disparity pseudo-dense targets using LiDAR with filtering and densification.",
+      "implementation": "Public author download links",
+      "evidenceLevel": "tool",
+      "limitations": "Driving-specific scenes are adjacent to egocentric near-field manipulation. The targets derive from LiDAR, not uniformly dense independent measurements.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Yang_DrivingStereo_A_Large-Scale_Dataset_for_Stereo_Matching_in_Autonomous_Driving_CVPR_2019_paper.html"
+        },
+        {
+          "label": "Data",
+          "url": "https://drivingstereo-dataset.github.io/"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use the released calibration and scene split.",
+        "captureRelevance": "Listed among expanded S²M² training sources.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "tartanground-stereo": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Six synthetic stereo pairs support ground-robot perception across trajectories and environments.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Six rendered binocular pair directions with depth, pose, synthetic LiDAR and IMU channels.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Rendered depth and stereo geometry",
+      "outputRepresentation": "Rendered depth and stereo geometry",
+      "supervision": "Rendered depth, disparity and related geometry; the download guide lists available warehouse modalities.",
+      "implementation": "Public download via dataset toolkit",
+      "evidenceLevel": "tool",
+      "limitations": "Project documentation describes 878 trajectories in 63 environments. The arXiv text uses a different total, so use the actual download subset when quoting scale.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2505.10696"
+        },
+        {
+          "label": "Project",
+          "url": "https://tartanair.org/tartanground/index.html"
+        },
+        {
+          "label": "Data and download instructions",
+          "url": "https://tartanair.org/tartanground"
+        },
+        {
+          "label": "Tools",
+          "url": "https://github.com/castacks/tartanairpy"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Rendered depth and stereo geometry",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Pair lcam and rcam at the same named direction and timestamp.",
+        "captureRelevance": "Training reference cited by NBS. Separate from TartanAir.",
+        "temporal": "Released stereo pairs; no model inference"
+      }
+    },
+    "infinigen-stereo-video": {
+      "depthDataset": true,
+      "toolTopics": [
+        "depth"
+      ],
+      "summary": "Synthetic nature sequences for temporally consistent stereo video experiments.",
+      "stage": "tool",
+      "target": "Stereo depth dataset",
+      "input": "Synchronized photorealistic left/right renders in natural settings.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "output": "Dense disparity",
+      "outputRepresentation": "Dense disparity",
+      "supervision": "Rendered dense disparity/depth. Real SouthKensington has separate qualitative scope.",
+      "implementation": "Official Hugging Face archives",
+      "evidenceLevel": "tool",
+      "limitations": "This is the data associated with Jing et al.’s BiDAVideo reference. It is separate from WMGStereo and Dynamic Replica.",
+      "verified": "2026-11-21",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2409.20283"
+        },
+        {
+          "label": "Project",
+          "url": "https://tomtomtommi.github.io/BiDAVideo/"
+        },
+        {
+          "label": "Data",
+          "url": "https://huggingface.co/datasets/MatchLab/InfinigenSV"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/tomtomtommi/bidavideo"
+        }
+      ],
+      "perception": {
+        "families": [
+          "stereo",
+          "multiview"
+        ],
+        "inputSetup": [
+          "stereo",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Stereo depth dataset",
+        "outputType": "Dense disparity",
+        "scaleSource": "Calibrated intrinsics and baseline; apply the dataset coordinate convention.",
+        "calibration": "Use native pairing and camera information for the released projection.",
+        "captureRelevance": "The BiDAVideo work is cited in NBS high-resolution training.",
+        "temporal": "Stereo sequences with temporal correspondence."
       }
     }
   }

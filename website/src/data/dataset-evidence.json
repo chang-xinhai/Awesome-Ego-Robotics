@@ -275,7 +275,7 @@
       "labels": "Narrations, temporal activity labels and benchmark-specific annotations.",
       "bodyCoverage": "Hands and daily activity",
       "annotationEvidence": "Human annotation; coverage varies by benchmark and recording.",
-      "limitations": "Most clips do not include metric hand pose or robot actions.",
+      "limitations": "Most clips do not include metric hand pose or robot actions. The total video-hour count covers mixed devices. The metadata flag does not prove a calibrated rectified pair.",
       "sources": [
         {
           "label": "Official project / release",
@@ -292,10 +292,14 @@
         {
           "label": "Dataset release",
           "url": "https://ego4d-data.org/docs/start-here/"
+        },
+        {
+          "label": "Stereo stream and release evidence",
+          "url": "https://ego4d-data.org/docs/data/metadata/"
         }
       ],
       "name": "Ego4D",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "accessNote": "Dataset license acceptance and official downloader; component availability varies.",
       "recordedSignals": [
         "Vision",
@@ -309,7 +313,7 @@
       "cameraSetup": "Seven head-mounted camera types; device and modality availability are per video.",
       "recordedStreams": "First-person video; audio, IMU and stereo exist only for documented subsets.",
       "coordinateFrame": "Video time and benchmark coordinates; no corpus-wide metric hand/world annotation.",
-      "calibration": "Device metadata; standardized 30-fps video option; calibration is not uniform.",
+      "calibration": "Device metadata; standardized 30-fps video option; calibration is not uniform. Mixed ego capture devices. Filter official metadata to is_stereo=true, then confirm pair format and calibration per recording.",
       "derivedSignals": [
         "Text narrations",
         "Benchmark-specific action / object labels"
@@ -355,7 +359,8 @@
           "https://ego4d-data.org/",
           "https://arxiv.org/abs/2110.07058",
           "https://github.com/facebookresearch/Ego4d",
-          "https://ego4d-data.org/docs/start-here/"
+          "https://ego4d-data.org/docs/start-here/",
+          "https://ego4d-data.org/docs/data/metadata/"
         ],
         "derivedSignals": [
           "https://ego4d-data.org/",
@@ -386,6 +391,9 @@
           "https://arxiv.org/abs/2110.07058",
           "https://github.com/facebookresearch/Ego4d",
           "https://ego4d-data.org/docs/start-here/"
+        ],
+        "limitations": [
+          "https://ego4d-data.org/docs/data/metadata/"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -407,7 +415,7 @@
       "labels": "Expert commentary, narrations, atomic actions and benchmark-specific hand/body poses.",
       "bodyCoverage": "Hands and whole body",
       "annotationEvidence": "Multi-view pose annotation and human language labeling; annotation scope is task dependent.",
-      "limitations": "The reported duration sums ego and exo streams; many activities are outside manipulation.",
+      "limitations": "The reported duration sums ego and exo streams; many activities are outside manipulation. The corpus total is multi-view video time. RGB previews and third-person GoPros use different stream contracts.",
       "sources": [
         {
           "label": "Official project / release",
@@ -424,10 +432,14 @@
         {
           "label": "Dataset release",
           "url": "https://docs.ego-exo4d-data.org/"
+        },
+        {
+          "label": "Stereo stream and release evidence",
+          "url": "https://docs.ego-exo4d-data.org/overview/"
         }
       ],
       "name": "Ego-Exo4D",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "accessNote": "Dataset agreement and official download CLI.",
       "recordedSignals": [
         "Vision",
@@ -443,7 +455,7 @@
       "cameraSetup": "Aria RGB + two monochrome SLAM cameras; four or five external GoPros.",
       "recordedStreams": "Synchronized ego/exo video, Aria IMUs, eye cameras/gaze and audio.",
       "coordinateFrame": "Calibrated ego/exo geometry; 3D hand/body benchmarks use defined scene frames.",
-      "calibration": "Ego camera calibration and synchronization with exo GoPros; session-specific layout.",
+      "calibration": "Ego camera calibration and synchronization with exo GoPros; session-specific layout. Use the same device’s timestamp-aligned left/right SLAM streams and camera model from raw Aria VRS.",
       "derivedSignals": [
         "3D hand/body pose annotations",
         "Expert commentary",
@@ -483,7 +495,8 @@
           "https://ego-exo4d-data.org/",
           "https://arxiv.org/abs/2311.18259",
           "https://github.com/facebookresearch/Ego4d",
-          "https://docs.ego-exo4d-data.org/"
+          "https://docs.ego-exo4d-data.org/",
+          "https://docs.ego-exo4d-data.org/overview/"
         ],
         "derivedSignals": [
           "https://ego-exo4d-data.org/",
@@ -514,6 +527,9 @@
           "https://arxiv.org/abs/2311.18259",
           "https://github.com/facebookresearch/Ego4d",
           "https://docs.ego-exo4d-data.org/"
+        ],
+        "limitations": [
+          "https://docs.ego-exo4d-data.org/overview/"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -926,7 +942,7 @@
       "labels": "3D hand shape/pose, rigid-object pose, camera calibration and object models.",
       "bodyCoverage": "Bimanual",
       "annotationEvidence": "Optical motion capture and fitted hand/object meshes.",
-      "limitations": "Controlled indoor scenes and known rigid objects; contact geometry is not measured tactile force.",
+      "limitations": "Controlled indoor scenes and known rigid objects; contact geometry is not measured tactile force. HOT3D-Clips is a subset of 3,832 five-second clips. The parent total includes both devices; pose labels are separate from depth or force.",
       "sources": [
         {
           "label": "Official project / release",
@@ -943,10 +959,14 @@
         {
           "label": "Dataset release",
           "url": "https://huggingface.co/datasets/projectaria/hot3d"
+        },
+        {
+          "label": "Stereo stream and release evidence",
+          "url": "https://facebookresearch.github.io/hot3d/#hot3d-clips"
         }
       ],
       "name": "HOT3D",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "accessNote": "Hugging Face / Aria download route under dataset terms.",
       "recordedSignals": [
         "Vision",
@@ -960,7 +980,7 @@
       "cameraSetup": "Aria: 1 RGB + 2 monochrome; Quest 3: 2 monochrome cameras.",
       "recordedStreams": "Aria 1408×1408 RGB + 640×480 mono; Quest 1280×1024 mono, all at 30 fps.",
       "coordinateFrame": "Camera-to-world transforms; mocap-referenced hands/objects and 3D scanned models.",
-      "calibration": "Intrinsics and camera-to-world transforms for images; Aria SLAM context separate.",
+      "calibration": "Intrinsics and camera-to-world transforms for images; Aria SLAM context separate. Aria delivers raw grayscale stereo with calibration and RGB; Quest 3 delivers synchronized two-eye monochrome. Use each device’s native model or rectify.",
       "derivedSignals": [
         "MANO/UmeTrack hand poses",
         "Rigid-object 6DoF poses",
@@ -1005,7 +1025,8 @@
           "https://facebookresearch.github.io/hot3d/",
           "https://arxiv.org/abs/2411.19167",
           "https://github.com/facebookresearch/hot3d",
-          "https://huggingface.co/datasets/projectaria/hot3d"
+          "https://huggingface.co/datasets/projectaria/hot3d",
+          "https://facebookresearch.github.io/hot3d/#hot3d-clips"
         ],
         "derivedSignals": [
           "https://facebookresearch.github.io/hot3d/",
@@ -1042,6 +1063,9 @@
           "https://arxiv.org/abs/2411.19167",
           "https://github.com/facebookresearch/hot3d",
           "https://huggingface.co/datasets/projectaria/hot3d"
+        ],
+        "limitations": [
+          "https://facebookresearch.github.io/hot3d/#hot3d-clips"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -3931,7 +3955,7 @@
       "labels": "Semantic masks and derived depth maps.",
       "bodyCoverage": "Body motion and environment",
       "annotationEvidence": "Human segmentation plus stereo/model-derived depth; synthetic labels are rendered.",
-      "limitations": "Real depth is stereo estimation, not independent active-depth ground truth; only 237 real sessions have segmentation.",
+      "limitations": "Real depth is stereo estimation, not independent active-depth ground truth; only 237 real sessions have segmentation. SANPO-Synthetic has a separate single-video-per-session release. Real depth is derived using stereo.",
       "sources": [
         {
           "label": "Official project / release",
@@ -3948,10 +3972,14 @@
         {
           "label": "Dataset release",
           "url": "https://github.com/google-research-datasets/sanpo_dataset"
+        },
+        {
+          "label": "Stereo stream and release evidence",
+          "url": "https://github.com/google-research-datasets/sanpo_dataset/blob/main/page_index.md"
         }
       ],
       "name": "SANPO",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "accessNote": "Official download repository; CC BY 4.0.",
       "recordedSignals": [
         "Vision",
@@ -3964,7 +3992,7 @@
       "cameraSetup": "Real: head ZED-M + chest ZED-2i stereo. Synthetic: simulated matching rigs.",
       "recordedStreams": "Real stereo RGB at 15 fps plus IMU; real depth is estimated from stereo.",
       "coordinateFrame": "Camera poses and metric depth; use the corrected right-handed, Y-up poses released 2025-06-05.",
-      "calibration": "Stereo camera metadata and rectification; corrected fixed_camera_poses.csv aligns real poses with the right-handed, Y-up convention.",
+      "calibration": "Stereo camera metadata and rectification; corrected fixed_camera_poses.csv aligns real poses with the right-handed, Y-up convention. Real distribution includes camera parameters, IMU and rectified PNG. Download the right eye explicitly, and keep head ZED-M and chest ZED-2i pairs separate.",
       "derivedSignals": [
         "ZED sparse / CREStereo dense depth",
         "VIO/IMU camera poses",
@@ -4015,7 +4043,8 @@
           "https://google-research-datasets.github.io/sanpo_dataset/",
           "https://arxiv.org/abs/2309.12172",
           "https://github.com/google-research-datasets/sanpo_dataset",
-          "https://github.com/google-research-datasets/sanpo_dataset"
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset/blob/main/page_index.md"
         ],
         "derivedSignals": [
           "https://google-research-datasets.github.io/sanpo_dataset/",
@@ -4063,7 +4092,8 @@
           "https://google-research-datasets.github.io/sanpo_dataset/",
           "https://arxiv.org/abs/2309.12172",
           "https://github.com/google-research-datasets/sanpo_dataset",
-          "https://github.com/google-research-datasets/sanpo_dataset"
+          "https://github.com/google-research-datasets/sanpo_dataset",
+          "https://github.com/google-research-datasets/sanpo_dataset/blob/main/page_index.md"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -4730,7 +4760,7 @@
       "labels": "Machine-perception outputs for wearer, scene and interaction context.",
       "bodyCoverage": "Head hands and environment",
       "annotationEvidence": "Device sensing with estimated perception outputs; fields follow release-specific documentation.",
-      "limitations": "No physical depth sensor. FoundationStereo depth and heart rate are predictions, not reference ground truth.",
+      "limitations": "No physical depth sensor. FoundationStereo depth and heart rate are predictions, not reference ground truth. Included metric depth is estimated by FoundationStereo rather than independently measured.",
       "sources": [
         {
           "label": "Official project / release",
@@ -4747,10 +4777,14 @@
         {
           "label": "Dataset release",
           "url": "https://www.projectaria.com/datasets/gen2pilot/"
+        },
+        {
+          "label": "Stereo stream and release evidence",
+          "url": "https://facebookresearch.github.io/projectaria_tools/gen2/research-tools/dataset/pilot/content"
         }
       ],
       "name": "Aria Gen 2 Pilot Dataset",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "accessNote": "Official Project Aria dataset page and release-specific terms.",
       "recordedSignals": [
         "Vision",
@@ -4766,7 +4800,7 @@
       "cameraSetup": "Aria Gen 2: one RGB, four CV mono and binocular eye cameras; dual IMUs and eight-channel audio.",
       "recordedStreams": "RGB 10 fps; CV mono 30 fps; eye images 5 fps; dual IMU 800 Hz; eight-channel audio; PPG 128 Hz and environmental sensors.",
       "coordinateFrame": "On-device odometry frame and shared multi-user SLAM frame; algorithm estimates.",
-      "calibration": "Factory and online calibration; multi-device alignment/time synchronization released.",
+      "calibration": "Factory and online calibration; multi-device alignment/time synchronization released. Stereo evaluation data include rectified images, corresponding intrinsics and camera pose. Raw VRS retains original camera streams.",
       "derivedSignals": [
         "VIO",
         "Hand tracking",
@@ -4820,7 +4854,8 @@
           "https://www.projectaria.com/datasets/gen2pilot/",
           "https://arxiv.org/abs/2510.16134",
           "https://github.com/facebookresearch/projectaria_tools",
-          "https://www.projectaria.com/datasets/gen2pilot/"
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://facebookresearch.github.io/projectaria_tools/gen2/research-tools/dataset/pilot/content"
         ],
         "derivedSignals": [
           "https://www.projectaria.com/datasets/gen2pilot/",
@@ -4856,7 +4891,8 @@
           "https://www.projectaria.com/datasets/gen2pilot/",
           "https://arxiv.org/abs/2510.16134",
           "https://github.com/facebookresearch/projectaria_tools",
-          "https://www.projectaria.com/datasets/gen2pilot/"
+          "https://www.projectaria.com/datasets/gen2pilot/",
+          "https://facebookresearch.github.io/projectaria_tools/gen2/research-tools/dataset/pilot/content"
         ]
       },
       "evidenceNote": "Observed streams, derived annotations and reference labels are listed separately; curation facets summarize this evidence."
@@ -6772,7 +6808,7 @@
       "labels": "21 keypoints per hand, MANO/hand geometry, large-FOV depth and video/task/subtask annotations.",
       "bodyCoverage": "Bimanual",
       "annotationEvidence": "GenRobot DFM reconstructs hand motion and depth; semantic labels use a hybrid processing workflow.",
-      "limitations": "No force/tactile ground truth. Predicted depth and hand meshes must remain separate from physical sensor observations.",
+      "limitations": "No force/tactile ground truth. Predicted depth and hand meshes must remain separate from physical sensor observations. Six synchronized RGB streams with estimated depth. The release does not establish six interchangeable rectified stereo pairs or independent depth ground truth.",
       "datasetUrl": "https://huggingface.co/datasets/genrobot2025/Gen-HumanEgo",
       "annotationType": "estimated",
       "dataRole": "egocentric",
@@ -6780,7 +6816,7 @@
       "cameraSetup": "Unified six-camera DAS-Ego headset; RGB 1600×1300 at 30 fps.",
       "recordedStreams": "Synchronized first-person multi-view RGB in MCAP.",
       "coordinateFrame": "Topic schemas and device frame transforms defined by official data specification / URDF.",
-      "calibration": "Provided device-frame definitions and episode topic timestamps; accuracy not independently validated.",
+      "calibration": "Provided device-frame definitions and episode topic timestamps; accuracy not independently validated. Use topic definitions, rig URDF, timestamps and overlap to select a pair, and match calibration to the chosen camera roles.",
       "derivedSignals": [
         "DFM hand keypoints / MANO meshes",
         "DFM depth",
@@ -6813,7 +6849,7 @@
           "url": "https://github.com/genrobot-ai/das-datakit"
         }
       ],
-      "verified": "2026-10-19",
+      "verified": "2026-11-21",
       "reviewed": "2026-10-16",
       "fieldSources": {
         "reportedScale": [
@@ -6961,7 +6997,7 @@
       "labels": "Dense second-scale free-form action captions and temporal segmentation.",
       "bodyCoverage": "Hands",
       "annotationEvidence": "Published action captions and calibrated stereo; caption-creation accuracy not independently validated.",
-      "limitations": "IMU is missing in 191 sessions; do not infer complete hand pose, tactile, force or robot actions.",
+      "limitations": "IMU is missing in 191 sessions; do not infer complete hand pose, tactile, force or robot actions. Validate projection and metric scale on the exact Stereo-550 release before using metric supervision. The discussion does not establish a validated fix.",
       "datasetUrl": "https://huggingface.co/datasets/fpvlabs/stereo-550",
       "annotationType": "mixed",
       "dataRole": "egocentric",
@@ -6969,7 +7005,7 @@
       "cameraSetup": "Synchronized calibrated left/right Ego-OSCAR cameras.",
       "recordedStreams": "Left/right RGB videos, calibration.json, action spans and optional IMU.",
       "coordinateFrame": "Per-session stereo calibration; metric depth can be derived, not a physically measured depth channel.",
-      "calibration": "Per-session intrinsics/extrinsics and stereo rectification parameters.",
+      "calibration": "Per-session intrinsics/extrinsics and stereo rectification parameters. Manifest includes calibration.json, video timestamps and IMU. The release discussion reports possible mismatch between calibration and video coordinates.",
       "derivedSignals": [
         "Action captions",
         "Optional stereo reconstruction"
@@ -6995,9 +7031,13 @@
         {
           "label": "Dataset",
           "url": "https://huggingface.co/datasets/fpvlabs/stereo-550"
+        },
+        {
+          "label": "Stereo stream and release evidence",
+          "url": "https://huggingface.co/datasets/fpvlabs/stereo-550/discussions/1"
         }
       ],
-      "verified": "2026-10-19",
+      "verified": "2026-11-21",
       "reviewed": "2026-10-16",
       "fieldSources": {
         "reportedScale": [
@@ -7044,7 +7084,8 @@
         "limitations": [
           "https://arxiv.org/abs/2608.08285",
           "https://github.com/fpv-labs/ego-oscar",
-          "https://huggingface.co/datasets/fpvlabs/stereo-550"
+          "https://huggingface.co/datasets/fpvlabs/stereo-550",
+          "https://huggingface.co/datasets/fpvlabs/stereo-550/discussions/1"
         ],
         "cameraSetup": [
           "https://arxiv.org/abs/2608.08285",
@@ -7064,7 +7105,8 @@
         "calibration": [
           "https://arxiv.org/abs/2608.08285",
           "https://github.com/fpv-labs/ego-oscar",
-          "https://huggingface.co/datasets/fpvlabs/stereo-550"
+          "https://huggingface.co/datasets/fpvlabs/stereo-550",
+          "https://huggingface.co/datasets/fpvlabs/stereo-550/discussions/1"
         ],
         "derivedSignals": [
           "https://arxiv.org/abs/2608.08285",
@@ -8671,7 +8713,7 @@
     },
     "ropedia-xperience-10m": {
       "name": "Xperience-10M",
-      "verified": "2026-10-30",
+      "verified": "2026-11-21",
       "reviewed": "2026-10-30",
       "reportedScale": {
         "hours": 10000,
@@ -8694,7 +8736,7 @@
       "labels": "Stereo-derived depth, SLAM trajectories, MANO hands, body motion and hierarchical captions.",
       "bodyCoverage": "Whole body",
       "annotationEvidence": "Stereo-derived depth, SLAM trajectories, MANO hands, body motion and hierarchical captions.",
-      "limitations": "Depth, SLAM and motion annotations are estimates and may be noisy. Six views are synchronized views, not six independent durations.",
+      "limitations": "Depth, SLAM and motion annotations are estimates and may be noisy. Six views are synchronized views, not six independent durations. The full release requires manual approval. The public sample does not establish the accessible stereo-only corpus size.",
       "sources": [
         {
           "label": "Official resource",
@@ -8724,7 +8766,7 @@
       "scaleType": "hours",
       "cameraSetup": "Four fisheye views, rectified stereo pair, audio and IMU.",
       "coordinateFrame": "Camera-to-world trajectory and body/hand coordinates stored with calibration; consult toolkit transforms.",
-      "calibration": "Camera-to-world trajectory and body/hand coordinates stored with calibration; consult toolkit transforms.",
+      "calibration": "Camera-to-world trajectory and body/hand coordinates stored with calibration; consult toolkit transforms. Separate rectified stereo left/right MP4s and four native fisheye streams are listed. Use annotation.hdf5 for calibration.",
       "derivedSignals": [
         "Stereo-derived depth, SLAM trajectories, MANO hands, body motion and hierarchical captions."
       ],
@@ -8788,6 +8830,9 @@
         ],
         "accessNote": [
           "https://huggingface.co/datasets/ropedia-ai/xperience-10m-sample",
+          "https://huggingface.co/datasets/ropedia-ai/xperience-10m"
+        ],
+        "limitations": [
           "https://huggingface.co/datasets/ropedia-ai/xperience-10m"
         ]
       }
@@ -8916,7 +8961,7 @@
     },
     "egoviz-120": {
       "name": "EgoViz-120",
-      "verified": "2026-10-17",
+      "verified": "2026-11-21",
       "reviewed": "2026-10-17",
       "reportedScale": {
         "hours": 120.4,
@@ -8939,7 +8984,7 @@
       "labels": "Stereo depth, head odometry, recovered hand keypoints/poses and model-generated action phases.",
       "bodyCoverage": "Bimanual",
       "annotationEvidence": "Stereo depth, head odometry, recovered hand keypoints/poses and model-generated action phases.",
-      "limitations": "Model-generated labels are not human verified; mopping is 47% of hours and geography is limited.",
+      "limitations": "Model-generated labels are not human verified; mopping is 47% of hours and geography is limited. The dashboard video is a preview. The source MCAP provides original multi-stream observations.",
       "sources": [
         {
           "label": "Official data",
@@ -8960,7 +9005,7 @@
       "scaleType": "hours",
       "cameraSetup": "Head-mounted ZED stereo views, two wrist cameras and three IMUs.",
       "coordinateFrame": "ROS TF tree, per-camera calibration and odometry delivered inside MCAP.",
-      "calibration": "ROS TF tree, per-camera calibration and odometry delivered inside MCAP.",
+      "calibration": "ROS TF tree, per-camera calibration and odometry delivered inside MCAP. MCAP retains ZED head left/right, wrist views, camera_info and transforms. Use the matching head streams with their camera information.",
       "derivedSignals": [
         "Stereo depth, head odometry, recovered hand keypoints/poses and model-generated action phases."
       ],
@@ -8989,7 +9034,8 @@
           "https://huggingface.co/datasets/humaidtech/EgoViz-120"
         ],
         "calibration": [
-          "https://huggingface.co/datasets/humaidtech/EgoViz-120"
+          "https://huggingface.co/datasets/humaidtech/EgoViz-120",
+          "https://huggingface.co/buckets/humaidtech/EgoViz-120"
         ],
         "derivedSignals": [
           "https://huggingface.co/datasets/humaidtech/EgoViz-120"
@@ -9002,6 +9048,9 @@
         ],
         "contactType": [
           "https://huggingface.co/datasets/humaidtech/EgoViz-120"
+        ],
+        "limitations": [
+          "https://huggingface.co/buckets/humaidtech/EgoViz-120"
         ]
       }
     },
@@ -13766,7 +13815,7 @@
       "cameraSetup": "Calibrated head-mounted multi-camera rig.",
       "recordedStreams": "Multicamera images and inertial streams; annotations are derived estimates.",
       "coordinateFrame": "Reported gravity-aligned head trajectory and world-frame MANO poses.",
-      "calibration": "Stereo and multi-camera calibration per author report.",
+      "calibration": "Stereo and multi-camera calibration per author report. Six hardware-synchronized global-shutter cameras, including two fisheye stereo pairs. Use the exact camera roles and episode calibration.",
       "derivedSignals": [
         "Head trajectory",
         "Hand pose",
@@ -13775,7 +13824,7 @@
       "datasetUrl": "https://huggingface.co/datasets/groundedsi/RoboCap-10k",
       "dataLicense": "CC BY 4.0 on dataset card; access requires request approval.",
       "releaseScope": "Reported 10,000 hours; full downloadable extent unverified.",
-      "limitations": "Head and hand coordinates are model estimates; they are not direct tactile sensing or robot action labels.",
+      "limitations": "Head and hand coordinates are model estimates; they are not direct tactile sensing or robot action labels. Public file tree lists LeRobot shards and access is manual. Trajectories and aggregate totals have separate provenance.",
       "sources": [
         {
           "label": "Technical report and project",
@@ -13856,7 +13905,7 @@
           "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
         ]
       },
-      "verified": "2026-11-08"
+      "verified": "2026-11-21"
     },
     "egoactionbench": {
       "name": "EgoActionBench",
@@ -15420,6 +15469,1649 @@
         }
       ],
       "verified": "2026-11-20"
+    },
+    "humancoin": {
+      "name": "HumanCOIN",
+      "observations": "Multiview head and wearable RGB. sEMG starts at L2 and EEG at L3. Direct gaze, hand pose and glove kinematics are recorded in controlled L3.",
+      "recordedStreams": "Multiview head and wearable RGB. sEMG starts at L2 and EEG at L3. Direct gaze, hand pose and glove kinematics are recorded in controlled L3.",
+      "labels": "Gaze inferred from video outside direct-gaze recordings; 6-DoF head/wrist poses and step action/object annotations. Check depth provenance per modality.",
+      "recordedSignals": [
+        "Vision",
+        "EMG",
+        "EEG"
+      ],
+      "bodyCoverage": "Hands and upper body",
+      "cameraSetup": "Multiview head and wearable RGB. sEMG starts at L2 and EEG at L3. Direct gaze, hand pose and glove kinematics are recorded in controlled L3.",
+      "calibration": "Per-device clocks and cross-stream calibration are provided by the documented format.",
+      "annotationType": "mixed",
+      "annotationEvidence": "Gaze inferred from video outside direct-gaze recordings; 6-DoF head/wrist poses and step action/object annotations. Check depth provenance per modality.",
+      "dataRole": "egocentric",
+      "access": "Toolkit available; partial data listing",
+      "releaseScope": "The publisher reports 10,000 h L1, 2,000 h L2 and 500 h L3. A public L3 listing does not establish downloadable totals for all tiers.",
+      "dataLicense": "Paper specifies CC BY-NC 4.0 for data. Check terms per release.",
+      "formats": [
+        "Time-indexed Parquet",
+        "RGB video"
+      ],
+      "datasetUrl": "https://www.modelscope.cn/organization/HumanCOIN",
+      "limitations": "The publisher reports 10,000 h L1, 2,000 h L2 and 500 h L3. A public L3 listing does not establish downloadable totals for all tiers.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2611.26434"
+        },
+        {
+          "label": "Project",
+          "url": "https://flagopen.github.io/HumanCOIN/"
+        },
+        {
+          "label": "Code (Apache-2.0)",
+          "url": "https://github.com/FlagOpen/HumanCOIN"
+        },
+        {
+          "label": "Dataset portal",
+          "url": "https://www.modelscope.cn/organization/HumanCOIN"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://www.modelscope.cn/organization/HumanCOIN"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2611.26434"
+        ]
+      },
+      "reportedScale": {
+        "hours": 12500,
+        "scope": "Three acquisition tiers across 38 scene classes"
+      }
+    },
+    "handworldbench": {
+      "name": "HandWorldBench",
+      "observations": "One primary view per Ego and TI5 clip. HandsOn simulation has synchronized front and left/right wrist views.",
+      "recordedStreams": "One primary view per Ego and TI5 clip. HandsOn simulation has synchronized front and left/right wrist views.",
+      "labels": "English captions, operation labels, camera trajectories, and per-source 21-point hand supervision.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "cameraSetup": "One primary view per Ego and TI5 clip. HandsOn simulation has synchronized front and left/right wrist views.",
+      "calibration": "Per-clip camera trajectories and optional calibration vary by source.",
+      "annotationType": "mixed",
+      "annotationEvidence": "English captions, operation labels, camera trajectories, and per-source 21-point hand supervision.",
+      "dataRole": "mixed",
+      "access": "Public corpus downloads",
+      "releaseScope": "The paper curates 20,500 clips. Corpus v1.1 contains 20,000 training clips and 32,000 video views, including 10,000 ego clips. Sixteen TI5 clips lack verified frame alignment for hand geometry.",
+      "dataLicense": "Per-source terms; see corpus data card.",
+      "formats": [
+        "WebDataset TAR",
+        "Parquet index",
+        "JSONL manifest"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/EmbodiedCity/HandWorldBench-Corpus",
+      "limitations": "The paper curates 20,500 clips. Corpus v1.1 contains 20,000 training clips and 32,000 video views, including 10,000 ego clips. Sixteen TI5 clips lack verified frame alignment for hand geometry.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2611.24731"
+        },
+        {
+          "label": "Project",
+          "url": "https://embodiedcity.github.io/HandWorldBench/"
+        },
+        {
+          "label": "Data corpus",
+          "url": "https://huggingface.co/datasets/EmbodiedCity/HandWorldBench-Corpus"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://huggingface.co/datasets/EmbodiedCity/HandWorldBench-Corpus"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2611.24731"
+        ]
+      },
+      "reportedScale": {
+        "clips": 20500,
+        "scope": "Paper corpus including held-out benchmark"
+      },
+      "publicScale": {
+        "clips": 20000,
+        "scope": "Corpus v1.1 training split"
+      }
+    },
+    "contact-transition": {
+      "name": "ContactTransition",
+      "observations": "Egocentric video focused on hands and manipulated objects.",
+      "recordedStreams": "Egocentric video focused on hands and manipulated objects.",
+      "labels": "Touch and release boundary annotations with object-of-interest supervision.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "cameraSetup": "Egocentric video focused on hands and manipulated objects.",
+      "calibration": "Video-frame temporal labels; stereo calibration is outside this task.",
+      "annotationType": "human",
+      "annotationEvidence": "Touch and release boundary annotations with object-of-interest supervision.",
+      "dataRole": "egocentric",
+      "access": "Paper public; data link unverified",
+      "releaseScope": "The reported annotations describe visible contact events. They do not measure tactile forces.",
+      "dataLicense": "Dataset terms unverified separately",
+      "formats": [],
+      "datasetUrl": "https://arxiv.org/abs/2611.13486",
+      "limitations": "The reported annotations describe visible contact events. They do not measure tactile forces.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2611.13486"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://arxiv.org/abs/2611.13486"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2611.13486"
+        ]
+      },
+      "reportedScale": {
+        "videos": 4021,
+        "scope": "8,498 touch and 8,077 release events"
+      }
+    },
+    "physicalai-human-1m-100k": {
+      "name": "Human-1M-100K",
+      "observations": "Monocular or stereo head RGB and optional wrist RGB, depending on episode.",
+      "recordedStreams": "Monocular or stereo head RGB and optional wrist RGB, depending on episode.",
+      "labels": "Goal and timed subtask language, estimated 6-DoF head pose, and 21 keypoints per hand with masks and confidence.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands and head",
+      "cameraSetup": "Monocular or stereo head RGB and optional wrist RGB, depending on episode.",
+      "calibration": "Episode metadata describes rig and camera intrinsics/extrinsics. Confirm actual main_left and main_right features and video streams per vendor shard.",
+      "annotationType": "mixed",
+      "annotationEvidence": "Goal and timed subtask language, estimated 6-DoF head pose, and 21 keypoints per hand with masks and confidence.",
+      "dataRole": "egocentric",
+      "access": "Public download",
+      "releaseScope": "The Hugging Face repository holds previews, schema and samples; the bucket holds vendor shards. Stereo-specific duration is unverified.",
+      "dataLicense": "CC BY 4.0",
+      "formats": [
+        "LeRobot v3.0",
+        "Parquet",
+        "MP4"
+      ],
+      "datasetUrl": "https://huggingface.co/buckets/nvidia/human-1m-100k-oss/tree/release-staging",
+      "limitations": "The Hugging Face repository holds previews, schema and samples; the bucket holds vendor shards. Stereo-specific duration is unverified.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K"
+        },
+        {
+          "label": "Data bucket (CC BY 4.0)",
+          "url": "https://huggingface.co/buckets/nvidia/human-1m-100k-oss/tree/release-staging"
+        },
+        {
+          "label": "Schema",
+          "url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K/blob/main/data/schema.json"
+        },
+        {
+          "label": "Complete sample episodes",
+          "url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K/tree/main/samples/downloads"
+        },
+        {
+          "label": "Explorer",
+          "url": "https://huggingface.co/spaces/nvidia/PhysicalAI-Human-1M-Explorer"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://huggingface.co/spaces/nvidia/PhysicalAI-Human-1M-Explorer"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K"
+        ]
+      },
+      "reportedScale": {
+        "hours": 1000000,
+        "scope": "Publisher-reported Human-1M parent collection"
+      },
+      "publicScale": {
+        "hours": 100000,
+        "episodes": 3405573,
+        "scope": "Publisher-reported public mixed mono/stereo release; no verified stereo-only total"
+      }
+    },
+    "humanola-ego-sample": {
+      "name": "Humanola Stereo Ego Sample",
+      "observations": "Rectified head stereo and separate monocular wrist views at 1920 × 1200 and 30 FPS; about 200 Hz IMUs.",
+      "recordedStreams": "Rectified head stereo and separate monocular wrist views at 1920 × 1200 and 30 FPS; about 200 Hz IMUs.",
+      "labels": "Gravity-aligned world-frame hand keypoints, joint angles, wrist and head pose, grip scalar and quality flags.",
+      "recordedSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "bodyCoverage": "Hands and head",
+      "cameraSetup": "Rectified head stereo and separate monocular wrist views at 1920 × 1200 and 30 FPS; about 200 Hz IMUs.",
+      "calibration": "Head stereo has reported 0.120 m baseline; exact per-episode intrinsics, timestamps and camera–IMU transforms ship with data.",
+      "annotationType": "mixed",
+      "annotationEvidence": "Gravity-aligned world-frame hand keypoints, joint angles, wrist and head pose, grip scalar and quality flags.",
+      "dataRole": "egocentric",
+      "access": "Public download",
+      "releaseScope": "Use the two head streams as the rigid stereo pair. Hand pose is derived, and no dense disparity ground truth is listed.",
+      "dataLicense": "CC BY 4.0",
+      "formats": [
+        "LeRobot v2.1",
+        "Parquet",
+        "MP4"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/humanola-inc/egocentric-sample/tree/main",
+      "limitations": "Use the two head streams as the rigid stereo pair. Hand pose is derived, and no dense disparity ground truth is listed.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/humanola-inc/egocentric-sample"
+        },
+        {
+          "label": "Data files (CC BY 4.0)",
+          "url": "https://huggingface.co/datasets/humanola-inc/egocentric-sample/tree/main"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://huggingface.co/datasets/humanola-inc/egocentric-sample/tree/main"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/humanola-inc/egocentric-sample"
+        ]
+      },
+      "publicScale": {
+        "episodes": 9,
+        "frames": 48272,
+        "minutes": 27
+      }
+    },
+    "arete-stereo-hands-sample": {
+      "name": "Stereo Hands Sample",
+      "observations": "Two head-camera RGB streams at 960 × 600 and 15 FPS, with the head IMU.",
+      "recordedStreams": "Two head-camera RGB streams at 960 × 600 and 15 FPS, with the head IMU.",
+      "labels": "Estimated 2D keypoints, triangulated 3D hands, visual-odometry head pose, grasp/release events and manually titled steps.",
+      "recordedSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "bodyCoverage": "Hands and head",
+      "cameraSetup": "Two head-camera RGB streams at 960 × 600 and 15 FPS, with the head IMU.",
+      "calibration": "Uses partly re-estimated calibration. World coordinates originate at the start of each source clip.",
+      "annotationType": "estimated",
+      "annotationEvidence": "Estimated 2D keypoints, triangulated 3D hands, visual-odometry head pose, grasp/release events and manually titled steps.",
+      "dataRole": "egocentric",
+      "access": "Public download",
+      "releaseScope": "Derived from the Humanola sample and overlaps its footage. The stereo hand and head estimates are benchmarked against another estimator rather than an independent motion-capture reference.",
+      "dataLicense": "CC BY 4.0; source video by Humanola Inc.",
+      "formats": [
+        "LeRobot v3.0",
+        "Parquet",
+        "MP4"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/arete-robotics/stereo-hands-sample/tree/main",
+      "limitations": "Derived from the Humanola sample and overlaps its footage. The stereo hand and head estimates are benchmarked against another estimator rather than an independent motion-capture reference.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/arete-robotics/stereo-hands-sample"
+        },
+        {
+          "label": "Data files (CC BY 4.0)",
+          "url": "https://huggingface.co/datasets/arete-robotics/stereo-hands-sample/tree/main"
+        },
+        {
+          "label": "Source footage",
+          "url": "https://huggingface.co/datasets/humanola-inc/egocentric-sample"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://huggingface.co/datasets/humanola-inc/egocentric-sample"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/arete-robotics/stereo-hands-sample"
+        ]
+      },
+      "publicScale": {
+        "episodes": 106,
+        "frames": 10827,
+        "minutes": 12
+      }
+    },
+    "humyn-apac-stereo": {
+      "name": "APAC Egocentric Stereo",
+      "observations": "Releases 12 stereo RGB clips, 1920 × 1080 per eye at 30 FPS. Browser preview is downsampled.",
+      "recordedStreams": "Releases 12 stereo RGB clips, 1920 × 1080 per eye at 30 FPS. Browser preview is downsampled.",
+      "labels": "248 three-second action captions and head/hand tracking render. Depth is distributed as video.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands and head",
+      "cameraSetup": "Releases 12 stereo RGB clips, 1920 × 1080 per eye at 30 FPS. Browser preview is downsampled.",
+      "calibration": "Side-by-side frames contain rectified left/right. Intrinsics and baseline are not documented as downloadable.",
+      "annotationType": "mixed",
+      "annotationEvidence": "248 three-second action captions and head/hand tracking render. Depth is distributed as video.",
+      "dataRole": "egocentric",
+      "access": "Public download",
+      "releaseScope": "Use videos/ for original rectified pairs. The depth video and visualization are not independent sensor ground truth.",
+      "dataLicense": "CC BY 4.0",
+      "formats": [
+        "MP4",
+        "JSONL",
+        "Parquet preview"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled/tree/main",
+      "limitations": "Use videos/ for original rectified pairs. The depth video and visualization are not independent sensor ground truth.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled"
+        },
+        {
+          "label": "Data files (CC BY 4.0)",
+          "url": "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled/tree/main"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled/tree/main"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled"
+        ]
+      },
+      "publicScale": {
+        "episodes": 12,
+        "minutes": 12
+      }
+    },
+    "caryx-everyday-manipulation-3d": {
+      "name": "Everyday Manipulation 3D",
+      "observations": "One iPhone Pro ego RGB stream and native-grid ARKit LiDAR-derived scene depth.",
+      "recordedStreams": "One iPhone Pro ego RGB stream and native-grid ARKit LiDAR-derived scene depth.",
+      "labels": "MANO hands, masks, language spans and geometry-derived hand-object contact with separate validity and correction fields.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Hands",
+      "cameraSetup": "One iPhone Pro ego RGB stream and native-grid ARKit LiDAR-derived scene depth.",
+      "calibration": "RGB and depth intrinsics ship per episode. RGB is uniformly scaled and depth is coded on its native grid.",
+      "annotationType": "mixed",
+      "annotationEvidence": "MANO hands, masks, language spans and geometry-derived hand-object contact with separate validity and correction fields.",
+      "dataRole": "egocentric",
+      "access": "Public download",
+      "releaseScope": "Released annotated corpus v0.8 has 116 episodes; raw release shares clip IDs. The setup has one RGB eye plus a depth sensor, and contact labels are not measured force.",
+      "dataLicense": "Annotated: CC BY-NC-SA 4.0 with MANO carve-out. Raw companion: CC BY 4.0.",
+      "formats": [
+        "LeRobot v3.0",
+        "Parquet",
+        "MP4",
+        "NPZ"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/CaryxAI/everyday-manipulation-3d-raw",
+      "limitations": "Released annotated corpus v0.8 has 116 episodes; raw release shares clip IDs. The setup has one RGB eye plus a depth sensor, and contact labels are not measured force.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/CaryxAI/everyday-manipulation-3d"
+        },
+        {
+          "label": "Project",
+          "url": "https://caryx.ai/data"
+        },
+        {
+          "label": "Data (raw companion)",
+          "url": "https://huggingface.co/datasets/CaryxAI/everyday-manipulation-3d-raw"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://huggingface.co/datasets/CaryxAI/everyday-manipulation-3d-raw"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/CaryxAI/everyday-manipulation-3d"
+        ]
+      },
+      "publicScale": {
+        "episodes": 116,
+        "frames": 28019,
+        "scope": "Annotated release at 15 FPS, across ten tasks"
+      }
+    },
+    "foundationstereo-fsd": {
+      "name": "FoundationStereo Dataset (FSD)",
+      "observations": "Rendered rectified RGB pairs from a large diverse scene generator.",
+      "recordedStreams": "Rendered rectified RGB pairs from a large diverse scene generator.",
+      "labels": "Dense rendered disparity.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered rectified RGB pairs from a large diverse scene generator.",
+      "calibration": "Render cameras define the stereo geometry.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Dense rendered disparity.",
+      "dataRole": "synthetic",
+      "access": "Public archive links",
+      "releaseScope": "The authors link separate full (>1 TB) and sample distributions. FSD is distinct from the real-image FFS Stereo4D pseudo-labels.",
+      "dataLicense": "Check the NVIDIA dataset release terms separately from software and weights.",
+      "formats": [
+        "Images",
+        "Disparity files"
+      ],
+      "datasetUrl": "https://drive.google.com/drive/folders/1YdC2a0_KTZ9xix_HyqNMPCrClpm0-XFU",
+      "limitations": "The authors link separate full (>1 TB) and sample distributions. FSD is distinct from the real-image FFS Stereo4D pseudo-labels.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://github.com/NVlabs/FoundationStereo#fsd-dataset"
+        },
+        {
+          "label": "Data (full archive)",
+          "url": "https://drive.google.com/drive/folders/1YdC2a0_KTZ9xix_HyqNMPCrClpm0-XFU"
+        },
+        {
+          "label": "Download (3 GB sample)",
+          "url": "https://drive.google.com/file/d/1dJwK5x8xsaCazz5xPGJ2OKFIWrd9rQT5/view"
+        },
+        {
+          "label": "Paper training recipe",
+          "url": "https://arxiv.org/html/2501.09898v1#S4.SS1"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://arxiv.org/html/2501.09898v1#S4.SS1"
+        ],
+        "cameraSetup": [
+          "https://github.com/NVlabs/FoundationStereo#fsd-dataset"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ],
+      "reportedScale": {
+        "pairs": 1000000,
+        "scope": "Approximately one million synthetic training pairs"
+      }
+    },
+    "scene-flow-stereo": {
+      "name": "Scene Flow",
+      "observations": "Rendered left/right images in clean/final passes across three subsets.",
+      "recordedStreams": "Rendered left/right images in clean/final passes across three subsets.",
+      "labels": "Ground-truth rendered disparity, flow and disparity change.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered left/right images in clean/final passes across three subsets.",
+      "calibration": "Use subset camera data and explicit scene splits.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Ground-truth rendered disparity, flow and disparity change.",
+      "dataRole": "synthetic",
+      "access": "Public download",
+      "releaseScope": "FlyingThings3D, Driving and Monkaa are parts of the same release. Standard training lists may omit difficult FlyingThings3D samples.",
+      "dataLicense": "See author release and per-asset terms.",
+      "formats": [
+        "PNG",
+        "PFM",
+        "Camera data"
+      ],
+      "datasetUrl": "https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html",
+      "limitations": "FlyingThings3D, Driving and Monkaa are parts of the same release. Standard training lists may omit difficult FlyingThings3D samples.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/1512.02134"
+        },
+        {
+          "label": "Data",
+          "url": "https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/1512.02134"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ]
+    },
+    "mpi-sintel-stereo": {
+      "name": "MPI Sintel Stereo",
+      "observations": "Rendered left/right views in clean and final passes.",
+      "recordedStreams": "Rendered left/right views in clean and final passes.",
+      "labels": "Dense rendered disparity with occlusion and out-of-frame masks.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered left/right views in clean and final passes.",
+      "calibration": "The right camera is translated 0.10 m parallel to the image plane.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Dense rendered disparity with occlusion and out-of-frame masks.",
+      "dataRole": "synthetic",
+      "access": "Public download",
+      "releaseScope": "The stereo release has its own download and is separate from optical-flow test data.",
+      "dataLicense": "See the official dataset terms.",
+      "formats": [
+        "PNG",
+        "Archive"
+      ],
+      "datasetUrl": "https://files.is.tue.mpg.de/jwulff/sintel/MPI-Sintel-stereo-training-20150305.zip",
+      "limitations": "The stereo release has its own download and is separate from optical-flow test data.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://sintel.is.tuebingen.mpg.de/stereo"
+        },
+        {
+          "label": "Download (2.5 GB)",
+          "url": "https://files.is.tue.mpg.de/jwulff/sintel/MPI-Sintel-stereo-training-20150305.zip"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://files.is.tue.mpg.de/jwulff/sintel/MPI-Sintel-stereo-training-20150305.zip"
+        ],
+        "cameraSetup": [
+          "https://sintel.is.tuebingen.mpg.de/stereo"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ]
+    },
+    "tartanair-stereo": {
+      "name": "TartanAir",
+      "observations": "Rendered left/right RGB, depth and poses across diverse indoor and outdoor trajectories.",
+      "recordedStreams": "Rendered left/right RGB, depth and poses across diverse indoor and outdoor trajectories.",
+      "labels": "Rendered per-view depth and derived disparity when converted with the rig geometry.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered left/right RGB, depth and poses across diverse indoor and outdoor trajectories.",
+      "calibration": "Use release-specific camera intrinsics, baseline and pose conventions.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Rendered per-view depth and derived disparity when converted with the rig geometry.",
+      "dataRole": "synthetic",
+      "access": "Public download",
+      "releaseScope": "TartanAir, TartanAir v2, and TartanGround have separate data contracts.",
+      "dataLicense": "See official distribution terms.",
+      "formats": [
+        "PNG",
+        "NPY",
+        "Pose text files"
+      ],
+      "datasetUrl": "https://theairlab.org/tartanair-dataset/",
+      "limitations": "TartanAir, TartanAir v2, and TartanGround have separate data contracts.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2003.14338"
+        },
+        {
+          "label": "Data",
+          "url": "https://theairlab.org/tartanair-dataset/"
+        },
+        {
+          "label": "Tools",
+          "url": "https://github.com/castacks/tartanair_tools"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://github.com/castacks/tartanair_tools"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2003.14338"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ]
+    },
+    "crestereo-training-data": {
+      "name": "CREStereo training data",
+      "observations": "Rendered stereo RGB pairs.",
+      "recordedStreams": "Rendered stereo RGB pairs.",
+      "labels": "Dense ground-truth rendered disparity.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered stereo RGB pairs.",
+      "calibration": "Use the released left/right pairing and disparity units.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Dense ground-truth rendered disparity.",
+      "dataRole": "synthetic",
+      "access": "Public author download links",
+      "releaseScope": "The training dataset is distinct from CREStereo model weights and code.",
+      "dataLicense": "Use dataset-specific terms at original mirrors.",
+      "formats": [
+        "PNG",
+        "Archives"
+      ],
+      "datasetUrl": "https://github.com/megvii-research/CREStereo",
+      "limitations": "The training dataset is distinct from CREStereo model weights and code.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://github.com/megvii-research/CREStereo#datasets"
+        },
+        {
+          "label": "Data (author downloads)",
+          "url": "https://github.com/megvii-research/CREStereo"
+        },
+        {
+          "label": "Related paper",
+          "url": "https://arxiv.org/abs/2203.11483"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://arxiv.org/abs/2203.11483"
+        ],
+        "cameraSetup": [
+          "https://github.com/megvii-research/CREStereo#datasets"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ]
+    },
+    "falling-things": {
+      "name": "Falling Things",
+      "observations": "Binocular RGB with per-view rendered depth.",
+      "recordedStreams": "Binocular RGB with per-view rendered depth.",
+      "labels": "Dense rendered depth, segmentation, object poses and bounding boxes.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Binocular RGB with per-view rendered depth.",
+      "calibration": "Use the camera settings included with the release for depth-to-disparity conversion.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Dense rendered depth, segmentation, object poses and bounding boxes.",
+      "dataRole": "synthetic",
+      "access": "Public author downloads",
+      "releaseScope": "The paper reports 61,500 snapshots and provides stereo imagery across single-object and mixed-object subsets.",
+      "dataLicense": "See original dataset terms.",
+      "formats": [
+        "JPG",
+        "PNG",
+        "JSON"
+      ],
+      "datasetUrl": "https://arxiv.org/abs/1804.06534",
+      "limitations": "The paper reports 61,500 snapshots and provides stereo imagery across single-object and mixed-object subsets.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/1804.06534"
+        },
+        {
+          "label": "Project and data",
+          "url": "https://research.nvidia.com/publication/2018-06_falling-things-synthetic-dataset-3d-object-detection-and-pose-estimation"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://research.nvidia.com/publication/2018-06_falling-things-synthetic-dataset-3d-object-detection-and-pose-estimation"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/1804.06534"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ],
+      "reportedScale": {
+        "images": 61500,
+        "scope": "Paper snapshots, not independently verified binocular pair count"
+      }
+    },
+    "instereo2k": {
+      "name": "InStereo2K",
+      "observations": "Captured left/right RGB images in indoor scenes.",
+      "recordedStreams": "Captured left/right RGB images in indoor scenes.",
+      "labels": "Dense ground-truth disparity; see valid-pixel masks and acquisition details.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Captured left/right RGB images in indoor scenes.",
+      "calibration": "Use released rectified pairs and disparity convention.",
+      "annotationType": "measured",
+      "annotationEvidence": "Dense ground-truth disparity; see valid-pixel masks and acquisition details.",
+      "dataRole": "reference",
+      "access": "Public author download links",
+      "releaseScope": "Separate 2,000 training and 50 test pairs in the official repository.",
+      "dataLicense": "Original repository specifies research use.",
+      "formats": [
+        "PNG",
+        "Archives"
+      ],
+      "datasetUrl": "https://github.com/yuhuaxu/stereodataset",
+      "limitations": "Separate 2,000 training and 50 test pairs in the official repository.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://doi.org/10.1007/s11432-019-2803-x"
+        },
+        {
+          "label": "Data (author downloads)",
+          "url": "https://github.com/yuhuaxu/stereodataset"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://github.com/yuhuaxu/stereodataset"
+        ],
+        "cameraSetup": [
+          "https://doi.org/10.1007/s11432-019-2803-x"
+        ]
+      },
+      "publicScale": {
+        "pairs": 2050,
+        "scope": "2,000 train and 50 test"
+      }
+    },
+    "virtual-kitti-2": {
+      "name": "Virtual KITTI 2",
+      "observations": "Two rendered camera streams, with matched RGB, depth and scene conditions.",
+      "recordedStreams": "Two rendered camera streams, with matched RGB, depth and scene conditions.",
+      "labels": "Rendered depth, flow and scene labels; disparity follows the released rig geometry.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Two rendered camera streams, with matched RGB, depth and scene conditions.",
+      "calibration": "Separate intrinsic and extrinsic tables; each scenario has aligned camera positions.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Rendered depth, flow and scene labels; disparity follows the released rig geometry.",
+      "dataRole": "synthetic",
+      "access": "Public author downloads",
+      "releaseScope": "This is the two-camera Virtual KITTI 2 release. Weather and viewpoint variants are not independent real captures.",
+      "dataLicense": "See dataset terms at the author site.",
+      "formats": [
+        "PNG",
+        "JPG",
+        "Text"
+      ],
+      "datasetUrl": "https://europe.naverlabs.com/research/computer-vision/proxy-virtual-worlds-vkitti-2/",
+      "limitations": "This is the two-camera Virtual KITTI 2 release. Weather and viewpoint variants are not independent real captures.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2001.10773"
+        },
+        {
+          "label": "Data",
+          "url": "https://europe.naverlabs.com/research/computer-vision/proxy-virtual-worlds-vkitti-2/"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://europe.naverlabs.com/research/computer-vision/proxy-virtual-worlds-vkitti-2/"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2001.10773"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ]
+    },
+    "wmgstereo": {
+      "name": "WMGStereo",
+      "observations": "Rendered RGB stereo across controlled variations of scenes and camera parameters.",
+      "recordedStreams": "Rendered RGB stereo across controlled variations of scenes and camera parameters.",
+      "labels": "Rendered ground-truth disparity.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered RGB stereo across controlled variations of scenes and camera parameters.",
+      "calibration": "Use the release geometry and disparity conventions.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Rendered ground-truth disparity.",
+      "dataRole": "synthetic",
+      "access": "Public tar archives",
+      "releaseScope": "The official published dataset is WMGStereo. MatchLab publishes InfinigenSV separately.",
+      "dataLicense": "BSD 3-Clause on Hugging Face.",
+      "formats": [
+        "TAR.GZ",
+        "Manifests"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/princeton-vl/WMGStereo",
+      "limitations": "The official published dataset is WMGStereo. MatchLab publishes InfinigenSV separately.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2504.16930"
+        },
+        {
+          "label": "Data (BSD-3-Clause)",
+          "url": "https://huggingface.co/datasets/princeton-vl/WMGStereo"
+        },
+        {
+          "label": "Generator",
+          "url": "https://github.com/princeton-vl/InfinigenStereo"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://github.com/princeton-vl/InfinigenStereo"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2504.16930"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ],
+      "reportedScale": {
+        "pairs": 150000
+      }
+    },
+    "unrealstereo4k": {
+      "name": "UnrealStereo4K",
+      "observations": "Rendered 3840 × 2160 binocular imagery across indoor and outdoor scenes.",
+      "recordedStreams": "Rendered 3840 × 2160 binocular imagery across indoor and outdoor scenes.",
+      "labels": "Dense rendered disparity.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered 3840 × 2160 binocular imagery across indoor and outdoor scenes.",
+      "calibration": "Use the matching resolution and geometry for the chosen bundle.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Dense rendered disparity.",
+      "dataRole": "synthetic",
+      "access": "Public archives",
+      "releaseScope": "Eight original training scenes and a 200-pair domain-shift scene; the quarter-resolution archive is an alternative distribution.",
+      "dataLicense": "Review the release-specific terms.",
+      "formats": [
+        "ZIP",
+        "Images"
+      ],
+      "datasetUrl": "https://github.com/fabiotosi92/SMD-Nets#datasets",
+      "limitations": "Eight original training scenes and a 200-pair domain-shift scene; the quarter-resolution archive is an alternative distribution.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2104.03866"
+        },
+        {
+          "label": "Data (full / quarter archives)",
+          "url": "https://github.com/fabiotosi92/SMD-Nets#datasets"
+        },
+        {
+          "label": "Data (quarter release)",
+          "url": "https://huggingface.co/datasets/fabiotosi92/UnrealStereo4K"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://huggingface.co/datasets/fabiotosi92/UnrealStereo4K"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2104.03866"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ]
+    },
+    "irs-stereo": {
+      "name": "IRS",
+      "observations": "Rendered binocular RGB from indoor navigation viewpoints.",
+      "recordedStreams": "Rendered binocular RGB from indoor navigation viewpoints.",
+      "labels": "Dense rendered disparity and surface normals.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered binocular RGB from indoor navigation viewpoints.",
+      "calibration": "Disparity is paired with the official left/right images.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Dense rendered disparity and surface normals.",
+      "dataRole": "synthetic",
+      "access": "Author archive links",
+      "releaseScope": "Reported 103,316 pairs across four indoor environment classes.",
+      "dataLicense": "Consult original archive terms.",
+      "formats": [
+        "Archive",
+        "Images"
+      ],
+      "datasetUrl": "https://github.com/blackjack2015/IRS",
+      "limitations": "Reported 103,316 pairs across four indoor environment classes.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/1912.09678"
+        },
+        {
+          "label": "Data",
+          "url": "https://github.com/blackjack2015/IRS"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://github.com/blackjack2015/IRS"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/1912.09678"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ],
+      "reportedScale": {
+        "pairs": 103316
+      }
+    },
+    "stereosplat-xrstereo": {
+      "name": "XRStereo (StereoSplat)",
+      "observations": "Rectified 1024 × 1024 stereo RGB from camera motion through static rendered scenes.",
+      "recordedStreams": "Rectified 1024 × 1024 stereo RGB from camera motion through static rendered scenes.",
+      "labels": "Dense left/right disparity, camera poses and per-sequence intrinsics and baseline.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rectified 1024 × 1024 stereo RGB from camera motion through static rendered scenes.",
+      "calibration": "Shared pinhole intrinsics and baseline 40–120 mm. Camera poses use Blender axes.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Dense left/right disparity, camera poses and per-sequence intrinsics and baseline.",
+      "dataRole": "synthetic",
+      "access": "Public download",
+      "releaseScope": "The public train release has 17,922 sequences and 72 TAR shards. Its larger paper corpus and earlier XR-Stereo (Stereo Matching in Time) are distinct.",
+      "dataLicense": "CC BY-NC 4.0",
+      "formats": [
+        "TAR",
+        "NPZ",
+        "NPY",
+        "JSON"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/facebook/xrstereo/tree/main",
+      "limitations": "The public train release has 17,922 sequences and 72 TAR shards. Its larger paper corpus and earlier XR-Stereo (Stereo Matching in Time) are distinct.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/facebook/xrstereo"
+        },
+        {
+          "label": "Data files (CC BY-NC 4.0)",
+          "url": "https://huggingface.co/datasets/facebook/xrstereo/tree/main"
+        },
+        {
+          "label": "Project",
+          "url": "https://vladimiryugay.github.io/stereosplat/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/facebookresearch/stereo-splat"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.35902"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://arxiv.org/abs/2610.35902"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/facebook/xrstereo"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ],
+      "reportedScale": {
+        "sequences": 20000,
+        "frames": 137000,
+        "scope": "Approximate full paper corpus; one stereo frame is a pair"
+      },
+      "publicScale": {
+        "sequences": 17922,
+        "pairs": 89610,
+        "scope": "Public train split, five stereo frames per sequence"
+      }
+    },
+    "ffs-stereo4d": {
+      "name": "FFS Stereo4D",
+      "observations": "Inputs were real VR180 binocular videos from Stereo4D. The release includes metadata and disparity images.",
+      "recordedStreams": "Inputs were real VR180 binocular videos from Stereo4D. The release includes metadata and disparity images.",
+      "labels": "Model-generated disparity; no independently captured depth ground truth.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Inputs were real VR180 binocular videos from Stereo4D. The release includes metadata and disparity images.",
+      "calibration": "Disparities apply to the source rectification and frame indices.",
+      "annotationType": "estimated",
+      "annotationEvidence": "Model-generated disparity; no independently captured depth ground truth.",
+      "dataRole": "reference",
+      "access": "Public disparity archives",
+      "releaseScope": "The download does not bundle left/right RGB. Source videos may no longer be available. The catalog provides metadata and 26 disparity archives.",
+      "dataLicense": "CC BY-NC 4.0 for the released disparity assets. Source video terms are separate.",
+      "formats": [
+        "PNG",
+        "ZIP",
+        "CSV"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/nvidia/ffs_stereo4d/tree/main",
+      "limitations": "The download does not bundle left/right RGB. Source videos may no longer be available. The catalog provides metadata and 26 disparity archives.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/nvidia/ffs_stereo4d"
+        },
+        {
+          "label": "Data files (disparity only)",
+          "url": "https://huggingface.co/datasets/nvidia/ffs_stereo4d/tree/main"
+        },
+        {
+          "label": "Source project",
+          "url": "https://stereo4d.github.io/"
+        },
+        {
+          "label": "Fast-FoundationStereo paper",
+          "url": "https://arxiv.org/abs/2512.11130"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://arxiv.org/abs/2512.11130"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/nvidia/ffs_stereo4d"
+        ]
+      },
+      "publicScale": {
+        "indexedRows": 1287442,
+        "scope": "Dataset viewer rows across the two variants; disparity and metadata only"
+      }
+    },
+    "princeton365-stereo": {
+      "name": "Princeton365",
+      "observations": "ZED left/right imagery on stereo recordings; 360° capture is a separate camera modality.",
+      "recordedStreams": "ZED left/right imagery on stereo recordings; 360° capture is a separate camera modality.",
+      "labels": "Camera-pose references and geometry products described by release variant.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "ZED left/right imagery on stereo recordings; 360° capture is a separate camera modality.",
+      "calibration": "Match left/right timestamp maps, calibration and effective FPS to the selected stereo sequence.",
+      "annotationType": "measured",
+      "annotationEvidence": "Camera-pose references and geometry products described by release variant.",
+      "dataRole": "reference",
+      "access": "Public download",
+      "releaseScope": "Use published effective sampling rates. The stereo subset should not be conflated with all 360° videos.",
+      "dataLicense": "BSD-3-Clause in the official Hugging Face distribution.",
+      "formats": [
+        "WebDataset TAR",
+        "MP4",
+        "JPEG",
+        "Pose files"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/princeton-vl/princeton365",
+      "limitations": "Use published effective sampling rates. The stereo subset should not be conflated with all 360° videos.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2506.09035"
+        },
+        {
+          "label": "Project",
+          "url": "https://princeton365.cs.princeton.edu/"
+        },
+        {
+          "label": "Data (BSD-3-Clause)",
+          "url": "https://huggingface.co/datasets/princeton-vl/princeton365"
+        },
+        {
+          "label": "Stereo archive instructions",
+          "url": "https://princeton365.cs.princeton.edu/download/"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://princeton365.cs.princeton.edu/download/"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2506.09035"
+        ]
+      }
+    },
+    "real3ext": {
+      "name": "REAL3EXT",
+      "observations": "RealSense R200 active stereo, ZED passive stereo, and Kinect v2 ToF under varying illumination.",
+      "recordedStreams": "RealSense R200 active stereo, ZED passive stereo, and Kinect v2 ToF under varying illumination.",
+      "labels": "Independent line-laser depth used as reference.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "RealSense R200 active stereo, ZED passive stereo, and Kinect v2 ToF under varying illumination.",
+      "calibration": "Capture rig calibration ships with the dataset.",
+      "annotationType": "measured",
+      "annotationEvidence": "Independent line-laser depth used as reference.",
+      "dataRole": "reference",
+      "access": "Public archive",
+      "releaseScope": "Ten static indoor scenes under four lighting conditions; choose the sensor-specific stream.",
+      "dataLicense": "Use the terms of the linked article and dataset deposit.",
+      "formats": [
+        "ZIP",
+        "Images",
+        "Calibration"
+      ],
+      "datasetUrl": "https://lttm.dei.unipd.it/paper_data/real3ext/data/REAL3EXT.zip",
+      "limitations": "Ten static indoor scenes under four lighting conditions; choose the sensor-specific stream.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://doi.org/10.1016/j.dib.2019.104619"
+        },
+        {
+          "label": "Project",
+          "url": "https://lttm.dei.unipd.it/paper_data/real3ext/"
+        },
+        {
+          "label": "Data",
+          "url": "https://lttm.dei.unipd.it/paper_data/real3ext/data/REAL3EXT.zip"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://lttm.dei.unipd.it/paper_data/real3ext/data/REAL3EXT.zip"
+        ],
+        "cameraSetup": [
+          "https://doi.org/10.1016/j.dib.2019.104619"
+        ]
+      }
+    },
+    "active-event-stereo-data": {
+      "name": "Active Event Stereo",
+      "observations": "Two event streams with a fixed projected IR pattern; separate events simulated from active RealSense IR videos.",
+      "recordedStreams": "Two event streams with a fixed projected IR pattern; separate events simulated from active RealSense IR videos.",
+      "labels": "Synchronized depth labels from the collection/calibration pipeline.",
+      "recordedSignals": [
+        "Events"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Two event streams with a fixed projected IR pattern; separate events simulated from active RealSense IR videos.",
+      "calibration": "Use the published camera parameters, projector setup and sequence timestamps.",
+      "annotationType": "mixed",
+      "annotationEvidence": "Synchronized depth labels from the collection/calibration pipeline.",
+      "dataRole": "reference",
+      "access": "Author repository and ModelScope downloads",
+      "releaseScope": "85 real sequences and about 21.5K labels; 119 original IR sequences used for simulation and about 23.8K simulated labels.",
+      "dataLicense": "Check original release terms.",
+      "formats": [
+        "Event sequences",
+        "Depth arrays"
+      ],
+      "datasetUrl": "https://www.modelscope.cn/datasets/jianingli/Active-Event-Stereo/files",
+      "limitations": "85 real sequences and about 21.5K labels; 119 original IR sequences used for simulation and about 23.8K simulated labels.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2607.23684"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/jianing-li/active_event_based_stereo"
+        },
+        {
+          "label": "Data (real)",
+          "url": "https://www.modelscope.cn/datasets/jianingli/Active-Event-Stereo/files"
+        },
+        {
+          "label": "Data (simulated)",
+          "url": "https://www.modelscope.cn/datasets/jianingli/RealSense-Event-Sim/files"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://www.modelscope.cn/datasets/jianingli/RealSense-Event-Sim/files"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2607.23684"
+        ]
+      }
+    },
+    "dreds-active-stereo": {
+      "name": "DREDS",
+      "observations": "Rendered color images and active-stereo sensor-depth simulation.",
+      "recordedStreams": "Rendered color images and active-stereo sensor-depth simulation.",
+      "labels": "Clean rendered depth and noisy simulated sensor depth, with material-specific scenes.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered color images and active-stereo sensor-depth simulation.",
+      "calibration": "Use the dataset’s synthetic camera configuration; separate real evaluation capture has different provenance.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Clean rendered depth and noisy simulated sensor depth, with material-specific scenes.",
+      "dataRole": "synthetic",
+      "access": "Author dataset archives",
+      "releaseScope": "Use as an RGB-D restoration resource. Check a particular archive for native left/right IR rather than assuming it is bundled.",
+      "dataLicense": "Review release-specific terms.",
+      "formats": [
+        "Images",
+        "Depth files",
+        "Archives"
+      ],
+      "datasetUrl": "https://arxiv.org/abs/2208.03792",
+      "limitations": "Use as an RGB-D restoration resource. Check a particular archive for native left/right IR rather than assuming it is bundled.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2208.03792"
+        },
+        {
+          "label": "Project and data",
+          "url": "https://pku-epic.github.io/DREDS/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/PKU-EPIC/DREDS"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://github.com/PKU-EPIC/DREDS"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2208.03792"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "reportedScale": {
+        "images": 130000
+      }
+    },
+    "asgrasp-active-stereo": {
+      "name": "ASGrasp",
+      "observations": "Native left/right rendered IR and RGB with active patterns.",
+      "recordedStreams": "Native left/right rendered IR and RGB with active patterns.",
+      "labels": "Clean simulated depth for geometry supervision.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Native left/right rendered IR and RGB with active patterns.",
+      "calibration": "Use the stated camera settings and IR/RGB alignment conventions.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Clean simulated depth for geometry supervision.",
+      "dataRole": "synthetic",
+      "access": "Public example files",
+      "releaseScope": "The public repository supplies one explicit left/right IR and RGB example. The full synthetic training corpus was not confirmed to be downloadable.",
+      "dataLicense": "Check terms for each artifact.",
+      "formats": [
+        "Images",
+        "Depth files"
+      ],
+      "datasetUrl": "https://github.com/jun7-shi/ASGrasp/tree/main/test_data",
+      "limitations": "The public repository supplies one explicit left/right IR and RGB example. The full synthetic training corpus was not confirmed to be downloadable.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2405.05648"
+        },
+        {
+          "label": "Project",
+          "url": "https://pku-epic.github.io/ASGrasp/"
+        },
+        {
+          "label": "Data (one released IR/RGB example)",
+          "url": "https://github.com/jun7-shi/ASGrasp/tree/main/test_data"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://github.com/jun7-shi/ASGrasp/tree/main/test_data"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2405.05648"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ]
+    },
+    "booster-stereo": {
+      "name": "Booster",
+      "observations": "Passive stereo input pairs, with separate controlled illumination for obtaining reference labels.",
+      "recordedStreams": "Passive stereo input pairs, with separate controlled illumination for obtaining reference labels.",
+      "labels": "Disparity and material masks from the capture and labeling pipeline.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Passive stereo input pairs, with separate controlled illumination for obtaining reference labels.",
+      "calibration": "Use the balanced/unbalanced configuration and matching camera calibration.",
+      "annotationType": "measured",
+      "annotationEvidence": "Disparity and material masks from the capture and labeling pipeline.",
+      "dataRole": "reference",
+      "access": "Public institutional download",
+      "releaseScope": "The journal paper reports 606 labeled pairs in 85 scenes. The original deposit documents 419 labeled pairs in 64 scenes plus unlabeled pairs.",
+      "dataLicense": "CC BY-NC 4.0 for the cited data deposit.",
+      "formats": [
+        "Images",
+        "Calibration",
+        "Archives"
+      ],
+      "datasetUrl": "https://amsacta.unibo.it/id/eprint/6876/",
+      "limitations": "The journal paper reports 606 labeled pairs in 85 scenes. The original deposit documents 419 labeled pairs in 64 scenes plus unlabeled pairs.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2301.08245"
+        },
+        {
+          "label": "Project",
+          "url": "https://cvlab.unibo.it/booster-web/"
+        },
+        {
+          "label": "Data (institutional deposit)",
+          "url": "https://amsacta.unibo.it/id/eprint/6876/"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://amsacta.unibo.it/id/eprint/6876/"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2301.08245"
+        ]
+      },
+      "reportedScale": {
+        "pairs": 606,
+        "scenes": 85,
+        "scope": "Journal paper dataset counts"
+      }
+    },
+    "hiss-active-stereo": {
+      "name": "HISS",
+      "observations": "Rendered active IR left/right streams and color observations from material-randomized scenes.",
+      "recordedStreams": "Rendered active IR left/right streams and color observations from material-randomized scenes.",
+      "labels": "Clean rendered scene geometry and stereo supervision.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered active IR left/right streams and color observations from material-randomized scenes.",
+      "calibration": "Use the training configuration and per-sample camera geometry.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Clean rendered scene geometry and stereo supervision.",
+      "dataRole": "synthetic",
+      "access": "Public download",
+      "releaseScope": "Official manifest contains four training archives and a validation archive. Rendered matching targets are separate from sensor observations.",
+      "dataLicense": "CC BY-NC 4.0",
+      "formats": [
+        "TAR.GZ",
+        "Image and geometry data"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/songlinwei/HISS/tree/main",
+      "limitations": "Official manifest contains four training archives and a validation archive. Rendered matching targets are separate from sensor observations.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://huggingface.co/datasets/songlinwei/HISS"
+        },
+        {
+          "label": "Data files (CC BY-NC 4.0)",
+          "url": "https://huggingface.co/datasets/songlinwei/HISS/tree/main"
+        },
+        {
+          "label": "Training tools and configuration",
+          "url": "https://github.com/songlin/d3roma#training"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2409.14365"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://arxiv.org/abs/2409.14365"
+        ],
+        "cameraSetup": [
+          "https://huggingface.co/datasets/songlinwei/HISS"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ],
+      "reportedScale": {
+        "pairs": 10000,
+        "pairsQualifier": ">",
+        "scenes": 168,
+        "scope": "Paper training render setup. The publisher distributes separate train and validation archives."
+      }
+    },
+    "spring-stereo": {
+      "name": "Spring",
+      "observations": "Rendered stereo frames from the Blender film Spring.",
+      "recordedStreams": "Rendered stereo frames from the Blender film Spring.",
+      "labels": "Dense disparity, optical flow and scene flow with distinct evaluation submissions.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Rendered stereo frames from the Blender film Spring.",
+      "calibration": "Use paired stereo frames and benchmark disparity convention.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Dense disparity, optical flow and scene flow with distinct evaluation submissions.",
+      "dataRole": "synthetic",
+      "access": "Public benchmark resources",
+      "releaseScope": "Use official train and held-out benchmark splits. This is a separate film dataset from MPI Sintel.",
+      "dataLicense": "Follow release terms and original film attribution.",
+      "formats": [
+        "PNG",
+        "HDF5"
+      ],
+      "datasetUrl": "https://spring-benchmark.org/",
+      "limitations": "Use official train and held-out benchmark splits. This is a separate film dataset from MPI Sintel.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2303.01943"
+        },
+        {
+          "label": "Data",
+          "url": "https://spring-benchmark.org/"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://spring-benchmark.org/"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2303.01943"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ]
+    },
+    "drivingstereo": {
+      "name": "DrivingStereo",
+      "observations": "Left/right stereo pairs from moving vehicles.",
+      "recordedStreams": "Left/right stereo pairs from moving vehicles.",
+      "labels": "Disparity pseudo-dense targets using LiDAR with filtering and densification.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Left/right stereo pairs from moving vehicles.",
+      "calibration": "Use the released calibration and scene split.",
+      "annotationType": "mixed",
+      "annotationEvidence": "Disparity pseudo-dense targets using LiDAR with filtering and densification.",
+      "dataRole": "reference",
+      "access": "Public author download links",
+      "releaseScope": "Driving-specific scenes are adjacent to egocentric near-field manipulation. The targets derive from LiDAR, not uniformly dense independent measurements.",
+      "dataLicense": "Review original dataset terms.",
+      "formats": [
+        "Images",
+        "Calibration",
+        "Archives"
+      ],
+      "datasetUrl": "https://drivingstereo-dataset.github.io/",
+      "limitations": "Driving-specific scenes are adjacent to egocentric near-field manipulation. The targets derive from LiDAR, not uniformly dense independent measurements.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Yang_DrivingStereo_A_Large-Scale_Dataset_for_Stereo_Matching_in_Autonomous_Driving_CVPR_2019_paper.html"
+        },
+        {
+          "label": "Data",
+          "url": "https://drivingstereo-dataset.github.io/"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://drivingstereo-dataset.github.io/"
+        ],
+        "cameraSetup": [
+          "https://openaccess.thecvf.com/content_CVPR_2019/html/Yang_DrivingStereo_A_Large-Scale_Dataset_for_Stereo_Matching_in_Autonomous_Driving_CVPR_2019_paper.html"
+        ]
+      }
+    },
+    "tartanground-stereo": {
+      "name": "TartanGround",
+      "observations": "Six rendered binocular pair directions with depth, pose, synthetic LiDAR and IMU channels.",
+      "recordedStreams": "Six rendered binocular pair directions with depth, pose, synthetic LiDAR and IMU channels.",
+      "labels": "Rendered depth, disparity and related geometry; the download guide lists available warehouse modalities.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Six rendered binocular pair directions with depth, pose, synthetic LiDAR and IMU channels.",
+      "calibration": "Pair lcam and rcam at the same named direction and timestamp.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Rendered depth, disparity and related geometry; the download guide lists available warehouse modalities.",
+      "dataRole": "synthetic",
+      "access": "Public download via dataset toolkit",
+      "releaseScope": "Project documentation describes 878 trajectories in 63 environments. The arXiv text uses a different total, so use the actual download subset when quoting scale.",
+      "dataLicense": "Review the project’s dataset terms.",
+      "formats": [
+        "Images",
+        "Metadata",
+        "Point clouds",
+        "ROS bags on selected robot"
+      ],
+      "datasetUrl": "https://tartanair.org/tartanground",
+      "limitations": "Project documentation describes 878 trajectories in 63 environments. The arXiv text uses a different total, so use the actual download subset when quoting scale.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2505.10696"
+        },
+        {
+          "label": "Project",
+          "url": "https://tartanair.org/tartanground/index.html"
+        },
+        {
+          "label": "Data and download instructions",
+          "url": "https://tartanair.org/tartanground"
+        },
+        {
+          "label": "Tools",
+          "url": "https://github.com/castacks/tartanairpy"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://github.com/castacks/tartanairpy"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2505.10696"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ],
+      "publicScale": {
+        "trajectories": 878,
+        "scenes": 63,
+        "scope": "Current documented release inventory"
+      }
+    },
+    "infinigen-stereo-video": {
+      "name": "Infinigen Stereo Video",
+      "observations": "Synchronized photorealistic left/right renders in natural settings.",
+      "recordedStreams": "Synchronized photorealistic left/right renders in natural settings.",
+      "labels": "Rendered dense disparity/depth. Real SouthKensington has separate qualitative scope.",
+      "recordedSignals": [],
+      "bodyCoverage": "Scene / camera",
+      "cameraSetup": "Synchronized photorealistic left/right renders in natural settings.",
+      "calibration": "Use native pairing and camera information for the released projection.",
+      "annotationType": "synthetic",
+      "annotationEvidence": "Rendered dense disparity/depth. Real SouthKensington has separate qualitative scope.",
+      "dataRole": "synthetic",
+      "access": "Official Hugging Face archives",
+      "releaseScope": "This is the data associated with Jing et al.’s BiDAVideo reference. It is separate from WMGStereo and Dynamic Replica.",
+      "dataLicense": "Verify dataset terms separately from author code.",
+      "formats": [
+        "Stereo video frames",
+        "Depth data",
+        "Archives"
+      ],
+      "datasetUrl": "https://huggingface.co/datasets/MatchLab/InfinigenSV",
+      "limitations": "This is the data associated with Jing et al.’s BiDAVideo reference. It is separate from WMGStereo and Dynamic Replica.",
+      "sources": [
+        {
+          "label": "Primary source",
+          "url": "https://arxiv.org/abs/2409.20283"
+        },
+        {
+          "label": "Project",
+          "url": "https://tomtomtommi.github.io/BiDAVideo/"
+        },
+        {
+          "label": "Data",
+          "url": "https://huggingface.co/datasets/MatchLab/InfinigenSV"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/tomtomtommi/bidavideo"
+        }
+      ],
+      "verified": "2026-11-21",
+      "fieldSources": {
+        "releaseScope": [
+          "https://github.com/tomtomtommi/bidavideo"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/abs/2409.20283"
+        ]
+      },
+      "syntheticSignals": [
+        "Vision"
+      ]
     }
   }
 }

@@ -119,6 +119,9 @@ export function getCatalog(): Work[] {
   for (const work of map.values()) {
     const h = hardware[work.id], d = datasets[work.id], m = methods[work.id];
     work.research = {hardware: h, dataset: d, method: m};
+    if (work.collections.includes("datasets") && m?.depthDataset === true && !work.collections.includes("methods")) {
+      work.collections.push("methods");
+    }
     work.release = releases[work.id];
     if (work.release?.softwareStatus) work.codeAccess = String(work.release.softwareStatus);
     work.openness = String(work.release?.status ?? "unknown");

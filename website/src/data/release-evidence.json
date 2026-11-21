@@ -7830,8 +7830,9 @@
       "notes": [
         "Source, model weights and training datasets have independent terms. NVIDIA research license for this repository; C-Fast-FoundationStereo / TAO have separate commercial terms"
       ],
-      "verified": "2026-10-19",
-      "modelStatus": "Model files verified; public file listing; other."
+      "verified": "2026-11-21",
+      "modelStatus": "Model files verified; public file listing; other.",
+      "dataStatus": "FFS Stereo4D disparity and metadata available. The release does not bundle source stereo RGB."
     },
     "bridgedepth": {
       "status": "partial",
@@ -7876,7 +7877,8 @@
         "Source, model weights and training datasets have independent terms. CC BY-NC 4.0 inference release and checkpoints; training code not included",
         "Inference supports calibrated pinhole stereo; original training code is not included and released models differ from selected leaderboard versions."
       ],
-      "verified": "2026-10-19"
+      "verified": "2026-11-21",
+      "dataStatus": "Training mixture documented in ICCV supplement and arXiv revisions. Dataset downloads and permissions are upstream-specific."
     },
     "smoe-stereo": {
       "status": "partial",
@@ -7929,7 +7931,8 @@
         "Source, model weights and training datasets have independent terms. NVIDIA non-commercial research source / checkpoints; TAO commercial model is separately licensed",
         "Commercial FoundationStereo S model is separately provided under NVIDIA Open Model License; it is not the same artifact as research weights."
       ],
-      "verified": "2026-11-08"
+      "verified": "2026-11-21",
+      "dataStatus": "Author links FSD full archive and 3 GB sample. Dataset reuse terms are separate from software/model terms."
     },
     "defom-stereo": {
       "status": "partial",

@@ -14391,12 +14391,18 @@
       "Vision"
     ],
     "coverage": "Hands",
-    "reviewed": "2026-11-15",
+    "reviewed": "2026-11-21",
     "image": "images/catalog/nov15-contact-transition.webp",
     "imagePage": "https://arxiv.org/html/2611.13486v1",
     "imageSource": "https://arxiv.org/html/2611.13486v1/hice_v2.png",
     "imageAlt": "ContactTransition author method overview",
-    "credit": "Adelaide University; original figure rights retained"
+    "credit": "Adelaide University; original figure rights retained",
+    "datasetSummary": "A visual benchmark for identifying when a hand touches or releases an object in first-person footage.",
+    "datasetImage": "images/catalog/nov15-contact-transition.webp",
+    "datasetImageSource": "https://arxiv.org/html/2611.13486v1/hice_v2.png",
+    "datasetImagePage": "https://arxiv.org/html/2611.13486v1",
+    "datasetImageAlt": "ContactTransition author method overview",
+    "datasetImageType": "Dataset example"
   },
   {
     "id": "egolabel",
@@ -15004,5 +15010,621 @@
     "imageType": "Dataset sample",
     "credit": "HubEgo-100K authors. Third-party figure rights retained",
     "imageCredit": "HubEgo-100K authors. Third-party figure rights retained"
+  },
+  {
+    "id": "humancoin",
+    "summary": "A three-tier egocentric collection pairs manipulation with gaze cues, muscle activity and cortical recordings.",
+    "datasetSummary": "A three-tier egocentric collection pairs manipulation with gaze cues, muscle activity and cortical recordings.",
+    "signals": [
+      "Vision",
+      "EMG",
+      "EEG"
+    ],
+    "coverage": "Hands and upper body",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/humancoin-nov21.webp",
+    "imageSource": "https://arxiv.org/html/2611.26434v1/fig8_scenes.png",
+    "imagePage": "https://arxiv.org/html/2611.26434v1",
+    "imageAlt": "Everyday and controlled settings for the HumanCOIN manipulation data",
+    "imageType": "Dataset example",
+    "credit": "HumanCOIN authors; third-party rights retained",
+    "imageCredit": "HumanCOIN authors; third-party rights retained",
+    "datasetImage": "images/catalog/humancoin-nov21.webp",
+    "datasetImageSource": "https://arxiv.org/html/2611.26434v1/fig8_scenes.png",
+    "datasetImagePage": "https://arxiv.org/html/2611.26434v1",
+    "datasetImageAlt": "Everyday and controlled settings for the HumanCOIN manipulation data",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "HumanCOIN authors; third-party rights retained"
+  },
+  {
+    "id": "handworldbench",
+    "summary": "Hand–object video for training and evaluating hand-centric world models across human, simulation and robot sources.",
+    "datasetSummary": "Hand–object video for training and evaluating hand-centric world models across human, simulation and robot sources.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/handworldbench-nov21.webp",
+    "imageSource": "https://arxiv.org/html/2611.24731v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2611.24731v1",
+    "imageAlt": "Hand-object interaction clips across human hands, simulated hands and real robots",
+    "imageType": "Dataset example",
+    "credit": "HandWorldBench authors; third-party rights retained",
+    "imageCredit": "HandWorldBench authors; third-party rights retained",
+    "datasetImage": "images/catalog/handworldbench-nov21.webp",
+    "datasetImageSource": "https://arxiv.org/html/2611.24731v1/teaser.png",
+    "datasetImagePage": "https://arxiv.org/html/2611.24731v1",
+    "datasetImageAlt": "Hand-object interaction clips across human hands, simulated hands and real robots",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "HandWorldBench authors; third-party rights retained"
+  },
+  {
+    "id": "physicalai-human-1m-100k",
+    "summary": "Mixed monocular and stereo human work demonstrations, published as a 100,000-hour slice of Human-1M.",
+    "datasetSummary": "Mixed monocular and stereo human work demonstrations, published as a 100,000-hour slice of Human-1M.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands and head",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/physicalai-human-1m-100k-nov21.webp",
+    "imageSource": "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K/resolve/main/figures/card_episode_anatomy.png",
+    "imagePage": "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K",
+    "imageAlt": "Human-1M example with stereo and wrist views and synchronized action annotations",
+    "imageType": "Dataset example",
+    "credit": "NVIDIA Human-1M team",
+    "imageCredit": "NVIDIA Human-1M team",
+    "datasetImage": "images/catalog/physicalai-human-1m-100k-nov21.webp",
+    "datasetImageSource": "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K/resolve/main/figures/card_episode_anatomy.png",
+    "datasetImagePage": "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K",
+    "datasetImageAlt": "Human-1M example with stereo and wrist views and synchronized action annotations",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "NVIDIA Human-1M team"
+  },
+  {
+    "id": "humanola-ego-sample",
+    "summary": "A small calibrated sample of synchronized head stereo and two wrist views with 3D hand labels.",
+    "datasetSummary": "A small calibrated sample of synchronized head stereo and two wrist views with 3D hand labels.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "coverage": "Hands and head",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "id": "arete-stereo-hands-sample",
+    "summary": "Reprocesses six Humanola samples into 106 first-person manipulation steps with stereo-derived 3D hand motion.",
+    "datasetSummary": "Reprocesses six Humanola samples into 106 first-person manipulation steps with stereo-derived 3D hand motion.",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "coverage": "Hands and head",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "id": "humyn-apac-stereo",
+    "summary": "Workplace sample with rectified side-by-side head stereo, annotated actions and playback overlays.",
+    "datasetSummary": "Workplace sample with rectified side-by-side head stereo, annotated actions and playback overlays.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Hands and head",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/humyn-apac-stereo-nov21.webp",
+    "imageSource": "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled/resolve/main/preview/27c96099-7718-437b-8e91-ef6d6e8591aa_sbs_720p.mp4",
+    "imagePage": "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled",
+    "imageAlt": "Side-by-side left and right views of an automotive work sequence",
+    "imageType": "Dataset example",
+    "credit": "Humyn Labs",
+    "imageCredit": "Humyn Labs",
+    "datasetImage": "images/catalog/humyn-apac-stereo-nov21.webp",
+    "datasetImageSource": "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled/resolve/main/preview/27c96099-7718-437b-8e91-ef6d6e8591aa_sbs_720p.mp4",
+    "datasetImagePage": "https://huggingface.co/datasets/humyn-labs/APAC-Egocentric-Stereo-Labeled",
+    "datasetImageAlt": "Side-by-side left and right views of an automotive work sequence",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "Humyn Labs"
+  },
+  {
+    "id": "caryx-everyday-manipulation-3d",
+    "summary": "Egocentric household tasks with iPhone LiDAR depth, metric camera poses and dense hand/object annotations.",
+    "datasetSummary": "Egocentric household tasks with iPhone LiDAR depth, metric camera poses and dense hand/object annotations.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "coverage": "Hands",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "id": "foundationstereo-fsd",
+    "summary": "Rendered training pairs with diverse illumination, objects and environments used by FoundationStereo and subsequent stereo models.",
+    "datasetSummary": "Rendered training pairs with diverse illumination, objects and environments used by FoundationStereo and subsequent stereo models.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/foundationstereo-fsd-nov21.webp",
+    "imageSource": "https://arxiv.org/html/2501.09898v1/sdg_montage.png",
+    "imagePage": "https://arxiv.org/html/2501.09898v1",
+    "imageAlt": "Montage of FoundationStereo synthetic training scenes",
+    "imageType": "Dataset example",
+    "credit": "NVIDIA FoundationStereo authors; third-party rights retained",
+    "imageCredit": "NVIDIA FoundationStereo authors; third-party rights retained",
+    "datasetImage": "images/catalog/foundationstereo-fsd-nov21.webp",
+    "datasetImageSource": "https://arxiv.org/html/2501.09898v1/sdg_montage.png",
+    "datasetImagePage": "https://arxiv.org/html/2501.09898v1",
+    "datasetImageAlt": "Montage of FoundationStereo synthetic training scenes",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "NVIDIA FoundationStereo authors; third-party rights retained"
+  },
+  {
+    "id": "scene-flow-stereo",
+    "summary": "FlyingThings3D, Monkaa and Driving provide synthetic binocular observations and pixelwise geometry.",
+    "datasetSummary": "FlyingThings3D, Monkaa and Driving provide synthetic binocular observations and pixelwise geometry.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/scene-flow-stereo-nov21.webp",
+    "imageSource": "https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlow/assets/img/teaser_tiny.png",
+    "imagePage": "https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html",
+    "imageAlt": "Example renderings and dense geometric ground truth from the original Scene Flow paper",
+    "imageType": "Dataset example",
+    "credit": "Scene Flow authors; third-party rights retained",
+    "imageCredit": "Scene Flow authors; third-party rights retained",
+    "datasetImage": "images/catalog/scene-flow-stereo-nov21.webp",
+    "datasetImageSource": "https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlow/assets/img/teaser_tiny.png",
+    "datasetImagePage": "https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html",
+    "datasetImageAlt": "Example renderings and dense geometric ground truth from the original Scene Flow paper",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "Scene Flow authors; third-party rights retained"
+  },
+  {
+    "id": "mpi-sintel-stereo",
+    "summary": "Procedurally rendered right view and dense disparity for the Sintel training scenes.",
+    "datasetSummary": "Procedurally rendered right view and dense disparity for the Sintel training scenes.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/mpi-sintel-stereo-nov21.webp",
+    "imageSource": "https://sintel.is.tue.mpg.de/images/stereo/ex_bamboo_1.png",
+    "imagePage": "https://sintel.is.tuebingen.mpg.de/stereo",
+    "imageAlt": "Rendered Sintel scene with stereo disparity example",
+    "imageType": "Dataset example",
+    "credit": "MPI Sintel authors; third-party rights retained",
+    "imageCredit": "MPI Sintel authors; third-party rights retained",
+    "datasetImage": "images/catalog/mpi-sintel-stereo-nov21.webp",
+    "datasetImageSource": "https://sintel.is.tue.mpg.de/images/stereo/ex_bamboo_1.png",
+    "datasetImagePage": "https://sintel.is.tuebingen.mpg.de/stereo",
+    "datasetImageAlt": "Rendered Sintel scene with stereo disparity example",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "MPI Sintel authors; third-party rights retained"
+  },
+  {
+    "id": "tartanair-stereo",
+    "summary": "Photorealistic virtual navigation trajectories ship synchronized binocular RGB, simulator depth and camera poses.",
+    "datasetSummary": "Photorealistic virtual navigation trajectories ship synchronized binocular RGB, simulator depth and camera poses.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/tartanair-stereo-nov21.webp",
+    "imageSource": "https://theairlab.org/img/posts/2020-02-29-tartanair/web_cover_figure.png",
+    "imagePage": "https://theairlab.org/tartanair-dataset/",
+    "imageAlt": "Examples of diverse TartanAir virtual navigation environments",
+    "imageType": "Dataset example",
+    "credit": "TartanAir authors; third-party rights retained",
+    "imageCredit": "TartanAir authors; third-party rights retained",
+    "datasetImage": "images/catalog/tartanair-stereo-nov21.webp",
+    "datasetImageSource": "https://theairlab.org/img/posts/2020-02-29-tartanair/web_cover_figure.png",
+    "datasetImagePage": "https://theairlab.org/tartanair-dataset/",
+    "datasetImageAlt": "Examples of diverse TartanAir virtual navigation environments",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "TartanAir authors; third-party rights retained"
+  },
+  {
+    "id": "crestereo-training-data",
+    "summary": "Synthetic training distribution with detailed objects and challenging disparity fields for iterative stereo.",
+    "datasetSummary": "Synthetic training distribution with detailed objects and challenging disparity fields for iterative stereo.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "id": "falling-things",
+    "summary": "Stereo renderings of household objects settling in photorealistic environments.",
+    "datasetSummary": "Stereo renderings of household objects settling in photorealistic environments.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/falling-things-nov21.webp",
+    "imageSource": "https://research.nvidia.com/sites/default/files/publications/group_photo_onefourth.png",
+    "imagePage": "https://research.nvidia.com/publication/2018-06_falling-things-synthetic-dataset-3d-object-detection-and-pose-estimation",
+    "imageAlt": "Falling Things stereo manipulation object samples from the original paper",
+    "imageType": "Dataset example",
+    "credit": "Falling Things authors; third-party rights retained",
+    "imageCredit": "Falling Things authors; third-party rights retained",
+    "datasetImage": "images/catalog/falling-things-nov21.webp",
+    "datasetImageSource": "https://research.nvidia.com/sites/default/files/publications/group_photo_onefourth.png",
+    "datasetImagePage": "https://research.nvidia.com/publication/2018-06_falling-things-synthetic-dataset-3d-object-detection-and-pose-estimation",
+    "datasetImageAlt": "Falling Things stereo manipulation object samples from the original paper",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "Falling Things authors; third-party rights retained"
+  },
+  {
+    "id": "instereo2k",
+    "summary": "Full-resolution real indoor stereo pairs provided for training and testing.",
+    "datasetSummary": "Full-resolution real indoor stereo pairs provided for training and testing.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/instereo2k-nov21.webp",
+    "imageSource": "https://raw.githubusercontent.com/YuhuaXu/StereoDataset/master/samples/1.png",
+    "imagePage": "https://github.com/yuhuaxu/stereodataset",
+    "imageAlt": "Real InStereo2K scene and example disparity label",
+    "imageType": "Dataset example",
+    "credit": "InStereo2K authors; third-party rights retained",
+    "imageCredit": "InStereo2K authors; third-party rights retained",
+    "datasetImage": "images/catalog/instereo2k-nov21.webp",
+    "datasetImageSource": "https://raw.githubusercontent.com/YuhuaXu/StereoDataset/master/samples/1.png",
+    "datasetImagePage": "https://github.com/yuhuaxu/stereodataset",
+    "datasetImageAlt": "Real InStereo2K scene and example disparity label",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "InStereo2K authors; third-party rights retained"
+  },
+  {
+    "id": "virtual-kitti-2",
+    "summary": "Simulated stereo RGB and dense geometry for the KITTI-derived driving scenes.",
+    "datasetSummary": "Simulated stereo RGB and dense geometry for the KITTI-derived driving scenes.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "id": "wmgstereo",
+    "summary": "Procedurally generated Infinigen stereo from the study of synthetic training data for zero-shot matching.",
+    "datasetSummary": "Procedurally generated Infinigen stereo from the study of synthetic training data for zero-shot matching.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "id": "unrealstereo4k",
+    "summary": "High-resolution rendered stereo with pixel-accurate disparity, published alongside SMD-Nets.",
+    "datasetSummary": "High-resolution rendered stereo with pixel-accurate disparity, published alongside SMD-Nets.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "id": "irs-stereo",
+    "summary": "Naturalistic synthetic indoor stereo for training disparity and surface-normal estimation.",
+    "datasetSummary": "Naturalistic synthetic indoor stereo for training disparity and surface-normal estimation.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21"
+  },
+  {
+    "id": "stereosplat-xrstereo",
+    "summary": "Five-frame binocular sequences with rendered disparities and calibrated moving-camera geometry.",
+    "datasetSummary": "Five-frame binocular sequences with rendered disparities and calibrated moving-camera geometry.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/stereosplat-xrstereo-nov21.webp",
+    "imageSource": "https://arxiv.org/html/2610.35902v1/figures/xrstereo/20_left_color.png",
+    "imagePage": "https://arxiv.org/html/2610.35902v1#A1.F7",
+    "imageAlt": "Rendered left-camera sample from the XRStereo training corpus",
+    "imageType": "Dataset example",
+    "credit": "StereoSplat authors; third-party rights retained",
+    "imageCredit": "StereoSplat authors; third-party rights retained",
+    "datasetImage": "images/catalog/stereosplat-xrstereo-nov21.webp",
+    "datasetImageSource": "https://arxiv.org/html/2610.35902v1/figures/xrstereo/20_left_color.png",
+    "datasetImagePage": "https://arxiv.org/html/2610.35902v1#A1.F7",
+    "datasetImageAlt": "Rendered left-camera sample from the XRStereo training corpus",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "StereoSplat authors; third-party rights retained"
+  },
+  {
+    "id": "ffs-stereo4d",
+    "summary": "FoundationStereo-generated disparity for internet VR180, released separately from the source video.",
+    "datasetSummary": "FoundationStereo-generated disparity for internet VR180, released separately from the source video.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/ffs-stereo4d-nov21.webp",
+    "imageSource": "https://arxiv.org/html/2512.11130v1/stereo4d.png",
+    "imagePage": "https://huggingface.co/datasets/nvidia/ffs_stereo4d",
+    "imageAlt": "Official Fast-FoundationStereo paper visualization of training on real stereo imagery",
+    "imageType": "Dataset example",
+    "credit": "Fast-FoundationStereo authors; third-party rights retained",
+    "imageCredit": "Fast-FoundationStereo authors; third-party rights retained",
+    "datasetImage": "images/catalog/ffs-stereo4d-nov21.webp",
+    "datasetImageSource": "https://arxiv.org/html/2512.11130v1/stereo4d.png",
+    "datasetImagePage": "https://huggingface.co/datasets/nvidia/ffs_stereo4d",
+    "datasetImageAlt": "Official Fast-FoundationStereo paper visualization of training on real stereo imagery",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "Fast-FoundationStereo authors; third-party rights retained"
+  },
+  {
+    "id": "princeton365-stereo",
+    "summary": "Diverse real captures include a separately downloadable ZED stereo subset with global pose references.",
+    "datasetSummary": "Diverse real captures include a separately downloadable ZED stereo subset with global pose references.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/princeton365-stereo-nov21.webp",
+    "imageSource": "https://princeton365.cs.princeton.edu/static/imgs/main_figure.png",
+    "imagePage": "https://princeton365.cs.princeton.edu/",
+    "imageAlt": "Princeton365 indoor and outdoor camera capture coverage",
+    "imageType": "Dataset example",
+    "credit": "Princeton365 authors; third-party rights retained",
+    "imageCredit": "Princeton365 authors; third-party rights retained",
+    "datasetImage": "images/catalog/princeton365-stereo-nov21.webp",
+    "datasetImageSource": "https://princeton365.cs.princeton.edu/static/imgs/main_figure.png",
+    "datasetImagePage": "https://princeton365.cs.princeton.edu/",
+    "datasetImageAlt": "Princeton365 indoor and outdoor camera capture coverage",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "Princeton365 authors; third-party rights retained"
+  },
+  {
+    "id": "real3ext",
+    "summary": "A controlled sensor comparison with active and passive stereo, ToF, and independently scanned ground truth.",
+    "datasetSummary": "A controlled sensor comparison with active and passive stereo, ToF, and independently scanned ground truth.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/real3ext-nov21.webp",
+    "imageSource": "https://lttm.dei.unipd.it/paper_data/real3ext/images/acquisition_system.png",
+    "imagePage": "https://lttm.dei.unipd.it/paper_data/real3ext/",
+    "imageAlt": "REAL3EXT acquisition rig showing evaluated sensor types",
+    "imageType": "Dataset example",
+    "credit": "University of Padova authors; third-party rights retained",
+    "imageCredit": "University of Padova authors; third-party rights retained",
+    "datasetImage": "images/catalog/real3ext-nov21.webp",
+    "datasetImageSource": "https://lttm.dei.unipd.it/paper_data/real3ext/images/acquisition_system.png",
+    "datasetImagePage": "https://lttm.dei.unipd.it/paper_data/real3ext/",
+    "datasetImageAlt": "REAL3EXT acquisition rig showing evaluated sensor types",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "University of Padova authors; third-party rights retained"
+  },
+  {
+    "id": "active-event-stereo-data",
+    "summary": "Synchronizes projected-pattern stereo events and depth reference labels in real and simulated sequences.",
+    "datasetSummary": "Synchronizes projected-pattern stereo events and depth reference labels in real and simulated sequences.",
+    "signals": [
+      "Events"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/active-event-stereo-data-nov21.webp",
+    "imageSource": "https://raw.githubusercontent.com/jianing-li/active_event_based_stereo/main/assets/real_dataset.png",
+    "imagePage": "https://github.com/jianing-li/active_event_based_stereo",
+    "imageAlt": "Real active stereo event rig and representative frames",
+    "imageType": "Dataset example",
+    "credit": "Active Event-based Stereo authors; third-party rights retained",
+    "imageCredit": "Active Event-based Stereo authors; third-party rights retained",
+    "datasetImage": "images/catalog/active-event-stereo-data-nov21.webp",
+    "datasetImageSource": "https://raw.githubusercontent.com/jianing-li/active_event_based_stereo/main/assets/real_dataset.png",
+    "datasetImagePage": "https://github.com/jianing-li/active_event_based_stereo",
+    "datasetImageAlt": "Real active stereo event rig and representative frames",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "Active Event-based Stereo authors; third-party rights retained"
+  },
+  {
+    "id": "dreds-active-stereo",
+    "summary": "Simulates an active stereo depth pipeline for learning restoration on reflective and transparent objects.",
+    "datasetSummary": "Simulates an active stereo depth pipeline for learning restoration on reflective and transparent objects.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/dreds-active-stereo-nov21.webp",
+    "imageSource": "https://pku-epic.github.io/DREDS/images/teaser.png",
+    "imagePage": "https://pku-epic.github.io/DREDS/",
+    "imageAlt": "DREDS synthetic training and real capture examples for challenging materials",
+    "imageType": "Dataset example",
+    "credit": "DREDS authors; third-party rights retained",
+    "imageCredit": "DREDS authors; third-party rights retained",
+    "datasetImage": "images/catalog/dreds-active-stereo-nov21.webp",
+    "datasetImageSource": "https://pku-epic.github.io/DREDS/images/teaser.png",
+    "datasetImagePage": "https://pku-epic.github.io/DREDS/",
+    "datasetImageAlt": "DREDS synthetic training and real capture examples for challenging materials",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "DREDS authors; third-party rights retained"
+  },
+  {
+    "id": "asgrasp-active-stereo",
+    "summary": "Synthetic active IR stereo generated from GraspNet object scenes for challenging material reconstruction.",
+    "datasetSummary": "Synthetic active IR stereo generated from GraspNet object scenes for challenging material reconstruction.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/asgrasp-active-stereo-nov21.webp",
+    "imageSource": "https://pku-epic.github.io/ASGrasp/images/Fig1.PNG",
+    "imagePage": "https://pku-epic.github.io/ASGrasp/",
+    "imageAlt": "Real and simulated ASGrasp multi-sensor scenes",
+    "imageType": "Dataset example",
+    "credit": "ASGrasp authors; third-party rights retained",
+    "imageCredit": "ASGrasp authors; third-party rights retained",
+    "datasetImage": "images/catalog/asgrasp-active-stereo-nov21.webp",
+    "datasetImageSource": "https://pku-epic.github.io/ASGrasp/images/Fig1.PNG",
+    "datasetImagePage": "https://pku-epic.github.io/ASGrasp/",
+    "datasetImageAlt": "Real and simulated ASGrasp multi-sensor scenes",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "ASGrasp authors; third-party rights retained"
+  },
+  {
+    "id": "booster-stereo",
+    "summary": "Real balanced and unbalanced stereo designed to reveal transparent and specular material failure modes.",
+    "datasetSummary": "Real balanced and unbalanced stereo designed to reveal transparent and specular material failure modes.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/booster-stereo-nov21.webp",
+    "imageSource": "https://cvlab.unibo.it/booster-web/assets/samples/balanced_ShotGlasses_camera_00_im0.jpg",
+    "imagePage": "https://cvlab.unibo.it/booster-web/",
+    "imageAlt": "Booster stereo scene with transparent shot glasses",
+    "imageType": "Dataset example",
+    "credit": "Booster authors; third-party rights retained",
+    "imageCredit": "Booster authors; third-party rights retained",
+    "datasetImage": "images/catalog/booster-stereo-nov21.webp",
+    "datasetImageSource": "https://cvlab.unibo.it/booster-web/assets/samples/balanced_ShotGlasses_camera_00_im0.jpg",
+    "datasetImagePage": "https://cvlab.unibo.it/booster-web/",
+    "datasetImageAlt": "Booster stereo scene with transparent shot glasses",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "Booster authors; third-party rights retained"
+  },
+  {
+    "id": "hiss-active-stereo",
+    "summary": "Photorealistic active-IR simulation for learning disparity on difficult materials.",
+    "datasetSummary": "Photorealistic active-IR simulation for learning disparity on difficult materials.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/hiss-active-stereo-nov21.webp",
+    "imageSource": "https://arxiv.org/html/2409.14365v1/hiss_2.png",
+    "imagePage": "https://arxiv.org/html/2409.14365v1#A9.F14",
+    "imageAlt": "HISS simulation scenes with RGB, infrared and rendered normal samples",
+    "imageType": "Dataset example",
+    "credit": "D3RoMa authors; third-party rights retained",
+    "imageCredit": "D3RoMa authors; third-party rights retained",
+    "datasetImage": "images/catalog/hiss-active-stereo-nov21.webp",
+    "datasetImageSource": "https://arxiv.org/html/2409.14365v1/hiss_2.png",
+    "datasetImagePage": "https://arxiv.org/html/2409.14365v1#A9.F14",
+    "datasetImageAlt": "HISS simulation scenes with RGB, infrared and rendered normal samples",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "D3RoMa authors; third-party rights retained"
+  },
+  {
+    "id": "spring-stereo",
+    "summary": "High-resolution animated stereo video with dense disparity and flow supervision.",
+    "datasetSummary": "High-resolution animated stereo video with dense disparity and flow supervision.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/spring-stereo-nov21.webp",
+    "imageSource": "https://spring-benchmark.org/static/springeval/teaserimage.png",
+    "imagePage": "https://spring-benchmark.org/",
+    "imageAlt": "Spring rendered stereo and correspondence examples",
+    "imageType": "Dataset example",
+    "credit": "Spring authors; third-party rights retained",
+    "imageCredit": "Spring authors; third-party rights retained",
+    "datasetImage": "images/catalog/spring-stereo-nov21.webp",
+    "datasetImageSource": "https://spring-benchmark.org/static/springeval/teaserimage.png",
+    "datasetImagePage": "https://spring-benchmark.org/",
+    "datasetImageAlt": "Spring rendered stereo and correspondence examples",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "Spring authors; third-party rights retained"
+  },
+  {
+    "id": "drivingstereo",
+    "summary": "Real stereo road imagery spanning lighting, weather and traffic conditions.",
+    "datasetSummary": "Real stereo road imagery spanning lighting, weather and traffic conditions.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/drivingstereo-nov21.webp",
+    "imageSource": "https://drivingstereo-dataset.github.io/images/drivingstereo_examples.jpg",
+    "imagePage": "https://drivingstereo-dataset.github.io/",
+    "imageAlt": "DrivingStereo driving scenes and example depth targets",
+    "imageType": "Dataset example",
+    "credit": "DrivingStereo authors; third-party rights retained",
+    "imageCredit": "DrivingStereo authors; third-party rights retained",
+    "datasetImage": "images/catalog/drivingstereo-nov21.webp",
+    "datasetImageSource": "https://drivingstereo-dataset.github.io/images/drivingstereo_examples.jpg",
+    "datasetImagePage": "https://drivingstereo-dataset.github.io/",
+    "datasetImageAlt": "DrivingStereo driving scenes and example depth targets",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "DrivingStereo authors; third-party rights retained"
+  },
+  {
+    "id": "tartanground-stereo",
+    "summary": "Six synthetic stereo pairs support ground-robot perception across trajectories and environments.",
+    "datasetSummary": "Six synthetic stereo pairs support ground-robot perception across trajectories and environments.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/tartanground-stereo-nov21.webp",
+    "imageSource": "https://tartanair.org/tartanground/static/images/figure_1_anymal_v2.png",
+    "imagePage": "https://tartanair.org/tartanground/index.html",
+    "imageAlt": "Virtual ground-robot view and stereo/depth channels",
+    "imageType": "Dataset example",
+    "credit": "TartanGround authors; third-party rights retained",
+    "imageCredit": "TartanGround authors; third-party rights retained",
+    "datasetImage": "images/catalog/tartanground-stereo-nov21.webp",
+    "datasetImageSource": "https://tartanair.org/tartanground/static/images/figure_1_anymal_v2.png",
+    "datasetImagePage": "https://tartanair.org/tartanground/index.html",
+    "datasetImageAlt": "Virtual ground-robot view and stereo/depth channels",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "TartanGround authors; third-party rights retained"
+  },
+  {
+    "id": "infinigen-stereo-video",
+    "summary": "Synthetic nature sequences for temporally consistent stereo video experiments.",
+    "datasetSummary": "Synthetic nature sequences for temporally consistent stereo video experiments.",
+    "signals": [
+      "Vision"
+    ],
+    "coverage": "Scene / camera",
+    "reviewed": "2026-11-21",
+    "image": "images/catalog/infinigen-stereo-video-nov21.webp",
+    "imageSource": "https://arxiv.org/html/2409.20283v1/infinigen.png",
+    "imagePage": "https://arxiv.org/html/2409.20283v1#S2.F2",
+    "imageAlt": "Infinigen stereo video sample frames and depth maps",
+    "imageType": "Dataset example",
+    "credit": "BiDAVideo authors; third-party rights retained",
+    "imageCredit": "BiDAVideo authors; third-party rights retained",
+    "datasetImage": "images/catalog/infinigen-stereo-video-nov21.webp",
+    "datasetImageSource": "https://arxiv.org/html/2409.20283v1/infinigen.png",
+    "datasetImagePage": "https://arxiv.org/html/2409.20283v1#S2.F2",
+    "datasetImageAlt": "Infinigen stereo video sample frames and depth maps",
+    "datasetImageType": "Dataset example",
+    "datasetImageCredit": "BiDAVideo authors; third-party rights retained"
   }
 ]

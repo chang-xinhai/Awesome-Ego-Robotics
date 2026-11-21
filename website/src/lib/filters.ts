@@ -20,6 +20,7 @@ export const CATEGORIES: Record<Lens, Category[]> = {
     {key:'body',label:'Body & multimodal',description:'Whole-body and multimodal datasets',section:'Whole-body and multimodal'},
     {key:'touch',label:'Touch, force & EMG',description:'Touch, force and EMG datasets',section:'Touch force and EMG'},
     {key:'robot',label:'Robot transfer',description:'Robot demonstration and transfer',section:'Robot demonstration and transfer'},
+    {key:'stereo',label:'Stereo depth',description:'Stereo datasets for supervision and evaluation',section:'Stereo depth datasets'},
   ],
   methods: [
     {key:'l1',label:'Hand reconstruction',description:'L1 · Hand reconstruction',section:'Hand reconstruction'},

@@ -26,7 +26,7 @@ const path = (p: string) =>
 type MediaMode = "hardware" | "datasets" | "methods";
 const mode = (): MediaMode => collection === "datasets" ? "datasets" : collection === "methods" ? "methods" : "hardware";
 function media(w: Work, context: MediaMode = mode()) {
-  if (context === "datasets") return w.datasetImage ? {
+  if (context === "datasets" || (context === "methods" && w.research?.method?.depthDataset === true)) return w.datasetImage ? {
     url: path(w.datasetImage), alt: w.datasetImageAlt ?? w.name,
     kind: w.datasetImageType ?? "Dataset overview",
     source: w.datasetImagePage ?? w.datasetImageSource ?? w.paperUrl,
@@ -482,8 +482,9 @@ function methodFacts(w: Work): [string, string][] {
 }
 function methodEvaluationFacts(w:Work):[string,string][] {
   const m=record(w.research?.method);
-  if(Object.keys(slamFor(w)).length||Object.keys(perceptionFor(w)).length)return [["Evaluation",text(m.evaluation)],
-    ["Implementation",text(m.implementation)],["Limits",text(m.limitations)]];
+  if(Object.keys(slamFor(w)).length||Object.keys(perceptionFor(w)).length)return [
+    ...(m.trainingData?[["Training data",text(m.trainingData)] as [string,string]]:[]),
+    ["Evaluation",text(m.evaluation)],["Implementation",text(m.implementation)],["Limits",text(m.limitations)]];
   return [["Evaluation",text(m.evaluation)],["Robot evidence",text(m.robotEvidence)],
     ["Robot platform",text(m.robotPlatform,"Not evaluated / not specified")],
     ...(m.policyInput?[["Policy input",text(m.policyInput)] as [string,string]]:[]),
@@ -592,7 +593,7 @@ function showDetail(id: string) {
   const section=(title:string,rows:[string,string][],note="")=>`<section class="detail-section"><h3>${e(title)}</h3>${factsHtml(rows)}${note?`<p class="detail-scope-note">${e(note)}</p>`:""}</section>`;
   const hardwareSection=w.research?.hardware?section("Hardware & sensing",hardwareFacts(w))+section("Capture & data",hardwareDataFacts(w))+(w.release?section("Release",methodReleaseFacts(w)):""):"";
   const tracking=trackingFacts(w),perception=perceptionFacts(w);
-  const methodSection=w.research?.method?section("Method at a glance",methodFacts(w))+(perception.length?section("Depth & camera setup",perception):"")+(tracking.length?section(["calibration","evaluation"].includes(String(slamFor(w).family))?"Tool setup":"Tracking & mapping",tracking):"")+section(tracking.length||perception.length?"Evaluation & implementation":"Evaluation & deployment",methodEvaluationFacts(w))+(w.release?section("Release",methodReleaseFacts(w)):""):"";
+  const methodSection=w.research?.method?section(w.research.method.depthDataset === true ? "Stereo depth dataset" : "Method at a glance",methodFacts(w))+(perception.length?section("Depth & camera setup",perception):"")+(tracking.length?section(["calibration","evaluation"].includes(String(slamFor(w).family))?"Tool setup":"Tracking & mapping",tracking):"")+section(tracking.length||perception.length?"Evaluation & implementation":"Evaluation & deployment",methodEvaluationFacts(w))+(w.release?section("Release",methodReleaseFacts(w)):""):"";
   const publicScale=scaleText(record(d.publicScale)),reportedScale=scaleText(record(d.reportedScale));
   const scaleColumns=`<div class="data-scale-columns">${publicScale!=="Not verified"?`<div class="data-scale-column"><span>Public release</span><p>${e(publicScale)}</p>${record(d.publicScale).scope?`<small>${e(record(d.publicScale).scope)}</small>`:""}</div>`:""}${reportedScale!=="Not verified"?`<div class="data-scale-column"><span>Reported</span><p>${e(reportedScale)}</p>${record(d.reportedScale).scope?`<small>${e(record(d.reportedScale).scope)}</small>`:""}</div>`:""}</div>`;
   const datasetSection=w.research?.dataset?`<section class="detail-section"><h3>Dataset</h3>${scaleColumns}${factsHtml(datasetFacts(w))}</section>`+section("Annotations & tasks",datasetAnnotationFacts(w))+section("Release & access",datasetReleaseFacts(w)):"";
