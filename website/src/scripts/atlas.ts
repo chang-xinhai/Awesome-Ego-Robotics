@@ -46,7 +46,7 @@ function coverHtml(w: Work) {
   const p = preview(w);
   return p
     ? `<button type="button" class="card-cover" data-detail="${e(w.id)}" aria-label="View ${e(collectionName(w))} details"><img src="${e(p.url)}" alt="${e(p.alt)}" width="640" height="360" decoding="async"/></button>`
-    : `<a class="card-cover text-cover" href="${e(w.paperUrl)}" target="_blank" rel="noopener noreferrer"><span>${e(collection === "datasets" ? "Dataset" : collection === "methods" ? "Research method" : "Capture system")}</span><strong>${e(w.name)}</strong><small>Official source ↗</small></a>`;
+    : `<a class="card-cover text-cover" href="${e(w.paperUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Official source for ${e(collectionName(w))}">Official source ↗</a>`;
 }
 const record = (v: unknown): Record<string, unknown> =>
   v && typeof v === "object" && !Array.isArray(v)
