@@ -18247,6 +18247,196 @@
       ],
       "verified": "2026-11-20",
       "dataStatus": "Public CC BY 4.0 data card. Automatic access gating"
+    },
+    "depth-pro-2": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Public PyTorch inference and Core ML demo under the repository’s separate Apple software terms.",
+      "verified": "2026-11-22",
+      "evidence": [
+        {
+          "label": "Source-code license",
+          "url": "https://github.com/apple-aiml-research/ml-depth-pro-2/blob/main/LICENSE"
+        },
+        {
+          "label": "Separate model license",
+          "url": "https://github.com/apple-aiml-research/ml-depth-pro-2/blob/main/LICENSE_MODEL"
+        },
+        {
+          "label": "Model family and focal estimator",
+          "url": "https://huggingface.co/apple/DepthPro2"
+        },
+        {
+          "label": "Core ML packages and supported modes",
+          "url": "https://huggingface.co/apple/DepthPro2-coreml"
+        }
+      ],
+      "modelStatus": "S, B, L, H+, focal and Core ML packages are downloadable under the Apple Machine Learning Research Model License for noncommercial scientific research and academic development.",
+      "notes": [
+        "A streaming state belongs to a single video, camera and frame size. The 1080p B200 benchmark assumes a known focal length."
+      ]
+    },
+    "dfd-gs": {
+      "status": "unknown",
+      "availability": "Research method / tool",
+      "softwareStatus": "Paper and project results public. Project-linked repository is not accessible.",
+      "verified": "2026-11-22",
+      "evidence": [
+        {
+          "label": "Project and planned implementation",
+          "url": "https://sh1027.github.io/dfd-gs/"
+        },
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.26072v1"
+        }
+      ]
+    },
+    "mir-depth": {
+      "status": "unknown",
+      "availability": "Research method / tool",
+      "softwareStatus": "Source code announced in the paper.",
+      "verified": "2026-11-22",
+      "evidence": [
+        {
+          "label": "Paper and release statement",
+          "url": "https://arxiv.org/html/2611.25417v1"
+        }
+      ],
+      "modelStatus": "Pretrained weights announced in the paper."
+    },
+    "zoom-depth-equivariance": {
+      "status": "open",
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT evaluation and adaptation source.",
+      "verified": "2026-11-22",
+      "evidence": [
+        {
+          "label": "Official repository and license",
+          "url": "https://github.com/rabeyanoor/zoom-equivariance"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.17903"
+        }
+      ]
+    },
+    "stereo-crossinjection": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Public implementation under FAIR Noncommercial Research License.",
+      "verified": "2026-11-22",
+      "evidence": [
+        {
+          "label": "Repository license",
+          "url": "https://github.com/facebookresearch/stereo_crossinjection/blob/main/LICENSE"
+        },
+        {
+          "label": "Model file listing",
+          "url": "https://huggingface.co/facebook/stereo_crossinjection/tree/main"
+        },
+        {
+          "label": "WACV accepted papers",
+          "url": "https://wacv.thecvf.com/Conferences/2027/AcceptedPapers"
+        }
+      ],
+      "modelStatus": "FoundationStereo-CI and S²M²-XL-CI published through manual HF access approval. Read model-specific upstream terms."
+    },
+    "gtr-depth": {
+      "status": "open",
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT software with runnable depth evaluation configs.",
+      "verified": "2026-11-22",
+      "evidence": [
+        {
+          "label": "Code license",
+          "url": "https://github.com/Intellindust-AI-Lab/GTR/blob/main/LICENSE"
+        },
+        {
+          "label": "Author weights",
+          "url": "https://huggingface.co/Phoenix8125/GTR/tree/main/depth"
+        },
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/Phoenix8125/GTR"
+        }
+      ],
+      "modelStatus": "Official model hub lists depth checkpoints under the publisher’s MIT designation."
+    },
+    "eco3r": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Code under VGGT license with separately licensed base engines.",
+      "verified": "2026-11-22",
+      "evidence": [
+        {
+          "label": "Code license",
+          "url": "https://github.com/Tequila7437/Eco3R/blob/main/LICENSE"
+        },
+        {
+          "label": "Third-party terms",
+          "url": "https://github.com/Tequila7437/Eco3R/blob/main/NOTICE.md"
+        },
+        {
+          "label": "Actual alignment checkpoint",
+          "url": "https://huggingface.co/Tequila7437/Eco3R/tree/main"
+        }
+      ],
+      "modelStatus": "CC BY-NC 4.0 Alignment Refocusing weights for VGGT-1B. Other backbones use their original checkpoints."
+    },
+    "ego-witness": {
+      "status": "unknown",
+      "availability": "Research method / tool",
+      "softwareStatus": "Project-introduction repository. Evaluation and agent code announced.",
+      "verified": "2026-11-22",
+      "evidence": [
+        {
+          "label": "Release statement",
+          "url": "https://github.com/egowitness/EgoWitness#code-and-data"
+        },
+        {
+          "label": "Project benchmark and examples",
+          "url": "https://egowitness.github.io/"
+        }
+      ],
+      "dataStatus": "Public examples and paper. Full benchmark and annotation files announced."
+    },
+    "egocaptioner": {
+      "status": "open",
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 inference code.",
+      "verified": "2026-11-22",
+      "evidence": [
+        {
+          "label": "Code license",
+          "url": "https://github.com/cactusqq/EgoCaptioner/blob/main/LICENSE"
+        },
+        {
+          "label": "Weight license and model card",
+          "url": "https://huggingface.co/Vickyinmyheart824/EgoCaptioner"
+        },
+        {
+          "label": "Actual weights",
+          "url": "https://huggingface.co/Vickyinmyheart824/EgoCaptioner/tree/main"
+        }
+      ],
+      "modelStatus": "Apache-2.0 EgoCaptioner checkpoint derived from Qwen3.5-9B."
+    },
+    "deq-stereo": {
+      "status": "unknown",
+      "availability": "Research method / tool",
+      "softwareStatus": "Author project and paper available. The linked code repository did not resolve.",
+      "verified": "2026-11-22",
+      "evidence": [
+        {
+          "label": "Official project",
+          "url": "https://kiljoon.github.io/projects/DEQStereo/"
+        },
+        {
+          "label": "ACCV publication comment",
+          "url": "https://arxiv.org/abs/2610.39701"
+        }
+      ]
     }
   }
 }

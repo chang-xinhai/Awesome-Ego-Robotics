@@ -14603,14 +14603,14 @@
     "form": "Not applicable",
     "coverage": "Scene / camera",
     "tracking": "Streaming stereo",
-    "reviewed": "2026-11-20",
-    "image": "images/catalog/deq-stereo-nov20.webp",
-    "imageSource": "https://arxiv.org/html/2610.39701v1/main_pipeline.png",
-    "imagePage": "https://arxiv.org/html/2610.39701v1/",
-    "imageAlt": "Pipeline for adaptive disparity refinement and hidden-state transfer between stereo frames",
-    "imageType": "Method / depth output",
-    "credit": "DEQ-Stereo authors. Third-party figure rights retained",
-    "imageCredit": "DEQ-Stereo authors. Third-party figure rights retained"
+    "reviewed": "2026-11-22",
+    "image": "images/catalog/deq-stereo-cover-nov22.webp",
+    "imageSource": "https://kiljoon.github.io/projects/DEQStereo/videos/stereo_comparison_eth3d_fixed.mp4",
+    "imagePage": "https://kiljoon.github.io/projects/DEQStereo/",
+    "imageAlt": "A left-camera image and the authors’ DEQ-Stereo disparity estimate from an ETH3D SLAM video",
+    "imageType": "Published qualitative examples",
+    "credit": "DEQ-Stereo authors; third-party rights retained",
+    "imageCredit": "DEQ-Stereo authors; third-party rights retained"
   },
   {
     "id": "depth-anyviewpoint",
@@ -15731,5 +15731,181 @@
     "datasetImageAlt": "Infinigen stereo video sample frames and depth maps",
     "datasetImageType": "Dataset example",
     "datasetImageCredit": "BiDAVideo authors; third-party rights retained"
+  },
+  {
+    "id": "depth-pro-2",
+    "name": "Depth Pro 2",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "Apple Machine Learning Research; third-party rights retained",
+    "summary": "Sharp monocular metric depth at native resolution for photos, buffered video and causal streams.",
+    "image": "images/catalog/depth-pro-2-cover-nov22.webp",
+    "imageSource": "https://apple-aiml-research.github.io/ml-depth-pro-2/assets/images/img01/input.jpg",
+    "imagePage": "https://apple-aiml-research.github.io/ml-depth-pro-2/#images",
+    "imageAlt": "Apple’s Depth Pro 2 RGB examples with a peacock and a cart above their corresponding colorized depth predictions",
+    "imageType": "Published qualitative examples",
+    "imageCredit": "Apple Machine Learning Research; third-party rights retained"
+  },
+  {
+    "id": "dfd-gs",
+    "name": "DfD-GS",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "DfD-GS authors; third-party rights retained",
+    "summary": "Recovers metric geometry using two same-view captures with different focus.",
+    "image": "images/catalog/dfd-gs-cover-nov22.webp",
+    "imageSource": "https://arxiv.org/html/2611.26072v1/results_real_comp.png",
+    "imagePage": "https://arxiv.org/html/2611.26072v1#S4.F14",
+    "imageAlt": "Four real optical-defocus scenes and the authors’ comparison of estimated depth with reference distance",
+    "imageType": "Published qualitative examples",
+    "imageCredit": "DfD-GS authors; third-party rights retained"
+  },
+  {
+    "id": "mir-depth",
+    "name": "MIR-Depth",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "MIR-Depth authors; third-party rights retained",
+    "summary": "Refines unreliable visible-surface depth for transparent objects from a masked RGB-D image.",
+    "image": "images/catalog/mir-depth-cover-nov22.webp",
+    "imageSource": "https://arxiv.org/html/2611.25417v1/real_world_qualitative.png",
+    "imagePage": "https://arxiv.org/html/2611.25417v1#S4.F5",
+    "imageAlt": "Cluttered transparent-object RGB-D capture, raw sensor depth, completed depth and resulting robot grasp overlay",
+    "imageType": "Published qualitative examples",
+    "imageCredit": "MIR-Depth authors; third-party rights retained"
+  },
+  {
+    "id": "zoom-depth-equivariance",
+    "name": "Zoom In, Scale Out",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "Rabeya Noor and Khandoker Nosiba Arifin; third-party rights retained",
+    "summary": "Tests scale drift under digital zoom and compares focal corrections for monocular metric depth.",
+    "image": "images/catalog/zoom-depth-equivariance-cover-nov22.webp",
+    "imageSource": "https://arxiv.org/pdf/2611.17903#page=2",
+    "imagePage": "https://arxiv.org/pdf/2611.17903#page=2",
+    "imageAlt": "KITTI input at three digital zoom factors and metric depth estimates for the unchanged scene",
+    "imageType": "Published qualitative examples",
+    "imageCredit": "Rabeya Noor and Khandoker Nosiba Arifin; third-party rights retained"
+  },
+  {
+    "id": "stereo-crossinjection",
+    "name": "Cross-Injection",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "Meta Reality Labs and the Middlebury 2014 dataset authors; third-party rights retained",
+    "summary": "Couples iterative left and right predictions to improve binocular disparity consistency.",
+    "image": "images/catalog/stereo-crossinjection-cover-nov22.webp",
+    "imageSource": "https://arxiv.org/html/2611.09458v1/fig/qualitative-examples/booster/Motorcycle_im8.png",
+    "imagePage": "https://arxiv.org/html/2611.09458v1#S1.F1",
+    "imageAlt": "Left and right Middlebury motorcycle camera frames above the matching Cross-Injection disparity estimates",
+    "imageType": "Published qualitative examples",
+    "imageCredit": "Meta Reality Labs and the Middlebury 2014 dataset authors; third-party rights retained"
+  },
+  {
+    "id": "gtr-depth",
+    "name": "GTR-Depth",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "Intellindust AI Lab and the GTR authors; third-party rights retained",
+    "summary": "Runs single-frame dense depth estimation using efficient gated token recurrence.",
+    "image": "images/catalog/gtr-depth-cover-nov22.webp",
+    "imageSource": "https://intellindust-ai-lab.github.io/projects/GTR/assets/figures/results_depth_nuscenes.jpg",
+    "imagePage": "https://intellindust-ai-lab.github.io/projects/GTR/",
+    "imageAlt": "Two nighttime nuScenes frames and their corresponding GTR depth estimates",
+    "imageType": "Published qualitative examples",
+    "imageCredit": "Intellindust AI Lab and the GTR authors; third-party rights retained"
+  },
+  {
+    "id": "eco3r",
+    "name": "Eco3R",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "Eco3R authors; third-party rights retained",
+    "summary": "Reuses a small pinned keyframe cache to reconstruct long monocular sequences.",
+    "image": "images/catalog/eco3r-cover-nov22.webp",
+    "imageSource": "https://raw.githubusercontent.com/Tequila7437/Eco3R/main/assets/teaser_online.gif",
+    "imagePage": "https://github.com/Tequila7437/Eco3R",
+    "imageAlt": "Incoming ScanNet RGB frame beside the scene point cloud reconstructed online with Eco3R and π³",
+    "imageType": "Published qualitative examples",
+    "imageCredit": "Eco3R authors; third-party rights retained"
+  },
+  {
+    "id": "ego-witness",
+    "name": "EgoWitness",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "EgoWitness authors; third-party rights retained",
+    "summary": "Benchmarks whether egocentric video models remember where and when specific objects were seen.",
+    "datasetImage": "images/catalog/ego-witness-cover-nov22.webp",
+    "datasetImageSource": "https://egowitness.github.io/media/clips/hero_mosaic_poster.jpg",
+    "datasetImagePage": "https://egowitness.github.io/",
+    "datasetImageAlt": "Annotated EgoWitness first-person recordings with persistent object identity labels across multiple settings",
+    "datasetImageType": "Published dataset examples"
+  },
+  {
+    "id": "egocaptioner",
+    "name": "EgoCaptioner",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "EgoCaptioner authors; third-party rights retained",
+    "summary": "Generates a first-person scene overview and fine-grained timestamped action captions.",
+    "image": "images/catalog/egocaptioner-cover-nov22.webp",
+    "imageSource": "https://arxiv.org/html/2611.26380v1/cases.png",
+    "imagePage": "https://arxiv.org/html/2611.26380v1#S4.F3",
+    "imageAlt": "Timestamped first-person examples of manipulation, locomotion, social interaction and visual attention used in the EgoCaptioner paper",
+    "imageType": "Published qualitative examples",
+    "imageCredit": "EgoCaptioner authors; third-party rights retained"
+  },
+  {
+    "id": "tomas-ego-hand",
+    "name": "TOMAS",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "TOMAS authors; third-party rights retained",
+    "summary": "Forecasts 2D and 3D hand motion from past motion, object context and inferred operations.",
+    "image": "images/catalog/tomas-ego-hand-cover-nov22.webp",
+    "imageSource": "https://arxiv.org/html/2611.23970v1/1.png",
+    "imagePage": "https://arxiv.org/html/2611.23970v1#S1.F1",
+    "imageAlt": "Different future hand trajectories for grasping and pushing the same cup in an egocentric scene",
+    "imageType": "Published qualitative examples",
+    "imageCredit": "TOMAS authors; third-party rights retained"
+  },
+  {
+    "id": "egohandwam",
+    "name": "EgoHandWAM",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-22",
+    "credit": "EgoHandWAM authors; third-party rights retained",
+    "summary": "Tests whether hand trajectories improve future visual feature prediction and simulated human-to-robot transfer.",
+    "image": "images/catalog/egohandwam-cover-nov22.webp",
+    "imageSource": "https://arxiv.org/html/2611.22151v1/lid_wrist_sequences.png",
+    "imagePage": "https://arxiv.org/html/2611.22151v1#S5.F2",
+    "imageAlt": "Held-out EgoDex frames with recorded and predicted wrist positions during two lid-placement runs",
+    "imageType": "Published qualitative examples",
+    "imageCredit": "EgoHandWAM authors; third-party rights retained"
   }
 ]

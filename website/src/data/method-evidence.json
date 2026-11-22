@@ -30880,7 +30880,7 @@
       "outputSpace": "camera",
       "evidenceLevel": "reconstruction",
       "trainingType": "supervised",
-      "verified": "2026-10-16",
+      "verified": "2026-11-22",
       "toolTopics": [
         "depth"
       ],
@@ -30916,6 +30916,10 @@
         {
           "label": "Official implementation",
           "url": "https://github.com/apple/ml-depth-pro"
+        },
+        {
+          "label": "Depth Pro 2 successor, image and video",
+          "url": "https://arxiv.org/abs/2611.26603"
         }
       ],
       "fieldSources": {
@@ -75481,7 +75485,7 @@
       "temporal": "Causal temporal state transfer and adaptive per-pair iteration count.",
       "limitations": "Evaluation covers disparity accuracy and latency under the paper’s hardware and resolution settings. No public author implementation was verified.",
       "robotEvidence": "Capture-processing reference. Direct ego-robotics use is unverified.",
-      "verified": "2026-11-20",
+      "verified": "2026-11-22",
       "sources": [
         {
           "label": "Primary paper",
@@ -75490,6 +75494,10 @@
         {
           "label": "Detailed method",
           "url": "https://arxiv.org/html/2610.39701v1/"
+        },
+        {
+          "label": "Official project and visual comparisons",
+          "url": "https://kiljoon.github.io/projects/DEQStereo/"
         }
       ],
       "toolTopics": [
@@ -75572,8 +75580,12 @@
         ],
         "perception.limitations": [
           "https://arxiv.org/html/2610.39701v1/"
+        ],
+        "implementation": [
+          "https://kiljoon.github.io/projects/DEQStereo/"
         ]
-      }
+      },
+      "implementation": "Author project and qualitative results are available. Its linked code repository was not publicly accessible when checked."
     },
     "depth-anyviewpoint": {
       "summary": "Benchmarks depth consistency under camera motion using warp error, temporal drift, and annotated points.",
@@ -79213,6 +79225,1144 @@
         "captureRelevance": "The BiDAVideo work is cited in NBS high-resolution training.",
         "temporal": "Stereo sequences with temporal correspondence."
       }
+    },
+    "depth-pro-2": {
+      "summary": "Estimates sharp metric depth from single photos or video with buffered and causal streaming.",
+      "input": "One RGB image or a monocular RGB video, with an optional focal length in pixels",
+      "output": "Native-resolution metric depth in metres per frame, decoded from focal-normalized inverse depth",
+      "outputRepresentation": "Native-resolution metric depth in metres per frame, decoded from focal-normalized inverse depth",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "scale": "Learned depth with focal-length normalization. Supply calibrated focal length or use Apple’s separate 23.5M-parameter estimate.",
+      "temporal": "Single frame, buffered windows with optional overlap, or causal per-frame inference with a finite FIFO attention cache. The authors use a 16-frame default PyTorch cache.",
+      "evaluation": "Evaluates metric depth accuracy, edge F1 and temporal jitter separately. S reaches 53 fps at 1080p on one NVIDIA B200 with given focal length and a 16-frame cache. The timing excludes focal-length estimation.",
+      "limitations": "Predicted depth rather than sensor-recorded distance. Focal estimation can affect metric scale. B200 timing is for the tested PyTorch configuration, not a device-agnostic latency guarantee.",
+      "robotEvidence": "General-purpose geometry for downstream camera capture and reconstruction. No Ego or UMI robot-policy validation is reported.",
+      "perception": {
+        "families": [
+          "monocular",
+          "multiview"
+        ],
+        "inputSetup": [
+          "monocular",
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "metric-predicted"
+        ],
+        "outputType": "Native-resolution metric depth in metres per frame, decoded from focal-normalized inverse depth",
+        "scaleSource": "Learned depth with focal-length normalization. Supply calibrated focal length or use Apple’s separate 23.5M-parameter estimate.",
+        "calibration": "Focal length is expected in pixels for the actual input resolution. For missing focal length use the released estimator. The published Core ML packages expose fixed resolutions and a four-frame state.",
+        "temporal": "Single frame, buffered windows with optional overlap, or causal per-frame inference with a finite FIFO attention cache. The authors use a 16-frame default PyTorch cache.",
+        "captureRelevance": "Capture-processing reference. Direct ego-robotics use has not been demonstrated.",
+        "limitations": "Predicted depth rather than sensor-recorded distance. Focal estimation can affect metric scale. B200 timing is for the tested PyTorch configuration, not a device-agnostic latency guarantee."
+      },
+      "toolTopics": [
+        "depth"
+      ],
+      "trainingData": "Joint training on images and sequences up to 32 frames, with depth, boundary-preserving, and temporal supervision. See the paper for training and augmentation recipes.",
+      "implementation": "Public PyTorch inference, streaming and Mac demo. S (24M), B (97M), L (334M), H+ (872M), and separate focal estimator weights are released. Apple also publishes Core ML exports.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.26603"
+        },
+        {
+          "label": "Method and evaluation",
+          "url": "https://arxiv.org/html/2611.26603v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://apple-aiml-research.github.io/ml-depth-pro-2/"
+        },
+        {
+          "label": "Code (Apple software license)",
+          "url": "https://github.com/apple-aiml-research/ml-depth-pro-2"
+        },
+        {
+          "label": "Models (noncommercial research)",
+          "url": "https://huggingface.co/apple/DepthPro2"
+        },
+        {
+          "label": "Core ML (noncommercial research)",
+          "url": "https://huggingface.co/apple/DepthPro2-coreml"
+        },
+        {
+          "label": "Apple research publication",
+          "url": "https://machinelearning.apple.com/research/depth-pro-2-monocular"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.26603v1#A6.F12",
+          "https://arxiv.org/html/2611.26603v1#A6.SS5"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "perception.families": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "perception.inputSetup": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "perception.cameraGeometry": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "perception.scaleType": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "perception.outputType": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "perception.scaleSource": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "perception.calibration": [
+          "https://arxiv.org/html/2611.26603v1#S3.SS3",
+          "https://github.com/apple-aiml-research/ml-depth-pro-2",
+          "https://huggingface.co/apple/DepthPro2-coreml"
+        ],
+        "perception.temporal": [
+          "https://arxiv.org/html/2611.26603v1#S3.SS3",
+          "https://huggingface.co/apple/DepthPro2-coreml"
+        ],
+        "perception.captureRelevance": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "perception.limitations": [
+          "https://arxiv.org/html/2611.26603v1"
+        ],
+        "trainingData": [
+          "https://arxiv.org/html/2611.26603v1#S3.SS2"
+        ],
+        "implementation": [
+          "https://github.com/apple-aiml-research/ml-depth-pro-2",
+          "https://huggingface.co/apple/DepthPro2",
+          "https://huggingface.co/apple/DepthPro2-coreml"
+        ]
+      },
+      "verified": "2026-11-22"
+    },
+    "dfd-gs": {
+      "summary": "Uses paired sharp and defocused images from one viewpoint to align a learned depth prior to metric scale.",
+      "input": "One all-in-focus and one defocused RGB capture of the same view, plus known defocus strength",
+      "output": "Source-view metric depth and metric 3D Gaussians for novel view synthesis",
+      "outputRepresentation": "Source-view metric depth and metric 3D Gaussians for novel view synthesis",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "scale": "Optical defocus and camera geometry anchor a learned monocular depth prior to metric scale.",
+      "temporal": "Independent same-view capture pairs. No video consistency mechanism.",
+      "evaluation": "Synthetic defocus on Booster and Middlebury and evaluation on WildRGB-D. Includes real optical-defocus examples.",
+      "limitations": "Optical blur is ambiguous on textureless or saturated regions. This setup requires complementary capture and does not establish metric recovery from an arbitrary single RGB frame.",
+      "robotEvidence": "Reference for a controlled single-view recording pipeline. Ego/UMI deployment was not evaluated.",
+      "perception": {
+        "families": [
+          "monocular"
+        ],
+        "inputSetup": [
+          "monocular"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "outputType": "Source-view metric depth and metric 3D Gaussians for novel view synthesis",
+        "scaleSource": "Optical defocus and camera geometry anchor a learned monocular depth prior to metric scale.",
+        "calibration": "Requires a matching pair at the same viewpoint and the defocus parameter used by the optical model.",
+        "temporal": "Independent same-view capture pairs. No video consistency mechanism.",
+        "captureRelevance": "Capture-processing reference. Direct ego-robotics use has not been demonstrated.",
+        "limitations": "Optical blur is ambiguous on textureless or saturated regions. This setup requires complementary capture and does not establish metric recovery from an arbitrary single RGB frame."
+      },
+      "toolTopics": [
+        "depth"
+      ],
+      "implementation": "Public paper, result figures and project. The repository linked by the project was not accessible when checked.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.26072"
+        },
+        {
+          "label": "Method and evaluation",
+          "url": "https://arxiv.org/html/2611.26072v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://sh1027.github.io/dfd-gs/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "perception.families": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "perception.inputSetup": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "perception.cameraGeometry": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "perception.scaleType": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "perception.outputType": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "perception.scaleSource": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "perception.calibration": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "perception.temporal": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "perception.captureRelevance": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "perception.limitations": [
+          "https://arxiv.org/html/2611.26072v1"
+        ],
+        "implementation": [
+          "https://sh1027.github.io/dfd-gs/"
+        ]
+      },
+      "verified": "2026-11-22"
+    },
+    "mir-depth": {
+      "summary": "Refines unreliable depth on transparent object surfaces from a masked RGB-D view.",
+      "input": "One synchronized RGB-D observation and a mask delimiting the target object",
+      "output": "Completed visible-surface depth, used to form point clouds for 6-DoF grasp proposals",
+      "outputRepresentation": "Completed visible-surface depth, used to form point clouds for 6-DoF grasp proposals",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "scale": "A learned relative-depth prior is refined with appearance and raw sensor-depth features. The result remains an estimate.",
+      "temporal": "Independent single-view predictions.",
+      "evaluation": "Evaluates TransCG, TODD, TRansPose, ClearPose and HouseCat6D and demonstrates grasp pose estimation on a real tabletop setup.",
+      "limitations": "Requires already segmented objects and RGB-D input. The paper does not demonstrate robustness to arbitrary ego-camera footage.",
+      "robotEvidence": "Real tabletop grasping setup with an AgileX PIPER arm and wrist-mounted RealSense D435i.",
+      "perception": {
+        "families": [
+          "monocular"
+        ],
+        "inputSetup": [
+          "monocular"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "metric-predicted"
+        ],
+        "outputType": "Completed visible-surface depth, used to form point clouds for 6-DoF grasp proposals",
+        "scaleSource": "A learned relative-depth prior is refined with appearance and raw sensor-depth features. The result remains an estimate.",
+        "calibration": "Requires pixel correspondence between RGB, sensor-depth and object-mask inputs.",
+        "temporal": "Independent single-view predictions.",
+        "captureRelevance": "Capture-processing reference. Direct ego-robotics use has not been demonstrated.",
+        "limitations": "Requires already segmented objects and RGB-D input. The paper does not demonstrate robustness to arbitrary ego-camera footage."
+      },
+      "toolTopics": [
+        "depth"
+      ],
+      "implementation": "The authors announce code and pretrained models. Release files were not linked from the paper.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.25417"
+        },
+        {
+          "label": "Method and evaluation",
+          "url": "https://arxiv.org/html/2611.25417v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "perception.families": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "perception.inputSetup": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "perception.cameraGeometry": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "perception.scaleType": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "perception.outputType": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "perception.scaleSource": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "perception.calibration": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "perception.temporal": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "perception.captureRelevance": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "perception.limitations": [
+          "https://arxiv.org/html/2611.25417v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2611.25417v1"
+        ]
+      },
+      "verified": "2026-11-22"
+    },
+    "zoom-depth-equivariance": {
+      "summary": "Measures metric-depth scale error under digital zoom and tests focal corrections and self-supervised adaptation.",
+      "input": "RGB images before and after digital crop-and-resize, with known or model-estimated intrinsics by protocol",
+      "output": "Zoom-induced depth and focal-length response coefficients, plus corrected predictions",
+      "outputRepresentation": "Zoom-induced depth and focal-length response coefficients, plus corrected predictions",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "scale": "Compares changes in predicted metric depth on corresponding pixels when image content is digitally magnified.",
+      "temporal": "Image-pair evaluation of a fixed scene. No temporal model.",
+      "evaluation": "800 images from KITTI, NYUv2 and DIODE. Evaluates Depth Anything V2, Depth Pro and other models under different focal-length conditions.",
+      "limitations": "Uses frame-level interventions and a dedicated evaluation protocol. The published experiment predates Depth Pro 2 and does not benchmark it.",
+      "robotEvidence": "A useful check when wearable pipelines crop, stabilize or digitally zoom camera frames.",
+      "perception": {
+        "families": [
+          "monocular"
+        ],
+        "inputSetup": [
+          "monocular"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "metric-predicted"
+        ],
+        "outputType": "Zoom-induced depth and focal-length response coefficients, plus corrected predictions",
+        "scaleSource": "Compares changes in predicted metric depth on corresponding pixels when image content is digitally magnified.",
+        "calibration": "A known focal length must be updated for the exact digital crop-and-resize transform.",
+        "temporal": "Image-pair evaluation of a fixed scene. No temporal model.",
+        "captureRelevance": "Capture-processing reference. Direct ego-robotics use has not been demonstrated.",
+        "limitations": "Uses frame-level interventions and a dedicated evaluation protocol. The published experiment predates Depth Pro 2 and does not benchmark it."
+      },
+      "toolTopics": [
+        "depth"
+      ],
+      "implementation": "MIT evaluation and training scripts are public. Uses reference models and separately governed source datasets.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.17903"
+        },
+        {
+          "label": "Method and evaluation",
+          "url": "https://arxiv.org/pdf/2611.17903"
+        },
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/rabeyanoor/zoom-equivariance"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "input": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "output": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "scale": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "temporal": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "evaluation": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "limitations": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "perception.families": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "perception.inputSetup": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "perception.cameraGeometry": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "perception.scaleType": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "perception.outputType": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "perception.scaleSource": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "perception.calibration": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "perception.temporal": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "perception.captureRelevance": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "perception.limitations": [
+          "https://arxiv.org/pdf/2611.17903"
+        ],
+        "implementation": [
+          "https://github.com/rabeyanoor/zoom-equivariance"
+        ]
+      },
+      "verified": "2026-11-22"
+    },
+    "stereo-crossinjection": {
+      "summary": "Couples left and right iterative disparity refinement to improve consistency between eyes.",
+      "input": "A rectified left/right RGB image pair for a compatible iterative stereo backbone",
+      "output": "Two mutually consistent disparity predictions",
+      "outputRepresentation": "Two mutually consistent disparity predictions",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "scale": "Metric depth requires the stereo camera focal length and calibrated baseline. The model predicts pixel disparity.",
+      "temporal": "Independent input pairs. Cross-injection links binocular estimates within a refinement step.",
+      "evaluation": "The paper assesses both one-view error and left–right agreement using FoundationStereo and S²M², including Booster transparent surfaces.",
+      "limitations": "Agreement does not guarantee both estimates are correct. A second coupled pass still has an inference cost.",
+      "robotEvidence": "Useful for dual-eye rendering and fusion of the two views. Direct Ego/UMI robot evaluation is not reported.",
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "outputType": "Two mutually consistent disparity predictions",
+        "scaleSource": "Metric depth requires the stereo camera focal length and calibrated baseline. The model predicts pixel disparity.",
+        "calibration": "Requires rectified stereo images. Known intrinsics and baseline are required when exporting metric depth.",
+        "temporal": "Independent input pairs. Cross-injection links binocular estimates within a refinement step.",
+        "captureRelevance": "Capture-processing reference. Direct ego-robotics use has not been demonstrated.",
+        "limitations": "Agreement does not guarantee both estimates are correct. A second coupled pass still has an inference cost."
+      },
+      "toolTopics": [
+        "depth"
+      ],
+      "implementation": "Meta publishes inference source and gated FoundationStereo-CI and S²M²-XL-CI checkpoints. The code and model repository include the FAIR noncommercial research terms.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2611.09458"
+        },
+        {
+          "label": "Method and evaluation",
+          "url": "https://arxiv.org/html/2611.09458v1"
+        },
+        {
+          "label": "Code (FAIR noncommercial research)",
+          "url": "https://github.com/facebookresearch/stereo_crossinjection"
+        },
+        {
+          "label": "Models (gated)",
+          "url": "https://huggingface.co/facebook/stereo_crossinjection"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "perception.families": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "perception.inputSetup": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "perception.cameraGeometry": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "perception.scaleType": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "perception.outputType": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "perception.scaleSource": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "perception.calibration": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "perception.temporal": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "perception.captureRelevance": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "perception.limitations": [
+          "https://arxiv.org/html/2611.09458v1"
+        ],
+        "implementation": [
+          "https://github.com/facebookresearch/stereo_crossinjection",
+          "https://huggingface.co/facebook/stereo_crossinjection"
+        ]
+      },
+      "verified": "2026-11-22"
+    },
+    "gtr-depth": {
+      "summary": "Runs dense single-frame depth estimation using a gated-linear-attention backbone.",
+      "input": "One perspective RGB frame",
+      "output": "Dense depth predictions with metric-trained checkpoints",
+      "outputRepresentation": "Dense depth predictions with metric-trained checkpoints",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "scale": "Metric training across indoor and outdoor reference datasets. The reported NYUv2 transfer metric uses a per-image log-affine fit.",
+      "temporal": "Per-image inference. Spatial token recurrence is not a temporal video state.",
+      "evaluation": "Reported zero-shot NYU Depth V2 Eigen test results use six test-time views and per-image log-affine alignment.",
+      "limitations": "Aligned NYUv2 scores do not establish unaligned metric accuracy. Hardware benchmark values depend on variant, TensorRT and input size.",
+      "robotEvidence": "Potentially useful edge reference with separate single-frame depth checkpoints; ego-robotics deployment is unverified.",
+      "perception": {
+        "families": [
+          "monocular"
+        ],
+        "inputSetup": [
+          "monocular"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "metric-predicted"
+        ],
+        "outputType": "Dense depth predictions with metric-trained checkpoints",
+        "scaleSource": "Metric training across indoor and outdoor reference datasets. The reported NYUv2 transfer metric uses a per-image log-affine fit.",
+        "calibration": "Camera calibration is needed when unprojecting estimates into a metric point cloud.",
+        "temporal": "Per-image inference. Spatial token recurrence is not a temporal video state.",
+        "captureRelevance": "Capture-processing reference. Direct ego-robotics use has not been demonstrated.",
+        "limitations": "Aligned NYUv2 scores do not establish unaligned metric accuracy. Hardware benchmark values depend on variant, TensorRT and input size."
+      },
+      "toolTopics": [
+        "depth"
+      ],
+      "implementation": "Public source, depth configs and downloadable S/M/L/X depth model weights.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/abs/2609.26590"
+        },
+        {
+          "label": "Method and evaluation",
+          "url": "https://arxiv.org/html/2609.26590v2"
+        },
+        {
+          "label": "Project",
+          "url": "https://intellindust-ai-lab.github.io/projects/GTR/"
+        },
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/Intellindust-AI-Lab/GTR"
+        },
+        {
+          "label": "Models",
+          "url": "https://huggingface.co/Phoenix8125/GTR/tree/main/depth"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "perception.families": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "perception.inputSetup": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "perception.cameraGeometry": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "perception.scaleType": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "perception.outputType": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "perception.scaleSource": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "perception.calibration": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "perception.temporal": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "perception.captureRelevance": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "perception.limitations": [
+          "https://arxiv.org/html/2609.26590v2"
+        ],
+        "implementation": [
+          "https://intellindust-ai-lab.github.io/projects/GTR/",
+          "https://github.com/Intellindust-AI-Lab/GTR",
+          "https://huggingface.co/Phoenix8125/GTR/tree/main/depth"
+        ]
+      },
+      "verified": "2026-11-22"
+    },
+    "eco3r": {
+      "summary": "Reuses a small pinned keyframe cache to reconstruct cameras and scene geometry from long monocular videos.",
+      "input": "One RGB video or ordered RGB frames",
+      "output": "Per-frame predicted depth, camera trajectories and reconstructed point maps",
+      "outputRepresentation": "Depth, poses and point maps",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "robotEvidence": "Offline and online ScanNet reconstruction; downstream ego-robotics use is unverified.",
+      "evaluation": "The paper reports 18.6 fps for Eco3R (π³) on 1,000 ScanNet frames and reconstruction up to 4,000 frames on one A100.",
+      "implementation": "Code and optional VGGT-1B Alignment Refocusing weights are released. Base models retain their own terms.",
+      "scale": "Depth and relative world-scale estimates depend on the selected geometry backbone and its camera assumptions.",
+      "temporal": "Offline pinned-key inference plus online modes for VGGT, π³ and VGGT-Ω. DA3 path in the public implementation is offline only. Output can be delayed to use later keys.",
+      "limitations": "Streaming evaluation was run on ScanNet. Online frame rates are A100 measurements and may include buffered output; the implementation is not a complete SLAM backend.",
+      "toolTopics": [
+        "slam",
+        "depth"
+      ],
+      "slam": {
+        "family": "streaming",
+        "role": "online",
+        "systemType": "Pinned-key streaming feed-forward reconstruction",
+        "loopClosure": "unknown",
+        "relocalization": "unknown",
+        "metricScale": "Depth and relative world-scale estimates depend on the selected geometry backbone and its camera assumptions.",
+        "calibration": "Uses RGB views and backbone-estimated camera parameters.",
+        "captureRelevance": "Reference for long-video geometry and trajectory extraction."
+      },
+      "perception": {
+        "families": [
+          "multiview"
+        ],
+        "inputSetup": [
+          "video"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "conditional"
+        ],
+        "outputType": "Per-frame predicted depth, camera poses and scene point maps",
+        "scaleSource": "Depth and relative world-scale estimates depend on the selected geometry backbone and its camera assumptions.",
+        "calibration": "RGB geometry estimated by the selected trained backbone.",
+        "temporal": "Offline pinned-key inference plus online modes for VGGT, π³ and VGGT-Ω. DA3 path in the public implementation is offline only. Output can be delayed to use later keys.",
+        "captureRelevance": "Makes long video geometry practical for preprocessing recordings.",
+        "limitations": "Streaming evaluation was run on ScanNet. Online frame rates are A100 measurements and may include buffered output; the implementation is not a complete SLAM backend."
+      },
+      "sources": [
+        {
+          "label": "Primary paper v2",
+          "url": "https://arxiv.org/html/2611.18099v2"
+        },
+        {
+          "label": "Official implementation and supported modes",
+          "url": "https://github.com/Tequila7437/Eco3R"
+        },
+        {
+          "label": "Refocusing weight files",
+          "url": "https://huggingface.co/Tequila7437/Eco3R/tree/main"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "implementation": [
+          "https://github.com/Tequila7437/Eco3R",
+          "https://huggingface.co/Tequila7437/Eco3R"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "temporal": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "slam.family": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "slam.role": [
+          "https://github.com/Tequila7437/Eco3R#backbones",
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "slam.systemType": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "slam.loopClosure": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "slam.relocalization": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "slam.metricScale": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "slam.calibration": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "slam.captureRelevance": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "perception.families": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "perception.inputSetup": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "perception.cameraGeometry": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "perception.scaleType": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "perception.outputType": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "perception.scaleSource": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "perception.calibration": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "perception.temporal": [
+          "https://github.com/Tequila7437/Eco3R#online-stream",
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "perception.captureRelevance": [
+          "https://arxiv.org/html/2611.18099v2"
+        ],
+        "perception.limitations": [
+          "https://arxiv.org/html/2611.18099v2"
+        ]
+      },
+      "verified": "2026-11-22"
+    },
+    "egocaptioner": {
+      "summary": "Produces scene overviews and timestamped first-person action captions for egocentric video.",
+      "input": "Egocentric RGB video and optional natural-language event prompt",
+      "output": "Video overview and timestamps with task-aware action captions",
+      "outputRepresentation": "Hierarchical video-language annotations",
+      "outputSpace": "representation",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Egocentric human activities",
+      "stage": "l6",
+      "supervision": "50,000 paper-reported examples from eight egocentric sources and factual, time-alignment and style rewards. Some training references use pose-derived motion facts.",
+      "evaluation": "Caption quality, caption-conditioned question answering and temporal alignment across five benchmarks.",
+      "robotEvidence": "Useful derived supervision for video datasets. No downstream robot-policy results reported.",
+      "limitations": "Generated labels are model estimates. The published model release does not by itself release the 50,000 training examples.",
+      "implementation": "Apache-2.0 single-video and batch inference code plus sharded model weights.",
+      "sources": [
+        {
+          "label": "Paper and evaluation",
+          "url": "https://arxiv.org/html/2611.26380v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://cactusqq.github.io/EgoCaptioner/"
+        },
+        {
+          "label": "Inference code",
+          "url": "https://github.com/cactusqq/EgoCaptioner"
+        },
+        {
+          "label": "Actual checkpoint shards",
+          "url": "https://huggingface.co/Vickyinmyheart824/EgoCaptioner/tree/main"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.26380v1"
+        ],
+        "implementation": [
+          "https://github.com/cactusqq/EgoCaptioner",
+          "https://huggingface.co/Vickyinmyheart824/EgoCaptioner/tree/main"
+        ]
+      },
+      "verified": "2026-11-22"
+    },
+    "tomas-ego-hand": {
+      "summary": "Forecasts where hands move by reasoning about the intended object operation and its stages.",
+      "input": "Egocentric RGB clip, historical hand motion, and detected candidate objects",
+      "output": "Future 2D and 3D hand-center trajectories",
+      "outputRepresentation": "Hand-center trajectory forecast",
+      "outputSpace": "camera",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "l3",
+      "evaluation": "2D and 3D hand trajectory forecast on EgoPAT3D-DT and H2O-PT.",
+      "supervision": "Uses benchmark hand motion and object context for operation-conditioned trajectory prediction.",
+      "robotEvidence": "Human hand motion prediction benchmark rather than robot policy execution.",
+      "limitations": "Observed past motion and detected object candidates are conditioning inputs. Separate executable robot actions are not established.",
+      "implementation": "Paper and qualitative evidence. An official software release was not verified.",
+      "sources": [
+        {
+          "label": "Primary paper and results",
+          "url": "https://arxiv.org/html/2611.23970v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.23970v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2611.23970v1"
+        ]
+      },
+      "verified": "2026-11-22"
+    },
+    "egohandwam": {
+      "summary": "Tests how observed and predicted hand trajectories affect future feature prediction and human-to-robot transfer.",
+      "input": "A current RGB view and a recent history of wrist and fingertip coordinates",
+      "output": "Future 3D hand trajectories and a future visual feature",
+      "outputRepresentation": "Motion forecasts and visual features",
+      "outputSpace": "mixed",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "l6",
+      "supervision": "751,065 EgoDex windows, with optional future-feature supervision.",
+      "evaluation": "Held-out EgoDex forecast and a two-task RoboTwin transfer probe.",
+      "robotEvidence": "Simulation only. Human examples did not consistently improve success across the three training seeds.",
+      "limitations": "Underestimates long reaches. Observed hand history is a separate input and does not follow from monocular pixels alone.",
+      "implementation": "Paper and experimental details. An official implementation or checkpoint was not verified.",
+      "sources": [
+        {
+          "label": "Primary paper and transfer probe",
+          "url": "https://arxiv.org/html/2611.22151v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.22151v1"
+        ],
+        "implementation": [
+          "https://arxiv.org/html/2611.22151v1"
+        ]
+      },
+      "verified": "2026-11-22"
     }
   }
 }

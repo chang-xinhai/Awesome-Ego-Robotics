@@ -17112,6 +17112,41 @@
       "syntheticSignals": [
         "Vision"
       ]
+    },
+    "ego-witness": {
+      "name": "EgoWitness",
+      "observations": "Week-long wearable-camera recordings and shorter Ego4D-derived video contexts.",
+      "cameraSetup": "First-person RGB recording; camera setup varies between long-horizon captures and Ego4D-derived contexts.",
+      "recordedStreams": "Egocentric video frames",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "annotationType": "mixed",
+      "annotationEvidence": "8,453 human-verified questions. More than one million reviewed masks, 34 registered landmarks and 21 movable-object labels. Masks and instance IDs are derived annotations.",
+      "labels": "Instance masks, object and room timelines, human-verified temporal and spatial questions",
+      "dataRole": "mixed",
+      "access": "Reported benchmark, release pending",
+      "releaseScope": "The authors publicly show examples and aggregate results. The implementation, dataset and annotations are announced but not downloadable from the official project.",
+      "reportedScale": {
+        "hours": 324,
+        "questions": 8453,
+        "scope": "Paper total across week-long and short-horizon recordings"
+      },
+      "verified": "2026-11-22",
+      "sources": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.25849"
+        },
+        {
+          "label": "Project overview and examples",
+          "url": "https://egowitness.github.io/"
+        },
+        {
+          "label": "Author release status",
+          "url": "https://github.com/egowitness/EgoWitness#code-and-data"
+        }
+      ]
     }
   }
 }
