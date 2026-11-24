@@ -13791,7 +13791,7 @@
         "hours": 10000,
         "episodes": 1363915,
         "tasks": 619,
-        "scope": "author-reported curated occupational-work corpus"
+        "scope": "Paper reports 10,000 curated hours across 11 countries, 18 task families, 200 task types and 2,000 tasks. The previously verified author dataset card counts 1,363,915 episodes and 619 task categories in its separate release taxonomy."
       },
       "publicScale": {
         "scope": "Manual access request; downloadable corpus not independently verified"
@@ -13799,6 +13799,8 @@
       "access": "Access conditions",
       "accessNote": "Hugging Face repository requires manual approval; full corpus download not verified.",
       "formats": [
+        "LeRobot v3.0",
+        "Rerun RRD",
         "Video",
         "Pose annotations"
       ],
@@ -13827,6 +13829,10 @@
       "limitations": "Head and hand coordinates are model estimates; they are not direct tactile sensing or robot action labels. Public file tree lists LeRobot shards and access is manual. Trajectories and aggregate totals have separate provenance.",
       "sources": [
         {
+          "label": "arXiv v1 collection and limitations",
+          "url": "https://arxiv.org/html/2611.26916v1"
+        },
+        {
           "label": "Technical report and project",
           "url": "https://www.gsi.company/blogs/robocap-10k"
         },
@@ -13837,7 +13843,7 @@
       ],
       "fieldSources": {
         "reportedScale": [
-          "https://www.gsi.company/blogs/robocap-10k",
+          "https://arxiv.org/html/2611.26916v1",
           "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
         ],
         "publicScale": [
@@ -13903,9 +13909,13 @@
         "limitations": [
           "https://www.gsi.company/blogs/robocap-10k",
           "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2611.26916v1",
+          "https://huggingface.co/datasets/groundedsi/RoboCap-10k"
         ]
       },
-      "verified": "2026-11-21"
+      "verified": "2026-11-24"
     },
     "egoactionbench": {
       "name": "EgoActionBench",
@@ -17126,13 +17136,13 @@
       "labels": "Instance masks, object and room timelines, human-verified temporal and spatial questions",
       "dataRole": "mixed",
       "access": "Reported benchmark, release pending",
-      "releaseScope": "The authors publicly show examples and aggregate results. The implementation, dataset and annotations are announced but not downloadable from the official project.",
+      "releaseScope": "Paper, examples and aggregate metrics are public. The official sources announce evaluation and dataset files. EgoClue is the paper’s tool-using evidence agent.",
       "reportedScale": {
         "hours": 324,
         "questions": 8453,
         "scope": "Paper total across week-long and short-horizon recordings"
       },
-      "verified": "2026-11-22",
+      "verified": "2026-11-24",
       "sources": [
         {
           "label": "Paper",
@@ -17145,8 +17155,406 @@
         {
           "label": "Author release status",
           "url": "https://github.com/egowitness/EgoWitness#code-and-data"
+        },
+        {
+          "label": "EgoClue agent and evidence workflow",
+          "url": "https://arxiv.org/html/2611.25849v1#S5"
         }
-      ]
+      ],
+      "tasks": [
+        "Instance-level spatial memory",
+        "Evidence retrieval and verification",
+        "Egocentric question answering"
+      ],
+      "limitations": "EgoClue uses a 4B controller to retrieve, inspect and verify evidence. The week-long and Ego4D-derived protocols have distinct conditions. These are offline egocentric evidence tasks.",
+      "fieldSources": {
+        "tasks": [
+          "https://arxiv.org/html/2611.25849v1#S4",
+          "https://arxiv.org/html/2611.25849v1#S5"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.25849v1#S4.SS5",
+          "https://arxiv.org/html/2611.25849v1#S5"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2611.25849v1",
+          "https://egowitness.github.io/"
+        ]
+      }
+    },
+    "egodepth-bench": {
+      "name": "EgoDepth-Bench",
+      "summary": "Benchmarks metric depth on fisheye wearable manipulation, including hands and objects on held-out sites.",
+      "observations": "Six synchronized calibrated RGB fisheye views plus active-IR stereo reference measurements from a wearable rig.",
+      "cameraSetup": "Six global-shutter fisheye RGB cameras and five active-infrared stereo modules on the head rig, with a common 30 Hz trigger.",
+      "recordedStreams": "Six fisheye RGB views and active-infrared stereo capture used to form the reference. Evaluation inputs vary by model protocol.",
+      "recordedSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "derivedSignals": [
+        "Fused metric camera-2 depth",
+        "Masks for hands and manipulated objects"
+      ],
+      "labels": "Metric axial depth fused into the native 512 × 416 view of camera 2, validity masks, and annotated hand and object regions.",
+      "annotationType": "mixed",
+      "annotationEvidence": "Five active-IR stereo modules provide triangulated depth. Consistency and visibility checks precede fusion into camera 2. Hand and object labels select interaction pixels.",
+      "coordinateFrame": "Camera-2 axis depth in native fisheye coordinates. Camera 2 is the evaluation anchor.",
+      "calibration": "Paper validates reference geometry with a certified 499.9903 mm ball-bar. Median spacing error is 1.27 mm across 1,220 accepted measurements.",
+      "tasks": [
+        "Metric depth",
+        "Zero-shot transfer",
+        "Interaction-region depth",
+        "Held-out site adaptation"
+      ],
+      "splits": "Sites are disjoint across 24 train, five validation and eight test locations.",
+      "reportedScale": {
+        "samples": 941233,
+        "participants": 5,
+        "scope": "Synchronized timestamps across 37 physical sites"
+      },
+      "access": "Gated dataset, public code and examples",
+      "datasetUrl": "https://huggingface.co/datasets/genrobot2025/EgoDepth-Bench",
+      "dataLicense": "The repository declares CC BY-SA 4.0 for EgoDepth-Bench data.",
+      "releaseScope": "Public Apache-2.0 evaluator and result statistics. The data guide documents starter and full archives, with Hugging Face account access required.",
+      "limitations": "The 1.27 mm value measures recovered ball-bar spacing, not per-pixel depth error. Baseline predictions are scored on accuracy and coverage under different input configurations.",
+      "dataRole": "egocentric",
+      "bodyCoverage": "Hands",
+      "formats": [
+        "RGB streams",
+        "Reference depth",
+        "Camera calibration",
+        "Validity masks"
+      ],
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.30734v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://egodepth-bench.github.io/"
+        },
+        {
+          "label": "Code (Apache-2.0)",
+          "url": "https://github.com/Chris004869/EgoDepth-Bench"
+        },
+        {
+          "label": "Dataset (author link)",
+          "url": "https://huggingface.co/datasets/genrobot2025/EgoDepth-Bench"
+        },
+        {
+          "label": "Data format",
+          "url": "https://github.com/Chris004869/EgoDepth-Bench/blob/main/docs/DATA.md"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "derivedSignals": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "annotationEvidence": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "calibration": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "splits": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2611.30734v1"
+        ],
+        "access": [
+          "https://egodepth-bench.github.io/",
+          "https://github.com/Chris004869/EgoDepth-Bench",
+          "https://huggingface.co/datasets/genrobot2025/EgoDepth-Bench",
+          "https://github.com/Chris004869/EgoDepth-Bench/blob/main/docs/DATA.md"
+        ],
+        "datasetUrl": [
+          "https://egodepth-bench.github.io/",
+          "https://github.com/Chris004869/EgoDepth-Bench",
+          "https://huggingface.co/datasets/genrobot2025/EgoDepth-Bench",
+          "https://github.com/Chris004869/EgoDepth-Bench/blob/main/docs/DATA.md"
+        ],
+        "dataLicense": [
+          "https://egodepth-bench.github.io/",
+          "https://github.com/Chris004869/EgoDepth-Bench",
+          "https://huggingface.co/datasets/genrobot2025/EgoDepth-Bench",
+          "https://github.com/Chris004869/EgoDepth-Bench/blob/main/docs/DATA.md"
+        ],
+        "releaseScope": [
+          "https://egodepth-bench.github.io/",
+          "https://github.com/Chris004869/EgoDepth-Bench",
+          "https://huggingface.co/datasets/genrobot2025/EgoDepth-Bench",
+          "https://github.com/Chris004869/EgoDepth-Bench/blob/main/docs/DATA.md"
+        ],
+        "publicScale": [
+          "https://github.com/Chris004869/EgoDepth-Bench/blob/main/docs/DATA.md"
+        ]
+      },
+      "verified": "2026-11-24",
+      "publicScale": {
+        "scope": "Interactive examples and tables are public. Gated downloadable scale not independently verified."
+      }
+    },
+    "egobench-interactive": {
+      "name": "EgoBench",
+      "summary": "Evaluates tool-using agents grounding multi-turn user interactions in wearable video.",
+      "observations": "Grounding in first-person Ego4D and author-recorded videos, plus user instructions and tool responses.",
+      "recordedStreams": "First-person RGB video. Multi-turn users in the evaluation environment are simulated.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "labels": "Scenario objectives, verifiable prescribed tool actions, structured tool outputs and task success criteria.",
+      "cameraSetup": "First-person daily-activity recordings from Ego4D and author-collected video.",
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "reportedScale": {
+        "tasks": 1590,
+        "scope": "Revision 2 reports 1,590 tasks across five daily scenarios. This is the paper scope."
+      },
+      "releaseScope": "MIT evaluator and benchmark files released. Benchmark annotations and original benchmark videos are published with CC BY 4.0; third-party videos keep original terms. The related EgoLink Challenge has separate tracks and its own data and scores.",
+      "datasetUrl": "https://huggingface.co/datasets/emodiary/EgoBench",
+      "access": "Public code and mixed-license benchmark files",
+      "dataLicense": "CC BY 4.0 for designated author content. Upstream videos retain their own licenses.",
+      "limitations": "Agents call software tools and interact with a simulated user. The benchmark involves no robot actuation.",
+      "tasks": [
+        "Interactive tool use",
+        "Multimodal reasoning",
+        "Multi-turn task completion"
+      ],
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2605.27820v2"
+        },
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/Wind-Flipped/EgoBench"
+        },
+        {
+          "label": "Dataset (mixed terms)",
+          "url": "https://huggingface.co/datasets/emodiary/EgoBench"
+        },
+        {
+          "label": "Related EgoLink Challenge and leaderboard",
+          "url": "https://ego-link.github.io/challenge2026/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2605.27820v2"
+        ],
+        "releaseScope": [
+          "https://github.com/Wind-Flipped/EgoBench",
+          "https://huggingface.co/datasets/emodiary/EgoBench",
+          "https://ego-link.github.io/challenge2026/"
+        ],
+        "datasetUrl": [
+          "https://github.com/Wind-Flipped/EgoBench",
+          "https://huggingface.co/datasets/emodiary/EgoBench",
+          "https://ego-link.github.io/challenge2026/"
+        ],
+        "access": [
+          "https://github.com/Wind-Flipped/EgoBench",
+          "https://huggingface.co/datasets/emodiary/EgoBench",
+          "https://ego-link.github.io/challenge2026/"
+        ],
+        "dataLicense": [
+          "https://github.com/Wind-Flipped/EgoBench",
+          "https://huggingface.co/datasets/emodiary/EgoBench",
+          "https://ego-link.github.io/challenge2026/"
+        ]
+      },
+      "verified": "2026-11-24"
+    },
+    "video2world": {
+      "name": "Video2World",
+      "summary": "Measures whether coding agents can reconstruct executable simulations of embodied demonstrations.",
+      "observations": "Robot execution clips together with a subset of ego and external human demonstration recordings.",
+      "recordedStreams": "RGB demonstration video. The agent iterates with feedback from its simulated candidate.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "labels": "Task definitions and track-specific references for geometry, object motion and functional interaction.",
+      "annotationType": "mixed",
+      "dataRole": "mixed",
+      "cameraSetup": "Mixed viewpoints from source data, including egocentric human interactions.",
+      "reportedScale": {
+        "tasks": 222,
+        "scope": "Reconstruction instances from 189 videos spanning 39 task families."
+      },
+      "publicScale": {
+        "tasks": 222,
+        "scope": "The author hub lists 222 benchmark tasks. Source video usage follows relevant upstream terms."
+      },
+      "releaseScope": "Dataset, code and live leaderboard are published. The author protocol specifies task handouts and evaluator inputs separately.",
+      "datasetUrl": "https://huggingface.co/datasets/AetherLabs-AI/Video2World",
+      "access": "Public benchmark package",
+      "dataLicense": "The author package is labeled Apache-2.0. Upstream dataset and simulation assets retain separate terms.",
+      "limitations": "The coding agent builds and revises an interactive simulator. The evaluator scores that simulated output across geometry, dynamics and function.",
+      "tasks": [
+        "Real-to-sim reconstruction",
+        "Executable world modeling",
+        "Coding-agent evaluation"
+      ],
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.04432v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://aetherlabsai.github.io/Video2World/"
+        },
+        {
+          "label": "Code (Apache-2.0)",
+          "url": "https://github.com/AetherLabsAI/Video2World"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/AetherLabs-AI/Video2World"
+        },
+        {
+          "label": "Leaderboard",
+          "url": "https://aetherlabsai.github.io/Video2World/leaderboard/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2610.04432v1"
+        ],
+        "publicScale": [
+          "https://aetherlabsai.github.io/Video2World/",
+          "https://github.com/AetherLabsAI/Video2World",
+          "https://huggingface.co/datasets/AetherLabs-AI/Video2World",
+          "https://aetherlabsai.github.io/Video2World/leaderboard/"
+        ],
+        "releaseScope": [
+          "https://aetherlabsai.github.io/Video2World/",
+          "https://github.com/AetherLabsAI/Video2World",
+          "https://huggingface.co/datasets/AetherLabs-AI/Video2World",
+          "https://aetherlabsai.github.io/Video2World/leaderboard/"
+        ],
+        "datasetUrl": [
+          "https://aetherlabsai.github.io/Video2World/",
+          "https://github.com/AetherLabsAI/Video2World",
+          "https://huggingface.co/datasets/AetherLabs-AI/Video2World",
+          "https://aetherlabsai.github.io/Video2World/leaderboard/"
+        ],
+        "access": [
+          "https://aetherlabsai.github.io/Video2World/",
+          "https://github.com/AetherLabsAI/Video2World",
+          "https://huggingface.co/datasets/AetherLabs-AI/Video2World",
+          "https://aetherlabsai.github.io/Video2World/leaderboard/"
+        ],
+        "dataLicense": [
+          "https://aetherlabsai.github.io/Video2World/",
+          "https://github.com/AetherLabsAI/Video2World",
+          "https://huggingface.co/datasets/AetherLabs-AI/Video2World",
+          "https://aetherlabsai.github.io/Video2World/leaderboard/"
+        ]
+      },
+      "verified": "2026-11-24"
     }
   }
 }

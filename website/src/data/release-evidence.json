@@ -1481,21 +1481,21 @@
       "verified": "2026-10-19"
     },
     "vidihand": {
-      "status": "unknown",
-      "commercial": false,
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Public ViDiHand v1 inference source and sample.",
+      "verified": "2026-11-24",
       "evidence": [
         {
-          "label": "Primary source",
-          "url": "https://arxiv.org/abs/2606.30308"
+          "label": "Repository and release branches",
+          "url": "https://github.com/NTUYWANG103/ViDiHand"
         },
         {
-          "label": "Verified announcement-only tree (2026-10-19)",
-          "url": "https://github.com/NTUYWANG103/ViDiHand/tree/main"
+          "label": "ViDiHand v1 weight files",
+          "url": "https://huggingface.co/WANG-XIXI/ViDiHand/tree/main/vidihand_v1"
         }
       ],
-      "availability": "Research resource",
-      "verified": "2026-10-19",
-      "softwareStatus": "No implementation files in the official repository; paper/project and announcement assets only."
+      "modelStatus": "ViDiHand v1 weights published separately from ViDiHand2."
     },
     "ace-ego-hand": {
       "status": "partial",
@@ -18435,6 +18435,260 @@
         {
           "label": "ACCV publication comment",
           "url": "https://arxiv.org/abs/2610.39701"
+        }
+      ]
+    },
+    "egodepth-bench": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 source includes reference evaluation scripts and bundled result statistics.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://egodepth-bench.github.io/"
+        },
+        {
+          "label": "Code (Apache-2.0)",
+          "url": "https://github.com/Chris004869/EgoDepth-Bench"
+        },
+        {
+          "label": "Dataset (author link)",
+          "url": "https://huggingface.co/datasets/genrobot2025/EgoDepth-Bench"
+        },
+        {
+          "label": "Data format",
+          "url": "https://github.com/Chris004869/EgoDepth-Bench/blob/main/docs/DATA.md"
+        }
+      ],
+      "dataStatus": "CC BY-SA 4.0 starter and full archives are described in the official guide and require Hugging Face account access."
+    },
+    "handrsi": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT code and harnesses, with separate upstream terms.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/GinKenneth/Hand_RSI"
+        },
+        {
+          "label": "Models (CC BY-NC 4.0)",
+          "url": "https://huggingface.co/HandRSI/HandRSI"
+        }
+      ],
+      "modelStatus": "Downloadable round checkpoints under CC BY-NC 4.0."
+    },
+    "vidihand2": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Public ViDiHand2 inference and sample. License scope is tracked separately from checkpoint access.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://vidihand2.github.io/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/NTUYWANG103/ViDiHand"
+        },
+        {
+          "label": "Models (ViDiHand2)",
+          "url": "https://huggingface.co/WANG-XIXI/ViDiHand/tree/main/vidihand_v2"
+        }
+      ],
+      "modelStatus": "ViDiHand2 weights published in the author’s versioned file tree."
+    },
+    "tac-hoi": {
+      "status": "unknown",
+      "availability": "Research method / tool",
+      "softwareStatus": "Public article and results. No implementation linked from the paper.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.26764v1"
+        }
+      ]
+    },
+    "ego2wrist": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Public Apache-2.0 code, with separate upstream model terms.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://adonis-galaxy.github.io/Ego2Wrist/"
+        },
+        {
+          "label": "Code (Apache-2.0)",
+          "url": "https://github.com/Adonis-galaxy/Ego2Wrist"
+        },
+        {
+          "label": "Models (initial LoRA)",
+          "url": "https://huggingface.co/adonis126/Ego2Wrist/tree/main"
+        }
+      ],
+      "modelStatus": "Raw and EMA M₀ LoRA weights are downloadable. No later iteration weights were listed when checked."
+    },
+    "egostudy": {
+      "status": "unknown",
+      "availability": "Research method / tool",
+      "softwareStatus": "Public protocol, results, and project examples. No runnable study code is linked from the checked project page.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://puzhenyuan.github.io/EgoStudy-website/"
+        }
+      ]
+    },
+    "duo-policy": {
+      "status": "unknown",
+      "availability": "Research method / tool",
+      "softwareStatus": "Public paper and author demonstrations. Implementation release was not verified.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://mingxi-jia.github.io/duo_policy_site/"
+        }
+      ]
+    },
+    "hive-bench": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT analysis, policy and evaluation source.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/KolaKivy/HIVE-Bench"
+        },
+        {
+          "label": "Dataset (author link)",
+          "url": "https://huggingface.co/datasets/zhengtu666/HIVE-Bench-Data"
+        },
+        {
+          "label": "Models (author link)",
+          "url": "https://huggingface.co/zhengtu666/HIVE-Bench"
+        }
+      ],
+      "modelStatus": "Author links an official checkpoint collection.",
+      "dataStatus": "Author links the benchmark data separately."
+    },
+    "robolivemem": {
+      "status": "open",
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT evaluator, task tier definitions and protocol.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://robolivemem.github.io/"
+        },
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/RoboLiveMem/RoboLiveMem"
+        },
+        {
+          "label": "Evaluation protocol",
+          "url": "https://github.com/RoboLiveMem/RoboLiveMem/blob/main/PROTOCOL.md"
+        }
+      ]
+    },
+    "momentmem": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT MomentMem source; modified OpenPI retains Apache-2.0.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://pku-value-lab.github.io/MomentMem/"
+        },
+        {
+          "label": "Code (MIT; OpenPI components Apache-2.0)",
+          "url": "https://github.com/PKU-VaLuE-Lab/MomentMem"
+        },
+        {
+          "label": "Models",
+          "url": "https://huggingface.co/frenzyfreeze/open-MomentMem-VLM"
+        }
+      ],
+      "modelStatus": "Public author-linked memorizer and separate executor checkpoints.",
+      "dataStatus": "Benchmark tools published; full training demonstration access was not verified."
+    },
+    "navrsi": {
+      "status": "unknown",
+      "availability": "Research method / tool",
+      "softwareStatus": "Code is announced in the paper. Public project shows the protocol and examples.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://daiguangzhao.github.io/NavRSI/"
+        }
+      ]
+    },
+    "egobench-interactive": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "MIT evaluator and scenario harness.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/Wind-Flipped/EgoBench"
+        },
+        {
+          "label": "Dataset (mixed terms)",
+          "url": "https://huggingface.co/datasets/emodiary/EgoBench"
+        },
+        {
+          "label": "Related EgoLink Challenge and leaderboard",
+          "url": "https://ego-link.github.io/challenge2026/"
+        }
+      ],
+      "dataStatus": "Published mixed-license dataset files. Third-party source video terms are separate."
+    },
+    "video2world": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "softwareStatus": "Apache-2.0 agent runner, validation and scoring code.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Project",
+          "url": "https://aetherlabsai.github.io/Video2World/"
+        },
+        {
+          "label": "Code (Apache-2.0)",
+          "url": "https://github.com/AetherLabsAI/Video2World"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/AetherLabs-AI/Video2World"
+        },
+        {
+          "label": "Leaderboard",
+          "url": "https://aetherlabsai.github.io/Video2World/leaderboard/"
+        }
+      ],
+      "dataStatus": "Public benchmark package with separately governed upstream videos and assets."
+    },
+    "ego4gen": {
+      "status": "unknown",
+      "availability": "Research method / tool",
+      "softwareStatus": "Paper and qualitative evaluations are public. No implementation link verified.",
+      "verified": "2026-11-24",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.27513v1"
         }
       ]
     }
