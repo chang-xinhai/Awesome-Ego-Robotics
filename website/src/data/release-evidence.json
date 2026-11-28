@@ -2535,11 +2535,16 @@
         {
           "label": "Repository license file",
           "url": "https://github.com/GaTech-RL2/EgoWAM/blob/main/LICENSE"
+        },
+        {
+          "label": "Official demonstration explorer",
+          "url": "https://partners.mecka.ai/egoverse?task=EgoWAM_fold_clothes#explorer"
         }
       ],
       "availability": "Research resource",
       "softwareStatus": "Public source files verified (EgoWAM: MIT). Model/data and third-party terms remain separate.",
-      "verified": "2026-10-19"
+      "verified": "2026-11-28",
+      "dataStatus": "The official data explorer previews aligned and unaligned examples. Full training data access remains separate."
     },
     "vip": {
       "status": "partial",
@@ -17874,7 +17879,7 @@
       "availability": "Public scene-registration source and first dataset batch",
       "softwareStatus": "Scene-registration tools and examples public under Apache-2.0; dataset has separate CC BY-NC 4.0 terms.",
       "dataStatus": "First batch public; full collection not independently verified as released.",
-      "verified": "2026-11-15",
+      "verified": "2026-11-28",
       "evidence": [
         {
           "label": "Official code",
@@ -17883,6 +17888,10 @@
         {
           "label": "Official dataset",
           "url": "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        },
+        {
+          "label": "Scene registration and output frames",
+          "url": "https://github.com/Ropedia/Ropedia-Xperience-2/blob/main/docs/scene_registration.md"
         }
       ],
       "codeRelease": {
@@ -18483,8 +18492,8 @@
     "vidihand2": {
       "status": "partial",
       "availability": "Research method / tool",
-      "softwareStatus": "Public ViDiHand2 inference and sample. License scope is tracked separately from checkpoint access.",
-      "verified": "2026-11-24",
+      "softwareStatus": "The shared official repository includes a dedicated ViDiHand2 inference module and sample input. A public author-hosted Space exposes the demo.",
+      "verified": "2026-11-28",
       "evidence": [
         {
           "label": "Project",
@@ -18497,9 +18506,13 @@
         {
           "label": "Models (ViDiHand2)",
           "url": "https://huggingface.co/WANG-XIXI/ViDiHand/tree/main/vidihand_v2"
+        },
+        {
+          "label": "Interactive demo",
+          "url": "https://huggingface.co/spaces/WANG-XIXI/ViDiHand2"
         }
       ],
-      "modelStatus": "ViDiHand2 weights published in the author’s versioned file tree."
+      "modelStatus": "The public checkpoint tree lists ViDiHand2 projector.safetensors and vdm.safetensors separately from the ViDiHand v1 weights."
     },
     "tac-hoi": {
       "status": "unknown",
@@ -18689,6 +18702,284 @@
         {
           "label": "Primary paper",
           "url": "https://arxiv.org/html/2611.27513v1"
+        }
+      ]
+    },
+    "memhand": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.32876v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://irmvlab.github.io/memhand.github.io/"
+        }
+      ],
+      "softwareStatus": "Project shows clips; the author marks the implementation as coming soon."
+    },
+    "horcrux": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.31812v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://shpark97.github.io/Horcrux/"
+        }
+      ],
+      "softwareStatus": "Project and paper examples are public; the implementation is announced."
+    },
+    "codehoi": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.31976v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://shpark97.github.io/CodeHOI/"
+        }
+      ],
+      "softwareStatus": "Project examples are public; simulation implementation and benchmark files were not verified."
+    },
+    "dexengine": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.33579v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://wongyun-yu.github.io/dexengine/"
+        },
+        {
+          "label": "Code (v0.1)",
+          "url": "https://github.com/wongyun-yu/DexEngine/tree/v0.1"
+        },
+        {
+          "label": "Data (gated)",
+          "url": "https://huggingface.co/datasets/Wongyun/DexEngine"
+        }
+      ],
+      "softwareStatus": "Public v0.1 snapshot with actual implementation and tests.",
+      "dataStatus": "Gated author-hosted LeRobot archives and public metadata.",
+      "license": "See repository LICENSE and third-party terms."
+    },
+    "egoloaf": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.32260v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://egoloaf.github.io/"
+        },
+        {
+          "label": "Dataset examples (release pending)",
+          "url": "https://egoloaf.github.io/#dataset"
+        }
+      ],
+      "softwareStatus": "Author project and robot demonstrations are public; dataset and implementation are announced.",
+      "dataStatus": "Author release is announced."
+    },
+    "x-world": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.33914v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://logosintelligencelab.github.io/X-World/"
+        }
+      ],
+      "softwareStatus": "The public repository contains the project site and manuscript. Training code and checkpoints were not verified."
+    },
+    "entangle": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.28732v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://entangle-robotics.github.io/"
+        }
+      ],
+      "softwareStatus": "Author project demonstrates the in-context model and describes data composition. Public reproducible model artifacts were not verified."
+    },
+    "ego2ego-perspective": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.27459v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://chuhan-jiao.github.io/ego2ego/"
+        }
+      ],
+      "softwareStatus": "Project and comparison videos are public. Code and model access were not verified."
+    },
+    "ego-hmb": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.29218v1"
+        },
+        {
+          "label": "Author repository (documentation)",
+          "url": "https://github.com/gaogehan/Ego-HMB"
+        }
+      ],
+      "softwareStatus": "Author project materials are public; implementation and trained checkpoints were not verified."
+    },
+    "xtream": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.31757v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://ernestolozano.github.io/xtream/"
+        },
+        {
+          "label": "Code (Apache-2.0)",
+          "url": "https://github.com/ErnestoLozano/Xtream"
+        }
+      ],
+      "softwareStatus": "Public repository includes runnable scripts, configs and factor-graph implementation. Upstream models have separate terms."
+    },
+    "egocarbs": {
+      "status": "partial",
+      "availability": "Research benchmark",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.33565v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://saif-mahmud.github.io/projects/ego-carbs/"
+        }
+      ],
+      "softwareStatus": "Author examples are public; recordings and capture code are announced.",
+      "dataStatus": "Author release is announced."
+    },
+    "egosurghands": {
+      "status": "partial",
+      "availability": "Research benchmark",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.27101v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://egosurghands.github.io/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/monk1337/egoSurgHands"
+        },
+        {
+          "label": "Data (gated, CC BY-NC-SA 4.0)",
+          "url": "https://huggingface.co/datasets/surgicalinformatics/EgoSurgHands"
+        }
+      ],
+      "softwareStatus": "Public benchmark scripts, model adapters and JRN training code.",
+      "dataStatus": "Manually gated Parquet shards; CC BY-NC-SA 4.0."
+    },
+    "airis": {
+      "status": "partial",
+      "availability": "Research benchmark",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.34347v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://airis-bench.github.io/"
+        },
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/AIRIS-bench/AIRIS"
+        },
+        {
+          "label": "Data annotations (CC BY 4.0)",
+          "url": "https://github.com/AIRIS-bench/AIRIS/tree/main/data"
+        }
+      ],
+      "softwareStatus": "MIT evaluation and source-frame reconstruction tools.",
+      "dataStatus": "CC BY 4.0 annotations and source IDs; original video files are governed by their own licenses."
+    },
+    "finedex": {
+      "status": "partial",
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.34884v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://finedex.github.io/"
+        }
+      ],
+      "softwareStatus": "Author demos are public; the code repository only contains release documentation."
+    },
+    "shape-egodex": {
+      "status": "partial",
+      "availability": "Research method",
+      "softwareStatus": "The author project provides deployment examples and diagrams. Public implementation and checkpoints were not verified.",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.24585v1"
+        },
+        {
+          "label": "Official project",
+          "url": "https://li-yaping.github.io/SHAPE/"
         }
       ]
     }

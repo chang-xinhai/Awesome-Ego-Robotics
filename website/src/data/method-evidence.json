@@ -5437,9 +5437,13 @@
         {
           "label": "Method and experiments",
           "url": "https://arxiv.org/html/2607.08436v1"
+        },
+        {
+          "label": "Official demonstration explorer",
+          "url": "https://partners.mecka.ai/egoverse?task=EgoWAM_fold_clothes#explorer"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-11-28",
       "summary": "Compares pixel, feature, and 3D-flow prediction targets for human-to-robot transfer.",
       "inputSignals": [
         "Vision"
@@ -77637,13 +77641,13 @@
         "Vision"
       ],
       "bodyCoverage": "Hands and arms",
-      "stage": "l6",
-      "target": "Depth estimation",
+      "stage": "L6",
+      "target": "Bimanual dexterous manipulation",
       "scale": "Human supervision comes from retargeted hand motion.",
       "temporal": "Pretrains on recorded trajectories and evaluates closed-loop robot execution.",
       "limitations": "Includes human-only task adaptation after mixed robot and human pretraining. No public implementation was verified.",
       "robotEvidence": "Real-robot dexterous manipulation, including transfer without task-specific robot demonstrations after mixed pretraining.",
-      "verified": "2026-11-20",
+      "verified": "2026-11-28",
       "sources": [
         {
           "label": "Primary paper",
@@ -77652,6 +77656,10 @@
         {
           "label": "Detailed method",
           "url": "https://arxiv.org/html/2611.24585v1/"
+        },
+        {
+          "label": "Official project",
+          "url": "https://li-yaping.github.io/SHAPE/"
         }
       ],
       "fieldSources": {
@@ -77681,6 +77689,10 @@
         ],
         "robotEvidence": [
           "https://arxiv.org/html/2611.24585v1/"
+        ],
+        "target": [
+          "https://arxiv.org/html/2611.24585v1",
+          "https://li-yaping.github.io/SHAPE/"
         ]
       }
     },
@@ -80489,6 +80501,10 @@
         {
           "label": "Models (ViDiHand2)",
           "url": "https://huggingface.co/WANG-XIXI/ViDiHand/tree/main/vidihand_v2"
+        },
+        {
+          "label": "Interactive demo",
+          "url": "https://huggingface.co/spaces/WANG-XIXI/ViDiHand2"
         }
       ],
       "fieldSources": {
@@ -80537,7 +80553,7 @@
           "https://huggingface.co/WANG-XIXI/ViDiHand/tree/main/vidihand_v2"
         ]
       },
-      "verified": "2026-11-24"
+      "verified": "2026-11-28"
     },
     "tac-hoi": {
       "summary": "Uses spatially separated tactile contacts on a metrically calibrated hand to constrain the scale and pose of an object in monocular video.",
@@ -81121,6 +81137,1404 @@
         ]
       },
       "verified": "2026-11-24"
+    },
+    "egomyo": {
+      "summary": "Fuses wearable RGB and wrist muscle signals to estimate hand pose, contact and force on the hand surface.",
+      "input": "Egocentric RGB and wrist surface EMG. Bare-hand pressure and 3D pose supply reference labels.",
+      "output": "3D hand configuration and surface-aligned contact and normal-force estimates.",
+      "outputRepresentation": "3D hand configuration and surface-aligned contact and normal-force estimates.",
+      "inputSignals": [
+        "Vision",
+        "EMG"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "evaluation": "Evaluates multimodal complementarity on a reported 5.75M frames from 50 people and 34 contact configurations.",
+      "limitations": "Pressure is captured as reference supervision. Released recordings and source code were not verified.",
+      "robotEvidence": "Evaluates multimodal complementarity on a reported 5.75M frames from 50 people and 34 contact configurations.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "mixed",
+      "trainingType": "supervised",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.34224v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.34224v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.34224v1"
+        ]
+      }
+    },
+    "memhand": {
+      "summary": "Uses event memory around occlusions and long-term scale memory to reconstruct world-space hand trajectories.",
+      "input": "Monocular egocentric video; camera motion and metric scale are estimated within the reconstruction pipeline.",
+      "output": "Continuous metric hand motions in world coordinates, including frames with weak or missing hand evidence.",
+      "outputRepresentation": "Continuous metric hand motions in world coordinates, including frames with weak or missing hand evidence.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L1",
+      "evaluation": "Evaluates camera-space and world-space motion on ARCTIC, HOT3D and HOI4D.",
+      "limitations": "World-space motion is reconstructed from monocular footage. The author repository currently contains documentation and media.",
+      "robotEvidence": "Evaluates camera-space and world-space motion on ARCTIC, HOT3D and HOI4D.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "world",
+      "trainingType": "mixed",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.32876v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://irmvlab.github.io/memhand.github.io/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.32876v1",
+          "https://irmvlab.github.io/memhand.github.io/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.32876v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.32876v1"
+        ]
+      }
+    },
+    "horcrux": {
+      "summary": "Reconstructs one or two hands, object pose and fine surface contacts from one image plus an object-mesh prior.",
+      "input": "A single RGB image and an available or image-reconstructed object mesh. Hand and object priors are encoded by pretrained models.",
+      "output": "Hand and object pose in camera space with coarse joint-level and refined region-level visual contact estimates.",
+      "outputRepresentation": "Hand and object pose in camera space with coarse joint-level and refined region-level visual contact estimates.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "evaluation": "Evaluated across seven datasets and protocols, including arbitrary unseen objects and bimanual cases.",
+      "limitations": "Object geometry is a prior. Contact is predicted from geometry and imagery, with no measured tactile signal at inference.",
+      "robotEvidence": "Evaluated across seven datasets and protocols, including arbitrary unseen objects and bimanual cases.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.31812v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://shpark97.github.io/Horcrux/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.31812v1",
+          "https://shpark97.github.io/Horcrux/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.31812v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.31812v1"
+        ]
+      }
+    },
+    "who-is-ego": {
+      "summary": "Uses epipolar geometry to locate the ego camera wearer in a synchronized external view.",
+      "input": "A synchronized ego/exo RGB pair and segmentation proposals. A frozen reconstruction model estimates relative pose and depth.",
+      "output": "Camera-wearer selection, mask and absence prediction plus cross-view camera localization.",
+      "outputRepresentation": "Camera-wearer selection, mask and absence prediction plus cross-view camera localization.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "L2",
+      "evaluation": "Reports a FindEgo-1M benchmark of 1.16 million simulated and real pairs across 12 wearer types.",
+      "limitations": "The method predicts geometry from RGB; no independently downloadable FindEgo-1M files were verified.",
+      "robotEvidence": "Reports a FindEgo-1M benchmark of 1.16 million simulated and real pairs across 12 wearer types.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "camera",
+      "trainingType": "model-based",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.34489v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.34489v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.34489v1"
+        ]
+      }
+    },
+    "codehoi": {
+      "summary": "Coding agents construct and check executable hand-object interactions with material-specific physics.",
+      "input": "Reconstruction uses a video and scene cues, including egocentric clips from ARCTIC, OakInk2 and H2O; generation uses prompts or imagery.",
+      "output": "Executable simulations of hand-object interactions with object material, contacts and time-varying states.",
+      "outputRepresentation": "Executable simulations of hand-object interactions with object material, contacts and time-varying states.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "evaluation": "Reports 100 reconstruction and generation tasks and transfers selected interactions to dexterous hands in Genesis.",
+      "limitations": "The transfer example uses simulation. The linked project repository contains the website rather than the paper’s implementation.",
+      "robotEvidence": "Reports 100 reconstruction and generation tasks and transfers selected interactions to dexterous hands in Genesis.",
+      "evidenceLevel": "simulation",
+      "outputSpace": "model",
+      "trainingType": "model-based",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.31976v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://shpark97.github.io/CodeHOI/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.31976v1",
+          "https://shpark97.github.io/CodeHOI/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.31976v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.31976v1"
+        ]
+      }
+    },
+    "dexengine": {
+      "summary": "Converts human hand-object sequences into physically executable arm-hand trajectories and robot-view renders.",
+      "input": "Tracks and object geometry from nine human hand-object datasets, including egocentric sources.",
+      "output": "Whole-robot bimanual reference trajectories, physics-verified replay and rendered visual streams across four hands.",
+      "outputRepresentation": "Whole-robot bimanual reference trajectories, physics-verified replay and rendered visual streams across four hands.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L4",
+      "evaluation": "Reports 65,000 trajectories and 325,000 augmented episodes; evaluates deployment of policies trained on the retargeted data.",
+      "limitations": "Generated views and trajectories are simulation products. The corpus sizes are reported by the paper, while files are account-gated.",
+      "robotEvidence": "Reports 65,000 trajectories and 325,000 augmented episodes; evaluates deployment of policies trained on the retargeted data.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "mixed",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.33579v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://wongyun-yu.github.io/dexengine/"
+        },
+        {
+          "label": "Code (v0.1)",
+          "url": "https://github.com/wongyun-yu/DexEngine/tree/v0.1"
+        },
+        {
+          "label": "Data (gated)",
+          "url": "https://huggingface.co/datasets/Wongyun/DexEngine"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.33579v1",
+          "https://wongyun-yu.github.io/dexengine/",
+          "https://github.com/wongyun-yu/DexEngine/tree/v0.1",
+          "https://huggingface.co/datasets/Wongyun/DexEngine"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.33579v1"
+        ]
+      }
+    },
+    "egoloaf": {
+      "summary": "Post-trains a humanoid VLA on converted wearable video, explicit hand-object cues and rendered robot viewpoints.",
+      "input": "Wearable egocentric RGB; camera tracking and hand reconstruction yield torso and hand targets for training. The action expert receives robot-view vision and affordance features.",
+      "output": "Humanoid body, arm and hand actions from visual and affordance conditioning.",
+      "outputRepresentation": "Humanoid body, arm and hand actions from visual and affordance conditioning.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body",
+      "stage": "L5",
+      "evaluation": "Reports four real Unitree G1 loco-manipulation tasks using converted human examples for post-training.",
+      "limitations": "The paper reports 128,400 episodes, 1,000 hours and 1,284 tasks. The official project lists the corpus and code as coming soon.",
+      "robotEvidence": "Reports four real Unitree G1 loco-manipulation tasks using converted human examples for post-training.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "supervised",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.32260v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://egoloaf.github.io/"
+        },
+        {
+          "label": "Dataset examples (release pending)",
+          "url": "https://egoloaf.github.io/#dataset"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.32260v1",
+          "https://egoloaf.github.io/",
+          "https://egoloaf.github.io/#dataset"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.32260v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.32260v1"
+        ]
+      }
+    },
+    "ego2real-visuotactile": {
+      "summary": "Uses measured human touch to refine bimanual reconstruction and supervise real-robot skill transfer.",
+      "input": "Demonstrations use a support-mounted first-person RGB-D camera and tactile gloves. The deployed policy uses tracked object pose, robot wrist and finger state, action history and trajectory references.",
+      "output": "Bimanual robot actions from residual reinforcement learning with region-wise contact supervision.",
+      "outputRepresentation": "Bimanual robot actions from residual reinforcement learning with region-wise contact supervision.",
+      "inputSignals": [
+        "Vision",
+        "Depth",
+        "Tactile"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L5",
+      "evaluation": "Evaluates bottle handover and box rotation on real Tianji Marvin Pro arms with dexterous hands.",
+      "limitations": "RGB-D and touch are used for reconstruction and rewards. The deployed actor does not consume tactile observations or images directly.",
+      "robotEvidence": "Evaluates bottle handover and box rotation on real Tianji Marvin Pro arms with dexterous hands.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "mixed",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.32101v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.32101v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.32101v1"
+        ]
+      }
+    },
+    "activebridge": {
+      "summary": "Learns head and wrist movement from human egocentric video and transfers viewpoint control to a single-head-camera robot.",
+      "input": "RGB sequences selected from EgoVerse. Metric camera tracking and wrist reconstruction supply training targets. Physical deployment uses one movable RGB head camera.",
+      "output": "Future head-camera video plus executable native head, arm and gripper commands.",
+      "outputRepresentation": "Future head-camera video plus executable native head, arm and gripper commands.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L6",
+      "evaluation": "Evaluates five TAVIS-Head tasks per simulated robot and four real tasks; paper reports 62.5% mean physical success.",
+      "limitations": "Geometry and wrist pose are derived supervision. In the TAVIS-Head comparisons the input setups vary across reported baselines.",
+      "robotEvidence": "Evaluates five TAVIS-Head tasks per simulated robot and four real tasks; paper reports 62.5% mean physical success.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "supervised",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.32098v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.32098v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.32098v1"
+        ]
+      }
+    },
+    "camact": {
+      "summary": "Adds camera-motion pseudo-actions from first-person walking footage to robot demonstrations during VLA fine-tuning.",
+      "input": "In-the-wild first-person RGB walking sequences and separate robot demonstrations at training time. Camera trajectories are estimated offline.",
+      "output": "Robot action chunks learned from mixed pseudo-action and measured robot-action supervision.",
+      "outputRepresentation": "Robot action chunks learned from mixed pseudo-action and measured robot-action supervision.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "L5",
+      "evaluation": "Reports LIBERO, RoboCasa 365 and four physical manipulation tasks under viewpoint and layout shifts.",
+      "limitations": "The human-video targets are estimated camera motion. They are not demonstrations of human object interaction or measured robot actions.",
+      "robotEvidence": "Reports LIBERO, RoboCasa 365 and four physical manipulation tasks under viewpoint and layout shifts.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "co-training",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.34257v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.34257v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.34257v1"
+        ]
+      }
+    },
+    "co-world-model": {
+      "summary": "Aligns human and robot latent actions by their effects on objects so a robot can follow a new human video.",
+      "input": "Paired but unsynchronized human EgoDex egocentric RGB and robot streams during training; an unseen human video and current robot observations at evaluation.",
+      "output": "Embodiment-shared dynamics and receding-horizon robot action targets that track demonstration phase.",
+      "outputRepresentation": "Embodiment-shared dynamics and receding-horizon robot action targets that track demonstration phase.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L6",
+      "evaluation": "Evaluates 30 LIBERO tasks and a real humanoid manipulation setup.",
+      "limitations": "The human training split is paired at task level. Transferred execution still relies on pre-trained dynamics and target robot observations.",
+      "robotEvidence": "Evaluates 30 LIBERO tasks and a real humanoid manipulation setup.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "mixed",
+      "trainingType": "co-training",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.34302v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.34302v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.34302v1"
+        ]
+      }
+    },
+    "x-world": {
+      "summary": "Adapts a variable-view video model on human and robot video before transferring its features into an RGB robot controller.",
+      "input": "Egocentric human and robot videos during backbone adaptation; robot RGB observations and native state at deployment.",
+      "output": "Flow-matching robot action chunks through a compact query transformer; future RGB prediction is an adaptation objective.",
+      "outputRepresentation": "Flow-matching robot action chunks through a compact query transformer; future RGB prediction is an adaptation objective.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L5",
+      "evaluation": "Reports LIBERO and LIBERO-Plus, with three physical robot configurations and 81.7% average on six side-mounted dual-arm UR5e tasks.",
+      "limitations": "The controller consumes RGB views and native state. The camera-model names do not establish a depth input stream.",
+      "robotEvidence": "Reports LIBERO and LIBERO-Plus, with three physical robot configurations and 81.7% average on six side-mounted dual-arm UR5e tasks.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "co-training",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.33914v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://logosintelligencelab.github.io/X-World/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.33914v1",
+          "https://logosintelligencelab.github.io/X-World/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.33914v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.33914v1"
+        ]
+      }
+    },
+    "entangle": {
+      "summary": "Uses a demonstration video as the task context for jointly predicting robot actions and visual futures.",
+      "input": "A human demonstration clip matched to the robot head viewpoint and current robot RGB observations. Training mixes reenacted pairs and video-translated robot clips.",
+      "output": "Future robot visual states and executable action chunks from a single context demonstration.",
+      "outputRepresentation": "Future robot visual states and executable action chunks from a single context demonstration.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L6",
+      "evaluation": "Reports real Astribot S1 and RoboTwin validation on held-out tasks and context variants.",
+      "limitations": "Matched-view or synthetic human context is a specific training setting. Cross-view or human-video-only training is not implied.",
+      "robotEvidence": "Reports real Astribot S1 and RoboTwin validation on held-out tasks and context variants.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "supervised",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.28732v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://entangle-robotics.github.io/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.28732v1",
+          "https://entangle-robotics.github.io/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.28732v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.28732v1"
+        ]
+      }
+    },
+    "beyondego": {
+      "summary": "Uses synchronized ego and exo observations and trains intermediate features to forecast both views.",
+      "input": "Robot ego and exo RGB views at inference. Future DINOv3 features from both viewpoints supervise the adapter in training.",
+      "output": "Whole-body control action chunks conditioned on current ego and external views.",
+      "outputRepresentation": "Whole-body control action chunks conditioned on current ego and external views.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body",
+      "stage": "L5",
+      "evaluation": "Evaluates simulated closed-loop humanoid manipulation on the five HELM tasks.",
+      "limitations": "Future observations are train-time supervision. The deployed policy still uses a current external view; the benchmark is simulated.",
+      "robotEvidence": "Evaluates simulated closed-loop humanoid manipulation on the five HELM tasks.",
+      "evidenceLevel": "simulation",
+      "outputSpace": "robot",
+      "trainingType": "supervised",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.27047v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.27047v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.27047v1"
+        ]
+      }
+    },
+    "awaken-hi": {
+      "summary": "Pretrains one action expert on human and retargeted actions, then post-trains for real humanoid control.",
+      "input": "Egocentric stereo recordings and body motion supervise pretraining. Stereo-estimated depth and wrist targets serve as auxiliary labels; runtime uses robot images and proprioception.",
+      "output": "Whole-body robot action chunks and auxiliary human or geometry targets during pretraining.",
+      "outputRepresentation": "Whole-body robot action chunks and auxiliary human or geometry targets during pretraining.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body",
+      "stage": "L5",
+      "evaluation": "Reports 50,000 hours of human pretraining data and about 150 hours of T800 teleoperation before real deployment on eight tasks.",
+      "limitations": "Stereo disparity is estimated into metric training depth, and the full reported corpus and model downloads were not independently verified.",
+      "robotEvidence": "Reports 50,000 hours of human pretraining data and about 150 hours of T800 teleoperation before real deployment on eight tasks.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "co-training",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.26420v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.26420v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.26420v1"
+        ]
+      }
+    },
+    "ego2ego-perspective": {
+      "summary": "Synthesizes a collaborator’s egocentric video using another wearer’s video and shared 3D geometry.",
+      "input": "A source egocentric RGB sequence, camera trajectories and a shared scene point cloud.",
+      "output": "Generated collaborator ego RGB sequence, including regions outside the source viewpoint.",
+      "outputRepresentation": "Generated collaborator ego RGB sequence, including regions outside the source viewpoint.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "L4",
+      "evaluation": "Evaluates held-out Ego-Exo4D clips with sparse view overlap and changed appearance.",
+      "limitations": "Scene geometry and target camera motion are conditioning inputs. Outputs are synthesized video rather than robot trajectories.",
+      "robotEvidence": "Evaluates held-out Ego-Exo4D clips with sparse view overlap and changed appearance.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "representation",
+      "trainingType": "supervised",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.27459v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://chuhan-jiao.github.io/ego2ego/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.27459v1",
+          "https://chuhan-jiao.github.io/ego2ego/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.27459v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.27459v1"
+        ]
+      }
+    },
+    "ego-hmb": {
+      "summary": "Generates a 3D body-motion sequence between two raw first-person video frames.",
+      "input": "Two egocentric RGB images at known endpoints, with training on body-pose sequences.",
+      "output": "Temporally coherent 3D body motion between endpoints in the model’s canonical representation.",
+      "outputRepresentation": "Temporally coherent 3D body motion between endpoints in the model’s canonical representation.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Whole body",
+      "stage": "L2",
+      "evaluation": "Benchmarks pose alignment and motion infilling on EE4D-Motion with a separate cross-dataset evaluation on Nymeria.",
+      "limitations": "The method synthesizes plausible in-between motion. The author repository exposes a README and license without source implementation files.",
+      "robotEvidence": "Benchmarks pose alignment and motion infilling on EE4D-Motion with a separate cross-dataset evaluation on Nymeria.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "world",
+      "trainingType": "supervised",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.29218v1"
+        },
+        {
+          "label": "Author repository (documentation)",
+          "url": "https://github.com/gaogehan/Ego-HMB"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.29218v1",
+          "https://github.com/gaogehan/Ego-HMB"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.29218v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.29218v1"
+        ]
+      }
+    },
+    "streamego": {
+      "summary": "Converts third-person video into streaming first-person video with visual and human pose priors.",
+      "input": "Exocentric RGB video with causal pose and appearance guidance derived from past and current observations.",
+      "output": "Generated egocentric RGB video in sequential autoregressive chunks.",
+      "outputRepresentation": "Generated egocentric RGB video in sequential autoregressive chunks.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "L4",
+      "evaluation": "Reports long and short generation quality on Ego-Exo4D and other paired viewpoints.",
+      "limitations": "Evaluation concerns generated video. Captured wearable video and executable actions are separate artifacts.",
+      "robotEvidence": "Reports long and short generation quality on Ego-Exo4D and other paired viewpoints.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "representation",
+      "trainingType": "supervised",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.26165v1"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.26165v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.26165v1"
+        ]
+      }
+    },
+    "xtream": {
+      "summary": "Maintains metric state in a factor graph while a 3D foundation model streams dense geometry.",
+      "input": "A monocular RGB stream, with scale from predicted priors or optional synchronized inertial measurements.",
+      "output": "Incremental camera trajectory and dense scene geometry with explicit per-window scale variables.",
+      "outputRepresentation": "Incremental camera trajectory and dense scene geometry with explicit per-window scale variables.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "evaluation": "Evaluates large trajectories in VBR, Oxford Spires and KITTI.",
+      "limitations": "Monocular model priors and inertial measurements are distinct scale sources. The pipeline serves as a general capture-processing reference.",
+      "robotEvidence": "Evaluates large trajectories in VBR, Oxford Spires and KITTI.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "world",
+      "trainingType": "model-based",
+      "scale": "Metric scale from a geometry prior or optional calibrated IMU.",
+      "coordinateFrame": "World-space trajectory with metric scale variables.",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.31757v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://ernestolozano.github.io/xtream/"
+        },
+        {
+          "label": "Code (Apache-2.0)",
+          "url": "https://github.com/ErnestoLozano/Xtream"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.31757v1",
+          "https://ernestolozano.github.io/xtream/",
+          "https://github.com/ErnestoLozano/Xtream"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "scale": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2611.31757v1"
+        ],
+        "slam": [
+          "https://arxiv.org/html/2611.31757v1",
+          "https://ernestolozano.github.io/xtream/"
+        ]
+      },
+      "slam": {
+        "family": "streaming",
+        "role": "online",
+        "systemType": "Streaming reconstruction",
+        "loopClosure": "yes",
+        "relocalization": "unknown",
+        "metricScale": "Estimated metric visual priors or calibrated inertial measurements.",
+        "calibration": "Monocular RGB; visual–inertial mode expects synchronized calibrated IMU.",
+        "captureRelevance": "Reference for long-video metric camera trajectories and geometry."
+      }
+    },
+    "finedex": {
+      "summary": "Turns finger-specific language instructions into generated interactions and validates their execution on a humanoid.",
+      "input": "Finger and hand language instructions, object geometry and ARCTIC motion supervision; no raw wearable RGB required by the generator.",
+      "output": "Generated whole-body hand-object interaction followed by physical contact and motion references.",
+      "outputRepresentation": "Generated whole-body hand-object interaction followed by physical contact and motion references.",
+      "inputSignals": [],
+      "bodyCoverage": "Whole body",
+      "stage": "L4",
+      "evaluation": "Evaluates motion generation and fine-grained instructions, with physically executed examples on Unitree G1.",
+      "limitations": "The generator uses human motion and object geometry; the real demonstrations establish trajectory execution and adaptation, not a generic end-to-end RGB VLA.",
+      "robotEvidence": "Evaluates motion generation and fine-grained instructions, with physically executed examples on Unitree G1.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "mixed",
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.34884v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://finedex.github.io/"
+        }
+      ],
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.34884v1",
+          "https://finedex.github.io/"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.34884v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.34884v1"
+        ]
+      }
     }
   }
 }

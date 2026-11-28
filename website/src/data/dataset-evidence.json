@@ -14985,6 +14985,10 @@
         {
           "label": "Official dataset",
           "url": "https://huggingface.co/datasets/ropedia-ai/Ropedia-Xperience-2"
+        },
+        {
+          "label": "Scene registration and output frames",
+          "url": "https://github.com/Ropedia/Ropedia-Xperience-2/blob/main/docs/scene_registration.md"
         }
       ],
       "fieldSources": {
@@ -15065,7 +15069,8 @@
         "Estimated hand and body motion",
         "Camera trajectories",
         "Model-generated captions"
-      ]
+      ],
+      "verified": "2026-11-28"
     },
     "egohandbench": {
       "name": "EgoHandBench",
@@ -17555,6 +17560,463 @@
         ]
       },
       "verified": "2026-11-24"
+    },
+    "dexengine": {
+      "name": "DexEngine",
+      "observations": "Simulated bimanual robot views and object state from physics-based retargeting.",
+      "recordedSignals": [],
+      "syntheticSignals": [
+        "Vision"
+      ],
+      "annotationType": "synthetic",
+      "cameraSetup": "Rendered egocentric views and an external view.",
+      "labels": "Robot arm-and-finger actions and states, object poses and trajectory metadata.",
+      "formats": [
+        "LeRobot v2",
+        "Parquet",
+        "Video"
+      ],
+      "dataRole": "synthetic",
+      "bodyCoverage": "Hands",
+      "access": "Gated data with public metadata",
+      "datasetUrl": "https://huggingface.co/datasets/Wongyun/DexEngine",
+      "dataLicense": "Repository data license is listed as Other. Verify task-specific upstream dataset and asset rights.",
+      "reportedScale": {
+        "trajectories": 65000,
+        "episodes": 325000,
+        "hours": 578,
+        "scope": "Generation totals across four hand embodiments and all augmentation"
+      },
+      "publicScale": {
+        "scope": "Author file tree has gated LeRobot archives and public metadata; artifact-level counts were not independently enumerated"
+      },
+      "limitations": "Streams and trajectories are simulated assets, derived from nine prior hand–object corpora. Benchmark real-robot trials are separate from the released simulated data.",
+      "releaseScope": "Author Hugging Face file tree lists gated archive parts and per-stream metadata.",
+      "tasks": [
+        "Demonstration retargeting",
+        "Bimanual manipulation"
+      ],
+      "verified": "2026-11-28",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.33579v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://wongyun-yu.github.io/dexengine/"
+        },
+        {
+          "label": "Code (v0.1)",
+          "url": "https://github.com/wongyun-yu/DexEngine/tree/v0.1"
+        },
+        {
+          "label": "Data (gated)",
+          "url": "https://huggingface.co/datasets/Wongyun/DexEngine"
+        }
+      ],
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "syntheticSignals": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2611.33579v1",
+          "https://huggingface.co/datasets/Wongyun/DexEngine"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "access": [
+          "https://arxiv.org/html/2611.33579v1",
+          "https://huggingface.co/datasets/Wongyun/DexEngine"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/html/2611.33579v1",
+          "https://huggingface.co/datasets/Wongyun/DexEngine"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/html/2611.33579v1",
+          "https://huggingface.co/datasets/Wongyun/DexEngine"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2611.33579v1",
+          "https://huggingface.co/datasets/Wongyun/DexEngine"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.33579v1"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2611.33579v1",
+          "https://huggingface.co/datasets/Wongyun/DexEngine"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2611.33579v1"
+        ]
+      }
+    },
+    "egocarbs": {
+      "name": "EgoCARBS",
+      "summary": "Pairs wearable first-person video with active acoustic sensing that can detect movements outside the camera view.",
+      "observations": "Wearable RGB, eyeglasses and smartwatch active acoustic echoes, watch audio/IMU and external reference video.",
+      "recordedSignals": [
+        "Vision",
+        "Audio",
+        "IMU"
+      ],
+      "labels": "Human annotations for 4,019 verb–noun actions.",
+      "bodyCoverage": "Hands and arms",
+      "limitations": "The official project describes planned release. Published clips and sensor descriptions are public.",
+      "cameraSetup": "Custom camera glasses and an off-the-shelf smartwatch provide active acoustic sensing. A fixed external camera is a reference.",
+      "recordedStreams": "Glasses RGB and active acoustic echoes, watch echoes, log-mel audio and IMU, and synchronized external reference video.",
+      "formats": [],
+      "annotationType": "human",
+      "dataRole": "egocentric",
+      "access": "Announced; public examples",
+      "reportedScale": {
+        "hours": 11.4,
+        "participants": 15,
+        "annotations": 4019,
+        "scope": "Reported recordings from participants’ kitchens"
+      },
+      "tasks": [
+        "Action recognition",
+        "Temporal detection",
+        "Action anticipation"
+      ],
+      "releaseScope": "The paper and author project illustrate recordings; the full dataset and capture implementation are announced.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.33565v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://saif-mahmud.github.io/projects/ego-carbs/"
+        }
+      ],
+      "verified": "2026-11-28",
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "access": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2611.33565v1"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2611.33565v1",
+          "https://saif-mahmud.github.io/projects/ego-carbs/"
+        ]
+      }
+    },
+    "egosurghands": {
+      "name": "EgoSurgHands",
+      "summary": "Benchmarks articulated hand-pose reconstruction from wearable recordings of surgical training on synthetic pads.",
+      "observations": "Aria Gen 1 streams and calibration, estimated hand landmarks, eye gaze and available SLAM extrinsics.",
+      "recordedSignals": [
+        "Vision",
+        "Eye gaze"
+      ],
+      "labels": "Aria sensor-fused hand landmarks and per-hand confidence; evaluation labels reviewed and triangulated in an independent reference check.",
+      "bodyCoverage": "Hands",
+      "limitations": "Benchmark recordings use training pads and consented wearers. The dataset is gated and benchmark code is public.",
+      "cameraSetup": "Project Aria Gen 1 glasses.",
+      "recordedStreams": "Egocentric RGB, SLAM tracking cameras, eye-gaze estimates, calibration and timestamps.",
+      "formats": [
+        "Parquet"
+      ],
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "datasetUrl": "https://huggingface.co/datasets/surgicalinformatics/EgoSurgHands",
+      "dataLicense": "CC BY-NC-SA 4.0",
+      "access": "Request access",
+      "reportedScale": {
+        "samples": 51385,
+        "frames": 32646,
+        "participants": 4,
+        "scope": "Hand-instance labels over train and held-out evaluation"
+      },
+      "publicScale": {
+        "scope": "Gated file listing; downloadable counts were not independently verified"
+      },
+      "tasks": [
+        "Articulated hand pose",
+        "Cross-procedure evaluation"
+      ],
+      "splits": "Procedure-disjoint train and held-out evaluation, with a separate leave-one-wearer evaluation.",
+      "releaseScope": "Public model evaluation and annotation tooling. The dataset file list is public and the recordings require manual approval.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.27101v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://egosurghands.github.io/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/monk1337/egoSurgHands"
+        },
+        {
+          "label": "Data (gated, CC BY-NC-SA 4.0)",
+          "url": "https://huggingface.co/datasets/surgicalinformatics/EgoSurgHands"
+        }
+      ],
+      "verified": "2026-11-28",
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/html/2611.27101v1",
+          "https://huggingface.co/datasets/surgicalinformatics/EgoSurgHands"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/html/2611.27101v1",
+          "https://huggingface.co/datasets/surgicalinformatics/EgoSurgHands"
+        ],
+        "access": [
+          "https://arxiv.org/html/2611.27101v1",
+          "https://huggingface.co/datasets/surgicalinformatics/EgoSurgHands"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2611.27101v1",
+          "https://huggingface.co/datasets/surgicalinformatics/EgoSurgHands"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "splits": [
+          "https://arxiv.org/html/2611.27101v1"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2611.27101v1",
+          "https://egosurghands.github.io/",
+          "https://github.com/monk1337/egoSurgHands",
+          "https://huggingface.co/datasets/surgicalinformatics/EgoSurgHands"
+        ]
+      }
+    },
+    "airis": {
+      "name": "AIRIS",
+      "summary": "Evaluates temporally grounded social decisions from prefixes of first-person videos.",
+      "observations": "Causal prefixes of curated egocentric clips and questions over social cues, outcomes and decisions.",
+      "recordedSignals": [
+        "Vision"
+      ],
+      "labels": "Grounding boxes, attention/intent/reaction/interaction questions and answer annotations.",
+      "bodyCoverage": "Scene / camera",
+      "limitations": "The dataset tests decisions from prerecorded video. Source media retain their original rights and are retrieved from their sources under the project protocol.",
+      "cameraSetup": "First-person videos from publicly referenced sources.",
+      "recordedStreams": "Egocentric video sources with clip IDs, timestamps and local frame reconstruction instructions.",
+      "formats": [
+        "JSONL"
+      ],
+      "annotationType": "human",
+      "dataRole": "egocentric",
+      "datasetUrl": "https://github.com/AIRIS-bench/AIRIS/tree/main/data",
+      "dataLicense": "CC BY 4.0 for original benchmark annotations; source video terms are separate.",
+      "access": "Open annotations and evaluation code",
+      "reportedScale": {
+        "clips": 357,
+        "annotations": 8000,
+        "scope": "357 benchmark clips in 11 context categories"
+      },
+      "publicScale": {
+        "annotations": 8000,
+        "scope": "Public benchmark question annotations, excluding video files"
+      },
+      "tasks": [
+        "Social attention",
+        "Intention inference",
+        "Timing",
+        "Interaction response"
+      ],
+      "releaseScope": "Public annotations, evaluator and source IDs. The release does not redistribute source media or extracted frames.",
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.34347v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://airis-bench.github.io/"
+        },
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/AIRIS-bench/AIRIS"
+        },
+        {
+          "label": "Data annotations (CC BY 4.0)",
+          "url": "https://github.com/AIRIS-bench/AIRIS/tree/main/data"
+        }
+      ],
+      "verified": "2026-11-28",
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/html/2611.34347v1",
+          "https://github.com/AIRIS-bench/AIRIS/tree/main/data"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/html/2611.34347v1",
+          "https://github.com/AIRIS-bench/AIRIS/tree/main/data"
+        ],
+        "access": [
+          "https://arxiv.org/html/2611.34347v1",
+          "https://github.com/AIRIS-bench/AIRIS/tree/main/data"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2611.34347v1",
+          "https://github.com/AIRIS-bench/AIRIS/tree/main/data"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2611.34347v1"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2611.34347v1",
+          "https://airis-bench.github.io/",
+          "https://github.com/AIRIS-bench/AIRIS",
+          "https://github.com/AIRIS-bench/AIRIS/tree/main/data"
+        ]
+      }
     }
   }
 }

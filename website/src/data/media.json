@@ -16134,5 +16134,363 @@
     "imageAlt": "Ego4Gen reference and predicted viewpoint geometry shown as colorized depth and point maps for manipulation",
     "imageType": "Published qualitative figure",
     "imageCredit": "Ego4Gen authors; third-party rights retained"
+  },
+  {
+    "id": "egomyo",
+    "name": "EgoMyo",
+    "summary": "Fuses wearable RGB and wrist muscle signals to estimate hand pose, contact and force on the hand surface.",
+    "signals": [
+      "Vision",
+      "EMG"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "EgoMyo authors; third-party rights retained",
+    "image": "images/catalog/egomyo-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.34224v1/capture_setup_acquisition_dataset_overview.png",
+    "imagePage": "https://arxiv.org/html/2611.34224v1#S3.F2",
+    "imageAlt": "Example capture setup, hand surface regions, contact configurations and synchronized vision, EMG and pressure streams",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "memhand",
+    "name": "MemHand",
+    "summary": "Uses event memory around occlusions and long-term scale memory to reconstruct world-space hand trajectories.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "MemHand authors; third-party rights retained",
+    "image": "images/catalog/memhand-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.32876v1/qual_whole.png",
+    "imagePage": "https://arxiv.org/html/2611.32876v1#S4.F5",
+    "imageAlt": "Egocentric sequences and corresponding world-space hand reconstruction comparisons across three datasets",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "horcrux",
+    "name": "HORCRUX",
+    "summary": "Reconstructs one or two hands, object pose and fine surface contacts from one image plus an object-mesh prior.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "HORCRUX authors; third-party rights retained",
+    "image": "images/catalog/horcrux-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.31812v1/qual_grid_2row.png",
+    "imagePage": "https://arxiv.org/html/2611.31812v1#S4.F4",
+    "imageAlt": "RGB crops and reconstructed one-hand and object meshes on DexYCB and OakInk",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "who-is-ego",
+    "name": "EgoRay-ZS / FindEgo-1M",
+    "summary": "Uses epipolar geometry to locate the ego camera wearer in a synchronized external view.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "EgoRay-ZS authors; third-party rights retained",
+    "image": "images/catalog/who-is-ego-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.34489v1/figs/dc/dc_real_exo.jpg",
+    "imagePage": "https://arxiv.org/html/2611.34489v1#A1.F4",
+    "imageAlt": "Real external view of a camera wearer from the authors’ paired ego-exo collection",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "codehoi",
+    "name": "CodeHOI",
+    "summary": "Coding agents construct and check executable hand-object interactions with material-specific physics.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "CodeHOI authors; third-party rights retained",
+    "image": "images/catalog/codehoi-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.31976v1/bench_overview.png",
+    "imagePage": "https://arxiv.org/html/2611.31976v1#S3.F3",
+    "imageAlt": "Author benchmark examples of rigid and deformable object interactions",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "dexengine",
+    "name": "DexEngine",
+    "summary": "Converts human hand-object sequences into physically executable arm-hand trajectories and robot-view renders.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "DexEngine authors; third-party rights retained",
+    "image": "images/catalog/dexengine-cover-nov28.webp",
+    "imageSource": "https://wongyun-yu.github.io/dexengine/assets/streams/ego_left.jpg",
+    "imagePage": "https://wongyun-yu.github.io/dexengine/#data",
+    "imageAlt": "First-person robot view of the reconstructed dexterous manipulation setup",
+    "imageType": "Published author figure",
+    "datasetSummary": "Gated simulation-replay trajectories and generated camera streams for four dexterous hands.",
+    "datasetImage": "images/catalog/dexengine-data-cover-nov28.webp",
+    "datasetImageSource": "https://wongyun-yu.github.io/dexengine/assets/aug/grid.jpg",
+    "datasetImagePage": "https://wongyun-yu.github.io/dexengine/#data",
+    "datasetImageAlt": "Examples of simulation-rendered bimanual actions with object, lighting and material augmentations",
+    "datasetImageType": "Published author figure"
+  },
+  {
+    "id": "egoloaf",
+    "name": "EgoLoAF",
+    "summary": "Post-trains a humanoid VLA on converted wearable video, explicit hand-object cues and rendered robot viewpoints.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "EgoLoAF authors; third-party rights retained",
+    "image": "images/catalog/egoloaf-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.32260v1/experiment_tasks.png",
+    "imagePage": "https://arxiv.org/html/2611.32260v1#S5.F4",
+    "imageAlt": "Four real G1 loco-manipulation tasks visualized from the authors’ experiment figure",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "ego2real-visuotactile",
+    "name": "Ego2Real",
+    "summary": "Uses measured human touch to refine bimanual reconstruction and supervise real-robot skill transfer.",
+    "signals": [
+      "Vision",
+      "Depth",
+      "Tactile"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "Ego2Real authors; third-party rights retained",
+    "image": "images/catalog/ego2real-visuotactile-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.32101v1/realworld_rollout.png",
+    "imagePage": "https://arxiv.org/html/2611.32101v1#S3.F5",
+    "imageAlt": "Human demonstration and physical robot rollouts for bottle handover and box rotation",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "activebridge",
+    "name": "ActiveBridge",
+    "summary": "Learns head and wrist movement from human egocentric video and transfers viewpoint control to a single-head-camera robot.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "ActiveBridge authors; third-party rights retained",
+    "image": "images/catalog/activebridge-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.32098v1/fig3_real_world.png",
+    "imagePage": "https://arxiv.org/html/2611.32098v1#S4.F3",
+    "imageAlt": "First-person head-camera sequences from four real active-manipulation tasks",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "camact",
+    "name": "CamAct",
+    "summary": "Adds camera-motion pseudo-actions from first-person walking footage to robot demonstrations during VLA fine-tuning.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "CamAct authors; third-party rights retained",
+    "image": "images/catalog/camact-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.34257v1/fig1.png",
+    "imagePage": "https://arxiv.org/html/2611.34257v1#S1.F1",
+    "imageAlt": "Comparison of robot examples, human manipulation footage and first-person walking video used to learn camera motion",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "co-world-model",
+    "name": "Co-World Model",
+    "summary": "Aligns human and robot latent actions by their effects on objects so a robot can follow a new human video.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "Co-World Model authors; third-party rights retained",
+    "image": "images/catalog/co-world-model-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.34302v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2611.34302v1#S1.F1",
+    "imageAlt": "Human demonstration frames, a shared latent dynamics diagram and humanoid execution in the author teaser",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "x-world",
+    "name": "X-World",
+    "summary": "Adapts a variable-view video model on human and robot video before transferring its features into an RGB robot controller.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "X-World authors; third-party rights retained",
+    "image": "images/catalog/x-world-cover-nov28.webp",
+    "imageSource": "https://logosintelligencelab.github.io/X-World/assets/images/real-world-predictions.webp",
+    "imagePage": "https://logosintelligencelab.github.io/X-World/",
+    "imageAlt": "Real robot cameras and future-frame predictions for tabletop manipulation",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "entangle",
+    "name": "Entangle",
+    "summary": "Uses a demonstration video as the task context for jointly predicting robot actions and visual futures.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "Entangle authors; third-party rights retained",
+    "image": "images/catalog/entangle-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.28732v1/context_ood_overview.png",
+    "imagePage": "https://arxiv.org/html/2611.28732v1#S5.F6",
+    "imageAlt": "Real robot rollout comparisons under changed context and spatial layouts",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "beyondego",
+    "name": "BeyondEgo",
+    "summary": "Uses synchronized ego and exo observations and trains intermediate features to forecast both views.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "BeyondEgo authors; third-party rights retained",
+    "image": "images/catalog/beyondego-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.27047v1/fig_routes_v3.png",
+    "imagePage": "https://arxiv.org/html/2611.27047v1#S0.F1",
+    "imageAlt": "Humanoid ego and external views with their training-time future-feature targets",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "awaken-hi",
+    "name": "Awaken-HI",
+    "summary": "Pretrains one action expert on human and retargeted actions, then post-trains for real humanoid control.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "Awaken-HI authors; third-party rights retained",
+    "image": "images/catalog/awaken-hi-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.26420v1/posttraining_tasks.png",
+    "imagePage": "https://arxiv.org/html/2611.26420v1#S5.F5",
+    "imageAlt": "Sequential real EngineAI T800 frames from the first two whole-body manipulation tasks",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "ego2ego-perspective",
+    "name": "Ego2Ego",
+    "summary": "Synthesizes a collaborator’s egocentric video using another wearer’s video and shared 3D geometry.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "Ego2Ego authors; third-party rights retained",
+    "image": "images/catalog/ego2ego-perspective-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.27459v1/qual.png",
+    "imagePage": "https://arxiv.org/html/2611.27459v1#S4.F3",
+    "imageAlt": "Collaborator-view predictions from the authors and several viewpoint synthesis baselines",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "ego-hmb",
+    "name": "Ego-HMB",
+    "summary": "Generates a 3D body-motion sequence between two raw first-person video frames.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "Ego-HMB authors; third-party rights retained",
+    "image": "images/catalog/ego-hmb-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.29218v1/fig/ego_vis.png",
+    "imagePage": "https://arxiv.org/html/2611.29218v1#S4.F2",
+    "imageAlt": "First-person start and end imagery and 3D motion bridge comparisons",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "streamego",
+    "name": "StreamEgo",
+    "summary": "Converts third-person video into streaming first-person video with visual and human pose priors.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "StreamEgo authors; third-party rights retained",
+    "image": "images/catalog/streamego-cover-nov28.webp",
+    "imageSource": "https://arxiv.org/html/2611.26165v1/main_visual_short.png",
+    "imagePage": "https://arxiv.org/html/2611.26165v1#S4.F4",
+    "imageAlt": "Exocentric source views and synthesized ego-view examples across multiple interaction settings",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "xtream",
+    "name": "Xtream",
+    "summary": "Maintains metric state in a factor graph while a 3D foundation model streams dense geometry.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "Xtream authors; third-party rights retained",
+    "image": "images/catalog/xtream-cover-nov28.webp",
+    "imageSource": "https://ernestolozano.github.io/xtream/assets/images/teaser.png",
+    "imagePage": "https://ernestolozano.github.io/xtream/",
+    "imageAlt": "Large-scale dense reconstruction and camera paths from the authors’ benchmarks",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "egocarbs",
+    "name": "EgoCARBS",
+    "summary": "Pairs wearable first-person video with active acoustic sensing that can detect movements outside the camera view.",
+    "signals": [
+      "Vision",
+      "Audio",
+      "IMU"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "EgoCARBS authors; third-party rights retained",
+    "datasetImage": "images/catalog/egocarbs-cover-nov28.webp",
+    "datasetImageSource": "https://arxiv.org/html/2611.33565v1/examples_1.png",
+    "datasetImagePage": "https://arxiv.org/html/2611.33565v1#S5.F5a",
+    "datasetImageAlt": "Wearable footage, wrist movement cues and active-acoustic spectrograms from natural kitchen activities",
+    "datasetImageType": "Published author figure",
+    "datasetSummary": "Pairs wearable first-person video with active acoustic sensing that can detect movements outside the camera view."
+  },
+  {
+    "id": "egosurghands",
+    "name": "EgoSurgHands",
+    "summary": "Benchmarks articulated hand-pose reconstruction from wearable recordings of surgical training on synthetic pads.",
+    "signals": [
+      "Vision",
+      "Eye gaze"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "EgoSurgHands authors; third-party rights retained",
+    "datasetImage": "images/catalog/egosurghands-cover-nov28.webp",
+    "datasetImageSource": "https://egosurghands.github.io/assets/teaser.webp",
+    "datasetImagePage": "https://egosurghands.github.io/#dataset",
+    "datasetImageAlt": "Nine first-person synthetic-pad training examples with projected hand joints",
+    "datasetImageType": "Published author figure",
+    "datasetSummary": "Benchmarks articulated hand-pose reconstruction from wearable recordings of surgical training on synthetic pads."
+  },
+  {
+    "id": "airis",
+    "name": "AIRIS",
+    "summary": "Evaluates temporally grounded social decisions from prefixes of first-person videos.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "AIRIS authors; third-party rights retained",
+    "datasetImage": "images/catalog/airis-cover-nov28.webp",
+    "datasetImageSource": "https://airis-bench.github.io/assets/figs/fig_teaser.png",
+    "datasetImagePage": "https://airis-bench.github.io/#benchmark",
+    "datasetImageAlt": "First-person social scene frames ordered over time in the AIRIS benchmark",
+    "datasetImageType": "Published author figure",
+    "datasetSummary": "Evaluates temporally grounded social decisions from prefixes of first-person videos."
+  },
+  {
+    "id": "finedex",
+    "name": "FineDex",
+    "summary": "Turns finger-specific language instructions into generated interactions and validates their execution on a humanoid.",
+    "signals": [],
+    "reviewed": "2026-11-28",
+    "credit": "FineDex authors; third-party rights retained",
+    "image": "images/catalog/finedex-cover-nov28.webp",
+    "imageSource": "https://finedex.github.io/assets/real_world.webp",
+    "imagePage": "https://finedex.github.io/",
+    "imageAlt": "Real Unitree G1 sequences showing different finger choices on an articulated object",
+    "imageType": "Published author figure"
   }
 ]
