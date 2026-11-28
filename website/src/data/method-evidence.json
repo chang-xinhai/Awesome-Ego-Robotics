@@ -71972,41 +71972,95 @@
       "policyInput": "RGB-D camera observations at robot execution"
     },
     "touchbridge": {
-      "summary": "Transfers human manipulation demonstrations to a tactile-conditioned robot manipulation policy.",
-      "input": "Human demonstrations with tactile observations",
-      "output": "Robot manipulation demonstrations and tactile-conditioned policy",
-      "supervision": "See primary paper",
+      "summary": "Uses human touch for contact-preserving retargeting and then trains a vision-conditioned VLA on converted demonstrations.",
+      "input": "Head RGB-D, bilateral wrist RGB, glove pose and fingertip tactile measurements for conversion. The deployed VLA uses the converted visual/action representation.",
+      "output": "Robot-view RGB and robot-domain action sequences from tactile-guided retargeting.",
+      "supervision": "Head RGB-D guides capture/geometry. Human fingertip taxel activation guides contact patch and graph matching.",
       "robotEvidence": "Real robot dexterous manipulation",
       "sources": [
         {
-          "label": "Primary paper",
-          "url": "https://arxiv.org/abs/2610.40349"
+          "label": "Primary capture and evaluation protocol",
+          "url": "https://arxiv.org/html/2610.40349v1"
+        },
+        {
+          "label": "Official retargeting source",
+          "url": "https://github.com/touchbridge2026/TouchBridge"
+        },
+        {
+          "label": "Glove and robot assembly",
+          "url": "https://github.com/touchbridge2026/TouchBridge/tree/main/hardware"
+        },
+        {
+          "label": "Preprocessed example",
+          "url": "https://github.com/touchbridge2026/TouchBridge/tree/main/examples"
         }
       ],
-      "verified": "2026-11-05",
+      "verified": "2026-11-28",
       "inputSignals": [
         "Vision",
-        "Tactile"
+        "Depth",
+        "Tactile",
+        "State"
       ],
       "bodyCoverage": "Hands",
       "stage": "L4",
       "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.40349v1"
+        ],
         "input": [
-          "https://arxiv.org/html/2610.40349v1/"
+          "https://arxiv.org/html/2610.40349v1",
+          "https://github.com/touchbridge2026/TouchBridge"
         ],
         "output": [
-          "https://arxiv.org/html/2610.40349v1/"
+          "https://arxiv.org/html/2610.40349v1",
+          "https://github.com/touchbridge2026/TouchBridge"
+        ],
+        "supervision": [
+          "https://arxiv.org/html/2610.40349v1",
+          "https://github.com/touchbridge2026/TouchBridge"
         ],
         "robotEvidence": [
-          "https://arxiv.org/html/2610.40349v1/"
+          "https://arxiv.org/html/2610.40349v1"
         ],
         "inputSignals": [
-          "https://arxiv.org/html/2610.40349v1/"
+          "https://arxiv.org/html/2610.40349v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.40349v1"
         ],
         "stage": [
-          "https://arxiv.org/html/2610.40349v1/"
+          "https://arxiv.org/html/2610.40349v1"
+        ],
+        "fieldSources": [
+          "https://arxiv.org/html/2610.40349v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.40349v1",
+          "https://github.com/touchbridge2026/TouchBridge"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.40349v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.40349v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.40349v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.40349v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.40349v1"
         ]
-      }
+      },
+      "outputRepresentation": "Robot-view observations and converted actions.",
+      "limitations": "Tactile measurements supervise retargeting. The paper’s policy experiments do not give the deployed VLA tactile input.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "optimization",
+      "evaluation": "Four real robot tasks evaluate policies fine-tuned on converted human demonstrations."
     },
     "cimi": {
       "summary": "Uses a contact imitation interface to transfer human dexterous manipulation skills to robots.",
@@ -77467,7 +77521,7 @@
       "temporal": "Single-image evaluation. No new depth model or video inference.",
       "limitations": "Includes results on 4,406 images under the primary protocol. Released results and diagnostic data have separate terms.",
       "robotEvidence": "Capture-processing reference. Direct ego-robotics use is unverified.",
-      "verified": "2026-11-20",
+      "verified": "2026-11-28",
       "sources": [
         {
           "label": "Primary paper",
@@ -77488,9 +77542,13 @@
         {
           "label": "Data",
           "url": "https://huggingface.co/datasets/hljiang/DIMED"
+        },
+        {
+          "label": "MIT license",
+          "url": "https://github.com/antigravity-tech/DIMED/blob/main/LICENSE"
         }
       ],
-      "implementation": "Evaluation source and diagnostic data are accessible. Repository code license was not verified",
+      "implementation": "MIT licensed evaluation source and adapters with separate upstream model and data terms.",
       "toolTopics": [
         "depth"
       ],
@@ -77572,7 +77630,7 @@
         ],
         "implementation": [
           "https://github.com/antigravity-tech/DIMED",
-          "https://huggingface.co/datasets/hljiang/DIMED"
+          "https://github.com/antigravity-tech/DIMED/blob/main/LICENSE"
         ]
       }
     },
@@ -82535,6 +82593,942 @@
           "https://arxiv.org/html/2611.34884v1"
         ]
       }
+    },
+    "vistacalign": {
+      "summary": "Aligns stereo geometry and per-finger touch from human and robot demonstrations to co-train a dexterous diffusion policy.",
+      "input": "Training uses calibrated ZED stereo and glove tracks on both embodiments. The deployed policy consumes colored point clouds, robot proprioception and ORCA fingertip force tokens.",
+      "output": "Closed-loop arm and dexterous hand actions.",
+      "outputRepresentation": "Closed-loop arm and dexterous hand actions.",
+      "inputSignals": [
+        "Vision",
+        "Tactile",
+        "State"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L5",
+      "evaluation": "Three real precision-force tasks on xArm 7 and ORCA Hand v2, including assembly and fruit picking.",
+      "robotEvidence": "Three real precision-force tasks on xArm 7 and ORCA Hand v2, including assembly and fruit picking.",
+      "limitations": "Both 3D streams are reconstructed with Fast-FoundationStereo. The human stream replaces the hand image with a textured robot rendering before stereo inference. Human taxels and robot fingertip sensors are aligned, with different hardware.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "co-training",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2609.30959v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2609.30959v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.30959v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://vis-tac-align.github.io/"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "unidex-vitac": {
+      "summary": "Turns human video into simulated contact-rich robot trajectories for an ACT policy with measured robot fingertip contact at deployment.",
+      "input": "Human video contributes motion references. A RealSense L515 produces point clouds at deployment alongside proprioception and four binary fingertip contacts.",
+      "output": "A single contact-conditioned ACT policy for several objects.",
+      "outputRepresentation": "A single contact-conditioned ACT policy for several objects.",
+      "inputSignals": [
+        "Vision",
+        "Depth",
+        "Tactile",
+        "State"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L5",
+      "evaluation": "50 human demonstrations, ten objects and 10,000 simulated training rollouts reported; evaluates simulated and physical manipulation.",
+      "robotEvidence": "50 human demonstrations, ten objects and 10,000 simulated training rollouts reported; evaluates simulated and physical manipulation.",
+      "limitations": "The tactile training inputs come from simulation. Human clips provide geometry and motion references and no measured tactile stream.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "mixed",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2609.16504v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2609.16504v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.16504v1"
+        },
+        {
+          "label": "Project and real-robot videos",
+          "url": "https://unidex-vitac.github.io/"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "gift-force-transfer": {
+      "summary": "Transfers calibrated human fingertip force to a robot policy that estimates force from motor currents.",
+      "input": "Human side uses a head RGB camera and a glove with five calibrated fingertip force sensors, finger flexion and wrist orientation. Robot feedback uses calibrated actuator-current residuals.",
+      "output": "Finger position targets conditioned on glove-space state and force feedback.",
+      "outputRepresentation": "Finger position targets conditioned on glove-space state and force feedback.",
+      "inputSignals": [
+        "Vision",
+        "Force",
+        "IMU",
+        "State"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L5",
+      "evaluation": "The paper reports repeated real-robot rollouts and measured force traces under with-force and force-ablated conditions.",
+      "robotEvidence": "The paper reports repeated real-robot rollouts and measured force traces under with-force and force-ablated conditions.",
+      "limitations": "Robot force is estimated, with no physical tactile sensor on the robot hand. Reported evaluation covers the demonstrated manipulation setup.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "supervised",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2609.14173v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2609.14173v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.14173v1"
+        },
+        {
+          "label": "Project and evaluation log",
+          "url": "https://tzahsarusi.github.io/"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "dextag": {
+      "summary": "Uses pressure-glove demonstrations to supervise a shared retargeter and distills a robot controller with no tactile input.",
+      "input": "Human demonstrations use WUJI glove touch and kinematics with overhead object observations. The deployed controller uses deployment-available robot observations rather than human touch maps.",
+      "output": "Tactile-guided sim trajectories and a distilled dexterous controller.",
+      "outputRepresentation": "Tactile-guided sim trajectories and a distilled dexterous controller.",
+      "inputSignals": [
+        "Tactile",
+        "State",
+        "Vision"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L5",
+      "evaluation": "Real xArm 7 with WUJI hand executes marker and hammer motions; source includes retargeting and behavior-cloning scripts.",
+      "robotEvidence": "Real xArm 7 with WUJI hand executes marker and hammer motions; source includes retargeting and behavior-cloning scripts.",
+      "limitations": "The camera is external to the wearer. Measured glove touch drives training rewards rather than deployment input.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "mixed",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2609.33882v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2609.33882v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.33882v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://dextag.github.io/"
+        },
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/UMass-Embodied-AGI/DexTaG"
+        },
+        {
+          "label": "Data (demonstration archive)",
+          "url": "https://drive.google.com/file/d/17gkLgZad7WZxZLt9SvIQ_VP64L53H0eP/view?usp=sharing"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "act-depth-failure": {
+      "summary": "Separates missing-depth pixels, validity masks and ordinary measurement noise in wrist-view RGB-D imitation.",
+      "input": "A physical stereo wrist camera calibrates the sensor model. The core ACT policy comparison uses controlled RGB-D observations in simulation.",
+      "output": "Policy-success curves under synthetic noise, holes, mask changes and imputation.",
+      "outputRepresentation": "Policy-success curves under synthetic noise, holes, mask changes and imputation.",
+      "inputSignals": [
+        "Vision",
+        "Depth"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "evaluation": "PickCube and PullCube comparisons in ManiSkill with three image encoders. Real wrist recordings inform the depth corruption setup.",
+      "robotEvidence": "PickCube and PullCube comparisons in ManiSkill with three image encoders. Real wrist recordings inform the depth corruption setup.",
+      "limitations": "The study identifies a failure mode under its reconstruction and policy protocol. The paper does not report a corresponding real closed-loop policy trial.",
+      "evidenceLevel": "simulation",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "general"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Sensor-depth evaluation",
+        "outputType": "Policy success under controlled depth corruptions",
+        "scaleSource": "Sensor-model calibration from a physical stereo wrist camera.",
+        "calibration": "Separates noise, invalid pixels, validity masks and hole filling in a controlled simulation.",
+        "temporal": "Evaluates policy episodes; it does not produce video depth.",
+        "captureRelevance": "Wrist-camera input reliability reference for robot imitation."
+      },
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.33352v1"
+        ],
+        "perception": [
+          "https://arxiv.org/html/2611.33352v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.33352v1"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "stereo-vo-feedforward": {
+      "summary": "Uses sparse calibrated stereo geometry to scale and shift dense depth predictions in metric local submaps.",
+      "input": "Calibrated binocular RGB video. A fixed stereo baseline and multi-view landmarks establish scale; LiDAR is used for evaluation reference.",
+      "output": "Camera trajectories and dense metric submaps.",
+      "outputRepresentation": "Camera trajectories and dense metric submaps.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "evaluation": "Tests include Newer College, KITTI and a custom indoor/outdoor rig.",
+      "robotEvidence": "Tests include Newer College, KITTI and a custom indoor/outdoor rig.",
+      "limitations": "Reference for first-person capture geometry. The paper does not evaluate a wearable robot-learning rig or provide a public implementation.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "world",
+      "trainingType": "model-based",
+      "slam": {
+        "family": "visual",
+        "systemType": "Odometry and dense mapping",
+        "role": "online",
+        "sensors": "Calibrated stereo RGB. LiDAR is an external evaluation reference.",
+        "loopClosure": "unknown",
+        "relocalization": "unknown",
+        "scale": "Metric scale from calibrated stereo baseline and optimized multi-view landmarks."
+      },
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.25445v1"
+        ],
+        "slam": [
+          "https://arxiv.org/html/2611.25445v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.25445v1"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "stereovlm": {
+      "summary": "Tests whether calibrated binocular RGB enables metric depth and language-grounded 3D reasoning on held-out scenes.",
+      "input": "An ordered rectified RGB stereo pair, focal length, baseline and a task query. Benchmark labels include sensor depth, stereo-derived metric depth and synthetic references as separate sources.",
+      "output": "Disparity, metric depth predictions and object-level spatial answers.",
+      "outputRepresentation": "Disparity, metric depth predictions and object-level spatial answers.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "evaluation": "Stereo3D-Bench combines robot DROID, wearable Xperience-10M, synthetic FSD/RoboCasa and a separate in-house OOD split.",
+      "robotEvidence": "Stereo3D-Bench combines robot DROID, wearable Xperience-10M, synthetic FSD/RoboCasa and a separate in-house OOD split.",
+      "limitations": "The VLM consumes stereo RGB rather than a depth channel. No checkpoint, benchmark archive or downstream robot policy was verified.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "perception": {
+        "families": [
+          "stereo"
+        ],
+        "inputSetup": [
+          "stereo"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Binocular reasoning",
+        "outputType": "Disparity, metric depth and object-level answers",
+        "scaleSource": "Calibrated focal length and baseline condition the learned model.",
+        "calibration": "Ordered rectified views plus focal length and baseline.",
+        "temporal": "Stereo image-pair inference.",
+        "captureRelevance": "Includes first-person Xperience-10M scenes and robot-view DROID in benchmark evaluation."
+      },
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.27915v1"
+        ],
+        "perception": [
+          "https://arxiv.org/html/2611.27915v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.27915v1"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "any2act": {
+      "summary": "Translates egocentric video to robot-view context for a policy pretrained to follow demonstrations.",
+      "input": "The human source starts from RGB video. Ego2Sim completes robot wrist views and recovers robot actions for translated context; the executor also consumes its own observations and state.",
+      "output": "Robot action chunks conditioned on a translated demonstration.",
+      "outputRepresentation": "Robot action chunks conditioned on a translated demonstration.",
+      "inputSignals": [
+        "Vision",
+        "State"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L5",
+      "evaluation": "Real-robot tasks compare robot, human-video, simulation, UMI and other-robot demonstration sources.",
+      "robotEvidence": "Real-robot tasks compare robot, human-video, simulation, UMI and other-robot demonstration sources.",
+      "limitations": "Ego video is one of several context families. Translated robot-view channels and actions are inferred rather than recorded human action labels.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "robot",
+      "trainingType": "mixed",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.32353v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.32353v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.32353v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://any2act.github.io/"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "dexlatentworld": {
+      "summary": "Learns cross-hand latent dynamics from retargeted human manipulation and plans in 3D on an unseen dexterous hand.",
+      "input": "Temporally aligned 3D scene points from tracked hand-object sequences for training and robot-scene point clouds for planning.",
+      "output": "Latent action sequences, predicted object/hand motion and executable robot commands via geometric control.",
+      "outputRepresentation": "Latent action sequences, predicted object/hand motion and executable robot commands via geometric control.",
+      "inputSignals": [
+        "Vision",
+        "Depth",
+        "State"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L5",
+      "evaluation": "Transfers latent actions from human H2O observations and reports real execution on an unseen Sharpa Wave hand.",
+      "robotEvidence": "Transfers latent actions from human H2O observations and reports real execution on an unseen Sharpa Wave hand.",
+      "limitations": "Real results are distinct from the synthetic paired embodiments used to train shared latent actions. Weights are tracked separately from code.",
+      "evidenceLevel": "real-robot",
+      "outputSpace": "latent",
+      "trainingType": "mixed",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.30907v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.30907v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.30907v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://vinaymohan0409.github.io/DexLatentWorld/"
+        },
+        {
+          "label": "Code (training and evaluation)",
+          "url": "https://github.com/VinayMohan0409/DexLatentWorld"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "dexduet": {
+      "summary": "Learns bimanual robot trajectories that preserve human finger-object contact in simulation.",
+      "input": "Tracked human hand configurations and object motion from demonstration suites, with retargeted motion as reference.",
+      "output": "A pair of shared-parameter control policies and generated robot trajectories.",
+      "outputRepresentation": "A pair of shared-parameter control policies and generated robot trajectories.",
+      "inputSignals": [
+        "State"
+      ],
+      "bodyCoverage": "Hands and arms",
+      "stage": "L4",
+      "evaluation": "Four benchmark suites include wearable and motion-capture derived sources. Several generated movements are replayed on physical humanoid and dual-arm robots.",
+      "robotEvidence": "Four benchmark suites include wearable and motion-capture derived sources. Several generated movements are replayed on physical humanoid and dual-arm robots.",
+      "limitations": "Contact is represented by geometric rewards. Physical examples are rollouts replayed from simulation, not a new physical closed-loop evaluation.",
+      "evidenceLevel": "simulation",
+      "outputSpace": "robot",
+      "trainingType": "mixed",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.30495v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.30495v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.30495v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://rcl-robotics.github.io/Dexduet.io/"
+        },
+        {
+          "label": "Code (training and replay)",
+          "url": "https://github.com/HaoranZhangumich/DexDuet"
+        },
+        {
+          "label": "Model checkpoints",
+          "url": "https://huggingface.co/oldTOM/dexduet-checkpoints"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "vicon-contact": {
+      "summary": "Recovers hand and object trajectories under occlusion by combining RGB-D pose evidence with glove contact and force.",
+      "input": "A single RGB-D camera with a visual-inertial glove and force-sensitive resistors. Monocular clips provide reconstructed object meshes.",
+      "output": "Synchronized hand and object pose, contact points and calibrated normal force estimates.",
+      "outputRepresentation": "Synchronized hand and object pose, contact points and calibrated normal force estimates.",
+      "inputSignals": [
+        "Vision",
+        "Depth",
+        "Tactile",
+        "Force",
+        "IMU",
+        "State"
+      ],
+      "bodyCoverage": "Hands",
+      "stage": "L3",
+      "evaluation": "Reported on 40 motion-capture sessions with five objects; compares poses to an external reference.",
+      "robotEvidence": "Reported on 40 motion-capture sessions with five objects; compares poses to an external reference.",
+      "limitations": "The RGB-D camera is external to the glove. The expanded dataset is announced and the public repository hosts a release notice.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "world",
+      "trainingType": "optimization",
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2610.05180v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2610.05180v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.05180v1"
+        },
+        {
+          "label": "Dataset release notice",
+          "url": "https://github.com/VICON-dataset/dataset"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "bridge-mvs": {
+      "summary": "Fuses learned single-view priors and calibrated multiview correspondences to reconstruct metric geometry.",
+      "input": "Calibrated multiview RGB with camera intrinsics and extrinsics; a learned monocular depth branch provides a structural prior.",
+      "output": "Dense depth maps and reconstructed point clouds.",
+      "outputRepresentation": "Dense depth maps and reconstructed point clouds.",
+      "inputSignals": [
+        "Vision"
+      ],
+      "bodyCoverage": "Scene / camera",
+      "stage": "tool",
+      "evaluation": "Reports standard DTU, Tanks and Temples and RobustMVD evaluations.",
+      "robotEvidence": "Reports standard DTU, Tanks and Temples and RobustMVD evaluations.",
+      "limitations": "Reference for calibrated capture processing. The public GitHub repository contained documentation only when checked.",
+      "evidenceLevel": "reconstruction",
+      "outputSpace": "camera",
+      "trainingType": "supervised",
+      "perception": {
+        "families": [
+          "multiview"
+        ],
+        "inputSetup": [
+          "multiview"
+        ],
+        "cameraGeometry": [
+          "pinhole"
+        ],
+        "scaleType": [
+          "calibrated"
+        ],
+        "systemType": "Multiview reconstruction",
+        "outputType": "Dense metric depth maps",
+        "scaleSource": "Scale from calibrated multiview geometry, with structural priors from a monocular estimator.",
+        "calibration": "Uses known camera intrinsics and extrinsics in multiview reconstruction.",
+        "temporal": "Processes multiple overlapping images; no continuous video inverse estimate is implied.",
+        "captureRelevance": "General capture reconstruction method; ego-specific evaluation was not reported."
+      },
+      "fieldSources": {
+        "summary": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "input": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "output": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "outputRepresentation": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "inputSignals": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "stage": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "evaluation": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "robotEvidence": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "evidenceLevel": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "outputSpace": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "trainingType": [
+          "https://arxiv.org/html/2611.30787v1"
+        ],
+        "perception": [
+          "https://arxiv.org/html/2611.30787v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.30787v1"
+        },
+        {
+          "label": "Repository (documentation only)",
+          "url": "https://github.com/JianfeiJ/BridgeMVS"
+        }
+      ],
+      "verified": "2026-11-28"
     }
   }
 }

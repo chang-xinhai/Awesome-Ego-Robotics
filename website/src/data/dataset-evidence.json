@@ -4908,8 +4908,8 @@
       "publicScale": {
         "scope": "Download artifacts listed; complete archive contents not independently audited."
       },
-      "access": "Public download",
-      "accessNote": "Official download links; no full-corpus integrity audit performed.",
+      "access": "Author download script",
+      "accessNote": "Official downloader lists 27 Drive file IDs. The filenames are not a release-size claim.",
       "formats": [
         "HDF5",
         "Video",
@@ -4928,7 +4928,7 @@
       "bodyCoverage": "Single hand",
       "annotationEvidence": "Measured tactile plus glove-based pose; machine-generated semantic labels reviewed by humans.",
       "limitations": "Only the right dominant hand is instrumented. Tactile retrieval on Ego4D is a prediction, not measured Ego4D touch.",
-      "datasetUrl": "https://github.com/OpenTouch-MIT/opentouch",
+      "datasetUrl": "https://github.com/OpenTouch-MIT/opentouch/blob/main/scripts/download_data.sh",
       "annotationType": "mixed",
       "dataRole": "egocentric",
       "scaleType": "hours",
@@ -4961,9 +4961,13 @@
         {
           "label": "Code & dataset",
           "url": "https://github.com/OpenTouch-MIT/opentouch"
+        },
+        {
+          "label": "Official data download manifest",
+          "url": "https://github.com/OpenTouch-MIT/opentouch/blob/main/scripts/download_data.sh"
         }
       ],
-      "verified": "2026-10-16",
+      "verified": "2026-11-28",
       "reviewed": "2026-10-16",
       "fieldSources": {
         "reportedScale": [
@@ -4977,9 +4981,7 @@
           "https://github.com/OpenTouch-MIT/opentouch"
         ],
         "access": [
-          "https://arxiv.org/abs/2512.16842",
-          "https://opentouch-tactile.github.io/",
-          "https://github.com/OpenTouch-MIT/opentouch"
+          "https://github.com/OpenTouch-MIT/opentouch/blob/main/scripts/download_data.sh"
         ],
         "formats": [
           "https://arxiv.org/abs/2512.16842",
@@ -5060,6 +5062,12 @@
           "https://arxiv.org/abs/2512.16842",
           "https://opentouch-tactile.github.io/",
           "https://github.com/OpenTouch-MIT/opentouch"
+        ],
+        "accessNote": [
+          "https://github.com/OpenTouch-MIT/opentouch/blob/main/scripts/download_data.sh"
+        ],
+        "datasetUrl": [
+          "https://github.com/OpenTouch-MIT/opentouch/blob/main/scripts/download_data.sh"
         ]
       }
     },
@@ -18017,6 +18025,344 @@
           "https://github.com/AIRIS-bench/AIRIS/tree/main/data"
         ]
       }
+    },
+    "touchbench": {
+      "name": "TouchBench",
+      "summary": "Compare how VLMs infer physical properties from egocentric video with and without synchronized touch.",
+      "observations": "A head-mounted RGB camera, a right-hand glove with 132 pressure taxels and five flexion channels, and a wrist IMU.",
+      "bodyCoverage": "Hands",
+      "limitations": "The paper reports benchmark experiments rather than robot-control results. No public benchmark archive or evaluator was verified.",
+      "recordedSignals": [
+        "Vision",
+        "Tactile",
+        "IMU"
+      ],
+      "cameraSetup": "Head-mounted camera, right-hand glove with 132 pressure taxels and five flexion channels, and a wrist IMU.",
+      "recordedStreams": "Egocentric video, pressure, finger flexion and wrist IMU.",
+      "labels": "900 single-clip and 4,102 relative questions with visible and visually hidden answerability tiers.",
+      "formats": [],
+      "annotationType": "mixed",
+      "dataRole": "egocentric",
+      "access": "Paper and benchmark examples",
+      "reportedScale": {
+        "clips": 900,
+        "participants": 5,
+        "tasks": 11,
+        "annotations": 5002,
+        "scope": "900 absolute and 4,102 relative questions on the core benchmark"
+      },
+      "tasks": [
+        "Physical-property recognition",
+        "Tactile question answering"
+      ],
+      "splits": "Reports leave-one-user-out fine-tuning and an unseen-object assessment.",
+      "releaseScope": "The paper provides benchmark and capture details. Benchmark data and evaluator were not verified as downloadable.",
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "access": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "splits": [
+          "https://arxiv.org/html/2611.26883v1"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2611.26883v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.26883v1"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "tactidex": {
+      "name": "TactiDex",
+      "summary": "Pairs whole-hand glove pressure with tracked motion and object poses for comparing tactile-guided dexterous transfer.",
+      "observations": "A dual glove stack records tactile pressure and hand kinematics; optical motion capture tracks wrist and object pose.",
+      "bodyCoverage": "Hands",
+      "limitations": "This is a wearable tactile and motion-capture corpus. The public folder lists separate processed outputs and object assets; archive completeness and terms were not independently confirmed.",
+      "recordedSignals": [
+        "Tactile",
+        "IMU",
+        "State"
+      ],
+      "cameraSetup": "Fixed OptiTrack motion-capture installation and an instrumented dual-glove stack.",
+      "recordedStreams": "Whole-hand pressure, instrumented hand kinematics, wrist/object optical tracking.",
+      "labels": "Tactile maps, wrist and object poses, and synchronized articulated hand states.",
+      "formats": [
+        "ZIP"
+      ],
+      "annotationType": "mixed",
+      "dataRole": "reference",
+      "access": "Public archive listing",
+      "datasetUrl": "https://drive.google.com/drive/folders/1O3Dipx7l_5aTlrXQKpZNMMUo5XbOHH5K?usp=sharing",
+      "reportedScale": {
+        "sequences": 757,
+        "objects": 49,
+        "scope": "73 representative sequences were used in the simulation transfer evaluation"
+      },
+      "publicScale": {
+        "scope": "Two listed archives contain processed outputs and object assets. Sequence completeness was not checked."
+      },
+      "releaseScope": "The author’s public Drive directory lists TactiDex_objects.zip and TactiDex_Output.zip.",
+      "tasks": [
+        "Human contact modeling",
+        "Hand-object transfer"
+      ],
+      "coordinateFrame": "Calibrated external optical-capture workspace.",
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "access": [
+          "https://arxiv.org/html/2607.09190v1",
+          "https://drive.google.com/drive/folders/1O3Dipx7l_5aTlrXQKpZNMMUo5XbOHH5K?usp=sharing"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/html/2607.09190v1",
+          "https://drive.google.com/drive/folders/1O3Dipx7l_5aTlrXQKpZNMMUo5XbOHH5K?usp=sharing"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2607.09190v1",
+          "https://drive.google.com/drive/folders/1O3Dipx7l_5aTlrXQKpZNMMUo5XbOHH5K?usp=sharing"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2607.09190v1",
+          "https://drive.google.com/drive/folders/1O3Dipx7l_5aTlrXQKpZNMMUo5XbOHH5K?usp=sharing"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2607.09190v1"
+        ],
+        "coordinateFrame": [
+          "https://arxiv.org/html/2607.09190v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2607.09190v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://tactidex.github.io/"
+        },
+        {
+          "label": "Dataset archives",
+          "url": "https://drive.google.com/drive/folders/1O3Dipx7l_5aTlrXQKpZNMMUo5XbOHH5K?usp=sharing"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "hoi-force-grounded": {
+      "name": "Hoi!",
+      "summary": "Benchmarks cross-view understanding and force prediction from articulated-object interactions captured under four embodiments.",
+      "observations": "Aria, smartphone RGB-D, wrist cameras, UMI and a separate instrumented gripper with ZED depth, a force/torque sensor and DIGIT tactile cameras.",
+      "bodyCoverage": "Hands and scene",
+      "limitations": "The handheld tool embodiments and bare-hand recordings provide different streams. The force/torque and DIGIT measurements are from the instrumented Hoi! gripper.",
+      "recordedSignals": [
+        "Vision",
+        "Depth",
+        "Tactile",
+        "Force",
+        "State"
+      ],
+      "cameraSetup": "Head-mounted Aria, iPhone RGB-D and wrist cameras; UMI and instrumented Hoi! gripper persist as separate embodiment variants.",
+      "recordedStreams": "Egocentric and exocentric images, poses and scene depth. Instrumented gripper adds ZED RGB-D, F/T and DIGIT tactile sensing.",
+      "labels": "Articulation labels, tracking and pose data, scene reference and stream-specific tactile/force measurements.",
+      "formats": [
+        "ZIP",
+        "JSON"
+      ],
+      "annotationType": "mixed",
+      "dataRole": "mixed",
+      "dataLicense": "CC BY 4.0 for the data.",
+      "access": "Public Bonn Dataverse archives",
+      "datasetUrl": "https://hoi-dataset.ethz.ch/#download",
+      "reportedScale": {
+        "sequences": 3048,
+        "objects": 381,
+        "environments": 38,
+        "scope": "Paper totals across all four embodiments"
+      },
+      "publicScale": {
+        "scope": "Current file manifest lists 4,769 files including 3,181 ZIPs. Stream archives do not correspond one-to-one to paper sequences."
+      },
+      "releaseScope": "The downloadable Bonn Dataverse manifest and author sample archive were verified.",
+      "tasks": [
+        "Articulated interaction",
+        "Cross-view hand pose",
+        "Tactile force estimation"
+      ],
+      "fieldSources": {
+        "name": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "summary": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "observations": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "bodyCoverage": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "limitations": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "recordedSignals": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "cameraSetup": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "recordedStreams": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "labels": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "formats": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "annotationType": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "dataRole": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "dataLicense": [
+          "https://arxiv.org/html/2512.04884v1",
+          "https://hoi-dataset.ethz.ch/#license"
+        ],
+        "access": [
+          "https://arxiv.org/html/2512.04884v1",
+          "https://hoi-dataset.ethz.ch/#download",
+          "https://hoi-dataset.ethz.ch/static/data/manifest.json"
+        ],
+        "datasetUrl": [
+          "https://arxiv.org/html/2512.04884v1",
+          "https://hoi-dataset.ethz.ch/#download",
+          "https://hoi-dataset.ethz.ch/static/data/manifest.json"
+        ],
+        "reportedScale": [
+          "https://arxiv.org/html/2512.04884v1"
+        ],
+        "publicScale": [
+          "https://arxiv.org/html/2512.04884v1",
+          "https://hoi-dataset.ethz.ch/#download",
+          "https://hoi-dataset.ethz.ch/static/data/manifest.json"
+        ],
+        "releaseScope": [
+          "https://arxiv.org/html/2512.04884v1",
+          "https://hoi-dataset.ethz.ch/#download",
+          "https://hoi-dataset.ethz.ch/static/data/manifest.json"
+        ],
+        "tasks": [
+          "https://arxiv.org/html/2512.04884v1"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2512.04884v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://hoi-dataset.ethz.ch/"
+        },
+        {
+          "label": "Code (recording and processing)",
+          "url": "https://github.com/timengelbracht/hoi-dataset-tools"
+        },
+        {
+          "label": "Data (Bonn Dataverse, CC BY 4.0)",
+          "url": "https://hoi-dataset.ethz.ch/#download"
+        },
+        {
+          "label": "File manifest",
+          "url": "https://hoi-dataset.ethz.ch/static/data/manifest.json"
+        }
+      ],
+      "verified": "2026-11-28"
     }
   }
 }

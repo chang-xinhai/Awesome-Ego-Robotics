@@ -5176,6 +5176,182 @@
         }
       ],
       "verified": "2026-11-15"
+    },
+    "tacross": {
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "State"
+      ],
+      "outputs": "Timestamp-aligned pressure, contact events and retargeted supervision for an ACT policy.",
+      "configuration": "A five-layer piezoresistive glove with 285 sensing points, wrist electronics, and separate RGB and hand tracking streams in the collection setups.",
+      "interface": "TACROSS glove",
+      "interfaceForms": [
+        "Glove"
+      ],
+      "vision": "Separate RGB camera streams in the capture system.",
+      "poseTracking": "Rokoko or vision-based inverse kinematics; separate from tactile sensing.",
+      "tactile": {
+        "status": "present",
+        "detail": "285 pressure-sensitive points on a piezoresistive glove."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "No separate six-axis wrist F/T stream asserted for the wearable."
+      },
+      "captureComponents": "Five-layer glove, wrist readout, separate RGB and hand-motion recording.",
+      "measuredSignals": "Glove signals are canonicalized into contact-semantic events across sensing embodiments.",
+      "hardwareRelease": "Public hardware-v1 ZIP on the authors’ GitHub release.",
+      "softwareRelease": "Training code and full reported corpus were not verified.",
+      "fieldSources": {
+        "bodyCoverage": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "observationSignals": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "outputs": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "configuration": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "interface": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "interfaceForms": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "vision": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "poseTracking": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "tactile": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "forceTorque": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "captureComponents": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/html/2610.11945v1"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/html/2610.11945v1",
+          "https://github.com/tacross-touch-project/tacross-touch-project.github.io/releases/tag/hardware-v1"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/html/2610.11945v1"
+        ]
+      },
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.11945v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://tacross-touch-project.github.io/"
+        },
+        {
+          "label": "Hardware ZIP (v1)",
+          "url": "https://github.com/tacross-touch-project/tacross-touch-project.github.io/releases/tag/hardware-v1"
+        }
+      ],
+      "verified": "2026-11-28"
+    },
+    "dexvitac": {
+      "bodyCoverage": "Hands",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "State"
+      ],
+      "outputs": "Aligned visual frames, tactile observations and hand kinematics for downstream dexterous policies.",
+      "configuration": "GoPro fisheye RGB, a motion-capture glove and fingertip tactile arrays; RealSense T265 tracking provides wrist pose.",
+      "interface": "DexViTac",
+      "interfaceForms": [
+        "Glove",
+        "Hybrid"
+      ],
+      "vision": "Human-side GoPro HERO12 Black fisheye RGB camera; matched first-person view on the robot.",
+      "poseTracking": "RealSense T265 VIO and hand motion capture.",
+      "tactile": {
+        "status": "present",
+        "detail": "High-resolution fingertip tactile modules alongside wearable hand tracking."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "detail": "No dedicated six-axis wrist F/T measurement established."
+      },
+      "captureComponents": "Backpack electronics, fisheye RGB, T265 tracking camera, wearable glove and tactile electronics.",
+      "measuredSignals": "First-person RGB, tactile signals, hand kinematics and wrist pose.",
+      "hardwareRelease": "Publication documents the rig; downloadable hardware design source was not verified.",
+      "softwareRelease": "Author code and data repositories are documentation placeholders.",
+      "fieldSources": {
+        "bodyCoverage": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "observationSignals": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "outputs": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "configuration": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "interface": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "interfaceForms": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "vision": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "poseTracking": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "tactile": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "forceTorque": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "captureComponents": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "measuredSignals": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "hardwareRelease": [
+          "https://arxiv.org/html/2603.17851v1"
+        ],
+        "softwareRelease": [
+          "https://arxiv.org/html/2603.17851v1"
+        ]
+      },
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2603.17851v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://xitong-c.github.io/DexViTac/"
+        },
+        {
+          "label": "Publication announcement",
+          "url": "https://github.com/IMCRLab/web/blob/main/_posts/2026-09-25-dexvitac-iros-2026.md"
+        }
+      ],
+      "verified": "2026-11-28"
     }
   }
 }

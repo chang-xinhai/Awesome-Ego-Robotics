@@ -3324,28 +3324,25 @@
       "availability": "Dataset release",
       "evidence": [
         {
-          "label": "Canonical source",
-          "url": "https://arxiv.org/abs/2512.16842"
-        },
-        {
-          "label": "Project",
-          "url": "https://opentouch-tactile.github.io/"
-        },
-        {
-          "label": "Code & dataset",
+          "label": "Official source",
           "url": "https://github.com/OpenTouch-MIT/opentouch"
         },
         {
-          "label": "Verified source file (2026-10-19)",
-          "url": "https://github.com/OpenTouch-MIT/opentouch/blob/main/src/opentouch/model.py"
+          "label": "Data download manifest",
+          "url": "https://github.com/OpenTouch-MIT/opentouch/blob/main/scripts/download_data.sh"
+        },
+        {
+          "label": "Official capture glove",
+          "url": "https://wiresens-gloves.vercel.app/"
         }
       ],
       "notes": [
         "Data-specific license not verified; MANO assets require separate terms.",
         "Official download links; no full-corpus integrity audit performed."
       ],
-      "softwareStatus": "Public source files verified (opentouch: no repository-wide source license verified). Model/data and third-party terms remain separate.",
-      "verified": "2026-10-19"
+      "softwareStatus": "Public preprocessing, retrieval and training source. Repository-wide license was not established.",
+      "verified": "2026-11-28",
+      "dataStatus": "The official downloader enumerates 27 Google Drive file IDs. Full archive download was not exercised."
     },
     "feel": {
       "status": "partial",
@@ -18191,19 +18188,25 @@
     },
     "dimed-metric-depth": {
       "status": "partial",
-      "availability": "Research reference",
+      "availability": "Research benchmark",
       "evidence": [
         {
-          "label": "Evaluation source",
+          "label": "Official evaluation source",
           "url": "https://github.com/antigravity-tech/DIMED"
         },
         {
-          "label": "Diagnostic data",
+          "label": "MIT license",
+          "url": "https://github.com/antigravity-tech/DIMED/blob/main/LICENSE"
+        },
+        {
+          "label": "Official diagnostic datasets",
           "url": "https://huggingface.co/datasets/hljiang/DIMED"
         }
       ],
-      "verified": "2026-11-20",
-      "softwareStatus": "Evaluation source and diagnostic data are accessible. Repository code license was not verified"
+      "verified": "2026-11-28",
+      "softwareStatus": "The evaluation scripts, model adapters and analysis source are MIT-licensed. Upstream checkpoints and benchmarks retain their own terms.",
+      "license": "MIT for the authors’ evaluator and analysis code.",
+      "dataStatus": "Per-image benchmark results and TUM-Family / TUM-Ref diagnostic archives are linked in the author release."
     },
     "ppm-stereo": {
       "status": "partial",
@@ -18982,6 +18985,343 @@
           "url": "https://li-yaping.github.io/SHAPE/"
         }
       ]
+    },
+    "touchbench": {
+      "availability": "Research benchmark",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.26883v1"
+        }
+      ],
+      "status": "unknown",
+      "softwareStatus": "No downloadable implementation verified in the cited public evidence."
+    },
+    "vistacalign": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.30959v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://vis-tac-align.github.io/"
+        }
+      ],
+      "status": "unknown",
+      "softwareStatus": "No downloadable implementation verified in the cited public evidence."
+    },
+    "tacross": {
+      "availability": "Research system",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.11945v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://tacross-touch-project.github.io/"
+        },
+        {
+          "label": "Hardware ZIP (v1)",
+          "url": "https://github.com/tacross-touch-project/tacross-touch-project.github.io/releases/tag/hardware-v1"
+        }
+      ],
+      "status": "partial",
+      "hardwareStatus": "The official hardware-v1 release lists a 117,352-byte ZIP.",
+      "softwareStatus": "Training implementation not verified.",
+      "dataStatus": "The complete 183.95-hour human plus robot dataset is announced."
+    },
+    "dexvitac": {
+      "availability": "Research system",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2603.17851v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://xitong-c.github.io/DexViTac/"
+        },
+        {
+          "label": "Publication announcement",
+          "url": "https://github.com/IMCRLab/web/blob/main/_posts/2026-09-25-dexvitac-iros-2026.md"
+        }
+      ],
+      "status": "partial",
+      "softwareStatus": "The author code repository contains a README only.",
+      "dataStatus": "The author data listing contains metadata and documentation only."
+    },
+    "unidex-vitac": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.16504v1"
+        },
+        {
+          "label": "Project and real-robot videos",
+          "url": "https://unidex-vitac.github.io/"
+        }
+      ],
+      "status": "unknown",
+      "softwareStatus": "No downloadable implementation verified in the cited public evidence."
+    },
+    "gift-force-transfer": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.14173v1"
+        },
+        {
+          "label": "Project and evaluation log",
+          "url": "https://tzahsarusi.github.io/"
+        }
+      ],
+      "status": "unknown",
+      "softwareStatus": "No downloadable implementation verified in the cited public evidence."
+    },
+    "tactidex": {
+      "availability": "Research benchmark",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2607.09190v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://tactidex.github.io/"
+        },
+        {
+          "label": "Dataset archives",
+          "url": "https://drive.google.com/drive/folders/1O3Dipx7l_5aTlrXQKpZNMMUo5XbOHH5K?usp=sharing"
+        }
+      ],
+      "status": "partial",
+      "softwareStatus": "No policy implementation verified.",
+      "dataStatus": "The official project links processed-output and object archives; terms were not established."
+    },
+    "dextag": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2609.33882v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://dextag.github.io/"
+        },
+        {
+          "label": "Code (MIT)",
+          "url": "https://github.com/UMass-Embodied-AGI/DexTaG"
+        },
+        {
+          "label": "Data (demonstration archive)",
+          "url": "https://drive.google.com/file/d/17gkLgZad7WZxZLt9SvIQ_VP64L53H0eP/view?usp=sharing"
+        }
+      ],
+      "status": "partial",
+      "softwareStatus": "MIT licensed reinforcement-learning, retargeting and behavior-cloning code.",
+      "dataStatus": "Official repository links a recorded-demonstration archive on Drive.",
+      "license": "MIT for code; data terms not established."
+    },
+    "act-depth-failure": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.33352v1"
+        }
+      ],
+      "status": "unknown",
+      "softwareStatus": "No downloadable implementation verified in the cited public evidence."
+    },
+    "stereo-vo-feedforward": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.25445v1"
+        }
+      ],
+      "status": "unknown",
+      "softwareStatus": "No downloadable implementation verified in the cited public evidence."
+    },
+    "stereovlm": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.27915v1"
+        }
+      ],
+      "status": "unknown",
+      "softwareStatus": "No downloadable implementation verified in the cited public evidence."
+    },
+    "any2act": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.32353v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://any2act.github.io/"
+        }
+      ],
+      "status": "unknown",
+      "softwareStatus": "No downloadable implementation verified in the cited public evidence."
+    },
+    "dexlatentworld": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.30907v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://vinaymohan0409.github.io/DexLatentWorld/"
+        },
+        {
+          "label": "Code (training and evaluation)",
+          "url": "https://github.com/VinayMohan0409/DexLatentWorld"
+        }
+      ],
+      "status": "partial",
+      "softwareStatus": "Source tree contains training, experiments, simulation and evaluation code.",
+      "modelStatus": "No author model weights verified in the cited source."
+    },
+    "dexduet": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.30495v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://rcl-robotics.github.io/Dexduet.io/"
+        },
+        {
+          "label": "Code (training and replay)",
+          "url": "https://github.com/HaoranZhangumich/DexDuet"
+        },
+        {
+          "label": "Model checkpoints",
+          "url": "https://huggingface.co/oldTOM/dexduet-checkpoints"
+        }
+      ],
+      "status": "partial",
+      "softwareStatus": "Official repository provides training, evaluation and replay code.",
+      "modelStatus": "Public Hugging Face repo lists suite and ablation checkpoint archives."
+    },
+    "vicon-contact": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2610.05180v1"
+        },
+        {
+          "label": "Dataset release notice",
+          "url": "https://github.com/VICON-dataset/dataset"
+        }
+      ],
+      "status": "partial",
+      "softwareStatus": "The linked author repository is a dataset release notice.",
+      "dataStatus": "Expanded dataset announced; a data archive is not present in the repository."
+    },
+    "hoi-force-grounded": {
+      "availability": "Research benchmark",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2512.04884v1"
+        },
+        {
+          "label": "Project",
+          "url": "https://hoi-dataset.ethz.ch/"
+        },
+        {
+          "label": "Code (recording and processing)",
+          "url": "https://github.com/timengelbracht/hoi-dataset-tools"
+        },
+        {
+          "label": "Data (Bonn Dataverse, CC BY 4.0)",
+          "url": "https://hoi-dataset.ethz.ch/#download"
+        },
+        {
+          "label": "File manifest",
+          "url": "https://hoi-dataset.ethz.ch/static/data/manifest.json"
+        }
+      ],
+      "status": "partial",
+      "softwareStatus": "Recording, calibration and processing code are public. A repository software license was not established.",
+      "dataStatus": "Public Bonn Dataverse file manifest, and a representative archive resolved to a downloadable ZIP.",
+      "license": "CC BY 4.0 applies to data."
+    },
+    "bridge-mvs": {
+      "availability": "Research method / tool",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary paper",
+          "url": "https://arxiv.org/html/2611.30787v1"
+        },
+        {
+          "label": "Repository (documentation only)",
+          "url": "https://github.com/JianfeiJ/BridgeMVS"
+        }
+      ],
+      "status": "partial",
+      "softwareStatus": "The author GitHub repository currently contains documentation only."
+    },
+    "touchbridge": {
+      "status": "partial",
+      "availability": "Research method",
+      "verified": "2026-11-28",
+      "evidence": [
+        {
+          "label": "Primary capture and evaluation protocol",
+          "url": "https://arxiv.org/html/2610.40349v1"
+        },
+        {
+          "label": "Official retargeting source",
+          "url": "https://github.com/touchbridge2026/TouchBridge"
+        },
+        {
+          "label": "Glove and robot assembly",
+          "url": "https://github.com/touchbridge2026/TouchBridge/tree/main/hardware"
+        },
+        {
+          "label": "Preprocessed example",
+          "url": "https://github.com/touchbridge2026/TouchBridge/tree/main/examples"
+        }
+      ],
+      "hardwareStatus": "Glove, robot fingertip adapters and assembly guides are in the official repository.",
+      "softwareStatus": "Public preprocessing, retargeting and training/export source. Repository-wide license not verified.",
+      "dataStatus": "A small preprocessed demonstration is included. No full study dataset or final policy checkpoints were verified."
     }
   }
 }

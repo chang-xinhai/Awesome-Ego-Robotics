@@ -16492,5 +16492,291 @@
     "imagePage": "https://finedex.github.io/",
     "imageAlt": "Real Unitree G1 sequences showing different finger choices on an articulated object",
     "imageType": "Published author figure"
+  },
+  {
+    "id": "touchbench",
+    "name": "TouchBench",
+    "summary": "Compare how VLMs infer physical properties from egocentric video with and without synchronized touch.",
+    "signals": [
+      "Vision",
+      "Tactile",
+      "IMU"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "TouchBench authors; third-party rights retained",
+    "datasetImage": "images/catalog/touchbench-cover-modality-20261128.webp",
+    "datasetImageSource": "https://arxiv.org/html/2611.26883v1/figs/qualitative.png",
+    "datasetImagePage": "https://arxiv.org/html/2611.26883v1#S0.F1",
+    "datasetImageAlt": "A pair of similar-looking opaque bottles with distinct pressure traces and video-only versus visual-plus-touch answers",
+    "datasetImageType": "Dataset examples"
+  },
+  {
+    "id": "vistacalign",
+    "name": "VisTacAlign",
+    "summary": "Aligns stereo geometry and per-finger touch from human and robot demonstrations to co-train a dexterous diffusion policy.",
+    "signals": [
+      "Vision",
+      "Tactile",
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "VisTacAlign authors; third-party rights retained",
+    "image": "images/catalog/vistacalign-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2609.30959v1/splash.png",
+    "imagePage": "https://arxiv.org/html/2609.30959v1#S0.F1",
+    "imageAlt": "A human tactile glove and an ORCA robot hand grasp the same red drill above paired colored point clouds",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "tacross",
+    "name": "TACROSS",
+    "summary": "Captures glove pressure and maps heterogeneous human and robot signals onto shared contact events.",
+    "signals": [
+      "Vision",
+      "Tactile",
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "TACROSS authors; third-party rights retained",
+    "hardwareImage": "images/catalog/tacross-cover-modality-20261128.webp",
+    "hardwareImageSource": "https://arxiv.org/html/2610.11945v1/Fig2_TACROSS_glove_native_vector.png",
+    "hardwareImagePage": "https://arxiv.org/html/2610.11945v1#S3.F2",
+    "hardwareImageAlt": "Piezoresistive glove taxel layout, layered glove assembly and sensing materials",
+    "hardwareImageType": "Hardware / capture system"
+  },
+  {
+    "id": "dexvitac",
+    "name": "DexViTac",
+    "summary": "Uses a portable fisheye and tactile glove rig to record human dexterous demonstrations with a matching robot-side sensor layout.",
+    "signals": [
+      "Vision",
+      "Tactile",
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "DexViTac authors; third-party rights retained",
+    "hardwareImage": "images/catalog/dexvitac-cover-modality-20261128.webp",
+    "hardwareImageSource": "https://arxiv.org/html/2603.17851v1/figure2.png",
+    "hardwareImagePage": "https://arxiv.org/html/2603.17851v1#S3.F1",
+    "hardwareImageAlt": "Outdoor DexViTac collection and a labeled close-up of the portable human demonstration rig",
+    "hardwareImageType": "Hardware / capture system"
+  },
+  {
+    "id": "unidex-vitac",
+    "name": "UniDex-ViTac",
+    "summary": "Turns human video into simulated contact-rich robot trajectories for an ACT policy with measured robot fingertip contact at deployment.",
+    "signals": [
+      "Vision",
+      "Depth",
+      "Tactile",
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "UniDex-ViTac authors; third-party rights retained",
+    "image": "images/catalog/unidex-vitac-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2609.16504v1/figure_5.png",
+    "imagePage": "https://arxiv.org/html/2609.16504v1#S4.F7",
+    "imageAlt": "Real robot rollouts on seen objects including a potted-meat can, mustard bottle and power drill",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "gift-force-transfer",
+    "name": "GIFT",
+    "summary": "Transfers calibrated human fingertip force to a robot policy that estimates force from motor currents.",
+    "signals": [
+      "Vision",
+      "Force",
+      "IMU",
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "GIFT authors; third-party rights retained",
+    "image": "images/catalog/gift-force-transfer-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2609.14173v1/fig_rollouts.png",
+    "imagePage": "https://arxiv.org/html/2609.14173v1#S4.F5",
+    "imageAlt": "Example rows of human and robot executions for approaching, grasping, holding and lifting an object",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "tactidex",
+    "name": "TactiDex",
+    "summary": "Pairs whole-hand glove pressure with tracked motion and object poses for comparing tactile-guided dexterous transfer.",
+    "signals": [
+      "Tactile",
+      "IMU",
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "TactiDex authors; third-party rights retained",
+    "datasetImage": "images/catalog/tactidex-cover-modality-20261128.webp",
+    "datasetImageSource": "https://arxiv.org/html/2607.09190v1/raw_HOI.png",
+    "datasetImagePage": "https://arxiv.org/html/2607.09190v1#A3.F8",
+    "datasetImageAlt": "Four recorded interactions visualized as reconstructed hands, tracked objects and pressure maps",
+    "datasetImageType": "Dataset examples"
+  },
+  {
+    "id": "dextag",
+    "name": "DexTaG",
+    "summary": "Uses pressure-glove demonstrations to supervise a shared retargeter and distills a robot controller with no tactile input.",
+    "signals": [
+      "Tactile",
+      "State",
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "DexTaG authors; third-party rights retained",
+    "image": "images/catalog/dextag-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2609.33882v1/images/data_visualization.png",
+    "imagePage": "https://arxiv.org/html/2609.33882v1#S3.F5",
+    "imageAlt": "Sequences of glove tactile readouts and reconstructed hand motion during marker and hammer manipulation",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "act-depth-failure",
+    "name": "ACT Sensor-Depth Failure Study",
+    "summary": "Separates missing-depth pixels, validity masks and ordinary measurement noise in wrist-view RGB-D imitation.",
+    "signals": [
+      "Vision",
+      "Depth"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "ACT Sensor-Depth Failure Study authors; third-party rights retained",
+    "image": "images/catalog/act-depth-failure-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2611.33352v1/fig_iros_1_teaser.png",
+    "imagePage": "https://arxiv.org/html/2611.33352v1#S1.F1",
+    "imageAlt": "Wrist RGB and four depth conditions above ACT success summaries",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "stereo-vo-feedforward",
+    "name": "Stereo VO with feed-forward geometry",
+    "summary": "Uses sparse calibrated stereo geometry to scale and shift dense depth predictions in metric local submaps.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "Stereo VO with feed-forward geometry authors; third-party rights retained",
+    "image": "images/catalog/stereo-vo-feedforward-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2611.25445v1/figures/hero_firstperson_fullres.jpg",
+    "imagePage": "https://arxiv.org/html/2611.25445v1#S1.F1",
+    "imageAlt": "Stereo and reference-LiDAR capture rig above an example stereo feature-tracking view",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "stereovlm",
+    "name": "StereoVLM / Stereo3D-Bench",
+    "summary": "Tests whether calibrated binocular RGB enables metric depth and language-grounded 3D reasoning on held-out scenes.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "StereoVLM authors; third-party rights retained",
+    "image": "images/catalog/stereovlm-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2611.27915v1/teaser_stereovlm.png",
+    "imagePage": "https://arxiv.org/html/2611.27915v1#S0.F1",
+    "imageAlt": "A paired tabletop stereo view and a metric depth map illustrating focal-length- and baseline-conditioned reasoning",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "any2act",
+    "name": "Any2Act",
+    "summary": "Translates egocentric video to robot-view context for a policy pretrained to follow demonstrations.",
+    "signals": [
+      "Vision",
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "Any2Act authors; third-party rights retained",
+    "image": "images/catalog/any2act-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2611.32353v1/exp_fig.png",
+    "imagePage": "https://arxiv.org/html/2611.32353v1#S4.F4",
+    "imageAlt": "Examples of real robot benchmark tasks, including discarding, lidding, gathering and pinching",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "dexlatentworld",
+    "name": "DexLatentWorld",
+    "summary": "Learns cross-hand latent dynamics from retargeted human manipulation and plans in 3D on an unseen dexterous hand.",
+    "signals": [
+      "Vision",
+      "Depth",
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "DexLatentWorld authors; third-party rights retained",
+    "image": "images/catalog/dexlatentworld-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2611.30907v1/Images/pour_window_mesh.png",
+    "imagePage": "https://arxiv.org/html/2611.30907v1#S5.F6",
+    "imageAlt": "Human and cross-embodiment hand meshes during the same pouring motion viewed from the front and from above",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "dexduet",
+    "name": "DexDuet",
+    "summary": "Learns bimanual robot trajectories that preserve human finger-object contact in simulation.",
+    "signals": [
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "DexDuet authors; third-party rights retained",
+    "image": "images/catalog/dexduet-cover-modality-20261128.webp",
+    "imageSource": "https://rcl-robotics.github.io/Dexduet.io/assets/roll/real/arms_bottle_simreal.mp4?v=4",
+    "imagePage": "https://rcl-robotics.github.io/Dexduet.io/",
+    "imageAlt": "Simulated and physical dual-arm dexterous hands reorienting a bottle during matched replay",
+    "imageType": "Frame from author replay video"
+  },
+  {
+    "id": "vicon-contact",
+    "name": "VICON",
+    "summary": "Recovers hand and object trajectories under occlusion by combining RGB-D pose evidence with glove contact and force.",
+    "signals": [
+      "Vision",
+      "Depth",
+      "Tactile",
+      "Force",
+      "IMU",
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "VICON authors; third-party rights retained",
+    "image": "images/catalog/vicon-contact-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2610.05180v1/fig1.png",
+    "imagePage": "https://arxiv.org/html/2610.05180v1#S1.F1",
+    "imageAlt": "A hand operating a yellow bottle while visual-inertial tracking, contact force and tracked object pose are overlaid",
+    "imageType": "Published author figure"
+  },
+  {
+    "id": "hoi-force-grounded",
+    "name": "Hoi!",
+    "summary": "Benchmarks cross-view understanding and force prediction from articulated-object interactions captured under four embodiments.",
+    "signals": [
+      "Vision",
+      "Depth",
+      "Tactile",
+      "Force",
+      "State"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "Hoi! authors; third-party rights retained",
+    "datasetImage": "images/catalog/hoi-force-grounded-cover-modality-20261128.webp",
+    "datasetImageSource": "https://arxiv.org/html/2512.04884v1/author-kit-CVPR2026-v1-latex-/figures/HoiVisuals.png",
+    "datasetImagePage": "https://arxiv.org/html/2512.04884v1#S3.F7",
+    "datasetImageAlt": "Indoor interaction views from bare-hand, wrist and gripper variants next to reference scene geometry",
+    "datasetImageType": "Dataset examples"
+  },
+  {
+    "id": "bridge-mvs",
+    "name": "BridgeMVS",
+    "summary": "Fuses learned single-view priors and calibrated multiview correspondences to reconstruct metric geometry.",
+    "signals": [
+      "Vision"
+    ],
+    "reviewed": "2026-11-28",
+    "credit": "BridgeMVS authors; third-party rights retained",
+    "image": "images/catalog/bridge-mvs-cover-modality-20261128.webp",
+    "imageSource": "https://arxiv.org/html/2611.30787v1/Figure/dtu_depth.png",
+    "imagePage": "https://arxiv.org/html/2611.30787v1#S4.F4",
+    "imageAlt": "Depth maps for challenging DTU views comparing BridgeMVS against other estimators and ground truth",
+    "imageType": "Published author figure"
   }
 ]
